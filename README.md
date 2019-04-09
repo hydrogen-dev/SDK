@@ -1,13 +1,24 @@
 # Hydrogen Client SDKs
 
+Follow the individual SDK READMEs for information on installation, authorization, and parameters.
+
+## Atom
+
 Hydrogen Atom client SDKs are offered in:
 * [Java](atom/java)
 * [Javascript/Node](atom/javascript)
 * [Python](atom/python)
 * [Ruby](atom/ruby)
 
-Follow the SDK README for information on installation, authorization, and parameters.
+Please see the official Atom API documentation: [Nucleus](https://www.hydrogenplatform.com/docs/nucleus/v1/) | [Proton](https://www.hydrogenplatform.com/docs/proton/v1/) | [Electron](https://www.hydrogenplatform.com/docs/electron/v1/)
 
-SDKs are generated from the [Atom Swagger specification](specs/atom.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
+Atom SDKs are generated from the [Atom Swagger specification](atom/atom.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
 
-For API documentation please see the official [Atom API documentation](https://www.hydrogenplatform.com/docs/nucleus/v1/)
+## Hydro - Raindrop
+Hydro Raindrop SDKs are offered in:
+* [Java](hydro/raindrop/java)
+* [Javascript/Node](hydro/raindrop/javascript)
+* [PHP](hydro/raindrop/php)
+* [Python](hydro/raindrop/python)
+
+Please see the official Hydro API documentation: [Raindrop](https://www.hydrogenplatform.com/docs/hydro/v1/#Raindrop)

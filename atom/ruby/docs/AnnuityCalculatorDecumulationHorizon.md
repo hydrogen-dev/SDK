@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **annuity_frequency_interval** | **String** | The frequency interval of the annuity | [optional] [default to &#39;year&#39;]
 **inflation_rate** | **Float** | The annualized inflation rate | [optional] 
 **tax_rate** | **Float** | The tax rate on withdrawals | [optional] 
-**deposit_schedule** | **Object** |  | [optional] 
+**deposit_schedule** | [**AnnuityDepositSchedule**](AnnuityDepositSchedule.md) |  | [optional] 
 
 

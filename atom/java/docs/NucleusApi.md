@@ -1,6 +1,6 @@
 # NucleusApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -4038,7 +4038,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllocationPerformance"></a>
 # **getAllocationPerformance**
-> PerformanceResponse getAllocationPerformance(allocationId)
+> PerformanceResponse getAllocationPerformance(allocationId, stat)
 
 Get allocation performance
 
@@ -4063,8 +4063,9 @@ oauth.setAccessToken("YOUR ACCESS TOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
+String stat = "stat_example"; // String | Performance statistic
 try {
-    PerformanceResponse result = apiInstance.getAllocationPerformance(allocationId);
+    PerformanceResponse result = apiInstance.getAllocationPerformance(allocationId, stat);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NucleusApi#getAllocationPerformance");
@@ -4077,6 +4078,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocationId** | [**UUID**](.md)| UUID of an allocation |
+ **stat** | **String**| Performance statistic | [enum: cum_return, ann_return, daily_return, mtd_return, ytd_return, rolling_n_day_return, calendar_monthly_return, calendar_quarterly_return, calendar_yearly_return, one_yr_return, three_yr_return, five_yr_return, seven_yr_return, ten_yr_return, best_month, worst_month, best_yr, worst_yr, best_qtr, worst_qtr, avg_return, avg_gain, avg_loss, alpha, active_premium, tracking_error, moving_avg_n_day, dollar_growth, ann_vol, daily_vol, rolling_n_day_vol, downside_deviation, semi_deviation, beta, correlation, covariance, r_squared, drawdown, max_drawdown, rolling_n_day_max_drawdown, upside_risk, downside_risk, current_drawdown, var, sharpe_ratio, treynor_ratio, sortino_ratio, up_capture, down_capture, information_ratio, calmar_ratio, pct_gain_ratio, pct_loss_ratio, gain_loss_ratio, profit_loss_ratio, up_pct_ratio, down_pct_ratio, sterling_ratio, skewness, kurtosis, monte_carlo, histogram, tstat]
 
 ### Return type
 

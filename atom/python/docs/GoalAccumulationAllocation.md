@@ -5,14 +5,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocation_method** | **str** | The allocation universe source, either create or select | 
 **allocation_priority** | **str** | Priority when allocating, either risk or goal | 
-**opt_config** | **object** |  | [optional] 
+**opt_config** | [**GoalOptConfig**](GoalOptConfig.md) |  | [optional] 
 **allocations** | **list[str]** |  | [optional] 
 **curr_inv** | **float** | The current amount invested | 
 **horizon** | **int** | The accumulation goal horizon | 
 **horizon_frequency** | **str** | Frequency in relation to the horizon | 
-**goal_config** | **object** |  | 
+**goal_config** | [**GoalConfig**](GoalConfig.md) |  | 
 **deposit_config** | [**list[GoalDepositConfig]**](GoalDepositConfig.md) | The deposit attributes | [optional] 
-**recommendation_config** | **object** |  | [optional] 
+**recommendation_config** | [**GoalRecommendationConfigStatus**](GoalRecommendationConfigStatus.md) |  | [optional] 
 **recommend_type** | **str** | The type of recommended action | [optional] [default to 'horizon']
 **conf_tgt** | **float** | The confidence target | [optional] 
 **n** | **int** | The number of Monte Carlo simulations to run | [optional] 

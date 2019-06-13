@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **retirement_age** | **Integer** | The age of retirement | [optional] 
 **retirement_savings** | **Float** | Current amount of retirement savings | [optional] 
 **retirement_income** | **Float** | Expected retirement income | [optional] 
-**deposit_schedule** | **Object** |  | [optional] 
+**deposit_schedule** | [**DepositSchedule**](DepositSchedule.md) |  | [optional] 
 **inflation_rate** | **Float** | The annualized inflation rate | [optional] 
 **retirement_tax** | **Float** | The expected tax rate in retirement | [optional] 
 

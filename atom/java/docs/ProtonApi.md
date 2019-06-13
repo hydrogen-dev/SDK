@@ -1,6 +1,6 @@
 # ProtonApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -44,6 +44,7 @@ Method | HTTP request | Description
 [**savingsCalculator**](ProtonApi.md#savingsCalculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenarioAnalysis**](ProtonApi.md#scenarioAnalysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivityAnalysis**](ProtonApi.md#sensitivityAnalysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**variableAnnuity**](ProtonApi.md#variableAnnuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
 <a name="annuityCalculatorAccumulationHorizon"></a>
@@ -2236,6 +2237,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="variableAnnuity"></a>
+# **variableAnnuity**
+> VariableAnnuityResponse variableAnnuity(payload)
+
+Variable annuity
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("YOUR ACCESS TOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+VariableAnnuityPayload payload = new VariableAnnuityPayload(); // VariableAnnuityPayload | 
+try {
+    VariableAnnuityResponse result = apiInstance.variableAnnuity(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#variableAnnuity");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**VariableAnnuityPayload**](VariableAnnuityPayload.md)|  |
+
+### Return type
+
+[**VariableAnnuityResponse**](VariableAnnuityResponse.md)
 
 ### Authorization
 

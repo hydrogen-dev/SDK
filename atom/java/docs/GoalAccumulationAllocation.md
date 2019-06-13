@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocationMethod** | [**AllocationMethodEnum**](#AllocationMethodEnum) | The allocation universe source, either create or select | 
 **allocationPriority** | [**AllocationPriorityEnum**](#AllocationPriorityEnum) | Priority when allocating, either risk or goal | 
-**optConfig** | **Object** |  |  [optional]
+**optConfig** | [**GoalOptConfig**](GoalOptConfig.md) |  |  [optional]
 **allocations** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **currInv** | [**BigDecimal**](BigDecimal.md) | The current amount invested | 
 **horizon** | **Integer** | The accumulation goal horizon | 
 **horizonFrequency** | [**HorizonFrequencyEnum**](#HorizonFrequencyEnum) | Frequency in relation to the horizon | 
-**goalConfig** | **Object** |  | 
+**goalConfig** | [**GoalConfig**](GoalConfig.md) |  | 
 **depositConfig** | [**List&lt;GoalDepositConfig&gt;**](GoalDepositConfig.md) | The deposit attributes |  [optional]
-**recommendationConfig** | **Object** |  |  [optional]
+**recommendationConfig** | [**GoalRecommendationConfigStatus**](GoalRecommendationConfigStatus.md) |  |  [optional]
 **recommendType** | [**RecommendTypeEnum**](#RecommendTypeEnum) | The type of recommended action |  [optional]
 **confTgt** | [**BigDecimal**](BigDecimal.md) | The confidence target |  [optional]
 **n** | **Integer** | The number of Monte Carlo simulations to run |  [optional]

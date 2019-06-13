@@ -1,6 +1,6 @@
 # atom_api.ProtonApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -44,6 +44,7 @@ Method | HTTP request | Description
 [**savingsCalculator**](ProtonApi.md#savingsCalculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenarioAnalysis**](ProtonApi.md#scenarioAnalysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivityAnalysis**](ProtonApi.md#sensitivityAnalysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**variableAnnuity**](ProtonApi.md#variableAnnuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
 <a name="annuityCalculatorAccumulationHorizon"></a>
@@ -2916,6 +2917,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="variableAnnuity"></a>
+# **variableAnnuity**
+> VariableAnnuityResponse variableAnnuity(payload)
+
+Variable annuity
+
+### Example
+```javascript
+var atom_api = require('hydrogen-atom-api');
+var defaultClient = atom_api.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth
+
+// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
+
+// Initialize the OAuth2 Library
+var ClientOAuth2 = require('client-oauth2')
+
+// Set the configuration settings
+var auth = new ClientOAuth2({
+  clientId: '<your clientId>',
+  clientSecret: '<your clientSecret>',
+  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
+})
+
+// Get the access token object for the client
+try {
+  auth.credentials.getToken()
+    .then(function (user) {
+      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
+} catch (error) {
+    console.log('Access Token error', error.message);
+}
+
+// Method 2: Set access token using an existing token
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new atom_api.ProtonApi();
+
+var payload = new atom_api.VariableAnnuityPayload(); // VariableAnnuityPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.variableAnnuity(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**VariableAnnuityPayload**](VariableAnnuityPayload.md)|  | 
+
+### Return type
+
+[**VariableAnnuityResponse**](VariableAnnuityResponse.md)
 
 ### Authorization
 

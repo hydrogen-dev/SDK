@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **portfolioTickers** | **[String]** | List of tickers | 
 **portfolioWeights** | **[Number]** | List of weights | 
-**optConfig** | **Object** |  | [optional] 
+**optConfig** | [**OptConfig**](OptConfig.md) |  | [optional] 
 
 

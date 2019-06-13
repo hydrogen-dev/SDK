@@ -1,6 +1,6 @@
 # ElectronApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

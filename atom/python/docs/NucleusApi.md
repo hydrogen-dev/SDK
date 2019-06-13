@@ -1,6 +1,6 @@
 # atom_api.NucleusApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -3901,7 +3901,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_allocation_performance**
-> PerformanceResponse get_allocation_performance(allocation_id)
+> PerformanceResponse get_allocation_performance(allocation_id, stat)
 
 Get allocation performance
 
@@ -3923,10 +3923,11 @@ configuration.access_token = 'MYACCESSTOKEN'
 # create an instance of the API class
 api_instance = atom_api.NucleusApi(atom_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID of an allocation
+stat = 'stat_example' # str | Performance statistic
 
 try:
     # Get allocation performance
-    api_response = api_instance.get_allocation_performance(allocation_id)
+    api_response = api_instance.get_allocation_performance(allocation_id, stat)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling NucleusApi->get_allocation_performance: %s\n" % e)
@@ -3937,6 +3938,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocation_id** | [**str**](.md)| UUID of an allocation | 
+ **stat** | **str**| Performance statistic | 
 
 ### Return type
 

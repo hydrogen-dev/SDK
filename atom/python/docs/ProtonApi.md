@@ -1,6 +1,6 @@
 # atom_api.ProtonApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -44,6 +44,7 @@ Method | HTTP request | Description
 [**savings_calculator**](ProtonApi.md#savings_calculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenario_analysis**](ProtonApi.md#scenario_analysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivity_analysis**](ProtonApi.md#sensitivity_analysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**variable_annuity**](ProtonApi.md#variable_annuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
 # **annuity_calculator_accumulation_horizon**
@@ -2154,6 +2155,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **variable_annuity**
+> VariableAnnuityResponse variable_annuity(payload)
+
+Variable annuity
+
+### Example
+```python
+from __future__ import print_function
+import time
+import atom_api
+from atom_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = atom_api.Configuration()
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = atom_api.ProtonApi(atom_api.ApiClient(configuration))
+payload = atom_api.VariableAnnuityPayload() # VariableAnnuityPayload | 
+
+try:
+    # Variable annuity
+    api_response = api_instance.variable_annuity(payload)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProtonApi->variable_annuity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**VariableAnnuityPayload**](VariableAnnuityPayload.md)|  | 
+
+### Return type
+
+[**VariableAnnuityResponse**](VariableAnnuityResponse.md)
 
 ### Authorization
 

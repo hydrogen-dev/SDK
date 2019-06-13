@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **grossAnnualIncome** | **Number** | Gross annual income | [optional] 
 **netMonthlyIncome** | **Number** | Net monthly income | [optional] 
 **monthlyExpenses** | **Number** | Monthly expenses | [optional] 
-**ratioTargets** | **Object** |  | [optional] 
+**ratioTargets** | [**RatioTargets**](RatioTargets.md) |  | [optional] 
 
 

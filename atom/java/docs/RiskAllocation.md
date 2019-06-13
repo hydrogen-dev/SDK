@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **riskScore** | [**BigDecimal**](BigDecimal.md) | A risk score from 0 to 100 | 
 **allocationMethod** | [**AllocationMethodEnum**](#AllocationMethodEnum) | The portfolio standard deviation | 
-**optConfig** | **Object** |  |  [optional]
+**optConfig** | [**RiskScoreOptConfigModel**](RiskScoreOptConfigModel.md) |  |  [optional]
 **allocations** | [**List&lt;UUID&gt;**](UUID.md) | The portfolio standard deviation |  [optional]
 
 

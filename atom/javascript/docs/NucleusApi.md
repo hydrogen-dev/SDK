@@ -1,6 +1,6 @@
 # atom_api.NucleusApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -833,7 +833,7 @@ null (empty response body)
 
 <a name="deleteAllocation"></a>
 # **deleteAllocation**
-> deleteAllocation(allocationId)
+> deleteAllocation(allocationId, )
 
 Delete an allocation
 
@@ -881,7 +881,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteAllocation(allocationId, callback);
+apiInstance.deleteAllocation(allocationId, , callback);
 ```
 
 ### Parameters
@@ -4880,7 +4880,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllocation"></a>
 # **getAllocation**
-> SpecificAllocationResponse getAllocation(allocationId)
+> SpecificAllocationResponse getAllocation(allocationId, )
 
 Retrieve an allocation
 
@@ -4928,7 +4928,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllocation(allocationId, callback);
+apiInstance.getAllocation(allocationId, , callback);
 ```
 
 ### Parameters
@@ -4952,7 +4952,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllocationAssetSizes"></a>
 # **getAllocationAssetSizes**
-> AllocationAssetSizeResponse getAllocationAssetSizes(allocationId, opts)
+> AllocationAssetSizeResponse getAllocationAssetSizes(allocationId, , opts)
 
 List all allocation asset sizes
 
@@ -5003,7 +5003,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllocationAssetSizes(allocationId, opts, callback);
+apiInstance.getAllocationAssetSizes(allocationId, , opts, callback);
 ```
 
 ### Parameters
@@ -5181,7 +5181,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllocationHoldings"></a>
 # **getAllocationHoldings**
-> AllocationHoldingsResponse getAllocationHoldings(allocationId, opts)
+> AllocationHoldingsResponse getAllocationHoldings(allocationId, , opts)
 
 List all allocation holdings
 
@@ -5232,7 +5232,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllocationHoldings(allocationId, opts, callback);
+apiInstance.getAllocationHoldings(allocationId, , opts, callback);
 ```
 
 ### Parameters
@@ -5257,7 +5257,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllocationPerformance"></a>
 # **getAllocationPerformance**
-> PerformanceResponse getAllocationPerformance(allocationId)
+> PerformanceResponse getAllocationPerformance(allocationId, stat)
 
 Get allocation performance
 
@@ -5297,6 +5297,8 @@ var apiInstance = new atom_api.NucleusApi();
 
 var allocationId = "allocationId_example"; // String | UUID of an allocation
 
+var stat = "stat_example"; // String | Performance statistic
+
 
 var callback = function(error, data, response) {
   if (error) {
@@ -5305,7 +5307,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllocationPerformance(allocationId, callback);
+apiInstance.getAllocationPerformance(allocationId, stat, callback);
 ```
 
 ### Parameters
@@ -5313,6 +5315,7 @@ apiInstance.getAllocationPerformance(allocationId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocationId** | [**String**](.md)| UUID of an allocation | 
+ **stat** | **String**| Performance statistic | 
 
 ### Return type
 
@@ -5329,7 +5332,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllocationTransactions"></a>
 # **getAllocationTransactions**
-> AllocationTransactionResponse getAllocationTransactions(allocationId, opts)
+> AllocationTransactionResponse getAllocationTransactions(allocationId, , opts)
 
 List all allocation transactions
 
@@ -5380,7 +5383,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getAllocationTransactions(allocationId, opts, callback);
+apiInstance.getAllocationTransactions(allocationId, , opts, callback);
 ```
 
 ### Parameters
@@ -16139,7 +16142,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAllocation"></a>
 # **updateAllocation**
-> SpecificAllocationResponse updateAllocation(allocationIdpayload)
+> SpecificAllocationResponse updateAllocation(allocationId, payload)
 
 Update an allocation
 
@@ -16189,7 +16192,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateAllocation(allocationIdpayload, callback);
+apiInstance.updateAllocation(allocationId, payload, callback);
 ```
 
 ### Parameters

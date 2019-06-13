@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **curr_inv** | **float** | The current amount invested | 
 **horizon** | **int** | The accumulation goal horizon | 
 **horizon_frequency** | **str** | Frequency in relation to the horizon | 
-**goal_config** | **object** |  | 
+**goal_config** | [**GoalConfig**](GoalConfig.md) |  | 
 **deposit_config** | [**list[GoalDepositConfig]**](GoalDepositConfig.md) | The deposit attributes | [optional] 
-**recommendation_config** | **object** |  | [optional] 
+**recommendation_config** | [**GoalRecommendationConfigRec**](GoalRecommendationConfigRec.md) |  | [optional] 
 **recommend_type** | **str** | The type of recommended action | [optional] [default to 'horizon']
 **conf_tgt** | **float** | The confidence target | [optional] 
 **n** | **int** | The number of Monte Carlo simulations to run | [optional] 

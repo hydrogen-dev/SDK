@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **educationInflationRate** | [**BigDecimal**](BigDecimal.md) | The inflation rate for education prices |  [optional]
 **generalInflationRate** | [**BigDecimal**](BigDecimal.md) | The annualized general inflation rate |  [optional]
 **taxRate** | [**BigDecimal**](BigDecimal.md) | The tax rate for withdrawals from the account |  [optional]
-**depositSchedule** | **Object** |  |  [optional]
+**depositSchedule** | [**EducationCalculatorDepositScheduleDepAmt**](EducationCalculatorDepositScheduleDepAmt.md) |  |  [optional]
 
 
 

@@ -1,8 +1,8 @@
 # hydrogen-atom-api
 
 Hydrogen Atom API
-- API version: 1.0.0
-  - Build date: 2019-04-08T13:59:38.361-04:00
+- API version: 1.0.1
+  - Build date: 2019-06-13T18:14:40.362-04:00
 
 The Hydrogen Atom API
 
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>hydrogenplatform</groupId>
   <artifactId>hydrogen-atom-api</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "hydrogenplatform:hydrogen-atom-api:1.0.0"
+compile "hydrogenplatform:hydrogen-atom-api:1.0.1"
 ```
 
 ### Others
@@ -66,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-atom-api-1.0.0.jar`
+* `target/hydrogen-atom-api-1.0.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -89,6 +89,10 @@ public class ElectronApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
+        // Set the environment (optional, defaults to sandbox)
+        // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+        defaultClient.setEnvironment("sandbox");
+
         
         // Configure OAuth2 access token for authorization: oauth
         OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
@@ -115,7 +119,7 @@ public class ElectronApiExample {
 
 Full usage documentation is available: [Nucleus](https://www.hydrogenplatform.com/docs/nucleus/v1/) | [Electron](https://www.hydrogenplatform.com/docs/electron/v1/) | [Proton](https://www.hydrogenplatform.com/docs/proton/v1/)
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -463,6 +467,7 @@ Class | Method | HTTP request | Description
 *ProtonApi* | [**savingsCalculator**](docs/ProtonApi.md#savingsCalculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 *ProtonApi* | [**scenarioAnalysis**](docs/ProtonApi.md#scenarioAnalysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 *ProtonApi* | [**sensitivityAnalysis**](docs/ProtonApi.md#sensitivityAnalysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+*ProtonApi* | [**variableAnnuity**](docs/ProtonApi.md#variableAnnuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
 ## Documentation for Models
@@ -546,6 +551,7 @@ Class | Method | HTTP request | Description
  - [DecisionTreePayload](docs/DecisionTreePayload.md)
  - [DepositRequestPayload](docs/DepositRequestPayload.md)
  - [DepositSchedule](docs/DepositSchedule.md)
+ - [DepositScheduleMajorPurchaseDepAmt](docs/DepositScheduleMajorPurchaseDepAmt.md)
  - [DepositScheduleMajorPurchaseNoDepAmt](docs/DepositScheduleMajorPurchaseNoDepAmt.md)
  - [DimRiskScoreResponse](docs/DimRiskScoreResponse.md)
  - [DimensionalRiskScore](docs/DimensionalRiskScore.md)
@@ -554,6 +560,7 @@ Class | Method | HTTP request | Description
  - [EducationCalculatorAnnualCost](docs/EducationCalculatorAnnualCost.md)
  - [EducationCalculatorAnnualcostResponse](docs/EducationCalculatorAnnualcostResponse.md)
  - [EducationCalculatorDepositAmount](docs/EducationCalculatorDepositAmount.md)
+ - [EducationCalculatorDepositScheduleDepAmt](docs/EducationCalculatorDepositScheduleDepAmt.md)
  - [EducationCalculatorDepositScheduleNoDepAmt](docs/EducationCalculatorDepositScheduleNoDepAmt.md)
  - [EducationCalculatorDepositamountResponse](docs/EducationCalculatorDepositamountResponse.md)
  - [EducationCalculatorPctcoveredResponse](docs/EducationCalculatorPctcoveredResponse.md)
@@ -581,7 +588,6 @@ Class | Method | HTTP request | Description
  - [GoalAllocationSectionResponse](docs/GoalAllocationSectionResponse.md)
  - [GoalAssetSizeResponse](docs/GoalAssetSizeResponse.md)
  - [GoalAssetSizeResponseInner](docs/GoalAssetSizeResponseInner.md)
- - [GoalAssetWeightConfig](docs/GoalAssetWeightConfig.md)
  - [GoalConfig](docs/GoalConfig.md)
  - [GoalDecumulationAllocation](docs/GoalDecumulationAllocation.md)
  - [GoalDecumulationRecommendation](docs/GoalDecumulationRecommendation.md)
@@ -677,6 +683,7 @@ Class | Method | HTTP request | Description
  - [RiskAllocationResponse](docs/RiskAllocationResponse.md)
  - [RiskScore](docs/RiskScore.md)
  - [RiskScoreOptConfigModel](docs/RiskScoreOptConfigModel.md)
+ - [RiskScoreOptConfigModelWConfig](docs/RiskScoreOptConfigModelWConfig.md)
  - [RiskScoreResponse](docs/RiskScoreResponse.md)
  - [SalesPayload](docs/SalesPayload.md)
  - [SavingsCalculatorResponse](docs/SavingsCalculatorResponse.md)
@@ -709,6 +716,9 @@ Class | Method | HTTP request | Description
  - [TargetPortfolioResponse](docs/TargetPortfolioResponse.md)
  - [TransactionCodePayload](docs/TransactionCodePayload.md)
  - [TransferRequestPayload](docs/TransferRequestPayload.md)
+ - [VariableAnnuityPayload](docs/VariableAnnuityPayload.md)
+ - [VariableAnnuityResponse](docs/VariableAnnuityResponse.md)
+ - [VariableAnnuityReturnDetail](docs/VariableAnnuityReturnDetail.md)
  - [WConfigPortfolio](docs/WConfigPortfolio.md)
  - [WhatIfPortfolio](docs/WhatIfPortfolio.md)
  - [WithdrawalPayload](docs/WithdrawalPayload.md)
@@ -764,8 +774,6 @@ Class | Method | HTTP request | Description
  - [CreateTransactionCodeResponse](docs/CreateTransactionCodeResponse.md)
  - [CreateTransferResponse](docs/CreateTransferResponse.md)
  - [CreateWithdrawalResponse](docs/CreateWithdrawalResponse.md)
- - [DepositScheduleMajorPurchaseDepAmt](docs/DepositScheduleMajorPurchaseDepAmt.md)
- - [EducationCalculatorDepositScheduleDepAmt](docs/EducationCalculatorDepositScheduleDepAmt.md)
  - [GetAccountAllocationResponse](docs/GetAccountAllocationResponse.md)
  - [GetAccountPermissionsResponse](docs/GetAccountPermissionsResponse.md)
  - [GetAccountResponse](docs/GetAccountResponse.md)
@@ -884,7 +892,7 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: application
-- **Token URL**: https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+- **Token URL**: https://sandbox.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
 
 
 ## Recommendation

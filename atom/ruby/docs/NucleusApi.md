@@ -1,6 +1,6 @@
 # AtomApi::NucleusApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -672,7 +672,7 @@ nil (empty response body)
 
 
 # **delete_allocation**
-> delete_allocation(allocation_id)
+> delete_allocation(allocation_id, )
 
 Delete an allocation
 
@@ -696,7 +696,7 @@ allocation_id = 'allocation_id_example' # String | UUID of an allocation
 
 begin
   #Delete an allocation
-  api_instance.delete_allocation(allocation_id)
+  api_instance.delete_allocation(allocation_id, )
 rescue AtomApi::ApiError => e
   puts "Exception when calling NucleusApi->delete_allocation: #{e}"
 end
@@ -3639,7 +3639,7 @@ Name | Type | Description  | Notes
 
 
 # **get_allocation**
-> SpecificAllocationResponse get_allocation(allocation_id)
+> SpecificAllocationResponse get_allocation(allocation_id, )
 
 Retrieve an allocation
 
@@ -3663,7 +3663,7 @@ allocation_id = 'allocation_id_example' # String | UUID of an allocation
 
 begin
   #Retrieve an allocation
-  result = api_instance.get_allocation(allocation_id)
+  result = api_instance.get_allocation(allocation_id, )
   p result
 rescue AtomApi::ApiError => e
   puts "Exception when calling NucleusApi->get_allocation: #{e}"
@@ -3692,7 +3692,7 @@ Name | Type | Description  | Notes
 
 
 # **get_allocation_asset_sizes**
-> AllocationAssetSizeResponse get_allocation_asset_sizes(allocation_id, opts)
+> AllocationAssetSizeResponse get_allocation_asset_sizes(allocation_id, , opts)
 
 List all allocation asset sizes
 
@@ -3719,7 +3719,7 @@ opts = {
 
 begin
   #List all allocation asset sizes
-  result = api_instance.get_allocation_asset_sizes(allocation_id, opts)
+  result = api_instance.get_allocation_asset_sizes(allocation_id, , opts)
   p result
 rescue AtomApi::ApiError => e
   puts "Exception when calling NucleusApi->get_allocation_asset_sizes: #{e}"
@@ -3864,7 +3864,7 @@ Name | Type | Description  | Notes
 
 
 # **get_allocation_holdings**
-> AllocationHoldingsResponse get_allocation_holdings(allocation_id, opts)
+> AllocationHoldingsResponse get_allocation_holdings(allocation_id, , opts)
 
 List all allocation holdings
 
@@ -3891,7 +3891,7 @@ opts = {
 
 begin
   #List all allocation holdings
-  result = api_instance.get_allocation_holdings(allocation_id, opts)
+  result = api_instance.get_allocation_holdings(allocation_id, , opts)
   p result
 rescue AtomApi::ApiError => e
   puts "Exception when calling NucleusApi->get_allocation_holdings: #{e}"
@@ -3921,7 +3921,7 @@ Name | Type | Description  | Notes
 
 
 # **get_allocation_performance**
-> PerformanceResponse get_allocation_performance(allocation_id)
+> PerformanceResponse get_allocation_performance(allocation_id, stat)
 
 Get allocation performance
 
@@ -3942,10 +3942,12 @@ api_instance = AtomApi::NucleusApi.new
 
 allocation_id = 'allocation_id_example' # String | UUID of an allocation
 
+stat = 'stat_example' # String | Performance statistic
+
 
 begin
   #Get allocation performance
-  result = api_instance.get_allocation_performance(allocation_id)
+  result = api_instance.get_allocation_performance(allocation_id, stat)
   p result
 rescue AtomApi::ApiError => e
   puts "Exception when calling NucleusApi->get_allocation_performance: #{e}"
@@ -3957,6 +3959,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocation_id** | [**String**](.md)| UUID of an allocation | 
+ **stat** | **String**| Performance statistic | 
 
 ### Return type
 
@@ -3974,7 +3977,7 @@ Name | Type | Description  | Notes
 
 
 # **get_allocation_transactions**
-> AllocationTransactionResponse get_allocation_transactions(allocation_id, opts)
+> AllocationTransactionResponse get_allocation_transactions(allocation_id, , opts)
 
 List all allocation transactions
 
@@ -4001,7 +4004,7 @@ opts = {
 
 begin
   #List all allocation transactions
-  result = api_instance.get_allocation_transactions(allocation_id, opts)
+  result = api_instance.get_allocation_transactions(allocation_id, , opts)
   p result
 rescue AtomApi::ApiError => e
   puts "Exception when calling NucleusApi->get_allocation_transactions: #{e}"
@@ -12046,7 +12049,7 @@ Name | Type | Description  | Notes
 
 
 # **update_allocation**
-> SpecificAllocationResponse update_allocation(allocation_idpayload)
+> SpecificAllocationResponse update_allocation(allocation_id, payload)
 
 Update an allocation
 
@@ -12072,7 +12075,7 @@ payload = AtomApi::AllocationPayload.new # AllocationPayload |
 
 begin
   #Update an allocation
-  result = api_instance.update_allocation(allocation_idpayload)
+  result = api_instance.update_allocation(allocation_id, payload)
   p result
 rescue AtomApi::ApiError => e
   puts "Exception when calling NucleusApi->update_allocation: #{e}"

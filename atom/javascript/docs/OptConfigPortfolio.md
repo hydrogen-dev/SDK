@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tickers** | **[String]** | List of tickers | 
 **minAssets** | **Number** | Minimum number of assets | 
-**wConfig** | **Object** |  | 
-**wAssetConfig** | **Object** | Weight constraints for asset classes. | 
+**wConfig** | [**WConfigPortfolio**](WConfigPortfolio.md) |  | 
+**wAssetConfig** | **{String: Number}** | Weight constraints for asset classes. | 
 **secTypes** | **[String]** | Security types | 
 **startDate** | **Date** |  | [optional] 
 **endDate** | **Date** |  | [optional] 

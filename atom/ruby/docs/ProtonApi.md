@@ -1,6 +1,6 @@
 # AtomApi::ProtonApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -44,6 +44,7 @@ Method | HTTP request | Description
 [**savings_calculator**](ProtonApi.md#savings_calculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenario_analysis**](ProtonApi.md#scenario_analysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivity_analysis**](ProtonApi.md#sensitivity_analysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**variable_annuity**](ProtonApi.md#variable_annuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
 # **annuity_calculator_accumulation_horizon**
@@ -2154,6 +2155,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **variable_annuity**
+> VariableAnnuityResponse variable_annuity(payload)
+
+Variable annuity
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+# setup authorization
+AtomApi.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::ProtonApi.new
+
+payload = AtomApi::VariableAnnuityPayload.new # VariableAnnuityPayload | 
+
+
+begin
+  #Variable annuity
+  result = api_instance.variable_annuity(payload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling ProtonApi->variable_annuity: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**VariableAnnuityPayload**](VariableAnnuityPayload.md)|  | 
+
+### Return type
+
+[**VariableAnnuityResponse**](VariableAnnuityResponse.md)
 
 ### Authorization
 

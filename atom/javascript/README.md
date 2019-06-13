@@ -111,7 +111,8 @@ var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
 // (Optional) Set the Atom environment you wish to use (defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+// This changes the base URL for requests to [environment].hydrogenplatform.com
+// i.e. a request to /nucleus/v1/security will be routed to https://sandbox.hydrogenplatform.com/nucleus/v1/security
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com"
 
 

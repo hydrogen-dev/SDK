@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tickers** | **List&lt;String&gt;** | Tickers for optimization |  [optional]
 **minAssets** | **Integer** | Minimum number of assets |  [optional]
-**wAssetConfig** | [**ERRORUNKNOWN**](ERRORUNKNOWN.md) | Weight constraints |  [optional]
+**wAssetConfig** | [**Map&lt;String, BigDecimal&gt;**](BigDecimal.md) | Weight constraints |  [optional]
 **wConfig** | [**WConfigPortfolio**](WConfigPortfolio.md) |  |  [optional]
 **secTypes** | [**List&lt;SecTypesEnum&gt;**](#List&lt;SecTypesEnum&gt;) | Security types |  [optional]
 **startDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * AccountRebalanceSellOnlyOrderPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-13T18:14:40.362-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
 public class AccountRebalanceSellOnlyOrderPayload {
   @SerializedName("sell_transaction_code_id")
   private UUID sellTransactionCodeId = null;

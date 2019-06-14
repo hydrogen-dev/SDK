@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from atom_api.models.errorunknown import ERRORUNKNOWN  # noqa: F401,E501
 from atom_api.models.goal_weight_config import GoalWeightConfig  # noqa: F401,E501
 
 
@@ -37,7 +36,7 @@ class GoalOptConfig(object):
         'tickers': 'list[str]',
         'min_assets': 'int',
         'w_config': 'GoalWeightConfig',
-        'w_asset_config': 'ERRORUNKNOWN',
+        'w_asset_config': 'dict(str, float)',
         'sec_types': 'list[str]',
         'start_date': 'date',
         'end_date': 'date'
@@ -155,7 +154,7 @@ class GoalOptConfig(object):
         Weight constraints for asset classes  # noqa: E501
 
         :return: The w_asset_config of this GoalOptConfig.  # noqa: E501
-        :rtype: ERRORUNKNOWN
+        :rtype: dict(str, float)
         """
         return self._w_asset_config
 
@@ -166,7 +165,7 @@ class GoalOptConfig(object):
         Weight constraints for asset classes  # noqa: E501
 
         :param w_asset_config: The w_asset_config of this GoalOptConfig.  # noqa: E501
-        :type: ERRORUNKNOWN
+        :type: dict(str, float)
         """
 
         self._w_asset_config = w_asset_config

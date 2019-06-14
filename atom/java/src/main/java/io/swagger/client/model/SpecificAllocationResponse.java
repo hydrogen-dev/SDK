@@ -33,7 +33,7 @@ import org.threeten.bp.LocalDate;
 /**
  * SpecificAllocationResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-13T18:14:40.362-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
 public class SpecificAllocationResponse {
   @SerializedName("id")
   private UUID id = null;

@@ -7397,6 +7397,7 @@ definitions:
       w_config:
         $ref: '#/definitions/goal_weight_config'
       w_asset_config:
+        type: object
         description: Weight constraints for asset classes
         additionalProperties:
           type: number
@@ -9491,6 +9492,7 @@ definitions:
         minimum: 0
         exclusiveMinimum: true
       w_asset_config:
+        type: object
         description: Weight constraints
         additionalProperties:
           type: number

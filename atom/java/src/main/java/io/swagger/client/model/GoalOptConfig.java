@@ -22,17 +22,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ERRORUNKNOWN;
 import io.swagger.client.model.GoalWeightConfig;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.threeten.bp.LocalDate;
 
 /**
  * GoalOptConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-13T18:14:40.362-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
 public class GoalOptConfig {
   @SerializedName("tickers")
   private List<String> tickers = new ArrayList<String>();
@@ -44,7 +46,7 @@ public class GoalOptConfig {
   private GoalWeightConfig wConfig = null;
 
   @SerializedName("w_asset_config")
-  private ERRORUNKNOWN wAssetConfig = null;
+  private Map<String, BigDecimal> wAssetConfig = null;
 
   /**
    * Gets or Sets secTypes
@@ -164,8 +166,16 @@ public class GoalOptConfig {
     this.wConfig = wConfig;
   }
 
-  public GoalOptConfig wAssetConfig(ERRORUNKNOWN wAssetConfig) {
+  public GoalOptConfig wAssetConfig(Map<String, BigDecimal> wAssetConfig) {
     this.wAssetConfig = wAssetConfig;
+    return this;
+  }
+
+  public GoalOptConfig putWAssetConfigItem(String key, BigDecimal wAssetConfigItem) {
+    if (this.wAssetConfig == null) {
+      this.wAssetConfig = new HashMap<String, BigDecimal>();
+    }
+    this.wAssetConfig.put(key, wAssetConfigItem);
     return this;
   }
 
@@ -174,11 +184,11 @@ public class GoalOptConfig {
    * @return wAssetConfig
   **/
   @ApiModelProperty(value = "Weight constraints for asset classes")
-  public ERRORUNKNOWN getWAssetConfig() {
+  public Map<String, BigDecimal> getWAssetConfig() {
     return wAssetConfig;
   }
 
-  public void setWAssetConfig(ERRORUNKNOWN wAssetConfig) {
+  public void setWAssetConfig(Map<String, BigDecimal> wAssetConfig) {
     this.wAssetConfig = wAssetConfig;
   }
 

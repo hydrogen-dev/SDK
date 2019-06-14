@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreateBankLinkResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-13T18:14:40.362-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
 public class CreateBankLinkResponse {
   @SerializedName("account_id")
   private UUID accountId = null;

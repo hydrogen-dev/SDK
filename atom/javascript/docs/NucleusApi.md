@@ -266,32 +266,15 @@ Delete an account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -338,32 +321,15 @@ Delete an account allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -410,32 +376,15 @@ Delete an account&#39;s permissions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -482,32 +431,15 @@ Delete an account stage
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -554,32 +486,15 @@ Delete an account status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -626,32 +541,15 @@ Delete an account type
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -698,32 +596,15 @@ Delete an aggregation account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -770,32 +651,15 @@ Delete an aggregation account balance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -842,32 +706,15 @@ Delete an allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -914,32 +761,15 @@ Delete an allocation composition
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -986,32 +816,15 @@ Delete a bank link
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1058,32 +871,15 @@ Delete a benchmark
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1130,32 +926,15 @@ Delete a client
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1202,32 +981,15 @@ Delete a client-hydro relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1274,32 +1036,15 @@ Delete a client response
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1346,32 +1091,15 @@ Delete a decision tree
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1418,32 +1146,15 @@ Delete a deposit request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1490,32 +1201,15 @@ Delete a funding request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1562,32 +1256,15 @@ Delete a goal
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1634,32 +1311,15 @@ Delete a goal track record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1706,32 +1366,15 @@ Delete a model
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1778,32 +1421,15 @@ Delete a model asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1850,32 +1476,15 @@ Delete a model commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1922,32 +1531,15 @@ Delete a model holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -1994,32 +1586,15 @@ Delete a model transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2066,32 +1641,15 @@ Delete a node
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2138,32 +1696,15 @@ Delete a node relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2210,32 +1751,15 @@ Delete an order record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2282,32 +1806,15 @@ Delete an order status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2354,32 +1861,15 @@ Delete an order tracking record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2426,32 +1916,15 @@ Delete a portfolio
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2498,32 +1971,15 @@ Delete a portfolio asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2570,32 +2026,15 @@ Delete a portfolio commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2642,32 +2081,15 @@ Delete a portfolio holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2714,32 +2136,15 @@ Delete a portfolio transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2786,32 +2191,15 @@ Delete a questionnaire
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2858,32 +2246,15 @@ Delete a score
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -2930,32 +2301,15 @@ Delete a security
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3002,32 +2356,15 @@ Delete a security exclusion
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3074,32 +2411,15 @@ Delete a security price
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3146,32 +2466,15 @@ Delete a transaction code
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3218,32 +2521,15 @@ Delete a transfer request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3290,32 +2576,15 @@ Delete a withdrawal request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3362,32 +2631,15 @@ Retrieve an account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3434,32 +2686,15 @@ Retrieve an account allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3506,32 +2741,15 @@ List all account allocations
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3587,32 +2805,15 @@ List all account asset sizes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3663,32 +2864,15 @@ List all account holdings
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3739,32 +2923,15 @@ Get account performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3814,32 +2981,15 @@ Retrieve an account&#39;s permission
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3886,32 +3036,15 @@ List all account permissions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -3967,32 +3100,15 @@ Retrieve an account stage
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4039,32 +3155,15 @@ List all account stages
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4120,32 +3219,15 @@ Retrieve an account status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4192,32 +3274,15 @@ List all account statuses
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4273,32 +3338,15 @@ List all account transactions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4349,32 +3397,15 @@ Retrieve an account type
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4421,32 +3452,15 @@ List all account types
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4502,32 +3516,15 @@ Get information for all accounts for all clients defined for your firm
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4583,32 +3580,15 @@ Retrieve an aggregation account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4655,32 +3635,15 @@ Retrieve an aggregation account balance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4727,32 +3690,15 @@ List all aggregation account balances
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4808,32 +3754,15 @@ List all aggregation accounts
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4889,32 +3818,15 @@ Retrieve an allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -4961,32 +3873,15 @@ List all allocation asset sizes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5037,32 +3932,15 @@ Retrieve an allocation composition
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5109,32 +3987,15 @@ List all allocation compositions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5190,32 +4051,15 @@ List all allocation holdings
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5266,32 +4110,15 @@ Get allocation performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5341,32 +4168,15 @@ List all allocation transactions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5417,32 +4227,15 @@ List all allocations
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5498,32 +4291,15 @@ Retrieve a bank link
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5570,32 +4346,15 @@ List all bank links
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5651,32 +4410,15 @@ Retrieve a benchmark
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5723,32 +4465,15 @@ List all benchmark asset sizes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5799,32 +4524,15 @@ Get benchmark performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5874,32 +4582,15 @@ List all benchmarks
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -5955,32 +4646,15 @@ List all bulk orders
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6036,32 +4710,15 @@ Retrieve a client
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6108,32 +4765,15 @@ List all client asset sizes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6184,32 +4824,15 @@ List all client holdings
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6260,32 +4883,15 @@ Retrieve a client-hydro relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6332,32 +4938,15 @@ List all client-hydro relationships
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6413,32 +5002,15 @@ Get client performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6488,32 +5060,15 @@ Retrieve a client response
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6560,32 +5115,15 @@ List all client responses
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6641,32 +5179,15 @@ List all client transactions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6717,32 +5238,15 @@ List all clients
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6798,32 +5302,15 @@ Retrieve a decision tree
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6870,32 +5357,15 @@ List all decision trees
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -6951,32 +5421,15 @@ Retrieve a deposit request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7023,32 +5476,15 @@ List all deposit requests
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7104,32 +5540,15 @@ Retrieve a funding request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7176,32 +5595,15 @@ List all funding requests
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7257,32 +5659,15 @@ Retrieve a goal
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7329,32 +5714,15 @@ List goal asset sizes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7408,32 +5776,15 @@ List goal holdings
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7487,32 +5838,15 @@ Get goal performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7565,32 +5899,15 @@ Retrieve a goal track record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7637,32 +5954,15 @@ List all goal track records
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7718,32 +6018,15 @@ List goal transactions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7805,32 +6088,15 @@ List all goals
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7886,32 +6152,15 @@ Retrieve a model
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -7958,32 +6207,15 @@ Retrieve a model asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8030,32 +6262,15 @@ List all model asset sizes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8111,32 +6326,15 @@ Retrieve a model commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8183,32 +6381,15 @@ List all model commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8264,32 +6445,15 @@ Retrieve a model holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8336,32 +6500,15 @@ List all model holdings
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8417,32 +6564,15 @@ Get model performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8492,32 +6622,15 @@ Retrieve a model transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8564,32 +6677,15 @@ List all model transactions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8645,32 +6741,15 @@ List all models
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8726,32 +6805,15 @@ Retrieve a node
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8798,32 +6860,15 @@ Retrieve a node relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8870,32 +6915,15 @@ List all node relationships
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -8951,32 +6979,15 @@ List all nodes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9032,32 +7043,15 @@ Retrieve an order record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9104,32 +7098,15 @@ List all order records
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9185,32 +7162,15 @@ Retrieve an order status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9257,32 +7217,15 @@ List all order statuses
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9338,32 +7281,15 @@ Retrieve an order tracking record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9410,32 +7336,15 @@ List all order tracking records
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9491,32 +7400,15 @@ Retrieve a portfolio
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9563,32 +7455,15 @@ Retrieve a portfolio asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9635,32 +7510,15 @@ List all portfolio asset sizes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9716,32 +7574,15 @@ Retrieve a portfolio commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9788,32 +7629,15 @@ List all portfolio commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9869,32 +7693,15 @@ Retrieve a portfolio holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -9941,32 +7748,15 @@ List all portfolio holdings
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10022,32 +7812,15 @@ Get portfolio performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10097,32 +7870,15 @@ Retrieve a portfolio transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10169,32 +7925,15 @@ List all portfolio transactions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10250,32 +7989,15 @@ List all portfolios
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10331,32 +8053,15 @@ Retrieve a questionnaire
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10403,32 +8108,15 @@ List all questionnaires
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10484,32 +8172,15 @@ Retrieve a score
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10556,32 +8227,15 @@ List all scores
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10637,32 +8291,15 @@ List all securities
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10718,32 +8355,15 @@ Retrieve a security
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10790,32 +8410,15 @@ Retrieve a security exclusion
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10862,32 +8465,15 @@ List all security exclusions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -10943,32 +8529,15 @@ Get security performance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11018,32 +8587,15 @@ Retrieve a security price
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11090,32 +8642,15 @@ List all security prices
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11171,32 +8706,15 @@ Retrieve a transaction code
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11243,32 +8761,15 @@ List all transaction codes
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11324,32 +8825,15 @@ Retrieve a transfer request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11396,32 +8880,15 @@ List all transfer requests
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11477,32 +8944,15 @@ Retrieve a withdrawal request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11549,32 +8999,15 @@ List all withdrawal requests
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11630,32 +9063,15 @@ Create an account under a client
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11702,32 +9118,15 @@ Create an account allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11774,32 +9173,15 @@ Bulk orders for an account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11849,32 +9231,15 @@ Create buy-only account rebalance orders
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11924,32 +9289,15 @@ Create account rebalance orders
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -11999,32 +9347,15 @@ Create sell-only account rebalance orders
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12074,32 +9405,15 @@ Sell all account order
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12149,32 +9463,15 @@ Create an account stage
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12221,32 +9518,15 @@ Create an account status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12293,32 +9573,15 @@ Create an account type
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12365,32 +9628,15 @@ Create an aggregation account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12437,32 +9683,15 @@ Create an aggregation account balance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12509,32 +9738,15 @@ Create an allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12581,32 +9793,15 @@ Create an allocation composition
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12653,32 +9848,15 @@ Create a bank link
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12725,32 +9903,15 @@ Create a benchmark
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12797,32 +9958,15 @@ Bulk orders for your firm
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12869,32 +10013,15 @@ Create a client
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -12941,32 +10068,15 @@ Bulk orders for a client
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13016,32 +10126,15 @@ Create a client-hydro relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13088,32 +10181,15 @@ Create a client response
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13160,32 +10236,15 @@ Create a decision tree
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13232,32 +10291,15 @@ Create a deposit request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13304,32 +10346,15 @@ Create a funding request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13376,32 +10401,15 @@ Create a goal
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13448,32 +10456,15 @@ Create a goal track record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13520,32 +10511,15 @@ Create a model
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13592,32 +10566,15 @@ Create a model asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13664,32 +10621,15 @@ Create a model commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13736,32 +10676,15 @@ Create a model holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13808,32 +10731,15 @@ Create a model transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13880,32 +10786,15 @@ Create a node
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -13952,32 +10841,15 @@ Create a node relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14024,32 +10896,15 @@ Create an order record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14096,32 +10951,15 @@ Create an order status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14168,32 +11006,15 @@ Create an order tracking record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14240,32 +11061,15 @@ Create a portfolio
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14312,32 +11116,15 @@ Create a portfolio asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14384,32 +11171,15 @@ Create a portfolio commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14456,32 +11226,15 @@ Create a portfolio holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14528,32 +11281,15 @@ Create buy-only portfolio rebalance orders
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14603,32 +11339,15 @@ Create portfolio rebalance orders
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14678,32 +11397,15 @@ Create sell-only portfolio rebalance orders
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14753,32 +11455,15 @@ Sell all portfolio order
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14828,32 +11513,15 @@ Create a portfolio transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14900,32 +11568,15 @@ Create a questionnaire
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -14972,32 +11623,15 @@ Create a score
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15044,32 +11678,15 @@ Create a security
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15116,32 +11733,15 @@ Create a security exclusion
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15188,32 +11788,15 @@ Create a security price
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15260,32 +11843,15 @@ Create a transaction code
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15332,32 +11898,15 @@ Create a transfer request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15404,32 +11953,15 @@ Create a withdrawal request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15476,32 +12008,15 @@ Subscribe an account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15551,32 +12066,15 @@ Update an account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15626,32 +12124,15 @@ Update an account allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15701,32 +12182,15 @@ Update an account&#39;s permissions
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15776,32 +12240,15 @@ Update an account stage
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15851,32 +12298,15 @@ Update an account status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -15926,32 +12356,15 @@ Update an account type
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16001,32 +12414,15 @@ Update an aggregation account
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16076,32 +12472,15 @@ Update an aggregation account balance
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16151,32 +12530,15 @@ Update an allocation
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16226,32 +12588,15 @@ Update an allocation composition
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16301,32 +12646,15 @@ Update a bank link
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16376,32 +12704,15 @@ Update a benchmark
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16451,32 +12762,15 @@ Update a client
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16526,32 +12820,15 @@ Update a client-hydro relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16601,32 +12878,15 @@ Update a client response
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16676,32 +12936,15 @@ Update a decision tree
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16751,32 +12994,15 @@ Update a deposit request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16826,32 +13052,15 @@ Update a funding request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16901,32 +13110,15 @@ Update a goal
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -16976,32 +13168,15 @@ Update a goal track record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17051,32 +13226,15 @@ Update a model
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17126,32 +13284,15 @@ Update a model asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17201,32 +13342,15 @@ Update a model commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17276,32 +13400,15 @@ Change a model composition
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17351,32 +13458,15 @@ Update a model holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17426,32 +13516,15 @@ Update a model transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17501,32 +13574,15 @@ Update a node
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17576,32 +13632,15 @@ Update a node relationship
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17651,32 +13690,15 @@ Update an order record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17726,32 +13748,15 @@ Update an order status
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17801,32 +13806,15 @@ Update an order tracking record
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17876,32 +13864,15 @@ Update a portfolio
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -17951,32 +13922,15 @@ Update a portfolio asset size
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18026,32 +13980,15 @@ Update a portfolio commentary
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18101,32 +14038,15 @@ Update a portfolio holding
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18176,32 +14096,15 @@ Update a portfolio transaction
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18251,32 +14154,15 @@ Update a questionnaire
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18326,32 +14212,15 @@ Update a score
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18401,32 +14270,15 @@ Update a security
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18476,32 +14328,15 @@ Update a security exclusion
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18551,32 +14386,15 @@ Update a security price
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18626,32 +14444,15 @@ Update a transaction code
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18701,32 +14502,15 @@ Update a transfer request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 
@@ -18776,32 +14560,15 @@ Update a withdrawal request
 var atom_api = require('hydrogen-atom-api');
 var defaultClient = atom_api.ApiClient.instance;
 
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
 // Configure OAuth2 access token for authorization: oauth
-
-// Method 1: Fetch and set access token with client_id and client_secret (requires npm client-oauth2)
-
-// Initialize the OAuth2 Library
-var ClientOAuth2 = require('client-oauth2')
-
-// Set the configuration settings
-var auth = new ClientOAuth2({
-  clientId: '<your clientId>',
-  clientSecret: '<your clientSecret>',
-  accessTokenUri: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials',
-})
-
-// Get the access token object for the client
-try {
-  auth.credentials.getToken()
-    .then(function (user) {
-      defaultClient.authentications['oauth']['accessToken'] = user.accessToken;
-} catch (error) {
-    console.log('Access Token error', error.message);
-}
-
-// Method 2: Set access token using an existing token
+// Ensure the token is from the same environment as the defaultClient.basePath above
 var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new atom_api.NucleusApi();
 

@@ -75,7 +75,7 @@ module AtomApi
         :'tickers' => :'Array<String>',
         :'min_assets' => :'Integer',
         :'w_config' => :'GoalWeightConfig',
-        :'w_asset_config' => :'',
+        :'w_asset_config' => :'Hash<String, Float>',
         :'sec_types' => :'Array<String>',
         :'start_date' => :'Date',
         :'end_date' => :'Date'
@@ -105,7 +105,9 @@ module AtomApi
       end
 
       if attributes.has_key?(:'w_asset_config')
-        self.w_asset_config = attributes[:'w_asset_config']
+        if (value = attributes[:'w_asset_config']).is_a?(Hash)
+          self.w_asset_config = value
+        end
       end
 
       if attributes.has_key?(:'sec_types')

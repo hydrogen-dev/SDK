@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from atom_api.models.errorunknown import ERRORUNKNOWN  # noqa: F401,E501
 from atom_api.models.w_config_portfolio import WConfigPortfolio  # noqa: F401,E501
 
 
@@ -36,7 +35,7 @@ class OptConfig(object):
     swagger_types = {
         'tickers': 'list[str]',
         'min_assets': 'int',
-        'w_asset_config': 'ERRORUNKNOWN',
+        'w_asset_config': 'dict(str, float)',
         'w_config': 'WConfigPortfolio',
         'sec_types': 'list[str]',
         'start_date': 'datetime',
@@ -135,7 +134,7 @@ class OptConfig(object):
         Weight constraints  # noqa: E501
 
         :return: The w_asset_config of this OptConfig.  # noqa: E501
-        :rtype: ERRORUNKNOWN
+        :rtype: dict(str, float)
         """
         return self._w_asset_config
 
@@ -146,7 +145,7 @@ class OptConfig(object):
         Weight constraints  # noqa: E501
 
         :param w_asset_config: The w_asset_config of this OptConfig.  # noqa: E501
-        :type: ERRORUNKNOWN
+        :type: dict(str, float)
         """
 
         self._w_asset_config = w_asset_config

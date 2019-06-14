@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 /**
  * RetirementCalculatorPercentCovered
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-13T18:14:40.362-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
 public class RetirementCalculatorPercentCovered {
   @SerializedName("current_age")
   private Integer currentAge = null;

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ERRORUNKNOWN', 'model/WConfigPortfolio'], factory);
+    define(['ApiClient', 'model/WConfigPortfolio'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ERRORUNKNOWN'), require('./WConfigPortfolio'));
+    module.exports = factory(require('../ApiClient'), require('./WConfigPortfolio'));
   } else {
     // Browser globals (root is window)
     if (!root.atom_api) {
       root.atom_api = {};
     }
-    root.atom_api.OptConfig = factory(root.atom_api.ApiClient, root.atom_api.ERRORUNKNOWN, root.atom_api.WConfigPortfolio);
+    root.atom_api.OptConfig = factory(root.atom_api.ApiClient, root.atom_api.WConfigPortfolio);
   }
-}(this, function(ApiClient, ERRORUNKNOWN, WConfigPortfolio) {
+}(this, function(ApiClient, WConfigPortfolio) {
   'use strict';
 
 
@@ -75,7 +75,7 @@
         obj['min_assets'] = ApiClient.convertToType(data['min_assets'], 'Number');
       }
       if (data.hasOwnProperty('w_asset_config')) {
-        obj['w_asset_config'] = ApiClient.convertToType(data['w_asset_config'], ERRORUNKNOWN);
+        obj['w_asset_config'] = ApiClient.convertToType(data['w_asset_config'], {'String': 'Number'});
       }
       if (data.hasOwnProperty('w_config')) {
         obj['w_config'] = WConfigPortfolio.constructFromObject(data['w_config']);
@@ -105,7 +105,7 @@
   exports.prototype['min_assets'] = undefined;
   /**
    * Weight constraints
-   * @member {module:model/ERRORUNKNOWN} w_asset_config
+   * @member {Object.<String, Number>} w_asset_config
    */
   exports.prototype['w_asset_config'] = undefined;
   /**

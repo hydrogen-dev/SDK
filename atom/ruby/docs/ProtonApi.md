@@ -56,8 +56,13 @@ Annuity calculator - accumulation horizon
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -109,8 +114,13 @@ Annuity calculator - annuity amount
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -162,8 +172,13 @@ Annuity calculator - decumulation horizon
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -215,8 +230,13 @@ Annuity calculator - deposit amount
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -268,8 +288,13 @@ Annuity calculator - initial balance
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -321,8 +346,13 @@ Dimensional risk score
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -374,8 +404,13 @@ Education calculator - total annual cost
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -427,8 +462,13 @@ Education calculator - deposit amount
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -480,8 +520,13 @@ Education calculator - percent covered
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -533,8 +578,13 @@ Emergency fund calculator
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -586,8 +636,13 @@ Event study
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -639,8 +694,13 @@ Financial health check
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -692,8 +752,13 @@ Goal accumulation allocation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -745,8 +810,13 @@ Goal accumulation recommendation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -798,8 +868,13 @@ Goal accumulation status
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -851,8 +926,13 @@ Goal decumulation allocation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -904,8 +984,13 @@ Goal decumulation recommendation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -957,8 +1042,13 @@ Goal decumulation status
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1010,8 +1100,13 @@ Life insurance needs calculator
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1063,8 +1158,13 @@ Model backtest
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1116,8 +1216,13 @@ Monte Carlo
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1169,8 +1274,13 @@ Mortgage calculator - down payment
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1222,8 +1332,13 @@ Mortgage calculator - home price
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1275,8 +1390,13 @@ Mortgage calculator - periodic payment
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1328,8 +1448,13 @@ Mean-variance optimization
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1381,8 +1506,13 @@ Portfolio diversification score
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1434,8 +1564,13 @@ Portfolio optimization score
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1487,8 +1622,13 @@ Portfolio what-if
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1540,8 +1680,13 @@ Purchase calculator - deposit amount
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1593,8 +1738,13 @@ Purchase calculator - horizon
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1646,8 +1796,13 @@ Purchase calculator - purchase amount
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1699,8 +1854,13 @@ Rebalancing
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1752,8 +1912,13 @@ Retirement calculator - deposit amount
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1805,8 +1970,13 @@ Retirement calculator - expenses
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1858,8 +2028,13 @@ Retirement calculator - percent of costs covered
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1911,8 +2086,13 @@ Risk allocation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1964,8 +2144,13 @@ Risk score
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2017,8 +2202,13 @@ Savings calculator
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2070,8 +2260,13 @@ Scenario analysis
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2123,8 +2318,13 @@ Sensitivity analysis
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2176,8 +2376,13 @@ Variable annuity
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')

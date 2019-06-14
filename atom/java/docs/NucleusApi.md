@@ -272,13 +272,18 @@ Delete an account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -326,13 +331,18 @@ Delete an account allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID of an account allocation
@@ -380,13 +390,18 @@ Delete an account&#39;s permissions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -434,13 +449,18 @@ Delete an account stage
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID stageId = new UUID(); // UUID | UUID of an account stage
@@ -488,13 +508,18 @@ Delete an account status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountStatusId = new UUID(); // UUID | UUID of an account status
@@ -542,13 +567,18 @@ Delete an account type
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountTypeId = new UUID(); // UUID | UUID of an account type
@@ -596,13 +626,18 @@ Delete an aggregation account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID of an aggregation account
@@ -650,13 +685,18 @@ Delete an aggregation account balance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID of an aggregation account balance
@@ -704,13 +744,18 @@ Delete an allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
@@ -758,13 +803,18 @@ Delete an allocation composition
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationCompositionId = new UUID(); // UUID | UUID of an allocation composition
@@ -812,13 +862,18 @@ Delete a bank link
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID bankLinkId = new UUID(); // UUID | UUID of a bank link
@@ -866,13 +921,18 @@ Delete a benchmark
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID benchmarkId = new UUID(); // UUID | UUID of a benchmark
@@ -920,13 +980,18 @@ Delete a client
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -974,13 +1039,18 @@ Delete a client-hydro relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientHydroId = new UUID(); // UUID | UUID of a client-hydro relationship
@@ -1028,13 +1098,18 @@ Delete a client response
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientResponseId = new UUID(); // UUID | UUID of a client response
@@ -1082,13 +1157,18 @@ Delete a decision tree
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID decisionTreeId = new UUID(); // UUID | UUID of a decision tree
@@ -1136,13 +1216,18 @@ Delete a deposit request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID depositId = new UUID(); // UUID | UUID of a deposit record
@@ -1190,13 +1275,18 @@ Delete a funding request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID fundingId = new UUID(); // UUID | UUID of a funding record
@@ -1244,13 +1334,18 @@ Delete a goal
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalId = new UUID(); // UUID | UUID of a goal
@@ -1298,13 +1393,18 @@ Delete a goal track record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalTrackId = new UUID(); // UUID | UUID of a goal tracking record
@@ -1352,13 +1452,18 @@ Delete a model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelId = new UUID(); // UUID | UUID of a model
@@ -1406,13 +1511,18 @@ Delete a model asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelAssetSizeId = new UUID(); // UUID | UUID of a model asset size record
@@ -1460,13 +1570,18 @@ Delete a model commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelCommentId = new UUID(); // UUID | UUID of a model comment
@@ -1514,13 +1629,18 @@ Delete a model holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelHoldingId = new UUID(); // UUID | UUID of a model holding record
@@ -1568,13 +1688,18 @@ Delete a model transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelTransactionId = new UUID(); // UUID | UUID of a model transaction record
@@ -1622,13 +1747,18 @@ Delete a node
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID nodeId = new UUID(); // UUID | UUID of a node
@@ -1676,13 +1806,18 @@ Delete a node relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID nodeRelationshipId = new UUID(); // UUID | UUID of a node relationship
@@ -1730,13 +1865,18 @@ Delete an order record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderId = new UUID(); // UUID | UUID of an order record
@@ -1784,13 +1924,18 @@ Delete an order status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderStatusId = new UUID(); // UUID | UUID of an order status record
@@ -1838,13 +1983,18 @@ Delete an order tracking record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderTrackId = new UUID(); // UUID | UUID of an order tracking record
@@ -1892,13 +2042,18 @@ Delete a portfolio
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -1946,13 +2101,18 @@ Delete a portfolio asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioAssetSizeId = new UUID(); // UUID | UUID of a portfolio asset size record
@@ -2000,13 +2160,18 @@ Delete a portfolio commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioCommentId = new UUID(); // UUID | UUID of a portfolio comment
@@ -2054,13 +2219,18 @@ Delete a portfolio holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioHoldingId = new UUID(); // UUID | UUID of a portfolio holding record
@@ -2108,13 +2278,18 @@ Delete a portfolio transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioTransactionId = new UUID(); // UUID | UUID of a portfolio transaction record
@@ -2162,13 +2337,18 @@ Delete a questionnaire
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID questionnaireId = new UUID(); // UUID | UUID of a questionnaire
@@ -2216,13 +2396,18 @@ Delete a score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID scoreId = new UUID(); // UUID | UUID of a score record
@@ -2270,13 +2455,18 @@ Delete a security
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityId = new UUID(); // UUID | UUID of a security
@@ -2324,13 +2514,18 @@ Delete a security exclusion
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityExclusionId = new UUID(); // UUID | UUID of a security exclusion record
@@ -2378,13 +2573,18 @@ Delete a security price
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityPriceId = new UUID(); // UUID | UUID of a security price record
@@ -2432,13 +2632,18 @@ Delete a transaction code
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID transactionCodeId = new UUID(); // UUID | UUID of a transaction code
@@ -2486,13 +2691,18 @@ Delete a transfer request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID transferId = new UUID(); // UUID | UUID of an account transfer record
@@ -2540,13 +2750,18 @@ Delete a withdrawal request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID withdrawalId = new UUID(); // UUID | UUID of a withdrawal request
@@ -2594,13 +2809,18 @@ Retrieve an account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -2649,13 +2869,18 @@ Retrieve an account allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID of an account allocation
@@ -2704,13 +2929,18 @@ List all account allocations
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -2767,13 +2997,18 @@ List all account asset sizes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -2824,13 +3059,18 @@ List all account holdings
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -2881,13 +3121,18 @@ Get account performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -2938,13 +3183,18 @@ Retrieve an account&#39;s permission
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -2993,13 +3243,18 @@ List all account permissions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3056,13 +3311,18 @@ Retrieve an account stage
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID stageId = new UUID(); // UUID | UUID of an account stage
@@ -3111,13 +3371,18 @@ List all account stages
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3174,13 +3439,18 @@ Retrieve an account status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountStatusId = new UUID(); // UUID | UUID of an account status
@@ -3229,13 +3499,18 @@ List all account statuses
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3292,13 +3567,18 @@ List all account transactions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -3349,13 +3629,18 @@ Retrieve an account type
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountTypeId = new UUID(); // UUID | UUID of an account type
@@ -3404,13 +3689,18 @@ List all account types
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3467,13 +3757,18 @@ Get information for all accounts for all clients defined for your firm
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3530,13 +3825,18 @@ Retrieve an aggregation account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID of an aggregation account
@@ -3585,13 +3885,18 @@ Retrieve an aggregation account balance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID of an aggregation account balance
@@ -3640,13 +3945,18 @@ List all aggregation account balances
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3703,13 +4013,18 @@ List all aggregation accounts
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3766,13 +4081,18 @@ Retrieve an allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
@@ -3821,13 +4141,18 @@ List all allocation asset sizes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
@@ -3878,13 +4203,18 @@ Retrieve an allocation composition
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationCompositionId = new UUID(); // UUID | UUID of an allocation composition
@@ -3933,13 +4263,18 @@ List all allocation compositions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -3996,13 +4331,18 @@ List all allocation holdings
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
@@ -4053,13 +4393,18 @@ Get allocation performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
@@ -4110,13 +4455,18 @@ List all allocation transactions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
@@ -4167,13 +4517,18 @@ List all allocations
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -4230,13 +4585,18 @@ Retrieve a bank link
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID bankLinkId = new UUID(); // UUID | UUID of a bank link
@@ -4285,13 +4645,18 @@ List all bank links
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -4348,13 +4713,18 @@ Retrieve a benchmark
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID benchmarkId = new UUID(); // UUID | UUID of a benchmark
@@ -4403,13 +4773,18 @@ List all benchmark asset sizes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID benchmarkId = new UUID(); // UUID | UUID of a benchmark
@@ -4460,13 +4835,18 @@ Get benchmark performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID benchmarkId = new UUID(); // UUID | UUID of a benchmark
@@ -4517,13 +4897,18 @@ List all benchmarks
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -4580,13 +4965,18 @@ List all bulk orders
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -4643,13 +5033,18 @@ Retrieve a client
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -4698,13 +5093,18 @@ List all client asset sizes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -4755,13 +5155,18 @@ List all client holdings
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -4812,13 +5217,18 @@ Retrieve a client-hydro relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientHydroId = new UUID(); // UUID | UUID of a client-hydro relationship
@@ -4867,13 +5277,18 @@ List all client-hydro relationships
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -4930,13 +5345,18 @@ Get client performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -4987,13 +5407,18 @@ Retrieve a client response
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientResponseId = new UUID(); // UUID | UUID of a client response
@@ -5042,13 +5467,18 @@ List all client responses
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -5105,13 +5535,18 @@ List all client transactions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -5162,13 +5597,18 @@ List all clients
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -5225,13 +5665,18 @@ Retrieve a decision tree
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID decisionTreeId = new UUID(); // UUID | UUID of a decision tree
@@ -5280,13 +5725,18 @@ List all decision trees
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -5343,13 +5793,18 @@ Retrieve a deposit request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID depositId = new UUID(); // UUID | UUID of a deposit record
@@ -5398,13 +5853,18 @@ List all deposit requests
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -5461,13 +5921,18 @@ Retrieve a funding request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID fundingId = new UUID(); // UUID | UUID of a funding record
@@ -5516,13 +5981,18 @@ List all funding requests
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -5579,13 +6049,18 @@ Retrieve a goal
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalId = new UUID(); // UUID | UUID of a goal
@@ -5634,13 +6109,18 @@ List goal asset sizes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalId = new UUID(); // UUID | UUID of a goal
@@ -5693,13 +6173,18 @@ List goal holdings
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalId = new UUID(); // UUID | UUID of a goal
@@ -5752,13 +6237,18 @@ Get goal performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalId = new UUID(); // UUID | UUID of a goal
@@ -5811,13 +6301,18 @@ Retrieve a goal track record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalTrackId = new UUID(); // UUID | UUID of a goal tracking record
@@ -5866,13 +6361,18 @@ List all goal track records
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -5929,13 +6429,18 @@ List goal transactions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalId = new UUID(); // UUID | UUID of a goal
@@ -5996,13 +6501,18 @@ List all goals
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6059,13 +6569,18 @@ Retrieve a model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelId = new UUID(); // UUID | UUID of a model
@@ -6114,13 +6629,18 @@ Retrieve a model asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelAssetSizeId = new UUID(); // UUID | UUID of a model asset size record
@@ -6169,13 +6689,18 @@ List all model asset sizes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6232,13 +6757,18 @@ Retrieve a model commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelCommentId = new UUID(); // UUID | UUID of a model comment
@@ -6287,13 +6817,18 @@ List all model commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6350,13 +6885,18 @@ Retrieve a model holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelHoldingId = new UUID(); // UUID | UUID of a model holding record
@@ -6405,13 +6945,18 @@ List all model holdings
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6468,13 +7013,18 @@ Get model performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelId = new UUID(); // UUID | UUID of a model
@@ -6525,13 +7075,18 @@ Retrieve a model transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelTransactionId = new UUID(); // UUID | UUID of a model transaction record
@@ -6580,13 +7135,18 @@ List all model transactions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6643,13 +7203,18 @@ List all models
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6706,13 +7271,18 @@ Retrieve a node
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID nodeId = new UUID(); // UUID | UUID of a node
@@ -6761,13 +7331,18 @@ Retrieve a node relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID nodeRelationshipId = new UUID(); // UUID | UUID of a node relationship
@@ -6816,13 +7391,18 @@ List all node relationships
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6879,13 +7459,18 @@ List all nodes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -6942,13 +7527,18 @@ Retrieve an order record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderId = new UUID(); // UUID | UUID of an order record
@@ -6997,13 +7587,18 @@ List all order records
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7060,13 +7655,18 @@ Retrieve an order status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderStatusId = new UUID(); // UUID | UUID of an order status record
@@ -7115,13 +7715,18 @@ List all order statuses
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7178,13 +7783,18 @@ Retrieve an order tracking record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderTrackId = new UUID(); // UUID | UUID of an order tracking record
@@ -7233,13 +7843,18 @@ List all order tracking records
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7296,13 +7911,18 @@ Retrieve a portfolio
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -7351,13 +7971,18 @@ Retrieve a portfolio asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioAssetSizeId = new UUID(); // UUID | UUID of a portfolio asset size record
@@ -7406,13 +8031,18 @@ List all portfolio asset sizes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7469,13 +8099,18 @@ Retrieve a portfolio commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioCommentId = new UUID(); // UUID | UUID of a portfolio comment
@@ -7524,13 +8159,18 @@ List all portfolio commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7587,13 +8227,18 @@ Retrieve a portfolio holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioHoldingId = new UUID(); // UUID | UUID of a portfolio holding record
@@ -7642,13 +8287,18 @@ List all portfolio holdings
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7705,13 +8355,18 @@ Get portfolio performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -7762,13 +8417,18 @@ Retrieve a portfolio transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioTransactionId = new UUID(); // UUID | UUID of a portfolio transaction record
@@ -7817,13 +8477,18 @@ List all portfolio transactions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7880,13 +8545,18 @@ List all portfolios
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -7943,13 +8613,18 @@ Retrieve a questionnaire
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID questionnaireId = new UUID(); // UUID | UUID of a questionnaire
@@ -7998,13 +8673,18 @@ List all questionnaires
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8061,13 +8741,18 @@ Retrieve a score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID scoreId = new UUID(); // UUID | UUID of a score record
@@ -8116,13 +8801,18 @@ List all scores
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8179,13 +8869,18 @@ List all securities
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8242,13 +8937,18 @@ Retrieve a security
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityId = new UUID(); // UUID | UUID of a security
@@ -8297,13 +8997,18 @@ Retrieve a security exclusion
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityExclusionId = new UUID(); // UUID | UUID of a security exclusion record
@@ -8352,13 +9057,18 @@ List all security exclusions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8415,13 +9125,18 @@ Get security performance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityId = new UUID(); // UUID | UUID of a security
@@ -8472,13 +9187,18 @@ Retrieve a security price
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityPriceId = new UUID(); // UUID | UUID of a security price record
@@ -8527,13 +9247,18 @@ List all security prices
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8590,13 +9315,18 @@ Retrieve a transaction code
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID transactionCodeId = new UUID(); // UUID | UUID of a transaction code
@@ -8645,13 +9375,18 @@ List all transaction codes
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8708,13 +9443,18 @@ Retrieve a transfer request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID transferId = new UUID(); // UUID | UUID of an account transfer record
@@ -8763,13 +9503,18 @@ List all transfer requests
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8826,13 +9571,18 @@ Retrieve a withdrawal request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID withdrawalId = new UUID(); // UUID | UUID of a withdrawal request
@@ -8881,13 +9631,18 @@ List all withdrawal requests
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -8944,13 +9699,18 @@ Create an account under a client
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AccountCreatePayload payload = new AccountCreatePayload(); // AccountCreatePayload | 
@@ -8999,13 +9759,18 @@ Create an account allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AccountAllocationPayload payload = new AccountAllocationPayload(); // AccountAllocationPayload | 
@@ -9054,13 +9819,18 @@ Bulk orders for an account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -9111,13 +9881,18 @@ Create buy-only account rebalance orders
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -9167,13 +9942,18 @@ Create account rebalance orders
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -9224,13 +10004,18 @@ Create sell-only account rebalance orders
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -9280,13 +10065,18 @@ Sell all account order
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -9337,13 +10127,18 @@ Create an account stage
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AccountStagePayload payload = new AccountStagePayload(); // AccountStagePayload | 
@@ -9392,13 +10187,18 @@ Create an account status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AccountStatusPayload payload = new AccountStatusPayload(); // AccountStatusPayload | 
@@ -9447,13 +10247,18 @@ Create an account type
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AccountTypePayload payload = new AccountTypePayload(); // AccountTypePayload | 
@@ -9502,13 +10307,18 @@ Create an aggregation account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AggregationAccountPayload payload = new AggregationAccountPayload(); // AggregationAccountPayload | 
@@ -9557,13 +10367,18 @@ Create an aggregation account balance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AggregationAccountBalancePayload payload = new AggregationAccountBalancePayload(); // AggregationAccountBalancePayload | 
@@ -9612,13 +10427,18 @@ Create an allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AllocationPayload payload = new AllocationPayload(); // AllocationPayload | 
@@ -9667,13 +10487,18 @@ Create an allocation composition
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 AllocationCompositionPayload payload = new AllocationCompositionPayload(); // AllocationCompositionPayload | 
@@ -9722,13 +10547,18 @@ Create a bank link
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 BankLinkPayload payload = new BankLinkPayload(); // BankLinkPayload | 
@@ -9777,13 +10607,18 @@ Create a benchmark
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 BenchmarkPayload payload = new BenchmarkPayload(); // BenchmarkPayload | 
@@ -9832,13 +10667,18 @@ Bulk orders for your firm
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 BulkOrderFirmPayload payload = new BulkOrderFirmPayload(); // BulkOrderFirmPayload | 
@@ -9887,13 +10727,18 @@ Create a client
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ClientPayload payload = new ClientPayload(); // ClientPayload | 
@@ -9942,13 +10787,18 @@ Bulk orders for a client
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -9999,13 +10849,18 @@ Create a client-hydro relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ClientHydroPayload payload = new ClientHydroPayload(); // ClientHydroPayload | 
@@ -10054,13 +10909,18 @@ Create a client response
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ClientResponsePayload payload = new ClientResponsePayload(); // ClientResponsePayload | 
@@ -10109,13 +10969,18 @@ Create a decision tree
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 DecisionTreePayload payload = new DecisionTreePayload(); // DecisionTreePayload | 
@@ -10164,13 +11029,18 @@ Create a deposit request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 DepositRequestPayload payload = new DepositRequestPayload(); // DepositRequestPayload | 
@@ -10219,13 +11089,18 @@ Create a funding request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 FundingRequestPayload payload = new FundingRequestPayload(); // FundingRequestPayload | 
@@ -10274,13 +11149,18 @@ Create a goal
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 GoalPayload payload = new GoalPayload(); // GoalPayload | 
@@ -10329,13 +11209,18 @@ Create a goal track record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 GoalTrackPayload payload = new GoalTrackPayload(); // GoalTrackPayload | 
@@ -10384,13 +11269,18 @@ Create a model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ModelPayload payload = new ModelPayload(); // ModelPayload | 
@@ -10439,13 +11329,18 @@ Create a model asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ModelAssetSizePayload payload = new ModelAssetSizePayload(); // ModelAssetSizePayload | 
@@ -10494,13 +11389,18 @@ Create a model commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ModelCommentPayload payload = new ModelCommentPayload(); // ModelCommentPayload | 
@@ -10549,13 +11449,18 @@ Create a model holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ModelHoldingPayload payload = new ModelHoldingPayload(); // ModelHoldingPayload | 
@@ -10604,13 +11509,18 @@ Create a model transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ModelTransactionPayload payload = new ModelTransactionPayload(); // ModelTransactionPayload | 
@@ -10659,13 +11569,18 @@ Create a node
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 NodePayload payload = new NodePayload(); // NodePayload | 
@@ -10714,13 +11629,18 @@ Create a node relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 NodeRelationshipPayload payload = new NodeRelationshipPayload(); // NodeRelationshipPayload | 
@@ -10769,13 +11689,18 @@ Create an order record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 OrderPayload payload = new OrderPayload(); // OrderPayload | 
@@ -10824,13 +11749,18 @@ Create an order status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 OrderStatusPayload payload = new OrderStatusPayload(); // OrderStatusPayload | 
@@ -10879,13 +11809,18 @@ Create an order tracking record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 OrderTrackPayload payload = new OrderTrackPayload(); // OrderTrackPayload | 
@@ -10934,13 +11869,18 @@ Create a portfolio
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 PortfolioPayload payload = new PortfolioPayload(); // PortfolioPayload | 
@@ -10989,13 +11929,18 @@ Create a portfolio asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 PortfolioAssetSizePayload payload = new PortfolioAssetSizePayload(); // PortfolioAssetSizePayload | 
@@ -11044,13 +11989,18 @@ Create a portfolio commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 PortfolioCommentPayload payload = new PortfolioCommentPayload(); // PortfolioCommentPayload | 
@@ -11099,13 +12049,18 @@ Create a portfolio holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 PortfolioHoldingPayload payload = new PortfolioHoldingPayload(); // PortfolioHoldingPayload | 
@@ -11154,13 +12109,18 @@ Create buy-only portfolio rebalance orders
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -11211,13 +12171,18 @@ Create portfolio rebalance orders
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -11268,13 +12233,18 @@ Create sell-only portfolio rebalance orders
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -11325,13 +12295,18 @@ Sell all portfolio order
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -11382,13 +12357,18 @@ Create a portfolio transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 PortfolioTransactionPayload payload = new PortfolioTransactionPayload(); // PortfolioTransactionPayload | 
@@ -11437,13 +12417,18 @@ Create a questionnaire
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 QuestionnairePayload payload = new QuestionnairePayload(); // QuestionnairePayload | 
@@ -11492,13 +12477,18 @@ Create a score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 ScorePayload payload = new ScorePayload(); // ScorePayload | 
@@ -11547,13 +12537,18 @@ Create a security
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 SecurityPayload payload = new SecurityPayload(); // SecurityPayload | 
@@ -11602,13 +12597,18 @@ Create a security exclusion
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 SecurityExclusionPayload payload = new SecurityExclusionPayload(); // SecurityExclusionPayload | 
@@ -11657,13 +12657,18 @@ Create a security price
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 SecurityPricePayload payload = new SecurityPricePayload(); // SecurityPricePayload | 
@@ -11712,13 +12717,18 @@ Create a transaction code
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 TransactionCodePayload payload = new TransactionCodePayload(); // TransactionCodePayload | 
@@ -11767,13 +12777,18 @@ Create a transfer request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 TransferRequestPayload payload = new TransferRequestPayload(); // TransferRequestPayload | 
@@ -11822,13 +12837,18 @@ Create a withdrawal request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 WithdrawalPayload payload = new WithdrawalPayload(); // WithdrawalPayload | 
@@ -11877,13 +12897,18 @@ Subscribe an account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -11934,13 +12959,18 @@ Update an account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -11991,13 +13021,18 @@ Update an account allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID of an account allocation
@@ -12048,13 +13083,18 @@ Update an account&#39;s permissions
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountId = new UUID(); // UUID | UUID of an account
@@ -12105,13 +13145,18 @@ Update an account stage
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID stageId = new UUID(); // UUID | UUID of an account stage
@@ -12162,13 +13207,18 @@ Update an account status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountStatusId = new UUID(); // UUID | UUID of an account status
@@ -12219,13 +13269,18 @@ Update an account type
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID accountTypeId = new UUID(); // UUID | UUID of an account type
@@ -12276,13 +13331,18 @@ Update an aggregation account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID of an aggregation account
@@ -12333,13 +13393,18 @@ Update an aggregation account balance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID of an aggregation account balance
@@ -12390,13 +13455,18 @@ Update an allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationId = new UUID(); // UUID | UUID of an allocation
@@ -12447,13 +13517,18 @@ Update an allocation composition
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID allocationCompositionId = new UUID(); // UUID | UUID of an allocation composition
@@ -12504,13 +13579,18 @@ Update a bank link
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID bankLinkId = new UUID(); // UUID | UUID of a bank link
@@ -12561,13 +13641,18 @@ Update a benchmark
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID benchmarkId = new UUID(); // UUID | UUID of a benchmark
@@ -12618,13 +13703,18 @@ Update a client
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientId = new UUID(); // UUID | UUID of a client
@@ -12675,13 +13765,18 @@ Update a client-hydro relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientHydroId = new UUID(); // UUID | UUID of a client-hydro relationship
@@ -12732,13 +13827,18 @@ Update a client response
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID clientResponseId = new UUID(); // UUID | UUID of a client response
@@ -12789,13 +13889,18 @@ Update a decision tree
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID decisionTreeId = new UUID(); // UUID | UUID of a decision tree
@@ -12846,13 +13951,18 @@ Update a deposit request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID depositId = new UUID(); // UUID | UUID of a deposit record
@@ -12903,13 +14013,18 @@ Update a funding request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID fundingId = new UUID(); // UUID | UUID of a funding record
@@ -12960,13 +14075,18 @@ Update a goal
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalId = new UUID(); // UUID | UUID of a goal
@@ -13017,13 +14137,18 @@ Update a goal track record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID goalTrackId = new UUID(); // UUID | UUID of a goal tracking record
@@ -13074,13 +14199,18 @@ Update a model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelId = new UUID(); // UUID | UUID of a model
@@ -13131,13 +14261,18 @@ Update a model asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelAssetSizeId = new UUID(); // UUID | UUID of a model asset size record
@@ -13188,13 +14323,18 @@ Update a model commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelCommentId = new UUID(); // UUID | UUID of a model comment
@@ -13245,13 +14385,18 @@ Change a model composition
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelId = new UUID(); // UUID | UUID of a model
@@ -13302,13 +14447,18 @@ Update a model holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelHoldingId = new UUID(); // UUID | UUID of a model holding record
@@ -13359,13 +14509,18 @@ Update a model transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID modelTransactionId = new UUID(); // UUID | UUID of a model transaction record
@@ -13416,13 +14571,18 @@ Update a node
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID nodeId = new UUID(); // UUID | UUID of a node
@@ -13473,13 +14633,18 @@ Update a node relationship
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID nodeRelationshipId = new UUID(); // UUID | UUID of a node relationship
@@ -13530,13 +14695,18 @@ Update an order record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderId = new UUID(); // UUID | UUID of an order record
@@ -13587,13 +14757,18 @@ Update an order status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderStatusId = new UUID(); // UUID | UUID of an order status record
@@ -13644,13 +14819,18 @@ Update an order tracking record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID orderTrackId = new UUID(); // UUID | UUID of an order tracking record
@@ -13701,13 +14881,18 @@ Update a portfolio
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioId = new UUID(); // UUID | UUID of a portfolio
@@ -13758,13 +14943,18 @@ Update a portfolio asset size
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioAssetSizeId = new UUID(); // UUID | UUID of a portfolio asset size record
@@ -13815,13 +15005,18 @@ Update a portfolio commentary
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioCommentId = new UUID(); // UUID | UUID of a portfolio comment
@@ -13872,13 +15067,18 @@ Update a portfolio holding
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioHoldingId = new UUID(); // UUID | UUID of a portfolio holding record
@@ -13929,13 +15129,18 @@ Update a portfolio transaction
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID portfolioTransactionId = new UUID(); // UUID | UUID of a portfolio transaction record
@@ -13986,13 +15191,18 @@ Update a questionnaire
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID questionnaireId = new UUID(); // UUID | UUID of a questionnaire
@@ -14043,13 +15253,18 @@ Update a score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID scoreId = new UUID(); // UUID | UUID of a score record
@@ -14100,13 +15315,18 @@ Update a security
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityId = new UUID(); // UUID | UUID of a security
@@ -14157,13 +15377,18 @@ Update a security exclusion
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityExclusionId = new UUID(); // UUID | UUID of a security exclusion record
@@ -14214,13 +15439,18 @@ Update a security price
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID securityPriceId = new UUID(); // UUID | UUID of a security price record
@@ -14271,13 +15501,18 @@ Update a transaction code
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID transactionCodeId = new UUID(); // UUID | UUID of a transaction code
@@ -14328,13 +15563,18 @@ Update a transfer request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID transferId = new UUID(); // UUID | UUID of an account transfer record
@@ -14385,13 +15625,18 @@ Update a withdrawal request
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 NucleusApi apiInstance = new NucleusApi();
 UUID withdrawalId = new UUID(); // UUID | UUID of a withdrawal request

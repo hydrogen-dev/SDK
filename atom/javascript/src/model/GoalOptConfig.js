@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ERRORUNKNOWN', 'model/GoalWeightConfig'], factory);
+    define(['ApiClient', 'model/GoalWeightConfig'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ERRORUNKNOWN'), require('./GoalWeightConfig'));
+    module.exports = factory(require('../ApiClient'), require('./GoalWeightConfig'));
   } else {
     // Browser globals (root is window)
     if (!root.atom_api) {
       root.atom_api = {};
     }
-    root.atom_api.GoalOptConfig = factory(root.atom_api.ApiClient, root.atom_api.ERRORUNKNOWN, root.atom_api.GoalWeightConfig);
+    root.atom_api.GoalOptConfig = factory(root.atom_api.ApiClient, root.atom_api.GoalWeightConfig);
   }
-}(this, function(ApiClient, ERRORUNKNOWN, GoalWeightConfig) {
+}(this, function(ApiClient, GoalWeightConfig) {
   'use strict';
 
 
@@ -83,7 +83,7 @@
         obj['w_config'] = GoalWeightConfig.constructFromObject(data['w_config']);
       }
       if (data.hasOwnProperty('w_asset_config')) {
-        obj['w_asset_config'] = ApiClient.convertToType(data['w_asset_config'], ERRORUNKNOWN);
+        obj['w_asset_config'] = ApiClient.convertToType(data['w_asset_config'], {'String': 'Number'});
       }
       if (data.hasOwnProperty('sec_types')) {
         obj['sec_types'] = ApiClient.convertToType(data['sec_types'], ['String']);
@@ -114,7 +114,7 @@
   exports.prototype['w_config'] = undefined;
   /**
    * Weight constraints for asset classes
-   * @member {module:model/ERRORUNKNOWN} w_asset_config
+   * @member {Object.<String, Number>} w_asset_config
    */
   exports.prototype['w_asset_config'] = undefined;
   /**

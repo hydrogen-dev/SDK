@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property useProxyData (base name: "use_proxy_data")', function() {
+      // uncomment below and update the code to test the property useProxyData
+      //var instance = new atom_api.EventStudy();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

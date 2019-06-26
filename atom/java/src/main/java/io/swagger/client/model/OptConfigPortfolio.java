@@ -34,7 +34,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * OptConfigPortfolio
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class OptConfigPortfolio {
   @SerializedName("tickers")
   private List<String> tickers = new ArrayList<String>();
@@ -109,6 +109,9 @@ public class OptConfigPortfolio {
 
   @SerializedName("tgt_val")
   private BigDecimal tgtVal = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   public OptConfigPortfolio tickers(List<String> tickers) {
     this.tickers = tickers;
@@ -288,6 +291,24 @@ public class OptConfigPortfolio {
     this.tgtVal = tgtVal;
   }
 
+  public OptConfigPortfolio useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -306,12 +327,13 @@ public class OptConfigPortfolio {
         Objects.equals(this.startDate, optConfigPortfolio.startDate) &&
         Objects.equals(this.endDate, optConfigPortfolio.endDate) &&
         Objects.equals(this.tgtType, optConfigPortfolio.tgtType) &&
-        Objects.equals(this.tgtVal, optConfigPortfolio.tgtVal);
+        Objects.equals(this.tgtVal, optConfigPortfolio.tgtVal) &&
+        Objects.equals(this.useProxyData, optConfigPortfolio.useProxyData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tickers, minAssets, wConfig, wAssetConfig, secTypes, startDate, endDate, tgtType, tgtVal);
+    return Objects.hash(tickers, minAssets, wConfig, wAssetConfig, secTypes, startDate, endDate, tgtType, tgtVal, useProxyData);
   }
 
 
@@ -329,6 +351,7 @@ public class OptConfigPortfolio {
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    tgtType: ").append(toIndentedString(tgtType)).append("\n");
     sb.append("    tgtVal: ").append(toIndentedString(tgtVal)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

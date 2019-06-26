@@ -32,7 +32,7 @@ import java.util.UUID;
 /**
  * CreateSupportTicketCommentResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class CreateSupportTicketCommentResponse {
   @SerializedName("support_ticket_id")
   private UUID supportTicketId = null;

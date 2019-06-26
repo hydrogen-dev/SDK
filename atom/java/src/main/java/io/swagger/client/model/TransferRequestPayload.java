@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * TransferRequestPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class TransferRequestPayload {
   @SerializedName("account_id")
   private UUID accountId = null;

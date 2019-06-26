@@ -629,6 +629,7 @@ Class | Method | HTTP request | Description
  - [atom_api.GoalTransactionsResponseContent](docs/GoalTransactionsResponseContent.md)
  - [atom_api.GoalWeightConfig](docs/GoalWeightConfig.md)
  - [atom_api.GoalWithdrawalConfig](docs/GoalWithdrawalConfig.md)
+ - [atom_api.GuaranteedRateBenefitSubpayload](docs/GuaranteedRateBenefitSubpayload.md)
  - [atom_api.HealthCheckResponse](docs/HealthCheckResponse.md)
  - [atom_api.HealthCheckResult](docs/HealthCheckResult.md)
  - [atom_api.HoldingsDetail](docs/HoldingsDetail.md)

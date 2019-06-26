@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * OptimizationScore
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class OptimizationScore {
   @SerializedName("portfolio_tickers")
   private List<String> portfolioTickers = new ArrayList<String>();
@@ -41,6 +41,9 @@ public class OptimizationScore {
 
   @SerializedName("opt_config")
   private OptConfig optConfig = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   public OptimizationScore portfolioTickers(List<String> portfolioTickers) {
     this.portfolioTickers = portfolioTickers;
@@ -106,6 +109,24 @@ public class OptimizationScore {
     this.optConfig = optConfig;
   }
 
+  public OptimizationScore useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -118,12 +139,13 @@ public class OptimizationScore {
     OptimizationScore optimizationScore = (OptimizationScore) o;
     return Objects.equals(this.portfolioTickers, optimizationScore.portfolioTickers) &&
         Objects.equals(this.portfolioWeights, optimizationScore.portfolioWeights) &&
-        Objects.equals(this.optConfig, optimizationScore.optConfig);
+        Objects.equals(this.optConfig, optimizationScore.optConfig) &&
+        Objects.equals(this.useProxyData, optimizationScore.useProxyData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(portfolioTickers, portfolioWeights, optConfig);
+    return Objects.hash(portfolioTickers, portfolioWeights, optConfig, useProxyData);
   }
 
 
@@ -135,6 +157,7 @@ public class OptimizationScore {
     sb.append("    portfolioTickers: ").append(toIndentedString(portfolioTickers)).append("\n");
     sb.append("    portfolioWeights: ").append(toIndentedString(portfolioWeights)).append("\n");
     sb.append("    optConfig: ").append(toIndentedString(optConfig)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

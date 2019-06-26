@@ -35,7 +35,7 @@ import java.util.UUID;
 /**
  * GoalAccumulationAllocation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class GoalAccumulationAllocation {
   /**
    * The allocation universe source, either create or select
@@ -348,6 +348,9 @@ public class GoalAccumulationAllocation {
 
   @SerializedName("compounding_rate")
   private BigDecimal compoundingRate = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   public GoalAccumulationAllocation allocationMethod(AllocationMethodEnum allocationMethod) {
     this.allocationMethod = allocationMethod;
@@ -757,6 +760,24 @@ public class GoalAccumulationAllocation {
     this.compoundingRate = compoundingRate;
   }
 
+  public GoalAccumulationAllocation useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -787,12 +808,13 @@ public class GoalAccumulationAllocation {
         Objects.equals(this.tradingDaysPerYear, goalAccumulationAllocation.tradingDaysPerYear) &&
         Objects.equals(this.riskScore, goalAccumulationAllocation.riskScore) &&
         Objects.equals(this.adjustForCompounding, goalAccumulationAllocation.adjustForCompounding) &&
-        Objects.equals(this.compoundingRate, goalAccumulationAllocation.compoundingRate);
+        Objects.equals(this.compoundingRate, goalAccumulationAllocation.compoundingRate) &&
+        Objects.equals(this.useProxyData, goalAccumulationAllocation.useProxyData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allocationMethod, allocationPriority, optConfig, allocations, currInv, horizon, horizonFrequency, goalConfig, depositConfig, recommendationConfig, recommendType, confTgt, n, removeOutliers, threshType, thresh, withdrawalTax, tradingDaysPerYear, riskScore, adjustForCompounding, compoundingRate);
+    return Objects.hash(allocationMethod, allocationPriority, optConfig, allocations, currInv, horizon, horizonFrequency, goalConfig, depositConfig, recommendationConfig, recommendType, confTgt, n, removeOutliers, threshType, thresh, withdrawalTax, tradingDaysPerYear, riskScore, adjustForCompounding, compoundingRate, useProxyData);
   }
 
 
@@ -822,6 +844,7 @@ public class GoalAccumulationAllocation {
     sb.append("    riskScore: ").append(toIndentedString(riskScore)).append("\n");
     sb.append("    adjustForCompounding: ").append(toIndentedString(adjustForCompounding)).append("\n");
     sb.append("    compoundingRate: ").append(toIndentedString(compoundingRate)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

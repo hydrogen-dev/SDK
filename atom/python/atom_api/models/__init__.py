@@ -151,6 +151,7 @@ from atom_api.models.goal_track_payload import GoalTrackPayload
 from atom_api.models.goal_transactions_response_content import GoalTransactionsResponseContent
 from atom_api.models.goal_weight_config import GoalWeightConfig
 from atom_api.models.goal_withdrawal_config import GoalWithdrawalConfig
+from atom_api.models.guaranteed_rate_benefit_subpayload import GuaranteedRateBenefitSubpayload
 from atom_api.models.health_check_response import HealthCheckResponse
 from atom_api.models.health_check_result import HealthCheckResult
 from atom_api.models.holdings_detail import HoldingsDetail

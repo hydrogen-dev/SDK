@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **riskScore** | **Number** | The investor&#39;s risk score | [optional] 
 **adjustForCompounding** | **Boolean** | If true, adjust periodic deposit amounts for compounding based on compounding_rate. This applies when a deposit’s dep_frequency is shorter than horizon_frequency. Defaults to false. | [optional] [default to false]
 **compoundingRate** | **Number** | The annualized rate to use when approximating a compounding effect on deposits. This value must be defined and adjust_for_compounding must be true in order to activate compounding adjustment. Defaults to 0. | [optional] 
+**useProxyData** | **Boolean** | If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false. | [optional] [default to false]
 
 
 <a name="AllocationMethodEnum"></a>

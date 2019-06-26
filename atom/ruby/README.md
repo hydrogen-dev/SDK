@@ -579,6 +579,7 @@ Class | Method | HTTP request | Description
  - [AtomApi::GoalTransactionsResponseContent](docs/GoalTransactionsResponseContent.md)
  - [AtomApi::GoalWeightConfig](docs/GoalWeightConfig.md)
  - [AtomApi::GoalWithdrawalConfig](docs/GoalWithdrawalConfig.md)
+ - [AtomApi::GuaranteedRateBenefitSubpayload](docs/GuaranteedRateBenefitSubpayload.md)
  - [AtomApi::HealthCheckResponse](docs/HealthCheckResponse.md)
  - [AtomApi::HealthCheckResult](docs/HealthCheckResult.md)
  - [AtomApi::HoldingsDetail](docs/HoldingsDetail.md)

@@ -38,6 +38,9 @@ module AtomApi
     # The target value for a target portfolio
     attr_accessor :tgt_val
 
+    # If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+    attr_accessor :use_proxy_data
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -71,7 +74,8 @@ module AtomApi
         :'start_date' => :'start_date',
         :'end_date' => :'end_date',
         :'tgt_type' => :'tgt_type',
-        :'tgt_val' => :'tgt_val'
+        :'tgt_val' => :'tgt_val',
+        :'use_proxy_data' => :'use_proxy_data'
       }
     end
 
@@ -86,7 +90,8 @@ module AtomApi
         :'start_date' => :'DateTime',
         :'end_date' => :'DateTime',
         :'tgt_type' => :'String',
-        :'tgt_val' => :'Float'
+        :'tgt_val' => :'Float',
+        :'use_proxy_data' => :'BOOLEAN'
       }
     end
 
@@ -138,6 +143,12 @@ module AtomApi
 
       if attributes.has_key?(:'tgt_val')
         self.tgt_val = attributes[:'tgt_val']
+      end
+
+      if attributes.has_key?(:'use_proxy_data')
+        self.use_proxy_data = attributes[:'use_proxy_data']
+      else
+        self.use_proxy_data = false
       end
     end
 
@@ -223,7 +234,8 @@ module AtomApi
           start_date == o.start_date &&
           end_date == o.end_date &&
           tgt_type == o.tgt_type &&
-          tgt_val == o.tgt_val
+          tgt_val == o.tgt_val &&
+          use_proxy_data == o.use_proxy_data
     end
 
     # @see the `==` method
@@ -235,7 +247,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [tickers, min_assets, w_config, w_asset_config, sec_types, start_date, end_date, tgt_type, tgt_val].hash
+      [tickers, min_assets, w_config, w_asset_config, sec_types, start_date, end_date, tgt_type, tgt_val, use_proxy_data].hash
     end
 
     # Builds the object from hash

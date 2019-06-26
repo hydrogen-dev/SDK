@@ -583,6 +583,7 @@ Class | Method | HTTP request | Description
  - [GoalTransactionsResponseContent](docs/GoalTransactionsResponseContent.md)
  - [GoalWeightConfig](docs/GoalWeightConfig.md)
  - [GoalWithdrawalConfig](docs/GoalWithdrawalConfig.md)
+ - [GuaranteedRateBenefitSubpayload](docs/GuaranteedRateBenefitSubpayload.md)
  - [HealthCheckResponse](docs/HealthCheckResponse.md)
  - [HealthCheckResult](docs/HealthCheckResult.md)
  - [HoldingsDetail](docs/HoldingsDetail.md)

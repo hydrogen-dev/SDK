@@ -24,13 +24,17 @@ module AtomApi
 
     attr_accessor :end_date
 
+    # If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+    attr_accessor :use_proxy_data
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'portfolio_tickers' => :'portfolio_tickers',
         :'portfolio_weights' => :'portfolio_weights',
         :'start_date' => :'start_date',
-        :'end_date' => :'end_date'
+        :'end_date' => :'end_date',
+        :'use_proxy_data' => :'use_proxy_data'
       }
     end
 
@@ -40,7 +44,8 @@ module AtomApi
         :'portfolio_tickers' => :'Array<String>',
         :'portfolio_weights' => :'Array<Float>',
         :'start_date' => :'DateTime',
-        :'end_date' => :'DateTime'
+        :'end_date' => :'DateTime',
+        :'use_proxy_data' => :'BOOLEAN'
       }
     end
 
@@ -70,6 +75,12 @@ module AtomApi
 
       if attributes.has_key?(:'end_date')
         self.end_date = attributes[:'end_date']
+      end
+
+      if attributes.has_key?(:'use_proxy_data')
+        self.use_proxy_data = attributes[:'use_proxy_data']
+      else
+        self.use_proxy_data = false
       end
     end
 
@@ -104,7 +115,8 @@ module AtomApi
           portfolio_tickers == o.portfolio_tickers &&
           portfolio_weights == o.portfolio_weights &&
           start_date == o.start_date &&
-          end_date == o.end_date
+          end_date == o.end_date &&
+          use_proxy_data == o.use_proxy_data
     end
 
     # @see the `==` method
@@ -116,7 +128,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [portfolio_tickers, portfolio_weights, start_date, end_date].hash
+      [portfolio_tickers, portfolio_weights, start_date, end_date, use_proxy_data].hash
     end
 
     # Builds the object from hash

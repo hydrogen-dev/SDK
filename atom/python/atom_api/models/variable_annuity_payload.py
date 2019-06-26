@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from atom_api.models.annuity_deposit_schedule import AnnuityDepositSchedule  # noqa: F401,E501
+from atom_api.models.guaranteed_rate_benefit_subpayload import GuaranteedRateBenefitSubpayload  # noqa: F401,E501
 
 
 class VariableAnnuityPayload(object):
@@ -39,7 +40,20 @@ class VariableAnnuityPayload(object):
         'decumulation_horizon': 'int',
         'initial_balance': 'float',
         'frequency_interval': 'str',
-        'deposit_schedule': 'AnnuityDepositSchedule'
+        'deposit_schedule': 'AnnuityDepositSchedule',
+        'inflation_rate': 'float',
+        'tax_rate': 'float',
+        'annuitization_rate': 'float',
+        'guaranteed_rate_benefit': 'list[GuaranteedRateBenefitSubpayload]',
+        'guaranteed_accumulation_benefit': 'float',
+        'n': 'int',
+        'result_type': 'str',
+        'p': 'float',
+        'remove_outliers': 'bool',
+        'start_date': 'date',
+        'end_date': 'date',
+        'trading_days_per_year': 'int',
+        'use_proxy_data': 'bool'
     }
 
     attribute_map = {
@@ -49,10 +63,23 @@ class VariableAnnuityPayload(object):
         'decumulation_horizon': 'decumulation_horizon',
         'initial_balance': 'initial_balance',
         'frequency_interval': 'frequency_interval',
-        'deposit_schedule': 'deposit_schedule'
+        'deposit_schedule': 'deposit_schedule',
+        'inflation_rate': 'inflation_rate',
+        'tax_rate': 'tax_rate',
+        'annuitization_rate': 'annuitization_rate',
+        'guaranteed_rate_benefit': 'guaranteed_rate_benefit',
+        'guaranteed_accumulation_benefit': 'guaranteed_accumulation_benefit',
+        'n': 'n',
+        'result_type': 'result_type',
+        'p': 'p',
+        'remove_outliers': 'remove_outliers',
+        'start_date': 'start_date',
+        'end_date': 'end_date',
+        'trading_days_per_year': 'trading_days_per_year',
+        'use_proxy_data': 'use_proxy_data'
     }
 
-    def __init__(self, portfolio_tickers=None, portfolio_weights=None, accumulation_horizon=None, decumulation_horizon=None, initial_balance=None, frequency_interval=None, deposit_schedule=None):  # noqa: E501
+    def __init__(self, portfolio_tickers=None, portfolio_weights=None, accumulation_horizon=None, decumulation_horizon=None, initial_balance=None, frequency_interval=None, deposit_schedule=None, inflation_rate=None, tax_rate=None, annuitization_rate=None, guaranteed_rate_benefit=None, guaranteed_accumulation_benefit=None, n=None, result_type='median', p=None, remove_outliers=False, start_date=None, end_date=None, trading_days_per_year=None, use_proxy_data=False):  # noqa: E501
         """VariableAnnuityPayload - a model defined in Swagger"""  # noqa: E501
 
         self._portfolio_tickers = None
@@ -62,6 +89,19 @@ class VariableAnnuityPayload(object):
         self._initial_balance = None
         self._frequency_interval = None
         self._deposit_schedule = None
+        self._inflation_rate = None
+        self._tax_rate = None
+        self._annuitization_rate = None
+        self._guaranteed_rate_benefit = None
+        self._guaranteed_accumulation_benefit = None
+        self._n = None
+        self._result_type = None
+        self._p = None
+        self._remove_outliers = None
+        self._start_date = None
+        self._end_date = None
+        self._trading_days_per_year = None
+        self._use_proxy_data = None
         self.discriminator = None
 
         self.portfolio_tickers = portfolio_tickers
@@ -73,6 +113,32 @@ class VariableAnnuityPayload(object):
             self.frequency_interval = frequency_interval
         if deposit_schedule is not None:
             self.deposit_schedule = deposit_schedule
+        if inflation_rate is not None:
+            self.inflation_rate = inflation_rate
+        if tax_rate is not None:
+            self.tax_rate = tax_rate
+        if annuitization_rate is not None:
+            self.annuitization_rate = annuitization_rate
+        if guaranteed_rate_benefit is not None:
+            self.guaranteed_rate_benefit = guaranteed_rate_benefit
+        if guaranteed_accumulation_benefit is not None:
+            self.guaranteed_accumulation_benefit = guaranteed_accumulation_benefit
+        if n is not None:
+            self.n = n
+        if result_type is not None:
+            self.result_type = result_type
+        if p is not None:
+            self.p = p
+        if remove_outliers is not None:
+            self.remove_outliers = remove_outliers
+        if start_date is not None:
+            self.start_date = start_date
+        if end_date is not None:
+            self.end_date = end_date
+        if trading_days_per_year is not None:
+            self.trading_days_per_year = trading_days_per_year
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
 
     @property
     def portfolio_tickers(self):
@@ -244,6 +310,327 @@ class VariableAnnuityPayload(object):
         """
 
         self._deposit_schedule = deposit_schedule
+
+    @property
+    def inflation_rate(self):
+        """Gets the inflation_rate of this VariableAnnuityPayload.  # noqa: E501
+
+        The annualized rate of inflation. Defaults to 0.  # noqa: E501
+
+        :return: The inflation_rate of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: float
+        """
+        return self._inflation_rate
+
+    @inflation_rate.setter
+    def inflation_rate(self, inflation_rate):
+        """Sets the inflation_rate of this VariableAnnuityPayload.
+
+        The annualized rate of inflation. Defaults to 0.  # noqa: E501
+
+        :param inflation_rate: The inflation_rate of this VariableAnnuityPayload.  # noqa: E501
+        :type: float
+        """
+        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._inflation_rate = inflation_rate
+
+    @property
+    def tax_rate(self):
+        """Gets the tax_rate of this VariableAnnuityPayload.  # noqa: E501
+
+        The tax rate applied to annuity payouts. Defaults to 0.  # noqa: E501
+
+        :return: The tax_rate of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: float
+        """
+        return self._tax_rate
+
+    @tax_rate.setter
+    def tax_rate(self, tax_rate):
+        """Sets the tax_rate of this VariableAnnuityPayload.
+
+        The tax rate applied to annuity payouts. Defaults to 0.  # noqa: E501
+
+        :param tax_rate: The tax_rate of this VariableAnnuityPayload.  # noqa: E501
+        :type: float
+        """
+        if tax_rate is not None and tax_rate >= 1:  # noqa: E501
+            raise ValueError("Invalid value for `tax_rate`, must be a value less than `1`")  # noqa: E501
+        if tax_rate is not None and tax_rate < 0:  # noqa: E501
+            raise ValueError("Invalid value for `tax_rate`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._tax_rate = tax_rate
+
+    @property
+    def annuitization_rate(self):
+        """Gets the annuitization_rate of this VariableAnnuityPayload.  # noqa: E501
+
+        The discount rate used to calculate annuity payout amounts during decumulation_horizon. Defaults to 0.  # noqa: E501
+
+        :return: The annuitization_rate of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: float
+        """
+        return self._annuitization_rate
+
+    @annuitization_rate.setter
+    def annuitization_rate(self, annuitization_rate):
+        """Sets the annuitization_rate of this VariableAnnuityPayload.
+
+        The discount rate used to calculate annuity payout amounts during decumulation_horizon. Defaults to 0.  # noqa: E501
+
+        :param annuitization_rate: The annuitization_rate of this VariableAnnuityPayload.  # noqa: E501
+        :type: float
+        """
+
+        self._annuitization_rate = annuitization_rate
+
+    @property
+    def guaranteed_rate_benefit(self):
+        """Gets the guaranteed_rate_benefit of this VariableAnnuityPayload.  # noqa: E501
+
+        Boundaries enforced on the plan's rate of return.  # noqa: E501
+
+        :return: The guaranteed_rate_benefit of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: list[GuaranteedRateBenefitSubpayload]
+        """
+        return self._guaranteed_rate_benefit
+
+    @guaranteed_rate_benefit.setter
+    def guaranteed_rate_benefit(self, guaranteed_rate_benefit):
+        """Sets the guaranteed_rate_benefit of this VariableAnnuityPayload.
+
+        Boundaries enforced on the plan's rate of return.  # noqa: E501
+
+        :param guaranteed_rate_benefit: The guaranteed_rate_benefit of this VariableAnnuityPayload.  # noqa: E501
+        :type: list[GuaranteedRateBenefitSubpayload]
+        """
+
+        self._guaranteed_rate_benefit = guaranteed_rate_benefit
+
+    @property
+    def guaranteed_accumulation_benefit(self):
+        """Gets the guaranteed_accumulation_benefit of this VariableAnnuityPayload.  # noqa: E501
+
+        A guaranteed lower bound for the plan balance at the end of accumulation_horizon.  # noqa: E501
+
+        :return: The guaranteed_accumulation_benefit of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: float
+        """
+        return self._guaranteed_accumulation_benefit
+
+    @guaranteed_accumulation_benefit.setter
+    def guaranteed_accumulation_benefit(self, guaranteed_accumulation_benefit):
+        """Sets the guaranteed_accumulation_benefit of this VariableAnnuityPayload.
+
+        A guaranteed lower bound for the plan balance at the end of accumulation_horizon.  # noqa: E501
+
+        :param guaranteed_accumulation_benefit: The guaranteed_accumulation_benefit of this VariableAnnuityPayload.  # noqa: E501
+        :type: float
+        """
+        if guaranteed_accumulation_benefit is not None and guaranteed_accumulation_benefit < 0:  # noqa: E501
+            raise ValueError("Invalid value for `guaranteed_accumulation_benefit`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._guaranteed_accumulation_benefit = guaranteed_accumulation_benefit
+
+    @property
+    def n(self):
+        """Gets the n of this VariableAnnuityPayload.  # noqa: E501
+
+        The number of Monte Carlo simulations to run. Defaults to 1000.  # noqa: E501
+
+        :return: The n of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: int
+        """
+        return self._n
+
+    @n.setter
+    def n(self, n):
+        """Sets the n of this VariableAnnuityPayload.
+
+        The number of Monte Carlo simulations to run. Defaults to 1000.  # noqa: E501
+
+        :param n: The n of this VariableAnnuityPayload.  # noqa: E501
+        :type: int
+        """
+
+        self._n = n
+
+    @property
+    def result_type(self):
+        """Gets the result_type of this VariableAnnuityPayload.  # noqa: E501
+
+        The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.  # noqa: E501
+
+        :return: The result_type of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._result_type
+
+    @result_type.setter
+    def result_type(self, result_type):
+        """Sets the result_type of this VariableAnnuityPayload.
+
+        The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.  # noqa: E501
+
+        :param result_type: The result_type of this VariableAnnuityPayload.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["mean", "median", "custom"]  # noqa: E501
+        if result_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `result_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(result_type, allowed_values)
+            )
+
+        self._result_type = result_type
+
+    @property
+    def p(self):
+        """Gets the p of this VariableAnnuityPayload.  # noqa: E501
+
+        A result percentile to output, applicable when result_type is custom. Must be between 0 and 100 inclusive. Defaults to 50.  # noqa: E501
+
+        :return: The p of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: float
+        """
+        return self._p
+
+    @p.setter
+    def p(self, p):
+        """Sets the p of this VariableAnnuityPayload.
+
+        A result percentile to output, applicable when result_type is custom. Must be between 0 and 100 inclusive. Defaults to 50.  # noqa: E501
+
+        :param p: The p of this VariableAnnuityPayload.  # noqa: E501
+        :type: float
+        """
+        if p is not None and p > 100:  # noqa: E501
+            raise ValueError("Invalid value for `p`, must be a value less than or equal to `100`")  # noqa: E501
+        if p is not None and p < 0:  # noqa: E501
+            raise ValueError("Invalid value for `p`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._p = p
+
+    @property
+    def remove_outliers(self):
+        """Gets the remove_outliers of this VariableAnnuityPayload.  # noqa: E501
+
+        If true, remove outlying results. If true, outlier analysis is performed on a median absolute deviation (MAD) basis, at the 2.5 threshold. Defaults to false.  # noqa: E501
+
+        :return: The remove_outliers of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._remove_outliers
+
+    @remove_outliers.setter
+    def remove_outliers(self, remove_outliers):
+        """Sets the remove_outliers of this VariableAnnuityPayload.
+
+        If true, remove outlying results. If true, outlier analysis is performed on a median absolute deviation (MAD) basis, at the 2.5 threshold. Defaults to false.  # noqa: E501
+
+        :param remove_outliers: The remove_outliers of this VariableAnnuityPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._remove_outliers = remove_outliers
+
+    @property
+    def start_date(self):
+        """Gets the start_date of this VariableAnnuityPayload.  # noqa: E501
+
+        Start date used for ticker price history. Defaults to the earliest common date among portfolio_tickers prices.  # noqa: E501
+
+        :return: The start_date of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this VariableAnnuityPayload.
+
+        Start date used for ticker price history. Defaults to the earliest common date among portfolio_tickers prices.  # noqa: E501
+
+        :param start_date: The start_date of this VariableAnnuityPayload.  # noqa: E501
+        :type: date
+        """
+
+        self._start_date = start_date
+
+    @property
+    def end_date(self):
+        """Gets the end_date of this VariableAnnuityPayload.  # noqa: E501
+
+        End date used for ticker price history. Defaults to the latest common date among portfolio_tickers prices.  # noqa: E501
+
+        :return: The end_date of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this VariableAnnuityPayload.
+
+        End date used for ticker price history. Defaults to the latest common date among portfolio_tickers prices.  # noqa: E501
+
+        :param end_date: The end_date of this VariableAnnuityPayload.  # noqa: E501
+        :type: date
+        """
+
+        self._end_date = end_date
+
+    @property
+    def trading_days_per_year(self):
+        """Gets the trading_days_per_year of this VariableAnnuityPayload.  # noqa: E501
+
+        The number of days per year for which a portfolio is subject to market fluctuation. Defaults to 252.  # noqa: E501
+
+        :return: The trading_days_per_year of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: int
+        """
+        return self._trading_days_per_year
+
+    @trading_days_per_year.setter
+    def trading_days_per_year(self, trading_days_per_year):
+        """Sets the trading_days_per_year of this VariableAnnuityPayload.
+
+        The number of days per year for which a portfolio is subject to market fluctuation. Defaults to 252.  # noqa: E501
+
+        :param trading_days_per_year: The trading_days_per_year of this VariableAnnuityPayload.  # noqa: E501
+        :type: int
+        """
+        if trading_days_per_year is not None and trading_days_per_year > 365:  # noqa: E501
+            raise ValueError("Invalid value for `trading_days_per_year`, must be a value less than or equal to `365`")  # noqa: E501
+        if trading_days_per_year is not None and trading_days_per_year < 1:  # noqa: E501
+            raise ValueError("Invalid value for `trading_days_per_year`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._trading_days_per_year = trading_days_per_year
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this VariableAnnuityPayload.  # noqa: E501
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :return: The use_proxy_data of this VariableAnnuityPayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this VariableAnnuityPayload.
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :param use_proxy_data: The use_proxy_data of this VariableAnnuityPayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

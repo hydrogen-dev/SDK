@@ -31,7 +31,7 @@ import org.threeten.bp.LocalDate;
 /**
  * WhatIfPortfolio
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class WhatIfPortfolio {
   @SerializedName("current_portfolio_tickers")
   private List<String> currentPortfolioTickers = new ArrayList<String>();
@@ -50,6 +50,9 @@ public class WhatIfPortfolio {
 
   @SerializedName("end_date")
   private LocalDate endDate = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   public WhatIfPortfolio currentPortfolioTickers(List<String> currentPortfolioTickers) {
     this.currentPortfolioTickers = currentPortfolioTickers;
@@ -182,6 +185,24 @@ public class WhatIfPortfolio {
     this.endDate = endDate;
   }
 
+  public WhatIfPortfolio useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -197,12 +218,13 @@ public class WhatIfPortfolio {
         Objects.equals(this.alteredPortfolioTickers, whatIfPortfolio.alteredPortfolioTickers) &&
         Objects.equals(this.alteredPortfolioWeights, whatIfPortfolio.alteredPortfolioWeights) &&
         Objects.equals(this.startDate, whatIfPortfolio.startDate) &&
-        Objects.equals(this.endDate, whatIfPortfolio.endDate);
+        Objects.equals(this.endDate, whatIfPortfolio.endDate) &&
+        Objects.equals(this.useProxyData, whatIfPortfolio.useProxyData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currentPortfolioTickers, currentPortfolioWeights, alteredPortfolioTickers, alteredPortfolioWeights, startDate, endDate);
+    return Objects.hash(currentPortfolioTickers, currentPortfolioWeights, alteredPortfolioTickers, alteredPortfolioWeights, startDate, endDate, useProxyData);
   }
 
 
@@ -217,6 +239,7 @@ public class WhatIfPortfolio {
     sb.append("    alteredPortfolioWeights: ").append(toIndentedString(alteredPortfolioWeights)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

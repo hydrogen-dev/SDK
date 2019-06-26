@@ -2,7 +2,7 @@
 
 Hydrogen Atom API
 - API version: 1.0.1
-  - Build date: 2019-06-14T14:44:02.139-04:00
+  - Build date: 2019-06-26T19:23:27.650-04:00
 
 The Hydrogen Atom API
 
@@ -608,6 +608,7 @@ Class | Method | HTTP request | Description
  - [GoalTransactionsResponseContent](docs/GoalTransactionsResponseContent.md)
  - [GoalWeightConfig](docs/GoalWeightConfig.md)
  - [GoalWithdrawalConfig](docs/GoalWithdrawalConfig.md)
+ - [GuaranteedRateBenefitSubpayload](docs/GuaranteedRateBenefitSubpayload.md)
  - [HealthCheckResponse](docs/HealthCheckResponse.md)
  - [HealthCheckResult](docs/HealthCheckResult.md)
  - [HoldingsDetail](docs/HoldingsDetail.md)

@@ -99,6 +99,84 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property inflationRate (base name: "inflation_rate")', function() {
+      // uncomment below and update the code to test the property inflationRate
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxRate (base name: "tax_rate")', function() {
+      // uncomment below and update the code to test the property taxRate
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property annuitizationRate (base name: "annuitization_rate")', function() {
+      // uncomment below and update the code to test the property annuitizationRate
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property guaranteedRateBenefit (base name: "guaranteed_rate_benefit")', function() {
+      // uncomment below and update the code to test the property guaranteedRateBenefit
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property guaranteedAccumulationBenefit (base name: "guaranteed_accumulation_benefit")', function() {
+      // uncomment below and update the code to test the property guaranteedAccumulationBenefit
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property n (base name: "n")', function() {
+      // uncomment below and update the code to test the property n
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property resultType (base name: "result_type")', function() {
+      // uncomment below and update the code to test the property resultType
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property p (base name: "p")', function() {
+      // uncomment below and update the code to test the property p
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property removeOutliers (base name: "remove_outliers")', function() {
+      // uncomment below and update the code to test the property removeOutliers
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property startDate (base name: "start_date")', function() {
+      // uncomment below and update the code to test the property startDate
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property endDate (base name: "end_date")', function() {
+      // uncomment below and update the code to test the property endDate
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tradingDaysPerYear (base name: "trading_days_per_year")', function() {
+      // uncomment below and update the code to test the property tradingDaysPerYear
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property useProxyData (base name: "use_proxy_data")', function() {
+      // uncomment below and update the code to test the property useProxyData
+      //var instance = new atom_api.VariableAnnuityPayload();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

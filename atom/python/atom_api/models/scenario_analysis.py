@@ -39,7 +39,8 @@ class ScenarioAnalysis(object):
         'scenario': 'list[SensitivityFactor]',
         'start_date': 'date',
         'end_date': 'date',
-        'trading_days_per_year': 'int'
+        'trading_days_per_year': 'int',
+        'use_proxy_data': 'bool'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class ScenarioAnalysis(object):
         'scenario': 'scenario',
         'start_date': 'start_date',
         'end_date': 'end_date',
-        'trading_days_per_year': 'trading_days_per_year'
+        'trading_days_per_year': 'trading_days_per_year',
+        'use_proxy_data': 'use_proxy_data'
     }
 
-    def __init__(self, portfolio_tickers=None, portfolio_weights=None, frequency_interval=None, scenario=None, start_date=None, end_date=None, trading_days_per_year=None):  # noqa: E501
+    def __init__(self, portfolio_tickers=None, portfolio_weights=None, frequency_interval=None, scenario=None, start_date=None, end_date=None, trading_days_per_year=None, use_proxy_data=False):  # noqa: E501
         """ScenarioAnalysis - a model defined in Swagger"""  # noqa: E501
 
         self._portfolio_tickers = None
@@ -62,6 +64,7 @@ class ScenarioAnalysis(object):
         self._start_date = None
         self._end_date = None
         self._trading_days_per_year = None
+        self._use_proxy_data = None
         self.discriminator = None
 
         self.portfolio_tickers = portfolio_tickers
@@ -74,6 +77,8 @@ class ScenarioAnalysis(object):
             self.end_date = end_date
         if trading_days_per_year is not None:
             self.trading_days_per_year = trading_days_per_year
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
 
     @property
     def portfolio_tickers(self):
@@ -247,6 +252,29 @@ class ScenarioAnalysis(object):
             raise ValueError("Invalid value for `trading_days_per_year`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._trading_days_per_year = trading_days_per_year
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this ScenarioAnalysis.  # noqa: E501
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :return: The use_proxy_data of this ScenarioAnalysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this ScenarioAnalysis.
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :param use_proxy_data: The use_proxy_data of this ScenarioAnalysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

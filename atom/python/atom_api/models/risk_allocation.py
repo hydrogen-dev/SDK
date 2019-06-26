@@ -36,23 +36,26 @@ class RiskAllocation(object):
         'risk_score': 'float',
         'allocation_method': 'str',
         'opt_config': 'RiskScoreOptConfigModel',
-        'allocations': 'list[str]'
+        'allocations': 'list[str]',
+        'use_proxy_data': 'bool'
     }
 
     attribute_map = {
         'risk_score': 'risk_score',
         'allocation_method': 'allocation_method',
         'opt_config': 'opt_config',
-        'allocations': 'allocations'
+        'allocations': 'allocations',
+        'use_proxy_data': 'use_proxy_data'
     }
 
-    def __init__(self, risk_score=None, allocation_method=None, opt_config=None, allocations=None):  # noqa: E501
+    def __init__(self, risk_score=None, allocation_method=None, opt_config=None, allocations=None, use_proxy_data=False):  # noqa: E501
         """RiskAllocation - a model defined in Swagger"""  # noqa: E501
 
         self._risk_score = None
         self._allocation_method = None
         self._opt_config = None
         self._allocations = None
+        self._use_proxy_data = None
         self.discriminator = None
 
         self.risk_score = risk_score
@@ -61,6 +64,8 @@ class RiskAllocation(object):
             self.opt_config = opt_config
         if allocations is not None:
             self.allocations = allocations
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
 
     @property
     def risk_score(self):
@@ -165,6 +170,29 @@ class RiskAllocation(object):
         """
 
         self._allocations = allocations
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this RiskAllocation.  # noqa: E501
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :return: The use_proxy_data of this RiskAllocation.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this RiskAllocation.
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :param use_proxy_data: The use_proxy_data of this RiskAllocation.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

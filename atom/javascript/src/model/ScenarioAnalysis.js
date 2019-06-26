@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       }
       if (data.hasOwnProperty('trading_days_per_year')) {
         obj['trading_days_per_year'] = ApiClient.convertToType(data['trading_days_per_year'], 'Number');
+      }
+      if (data.hasOwnProperty('use_proxy_data')) {
+        obj['use_proxy_data'] = ApiClient.convertToType(data['use_proxy_data'], 'Boolean');
       }
     }
     return obj;
@@ -130,6 +134,12 @@
    * @member {Number} trading_days_per_year
    */
   exports.prototype['trading_days_per_year'] = undefined;
+  /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @member {Boolean} use_proxy_data
+   * @default false
+   */
+  exports.prototype['use_proxy_data'] = false;
 
 
   /**

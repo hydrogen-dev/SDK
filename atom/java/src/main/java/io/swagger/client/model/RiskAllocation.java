@@ -32,7 +32,7 @@ import java.util.UUID;
 /**
  * RiskAllocation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class RiskAllocation {
   @SerializedName("risk_score")
   private BigDecimal riskScore = null;
@@ -92,6 +92,9 @@ public class RiskAllocation {
 
   @SerializedName("allocations")
   private List<UUID> allocations = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   public RiskAllocation riskScore(BigDecimal riskScore) {
     this.riskScore = riskScore;
@@ -175,6 +178,24 @@ public class RiskAllocation {
     this.allocations = allocations;
   }
 
+  public RiskAllocation useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -188,12 +209,13 @@ public class RiskAllocation {
     return Objects.equals(this.riskScore, riskAllocation.riskScore) &&
         Objects.equals(this.allocationMethod, riskAllocation.allocationMethod) &&
         Objects.equals(this.optConfig, riskAllocation.optConfig) &&
-        Objects.equals(this.allocations, riskAllocation.allocations);
+        Objects.equals(this.allocations, riskAllocation.allocations) &&
+        Objects.equals(this.useProxyData, riskAllocation.useProxyData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(riskScore, allocationMethod, optConfig, allocations);
+    return Objects.hash(riskScore, allocationMethod, optConfig, allocations, useProxyData);
   }
 
 
@@ -206,6 +228,7 @@ public class RiskAllocation {
     sb.append("    allocationMethod: ").append(toIndentedString(allocationMethod)).append("\n");
     sb.append("    optConfig: ").append(toIndentedString(optConfig)).append("\n");
     sb.append("    allocations: ").append(toIndentedString(allocations)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

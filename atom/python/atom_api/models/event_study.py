@@ -33,27 +33,32 @@ class EventStudy(object):
     swagger_types = {
         'portfolio_tickers': 'list[str]',
         'portfolio_weights': 'list[float]',
-        'events': 'list[str]'
+        'events': 'list[str]',
+        'use_proxy_data': 'bool'
     }
 
     attribute_map = {
         'portfolio_tickers': 'portfolio_tickers',
         'portfolio_weights': 'portfolio_weights',
-        'events': 'events'
+        'events': 'events',
+        'use_proxy_data': 'use_proxy_data'
     }
 
-    def __init__(self, portfolio_tickers=None, portfolio_weights=None, events=None):  # noqa: E501
+    def __init__(self, portfolio_tickers=None, portfolio_weights=None, events=None, use_proxy_data=False):  # noqa: E501
         """EventStudy - a model defined in Swagger"""  # noqa: E501
 
         self._portfolio_tickers = None
         self._portfolio_weights = None
         self._events = None
+        self._use_proxy_data = None
         self.discriminator = None
 
         self.portfolio_tickers = portfolio_tickers
         self.portfolio_weights = portfolio_weights
         if events is not None:
             self.events = events
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
 
     @property
     def portfolio_tickers(self):
@@ -134,6 +139,29 @@ class EventStudy(object):
             )
 
         self._events = events
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this EventStudy.  # noqa: E501
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :return: The use_proxy_data of this EventStudy.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this EventStudy.
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :param use_proxy_data: The use_proxy_data of this EventStudy.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,6 +34,67 @@ module AtomApi
 
     attr_accessor :deposit_schedule
 
+    # The annualized rate of inflation. Defaults to 0.
+    attr_accessor :inflation_rate
+
+    # The tax rate applied to annuity payouts. Defaults to 0.
+    attr_accessor :tax_rate
+
+    # The discount rate used to calculate annuity payout amounts during decumulation_horizon. Defaults to 0.
+    attr_accessor :annuitization_rate
+
+    # Boundaries enforced on the plan's rate of return.
+    attr_accessor :guaranteed_rate_benefit
+
+    # A guaranteed lower bound for the plan balance at the end of accumulation_horizon.
+    attr_accessor :guaranteed_accumulation_benefit
+
+    # The number of Monte Carlo simulations to run. Defaults to 1000.
+    attr_accessor :n
+
+    # The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.
+    attr_accessor :result_type
+
+    # A result percentile to output, applicable when result_type is custom. Must be between 0 and 100 inclusive. Defaults to 50.
+    attr_accessor :p
+
+    # If true, remove outlying results. If true, outlier analysis is performed on a median absolute deviation (MAD) basis, at the 2.5 threshold. Defaults to false.
+    attr_accessor :remove_outliers
+
+    # Start date used for ticker price history. Defaults to the earliest common date among portfolio_tickers prices.
+    attr_accessor :start_date
+
+    # End date used for ticker price history. Defaults to the latest common date among portfolio_tickers prices.
+    attr_accessor :end_date
+
+    # The number of days per year for which a portfolio is subject to market fluctuation. Defaults to 252.
+    attr_accessor :trading_days_per_year
+
+    # If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+    attr_accessor :use_proxy_data
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -43,7 +104,20 @@ module AtomApi
         :'decumulation_horizon' => :'decumulation_horizon',
         :'initial_balance' => :'initial_balance',
         :'frequency_interval' => :'frequency_interval',
-        :'deposit_schedule' => :'deposit_schedule'
+        :'deposit_schedule' => :'deposit_schedule',
+        :'inflation_rate' => :'inflation_rate',
+        :'tax_rate' => :'tax_rate',
+        :'annuitization_rate' => :'annuitization_rate',
+        :'guaranteed_rate_benefit' => :'guaranteed_rate_benefit',
+        :'guaranteed_accumulation_benefit' => :'guaranteed_accumulation_benefit',
+        :'n' => :'n',
+        :'result_type' => :'result_type',
+        :'p' => :'p',
+        :'remove_outliers' => :'remove_outliers',
+        :'start_date' => :'start_date',
+        :'end_date' => :'end_date',
+        :'trading_days_per_year' => :'trading_days_per_year',
+        :'use_proxy_data' => :'use_proxy_data'
       }
     end
 
@@ -56,7 +130,20 @@ module AtomApi
         :'decumulation_horizon' => :'Integer',
         :'initial_balance' => :'Float',
         :'frequency_interval' => :'String',
-        :'deposit_schedule' => :'AnnuityDepositSchedule'
+        :'deposit_schedule' => :'AnnuityDepositSchedule',
+        :'inflation_rate' => :'Float',
+        :'tax_rate' => :'Float',
+        :'annuitization_rate' => :'Float',
+        :'guaranteed_rate_benefit' => :'Array<GuaranteedRateBenefitSubpayload>',
+        :'guaranteed_accumulation_benefit' => :'Float',
+        :'n' => :'Integer',
+        :'result_type' => :'String',
+        :'p' => :'Float',
+        :'remove_outliers' => :'BOOLEAN',
+        :'start_date' => :'Date',
+        :'end_date' => :'Date',
+        :'trading_days_per_year' => :'Integer',
+        :'use_proxy_data' => :'BOOLEAN'
       }
     end
 
@@ -99,6 +186,66 @@ module AtomApi
       if attributes.has_key?(:'deposit_schedule')
         self.deposit_schedule = attributes[:'deposit_schedule']
       end
+
+      if attributes.has_key?(:'inflation_rate')
+        self.inflation_rate = attributes[:'inflation_rate']
+      end
+
+      if attributes.has_key?(:'tax_rate')
+        self.tax_rate = attributes[:'tax_rate']
+      end
+
+      if attributes.has_key?(:'annuitization_rate')
+        self.annuitization_rate = attributes[:'annuitization_rate']
+      end
+
+      if attributes.has_key?(:'guaranteed_rate_benefit')
+        if (value = attributes[:'guaranteed_rate_benefit']).is_a?(Array)
+          self.guaranteed_rate_benefit = value
+        end
+      end
+
+      if attributes.has_key?(:'guaranteed_accumulation_benefit')
+        self.guaranteed_accumulation_benefit = attributes[:'guaranteed_accumulation_benefit']
+      end
+
+      if attributes.has_key?(:'n')
+        self.n = attributes[:'n']
+      end
+
+      if attributes.has_key?(:'result_type')
+        self.result_type = attributes[:'result_type']
+      else
+        self.result_type = 'median'
+      end
+
+      if attributes.has_key?(:'p')
+        self.p = attributes[:'p']
+      end
+
+      if attributes.has_key?(:'remove_outliers')
+        self.remove_outliers = attributes[:'remove_outliers']
+      else
+        self.remove_outliers = false
+      end
+
+      if attributes.has_key?(:'start_date')
+        self.start_date = attributes[:'start_date']
+      end
+
+      if attributes.has_key?(:'end_date')
+        self.end_date = attributes[:'end_date']
+      end
+
+      if attributes.has_key?(:'trading_days_per_year')
+        self.trading_days_per_year = attributes[:'trading_days_per_year']
+      end
+
+      if attributes.has_key?(:'use_proxy_data')
+        self.use_proxy_data = attributes[:'use_proxy_data']
+      else
+        self.use_proxy_data = false
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -129,6 +276,38 @@ module AtomApi
         invalid_properties.push('invalid value for "initial_balance", must be greater than or equal to 0.')
       end
 
+      if !@inflation_rate.nil? && @inflation_rate < -1
+        invalid_properties.push('invalid value for "inflation_rate", must be greater than or equal to -1.')
+      end
+
+      if !@tax_rate.nil? && @tax_rate >= 1
+        invalid_properties.push('invalid value for "tax_rate", must be smaller than 1.')
+      end
+
+      if !@tax_rate.nil? && @tax_rate < 0
+        invalid_properties.push('invalid value for "tax_rate", must be greater than or equal to 0.')
+      end
+
+      if !@guaranteed_accumulation_benefit.nil? && @guaranteed_accumulation_benefit < 0
+        invalid_properties.push('invalid value for "guaranteed_accumulation_benefit", must be greater than or equal to 0.')
+      end
+
+      if !@p.nil? && @p > 100
+        invalid_properties.push('invalid value for "p", must be smaller than or equal to 100.')
+      end
+
+      if !@p.nil? && @p < 0
+        invalid_properties.push('invalid value for "p", must be greater than or equal to 0.')
+      end
+
+      if !@trading_days_per_year.nil? && @trading_days_per_year > 365
+        invalid_properties.push('invalid value for "trading_days_per_year", must be smaller than or equal to 365.')
+      end
+
+      if !@trading_days_per_year.nil? && @trading_days_per_year < 1
+        invalid_properties.push('invalid value for "trading_days_per_year", must be greater than or equal to 1.')
+      end
+
       invalid_properties
     end
 
@@ -141,6 +320,16 @@ module AtomApi
       return false if @decumulation_horizon.nil?
       return false if @initial_balance.nil?
       return false if @initial_balance < 0
+      return false if !@inflation_rate.nil? && @inflation_rate < -1
+      return false if !@tax_rate.nil? && @tax_rate >= 1
+      return false if !@tax_rate.nil? && @tax_rate < 0
+      return false if !@guaranteed_accumulation_benefit.nil? && @guaranteed_accumulation_benefit < 0
+      result_type_validator = EnumAttributeValidator.new('String', ['mean', 'median', 'custom'])
+      return false unless result_type_validator.valid?(@result_type)
+      return false if !@p.nil? && @p > 100
+      return false if !@p.nil? && @p < 0
+      return false if !@trading_days_per_year.nil? && @trading_days_per_year > 365
+      return false if !@trading_days_per_year.nil? && @trading_days_per_year < 1
       true
     end
 
@@ -158,6 +347,78 @@ module AtomApi
       @initial_balance = initial_balance
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] inflation_rate Value to be assigned
+    def inflation_rate=(inflation_rate)
+      if !inflation_rate.nil? && inflation_rate < -1
+        fail ArgumentError, 'invalid value for "inflation_rate", must be greater than or equal to -1.'
+      end
+
+      @inflation_rate = inflation_rate
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] tax_rate Value to be assigned
+    def tax_rate=(tax_rate)
+      if !tax_rate.nil? && tax_rate >= 1
+        fail ArgumentError, 'invalid value for "tax_rate", must be smaller than 1.'
+      end
+
+      if !tax_rate.nil? && tax_rate < 0
+        fail ArgumentError, 'invalid value for "tax_rate", must be greater than or equal to 0.'
+      end
+
+      @tax_rate = tax_rate
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] guaranteed_accumulation_benefit Value to be assigned
+    def guaranteed_accumulation_benefit=(guaranteed_accumulation_benefit)
+      if !guaranteed_accumulation_benefit.nil? && guaranteed_accumulation_benefit < 0
+        fail ArgumentError, 'invalid value for "guaranteed_accumulation_benefit", must be greater than or equal to 0.'
+      end
+
+      @guaranteed_accumulation_benefit = guaranteed_accumulation_benefit
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] result_type Object to be assigned
+    def result_type=(result_type)
+      validator = EnumAttributeValidator.new('String', ['mean', 'median', 'custom'])
+      unless validator.valid?(result_type)
+        fail ArgumentError, 'invalid value for "result_type", must be one of #{validator.allowable_values}.'
+      end
+      @result_type = result_type
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] p Value to be assigned
+    def p=(p)
+      if !p.nil? && p > 100
+        fail ArgumentError, 'invalid value for "p", must be smaller than or equal to 100.'
+      end
+
+      if !p.nil? && p < 0
+        fail ArgumentError, 'invalid value for "p", must be greater than or equal to 0.'
+      end
+
+      @p = p
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] trading_days_per_year Value to be assigned
+    def trading_days_per_year=(trading_days_per_year)
+      if !trading_days_per_year.nil? && trading_days_per_year > 365
+        fail ArgumentError, 'invalid value for "trading_days_per_year", must be smaller than or equal to 365.'
+      end
+
+      if !trading_days_per_year.nil? && trading_days_per_year < 1
+        fail ArgumentError, 'invalid value for "trading_days_per_year", must be greater than or equal to 1.'
+      end
+
+      @trading_days_per_year = trading_days_per_year
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -169,7 +430,20 @@ module AtomApi
           decumulation_horizon == o.decumulation_horizon &&
           initial_balance == o.initial_balance &&
           frequency_interval == o.frequency_interval &&
-          deposit_schedule == o.deposit_schedule
+          deposit_schedule == o.deposit_schedule &&
+          inflation_rate == o.inflation_rate &&
+          tax_rate == o.tax_rate &&
+          annuitization_rate == o.annuitization_rate &&
+          guaranteed_rate_benefit == o.guaranteed_rate_benefit &&
+          guaranteed_accumulation_benefit == o.guaranteed_accumulation_benefit &&
+          n == o.n &&
+          result_type == o.result_type &&
+          p == o.p &&
+          remove_outliers == o.remove_outliers &&
+          start_date == o.start_date &&
+          end_date == o.end_date &&
+          trading_days_per_year == o.trading_days_per_year &&
+          use_proxy_data == o.use_proxy_data
     end
 
     # @see the `==` method
@@ -181,7 +455,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [portfolio_tickers, portfolio_weights, accumulation_horizon, decumulation_horizon, initial_balance, frequency_interval, deposit_schedule].hash
+      [portfolio_tickers, portfolio_weights, accumulation_horizon, decumulation_horizon, initial_balance, frequency_interval, deposit_schedule, inflation_rate, tax_rate, annuitization_rate, guaranteed_rate_benefit, guaranteed_accumulation_benefit, n, result_type, p, remove_outliers, start_date, end_date, trading_days_per_year, use_proxy_data].hash
     end
 
     # Builds the object from hash

@@ -56,7 +56,8 @@ class GoalAccumulationAllocation(object):
         'trading_days_per_year': 'int',
         'risk_score': 'int',
         'adjust_for_compounding': 'bool',
-        'compounding_rate': 'float'
+        'compounding_rate': 'float',
+        'use_proxy_data': 'bool'
     }
 
     attribute_map = {
@@ -80,10 +81,11 @@ class GoalAccumulationAllocation(object):
         'trading_days_per_year': 'trading_days_per_year',
         'risk_score': 'risk_score',
         'adjust_for_compounding': 'adjust_for_compounding',
-        'compounding_rate': 'compounding_rate'
+        'compounding_rate': 'compounding_rate',
+        'use_proxy_data': 'use_proxy_data'
     }
 
-    def __init__(self, allocation_method=None, allocation_priority=None, opt_config=None, allocations=None, curr_inv=None, horizon=None, horizon_frequency=None, goal_config=None, deposit_config=None, recommendation_config=None, recommend_type='horizon', conf_tgt=None, n=None, remove_outliers=True, thresh_type='perc', thresh=None, withdrawal_tax=None, trading_days_per_year=None, risk_score=None, adjust_for_compounding=False, compounding_rate=None):  # noqa: E501
+    def __init__(self, allocation_method=None, allocation_priority=None, opt_config=None, allocations=None, curr_inv=None, horizon=None, horizon_frequency=None, goal_config=None, deposit_config=None, recommendation_config=None, recommend_type='horizon', conf_tgt=None, n=None, remove_outliers=True, thresh_type='perc', thresh=None, withdrawal_tax=None, trading_days_per_year=None, risk_score=None, adjust_for_compounding=False, compounding_rate=None, use_proxy_data=False):  # noqa: E501
         """GoalAccumulationAllocation - a model defined in Swagger"""  # noqa: E501
 
         self._allocation_method = None
@@ -107,6 +109,7 @@ class GoalAccumulationAllocation(object):
         self._risk_score = None
         self._adjust_for_compounding = None
         self._compounding_rate = None
+        self._use_proxy_data = None
         self.discriminator = None
 
         self.allocation_method = allocation_method
@@ -145,6 +148,8 @@ class GoalAccumulationAllocation(object):
             self.adjust_for_compounding = adjust_for_compounding
         if compounding_rate is not None:
             self.compounding_rate = compounding_rate
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
 
     @property
     def allocation_method(self):
@@ -690,6 +695,29 @@ class GoalAccumulationAllocation(object):
         """
 
         self._compounding_rate = compounding_rate
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this GoalAccumulationAllocation.  # noqa: E501
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :return: The use_proxy_data of this GoalAccumulationAllocation.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this GoalAccumulationAllocation.
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :param use_proxy_data: The use_proxy_data of this GoalAccumulationAllocation.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

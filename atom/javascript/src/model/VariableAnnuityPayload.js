@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AnnuityDepositSchedule'], factory);
+    define(['ApiClient', 'model/AnnuityDepositSchedule', 'model/GuaranteedRateBenefitSubpayload'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AnnuityDepositSchedule'));
+    module.exports = factory(require('../ApiClient'), require('./AnnuityDepositSchedule'), require('./GuaranteedRateBenefitSubpayload'));
   } else {
     // Browser globals (root is window)
     if (!root.atom_api) {
       root.atom_api = {};
     }
-    root.atom_api.VariableAnnuityPayload = factory(root.atom_api.ApiClient, root.atom_api.AnnuityDepositSchedule);
+    root.atom_api.VariableAnnuityPayload = factory(root.atom_api.ApiClient, root.atom_api.AnnuityDepositSchedule, root.atom_api.GuaranteedRateBenefitSubpayload);
   }
-}(this, function(ApiClient, AnnuityDepositSchedule) {
+}(this, function(ApiClient, AnnuityDepositSchedule, GuaranteedRateBenefitSubpayload) {
   'use strict';
 
 
@@ -58,6 +58,19 @@
     _this['accumulation_horizon'] = accumulationHorizon;
     _this['decumulation_horizon'] = decumulationHorizon;
     _this['initial_balance'] = initialBalance;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   };
@@ -93,6 +106,45 @@
       }
       if (data.hasOwnProperty('deposit_schedule')) {
         obj['deposit_schedule'] = AnnuityDepositSchedule.constructFromObject(data['deposit_schedule']);
+      }
+      if (data.hasOwnProperty('inflation_rate')) {
+        obj['inflation_rate'] = ApiClient.convertToType(data['inflation_rate'], 'Number');
+      }
+      if (data.hasOwnProperty('tax_rate')) {
+        obj['tax_rate'] = ApiClient.convertToType(data['tax_rate'], 'Number');
+      }
+      if (data.hasOwnProperty('annuitization_rate')) {
+        obj['annuitization_rate'] = ApiClient.convertToType(data['annuitization_rate'], 'Number');
+      }
+      if (data.hasOwnProperty('guaranteed_rate_benefit')) {
+        obj['guaranteed_rate_benefit'] = ApiClient.convertToType(data['guaranteed_rate_benefit'], [GuaranteedRateBenefitSubpayload]);
+      }
+      if (data.hasOwnProperty('guaranteed_accumulation_benefit')) {
+        obj['guaranteed_accumulation_benefit'] = ApiClient.convertToType(data['guaranteed_accumulation_benefit'], 'Number');
+      }
+      if (data.hasOwnProperty('n')) {
+        obj['n'] = ApiClient.convertToType(data['n'], 'Number');
+      }
+      if (data.hasOwnProperty('result_type')) {
+        obj['result_type'] = ApiClient.convertToType(data['result_type'], 'String');
+      }
+      if (data.hasOwnProperty('p')) {
+        obj['p'] = ApiClient.convertToType(data['p'], 'Number');
+      }
+      if (data.hasOwnProperty('remove_outliers')) {
+        obj['remove_outliers'] = ApiClient.convertToType(data['remove_outliers'], 'Boolean');
+      }
+      if (data.hasOwnProperty('start_date')) {
+        obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Date');
+      }
+      if (data.hasOwnProperty('end_date')) {
+        obj['end_date'] = ApiClient.convertToType(data['end_date'], 'Date');
+      }
+      if (data.hasOwnProperty('trading_days_per_year')) {
+        obj['trading_days_per_year'] = ApiClient.convertToType(data['trading_days_per_year'], 'Number');
+      }
+      if (data.hasOwnProperty('use_proxy_data')) {
+        obj['use_proxy_data'] = ApiClient.convertToType(data['use_proxy_data'], 'Boolean');
       }
     }
     return obj;
@@ -132,7 +184,97 @@
    * @member {module:model/AnnuityDepositSchedule} deposit_schedule
    */
   exports.prototype['deposit_schedule'] = undefined;
+  /**
+   * The annualized rate of inflation. Defaults to 0.
+   * @member {Number} inflation_rate
+   */
+  exports.prototype['inflation_rate'] = undefined;
+  /**
+   * The tax rate applied to annuity payouts. Defaults to 0.
+   * @member {Number} tax_rate
+   */
+  exports.prototype['tax_rate'] = undefined;
+  /**
+   * The discount rate used to calculate annuity payout amounts during decumulation_horizon. Defaults to 0.
+   * @member {Number} annuitization_rate
+   */
+  exports.prototype['annuitization_rate'] = undefined;
+  /**
+   * Boundaries enforced on the plan's rate of return.
+   * @member {Array.<module:model/GuaranteedRateBenefitSubpayload>} guaranteed_rate_benefit
+   */
+  exports.prototype['guaranteed_rate_benefit'] = undefined;
+  /**
+   * A guaranteed lower bound for the plan balance at the end of accumulation_horizon.
+   * @member {Number} guaranteed_accumulation_benefit
+   */
+  exports.prototype['guaranteed_accumulation_benefit'] = undefined;
+  /**
+   * The number of Monte Carlo simulations to run. Defaults to 1000.
+   * @member {Number} n
+   */
+  exports.prototype['n'] = undefined;
+  /**
+   * The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.
+   * @member {module:model/VariableAnnuityPayload.ResultTypeEnum} result_type
+   * @default 'median'
+   */
+  exports.prototype['result_type'] = 'median';
+  /**
+   * A result percentile to output, applicable when result_type is custom. Must be between 0 and 100 inclusive. Defaults to 50.
+   * @member {Number} p
+   */
+  exports.prototype['p'] = undefined;
+  /**
+   * If true, remove outlying results. If true, outlier analysis is performed on a median absolute deviation (MAD) basis, at the 2.5 threshold. Defaults to false.
+   * @member {Boolean} remove_outliers
+   * @default false
+   */
+  exports.prototype['remove_outliers'] = false;
+  /**
+   * Start date used for ticker price history. Defaults to the earliest common date among portfolio_tickers prices.
+   * @member {Date} start_date
+   */
+  exports.prototype['start_date'] = undefined;
+  /**
+   * End date used for ticker price history. Defaults to the latest common date among portfolio_tickers prices.
+   * @member {Date} end_date
+   */
+  exports.prototype['end_date'] = undefined;
+  /**
+   * The number of days per year for which a portfolio is subject to market fluctuation. Defaults to 252.
+   * @member {Number} trading_days_per_year
+   */
+  exports.prototype['trading_days_per_year'] = undefined;
+  /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @member {Boolean} use_proxy_data
+   * @default false
+   */
+  exports.prototype['use_proxy_data'] = false;
 
+
+  /**
+   * Allowed values for the <code>result_type</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.ResultTypeEnum = {
+    /**
+     * value: "mean"
+     * @const
+     */
+    "mean": "mean",
+    /**
+     * value: "median"
+     * @const
+     */
+    "median": "median",
+    /**
+     * value: "custom"
+     * @const
+     */
+    "custom": "custom"  };
 
 
   return exports;

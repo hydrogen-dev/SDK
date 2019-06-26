@@ -77,6 +77,9 @@ module AtomApi
     # The annualized rate to use when approximating a compounding effect on deposits. This value must be defined and adjust_for_compounding must be true in order to activate compounding adjustment. Defaults to 0.
     attr_accessor :compounding_rate
 
+    # If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+    attr_accessor :use_proxy_data
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -123,7 +126,8 @@ module AtomApi
         :'trading_days_per_year' => :'trading_days_per_year',
         :'risk_score' => :'risk_score',
         :'adjust_for_compounding' => :'adjust_for_compounding',
-        :'compounding_rate' => :'compounding_rate'
+        :'compounding_rate' => :'compounding_rate',
+        :'use_proxy_data' => :'use_proxy_data'
       }
     end
 
@@ -151,7 +155,8 @@ module AtomApi
         :'trading_days_per_year' => :'Integer',
         :'risk_score' => :'Integer',
         :'adjust_for_compounding' => :'BOOLEAN',
-        :'compounding_rate' => :'Float'
+        :'compounding_rate' => :'Float',
+        :'use_proxy_data' => :'BOOLEAN'
       }
     end
 
@@ -263,6 +268,12 @@ module AtomApi
 
       if attributes.has_key?(:'compounding_rate')
         self.compounding_rate = attributes[:'compounding_rate']
+      end
+
+      if attributes.has_key?(:'use_proxy_data')
+        self.use_proxy_data = attributes[:'use_proxy_data']
+      else
+        self.use_proxy_data = false
       end
     end
 
@@ -610,7 +621,8 @@ module AtomApi
           trading_days_per_year == o.trading_days_per_year &&
           risk_score == o.risk_score &&
           adjust_for_compounding == o.adjust_for_compounding &&
-          compounding_rate == o.compounding_rate
+          compounding_rate == o.compounding_rate &&
+          use_proxy_data == o.use_proxy_data
     end
 
     # @see the `==` method
@@ -622,7 +634,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allocation_method, allocation_priority, opt_config, allocations, curr_inv, a_horizon, d_horizon, horizon_frequency, withdrawal_config, deposit_config, recommendation_config, recommend_type, conf_tgt, n, remove_outliers, thresh_type, thresh, withdrawal_tax, trading_days_per_year, risk_score, adjust_for_compounding, compounding_rate].hash
+      [allocation_method, allocation_priority, opt_config, allocations, curr_inv, a_horizon, d_horizon, horizon_frequency, withdrawal_config, deposit_config, recommendation_config, recommend_type, conf_tgt, n, remove_outliers, thresh_type, thresh, withdrawal_tax, trading_days_per_year, risk_score, adjust_for_compounding, compounding_rate, use_proxy_data].hash
     end
 
     # Builds the object from hash

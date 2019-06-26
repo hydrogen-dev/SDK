@@ -29,7 +29,7 @@ import java.util.UUID;
  * List of securities and their respective weights as a percentage of the benchmark’s total value. It is recommended to provide at least one security_id
  */
 @ApiModel(description = "List of securities and their respective weights as a percentage of the benchmark’s total value. It is recommended to provide at least one security_id")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class BenchmarkPayloadComposition {
   @SerializedName("weight")
   private Double weight = null;

@@ -23,15 +23,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.AnnuityDepositSchedule;
+import io.swagger.client.model.GuaranteedRateBenefitSubpayload;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.threeten.bp.LocalDate;
 
 /**
  * VariableAnnuityPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class VariableAnnuityPayload {
   @SerializedName("portfolio_tickers")
   private List<String> portfolioTickers = new ArrayList<String>();
@@ -53,6 +55,94 @@ public class VariableAnnuityPayload {
 
   @SerializedName("deposit_schedule")
   private AnnuityDepositSchedule depositSchedule = null;
+
+  @SerializedName("inflation_rate")
+  private BigDecimal inflationRate = null;
+
+  @SerializedName("tax_rate")
+  private BigDecimal taxRate = null;
+
+  @SerializedName("annuitization_rate")
+  private BigDecimal annuitizationRate = null;
+
+  @SerializedName("guaranteed_rate_benefit")
+  private List<GuaranteedRateBenefitSubpayload> guaranteedRateBenefit = null;
+
+  @SerializedName("guaranteed_accumulation_benefit")
+  private BigDecimal guaranteedAccumulationBenefit = null;
+
+  @SerializedName("n")
+  private Integer n = null;
+
+  /**
+   * The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.
+   */
+  @JsonAdapter(ResultTypeEnum.Adapter.class)
+  public enum ResultTypeEnum {
+    MEAN("mean"),
+    
+    MEDIAN("median"),
+    
+    CUSTOM("custom");
+
+    private String value;
+
+    ResultTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ResultTypeEnum fromValue(String text) {
+      for (ResultTypeEnum b : ResultTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ResultTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ResultTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ResultTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ResultTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("result_type")
+  private ResultTypeEnum resultType = ResultTypeEnum.MEDIAN;
+
+  @SerializedName("p")
+  private BigDecimal p = null;
+
+  @SerializedName("remove_outliers")
+  private Boolean removeOutliers = false;
+
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
+
+  @SerializedName("trading_days_per_year")
+  private Integer tradingDaysPerYear = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   public VariableAnnuityPayload portfolioTickers(List<String> portfolioTickers) {
     this.portfolioTickers = portfolioTickers;
@@ -191,6 +281,256 @@ public class VariableAnnuityPayload {
     this.depositSchedule = depositSchedule;
   }
 
+  public VariableAnnuityPayload inflationRate(BigDecimal inflationRate) {
+    this.inflationRate = inflationRate;
+    return this;
+  }
+
+   /**
+   * The annualized rate of inflation. Defaults to 0.
+   * minimum: -1
+   * @return inflationRate
+  **/
+  @ApiModelProperty(value = "The annualized rate of inflation. Defaults to 0.")
+  public BigDecimal getInflationRate() {
+    return inflationRate;
+  }
+
+  public void setInflationRate(BigDecimal inflationRate) {
+    this.inflationRate = inflationRate;
+  }
+
+  public VariableAnnuityPayload taxRate(BigDecimal taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
+   /**
+   * The tax rate applied to annuity payouts. Defaults to 0.
+   * minimum: 0
+   * maximum: 1
+   * @return taxRate
+  **/
+  @ApiModelProperty(value = "The tax rate applied to annuity payouts. Defaults to 0.")
+  public BigDecimal getTaxRate() {
+    return taxRate;
+  }
+
+  public void setTaxRate(BigDecimal taxRate) {
+    this.taxRate = taxRate;
+  }
+
+  public VariableAnnuityPayload annuitizationRate(BigDecimal annuitizationRate) {
+    this.annuitizationRate = annuitizationRate;
+    return this;
+  }
+
+   /**
+   * The discount rate used to calculate annuity payout amounts during decumulation_horizon. Defaults to 0.
+   * @return annuitizationRate
+  **/
+  @ApiModelProperty(value = "The discount rate used to calculate annuity payout amounts during decumulation_horizon. Defaults to 0.")
+  public BigDecimal getAnnuitizationRate() {
+    return annuitizationRate;
+  }
+
+  public void setAnnuitizationRate(BigDecimal annuitizationRate) {
+    this.annuitizationRate = annuitizationRate;
+  }
+
+  public VariableAnnuityPayload guaranteedRateBenefit(List<GuaranteedRateBenefitSubpayload> guaranteedRateBenefit) {
+    this.guaranteedRateBenefit = guaranteedRateBenefit;
+    return this;
+  }
+
+  public VariableAnnuityPayload addGuaranteedRateBenefitItem(GuaranteedRateBenefitSubpayload guaranteedRateBenefitItem) {
+    if (this.guaranteedRateBenefit == null) {
+      this.guaranteedRateBenefit = new ArrayList<GuaranteedRateBenefitSubpayload>();
+    }
+    this.guaranteedRateBenefit.add(guaranteedRateBenefitItem);
+    return this;
+  }
+
+   /**
+   * Boundaries enforced on the plan&#39;s rate of return.
+   * @return guaranteedRateBenefit
+  **/
+  @ApiModelProperty(value = "Boundaries enforced on the plan's rate of return.")
+  public List<GuaranteedRateBenefitSubpayload> getGuaranteedRateBenefit() {
+    return guaranteedRateBenefit;
+  }
+
+  public void setGuaranteedRateBenefit(List<GuaranteedRateBenefitSubpayload> guaranteedRateBenefit) {
+    this.guaranteedRateBenefit = guaranteedRateBenefit;
+  }
+
+  public VariableAnnuityPayload guaranteedAccumulationBenefit(BigDecimal guaranteedAccumulationBenefit) {
+    this.guaranteedAccumulationBenefit = guaranteedAccumulationBenefit;
+    return this;
+  }
+
+   /**
+   * A guaranteed lower bound for the plan balance at the end of accumulation_horizon.
+   * minimum: 0
+   * @return guaranteedAccumulationBenefit
+  **/
+  @ApiModelProperty(value = "A guaranteed lower bound for the plan balance at the end of accumulation_horizon.")
+  public BigDecimal getGuaranteedAccumulationBenefit() {
+    return guaranteedAccumulationBenefit;
+  }
+
+  public void setGuaranteedAccumulationBenefit(BigDecimal guaranteedAccumulationBenefit) {
+    this.guaranteedAccumulationBenefit = guaranteedAccumulationBenefit;
+  }
+
+  public VariableAnnuityPayload n(Integer n) {
+    this.n = n;
+    return this;
+  }
+
+   /**
+   * The number of Monte Carlo simulations to run. Defaults to 1000.
+   * @return n
+  **/
+  @ApiModelProperty(value = "The number of Monte Carlo simulations to run. Defaults to 1000.")
+  public Integer getN() {
+    return n;
+  }
+
+  public void setN(Integer n) {
+    this.n = n;
+  }
+
+  public VariableAnnuityPayload resultType(ResultTypeEnum resultType) {
+    this.resultType = resultType;
+    return this;
+  }
+
+   /**
+   * The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.
+   * @return resultType
+  **/
+  @ApiModelProperty(value = "The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.")
+  public ResultTypeEnum getResultType() {
+    return resultType;
+  }
+
+  public void setResultType(ResultTypeEnum resultType) {
+    this.resultType = resultType;
+  }
+
+  public VariableAnnuityPayload p(BigDecimal p) {
+    this.p = p;
+    return this;
+  }
+
+   /**
+   * A result percentile to output, applicable when result_type is custom. Must be between 0 and 100 inclusive. Defaults to 50.
+   * minimum: 0
+   * maximum: 100
+   * @return p
+  **/
+  @ApiModelProperty(value = "A result percentile to output, applicable when result_type is custom. Must be between 0 and 100 inclusive. Defaults to 50.")
+  public BigDecimal getP() {
+    return p;
+  }
+
+  public void setP(BigDecimal p) {
+    this.p = p;
+  }
+
+  public VariableAnnuityPayload removeOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
+    return this;
+  }
+
+   /**
+   * If true, remove outlying results. If true, outlier analysis is performed on a median absolute deviation (MAD) basis, at the 2.5 threshold. Defaults to false.
+   * @return removeOutliers
+  **/
+  @ApiModelProperty(value = "If true, remove outlying results. If true, outlier analysis is performed on a median absolute deviation (MAD) basis, at the 2.5 threshold. Defaults to false.")
+  public Boolean isRemoveOutliers() {
+    return removeOutliers;
+  }
+
+  public void setRemoveOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
+  }
+
+  public VariableAnnuityPayload startDate(LocalDate startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Start date used for ticker price history. Defaults to the earliest common date among portfolio_tickers prices.
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "Start date used for ticker price history. Defaults to the earliest common date among portfolio_tickers prices.")
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+  public VariableAnnuityPayload endDate(LocalDate endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+
+   /**
+   * End date used for ticker price history. Defaults to the latest common date among portfolio_tickers prices.
+   * @return endDate
+  **/
+  @ApiModelProperty(value = "End date used for ticker price history. Defaults to the latest common date among portfolio_tickers prices.")
+  public LocalDate getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
+  }
+
+  public VariableAnnuityPayload tradingDaysPerYear(Integer tradingDaysPerYear) {
+    this.tradingDaysPerYear = tradingDaysPerYear;
+    return this;
+  }
+
+   /**
+   * The number of days per year for which a portfolio is subject to market fluctuation. Defaults to 252.
+   * minimum: 1
+   * maximum: 365
+   * @return tradingDaysPerYear
+  **/
+  @ApiModelProperty(value = "The number of days per year for which a portfolio is subject to market fluctuation. Defaults to 252.")
+  public Integer getTradingDaysPerYear() {
+    return tradingDaysPerYear;
+  }
+
+  public void setTradingDaysPerYear(Integer tradingDaysPerYear) {
+    this.tradingDaysPerYear = tradingDaysPerYear;
+  }
+
+  public VariableAnnuityPayload useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -207,12 +547,25 @@ public class VariableAnnuityPayload {
         Objects.equals(this.decumulationHorizon, variableAnnuityPayload.decumulationHorizon) &&
         Objects.equals(this.initialBalance, variableAnnuityPayload.initialBalance) &&
         Objects.equals(this.frequencyInterval, variableAnnuityPayload.frequencyInterval) &&
-        Objects.equals(this.depositSchedule, variableAnnuityPayload.depositSchedule);
+        Objects.equals(this.depositSchedule, variableAnnuityPayload.depositSchedule) &&
+        Objects.equals(this.inflationRate, variableAnnuityPayload.inflationRate) &&
+        Objects.equals(this.taxRate, variableAnnuityPayload.taxRate) &&
+        Objects.equals(this.annuitizationRate, variableAnnuityPayload.annuitizationRate) &&
+        Objects.equals(this.guaranteedRateBenefit, variableAnnuityPayload.guaranteedRateBenefit) &&
+        Objects.equals(this.guaranteedAccumulationBenefit, variableAnnuityPayload.guaranteedAccumulationBenefit) &&
+        Objects.equals(this.n, variableAnnuityPayload.n) &&
+        Objects.equals(this.resultType, variableAnnuityPayload.resultType) &&
+        Objects.equals(this.p, variableAnnuityPayload.p) &&
+        Objects.equals(this.removeOutliers, variableAnnuityPayload.removeOutliers) &&
+        Objects.equals(this.startDate, variableAnnuityPayload.startDate) &&
+        Objects.equals(this.endDate, variableAnnuityPayload.endDate) &&
+        Objects.equals(this.tradingDaysPerYear, variableAnnuityPayload.tradingDaysPerYear) &&
+        Objects.equals(this.useProxyData, variableAnnuityPayload.useProxyData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(portfolioTickers, portfolioWeights, accumulationHorizon, decumulationHorizon, initialBalance, frequencyInterval, depositSchedule);
+    return Objects.hash(portfolioTickers, portfolioWeights, accumulationHorizon, decumulationHorizon, initialBalance, frequencyInterval, depositSchedule, inflationRate, taxRate, annuitizationRate, guaranteedRateBenefit, guaranteedAccumulationBenefit, n, resultType, p, removeOutliers, startDate, endDate, tradingDaysPerYear, useProxyData);
   }
 
 
@@ -228,6 +581,19 @@ public class VariableAnnuityPayload {
     sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
     sb.append("    frequencyInterval: ").append(toIndentedString(frequencyInterval)).append("\n");
     sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
+    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
+    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    sb.append("    annuitizationRate: ").append(toIndentedString(annuitizationRate)).append("\n");
+    sb.append("    guaranteedRateBenefit: ").append(toIndentedString(guaranteedRateBenefit)).append("\n");
+    sb.append("    guaranteedAccumulationBenefit: ").append(toIndentedString(guaranteedAccumulationBenefit)).append("\n");
+    sb.append("    n: ").append(toIndentedString(n)).append("\n");
+    sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
+    sb.append("    p: ").append(toIndentedString(p)).append("\n");
+    sb.append("    removeOutliers: ").append(toIndentedString(removeOutliers)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    tradingDaysPerYear: ").append(toIndentedString(tradingDaysPerYear)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

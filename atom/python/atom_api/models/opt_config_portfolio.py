@@ -41,7 +41,8 @@ class OptConfigPortfolio(object):
         'start_date': 'datetime',
         'end_date': 'datetime',
         'tgt_type': 'str',
-        'tgt_val': 'float'
+        'tgt_val': 'float',
+        'use_proxy_data': 'bool'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class OptConfigPortfolio(object):
         'start_date': 'start_date',
         'end_date': 'end_date',
         'tgt_type': 'tgt_type',
-        'tgt_val': 'tgt_val'
+        'tgt_val': 'tgt_val',
+        'use_proxy_data': 'use_proxy_data'
     }
 
-    def __init__(self, tickers=None, min_assets=None, w_config=None, w_asset_config=None, sec_types=None, start_date=None, end_date=None, tgt_type=None, tgt_val=None):  # noqa: E501
+    def __init__(self, tickers=None, min_assets=None, w_config=None, w_asset_config=None, sec_types=None, start_date=None, end_date=None, tgt_type=None, tgt_val=None, use_proxy_data=False):  # noqa: E501
         """OptConfigPortfolio - a model defined in Swagger"""  # noqa: E501
 
         self._tickers = None
@@ -68,6 +70,7 @@ class OptConfigPortfolio(object):
         self._end_date = None
         self._tgt_type = None
         self._tgt_val = None
+        self._use_proxy_data = None
         self.discriminator = None
 
         self.tickers = tickers
@@ -83,6 +86,8 @@ class OptConfigPortfolio(object):
             self.tgt_type = tgt_type
         if tgt_val is not None:
             self.tgt_val = tgt_val
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
 
     @property
     def tickers(self):
@@ -302,6 +307,29 @@ class OptConfigPortfolio(object):
         """
 
         self._tgt_val = tgt_val
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this OptConfigPortfolio.  # noqa: E501
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :return: The use_proxy_data of this OptConfigPortfolio.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this OptConfigPortfolio.
+
+        If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.  # noqa: E501
+
+        :param use_proxy_data: The use_proxy_data of this OptConfigPortfolio.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

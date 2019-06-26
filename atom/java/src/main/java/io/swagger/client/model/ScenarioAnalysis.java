@@ -32,7 +32,7 @@ import org.threeten.bp.LocalDate;
 /**
  * ScenarioAnalysis
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-14T14:44:02.139-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
 public class ScenarioAnalysis {
   @SerializedName("portfolio_tickers")
   private List<String> portfolioTickers = new ArrayList<String>();
@@ -107,6 +107,9 @@ public class ScenarioAnalysis {
 
   @SerializedName("trading_days_per_year")
   private Integer tradingDaysPerYear = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   public ScenarioAnalysis portfolioTickers(List<String> portfolioTickers) {
     this.portfolioTickers = portfolioTickers;
@@ -250,6 +253,24 @@ public class ScenarioAnalysis {
     this.tradingDaysPerYear = tradingDaysPerYear;
   }
 
+  public ScenarioAnalysis useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -266,12 +287,13 @@ public class ScenarioAnalysis {
         Objects.equals(this.scenario, scenarioAnalysis.scenario) &&
         Objects.equals(this.startDate, scenarioAnalysis.startDate) &&
         Objects.equals(this.endDate, scenarioAnalysis.endDate) &&
-        Objects.equals(this.tradingDaysPerYear, scenarioAnalysis.tradingDaysPerYear);
+        Objects.equals(this.tradingDaysPerYear, scenarioAnalysis.tradingDaysPerYear) &&
+        Objects.equals(this.useProxyData, scenarioAnalysis.useProxyData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(portfolioTickers, portfolioWeights, frequencyInterval, scenario, startDate, endDate, tradingDaysPerYear);
+    return Objects.hash(portfolioTickers, portfolioWeights, frequencyInterval, scenario, startDate, endDate, tradingDaysPerYear, useProxyData);
   }
 
 
@@ -287,6 +309,7 @@ public class ScenarioAnalysis {
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    tradingDaysPerYear: ").append(toIndentedString(tradingDaysPerYear)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

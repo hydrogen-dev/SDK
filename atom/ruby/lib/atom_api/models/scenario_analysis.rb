@@ -33,6 +33,9 @@ module AtomApi
     # Number of trading days per year, used in calculations
     attr_accessor :trading_days_per_year
 
+    # If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+    attr_accessor :use_proxy_data
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -64,7 +67,8 @@ module AtomApi
         :'scenario' => :'scenario',
         :'start_date' => :'start_date',
         :'end_date' => :'end_date',
-        :'trading_days_per_year' => :'trading_days_per_year'
+        :'trading_days_per_year' => :'trading_days_per_year',
+        :'use_proxy_data' => :'use_proxy_data'
       }
     end
 
@@ -77,7 +81,8 @@ module AtomApi
         :'scenario' => :'Array<SensitivityFactor>',
         :'start_date' => :'Date',
         :'end_date' => :'Date',
-        :'trading_days_per_year' => :'Integer'
+        :'trading_days_per_year' => :'Integer',
+        :'use_proxy_data' => :'BOOLEAN'
       }
     end
 
@@ -121,6 +126,12 @@ module AtomApi
 
       if attributes.has_key?(:'trading_days_per_year')
         self.trading_days_per_year = attributes[:'trading_days_per_year']
+      end
+
+      if attributes.has_key?(:'use_proxy_data')
+        self.use_proxy_data = attributes[:'use_proxy_data']
+      else
+        self.use_proxy_data = false
       end
     end
 
@@ -195,7 +206,8 @@ module AtomApi
           scenario == o.scenario &&
           start_date == o.start_date &&
           end_date == o.end_date &&
-          trading_days_per_year == o.trading_days_per_year
+          trading_days_per_year == o.trading_days_per_year &&
+          use_proxy_data == o.use_proxy_data
     end
 
     # @see the `==` method
@@ -207,7 +219,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [portfolio_tickers, portfolio_weights, frequency_interval, scenario, start_date, end_date, trading_days_per_year].hash
+      [portfolio_tickers, portfolio_weights, frequency_interval, scenario, start_date, end_date, trading_days_per_year, use_proxy_data].hash
     end
 
     # Builds the object from hash

@@ -8099,6 +8099,10 @@ definitions:
         type: number
         description: The annualized rate to use when approximating a compounding effect on deposits. This value must be defined and adjust_for_compounding must be true in order to activate compounding adjustment. Defaults to 0.
         default: 0
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   goal_decumulation_allocation:
     type: object
     required:
@@ -8250,6 +8254,10 @@ definitions:
         type: number
         description: The annualized rate to use when approximating a compounding effect on deposits. This value must be defined and adjust_for_compounding must be true in order to activate compounding adjustment. Defaults to 0.
         default: 0
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   opt_config_portfolio:
     type: object
     required:
@@ -8296,6 +8304,10 @@ definitions:
       tgt_val:
         type: number
         description: The target value for a target portfolio
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   w_config_portfolio:
     type: object
     properties:
@@ -8433,6 +8445,10 @@ definitions:
         items:
           type: string
           format: uuid
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   risk_score_opt_config_model:
     type: object
     required:
@@ -8733,6 +8749,10 @@ definitions:
         type: integer
         description: 'Number of trading days per year, used in calculations'
         minimum: 1
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   sensitivity_factor:
     type: object
     required:
@@ -8799,6 +8819,10 @@ definitions:
         type: integer
         description: 'Number of trading days per year, used in calculations'
         minimum: 1
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   what_if_portfolio:
     type: object
     required:
@@ -8834,6 +8858,10 @@ definitions:
         type: string
         format: date
         description: End date of portfolio returns for the comparison
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   event_study:
     type: object
     required:
@@ -8864,6 +8892,10 @@ definitions:
             - 1987_black_monday
             - 1992_black_wednesday
             - 1997_asian_financial_crisis
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   life_insurance_calculator:
     type: object
     required:
@@ -9477,6 +9509,10 @@ definitions:
           type: number
       opt_config:
         $ref: '#/definitions/opt_config'
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   opt_config:
     type: object
     properties:
@@ -9535,6 +9571,10 @@ definitions:
       end_date:
         type: string
         format: date-time
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
   mortgage_calculator_periodic_payment:
     type: object
     required:
@@ -10168,6 +10208,23 @@ definitions:
         minimum: 0
         maximum: 1
         exclusiveMaximum: true
+  guaranteed_rate_benefit_subpayload:
+    type: object
+    properties:
+      start:
+        type: integer
+        description: The starting period for the guarantee, where 1 indicates the first period in accumulation_horizon. Must be greater than or equal to 1. Defaults to 1.
+        default: 1
+        minimum: 1
+      end:
+        type: integer
+        description: The ending period for the guarantee. Must be less than or equal to the sum of accumulation_horizon and decumulation_horizon. Defaults to the sum of accumulation_horizon and decumulation_horizon.
+      min_rate:
+        type: number
+        description: The minimum allowable rate. Must be less than or equal to max_rate.
+      max_rate:
+        type: number
+        description: The minimum allowable rate. Must be greater than or equal to min_rate.
   variable_annuity_payload:
     type: object
     required:
@@ -10202,6 +10259,71 @@ definitions:
         description: Unit of time associated with accumulation_horizon, decumulation_horizon, start, end, and annuity payments.
       deposit_schedule:
         $ref: '#/definitions/annuity_deposit_schedule'
+      inflation_rate:
+        type: number
+        description: The annualized rate of inflation. Defaults to 0.
+        default: 0
+        minimum: -1
+      tax_rate:
+        type: number
+        description: The tax rate applied to annuity payouts. Defaults to 0.
+        default: 0
+        minimum: 0
+        maximum: 1
+        exclusiveMaximum: true
+      annuitization_rate:
+        type: number
+        description: The discount rate used to calculate annuity payout amounts during decumulation_horizon. Defaults to 0.
+        default: 0
+      guaranteed_rate_benefit:
+        type: array
+        description: Boundaries enforced on the plan's rate of return.
+        items:
+          $ref: '#/definitions/guaranteed_rate_benefit_subpayload'
+      guaranteed_accumulation_benefit:
+        type: number
+        description: A guaranteed lower bound for the plan balance at the end of accumulation_horizon.
+        minimum: 0
+      n:
+        type: integer
+        description: The number of Monte Carlo simulations to run. Defaults to 1000.
+        default: 1000
+      result_type:
+        type: string
+        description: The type of Monte Carlo result to output. Must be one of mean, median, or custom. Defaults to median.
+        default: "median"
+        enum:
+          - mean
+          - median
+          - custom
+      p:
+        type: number
+        description: A result percentile to output, applicable when result_type is custom. Must be between 0 and 100 inclusive. Defaults to 50.
+        default: 50
+        minimum: 0
+        maximum: 100
+      remove_outliers:
+        type: boolean
+        description: If true, remove outlying results. If true, outlier analysis is performed on a median absolute deviation (MAD) basis, at the 2.5 threshold. Defaults to false.
+        default: false
+      start_date:
+        type: string
+        format: date
+        description: Start date used for ticker price history. Defaults to the earliest common date among portfolio_tickers prices.
+      end_date:
+        type: string
+        format: date
+        description: End date used for ticker price history. Defaults to the latest common date among portfolio_tickers prices.
+      trading_days_per_year:
+        type: integer
+        description: The number of days per year for which a portfolio is subject to market fluctuation. Defaults to 252.
+        default: 252
+        minimum: 1
+        maximum: 365
+      use_proxy_data:
+        type: boolean
+        description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+        default: false
 paths:
 # ********** Nucleus **********
   /nucleus/v1/account:

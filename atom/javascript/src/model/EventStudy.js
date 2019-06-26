@@ -53,6 +53,7 @@
     _this['portfolio_tickers'] = portfolioTickers;
     _this['portfolio_weights'] = portfolioWeights;
 
+
   };
 
   /**
@@ -75,6 +76,9 @@
       if (data.hasOwnProperty('events')) {
         obj['events'] = ApiClient.convertToType(data['events'], ['String']);
       }
+      if (data.hasOwnProperty('use_proxy_data')) {
+        obj['use_proxy_data'] = ApiClient.convertToType(data['use_proxy_data'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -94,6 +98,12 @@
    * @member {Array.<module:model/EventStudy.EventsEnum>} events
    */
   exports.prototype['events'] = undefined;
+  /**
+   * If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+   * @member {Boolean} use_proxy_data
+   * @default false
+   */
+  exports.prototype['use_proxy_data'] = false;
 
 
   /**

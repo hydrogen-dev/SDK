@@ -25,6 +25,9 @@ module AtomApi
     # The portfolio standard deviation
     attr_accessor :allocations
 
+    # If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
+    attr_accessor :use_proxy_data
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -53,7 +56,8 @@ module AtomApi
         :'risk_score' => :'risk_score',
         :'allocation_method' => :'allocation_method',
         :'opt_config' => :'opt_config',
-        :'allocations' => :'allocations'
+        :'allocations' => :'allocations',
+        :'use_proxy_data' => :'use_proxy_data'
       }
     end
 
@@ -63,7 +67,8 @@ module AtomApi
         :'risk_score' => :'Float',
         :'allocation_method' => :'String',
         :'opt_config' => :'RiskScoreOptConfigModel',
-        :'allocations' => :'Array<String>'
+        :'allocations' => :'Array<String>',
+        :'use_proxy_data' => :'BOOLEAN'
       }
     end
 
@@ -91,6 +96,12 @@ module AtomApi
         if (value = attributes[:'allocations']).is_a?(Array)
           self.allocations = value
         end
+      end
+
+      if attributes.has_key?(:'use_proxy_data')
+        self.use_proxy_data = attributes[:'use_proxy_data']
+      else
+        self.use_proxy_data = false
       end
     end
 
@@ -165,7 +176,8 @@ module AtomApi
           risk_score == o.risk_score &&
           allocation_method == o.allocation_method &&
           opt_config == o.opt_config &&
-          allocations == o.allocations
+          allocations == o.allocations &&
+          use_proxy_data == o.use_proxy_data
     end
 
     # @see the `==` method
@@ -177,7 +189,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [risk_score, allocation_method, opt_config, allocations].hash
+      [risk_score, allocation_method, opt_config, allocations, use_proxy_data].hash
     end
 
     # Builds the object from hash

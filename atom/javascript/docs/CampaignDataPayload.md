@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **totalClicks** | **Number** | Total number of clicks measured in the campaign data record for a specific feature as a whole number | [optional] 
 **totalImpressions** | **Number** | Total number of impressions measured in the campaign data record for a specific feature as a whole number | [optional] 
 **secondaryId** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **Object** | Custom information associated with the campaign data in the format key:value | [optional] 
 
 

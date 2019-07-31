@@ -34,6 +34,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the security exclusion in the format key:value
+    attr_accessor :metadata
+
     # ID of the security exclusion
     attr_accessor :id
 
@@ -50,6 +53,7 @@ module AtomApi
         :'account_id' => :'account_id',
         :'portfolio_id' => :'portfolio_id',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'id' => :'id',
         :'create_date' => :'create_date'
       }
@@ -65,6 +69,7 @@ module AtomApi
         :'account_id' => :'String',
         :'portfolio_id' => :'String',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'id' => :'String',
         :'create_date' => :'String'
       }
@@ -104,6 +109,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
 
       if attributes.has_key?(:'id')
@@ -160,6 +169,7 @@ module AtomApi
           account_id == o.account_id &&
           portfolio_id == o.portfolio_id &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           id == o.id &&
           create_date == o.create_date
     end
@@ -173,7 +183,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [client_id, security_id, is_restrict_buy, is_restrict_sell, account_id, portfolio_id, secondary_id, id, create_date].hash
+      [client_id, security_id, is_restrict_buy, is_restrict_sell, account_id, portfolio_id, secondary_id, metadata, id, create_date].hash
     end
 
     # Builds the object from hash

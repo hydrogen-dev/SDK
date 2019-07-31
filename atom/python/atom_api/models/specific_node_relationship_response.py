@@ -43,6 +43,7 @@ class SpecificNodeRelationshipResponse(object):
         'node_child_id': 'str',
         'is_leaf': 'bool',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'update_date': 'str'
     }
 
@@ -56,10 +57,11 @@ class SpecificNodeRelationshipResponse(object):
         'node_child_id': 'node_child_id',
         'is_leaf': 'is_leaf',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, create_date=None, answer_id=None, value=None, decision_tree_id=None, node_parent_id=None, node_child_id=None, is_leaf=None, secondary_id=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, answer_id=None, value=None, decision_tree_id=None, node_parent_id=None, node_child_id=None, is_leaf=None, secondary_id=None, metadata=None, update_date=None):  # noqa: E501
         """SpecificNodeRelationshipResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -71,6 +73,7 @@ class SpecificNodeRelationshipResponse(object):
         self._node_child_id = None
         self._is_leaf = None
         self._secondary_id = None
+        self._metadata = None
         self._update_date = None
         self.discriminator = None
 
@@ -88,6 +91,8 @@ class SpecificNodeRelationshipResponse(object):
             self.is_leaf = is_leaf
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if update_date is not None:
             self.update_date = update_date
 
@@ -303,6 +308,29 @@ class SpecificNodeRelationshipResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this SpecificNodeRelationshipResponse.  # noqa: E501
+
+        Custom information associated with the node relationship in the format key:value  # noqa: E501
+
+        :return: The metadata of this SpecificNodeRelationshipResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this SpecificNodeRelationshipResponse.
+
+        Custom information associated with the node relationship in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this SpecificNodeRelationshipResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def update_date(self):

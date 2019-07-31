@@ -29,7 +29,7 @@ import org.threeten.bp.LocalDate;
 /**
  * BulkOrderAccountPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class BulkOrderAccountPayload {
   @SerializedName("date")
   private LocalDate date = null;
@@ -39,6 +39,9 @@ public class BulkOrderAccountPayload {
 
   @SerializedName("sell_transaction_code_id")
   private UUID sellTransactionCodeId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public BulkOrderAccountPayload date(LocalDate date) {
     this.date = date;
@@ -94,6 +97,24 @@ public class BulkOrderAccountPayload {
     this.sellTransactionCodeId = sellTransactionCodeId;
   }
 
+  public BulkOrderAccountPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the bulk order in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the bulk order in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +127,13 @@ public class BulkOrderAccountPayload {
     BulkOrderAccountPayload bulkOrderAccountPayload = (BulkOrderAccountPayload) o;
     return Objects.equals(this.date, bulkOrderAccountPayload.date) &&
         Objects.equals(this.buyTransactionCodeId, bulkOrderAccountPayload.buyTransactionCodeId) &&
-        Objects.equals(this.sellTransactionCodeId, bulkOrderAccountPayload.sellTransactionCodeId);
+        Objects.equals(this.sellTransactionCodeId, bulkOrderAccountPayload.sellTransactionCodeId) &&
+        Objects.equals(this.metadata, bulkOrderAccountPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, buyTransactionCodeId, sellTransactionCodeId);
+    return Objects.hash(date, buyTransactionCodeId, sellTransactionCodeId, metadata);
   }
 
 
@@ -123,6 +145,7 @@ public class BulkOrderAccountPayload {
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    buyTransactionCodeId: ").append(toIndentedString(buyTransactionCodeId)).append("\n");
     sb.append("    sellTransactionCodeId: ").append(toIndentedString(sellTransactionCodeId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

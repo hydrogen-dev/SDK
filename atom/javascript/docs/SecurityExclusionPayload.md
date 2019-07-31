@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **accountId** | **String** | The ID of the account to which the security exclusion applies (if account-specific) | [optional] 
 **portfolioId** | **String** | The ID of the portfolio to which the security exclusion applies (if portfolio-specific) | [optional] 
 **secondaryId** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **Object** | Custom information associated with the security exclusion in the format key:value | [optional] 
 
 

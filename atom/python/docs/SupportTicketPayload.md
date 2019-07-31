@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **status** | **str** | Status of the support ticket such as closed | [optional] 
 **subject** | **str** | Title of the support ticket relating to the underlying issue | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the support ticket in the format key:value | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

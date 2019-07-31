@@ -35,6 +35,9 @@ module AtomApi
     # Indicates if the support ticket comment has been read by the internal user to whom the support ticket is assigned for resolution. Defaults to false which indicates that it has not been read
     attr_accessor :is_read
 
+    # Custom information associated with the support ticket comment in the format key:value
+    attr_accessor :metadata
+
     attr_accessor :support_ticket_document
 
     attr_accessor :secondary_id
@@ -52,6 +55,7 @@ module AtomApi
         :'has_attachment' => :'has_attachment',
         :'is_admin' => :'is_admin',
         :'is_read' => :'is_read',
+        :'metadata' => :'metadata',
         :'support_ticket_document' => :'support_ticket_document',
         :'secondary_id' => :'secondary_id',
         :'update_date' => :'update_date'
@@ -68,6 +72,7 @@ module AtomApi
         :'has_attachment' => :'BOOLEAN',
         :'is_admin' => :'BOOLEAN',
         :'is_read' => :'BOOLEAN',
+        :'metadata' => :'Object',
         :'support_ticket_document' => :'Array<SupportTicketCommentPayloadSupportTicketDocument>',
         :'secondary_id' => :'SecondaryId',
         :'update_date' => :'String'
@@ -116,6 +121,10 @@ module AtomApi
         self.is_read = false
       end
 
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
       if attributes.has_key?(:'support_ticket_document')
         if (value = attributes[:'support_ticket_document']).is_a?(Array)
           self.support_ticket_document = value
@@ -161,6 +170,7 @@ module AtomApi
           has_attachment == o.has_attachment &&
           is_admin == o.is_admin &&
           is_read == o.is_read &&
+          metadata == o.metadata &&
           support_ticket_document == o.support_ticket_document &&
           secondary_id == o.secondary_id &&
           update_date == o.update_date
@@ -175,7 +185,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, support_ticket_id, description, has_attachment, is_admin, is_read, support_ticket_document, secondary_id, update_date].hash
+      [id, create_date, support_ticket_id, description, has_attachment, is_admin, is_read, metadata, support_ticket_document, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

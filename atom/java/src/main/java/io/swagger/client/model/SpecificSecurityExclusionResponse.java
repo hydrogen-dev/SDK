@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificSecurityExclusionResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificSecurityExclusionResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -57,6 +57,9 @@ public class SpecificSecurityExclusionResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -223,6 +226,24 @@ public class SpecificSecurityExclusionResponse {
     this.secondaryId = secondaryId;
   }
 
+  public SpecificSecurityExclusionResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the security exclusion in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the security exclusion in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificSecurityExclusionResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -260,12 +281,13 @@ public class SpecificSecurityExclusionResponse {
         Objects.equals(this.accountId, specificSecurityExclusionResponse.accountId) &&
         Objects.equals(this.portfolioId, specificSecurityExclusionResponse.portfolioId) &&
         Objects.equals(this.secondaryId, specificSecurityExclusionResponse.secondaryId) &&
+        Objects.equals(this.metadata, specificSecurityExclusionResponse.metadata) &&
         Objects.equals(this.updateDate, specificSecurityExclusionResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, clientId, securityId, isRestrictBuy, isRestrictSell, accountId, portfolioId, secondaryId, updateDate);
+    return Objects.hash(id, createDate, clientId, securityId, isRestrictBuy, isRestrictSell, accountId, portfolioId, secondaryId, metadata, updateDate);
   }
 
 
@@ -283,6 +305,7 @@ public class SpecificSecurityExclusionResponse {
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

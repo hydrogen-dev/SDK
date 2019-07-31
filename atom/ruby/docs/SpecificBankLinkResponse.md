@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | ID of the bank link | [optional] 
 **create_date** | **String** | Datetime the bank link was created | [optional] 
-**account_id** | **String** | The ID for the account to which the bank link belongs | 
+**account_id** | **String** | The ID for the account to which the bank link belongs | [optional] 
 **bank_account_holder** | **String** | Name of the individual that owns the bank account | 
 **bank_account_number** | **String** | Account number of the bank account | 
 **name** | **String** | Name of the bank for the bank link, e.g. HSBC | 

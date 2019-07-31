@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CreateDepositRequestResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateDepositRequestResponse {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -69,6 +69,9 @@ public class CreateDepositRequestResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -310,6 +313,24 @@ public class CreateDepositRequestResponse {
     this.secondaryId = secondaryId;
   }
 
+  public CreateDepositRequestResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the deposit in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the deposit in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public CreateDepositRequestResponse id(UUID id) {
     this.id = id;
     return this;
@@ -369,13 +390,14 @@ public class CreateDepositRequestResponse {
         Objects.equals(this.statusTimeStamp, createDepositRequestResponse.statusTimeStamp) &&
         Objects.equals(this.type, createDepositRequestResponse.type) &&
         Objects.equals(this.secondaryId, createDepositRequestResponse.secondaryId) &&
+        Objects.equals(this.metadata, createDepositRequestResponse.metadata) &&
         Objects.equals(this.id, createDepositRequestResponse.id) &&
         Objects.equals(this.createDate, createDepositRequestResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, amount, fundingId, investedDate, accountNumber, comments, direction, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId, id, createDate);
+    return Objects.hash(accountId, amount, fundingId, investedDate, accountNumber, comments, direction, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId, metadata, id, createDate);
   }
 
 
@@ -397,6 +419,7 @@ public class CreateDepositRequestResponse {
     sb.append("    statusTimeStamp: ").append(toIndentedString(statusTimeStamp)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

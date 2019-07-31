@@ -12,15 +12,19 @@ Method | HTTP request | Description
 [**deleteAccountType**](NucleusApi.md#deleteAccountType) | **DELETE** /nucleus/v1/account_type/{account_type_id} | Delete an account type
 [**deleteAggregationAccount**](NucleusApi.md#deleteAggregationAccount) | **DELETE** /nucleus/v1/aggregation_account/{aggregation_account_id} | Delete an aggregation account
 [**deleteAggregationAccountBalance**](NucleusApi.md#deleteAggregationAccountBalance) | **DELETE** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Delete an aggregation account balance
+[**deleteAggregationAccountHolding**](NucleusApi.md#deleteAggregationAccountHolding) | **DELETE** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Delete an aggregation account holding
+[**deleteAggregationAccountTransaction**](NucleusApi.md#deleteAggregationAccountTransaction) | **DELETE** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Delete an aggregation account transaction
 [**deleteAllocation**](NucleusApi.md#deleteAllocation) | **DELETE** /nucleus/v1/allocation/{allocation_id} | Delete an allocation
 [**deleteAllocationComposition**](NucleusApi.md#deleteAllocationComposition) | **DELETE** /nucleus/v1/allocation_composition/{allocation_composition_id} | Delete an allocation composition
 [**deleteBankLink**](NucleusApi.md#deleteBankLink) | **DELETE** /nucleus/v1/bank_link/{bank_link_id} | Delete a bank link
 [**deleteBenchmark**](NucleusApi.md#deleteBenchmark) | **DELETE** /nucleus/v1/benchmark/{benchmark_id} | Delete a benchmark
+[**deleteBudget**](NucleusApi.md#deleteBudget) | **DELETE** /nucleus/v1/budget/{budget_id} | Delete a budget
 [**deleteClient**](NucleusApi.md#deleteClient) | **DELETE** /nucleus/v1/client/{client_id} | Delete a client
 [**deleteClientHydro**](NucleusApi.md#deleteClientHydro) | **DELETE** /nucleus/v1/client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 [**deleteClientResponse**](NucleusApi.md#deleteClientResponse) | **DELETE** /nucleus/v1/client_response/{client_response_id} | Delete a client response
 [**deleteDecisionTree**](NucleusApi.md#deleteDecisionTree) | **DELETE** /nucleus/v1/decision_tree/{decision_tree_id} | Delete a decision tree
 [**deleteDepositRequest**](NucleusApi.md#deleteDepositRequest) | **DELETE** /nucleus/v1/deposit/{deposit_id} | Delete a deposit request
+[**deleteFinancialOffer**](NucleusApi.md#deleteFinancialOffer) | **DELETE** /nucleus/v1/financial_offer/{financial_offer_id} | Delete a financial offer
 [**deleteFundingRequest**](NucleusApi.md#deleteFundingRequest) | **DELETE** /nucleus/v1/funding/{funding_id} | Delete a funding request
 [**deleteGoal**](NucleusApi.md#deleteGoal) | **DELETE** /nucleus/v1/goal/{goal_id} | Delete a goal
 [**deleteGoalTrackRecord**](NucleusApi.md#deleteGoalTrackRecord) | **DELETE** /nucleus/v1/goal_track/{goal_track_id} | Delete a goal track record
@@ -66,6 +70,10 @@ Method | HTTP request | Description
 [**getAggregationAccount**](NucleusApi.md#getAggregationAccount) | **GET** /nucleus/v1/aggregation_account/{aggregation_account_id} | Retrieve an aggregation account
 [**getAggregationAccountBalance**](NucleusApi.md#getAggregationAccountBalance) | **GET** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Retrieve an aggregation account balance
 [**getAggregationAccountBalances**](NucleusApi.md#getAggregationAccountBalances) | **GET** /nucleus/v1/aggregation_account_balance | List all aggregation account balances
+[**getAggregationAccountHolding**](NucleusApi.md#getAggregationAccountHolding) | **GET** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Retrieve an aggregation account holding
+[**getAggregationAccountHoldings**](NucleusApi.md#getAggregationAccountHoldings) | **GET** /nucleus/v1/aggregation_account_holding | List all aggregation account holdings
+[**getAggregationAccountTransaction**](NucleusApi.md#getAggregationAccountTransaction) | **GET** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Retrieve an aggregation account transaction
+[**getAggregationAccountTransactions**](NucleusApi.md#getAggregationAccountTransactions) | **GET** /nucleus/v1/aggregation_account_transaction | List all aggregation account transactions
 [**getAggregationAccounts**](NucleusApi.md#getAggregationAccounts) | **GET** /nucleus/v1/aggregation_account | List all aggregation accounts
 [**getAllocation**](NucleusApi.md#getAllocation) | **GET** /nucleus/v1/allocation/{allocation_id} | Retrieve an allocation
 [**getAllocationAssetSizes**](NucleusApi.md#getAllocationAssetSizes) | **GET** /nucleus/v1/allocation/{allocation_id}/asset_size | List all allocation asset sizes
@@ -81,6 +89,8 @@ Method | HTTP request | Description
 [**getBenchmarkAssetSizes**](NucleusApi.md#getBenchmarkAssetSizes) | **GET** /nucleus/v1/benchmark/{benchmark_id}/asset_size | List all benchmark asset sizes
 [**getBenchmarkPerformance**](NucleusApi.md#getBenchmarkPerformance) | **GET** /nucleus/v1/benchmark/{benchmark_id}/performance | Get benchmark performance
 [**getBenchmarks**](NucleusApi.md#getBenchmarks) | **GET** /nucleus/v1/benchmark | List all benchmarks
+[**getBudget**](NucleusApi.md#getBudget) | **GET** /nucleus/v1/budget/{budget_id} | Retrieve a budget
+[**getBudgets**](NucleusApi.md#getBudgets) | **GET** /nucleus/v1/budget | List all budgets
 [**getBulkOrders**](NucleusApi.md#getBulkOrders) | **GET** /nucleus/v1/order_bulk | List all bulk orders
 [**getClient**](NucleusApi.md#getClient) | **GET** /nucleus/v1/client/{client_id} | Retrieve a client
 [**getClientAssetSizes**](NucleusApi.md#getClientAssetSizes) | **GET** /nucleus/v1/client/{client_id}/asset_size | List all client asset sizes
@@ -96,6 +106,8 @@ Method | HTTP request | Description
 [**getDecisionTrees**](NucleusApi.md#getDecisionTrees) | **GET** /nucleus/v1/decision_tree | List all decision trees
 [**getDepositRequest**](NucleusApi.md#getDepositRequest) | **GET** /nucleus/v1/deposit/{deposit_id} | Retrieve a deposit request
 [**getDepositRequests**](NucleusApi.md#getDepositRequests) | **GET** /nucleus/v1/deposit | List all deposit requests
+[**getFinancialOffer**](NucleusApi.md#getFinancialOffer) | **GET** /nucleus/v1/financial_offer/{financial_offer_id} | Retrieve a financial offer
+[**getFinancialOffers**](NucleusApi.md#getFinancialOffers) | **GET** /nucleus/v1/financial_offer | List all financial offers
 [**getFundingRequest**](NucleusApi.md#getFundingRequest) | **GET** /nucleus/v1/funding/{funding_id} | Retrieve a funding request
 [**getFundingRequests**](NucleusApi.md#getFundingRequests) | **GET** /nucleus/v1/funding | List all funding requests
 [**getGoal**](NucleusApi.md#getGoal) | **GET** /nucleus/v1/goal/{goal_id} | Retrieve a goal
@@ -167,10 +179,13 @@ Method | HTTP request | Description
 [**postAccountType**](NucleusApi.md#postAccountType) | **POST** /nucleus/v1/account_type | Create an account type
 [**postAggregationAccount**](NucleusApi.md#postAggregationAccount) | **POST** /nucleus/v1/aggregation_account | Create an aggregation account
 [**postAggregationAccountBalance**](NucleusApi.md#postAggregationAccountBalance) | **POST** /nucleus/v1/aggregation_account_balance | Create an aggregation account balance
+[**postAggregationAccountHolding**](NucleusApi.md#postAggregationAccountHolding) | **POST** /nucleus/v1/aggregation_account_holding | Create an aggregation account holding
+[**postAggregationAccountTransaction**](NucleusApi.md#postAggregationAccountTransaction) | **POST** /nucleus/v1/aggregation_account_transaction | Create an aggregation account transaction
 [**postAllocation**](NucleusApi.md#postAllocation) | **POST** /nucleus/v1/allocation | Create an allocation
 [**postAllocationComposition**](NucleusApi.md#postAllocationComposition) | **POST** /nucleus/v1/allocation_composition | Create an allocation composition
 [**postBankLink**](NucleusApi.md#postBankLink) | **POST** /nucleus/v1/bank_link | Create a bank link
 [**postBenchmark**](NucleusApi.md#postBenchmark) | **POST** /nucleus/v1/benchmark | Create a benchmark
+[**postBudget**](NucleusApi.md#postBudget) | **POST** /nucleus/v1/budget | Create a budget
 [**postBulkOrder**](NucleusApi.md#postBulkOrder) | **POST** /nucleus/v1/order_bulk | Bulk orders for your firm
 [**postClient**](NucleusApi.md#postClient) | **POST** /nucleus/v1/client | Create a client
 [**postClientBulkOrder**](NucleusApi.md#postClientBulkOrder) | **POST** /nucleus/v1/client/{client_id}/order_bulk | Bulk orders for a client
@@ -178,6 +193,7 @@ Method | HTTP request | Description
 [**postClientResponse**](NucleusApi.md#postClientResponse) | **POST** /nucleus/v1/client_response | Create a client response
 [**postDecisionTree**](NucleusApi.md#postDecisionTree) | **POST** /nucleus/v1/decision_tree | Create a decision tree
 [**postDepositRequest**](NucleusApi.md#postDepositRequest) | **POST** /nucleus/v1/deposit | Create a deposit request
+[**postFinancialOffer**](NucleusApi.md#postFinancialOffer) | **POST** /nucleus/v1/financial_offer | Create a financial offer
 [**postFundingRequest**](NucleusApi.md#postFundingRequest) | **POST** /nucleus/v1/funding | Create a funding request
 [**postGoal**](NucleusApi.md#postGoal) | **POST** /nucleus/v1/goal | Create a goal
 [**postGoalTrackRecord**](NucleusApi.md#postGoalTrackRecord) | **POST** /nucleus/v1/goal_track | Create a goal track record
@@ -217,15 +233,19 @@ Method | HTTP request | Description
 [**updateAccountType**](NucleusApi.md#updateAccountType) | **PUT** /nucleus/v1/account_type/{account_type_id} | Update an account type
 [**updateAggregationAccount**](NucleusApi.md#updateAggregationAccount) | **PUT** /nucleus/v1/aggregation_account/{aggregation_account_id} | Update an aggregation account
 [**updateAggregationAccountBalance**](NucleusApi.md#updateAggregationAccountBalance) | **PUT** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Update an aggregation account balance
+[**updateAggregationAccountHolding**](NucleusApi.md#updateAggregationAccountHolding) | **PUT** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Update an aggregation account holding
+[**updateAggregationAccountTransaction**](NucleusApi.md#updateAggregationAccountTransaction) | **PUT** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Update an aggregation account transaction
 [**updateAllocation**](NucleusApi.md#updateAllocation) | **PUT** /nucleus/v1/allocation/{allocation_id} | Update an allocation
 [**updateAllocationComposition**](NucleusApi.md#updateAllocationComposition) | **PUT** /nucleus/v1/allocation_composition/{allocation_composition_id} | Update an allocation composition
 [**updateBankLink**](NucleusApi.md#updateBankLink) | **PUT** /nucleus/v1/bank_link/{bank_link_id} | Update a bank link
 [**updateBenchmark**](NucleusApi.md#updateBenchmark) | **PUT** /nucleus/v1/benchmark/{benchmark_id} | Update a benchmark
+[**updateBudget**](NucleusApi.md#updateBudget) | **PUT** /nucleus/v1/budget/{budget_id} | Update a budget
 [**updateClient**](NucleusApi.md#updateClient) | **PUT** /nucleus/v1/client/{client_id} | Update a client
 [**updateClientHydro**](NucleusApi.md#updateClientHydro) | **PUT** /nucleus/v1/client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**updateClientResponse**](NucleusApi.md#updateClientResponse) | **PUT** /nucleus/v1/client_response/{client_response_id} | Update a client response
 [**updateDecisionTree**](NucleusApi.md#updateDecisionTree) | **PUT** /nucleus/v1/decision_tree/{decision_tree_id} | Update a decision tree
 [**updateDepositRequest**](NucleusApi.md#updateDepositRequest) | **PUT** /nucleus/v1/deposit/{deposit_id} | Update a deposit request
+[**updateFinancialOffer**](NucleusApi.md#updateFinancialOffer) | **PUT** /nucleus/v1/financial_offer/{financial_offer_id} | Update a financial offer
 [**updateFundingRequest**](NucleusApi.md#updateFundingRequest) | **PUT** /nucleus/v1/funding/{funding_id} | Update a funding request
 [**updateGoal**](NucleusApi.md#updateGoal) | **PUT** /nucleus/v1/goal/{goal_id} | Update a goal
 [**updateGoalTrackRecord**](NucleusApi.md#updateGoalTrackRecord) | **PUT** /nucleus/v1/goal_track/{goal_track_id} | Update a goal track record
@@ -727,6 +747,124 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="deleteAggregationAccountHolding"></a>
+# **deleteAggregationAccountHolding**
+> deleteAggregationAccountHolding(aggregationAccountHoldingId)
+
+Delete an aggregation account holding
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID of an aggregation account holding
+try {
+    apiInstance.deleteAggregationAccountHolding(aggregationAccountHoldingId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#deleteAggregationAccountHolding");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregationAccountHoldingId** | [**UUID**](.md)| UUID of an aggregation account holding |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteAggregationAccountTransaction"></a>
+# **deleteAggregationAccountTransaction**
+> deleteAggregationAccountTransaction(aggregationAccountTransactionId)
+
+Delete an aggregation account transaction
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID of an aggregation account transaction
+try {
+    apiInstance.deleteAggregationAccountTransaction(aggregationAccountTransactionId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#deleteAggregationAccountTransaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregationAccountTransactionId** | [**UUID**](.md)| UUID of an aggregation account transaction |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteAllocation"></a>
 # **deleteAllocation**
 > deleteAllocation(allocationId)
@@ -949,6 +1087,65 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **benchmarkId** | [**UUID**](.md)| UUID of a benchmark |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteBudget"></a>
+# **deleteBudget**
+> deleteBudget(budgetId)
+
+Delete a budget
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID budgetId = new UUID(); // UUID | UUID of a budget
+try {
+    apiInstance.deleteBudget(budgetId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#deleteBudget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budgetId** | [**UUID**](.md)| UUID of a budget |
 
 ### Return type
 
@@ -1244,6 +1441,65 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **depositId** | [**UUID**](.md)| UUID of a deposit record |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteFinancialOffer"></a>
+# **deleteFinancialOffer**
+> deleteFinancialOffer(financialOfferId)
+
+Delete a financial offer
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID financialOfferId = new UUID(); // UUID | UUID of a financial offer
+try {
+    apiInstance.deleteFinancialOffer(financialOfferId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#deleteFinancialOffer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **financialOfferId** | [**UUID**](.md)| UUID of a financial offer |
 
 ### Return type
 
@@ -3996,6 +4252,262 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getAggregationAccountHolding"></a>
+# **getAggregationAccountHolding**
+> SpecificAggregationAccountHoldingResponse getAggregationAccountHolding(aggregationAccountHoldingId)
+
+Retrieve an aggregation account holding
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID of an aggregation account holding
+try {
+    SpecificAggregationAccountHoldingResponse result = apiInstance.getAggregationAccountHolding(aggregationAccountHoldingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getAggregationAccountHolding");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregationAccountHoldingId** | [**UUID**](.md)| UUID of an aggregation account holding |
+
+### Return type
+
+[**SpecificAggregationAccountHoldingResponse**](SpecificAggregationAccountHoldingResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getAggregationAccountHoldings"></a>
+# **getAggregationAccountHoldings**
+> GetAggregationAccountHoldingsResponse getAggregationAccountHoldings(page, size, orderBy, ascending, filter)
+
+List all aggregation account holdings
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+try {
+    GetAggregationAccountHoldingsResponse result = apiInstance.getAggregationAccountHoldings(page, size, orderBy, ascending, filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getAggregationAccountHoldings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+
+### Return type
+
+[**GetAggregationAccountHoldingsResponse**](GetAggregationAccountHoldingsResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getAggregationAccountTransaction"></a>
+# **getAggregationAccountTransaction**
+> SpecificAggregationAccountTransactionResponse getAggregationAccountTransaction(aggregationAccountTransactionId)
+
+Retrieve an aggregation account transaction
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID of an aggregation account transaction
+try {
+    SpecificAggregationAccountTransactionResponse result = apiInstance.getAggregationAccountTransaction(aggregationAccountTransactionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getAggregationAccountTransaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregationAccountTransactionId** | [**UUID**](.md)| UUID of an aggregation account transaction |
+
+### Return type
+
+[**SpecificAggregationAccountTransactionResponse**](SpecificAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getAggregationAccountTransactions"></a>
+# **getAggregationAccountTransactions**
+> GetAggregationAccountTransactionResponse getAggregationAccountTransactions(page, size, orderBy, ascending, filter)
+
+List all aggregation account transactions
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+try {
+    GetAggregationAccountTransactionResponse result = apiInstance.getAggregationAccountTransactions(page, size, orderBy, ascending, filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getAggregationAccountTransactions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+
+### Return type
+
+[**GetAggregationAccountTransactionResponse**](GetAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getAggregationAccounts"></a>
 # **getAggregationAccounts**
 > GetAggregationAccountsResponse getAggregationAccounts(page, size, orderBy, ascending, filter)
@@ -4938,6 +5450,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetBenchmarkResponse**](GetBenchmarkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getBudget"></a>
+# **getBudget**
+> SpecificBudgetResponse getBudget(budgetId)
+
+Retrieve a budget
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID budgetId = new UUID(); // UUID | UUID of a budget
+try {
+    SpecificBudgetResponse result = apiInstance.getBudget(budgetId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getBudget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budgetId** | [**UUID**](.md)| UUID of a budget |
+
+### Return type
+
+[**SpecificBudgetResponse**](SpecificBudgetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getBudgets"></a>
+# **getBudgets**
+> GetBudgetResponse getBudgets(page, size, orderBy, ascending, filter)
+
+List all budgets
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+try {
+    GetBudgetResponse result = apiInstance.getBudgets(page, size, orderBy, ascending, filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getBudgets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+
+### Return type
+
+[**GetBudgetResponse**](GetBudgetResponse.md)
 
 ### Authorization
 
@@ -5894,6 +6534,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetDepositRequestResponse**](GetDepositRequestResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFinancialOffer"></a>
+# **getFinancialOffer**
+> SpecificFinancialOfferResponse getFinancialOffer(financialOfferId)
+
+Retrieve a financial offer
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID financialOfferId = new UUID(); // UUID | UUID of a financial offer
+try {
+    SpecificFinancialOfferResponse result = apiInstance.getFinancialOffer(financialOfferId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getFinancialOffer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **financialOfferId** | [**UUID**](.md)| UUID of a financial offer |
+
+### Return type
+
+[**SpecificFinancialOfferResponse**](SpecificFinancialOfferResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFinancialOffers"></a>
+# **getFinancialOffers**
+> GetFinancialOfferResponse getFinancialOffers(page, size, orderBy, ascending, filter)
+
+List all financial offers
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+try {
+    GetFinancialOfferResponse result = apiInstance.getFinancialOffers(page, size, orderBy, ascending, filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#getFinancialOffers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+
+### Return type
+
+[**GetFinancialOfferResponse**](GetFinancialOfferResponse.md)
 
 ### Authorization
 
@@ -10410,6 +11178,126 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postAggregationAccountHolding"></a>
+# **postAggregationAccountHolding**
+> CreateAggregationAccountHoldingResponse postAggregationAccountHolding(payload)
+
+Create an aggregation account holding
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+AggregationAccountHoldingPayload payload = new AggregationAccountHoldingPayload(); // AggregationAccountHoldingPayload | 
+try {
+    CreateAggregationAccountHoldingResponse result = apiInstance.postAggregationAccountHolding(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#postAggregationAccountHolding");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**AggregationAccountHoldingPayload**](AggregationAccountHoldingPayload.md)|  |
+
+### Return type
+
+[**CreateAggregationAccountHoldingResponse**](CreateAggregationAccountHoldingResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postAggregationAccountTransaction"></a>
+# **postAggregationAccountTransaction**
+> CreateAggregationAccountTransactionResponse postAggregationAccountTransaction(payload)
+
+Create an aggregation account transaction
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+AggregationAccountTransactionPayload payload = new AggregationAccountTransactionPayload(); // AggregationAccountTransactionPayload | 
+try {
+    CreateAggregationAccountTransactionResponse result = apiInstance.postAggregationAccountTransaction(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#postAggregationAccountTransaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**AggregationAccountTransactionPayload**](AggregationAccountTransactionPayload.md)|  |
+
+### Return type
+
+[**CreateAggregationAccountTransactionResponse**](CreateAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postAllocation"></a>
 # **postAllocation**
 > CreateAllocationResponse postAllocation(payload)
@@ -10640,6 +11528,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateBenchmarkResponse**](CreateBenchmarkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postBudget"></a>
+# **postBudget**
+> CreateBudgetResponse postBudget(payload)
+
+Create a budget
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+BudgetPayload payload = new BudgetPayload(); // BudgetPayload | 
+try {
+    CreateBudgetResponse result = apiInstance.postBudget(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#postBudget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**BudgetPayload**](BudgetPayload.md)|  |
+
+### Return type
+
+[**CreateBudgetResponse**](CreateBudgetResponse.md)
 
 ### Authorization
 
@@ -11062,6 +12010,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateDepositRequestResponse**](CreateDepositRequestResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postFinancialOffer"></a>
+# **postFinancialOffer**
+> CreateFinancialOfferResponse postFinancialOffer(payload)
+
+Create a financial offer
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+FinancialOfferPayload payload = new FinancialOfferPayload(); // FinancialOfferPayload | 
+try {
+    CreateFinancialOfferResponse result = apiInstance.postFinancialOffer(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#postFinancialOffer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**FinancialOfferPayload**](FinancialOfferPayload.md)|  |
+
+### Return type
+
+[**CreateFinancialOfferResponse**](CreateFinancialOfferResponse.md)
 
 ### Authorization
 
@@ -13438,6 +14446,130 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="updateAggregationAccountHolding"></a>
+# **updateAggregationAccountHolding**
+> SpecificAggregationAccountHoldingResponse updateAggregationAccountHolding(aggregationAccountHoldingId, payload)
+
+Update an aggregation account holding
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID of an aggregation account holding
+AggregationAccountHoldingPayload payload = new AggregationAccountHoldingPayload(); // AggregationAccountHoldingPayload | 
+try {
+    SpecificAggregationAccountHoldingResponse result = apiInstance.updateAggregationAccountHolding(aggregationAccountHoldingId, payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#updateAggregationAccountHolding");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregationAccountHoldingId** | [**UUID**](.md)| UUID of an aggregation account holding |
+ **payload** | [**AggregationAccountHoldingPayload**](AggregationAccountHoldingPayload.md)|  |
+
+### Return type
+
+[**SpecificAggregationAccountHoldingResponse**](SpecificAggregationAccountHoldingResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateAggregationAccountTransaction"></a>
+# **updateAggregationAccountTransaction**
+> SpecificAggregationAccountTransactionResponse updateAggregationAccountTransaction(aggregationAccountTransactionId, payload)
+
+Update an aggregation account transaction
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID of an aggregation account transaction
+AggregationAccountTransactionPayload payload = new AggregationAccountTransactionPayload(); // AggregationAccountTransactionPayload | 
+try {
+    SpecificAggregationAccountTransactionResponse result = apiInstance.updateAggregationAccountTransaction(aggregationAccountTransactionId, payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#updateAggregationAccountTransaction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregationAccountTransactionId** | [**UUID**](.md)| UUID of an aggregation account transaction |
+ **payload** | [**AggregationAccountTransactionPayload**](AggregationAccountTransactionPayload.md)|  |
+
+### Return type
+
+[**SpecificAggregationAccountTransactionResponse**](SpecificAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateAllocation"></a>
 # **updateAllocation**
 > SpecificAllocationResponse updateAllocation(allocationId, payload)
@@ -13676,6 +14808,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SpecificBenchmarkResponse**](SpecificBenchmarkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateBudget"></a>
+# **updateBudget**
+> SpecificBudgetResponse updateBudget(budgetId, payload)
+
+Update a budget
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID budgetId = new UUID(); // UUID | UUID of a budget
+BudgetPayload payload = new BudgetPayload(); // BudgetPayload | 
+try {
+    SpecificBudgetResponse result = apiInstance.updateBudget(budgetId, payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#updateBudget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budgetId** | [**UUID**](.md)| UUID of a budget |
+ **payload** | [**BudgetPayload**](BudgetPayload.md)|  |
+
+### Return type
+
+[**SpecificBudgetResponse**](SpecificBudgetResponse.md)
 
 ### Authorization
 
@@ -13986,6 +15180,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SpecificDepositRequestResponse**](SpecificDepositRequestResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateFinancialOffer"></a>
+# **updateFinancialOffer**
+> SpecificFinancialOfferResponse updateFinancialOffer(financialOfferId, payload)
+
+Update a financial offer
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.NucleusApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+NucleusApi apiInstance = new NucleusApi();
+UUID financialOfferId = new UUID(); // UUID | UUID of a financial offer
+FinancialOfferPayload payload = new FinancialOfferPayload(); // FinancialOfferPayload | 
+try {
+    SpecificFinancialOfferResponse result = apiInstance.updateFinancialOffer(financialOfferId, payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NucleusApi#updateFinancialOffer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **financialOfferId** | [**UUID**](.md)| UUID of a financial offer |
+ **payload** | [**FinancialOfferPayload**](FinancialOfferPayload.md)|  |
+
+### Return type
+
+[**SpecificFinancialOfferResponse**](SpecificFinancialOfferResponse.md)
 
 ### Authorization
 

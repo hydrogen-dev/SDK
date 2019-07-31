@@ -25,13 +25,17 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the client campaign in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'campaign_id' => :'campaign_id',
         :'client_id' => :'client_id',
         :'ip' => :'ip',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -41,7 +45,8 @@ module AtomApi
         :'campaign_id' => :'String',
         :'client_id' => :'String',
         :'ip' => :'String',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -67,6 +72,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -96,7 +105,8 @@ module AtomApi
           campaign_id == o.campaign_id &&
           client_id == o.client_id &&
           ip == o.ip &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -108,7 +118,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [campaign_id, client_id, ip, secondary_id].hash
+      [campaign_id, client_id, ip, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

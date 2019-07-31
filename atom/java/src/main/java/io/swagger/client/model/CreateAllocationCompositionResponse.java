@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreateAllocationCompositionResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateAllocationCompositionResponse {
   @SerializedName("allocation_id")
   private UUID allocationId = null;
@@ -49,6 +49,9 @@ public class CreateAllocationCompositionResponse {
 
   @SerializedName("core")
   private Boolean core = false;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -164,6 +167,24 @@ public class CreateAllocationCompositionResponse {
     this.core = core;
   }
 
+  public CreateAllocationCompositionResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the allocation composition in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the allocation composition in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public CreateAllocationCompositionResponse id(UUID id) {
     this.id = id;
     return this;
@@ -216,13 +237,14 @@ public class CreateAllocationCompositionResponse {
         Objects.equals(this.strategicWeight, createAllocationCompositionResponse.strategicWeight) &&
         Objects.equals(this.date, createAllocationCompositionResponse.date) &&
         Objects.equals(this.core, createAllocationCompositionResponse.core) &&
+        Objects.equals(this.metadata, createAllocationCompositionResponse.metadata) &&
         Objects.equals(this.id, createAllocationCompositionResponse.id) &&
         Objects.equals(this.createDate, createAllocationCompositionResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allocationId, modelId, currentWeight, strategicWeight, date, core, id, createDate);
+    return Objects.hash(allocationId, modelId, currentWeight, strategicWeight, date, core, metadata, id, createDate);
   }
 
 
@@ -237,6 +259,7 @@ public class CreateAllocationCompositionResponse {
     sb.append("    strategicWeight: ").append(toIndentedString(strategicWeight)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    core: ").append(toIndentedString(core)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

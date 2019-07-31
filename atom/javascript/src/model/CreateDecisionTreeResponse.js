@@ -106,6 +106,12 @@ exports.prototype['description'] = undefined;
    */
 exports.prototype['secondary_id'] = undefined;
 
+  /**
+   * Custom information associated with the decision tree in the format key:value
+   * @member {Object} metadata
+   */
+exports.prototype['metadata'] = undefined;
+
 
 
   return exports;

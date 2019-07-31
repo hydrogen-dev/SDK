@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**annuityCalculatorDecumulationHorizon**](ProtonApi.md#annuityCalculatorDecumulationHorizon) | **POST** /proton/v1/annuity_calculator/decumulation_horizon | Annuity calculator - decumulation horizon
 [**annuityCalculatorDepositAmount**](ProtonApi.md#annuityCalculatorDepositAmount) | **POST** /proton/v1/annuity_calculator/deposit_amount | Annuity calculator - deposit amount
 [**annuityCalculatorInitialBalance**](ProtonApi.md#annuityCalculatorInitialBalance) | **POST** /proton/v1/annuity_calculator/initial_balance | Annuity calculator - initial balance
+[**budgetCalculator**](ProtonApi.md#budgetCalculator) | **POST** /proton/v1/budget_calculator | Budget Calculator
 [**dimensionalRiskScore**](ProtonApi.md#dimensionalRiskScore) | **POST** /proton/v1/dimensional_risk_score | Dimensional risk score
 [**educationCalculatorAnnualCost**](ProtonApi.md#educationCalculatorAnnualCost) | **POST** /proton/v1/education_calculator/annual_cost | Education calculator - total annual cost
 [**educationCalculatorDepositAmount**](ProtonApi.md#educationCalculatorDepositAmount) | **POST** /proton/v1/education_calculator/deposit_amount | Education calculator - deposit amount
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**emergencyFundCalculator**](ProtonApi.md#emergencyFundCalculator) | **POST** /proton/v1/emergency_fund_calculator | Emergency fund calculator
 [**eventStudy**](ProtonApi.md#eventStudy) | **POST** /proton/v1/event_study | Event study
 [**financialHealthCheck**](ProtonApi.md#financialHealthCheck) | **POST** /proton/v1/financial_health_check | Financial health check
+[**financialPicture**](ProtonApi.md#financialPicture) | **POST** /proton/v1/financial_picture | Financial Picture
 [**goalAccumulationAllocation**](ProtonApi.md#goalAccumulationAllocation) | **POST** /proton/v1/goal_accumulation/allocation | Goal accumulation allocation
 [**goalAccumulationRecommendation**](ProtonApi.md#goalAccumulationRecommendation) | **POST** /proton/v1/goal_accumulation/recommendation | Goal accumulation recommendation
 [**goalAccumulationStatus**](ProtonApi.md#goalAccumulationStatus) | **POST** /proton/v1/goal_accumulation/status | Goal accumulation status
@@ -44,6 +46,7 @@ Method | HTTP request | Description
 [**savingsCalculator**](ProtonApi.md#savingsCalculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenarioAnalysis**](ProtonApi.md#scenarioAnalysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivityAnalysis**](ProtonApi.md#sensitivityAnalysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**spendingAnalysis**](ProtonApi.md#spendingAnalysis) | **POST** /proton/v1/spending_analysis | Spending Analysis
 [**variableAnnuity**](ProtonApi.md#variableAnnuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
@@ -312,6 +315,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AnnuityInitialbalanceResponse**](AnnuityInitialbalanceResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="budgetCalculator"></a>
+# **budgetCalculator**
+> BudgetCalculatorResponse budgetCalculator(payload)
+
+Budget Calculator
+
+### Example
+```javascript
+var atom_api = require('hydrogen-atom-api');
+var defaultClient = atom_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new atom_api.ProtonApi();
+
+var payload = new atom_api.BudgetCalculator(); // BudgetCalculator | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.budgetCalculator(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**BudgetCalculator**](BudgetCalculator.md)|  | 
+
+### Return type
+
+[**BudgetCalculatorResponse**](BudgetCalculatorResponse.md)
 
 ### Authorization
 
@@ -697,6 +755,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**HealthCheckResponse**](HealthCheckResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="financialPicture"></a>
+# **financialPicture**
+> FinancialPictureResponse financialPicture(payload)
+
+Financial Picture
+
+### Example
+```javascript
+var atom_api = require('hydrogen-atom-api');
+var defaultClient = atom_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new atom_api.ProtonApi();
+
+var payload = new atom_api.FinancialPicture(); // FinancialPicture | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.financialPicture(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**FinancialPicture**](FinancialPicture.md)|  | 
+
+### Return type
+
+[**FinancialPictureResponse**](FinancialPictureResponse.md)
 
 ### Authorization
 
@@ -2237,6 +2350,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="spendingAnalysis"></a>
+# **spendingAnalysis**
+> SpendingAnalysisResponse spendingAnalysis(payload)
+
+Spending Analysis
+
+### Example
+```javascript
+var atom_api = require('hydrogen-atom-api');
+var defaultClient = atom_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new atom_api.ProtonApi();
+
+var payload = new atom_api.SpendingAnalysis(); // SpendingAnalysis | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.spendingAnalysis(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**SpendingAnalysis**](SpendingAnalysis.md)|  | 
+
+### Return type
+
+[**SpendingAnalysisResponse**](SpendingAnalysisResponse.md)
 
 ### Authorization
 

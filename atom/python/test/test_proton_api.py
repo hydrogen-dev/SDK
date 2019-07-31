@@ -64,6 +64,13 @@ class TestProtonApi(unittest.TestCase):
         """
         pass
 
+    def test_budget_calculator(self):
+        """Test case for budget_calculator
+
+        Budget Calculator  # noqa: E501
+        """
+        pass
+
     def test_dimensional_risk_score(self):
         """Test case for dimensional_risk_score
 
@@ -110,6 +117,13 @@ class TestProtonApi(unittest.TestCase):
         """Test case for financial_health_check
 
         Financial health check  # noqa: E501
+        """
+        pass
+
+    def test_financial_picture(self):
+        """Test case for financial_picture
+
+        Financial Picture  # noqa: E501
         """
         pass
 
@@ -306,6 +320,13 @@ class TestProtonApi(unittest.TestCase):
         """Test case for sensitivity_analysis
 
         Sensitivity analysis  # noqa: E501
+        """
+        pass
+
+    def test_spending_analysis(self):
+        """Test case for spending_analysis
+
+        Spending Analysis  # noqa: E501
         """
         pass
 

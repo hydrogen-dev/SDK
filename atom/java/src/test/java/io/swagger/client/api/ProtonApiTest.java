@@ -26,6 +26,8 @@ import io.swagger.client.model.AnnuityDepositamountResponse;
 import io.swagger.client.model.AnnuityInitialbalanceResponse;
 import io.swagger.client.model.Backtest;
 import io.swagger.client.model.BacktestResponse;
+import io.swagger.client.model.BudgetCalculator;
+import io.swagger.client.model.BudgetCalculatorResponse;
 import io.swagger.client.model.DimRiskScoreResponse;
 import io.swagger.client.model.DimensionalRiskScore;
 import io.swagger.client.model.DiversificationScore;
@@ -40,6 +42,8 @@ import io.swagger.client.model.EmergencyFundResponse;
 import io.swagger.client.model.EventStudy;
 import io.swagger.client.model.EventStudyResponse;
 import io.swagger.client.model.FinancialHealthCheck;
+import io.swagger.client.model.FinancialPicture;
+import io.swagger.client.model.FinancialPictureResponse;
 import io.swagger.client.model.GoalAccumulationAllocation;
 import io.swagger.client.model.GoalAccumulationRecommendation;
 import io.swagger.client.model.GoalAccumulationStatus;
@@ -90,6 +94,8 @@ import io.swagger.client.model.ScenarioAnalysisResponse;
 import io.swagger.client.model.SensitivityAnalysis;
 import io.swagger.client.model.SensitivityAnalysisResponse;
 import io.swagger.client.model.SimpleSavingsCalculator;
+import io.swagger.client.model.SpendingAnalysis;
+import io.swagger.client.model.SpendingAnalysisResponse;
 import io.swagger.client.model.VariableAnnuityPayload;
 import io.swagger.client.model.VariableAnnuityResponse;
 import io.swagger.client.model.WhatIfPortfolio;
@@ -186,6 +192,22 @@ public class ProtonApiTest {
     public void annuityCalculatorInitialBalanceTest() throws ApiException {
         AnnuityCalculatorInitialBalance payload = null;
         AnnuityInitialbalanceResponse response = api.annuityCalculatorInitialBalance(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Budget Calculator
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void budgetCalculatorTest() throws ApiException {
+        BudgetCalculator payload = null;
+        BudgetCalculatorResponse response = api.budgetCalculator(payload);
 
         // TODO: test validations
     }
@@ -298,6 +320,22 @@ public class ProtonApiTest {
     public void financialHealthCheckTest() throws ApiException {
         FinancialHealthCheck payload = null;
         HealthCheckResponse response = api.financialHealthCheck(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Financial Picture
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void financialPictureTest() throws ApiException {
+        FinancialPicture payload = null;
+        FinancialPictureResponse response = api.financialPicture(payload);
 
         // TODO: test validations
     }
@@ -746,6 +784,22 @@ public class ProtonApiTest {
     public void sensitivityAnalysisTest() throws ApiException {
         SensitivityAnalysis payload = null;
         SensitivityAnalysisResponse response = api.sensitivityAnalysis(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Spending Analysis
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void spendingAnalysisTest() throws ApiException {
+        SpendingAnalysis payload = null;
+        SpendingAnalysisResponse response = api.spendingAnalysis(payload);
 
         // TODO: test validations
     }

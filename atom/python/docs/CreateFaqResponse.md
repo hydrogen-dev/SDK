@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **faq_keywords** | [**list[FaqPayloadFaqKeywords]**](FaqPayloadFaqKeywords.md) |  | [optional] 
 **is_featured** | **bool** | Indicator for whether or not this is a featured FAQ. Defaults to false indicating it is not featured | [optional] [default to False]
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the FAQ in the format key:value | [optional] 
 **id** | **str** | ID of the FAQ | [optional] 
 **create_date** | **str** | Datetime the FAQ was created | [optional] 
 

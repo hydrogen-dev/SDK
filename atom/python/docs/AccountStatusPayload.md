@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **stage_id** | **str** | Refers to the stage the client is in. Useful for sign-up funnels | 
 **comments** | **str** | Comments for the client regarding the status of their account | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the aggregation account in the format key:value | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

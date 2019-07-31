@@ -42,6 +42,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the FAQ in the format key:value
+    attr_accessor :metadata
+
     # ID of the FAQ
     attr_accessor :id
 
@@ -61,6 +64,7 @@ module AtomApi
         :'faq_keywords' => :'faq_keywords',
         :'is_featured' => :'is_featured',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'id' => :'id',
         :'create_date' => :'create_date'
       }
@@ -79,6 +83,7 @@ module AtomApi
         :'faq_keywords' => :'Array<FaqPayloadFaqKeywords>',
         :'is_featured' => :'BOOLEAN',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'id' => :'String',
         :'create_date' => :'String'
       }
@@ -138,6 +143,10 @@ module AtomApi
         self.secondary_id = attributes[:'secondary_id']
       end
 
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
       end
@@ -185,6 +194,7 @@ module AtomApi
           faq_keywords == o.faq_keywords &&
           is_featured == o.is_featured &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           id == o.id &&
           create_date == o.create_date
     end
@@ -198,7 +208,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [question, answer, category, subcategory, is_active, number, seo_name, faq_keywords, is_featured, secondary_id, id, create_date].hash
+      [question, answer, category, subcategory, is_active, number, seo_name, faq_keywords, is_featured, secondary_id, metadata, id, create_date].hash
     end
 
     # Builds the object from hash

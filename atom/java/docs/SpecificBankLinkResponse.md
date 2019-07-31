@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**UUID**](UUID.md) | ID of the bank link |  [optional]
 **createDate** | **String** | Datetime the bank link was created |  [optional]
-**accountId** | [**UUID**](UUID.md) | The ID for the account to which the bank link belongs | 
+**accountId** | [**UUID**](UUID.md) | The ID for the account to which the bank link belongs |  [optional]
 **bankAccountHolder** | **String** | Name of the individual that owns the bank account | 
 **bankAccountNumber** | **String** | Account number of the bank account | 
 **name** | **String** | Name of the bank for the bank link, e.g. HSBC | 

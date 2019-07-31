@@ -85,6 +85,20 @@ class TestNucleusApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_aggregation_account_holding(self):
+        """Test case for delete_aggregation_account_holding
+
+        Delete an aggregation account holding  # noqa: E501
+        """
+        pass
+
+    def test_delete_aggregation_account_transaction(self):
+        """Test case for delete_aggregation_account_transaction
+
+        Delete an aggregation account transaction  # noqa: E501
+        """
+        pass
+
     def test_delete_allocation(self):
         """Test case for delete_allocation
 
@@ -110,6 +124,13 @@ class TestNucleusApi(unittest.TestCase):
         """Test case for delete_benchmark
 
         Delete a benchmark  # noqa: E501
+        """
+        pass
+
+    def test_delete_budget(self):
+        """Test case for delete_budget
+
+        Delete a budget  # noqa: E501
         """
         pass
 
@@ -145,6 +166,13 @@ class TestNucleusApi(unittest.TestCase):
         """Test case for delete_deposit_request
 
         Delete a deposit request  # noqa: E501
+        """
+        pass
+
+    def test_delete_financial_offer(self):
+        """Test case for delete_financial_offer
+
+        Delete a financial offer  # noqa: E501
         """
         pass
 
@@ -463,6 +491,34 @@ class TestNucleusApi(unittest.TestCase):
         """
         pass
 
+    def test_get_aggregation_account_holding(self):
+        """Test case for get_aggregation_account_holding
+
+        Retrieve an aggregation account holding  # noqa: E501
+        """
+        pass
+
+    def test_get_aggregation_account_holdings(self):
+        """Test case for get_aggregation_account_holdings
+
+        List all aggregation account holdings  # noqa: E501
+        """
+        pass
+
+    def test_get_aggregation_account_transaction(self):
+        """Test case for get_aggregation_account_transaction
+
+        Retrieve an aggregation account transaction  # noqa: E501
+        """
+        pass
+
+    def test_get_aggregation_account_transactions(self):
+        """Test case for get_aggregation_account_transactions
+
+        List all aggregation account transactions  # noqa: E501
+        """
+        pass
+
     def test_get_aggregation_accounts(self):
         """Test case for get_aggregation_accounts
 
@@ -568,6 +624,20 @@ class TestNucleusApi(unittest.TestCase):
         """
         pass
 
+    def test_get_budget(self):
+        """Test case for get_budget
+
+        Retrieve a budget  # noqa: E501
+        """
+        pass
+
+    def test_get_budgets(self):
+        """Test case for get_budgets
+
+        List all budgets  # noqa: E501
+        """
+        pass
+
     def test_get_bulk_orders(self):
         """Test case for get_bulk_orders
 
@@ -670,6 +740,20 @@ class TestNucleusApi(unittest.TestCase):
         """Test case for get_deposit_requests
 
         List all deposit requests  # noqa: E501
+        """
+        pass
+
+    def test_get_financial_offer(self):
+        """Test case for get_financial_offer
+
+        Retrieve a financial offer  # noqa: E501
+        """
+        pass
+
+    def test_get_financial_offers(self):
+        """Test case for get_financial_offers
+
+        List all financial offers  # noqa: E501
         """
         pass
 
@@ -1170,6 +1254,20 @@ class TestNucleusApi(unittest.TestCase):
         """
         pass
 
+    def test_post_aggregation_account_holding(self):
+        """Test case for post_aggregation_account_holding
+
+        Create an aggregation account holding  # noqa: E501
+        """
+        pass
+
+    def test_post_aggregation_account_transaction(self):
+        """Test case for post_aggregation_account_transaction
+
+        Create an aggregation account transaction  # noqa: E501
+        """
+        pass
+
     def test_post_allocation(self):
         """Test case for post_allocation
 
@@ -1195,6 +1293,13 @@ class TestNucleusApi(unittest.TestCase):
         """Test case for post_benchmark
 
         Create a benchmark  # noqa: E501
+        """
+        pass
+
+    def test_post_budget(self):
+        """Test case for post_budget
+
+        Create a budget  # noqa: E501
         """
         pass
 
@@ -1244,6 +1349,13 @@ class TestNucleusApi(unittest.TestCase):
         """Test case for post_deposit_request
 
         Create a deposit request  # noqa: E501
+        """
+        pass
+
+    def test_post_financial_offer(self):
+        """Test case for post_financial_offer
+
+        Create a financial offer  # noqa: E501
         """
         pass
 
@@ -1520,6 +1632,20 @@ class TestNucleusApi(unittest.TestCase):
         """
         pass
 
+    def test_update_aggregation_account_holding(self):
+        """Test case for update_aggregation_account_holding
+
+        Update an aggregation account holding  # noqa: E501
+        """
+        pass
+
+    def test_update_aggregation_account_transaction(self):
+        """Test case for update_aggregation_account_transaction
+
+        Update an aggregation account transaction  # noqa: E501
+        """
+        pass
+
     def test_update_allocation(self):
         """Test case for update_allocation
 
@@ -1545,6 +1671,13 @@ class TestNucleusApi(unittest.TestCase):
         """Test case for update_benchmark
 
         Update a benchmark  # noqa: E501
+        """
+        pass
+
+    def test_update_budget(self):
+        """Test case for update_budget
+
+        Update a budget  # noqa: E501
         """
         pass
 
@@ -1580,6 +1713,13 @@ class TestNucleusApi(unittest.TestCase):
         """Test case for update_deposit_request
 
         Update a deposit request  # noqa: E501
+        """
+        pass
+
+    def test_update_financial_offer(self):
+        """Test case for update_financial_offer
+
+        Update a financial offer  # noqa: E501
         """
         pass
 

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**annuity_calculator_decumulation_horizon**](ProtonApi.md#annuity_calculator_decumulation_horizon) | **POST** /proton/v1/annuity_calculator/decumulation_horizon | Annuity calculator - decumulation horizon
 [**annuity_calculator_deposit_amount**](ProtonApi.md#annuity_calculator_deposit_amount) | **POST** /proton/v1/annuity_calculator/deposit_amount | Annuity calculator - deposit amount
 [**annuity_calculator_initial_balance**](ProtonApi.md#annuity_calculator_initial_balance) | **POST** /proton/v1/annuity_calculator/initial_balance | Annuity calculator - initial balance
+[**budget_calculator**](ProtonApi.md#budget_calculator) | **POST** /proton/v1/budget_calculator | Budget Calculator
 [**dimensional_risk_score**](ProtonApi.md#dimensional_risk_score) | **POST** /proton/v1/dimensional_risk_score | Dimensional risk score
 [**education_calculator_annual_cost**](ProtonApi.md#education_calculator_annual_cost) | **POST** /proton/v1/education_calculator/annual_cost | Education calculator - total annual cost
 [**education_calculator_deposit_amount**](ProtonApi.md#education_calculator_deposit_amount) | **POST** /proton/v1/education_calculator/deposit_amount | Education calculator - deposit amount
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**emergency_fund_calculator**](ProtonApi.md#emergency_fund_calculator) | **POST** /proton/v1/emergency_fund_calculator | Emergency fund calculator
 [**event_study**](ProtonApi.md#event_study) | **POST** /proton/v1/event_study | Event study
 [**financial_health_check**](ProtonApi.md#financial_health_check) | **POST** /proton/v1/financial_health_check | Financial health check
+[**financial_picture**](ProtonApi.md#financial_picture) | **POST** /proton/v1/financial_picture | Financial Picture
 [**goal_accumulation_allocation**](ProtonApi.md#goal_accumulation_allocation) | **POST** /proton/v1/goal_accumulation/allocation | Goal accumulation allocation
 [**goal_accumulation_recommendation**](ProtonApi.md#goal_accumulation_recommendation) | **POST** /proton/v1/goal_accumulation/recommendation | Goal accumulation recommendation
 [**goal_accumulation_status**](ProtonApi.md#goal_accumulation_status) | **POST** /proton/v1/goal_accumulation/status | Goal accumulation status
@@ -44,6 +46,7 @@ Method | HTTP request | Description
 [**savings_calculator**](ProtonApi.md#savings_calculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenario_analysis**](ProtonApi.md#scenario_analysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivity_analysis**](ProtonApi.md#sensitivity_analysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**spending_analysis**](ProtonApi.md#spending_analysis) | **POST** /proton/v1/spending_analysis | Spending Analysis
 [**variable_annuity**](ProtonApi.md#variable_annuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
@@ -335,6 +338,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AnnuityInitialbalanceResponse**](AnnuityInitialbalanceResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **budget_calculator**
+> BudgetCalculatorResponse budget_calculator(payload)
+
+Budget Calculator
+
+### Example
+```python
+from __future__ import print_function
+import time
+import atom_api
+from atom_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = atom_api.ProtonApi(atom_api.ApiClient(configuration))
+payload = atom_api.BudgetCalculator() # BudgetCalculator | 
+
+try:
+    # Budget Calculator
+    api_response = api_instance.budget_calculator(payload)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProtonApi->budget_calculator: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**BudgetCalculator**](BudgetCalculator.md)|  | 
+
+### Return type
+
+[**BudgetCalculatorResponse**](BudgetCalculatorResponse.md)
 
 ### Authorization
 
@@ -755,6 +818,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**HealthCheckResponse**](HealthCheckResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **financial_picture**
+> FinancialPictureResponse financial_picture(payload)
+
+Financial Picture
+
+### Example
+```python
+from __future__ import print_function
+import time
+import atom_api
+from atom_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = atom_api.ProtonApi(atom_api.ApiClient(configuration))
+payload = atom_api.FinancialPicture() # FinancialPicture | 
+
+try:
+    # Financial Picture
+    api_response = api_instance.financial_picture(payload)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProtonApi->financial_picture: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**FinancialPicture**](FinancialPicture.md)|  | 
+
+### Return type
+
+[**FinancialPictureResponse**](FinancialPictureResponse.md)
 
 ### Authorization
 
@@ -2435,6 +2558,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **spending_analysis**
+> SpendingAnalysisResponse spending_analysis(payload)
+
+Spending Analysis
+
+### Example
+```python
+from __future__ import print_function
+import time
+import atom_api
+from atom_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = atom_api.ProtonApi(atom_api.ApiClient(configuration))
+payload = atom_api.SpendingAnalysis() # SpendingAnalysis | 
+
+try:
+    # Spending Analysis
+    api_response = api_instance.spending_analysis(payload)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProtonApi->spending_analysis: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**SpendingAnalysis**](SpendingAnalysis.md)|  | 
+
+### Return type
+
+[**SpendingAnalysisResponse**](SpendingAnalysisResponse.md)
 
 ### Authorization
 

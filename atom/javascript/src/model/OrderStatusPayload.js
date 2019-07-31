@@ -52,6 +52,7 @@
 
     _this['status'] = status;
     _this['description'] = description;
+
   };
 
   /**
@@ -71,6 +72,9 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
+      if (data.hasOwnProperty('metadata')) {
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
+      }
     }
     return obj;
   }
@@ -85,6 +89,11 @@
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
+  /**
+   * Custom information associated with the order status in the format key:value
+   * @member {Object} metadata
+   */
+  exports.prototype['metadata'] = undefined;
 
 
 

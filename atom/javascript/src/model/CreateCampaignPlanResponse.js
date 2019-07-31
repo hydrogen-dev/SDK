@@ -112,6 +112,12 @@ exports.prototype['plan_rates'] = undefined;
    */
 exports.prototype['secondary_id'] = undefined;
 
+  /**
+   * Custom information associated with the campaign plan in the format key:value
+   * @member {Object} metadata
+   */
+exports.prototype['metadata'] = undefined;
+
 
 
   return exports;

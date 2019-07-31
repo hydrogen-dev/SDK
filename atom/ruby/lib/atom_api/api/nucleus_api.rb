@@ -427,6 +427,108 @@ module AtomApi
       end
       return data, status_code, headers
     end
+    # Delete an aggregation account holding
+    # @param aggregation_account_holding_id UUID of an aggregation account holding
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_aggregation_account_holding(aggregation_account_holding_id, opts = {})
+      delete_aggregation_account_holding_with_http_info(aggregation_account_holding_id, opts)
+      nil
+    end
+
+    # Delete an aggregation account holding
+    # @param aggregation_account_holding_id UUID of an aggregation account holding
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_aggregation_account_holding_with_http_info(aggregation_account_holding_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.delete_aggregation_account_holding ...'
+      end
+      # verify the required parameter 'aggregation_account_holding_id' is set
+      if @api_client.config.client_side_validation && aggregation_account_holding_id.nil?
+        fail ArgumentError, "Missing the required parameter 'aggregation_account_holding_id' when calling NucleusApi.delete_aggregation_account_holding"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}'.sub('{' + 'aggregation_account_holding_id' + '}', aggregation_account_holding_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#delete_aggregation_account_holding\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Delete an aggregation account transaction
+    # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_aggregation_account_transaction(aggregation_account_transaction_id, opts = {})
+      delete_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, opts)
+      nil
+    end
+
+    # Delete an aggregation account transaction
+    # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.delete_aggregation_account_transaction ...'
+      end
+      # verify the required parameter 'aggregation_account_transaction_id' is set
+      if @api_client.config.client_side_validation && aggregation_account_transaction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'aggregation_account_transaction_id' when calling NucleusApi.delete_aggregation_account_transaction"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}'.sub('{' + 'aggregation_account_transaction_id' + '}', aggregation_account_transaction_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#delete_aggregation_account_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Delete an allocation
     # @param allocation_id UUID of an allocation
     # @param [Hash] opts the optional parameters
@@ -628,6 +730,57 @@ module AtomApi
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#delete_benchmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Delete a budget
+    # @param budget_id UUID of a budget
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_budget(budget_id, opts = {})
+      delete_budget_with_http_info(budget_id, opts)
+      nil
+    end
+
+    # Delete a budget
+    # @param budget_id UUID of a budget
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_budget_with_http_info(budget_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.delete_budget ...'
+      end
+      # verify the required parameter 'budget_id' is set
+      if @api_client.config.client_side_validation && budget_id.nil?
+        fail ArgumentError, "Missing the required parameter 'budget_id' when calling NucleusApi.delete_budget"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/budget/{budget_id}'.sub('{' + 'budget_id' + '}', budget_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#delete_budget\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -883,6 +1036,57 @@ module AtomApi
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#delete_deposit_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Delete a financial offer
+    # @param financial_offer_id UUID of a financial offer
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_financial_offer(financial_offer_id, opts = {})
+      delete_financial_offer_with_http_info(financial_offer_id, opts)
+      nil
+    end
+
+    # Delete a financial offer
+    # @param financial_offer_id UUID of a financial offer
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_financial_offer_with_http_info(financial_offer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.delete_financial_offer ...'
+      end
+      # verify the required parameter 'financial_offer_id' is set
+      if @api_client.config.client_side_validation && financial_offer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'financial_offer_id' when calling NucleusApi.delete_financial_offer"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/financial_offer/{financial_offer_id}'.sub('{' + 'financial_offer_id' + '}', financial_offer_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#delete_financial_offer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3339,6 +3543,248 @@ module AtomApi
       end
       return data, status_code, headers
     end
+    # Retrieve an aggregation account holding
+    # @param aggregation_account_holding_id UUID of an aggregation account holding
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificAggregationAccountHoldingResponse]
+    def get_aggregation_account_holding(aggregation_account_holding_id, opts = {})
+      data, _status_code, _headers = get_aggregation_account_holding_with_http_info(aggregation_account_holding_id, opts)
+      data
+    end
+
+    # Retrieve an aggregation account holding
+    # @param aggregation_account_holding_id UUID of an aggregation account holding
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificAggregationAccountHoldingResponse, Fixnum, Hash)>] SpecificAggregationAccountHoldingResponse data, response status code and response headers
+    def get_aggregation_account_holding_with_http_info(aggregation_account_holding_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_aggregation_account_holding ...'
+      end
+      # verify the required parameter 'aggregation_account_holding_id' is set
+      if @api_client.config.client_side_validation && aggregation_account_holding_id.nil?
+        fail ArgumentError, "Missing the required parameter 'aggregation_account_holding_id' when calling NucleusApi.get_aggregation_account_holding"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}'.sub('{' + 'aggregation_account_holding_id' + '}', aggregation_account_holding_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificAggregationAccountHoldingResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_aggregation_account_holding\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # List all aggregation account holdings
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [GetAggregationAccountHoldingsResponse]
+    def get_aggregation_account_holdings(opts = {})
+      data, _status_code, _headers = get_aggregation_account_holdings_with_http_info(opts)
+      data
+    end
+
+    # List all aggregation account holdings
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [Array<(GetAggregationAccountHoldingsResponse, Fixnum, Hash)>] GetAggregationAccountHoldingsResponse data, response status code and response headers
+    def get_aggregation_account_holdings_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_aggregation_account_holdings ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling NucleusApi.get_aggregation_account_holdings, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling NucleusApi.get_aggregation_account_holdings, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_holding'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetAggregationAccountHoldingsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_aggregation_account_holdings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve an aggregation account transaction
+    # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificAggregationAccountTransactionResponse]
+    def get_aggregation_account_transaction(aggregation_account_transaction_id, opts = {})
+      data, _status_code, _headers = get_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, opts)
+      data
+    end
+
+    # Retrieve an aggregation account transaction
+    # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificAggregationAccountTransactionResponse, Fixnum, Hash)>] SpecificAggregationAccountTransactionResponse data, response status code and response headers
+    def get_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_aggregation_account_transaction ...'
+      end
+      # verify the required parameter 'aggregation_account_transaction_id' is set
+      if @api_client.config.client_side_validation && aggregation_account_transaction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'aggregation_account_transaction_id' when calling NucleusApi.get_aggregation_account_transaction"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}'.sub('{' + 'aggregation_account_transaction_id' + '}', aggregation_account_transaction_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificAggregationAccountTransactionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_aggregation_account_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # List all aggregation account transactions
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [GetAggregationAccountTransactionResponse]
+    def get_aggregation_account_transactions(opts = {})
+      data, _status_code, _headers = get_aggregation_account_transactions_with_http_info(opts)
+      data
+    end
+
+    # List all aggregation account transactions
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [Array<(GetAggregationAccountTransactionResponse, Fixnum, Hash)>] GetAggregationAccountTransactionResponse data, response status code and response headers
+    def get_aggregation_account_transactions_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_aggregation_account_transactions ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling NucleusApi.get_aggregation_account_transactions, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling NucleusApi.get_aggregation_account_transactions, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_transaction'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetAggregationAccountTransactionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_aggregation_account_transactions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # List all aggregation accounts
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
@@ -4235,6 +4681,127 @@ module AtomApi
         :return_type => 'GetBenchmarkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#get_benchmarks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve a budget
+    # @param budget_id UUID of a budget
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificBudgetResponse]
+    def get_budget(budget_id, opts = {})
+      data, _status_code, _headers = get_budget_with_http_info(budget_id, opts)
+      data
+    end
+
+    # Retrieve a budget
+    # @param budget_id UUID of a budget
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificBudgetResponse, Fixnum, Hash)>] SpecificBudgetResponse data, response status code and response headers
+    def get_budget_with_http_info(budget_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_budget ...'
+      end
+      # verify the required parameter 'budget_id' is set
+      if @api_client.config.client_side_validation && budget_id.nil?
+        fail ArgumentError, "Missing the required parameter 'budget_id' when calling NucleusApi.get_budget"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/budget/{budget_id}'.sub('{' + 'budget_id' + '}', budget_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificBudgetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_budget\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # List all budgets
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [GetBudgetResponse]
+    def get_budgets(opts = {})
+      data, _status_code, _headers = get_budgets_with_http_info(opts)
+      data
+    end
+
+    # List all budgets
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [Array<(GetBudgetResponse, Fixnum, Hash)>] GetBudgetResponse data, response status code and response headers
+    def get_budgets_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_budgets ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling NucleusApi.get_budgets, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling NucleusApi.get_budgets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/nucleus/v1/budget'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetBudgetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_budgets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5137,6 +5704,127 @@ module AtomApi
         :return_type => 'GetDepositRequestResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#get_deposit_requests\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve a financial offer
+    # @param financial_offer_id UUID of a financial offer
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificFinancialOfferResponse]
+    def get_financial_offer(financial_offer_id, opts = {})
+      data, _status_code, _headers = get_financial_offer_with_http_info(financial_offer_id, opts)
+      data
+    end
+
+    # Retrieve a financial offer
+    # @param financial_offer_id UUID of a financial offer
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificFinancialOfferResponse, Fixnum, Hash)>] SpecificFinancialOfferResponse data, response status code and response headers
+    def get_financial_offer_with_http_info(financial_offer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_financial_offer ...'
+      end
+      # verify the required parameter 'financial_offer_id' is set
+      if @api_client.config.client_side_validation && financial_offer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'financial_offer_id' when calling NucleusApi.get_financial_offer"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/financial_offer/{financial_offer_id}'.sub('{' + 'financial_offer_id' + '}', financial_offer_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificFinancialOfferResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_financial_offer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # List all financial offers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [GetFinancialOfferResponse]
+    def get_financial_offers(opts = {})
+      data, _status_code, _headers = get_financial_offers_with_http_info(opts)
+      data
+    end
+
+    # List all financial offers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [Array<(GetFinancialOfferResponse, Fixnum, Hash)>] GetFinancialOfferResponse data, response status code and response headers
+    def get_financial_offers_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.get_financial_offers ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling NucleusApi.get_financial_offers, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling NucleusApi.get_financial_offers, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/nucleus/v1/financial_offer'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetFinancialOfferResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#get_financial_offers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -9403,6 +10091,110 @@ module AtomApi
       end
       return data, status_code, headers
     end
+    # Create an aggregation account holding
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateAggregationAccountHoldingResponse]
+    def post_aggregation_account_holding(payload, opts = {})
+      data, _status_code, _headers = post_aggregation_account_holding_with_http_info(payload, opts)
+      data
+    end
+
+    # Create an aggregation account holding
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateAggregationAccountHoldingResponse, Fixnum, Hash)>] CreateAggregationAccountHoldingResponse data, response status code and response headers
+    def post_aggregation_account_holding_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.post_aggregation_account_holding ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.post_aggregation_account_holding"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_holding'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CreateAggregationAccountHoldingResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#post_aggregation_account_holding\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Create an aggregation account transaction
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateAggregationAccountTransactionResponse]
+    def post_aggregation_account_transaction(payload, opts = {})
+      data, _status_code, _headers = post_aggregation_account_transaction_with_http_info(payload, opts)
+      data
+    end
+
+    # Create an aggregation account transaction
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateAggregationAccountTransactionResponse, Fixnum, Hash)>] CreateAggregationAccountTransactionResponse data, response status code and response headers
+    def post_aggregation_account_transaction_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.post_aggregation_account_transaction ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.post_aggregation_account_transaction"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_transaction'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CreateAggregationAccountTransactionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#post_aggregation_account_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Create an allocation
     # @param payload 
     # @param [Hash] opts the optional parameters
@@ -9608,6 +10400,58 @@ module AtomApi
         :return_type => 'CreateBenchmarkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#post_benchmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Create a budget
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateBudgetResponse]
+    def post_budget(payload, opts = {})
+      data, _status_code, _headers = post_budget_with_http_info(payload, opts)
+      data
+    end
+
+    # Create a budget
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateBudgetResponse, Fixnum, Hash)>] CreateBudgetResponse data, response status code and response headers
+    def post_budget_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.post_budget ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.post_budget"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/budget'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CreateBudgetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#post_budget\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -9978,6 +10822,58 @@ module AtomApi
         :return_type => 'CreateDepositRequestResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#post_deposit_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Create a financial offer
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateFinancialOfferResponse]
+    def post_financial_offer(payload, opts = {})
+      data, _status_code, _headers = post_financial_offer_with_http_info(payload, opts)
+      data
+    end
+
+    # Create a financial offer
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateFinancialOfferResponse, Fixnum, Hash)>] CreateFinancialOfferResponse data, response status code and response headers
+    def post_financial_offer_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.post_financial_offer ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.post_financial_offer"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/financial_offer'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CreateFinancialOfferResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#post_financial_offer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -12087,6 +12983,122 @@ module AtomApi
       end
       return data, status_code, headers
     end
+    # Update an aggregation account holding
+    # @param aggregation_account_holding_id UUID of an aggregation account holding
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificAggregationAccountHoldingResponse]
+    def update_aggregation_account_holding(aggregation_account_holding_id, payload, opts = {})
+      data, _status_code, _headers = update_aggregation_account_holding_with_http_info(aggregation_account_holding_id, payload, opts)
+      data
+    end
+
+    # Update an aggregation account holding
+    # @param aggregation_account_holding_id UUID of an aggregation account holding
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificAggregationAccountHoldingResponse, Fixnum, Hash)>] SpecificAggregationAccountHoldingResponse data, response status code and response headers
+    def update_aggregation_account_holding_with_http_info(aggregation_account_holding_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.update_aggregation_account_holding ...'
+      end
+      # verify the required parameter 'aggregation_account_holding_id' is set
+      if @api_client.config.client_side_validation && aggregation_account_holding_id.nil?
+        fail ArgumentError, "Missing the required parameter 'aggregation_account_holding_id' when calling NucleusApi.update_aggregation_account_holding"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.update_aggregation_account_holding"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}'.sub('{' + 'aggregation_account_holding_id' + '}', aggregation_account_holding_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificAggregationAccountHoldingResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#update_aggregation_account_holding\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Update an aggregation account transaction
+    # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificAggregationAccountTransactionResponse]
+    def update_aggregation_account_transaction(aggregation_account_transaction_id, payload, opts = {})
+      data, _status_code, _headers = update_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, payload, opts)
+      data
+    end
+
+    # Update an aggregation account transaction
+    # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificAggregationAccountTransactionResponse, Fixnum, Hash)>] SpecificAggregationAccountTransactionResponse data, response status code and response headers
+    def update_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.update_aggregation_account_transaction ...'
+      end
+      # verify the required parameter 'aggregation_account_transaction_id' is set
+      if @api_client.config.client_side_validation && aggregation_account_transaction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'aggregation_account_transaction_id' when calling NucleusApi.update_aggregation_account_transaction"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.update_aggregation_account_transaction"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}'.sub('{' + 'aggregation_account_transaction_id' + '}', aggregation_account_transaction_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificAggregationAccountTransactionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#update_aggregation_account_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Update an allocation
     # @param allocation_id UUID of an allocation
     # @param payload 
@@ -12316,6 +13328,64 @@ module AtomApi
         :return_type => 'SpecificBenchmarkResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#update_benchmark\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Update a budget
+    # @param budget_id UUID of a budget
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificBudgetResponse]
+    def update_budget(budget_id, payload, opts = {})
+      data, _status_code, _headers = update_budget_with_http_info(budget_id, payload, opts)
+      data
+    end
+
+    # Update a budget
+    # @param budget_id UUID of a budget
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificBudgetResponse, Fixnum, Hash)>] SpecificBudgetResponse data, response status code and response headers
+    def update_budget_with_http_info(budget_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.update_budget ...'
+      end
+      # verify the required parameter 'budget_id' is set
+      if @api_client.config.client_side_validation && budget_id.nil?
+        fail ArgumentError, "Missing the required parameter 'budget_id' when calling NucleusApi.update_budget"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.update_budget"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/budget/{budget_id}'.sub('{' + 'budget_id' + '}', budget_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificBudgetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#update_budget\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -12606,6 +13676,64 @@ module AtomApi
         :return_type => 'SpecificDepositRequestResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NucleusApi#update_deposit_request\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Update a financial offer
+    # @param financial_offer_id UUID of a financial offer
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [SpecificFinancialOfferResponse]
+    def update_financial_offer(financial_offer_id, payload, opts = {})
+      data, _status_code, _headers = update_financial_offer_with_http_info(financial_offer_id, payload, opts)
+      data
+    end
+
+    # Update a financial offer
+    # @param financial_offer_id UUID of a financial offer
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpecificFinancialOfferResponse, Fixnum, Hash)>] SpecificFinancialOfferResponse data, response status code and response headers
+    def update_financial_offer_with_http_info(financial_offer_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NucleusApi.update_financial_offer ...'
+      end
+      # verify the required parameter 'financial_offer_id' is set
+      if @api_client.config.client_side_validation && financial_offer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'financial_offer_id' when calling NucleusApi.update_financial_offer"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling NucleusApi.update_financial_offer"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/financial_offer/{financial_offer_id}'.sub('{' + 'financial_offer_id' + '}', financial_offer_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpecificFinancialOfferResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NucleusApi#update_financial_offer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

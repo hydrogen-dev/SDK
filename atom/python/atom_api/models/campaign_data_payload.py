@@ -41,7 +41,8 @@ class CampaignDataPayload(object):
         'publisher_campaign_name': 'str',
         'total_clicks': 'int',
         'total_impressions': 'int',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class CampaignDataPayload(object):
         'publisher_campaign_name': 'publisher_campaign_name',
         'total_clicks': 'total_clicks',
         'total_impressions': 'total_impressions',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, campaign_id=None, start_date=None, end_date=None, click_through_rate=None, line_item=None, publisher_campaign_name=None, total_clicks=None, total_impressions=None, secondary_id=None):  # noqa: E501
+    def __init__(self, campaign_id=None, start_date=None, end_date=None, click_through_rate=None, line_item=None, publisher_campaign_name=None, total_clicks=None, total_impressions=None, secondary_id=None, metadata=None):  # noqa: E501
         """CampaignDataPayload - a model defined in Swagger"""  # noqa: E501
 
         self._campaign_id = None
@@ -68,6 +70,7 @@ class CampaignDataPayload(object):
         self._total_clicks = None
         self._total_impressions = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         self.campaign_id = campaign_id
@@ -85,6 +88,8 @@ class CampaignDataPayload(object):
             self.total_impressions = total_impressions
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def campaign_id(self):
@@ -296,6 +301,29 @@ class CampaignDataPayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CampaignDataPayload.  # noqa: E501
+
+        Custom information associated with the campaign data in the format key:value  # noqa: E501
+
+        :return: The metadata of this CampaignDataPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CampaignDataPayload.
+
+        Custom information associated with the campaign data in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CampaignDataPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

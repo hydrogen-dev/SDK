@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * AccountStatusPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class AccountStatusPayload {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -44,6 +44,9 @@ public class AccountStatusPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public AccountStatusPayload accountId(UUID accountId) {
     this.accountId = accountId;
@@ -135,6 +138,24 @@ public class AccountStatusPayload {
     this.secondaryId = secondaryId;
   }
 
+  public AccountStatusPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the aggregation account in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the aggregation account in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +170,13 @@ public class AccountStatusPayload {
         Objects.equals(this.status, accountStatusPayload.status) &&
         Objects.equals(this.stageId, accountStatusPayload.stageId) &&
         Objects.equals(this.comments, accountStatusPayload.comments) &&
-        Objects.equals(this.secondaryId, accountStatusPayload.secondaryId);
+        Objects.equals(this.secondaryId, accountStatusPayload.secondaryId) &&
+        Objects.equals(this.metadata, accountStatusPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, status, stageId, comments, secondaryId);
+    return Objects.hash(accountId, status, stageId, comments, secondaryId, metadata);
   }
 
 
@@ -168,6 +190,7 @@ public class AccountStatusPayload {
     sb.append("    stageId: ").append(toIndentedString(stageId)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

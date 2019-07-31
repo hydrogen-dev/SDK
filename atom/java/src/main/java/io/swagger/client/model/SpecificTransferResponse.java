@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificTransferResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificTransferResponse {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -69,6 +69,9 @@ public class SpecificTransferResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -307,6 +310,24 @@ public class SpecificTransferResponse {
     this.secondaryId = secondaryId;
   }
 
+  public SpecificTransferResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the transfer in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the transfer in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificTransferResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -348,12 +369,13 @@ public class SpecificTransferResponse {
         Objects.equals(this.status, specificTransferResponse.status) &&
         Objects.equals(this.transferType, specificTransferResponse.transferType) &&
         Objects.equals(this.secondaryId, specificTransferResponse.secondaryId) &&
+        Objects.equals(this.metadata, specificTransferResponse.metadata) &&
         Objects.equals(this.updateDate, specificTransferResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, accountHolder, accountNumber, accountTypeId, firmName, transferAllCash, amount, comment, dtcNumber, rothFiveYear, status, transferType, secondaryId, updateDate);
+    return Objects.hash(accountId, accountHolder, accountNumber, accountTypeId, firmName, transferAllCash, amount, comment, dtcNumber, rothFiveYear, status, transferType, secondaryId, metadata, updateDate);
   }
 
 
@@ -375,6 +397,7 @@ public class SpecificTransferResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

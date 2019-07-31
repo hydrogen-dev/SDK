@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **status** | **String** | Status of the transfer such as “Pending” | [optional] 
 **transfer_type** | **String** | Type of transaction being made such as “wire” or “check” | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **Object** | Custom information associated with the transfer in the format key:value | [optional] 
 **update_date** | **String** | Datetime the transfer request was last updated | [optional] 
 
 

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CreateClientCampaignResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateClientCampaignResponse {
   @SerializedName("campaign_id")
   private UUID campaignId = null;
@@ -42,6 +42,9 @@ public class CreateClientCampaignResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -121,6 +124,24 @@ public class CreateClientCampaignResponse {
     this.secondaryId = secondaryId;
   }
 
+  public CreateClientCampaignResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the client campaign in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the client campaign in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public CreateClientCampaignResponse id(UUID id) {
     this.id = id;
     return this;
@@ -171,13 +192,14 @@ public class CreateClientCampaignResponse {
         Objects.equals(this.clientId, createClientCampaignResponse.clientId) &&
         Objects.equals(this.ip, createClientCampaignResponse.ip) &&
         Objects.equals(this.secondaryId, createClientCampaignResponse.secondaryId) &&
+        Objects.equals(this.metadata, createClientCampaignResponse.metadata) &&
         Objects.equals(this.id, createClientCampaignResponse.id) &&
         Objects.equals(this.createDate, createClientCampaignResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaignId, clientId, ip, secondaryId, id, createDate);
+    return Objects.hash(campaignId, clientId, ip, secondaryId, metadata, id, createDate);
   }
 
 
@@ -190,6 +212,7 @@ public class CreateClientCampaignResponse {
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

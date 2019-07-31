@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -85,6 +86,9 @@
       }
       if (data.hasOwnProperty('is_buy')) {
         obj['is_buy'] = ApiClient.convertToType(data['is_buy'], 'Boolean');
+      }
+      if (data.hasOwnProperty('metadata')) {
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
       }
     }
     return obj;
@@ -121,6 +125,11 @@
    * @default false
    */
   exports.prototype['is_buy'] = false;
+  /**
+   * Custom information associated with the transaction code in the format key:value
+   * @member {Object} metadata
+   */
+  exports.prototype['metadata'] = undefined;
 
 
 

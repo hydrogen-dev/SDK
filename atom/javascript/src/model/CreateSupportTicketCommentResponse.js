@@ -123,6 +123,12 @@ exports.prototype['is_admin'] = false;
 exports.prototype['is_read'] = false;
 
   /**
+   * Custom information associated with the support ticket comment in the format key:value
+   * @member {Object} metadata
+   */
+exports.prototype['metadata'] = undefined;
+
+  /**
    * @member {Array.<module:model/SupportTicketCommentPayloadSupportTicketDocument>} support_ticket_document
    */
 exports.prototype['support_ticket_document'] = undefined;

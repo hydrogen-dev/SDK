@@ -28,6 +28,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the decision tree in the format key:value
+    attr_accessor :metadata
+
     # Datetime the decision tree was last updated
     attr_accessor :update_date
 
@@ -39,6 +42,7 @@ module AtomApi
         :'name' => :'name',
         :'description' => :'description',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'update_date' => :'update_date'
       }
     end
@@ -51,6 +55,7 @@ module AtomApi
         :'name' => :'String',
         :'description' => :'String',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'update_date' => :'String'
       }
     end
@@ -81,6 +86,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
 
       if attributes.has_key?(:'update_date')
@@ -116,6 +125,7 @@ module AtomApi
           name == o.name &&
           description == o.description &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           update_date == o.update_date
     end
 
@@ -128,7 +138,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, name, description, secondary_id, update_date].hash
+      [id, create_date, name, description, secondary_id, metadata, update_date].hash
     end
 
     # Builds the object from hash

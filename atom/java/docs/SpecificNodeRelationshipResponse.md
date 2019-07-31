@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **nodeChildId** | [**UUID**](UUID.md) | The ID for the child node. |  [optional]
 **isLeaf** | **Boolean** | Indicator if the node relationship represents the last point in the decision tree branch. true indicates it is the last point and that is maps to an allocation or model |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**metadata** | **Object** | Custom information associated with the node relationship in the format key:value |  [optional]
 **updateDate** | **String** | Datetime the node relationship was last updated |  [optional]
 
 

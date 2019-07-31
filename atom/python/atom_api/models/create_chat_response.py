@@ -40,6 +40,7 @@ class CreateChatResponse(object):
         'is_notification': 'bool',
         'is_open': 'bool',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -51,11 +52,12 @@ class CreateChatResponse(object):
         'is_notification': 'is_notification',
         'is_open': 'is_open',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, chat_log=None, assigned_to=None, comments=None, is_notification=True, is_open=True, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, chat_log=None, assigned_to=None, comments=None, is_notification=True, is_open=True, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateChatResponse - a model defined in Swagger"""  # noqa: E501
 
         self._chat_log = None
@@ -64,6 +66,7 @@ class CreateChatResponse(object):
         self._is_notification = None
         self._is_open = None
         self._secondary_id = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -79,6 +82,8 @@ class CreateChatResponse(object):
             self.is_open = is_open
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -221,6 +226,29 @@ class CreateChatResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateChatResponse.  # noqa: E501
+
+        Custom information associated with the chat in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateChatResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateChatResponse.
+
+        Custom information associated with the chat in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateChatResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

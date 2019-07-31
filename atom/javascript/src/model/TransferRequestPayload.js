@@ -67,6 +67,7 @@
 
 
 
+
   };
 
   /**
@@ -118,6 +119,9 @@
       }
       if (data.hasOwnProperty('secondary_id')) {
         obj['secondary_id'] = SecondaryId.constructFromObject(data['secondary_id']);
+      }
+      if (data.hasOwnProperty('metadata')) {
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
       }
     }
     return obj;
@@ -187,6 +191,11 @@
    * @member {module:model/SecondaryId} secondary_id
    */
   exports.prototype['secondary_id'] = undefined;
+  /**
+   * Custom information associated with the transfer in the format key:value
+   * @member {Object} metadata
+   */
+  exports.prototype['metadata'] = undefined;
 
 
 

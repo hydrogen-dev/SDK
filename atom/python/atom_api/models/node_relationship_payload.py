@@ -39,7 +39,8 @@ class NodeRelationshipPayload(object):
         'node_parent_id': 'str',
         'node_child_id': 'str',
         'is_leaf': 'bool',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class NodeRelationshipPayload(object):
         'node_parent_id': 'node_parent_id',
         'node_child_id': 'node_child_id',
         'is_leaf': 'is_leaf',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, answer_id=None, value=None, decision_tree_id=None, node_parent_id=None, node_child_id=None, is_leaf=None, secondary_id=None):  # noqa: E501
+    def __init__(self, answer_id=None, value=None, decision_tree_id=None, node_parent_id=None, node_child_id=None, is_leaf=None, secondary_id=None, metadata=None):  # noqa: E501
         """NodeRelationshipPayload - a model defined in Swagger"""  # noqa: E501
 
         self._answer_id = None
@@ -62,6 +64,7 @@ class NodeRelationshipPayload(object):
         self._node_child_id = None
         self._is_leaf = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         self.answer_id = answer_id
@@ -74,6 +77,8 @@ class NodeRelationshipPayload(object):
             self.is_leaf = is_leaf
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def answer_id(self):
@@ -241,6 +246,29 @@ class NodeRelationshipPayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this NodeRelationshipPayload.  # noqa: E501
+
+        Custom information associated with the node relationship in the format key:value  # noqa: E501
+
+        :return: The metadata of this NodeRelationshipPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this NodeRelationshipPayload.
+
+        Custom information associated with the node relationship in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this NodeRelationshipPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

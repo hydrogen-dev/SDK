@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**annuityCalculatorDecumulationHorizon**](ProtonApi.md#annuityCalculatorDecumulationHorizon) | **POST** /proton/v1/annuity_calculator/decumulation_horizon | Annuity calculator - decumulation horizon
 [**annuityCalculatorDepositAmount**](ProtonApi.md#annuityCalculatorDepositAmount) | **POST** /proton/v1/annuity_calculator/deposit_amount | Annuity calculator - deposit amount
 [**annuityCalculatorInitialBalance**](ProtonApi.md#annuityCalculatorInitialBalance) | **POST** /proton/v1/annuity_calculator/initial_balance | Annuity calculator - initial balance
+[**budgetCalculator**](ProtonApi.md#budgetCalculator) | **POST** /proton/v1/budget_calculator | Budget Calculator
 [**dimensionalRiskScore**](ProtonApi.md#dimensionalRiskScore) | **POST** /proton/v1/dimensional_risk_score | Dimensional risk score
 [**educationCalculatorAnnualCost**](ProtonApi.md#educationCalculatorAnnualCost) | **POST** /proton/v1/education_calculator/annual_cost | Education calculator - total annual cost
 [**educationCalculatorDepositAmount**](ProtonApi.md#educationCalculatorDepositAmount) | **POST** /proton/v1/education_calculator/deposit_amount | Education calculator - deposit amount
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**emergencyFundCalculator**](ProtonApi.md#emergencyFundCalculator) | **POST** /proton/v1/emergency_fund_calculator | Emergency fund calculator
 [**eventStudy**](ProtonApi.md#eventStudy) | **POST** /proton/v1/event_study | Event study
 [**financialHealthCheck**](ProtonApi.md#financialHealthCheck) | **POST** /proton/v1/financial_health_check | Financial health check
+[**financialPicture**](ProtonApi.md#financialPicture) | **POST** /proton/v1/financial_picture | Financial Picture
 [**goalAccumulationAllocation**](ProtonApi.md#goalAccumulationAllocation) | **POST** /proton/v1/goal_accumulation/allocation | Goal accumulation allocation
 [**goalAccumulationRecommendation**](ProtonApi.md#goalAccumulationRecommendation) | **POST** /proton/v1/goal_accumulation/recommendation | Goal accumulation recommendation
 [**goalAccumulationStatus**](ProtonApi.md#goalAccumulationStatus) | **POST** /proton/v1/goal_accumulation/status | Goal accumulation status
@@ -44,6 +46,7 @@ Method | HTTP request | Description
 [**savingsCalculator**](ProtonApi.md#savingsCalculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenarioAnalysis**](ProtonApi.md#scenarioAnalysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivityAnalysis**](ProtonApi.md#sensitivityAnalysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**spendingAnalysis**](ProtonApi.md#spendingAnalysis) | **POST** /proton/v1/spending_analysis | Spending Analysis
 [**variableAnnuity**](ProtonApi.md#variableAnnuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
@@ -337,6 +340,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AnnuityInitialbalanceResponse**](AnnuityInitialbalanceResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="budgetCalculator"></a>
+# **budgetCalculator**
+> BudgetCalculatorResponse budgetCalculator(payload)
+
+Budget Calculator
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+BudgetCalculator payload = new BudgetCalculator(); // BudgetCalculator | 
+try {
+    BudgetCalculatorResponse result = apiInstance.budgetCalculator(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#budgetCalculator");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**BudgetCalculator**](BudgetCalculator.md)|  |
+
+### Return type
+
+[**BudgetCalculatorResponse**](BudgetCalculatorResponse.md)
 
 ### Authorization
 
@@ -757,6 +820,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**HealthCheckResponse**](HealthCheckResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="financialPicture"></a>
+# **financialPicture**
+> FinancialPictureResponse financialPicture(payload)
+
+Financial Picture
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+FinancialPicture payload = new FinancialPicture(); // FinancialPicture | 
+try {
+    FinancialPictureResponse result = apiInstance.financialPicture(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#financialPicture");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**FinancialPicture**](FinancialPicture.md)|  |
+
+### Return type
+
+[**FinancialPictureResponse**](FinancialPictureResponse.md)
 
 ### Authorization
 
@@ -2437,6 +2560,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="spendingAnalysis"></a>
+# **spendingAnalysis**
+> SpendingAnalysisResponse spendingAnalysis(payload)
+
+Spending Analysis
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+SpendingAnalysis payload = new SpendingAnalysis(); // SpendingAnalysis | 
+try {
+    SpendingAnalysisResponse result = apiInstance.spendingAnalysis(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#spendingAnalysis");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**SpendingAnalysis**](SpendingAnalysis.md)|  |
+
+### Return type
+
+[**SpendingAnalysisResponse**](SpendingAnalysisResponse.md)
 
 ### Authorization
 

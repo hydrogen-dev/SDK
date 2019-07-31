@@ -46,6 +46,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the campaign data in the format key:value
+    attr_accessor :metadata
+
     # Datetime the marketing campaign data record was last updated
     attr_accessor :update_date
 
@@ -63,6 +66,7 @@ module AtomApi
         :'total_clicks' => :'total_clicks',
         :'total_impressions' => :'total_impressions',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'update_date' => :'update_date'
       }
     end
@@ -81,6 +85,7 @@ module AtomApi
         :'total_clicks' => :'Integer',
         :'total_impressions' => :'Integer',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'update_date' => :'String'
       }
     end
@@ -137,6 +142,10 @@ module AtomApi
         self.secondary_id = attributes[:'secondary_id']
       end
 
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
       if attributes.has_key?(:'update_date')
         self.update_date = attributes[:'update_date']
       end
@@ -186,6 +195,7 @@ module AtomApi
           total_clicks == o.total_clicks &&
           total_impressions == o.total_impressions &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           update_date == o.update_date
     end
 
@@ -198,7 +208,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, campaign_id, start_date, end_date, click_through_rate, line_item, publisher_campaign_name, total_clicks, total_impressions, secondary_id, update_date].hash
+      [id, create_date, campaign_id, start_date, end_date, click_through_rate, line_item, publisher_campaign_name, total_clicks, total_impressions, secondary_id, metadata, update_date].hash
     end
 
     # Builds the object from hash

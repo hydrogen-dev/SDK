@@ -106,6 +106,12 @@ exports.prototype['is_first'] = false;
 exports.prototype['secondary_id'] = undefined;
 
   /**
+   * Custom information associated with the node in the format key:value
+   * @member {Object} metadata
+   */
+exports.prototype['metadata'] = undefined;
+
+  /**
    * ID of the node
    * @member {String} id
    */

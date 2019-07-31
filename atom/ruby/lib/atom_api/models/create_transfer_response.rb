@@ -52,6 +52,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the transfer in the format key:value
+    attr_accessor :metadata
+
     # ID of the transfer request
     attr_accessor :id
 
@@ -74,6 +77,7 @@ module AtomApi
         :'status' => :'status',
         :'transfer_type' => :'transfer_type',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'id' => :'id',
         :'create_date' => :'create_date'
       }
@@ -95,6 +99,7 @@ module AtomApi
         :'status' => :'String',
         :'transfer_type' => :'String',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'id' => :'String',
         :'create_date' => :'String'
       }
@@ -158,6 +163,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
 
       if attributes.has_key?(:'id')
@@ -230,6 +239,7 @@ module AtomApi
           status == o.status &&
           transfer_type == o.transfer_type &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           id == o.id &&
           create_date == o.create_date
     end
@@ -243,7 +253,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, account_holder, account_number, account_type_id, firm_name, transfer_all_cash, amount, comment, dtc_number, roth_five_year, status, transfer_type, secondary_id, id, create_date].hash
+      [account_id, account_holder, account_number, account_type_id, firm_name, transfer_all_cash, amount, comment, dtc_number, roth_five_year, status, transfer_type, secondary_id, metadata, id, create_date].hash
     end
 
     # Builds the object from hash

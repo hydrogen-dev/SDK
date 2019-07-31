@@ -44,16 +44,15 @@
    * Constructs a new <code>BankLinkPayload</code>.
    * @alias module:model/BankLinkPayload
    * @class
-   * @param accountId {String} The ID for the account to which the bank link belongs
    * @param bankAccountHolder {String} Name of the individual that owns the bank account
    * @param bankAccountNumber {String} Account number of the bank account
    * @param name {String} Name of the bank for the bank link, e.g. HSBC
    * @param routing {String} Routing number of the bank for the bank link
    */
-  var exports = function(accountId, bankAccountHolder, bankAccountNumber, name, routing) {
+  var exports = function(bankAccountHolder, bankAccountNumber, name, routing) {
     var _this = this;
 
-    _this['account_id'] = accountId;
+
     _this['bank_account_holder'] = bankAccountHolder;
     _this['bank_account_number'] = bankAccountNumber;
     _this['name'] = name;

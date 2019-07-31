@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DecisionTreePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class DecisionTreePayload {
   @SerializedName("name")
   private String name = null;
@@ -37,6 +37,9 @@ public class DecisionTreePayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public DecisionTreePayload name(String name) {
     this.name = name;
@@ -92,6 +95,24 @@ public class DecisionTreePayload {
     this.secondaryId = secondaryId;
   }
 
+  public DecisionTreePayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the decision tree in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the decision tree in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +125,13 @@ public class DecisionTreePayload {
     DecisionTreePayload decisionTreePayload = (DecisionTreePayload) o;
     return Objects.equals(this.name, decisionTreePayload.name) &&
         Objects.equals(this.description, decisionTreePayload.description) &&
-        Objects.equals(this.secondaryId, decisionTreePayload.secondaryId);
+        Objects.equals(this.secondaryId, decisionTreePayload.secondaryId) &&
+        Objects.equals(this.metadata, decisionTreePayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, secondaryId);
+    return Objects.hash(name, description, secondaryId, metadata);
   }
 
 
@@ -121,6 +143,7 @@ public class DecisionTreePayload {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

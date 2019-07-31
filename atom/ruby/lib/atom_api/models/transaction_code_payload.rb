@@ -32,6 +32,9 @@ module AtomApi
     # Indicates if the transaction is to buy securities. Defaults to false which means it is a sell transaction.
     attr_accessor :is_buy
 
+    # Custom information associated with the transaction code in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,7 +43,8 @@ module AtomApi
         :'transaction_type' => :'transaction_type',
         :'category' => :'category',
         :'subcategory' => :'subcategory',
-        :'is_buy' => :'is_buy'
+        :'is_buy' => :'is_buy',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -52,7 +56,8 @@ module AtomApi
         :'transaction_type' => :'String',
         :'category' => :'String',
         :'subcategory' => :'String',
-        :'is_buy' => :'BOOLEAN'
+        :'is_buy' => :'BOOLEAN',
+        :'metadata' => :'Object'
       }
     end
 
@@ -89,6 +94,10 @@ module AtomApi
       else
         self.is_buy = false
       end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -119,7 +128,8 @@ module AtomApi
           transaction_type == o.transaction_type &&
           category == o.category &&
           subcategory == o.subcategory &&
-          is_buy == o.is_buy
+          is_buy == o.is_buy &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -131,7 +141,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [transaction_code, transaction_code_description, transaction_type, category, subcategory, is_buy].hash
+      [transaction_code, transaction_code_description, transaction_type, category, subcategory, is_buy, metadata].hash
     end
 
     # Builds the object from hash

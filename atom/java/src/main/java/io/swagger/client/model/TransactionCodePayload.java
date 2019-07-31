@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TransactionCodePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class TransactionCodePayload {
   @SerializedName("transaction_code")
   private String transactionCode = null;
@@ -46,6 +46,9 @@ public class TransactionCodePayload {
 
   @SerializedName("is_buy")
   private Boolean isBuy = false;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public TransactionCodePayload transactionCode(String transactionCode) {
     this.transactionCode = transactionCode;
@@ -155,6 +158,24 @@ public class TransactionCodePayload {
     this.isBuy = isBuy;
   }
 
+  public TransactionCodePayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the transaction code in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the transaction code in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,12 +191,13 @@ public class TransactionCodePayload {
         Objects.equals(this.transactionType, transactionCodePayload.transactionType) &&
         Objects.equals(this.category, transactionCodePayload.category) &&
         Objects.equals(this.subcategory, transactionCodePayload.subcategory) &&
-        Objects.equals(this.isBuy, transactionCodePayload.isBuy);
+        Objects.equals(this.isBuy, transactionCodePayload.isBuy) &&
+        Objects.equals(this.metadata, transactionCodePayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionCode, transactionCodeDescription, transactionType, category, subcategory, isBuy);
+    return Objects.hash(transactionCode, transactionCodeDescription, transactionType, category, subcategory, isBuy, metadata);
   }
 
 
@@ -190,6 +212,7 @@ public class TransactionCodePayload {
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    subcategory: ").append(toIndentedString(subcategory)).append("\n");
     sb.append("    isBuy: ").append(toIndentedString(isBuy)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountId** | **String** | The ID for the account to which the bank link belongs | 
+**accountId** | **String** | The ID for the account to which the bank link belongs | [optional] 
 **bankAccountHolder** | **String** | Name of the individual that owns the bank account | 
 **bankAccountNumber** | **String** | Account number of the bank account | 
 **name** | **String** | Name of the bank for the bank link, e.g. HSBC | 

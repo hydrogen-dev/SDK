@@ -55,6 +55,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the withdrawal in the format key:value
+    attr_accessor :metadata
+
     # ID of the withdrawal request
     attr_accessor :id
 
@@ -78,6 +81,7 @@ module AtomApi
         :'status_time_stamp' => :'status_time_stamp',
         :'type' => :'type',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'id' => :'id',
         :'create_date' => :'create_date'
       }
@@ -100,6 +104,7 @@ module AtomApi
         :'status_time_stamp' => :'String',
         :'type' => :'String',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'id' => :'String',
         :'create_date' => :'String'
       }
@@ -169,6 +174,10 @@ module AtomApi
         self.secondary_id = attributes[:'secondary_id']
       end
 
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
       end
@@ -230,6 +239,7 @@ module AtomApi
           status_time_stamp == o.status_time_stamp &&
           type == o.type &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           id == o.id &&
           create_date == o.create_date
     end
@@ -243,7 +253,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, amount, funding_id, withdrawal_date, account_number, comments, direction, fees, last_request_date, received_date, status, status_time_stamp, type, secondary_id, id, create_date].hash
+      [account_id, amount, funding_id, withdrawal_date, account_number, comments, direction, fees, last_request_date, received_date, status, status_time_stamp, type, secondary_id, metadata, id, create_date].hash
     end
 
     # Builds the object from hash

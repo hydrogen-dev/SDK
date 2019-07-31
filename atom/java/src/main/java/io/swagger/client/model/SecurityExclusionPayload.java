@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * SecurityExclusionPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SecurityExclusionPayload {
   @SerializedName("client_id")
   private UUID clientId = null;
@@ -50,6 +50,9 @@ public class SecurityExclusionPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public SecurityExclusionPayload clientId(UUID clientId) {
     this.clientId = clientId;
@@ -177,6 +180,24 @@ public class SecurityExclusionPayload {
     this.secondaryId = secondaryId;
   }
 
+  public SecurityExclusionPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the security exclusion in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the security exclusion in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,12 +214,13 @@ public class SecurityExclusionPayload {
         Objects.equals(this.isRestrictSell, securityExclusionPayload.isRestrictSell) &&
         Objects.equals(this.accountId, securityExclusionPayload.accountId) &&
         Objects.equals(this.portfolioId, securityExclusionPayload.portfolioId) &&
-        Objects.equals(this.secondaryId, securityExclusionPayload.secondaryId);
+        Objects.equals(this.secondaryId, securityExclusionPayload.secondaryId) &&
+        Objects.equals(this.metadata, securityExclusionPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, securityId, isRestrictBuy, isRestrictSell, accountId, portfolioId, secondaryId);
+    return Objects.hash(clientId, securityId, isRestrictBuy, isRestrictSell, accountId, portfolioId, secondaryId, metadata);
   }
 
 
@@ -214,6 +236,7 @@ public class SecurityExclusionPayload {
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

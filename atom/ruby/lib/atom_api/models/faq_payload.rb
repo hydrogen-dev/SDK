@@ -42,6 +42,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the FAQ in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,7 +57,8 @@ module AtomApi
         :'seo_name' => :'seo_name',
         :'faq_keywords' => :'faq_keywords',
         :'is_featured' => :'is_featured',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -70,7 +74,8 @@ module AtomApi
         :'seo_name' => :'String',
         :'faq_keywords' => :'Array<FaqPayloadFaqKeywords>',
         :'is_featured' => :'BOOLEAN',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -127,6 +132,10 @@ module AtomApi
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
       end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -166,7 +175,8 @@ module AtomApi
           seo_name == o.seo_name &&
           faq_keywords == o.faq_keywords &&
           is_featured == o.is_featured &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -178,7 +188,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [question, answer, category, subcategory, is_active, number, seo_name, faq_keywords, is_featured, secondary_id].hash
+      [question, answer, category, subcategory, is_active, number, seo_name, faq_keywords, is_featured, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

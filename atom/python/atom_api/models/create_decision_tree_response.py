@@ -37,6 +37,7 @@ class CreateDecisionTreeResponse(object):
         'name': 'str',
         'description': 'str',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -45,16 +46,18 @@ class CreateDecisionTreeResponse(object):
         'name': 'name',
         'description': 'description',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, name=None, description=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, name=None, description=None, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateDecisionTreeResponse - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._description = None
         self._secondary_id = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -64,6 +67,8 @@ class CreateDecisionTreeResponse(object):
             self.description = description
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -137,6 +142,29 @@ class CreateDecisionTreeResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateDecisionTreeResponse.  # noqa: E501
+
+        Custom information associated with the decision tree in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateDecisionTreeResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateDecisionTreeResponse.
+
+        Custom information associated with the decision tree in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateDecisionTreeResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

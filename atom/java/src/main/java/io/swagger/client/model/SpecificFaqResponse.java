@@ -32,7 +32,7 @@ import java.util.UUID;
 /**
  * SpecificFaqResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificFaqResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -69,6 +69,9 @@ public class SpecificFaqResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -297,6 +300,24 @@ public class SpecificFaqResponse {
     this.secondaryId = secondaryId;
   }
 
+  public SpecificFaqResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the FAQ in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the FAQ in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificFaqResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -337,12 +358,13 @@ public class SpecificFaqResponse {
         Objects.equals(this.faqKeywords, specificFaqResponse.faqKeywords) &&
         Objects.equals(this.isFeatured, specificFaqResponse.isFeatured) &&
         Objects.equals(this.secondaryId, specificFaqResponse.secondaryId) &&
+        Objects.equals(this.metadata, specificFaqResponse.metadata) &&
         Objects.equals(this.updateDate, specificFaqResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, question, answer, category, subcategory, isActive, number, seoName, faqKeywords, isFeatured, secondaryId, updateDate);
+    return Objects.hash(id, createDate, question, answer, category, subcategory, isActive, number, seoName, faqKeywords, isFeatured, secondaryId, metadata, updateDate);
   }
 
 
@@ -363,6 +385,7 @@ public class SpecificFaqResponse {
     sb.append("    faqKeywords: ").append(toIndentedString(faqKeywords)).append("\n");
     sb.append("    isFeatured: ").append(toIndentedString(isFeatured)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

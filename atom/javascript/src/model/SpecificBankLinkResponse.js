@@ -45,16 +45,15 @@
    * @alias module:model/SpecificBankLinkResponse
    * @class
    * @implements module:model/CreateBankLinkResponse
-   * @param accountId {String} The ID for the account to which the bank link belongs
    * @param bankAccountHolder {String} Name of the individual that owns the bank account
    * @param bankAccountNumber {String} Account number of the bank account
    * @param name {String} Name of the bank for the bank link, e.g. HSBC
    * @param routing {String} Routing number of the bank for the bank link
    */
-  var exports = function(accountId, bankAccountHolder, bankAccountNumber, name, routing) {
+  var exports = function(bankAccountHolder, bankAccountNumber, name, routing) {
     var _this = this;
 
-    CreateBankLinkResponse.call(_this, accountId, bankAccountHolder, bankAccountNumber, name, routing);
+    CreateBankLinkResponse.call(_this, bankAccountHolder, bankAccountNumber, name, routing);
 
   };
 

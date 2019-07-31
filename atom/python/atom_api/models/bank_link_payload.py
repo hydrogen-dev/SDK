@@ -91,7 +91,8 @@ class BankLinkPayload(object):
         self._secondary_id = None
         self.discriminator = None
 
-        self.account_id = account_id
+        if account_id is not None:
+            self.account_id = account_id
         self.bank_account_holder = bank_account_holder
         self.bank_account_number = bank_account_number
         self.name = name
@@ -139,8 +140,6 @@ class BankLinkPayload(object):
         :param account_id: The account_id of this BankLinkPayload.  # noqa: E501
         :type: str
         """
-        if account_id is None:
-            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
 
         self._account_id = account_id
 

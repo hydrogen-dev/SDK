@@ -39,6 +39,8 @@ import io.swagger.client.model.AnnuityDepositamountResponse;
 import io.swagger.client.model.AnnuityInitialbalanceResponse;
 import io.swagger.client.model.Backtest;
 import io.swagger.client.model.BacktestResponse;
+import io.swagger.client.model.BudgetCalculator;
+import io.swagger.client.model.BudgetCalculatorResponse;
 import io.swagger.client.model.DimRiskScoreResponse;
 import io.swagger.client.model.DimensionalRiskScore;
 import io.swagger.client.model.DiversificationScore;
@@ -53,6 +55,8 @@ import io.swagger.client.model.EmergencyFundResponse;
 import io.swagger.client.model.EventStudy;
 import io.swagger.client.model.EventStudyResponse;
 import io.swagger.client.model.FinancialHealthCheck;
+import io.swagger.client.model.FinancialPicture;
+import io.swagger.client.model.FinancialPictureResponse;
 import io.swagger.client.model.GoalAccumulationAllocation;
 import io.swagger.client.model.GoalAccumulationRecommendation;
 import io.swagger.client.model.GoalAccumulationStatus;
@@ -103,6 +107,8 @@ import io.swagger.client.model.ScenarioAnalysisResponse;
 import io.swagger.client.model.SensitivityAnalysis;
 import io.swagger.client.model.SensitivityAnalysisResponse;
 import io.swagger.client.model.SimpleSavingsCalculator;
+import io.swagger.client.model.SpendingAnalysis;
+import io.swagger.client.model.SpendingAnalysisResponse;
 import io.swagger.client.model.VariableAnnuityPayload;
 import io.swagger.client.model.VariableAnnuityResponse;
 import io.swagger.client.model.WhatIfPortfolio;
@@ -779,6 +785,136 @@ public class ProtonApi {
 
         com.squareup.okhttp.Call call = annuityCalculatorInitialBalanceValidateBeforeCall(payload, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AnnuityInitialbalanceResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for budgetCalculator
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Budget-Calculator">Budget Calculator Documentation</a>
+     */
+    public com.squareup.okhttp.Call budgetCalculatorCall(BudgetCalculator payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/proton/v1/budget_calculator";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call budgetCalculatorValidateBeforeCall(BudgetCalculator payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling budgetCalculator(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = budgetCalculatorCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Budget Calculator
+     * 
+     * @param payload  (required)
+     * @return BudgetCalculatorResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Budget-Calculator">Budget Calculator Documentation</a>
+     */
+    public BudgetCalculatorResponse budgetCalculator(BudgetCalculator payload) throws ApiException {
+        ApiResponse<BudgetCalculatorResponse> resp = budgetCalculatorWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Budget Calculator
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;BudgetCalculatorResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Budget-Calculator">Budget Calculator Documentation</a>
+     */
+    public ApiResponse<BudgetCalculatorResponse> budgetCalculatorWithHttpInfo(BudgetCalculator payload) throws ApiException {
+        com.squareup.okhttp.Call call = budgetCalculatorValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<BudgetCalculatorResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Budget Calculator (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Budget-Calculator">Budget Calculator Documentation</a>
+     */
+    public com.squareup.okhttp.Call budgetCalculatorAsync(BudgetCalculator payload, final ApiCallback<BudgetCalculatorResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = budgetCalculatorValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BudgetCalculatorResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1689,6 +1825,136 @@ public class ProtonApi {
 
         com.squareup.okhttp.Call call = financialHealthCheckValidateBeforeCall(payload, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HealthCheckResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for financialPicture
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Financial-Picture">Financial Picture Documentation</a>
+     */
+    public com.squareup.okhttp.Call financialPictureCall(FinancialPicture payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/proton/v1/financial_picture";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call financialPictureValidateBeforeCall(FinancialPicture payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling financialPicture(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = financialPictureCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Financial Picture
+     * 
+     * @param payload  (required)
+     * @return FinancialPictureResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Financial-Picture">Financial Picture Documentation</a>
+     */
+    public FinancialPictureResponse financialPicture(FinancialPicture payload) throws ApiException {
+        ApiResponse<FinancialPictureResponse> resp = financialPictureWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Financial Picture
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;FinancialPictureResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Financial-Picture">Financial Picture Documentation</a>
+     */
+    public ApiResponse<FinancialPictureResponse> financialPictureWithHttpInfo(FinancialPicture payload) throws ApiException {
+        com.squareup.okhttp.Call call = financialPictureValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<FinancialPictureResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Financial Picture (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Financial-Picture">Financial Picture Documentation</a>
+     */
+    public com.squareup.okhttp.Call financialPictureAsync(FinancialPicture payload, final ApiCallback<FinancialPictureResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = financialPictureValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FinancialPictureResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -5329,6 +5595,136 @@ public class ProtonApi {
 
         com.squareup.okhttp.Call call = sensitivityAnalysisValidateBeforeCall(payload, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SensitivityAnalysisResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for spendingAnalysis
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Spending-Analysis">Spending Analysis Documentation</a>
+     */
+    public com.squareup.okhttp.Call spendingAnalysisCall(SpendingAnalysis payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/proton/v1/spending_analysis";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call spendingAnalysisValidateBeforeCall(SpendingAnalysis payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling spendingAnalysis(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = spendingAnalysisCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Spending Analysis
+     * 
+     * @param payload  (required)
+     * @return SpendingAnalysisResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Spending-Analysis">Spending Analysis Documentation</a>
+     */
+    public SpendingAnalysisResponse spendingAnalysis(SpendingAnalysis payload) throws ApiException {
+        ApiResponse<SpendingAnalysisResponse> resp = spendingAnalysisWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Spending Analysis
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;SpendingAnalysisResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Spending-Analysis">Spending Analysis Documentation</a>
+     */
+    public ApiResponse<SpendingAnalysisResponse> spendingAnalysisWithHttpInfo(SpendingAnalysis payload) throws ApiException {
+        com.squareup.okhttp.Call call = spendingAnalysisValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<SpendingAnalysisResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Spending Analysis (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/proton/v1/#Spending-Analysis">Spending Analysis Documentation</a>
+     */
+    public com.squareup.okhttp.Call spendingAnalysisAsync(SpendingAnalysis payload, final ApiCallback<SpendingAnalysisResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = spendingAnalysisValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SpendingAnalysisResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

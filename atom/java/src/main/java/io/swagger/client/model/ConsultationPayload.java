@@ -29,7 +29,7 @@ import org.threeten.bp.LocalDate;
 /**
  * ConsultationPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class ConsultationPayload {
   @SerializedName("account_type_id")
   private UUID accountTypeId = null;
@@ -99,6 +99,9 @@ public class ConsultationPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public ConsultationPayload accountTypeId(UUID accountTypeId) {
     this.accountTypeId = accountTypeId;
@@ -514,6 +517,24 @@ public class ConsultationPayload {
     this.secondaryId = secondaryId;
   }
 
+  public ConsultationPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the consultation in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the consultation in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -546,12 +567,13 @@ public class ConsultationPayload {
         Objects.equals(this.isActive, consultationPayload.isActive) &&
         Objects.equals(this.reminded, consultationPayload.reminded) &&
         Objects.equals(this.source, consultationPayload.source) &&
-        Objects.equals(this.secondaryId, consultationPayload.secondaryId);
+        Objects.equals(this.secondaryId, consultationPayload.secondaryId) &&
+        Objects.equals(this.metadata, consultationPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountTypeId, additionalQuestions, assets, assigned, calendar, category, comments, clientId, time, closeTime, closedBy, completed, name, email, firmname, phone, investmentAllocation, investmentLocation, investmentObjectives, isActive, reminded, source, secondaryId);
+    return Objects.hash(accountTypeId, additionalQuestions, assets, assigned, calendar, category, comments, clientId, time, closeTime, closedBy, completed, name, email, firmname, phone, investmentAllocation, investmentLocation, investmentObjectives, isActive, reminded, source, secondaryId, metadata);
   }
 
 
@@ -583,6 +605,7 @@ public class ConsultationPayload {
     sb.append("    reminded: ").append(toIndentedString(reminded)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

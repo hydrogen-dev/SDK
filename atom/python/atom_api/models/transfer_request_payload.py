@@ -45,7 +45,8 @@ class TransferRequestPayload(object):
         'roth_five_year': 'int',
         'status': 'str',
         'transfer_type': 'str',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class TransferRequestPayload(object):
         'roth_five_year': 'roth_five_year',
         'status': 'status',
         'transfer_type': 'transfer_type',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, account_id=None, account_holder=None, account_number=None, account_type_id=None, firm_name=None, transfer_all_cash=None, amount=None, comment=None, dtc_number=None, roth_five_year=None, status=None, transfer_type=None, secondary_id=None):  # noqa: E501
+    def __init__(self, account_id=None, account_holder=None, account_number=None, account_type_id=None, firm_name=None, transfer_all_cash=None, amount=None, comment=None, dtc_number=None, roth_five_year=None, status=None, transfer_type=None, secondary_id=None, metadata=None):  # noqa: E501
         """TransferRequestPayload - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -80,6 +82,7 @@ class TransferRequestPayload(object):
         self._status = None
         self._transfer_type = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         self.account_id = account_id
@@ -102,6 +105,8 @@ class TransferRequestPayload(object):
             self.transfer_type = transfer_type
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def account_id(self):
@@ -411,6 +416,29 @@ class TransferRequestPayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this TransferRequestPayload.  # noqa: E501
+
+        Custom information associated with the transfer in the format key:value  # noqa: E501
+
+        :return: The metadata of this TransferRequestPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this TransferRequestPayload.
+
+        Custom information associated with the transfer in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this TransferRequestPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

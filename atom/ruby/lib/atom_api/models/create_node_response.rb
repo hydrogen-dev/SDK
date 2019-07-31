@@ -25,6 +25,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the node in the format key:value
+    attr_accessor :metadata
+
     # ID of the node
     attr_accessor :id
 
@@ -38,6 +41,7 @@ module AtomApi
         :'question_id' => :'question_id',
         :'is_first' => :'is_first',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'id' => :'id',
         :'create_date' => :'create_date'
       }
@@ -50,6 +54,7 @@ module AtomApi
         :'question_id' => :'String',
         :'is_first' => :'BOOLEAN',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'id' => :'String',
         :'create_date' => :'String'
       }
@@ -79,6 +84,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
 
       if attributes.has_key?(:'id')
@@ -122,6 +131,7 @@ module AtomApi
           question_id == o.question_id &&
           is_first == o.is_first &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           id == o.id &&
           create_date == o.create_date
     end
@@ -135,7 +145,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, question_id, is_first, secondary_id, id, create_date].hash
+      [name, question_id, is_first, secondary_id, metadata, id, create_date].hash
     end
 
     # Builds the object from hash

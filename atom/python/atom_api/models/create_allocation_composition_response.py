@@ -39,6 +39,7 @@ class CreateAllocationCompositionResponse(object):
         'strategic_weight': 'float',
         '_date': 'date',
         'core': 'bool',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -50,11 +51,12 @@ class CreateAllocationCompositionResponse(object):
         'strategic_weight': 'strategic_weight',
         '_date': 'date',
         'core': 'core',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, allocation_id=None, model_id=None, current_weight=None, strategic_weight=None, _date=None, core=False, id=None, create_date=None):  # noqa: E501
+    def __init__(self, allocation_id=None, model_id=None, current_weight=None, strategic_weight=None, _date=None, core=False, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateAllocationCompositionResponse - a model defined in Swagger"""  # noqa: E501
 
         self._allocation_id = None
@@ -63,6 +65,7 @@ class CreateAllocationCompositionResponse(object):
         self._strategic_weight = None
         self.__date = None
         self._core = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -74,6 +77,8 @@ class CreateAllocationCompositionResponse(object):
         self._date = _date
         if core is not None:
             self.core = core
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -226,6 +231,29 @@ class CreateAllocationCompositionResponse(object):
         """
 
         self._core = core
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateAllocationCompositionResponse.  # noqa: E501
+
+        Custom information associated with the allocation composition in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateAllocationCompositionResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateAllocationCompositionResponse.
+
+        Custom information associated with the allocation composition in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateAllocationCompositionResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

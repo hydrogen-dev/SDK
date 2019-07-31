@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **status** | **str** | Status of the transfer such as “Pending” | [optional] 
 **transfer_type** | **str** | Type of transaction being made such as “wire” or “check” | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the transfer in the format key:value | [optional] 
 **update_date** | **str** | Datetime the transfer request was last updated | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

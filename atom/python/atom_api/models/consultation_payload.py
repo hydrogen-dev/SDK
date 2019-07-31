@@ -55,7 +55,8 @@ class ConsultationPayload(object):
         'is_active': 'bool',
         'reminded': 'bool',
         'source': 'str',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
@@ -81,10 +82,11 @@ class ConsultationPayload(object):
         'is_active': 'is_active',
         'reminded': 'reminded',
         'source': 'source',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, account_type_id=None, additional_questions=None, assets=None, assigned=None, calendar=False, category=None, comments=None, client_id=None, time=None, close_time=None, closed_by=None, completed=False, name=None, email=None, firmname=None, phone=None, investment_allocation=None, investment_location=None, investment_objectives=None, is_active=True, reminded=False, source=None, secondary_id=None):  # noqa: E501
+    def __init__(self, account_type_id=None, additional_questions=None, assets=None, assigned=None, calendar=False, category=None, comments=None, client_id=None, time=None, close_time=None, closed_by=None, completed=False, name=None, email=None, firmname=None, phone=None, investment_allocation=None, investment_location=None, investment_objectives=None, is_active=True, reminded=False, source=None, secondary_id=None, metadata=None):  # noqa: E501
         """ConsultationPayload - a model defined in Swagger"""  # noqa: E501
 
         self._account_type_id = None
@@ -110,6 +112,7 @@ class ConsultationPayload(object):
         self._reminded = None
         self._source = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         if account_type_id is not None:
@@ -158,6 +161,8 @@ class ConsultationPayload(object):
             self.source = source
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def account_type_id(self):
@@ -685,6 +690,29 @@ class ConsultationPayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this ConsultationPayload.  # noqa: E501
+
+        Custom information associated with the consultation in the format key:value  # noqa: E501
+
+        :return: The metadata of this ConsultationPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this ConsultationPayload.
+
+        Custom information associated with the consultation in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this ConsultationPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -62,6 +62,12 @@ describe 'CreateSupportTicketCommentResponse' do
     end
   end
 
+  describe 'test attribute "metadata"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "support_ticket_document"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

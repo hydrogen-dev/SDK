@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificWithdrawalResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificWithdrawalResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -78,6 +78,9 @@ public class SpecificWithdrawalResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -370,6 +373,24 @@ public class SpecificWithdrawalResponse {
     this.secondaryId = secondaryId;
   }
 
+  public SpecificWithdrawalResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the withdrawal in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the withdrawal in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificWithdrawalResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -414,12 +435,13 @@ public class SpecificWithdrawalResponse {
         Objects.equals(this.statusTimeStamp, specificWithdrawalResponse.statusTimeStamp) &&
         Objects.equals(this.type, specificWithdrawalResponse.type) &&
         Objects.equals(this.secondaryId, specificWithdrawalResponse.secondaryId) &&
+        Objects.equals(this.metadata, specificWithdrawalResponse.metadata) &&
         Objects.equals(this.updateDate, specificWithdrawalResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, accountId, amount, fundingId, withdrawalDate, accountNumber, comments, direction, fees, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId, updateDate);
+    return Objects.hash(id, createDate, accountId, amount, fundingId, withdrawalDate, accountNumber, comments, direction, fees, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId, metadata, updateDate);
   }
 
 
@@ -444,6 +466,7 @@ public class SpecificWithdrawalResponse {
     sb.append("    statusTimeStamp: ").append(toIndentedString(statusTimeStamp)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

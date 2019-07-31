@@ -28,6 +28,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the client response in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -35,7 +38,8 @@ module AtomApi
         :'answer_value' => :'answer_value',
         :'client_id' => :'client_id',
         :'account_id' => :'account_id',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -46,7 +50,8 @@ module AtomApi
         :'answer_value' => :'String',
         :'client_id' => :'String',
         :'account_id' => :'String',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -76,6 +81,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -111,7 +120,8 @@ module AtomApi
           answer_value == o.answer_value &&
           client_id == o.client_id &&
           account_id == o.account_id &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -123,7 +133,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [answer_id, answer_value, client_id, account_id, secondary_id].hash
+      [answer_id, answer_value, client_id, account_id, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

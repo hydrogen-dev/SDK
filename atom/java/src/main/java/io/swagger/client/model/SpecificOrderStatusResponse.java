@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificOrderStatusResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificOrderStatusResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -42,6 +42,9 @@ public class SpecificOrderStatusResponse {
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -118,6 +121,24 @@ public class SpecificOrderStatusResponse {
     this.description = description;
   }
 
+  public SpecificOrderStatusResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the order status in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the order status in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificOrderStatusResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -150,12 +171,13 @@ public class SpecificOrderStatusResponse {
         Objects.equals(this.createDate, specificOrderStatusResponse.createDate) &&
         Objects.equals(this.status, specificOrderStatusResponse.status) &&
         Objects.equals(this.description, specificOrderStatusResponse.description) &&
+        Objects.equals(this.metadata, specificOrderStatusResponse.metadata) &&
         Objects.equals(this.updateDate, specificOrderStatusResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, status, description, updateDate);
+    return Objects.hash(id, createDate, status, description, metadata, updateDate);
   }
 
 
@@ -168,6 +190,7 @@ public class SpecificOrderStatusResponse {
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

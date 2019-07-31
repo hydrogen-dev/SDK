@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * NodeRelationshipPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class NodeRelationshipPayload {
   @SerializedName("answer_id")
   private UUID answerId = null;
@@ -50,6 +50,9 @@ public class NodeRelationshipPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public NodeRelationshipPayload answerId(UUID answerId) {
     this.answerId = answerId;
@@ -177,6 +180,24 @@ public class NodeRelationshipPayload {
     this.secondaryId = secondaryId;
   }
 
+  public NodeRelationshipPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the node relationship in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the node relationship in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -193,12 +214,13 @@ public class NodeRelationshipPayload {
         Objects.equals(this.nodeParentId, nodeRelationshipPayload.nodeParentId) &&
         Objects.equals(this.nodeChildId, nodeRelationshipPayload.nodeChildId) &&
         Objects.equals(this.isLeaf, nodeRelationshipPayload.isLeaf) &&
-        Objects.equals(this.secondaryId, nodeRelationshipPayload.secondaryId);
+        Objects.equals(this.secondaryId, nodeRelationshipPayload.secondaryId) &&
+        Objects.equals(this.metadata, nodeRelationshipPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(answerId, value, decisionTreeId, nodeParentId, nodeChildId, isLeaf, secondaryId);
+    return Objects.hash(answerId, value, decisionTreeId, nodeParentId, nodeChildId, isLeaf, secondaryId, metadata);
   }
 
 
@@ -214,6 +236,7 @@ public class NodeRelationshipPayload {
     sb.append("    nodeChildId: ").append(toIndentedString(nodeChildId)).append("\n");
     sb.append("    isLeaf: ").append(toIndentedString(isLeaf)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

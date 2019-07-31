@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -83,6 +84,9 @@
       }
       if (data.hasOwnProperty('is_read')) {
         obj['is_read'] = ApiClient.convertToType(data['is_read'], 'Boolean');
+      }
+      if (data.hasOwnProperty('metadata')) {
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
       }
       if (data.hasOwnProperty('support_ticket_document')) {
         obj['support_ticket_document'] = ApiClient.convertToType(data['support_ticket_document'], [SupportTicketCommentPayloadSupportTicketDocument]);
@@ -122,6 +126,11 @@
    * @default false
    */
   exports.prototype['is_read'] = false;
+  /**
+   * Custom information associated with the support ticket comment in the format key:value
+   * @member {Object} metadata
+   */
+  exports.prototype['metadata'] = undefined;
   /**
    * @member {Array.<module:model/SupportTicketCommentPayloadSupportTicketDocument>} support_ticket_document
    */

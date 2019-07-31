@@ -54,6 +54,7 @@
     _this['date'] = _date;
     _this['buy_transaction_code_id'] = buyTransactionCodeId;
     _this['sell_transaction_code_id'] = sellTransactionCodeId;
+
   };
 
   /**
@@ -76,6 +77,9 @@
       if (data.hasOwnProperty('sell_transaction_code_id')) {
         obj['sell_transaction_code_id'] = ApiClient.convertToType(data['sell_transaction_code_id'], 'String');
       }
+      if (data.hasOwnProperty('metadata')) {
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
+      }
     }
     return obj;
   }
@@ -95,6 +99,11 @@
    * @member {String} sell_transaction_code_id
    */
   exports.prototype['sell_transaction_code_id'] = undefined;
+  /**
+   * Custom information associated with the bulk order in the format key:value
+   * @member {Object} metadata
+   */
+  exports.prototype['metadata'] = undefined;
 
 
 

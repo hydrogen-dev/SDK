@@ -33,26 +33,31 @@ class BulkOrderAccountPayload(object):
     swagger_types = {
         '_date': 'date',
         'buy_transaction_code_id': 'str',
-        'sell_transaction_code_id': 'str'
+        'sell_transaction_code_id': 'str',
+        'metadata': 'object'
     }
 
     attribute_map = {
         '_date': 'date',
         'buy_transaction_code_id': 'buy_transaction_code_id',
-        'sell_transaction_code_id': 'sell_transaction_code_id'
+        'sell_transaction_code_id': 'sell_transaction_code_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, _date=None, buy_transaction_code_id=None, sell_transaction_code_id=None):  # noqa: E501
+    def __init__(self, _date=None, buy_transaction_code_id=None, sell_transaction_code_id=None, metadata=None):  # noqa: E501
         """BulkOrderAccountPayload - a model defined in Swagger"""  # noqa: E501
 
         self.__date = None
         self._buy_transaction_code_id = None
         self._sell_transaction_code_id = None
+        self._metadata = None
         self.discriminator = None
 
         self._date = _date
         self.buy_transaction_code_id = buy_transaction_code_id
         self.sell_transaction_code_id = sell_transaction_code_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def _date(self):
@@ -128,6 +133,29 @@ class BulkOrderAccountPayload(object):
             raise ValueError("Invalid value for `sell_transaction_code_id`, must not be `None`")  # noqa: E501
 
         self._sell_transaction_code_id = sell_transaction_code_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this BulkOrderAccountPayload.  # noqa: E501
+
+        Custom information associated with the bulk order in the format key:value  # noqa: E501
+
+        :return: The metadata of this BulkOrderAccountPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this BulkOrderAccountPayload.
+
+        Custom information associated with the bulk order in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this BulkOrderAccountPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

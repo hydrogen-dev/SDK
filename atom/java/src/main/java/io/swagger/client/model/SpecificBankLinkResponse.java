@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * SpecificBankLinkResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificBankLinkResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -134,7 +134,7 @@ public class SpecificBankLinkResponse {
    * The ID for the account to which the bank link belongs
    * @return accountId
   **/
-  @ApiModelProperty(required = true, value = "The ID for the account to which the bank link belongs")
+  @ApiModelProperty(value = "The ID for the account to which the bank link belongs")
   public UUID getAccountId() {
     return accountId;
   }

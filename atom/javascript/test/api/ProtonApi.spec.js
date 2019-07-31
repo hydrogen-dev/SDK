@@ -101,6 +101,16 @@
         done();
       });
     });
+    describe('budgetCalculator', function() {
+      it('should call budgetCalculator successfully', function(done) {
+        //uncomment below and update the code to test budgetCalculator
+        //instance.budgetCalculator(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('dimensionalRiskScore', function() {
       it('should call dimensionalRiskScore successfully', function(done) {
         //uncomment below and update the code to test dimensionalRiskScore
@@ -165,6 +175,16 @@
       it('should call financialHealthCheck successfully', function(done) {
         //uncomment below and update the code to test financialHealthCheck
         //instance.financialHealthCheck(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('financialPicture', function() {
+      it('should call financialPicture successfully', function(done) {
+        //uncomment below and update the code to test financialPicture
+        //instance.financialPicture(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -445,6 +465,16 @@
       it('should call sensitivityAnalysis successfully', function(done) {
         //uncomment below and update the code to test sensitivityAnalysis
         //instance.sensitivityAnalysis(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('spendingAnalysis', function() {
+      it('should call spendingAnalysis successfully', function(done) {
+        //uncomment below and update the code to test spendingAnalysis
+        //instance.spendingAnalysis(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

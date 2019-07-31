@@ -133,6 +133,12 @@ exports.prototype['portfolio_id'] = undefined;
    */
 exports.prototype['secondary_id'] = undefined;
 
+  /**
+   * Custom information associated with the security exclusion in the format key:value
+   * @member {Object} metadata
+   */
+exports.prototype['metadata'] = undefined;
+
 
 
   return exports;

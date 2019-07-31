@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * CampaignPlanPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CampaignPlanPayload {
   @SerializedName("description")
   private String description = null;
@@ -43,6 +43,9 @@ public class CampaignPlanPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public CampaignPlanPayload description(String description) {
     this.description = description;
@@ -124,6 +127,24 @@ public class CampaignPlanPayload {
     this.secondaryId = secondaryId;
   }
 
+  public CampaignPlanPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the campaign plan in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the campaign plan in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,12 +158,13 @@ public class CampaignPlanPayload {
     return Objects.equals(this.description, campaignPlanPayload.description) &&
         Objects.equals(this.isActive, campaignPlanPayload.isActive) &&
         Objects.equals(this.planRates, campaignPlanPayload.planRates) &&
-        Objects.equals(this.secondaryId, campaignPlanPayload.secondaryId);
+        Objects.equals(this.secondaryId, campaignPlanPayload.secondaryId) &&
+        Objects.equals(this.metadata, campaignPlanPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, isActive, planRates, secondaryId);
+    return Objects.hash(description, isActive, planRates, secondaryId, metadata);
   }
 
 
@@ -155,6 +177,7 @@ public class CampaignPlanPayload {
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    planRates: ").append(toIndentedString(planRates)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

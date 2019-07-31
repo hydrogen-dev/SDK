@@ -59,6 +59,7 @@
     _this['strategic_weight'] = strategicWeight;
     _this['date'] = _date;
 
+
   };
 
   /**
@@ -89,6 +90,9 @@
       }
       if (data.hasOwnProperty('core')) {
         obj['core'] = ApiClient.convertToType(data['core'], 'Boolean');
+      }
+      if (data.hasOwnProperty('metadata')) {
+        obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
       }
     }
     return obj;
@@ -125,6 +129,11 @@
    * @default false
    */
   exports.prototype['core'] = false;
+  /**
+   * Custom information associated with the allocation composition in the format key:value
+   * @member {Object} metadata
+   */
+  exports.prototype['metadata'] = undefined;
 
 
 

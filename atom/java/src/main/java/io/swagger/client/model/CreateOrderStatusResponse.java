@@ -29,13 +29,16 @@ import java.util.UUID;
 /**
  * CreateOrderStatusResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateOrderStatusResponse {
   @SerializedName("status")
   private String status = null;
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -77,6 +80,24 @@ public class CreateOrderStatusResponse {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public CreateOrderStatusResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the order status in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the order status in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
   }
 
   public CreateOrderStatusResponse id(UUID id) {
@@ -127,13 +148,14 @@ public class CreateOrderStatusResponse {
     CreateOrderStatusResponse createOrderStatusResponse = (CreateOrderStatusResponse) o;
     return Objects.equals(this.status, createOrderStatusResponse.status) &&
         Objects.equals(this.description, createOrderStatusResponse.description) &&
+        Objects.equals(this.metadata, createOrderStatusResponse.metadata) &&
         Objects.equals(this.id, createOrderStatusResponse.id) &&
         Objects.equals(this.createDate, createOrderStatusResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, description, id, createDate);
+    return Objects.hash(status, description, metadata, id, createDate);
   }
 
 
@@ -144,6 +166,7 @@ public class CreateOrderStatusResponse {
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

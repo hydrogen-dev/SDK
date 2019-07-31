@@ -34,6 +34,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the node relationship in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -43,7 +46,8 @@ module AtomApi
         :'node_parent_id' => :'node_parent_id',
         :'node_child_id' => :'node_child_id',
         :'is_leaf' => :'is_leaf',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -56,7 +60,8 @@ module AtomApi
         :'node_parent_id' => :'String',
         :'node_child_id' => :'String',
         :'is_leaf' => :'BOOLEAN',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -94,6 +99,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -141,7 +150,8 @@ module AtomApi
           node_parent_id == o.node_parent_id &&
           node_child_id == o.node_child_id &&
           is_leaf == o.is_leaf &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -153,7 +163,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [answer_id, value, decision_tree_id, node_parent_id, node_child_id, is_leaf, secondary_id].hash
+      [answer_id, value, decision_tree_id, node_parent_id, node_child_id, is_leaf, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CreateNodeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateNodeResponse {
   @SerializedName("name")
   private String name = null;
@@ -42,6 +42,9 @@ public class CreateNodeResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -121,6 +124,24 @@ public class CreateNodeResponse {
     this.secondaryId = secondaryId;
   }
 
+  public CreateNodeResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the node in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the node in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public CreateNodeResponse id(UUID id) {
     this.id = id;
     return this;
@@ -171,13 +192,14 @@ public class CreateNodeResponse {
         Objects.equals(this.questionId, createNodeResponse.questionId) &&
         Objects.equals(this.isFirst, createNodeResponse.isFirst) &&
         Objects.equals(this.secondaryId, createNodeResponse.secondaryId) &&
+        Objects.equals(this.metadata, createNodeResponse.metadata) &&
         Objects.equals(this.id, createNodeResponse.id) &&
         Objects.equals(this.createDate, createNodeResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, questionId, isFirst, secondaryId, id, createDate);
+    return Objects.hash(name, questionId, isFirst, secondaryId, metadata, id, createDate);
   }
 
 
@@ -190,6 +212,7 @@ public class CreateNodeResponse {
     sb.append("    questionId: ").append(toIndentedString(questionId)).append("\n");
     sb.append("    isFirst: ").append(toIndentedString(isFirst)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

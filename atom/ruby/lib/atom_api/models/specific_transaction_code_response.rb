@@ -38,6 +38,9 @@ module AtomApi
     # Indicates if the transaction is to buy securities. Defaults to false which means it is a sell transaction.
     attr_accessor :is_buy
 
+    # Custom information associated with the transaction code in the format key:value
+    attr_accessor :metadata
+
     # Datetime the transaction code was last updated
     attr_accessor :update_date
 
@@ -52,6 +55,7 @@ module AtomApi
         :'category' => :'category',
         :'subcategory' => :'subcategory',
         :'is_buy' => :'is_buy',
+        :'metadata' => :'metadata',
         :'update_date' => :'update_date'
       }
     end
@@ -67,6 +71,7 @@ module AtomApi
         :'category' => :'String',
         :'subcategory' => :'String',
         :'is_buy' => :'BOOLEAN',
+        :'metadata' => :'Object',
         :'update_date' => :'String'
       }
     end
@@ -113,6 +118,10 @@ module AtomApi
         self.is_buy = false
       end
 
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
       if attributes.has_key?(:'update_date')
         self.update_date = attributes[:'update_date']
       end
@@ -149,6 +158,7 @@ module AtomApi
           category == o.category &&
           subcategory == o.subcategory &&
           is_buy == o.is_buy &&
+          metadata == o.metadata &&
           update_date == o.update_date
     end
 
@@ -161,7 +171,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, transaction_code, transaction_code_description, transaction_type, category, subcategory, is_buy, update_date].hash
+      [id, create_date, transaction_code, transaction_code_description, transaction_type, category, subcategory, is_buy, metadata, update_date].hash
     end
 
     # Builds the object from hash

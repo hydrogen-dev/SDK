@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | ID of the bank link | [optional] 
 **create_date** | **str** | Datetime the bank link was created | [optional] 
-**account_id** | **str** | The ID for the account to which the bank link belongs | 
+**account_id** | **str** | The ID for the account to which the bank link belongs | [optional] 
 **bank_account_holder** | **str** | Name of the individual that owns the bank account | 
 **bank_account_number** | **str** | Account number of the bank account | 
 **name** | **str** | Name of the bank for the bank link, e.g. HSBC | 

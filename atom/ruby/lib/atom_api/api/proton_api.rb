@@ -279,6 +279,58 @@ module AtomApi
       end
       return data, status_code, headers
     end
+    # Budget Calculator
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [BudgetCalculatorResponse]
+    def budget_calculator(payload, opts = {})
+      data, _status_code, _headers = budget_calculator_with_http_info(payload, opts)
+      data
+    end
+
+    # Budget Calculator
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BudgetCalculatorResponse, Fixnum, Hash)>] BudgetCalculatorResponse data, response status code and response headers
+    def budget_calculator_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProtonApi.budget_calculator ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling ProtonApi.budget_calculator"
+      end
+      # resource path
+      local_var_path = '/proton/v1/budget_calculator'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'BudgetCalculatorResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProtonApi#budget_calculator\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Dimensional risk score
     # @param payload 
     # @param [Hash] opts the optional parameters
@@ -640,6 +692,58 @@ module AtomApi
         :return_type => 'HealthCheckResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProtonApi#financial_health_check\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Financial Picture
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [FinancialPictureResponse]
+    def financial_picture(payload, opts = {})
+      data, _status_code, _headers = financial_picture_with_http_info(payload, opts)
+      data
+    end
+
+    # Financial Picture
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FinancialPictureResponse, Fixnum, Hash)>] FinancialPictureResponse data, response status code and response headers
+    def financial_picture_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProtonApi.financial_picture ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling ProtonApi.financial_picture"
+      end
+      # resource path
+      local_var_path = '/proton/v1/financial_picture'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'FinancialPictureResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProtonApi#financial_picture\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2096,6 +2200,58 @@ module AtomApi
         :return_type => 'SensitivityAnalysisResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ProtonApi#sensitivity_analysis\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Spending Analysis
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [SpendingAnalysisResponse]
+    def spending_analysis(payload, opts = {})
+      data, _status_code, _headers = spending_analysis_with_http_info(payload, opts)
+      data
+    end
+
+    # Spending Analysis
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SpendingAnalysisResponse, Fixnum, Hash)>] SpendingAnalysisResponse data, response status code and response headers
+    def spending_analysis_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProtonApi.spending_analysis ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling ProtonApi.spending_analysis"
+      end
+      # resource path
+      local_var_path = '/proton/v1/spending_analysis'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SpendingAnalysisResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProtonApi#spending_analysis\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

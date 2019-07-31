@@ -57,6 +57,7 @@ class CreateConsultationResponse(object):
         'reminded': 'bool',
         'source': 'str',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -85,11 +86,12 @@ class CreateConsultationResponse(object):
         'reminded': 'reminded',
         'source': 'source',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, account_type_id=None, additional_questions=None, assets=None, assigned=None, calendar=False, category=None, comments=None, client_id=None, time=None, close_time=None, closed_by=None, completed=False, name=None, email=None, firmname=None, phone=None, investment_allocation=None, investment_location=None, investment_objectives=None, is_active=True, reminded=False, source=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, account_type_id=None, additional_questions=None, assets=None, assigned=None, calendar=False, category=None, comments=None, client_id=None, time=None, close_time=None, closed_by=None, completed=False, name=None, email=None, firmname=None, phone=None, investment_allocation=None, investment_location=None, investment_objectives=None, is_active=True, reminded=False, source=None, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateConsultationResponse - a model defined in Swagger"""  # noqa: E501
 
         self._account_type_id = None
@@ -115,6 +117,7 @@ class CreateConsultationResponse(object):
         self._reminded = None
         self._source = None
         self._secondary_id = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -165,6 +168,8 @@ class CreateConsultationResponse(object):
             self.source = source
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -696,6 +701,29 @@ class CreateConsultationResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateConsultationResponse.  # noqa: E501
+
+        Custom information associated with the consultation in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateConsultationResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateConsultationResponse.
+
+        Custom information associated with the consultation in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateConsultationResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

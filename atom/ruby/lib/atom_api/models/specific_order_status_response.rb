@@ -26,6 +26,9 @@ module AtomApi
     # Additional description of the order status
     attr_accessor :description
 
+    # Custom information associated with the order status in the format key:value
+    attr_accessor :metadata
+
     # Datetime the order status was last updated
     attr_accessor :update_date
 
@@ -36,6 +39,7 @@ module AtomApi
         :'create_date' => :'create_date',
         :'status' => :'status',
         :'description' => :'description',
+        :'metadata' => :'metadata',
         :'update_date' => :'update_date'
       }
     end
@@ -47,6 +51,7 @@ module AtomApi
         :'create_date' => :'String',
         :'status' => :'String',
         :'description' => :'String',
+        :'metadata' => :'Object',
         :'update_date' => :'String'
       }
     end
@@ -73,6 +78,10 @@ module AtomApi
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
 
       if attributes.has_key?(:'update_date')
@@ -112,6 +121,7 @@ module AtomApi
           create_date == o.create_date &&
           status == o.status &&
           description == o.description &&
+          metadata == o.metadata &&
           update_date == o.update_date
     end
 
@@ -124,7 +134,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, status, description, update_date].hash
+      [id, create_date, status, description, metadata, update_date].hash
     end
 
     # Builds the object from hash

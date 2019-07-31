@@ -26,7 +26,9 @@ import io.swagger.client.model.AccountSubscribePayload;
 import io.swagger.client.model.AccountTransactionResponse;
 import io.swagger.client.model.AccountTypePayload;
 import io.swagger.client.model.AggregationAccountBalancePayload;
+import io.swagger.client.model.AggregationAccountHoldingPayload;
 import io.swagger.client.model.AggregationAccountPayload;
+import io.swagger.client.model.AggregationAccountTransactionPayload;
 import io.swagger.client.model.AllocationAssetSizeResponse;
 import io.swagger.client.model.AllocationCompositionPayload;
 import io.swagger.client.model.AllocationHoldingsResponse;
@@ -35,6 +37,7 @@ import io.swagger.client.model.AllocationTransactionResponse;
 import io.swagger.client.model.BankLinkPayload;
 import io.swagger.client.model.BenchmarkAssetSizeResponse;
 import io.swagger.client.model.BenchmarkPayload;
+import io.swagger.client.model.BudgetPayload;
 import io.swagger.client.model.BulkOrderAccountPayload;
 import io.swagger.client.model.BulkOrderClientPayload;
 import io.swagger.client.model.BulkOrderFirmPayload;
@@ -49,16 +52,20 @@ import io.swagger.client.model.ClientTransactionResponse;
 import io.swagger.client.model.CreateAccountResponse;
 import io.swagger.client.model.CreateAccountStatusResponse;
 import io.swagger.client.model.CreateAggregationAccountBalanceResponse;
+import io.swagger.client.model.CreateAggregationAccountHoldingResponse;
 import io.swagger.client.model.CreateAggregationAccountResponse;
+import io.swagger.client.model.CreateAggregationAccountTransactionResponse;
 import io.swagger.client.model.CreateAllocationCompositionResponse;
 import io.swagger.client.model.CreateAllocationResponse;
 import io.swagger.client.model.CreateBankLinkResponse;
 import io.swagger.client.model.CreateBenchmarkResponse;
+import io.swagger.client.model.CreateBudgetResponse;
 import io.swagger.client.model.CreateClientHydroResponse;
 import io.swagger.client.model.CreateClientResponse;
 import io.swagger.client.model.CreateClientResponseResponse;
 import io.swagger.client.model.CreateDecisionTreeResponse;
 import io.swagger.client.model.CreateDepositRequestResponse;
+import io.swagger.client.model.CreateFinancialOfferResponse;
 import io.swagger.client.model.CreateFundingRequestResponse;
 import io.swagger.client.model.CreateGoalResponse;
 import io.swagger.client.model.CreateGoalTrackResponse;
@@ -87,6 +94,7 @@ import io.swagger.client.model.CreateTransferResponse;
 import io.swagger.client.model.CreateWithdrawalResponse;
 import io.swagger.client.model.DecisionTreePayload;
 import io.swagger.client.model.DepositRequestPayload;
+import io.swagger.client.model.FinancialOfferPayload;
 import io.swagger.client.model.FundingRequestPayload;
 import io.swagger.client.model.GetAccountAllocationResponse;
 import io.swagger.client.model.GetAccountAssetSizeResponse;
@@ -98,17 +106,21 @@ import io.swagger.client.model.GetAccountStatusResponse;
 import io.swagger.client.model.GetAccountTypeResponse;
 import io.swagger.client.model.GetAccountTypeSubresponse;
 import io.swagger.client.model.GetAggregationAccountBalanceResponse;
+import io.swagger.client.model.GetAggregationAccountHoldingsResponse;
+import io.swagger.client.model.GetAggregationAccountTransactionResponse;
 import io.swagger.client.model.GetAggregationAccountsResponse;
 import io.swagger.client.model.GetAllocationCompositionResponse;
 import io.swagger.client.model.GetAllocationResponse;
 import io.swagger.client.model.GetBankLinkResponse;
 import io.swagger.client.model.GetBenchmarkResponse;
+import io.swagger.client.model.GetBudgetResponse;
 import io.swagger.client.model.GetBulkOrderResponse;
 import io.swagger.client.model.GetClientHydroResponse;
 import io.swagger.client.model.GetClientResponse;
 import io.swagger.client.model.GetClientResponseResponse;
 import io.swagger.client.model.GetDecisionTreeResponse;
 import io.swagger.client.model.GetDepositRequestResponse;
+import io.swagger.client.model.GetFinancialOfferResponse;
 import io.swagger.client.model.GetFundingRequestResponse;
 import io.swagger.client.model.GetGoalResponse;
 import io.swagger.client.model.GetGoalTrackResponse;
@@ -175,16 +187,20 @@ import io.swagger.client.model.SpecificAccountResponse;
 import io.swagger.client.model.SpecificAccountStageResponse;
 import io.swagger.client.model.SpecificAccountStatusResponse;
 import io.swagger.client.model.SpecificAggregationAccountBalanceResponse;
+import io.swagger.client.model.SpecificAggregationAccountHoldingResponse;
 import io.swagger.client.model.SpecificAggregationAccountResponse;
+import io.swagger.client.model.SpecificAggregationAccountTransactionResponse;
 import io.swagger.client.model.SpecificAllocationCompositionResponse;
 import io.swagger.client.model.SpecificAllocationResponse;
 import io.swagger.client.model.SpecificBankLinkResponse;
 import io.swagger.client.model.SpecificBenchmarkResponse;
+import io.swagger.client.model.SpecificBudgetResponse;
 import io.swagger.client.model.SpecificClientHydroResponse;
 import io.swagger.client.model.SpecificClientResponse;
 import io.swagger.client.model.SpecificClientResponseResponse;
 import io.swagger.client.model.SpecificDecisionTreeResponse;
 import io.swagger.client.model.SpecificDepositRequestResponse;
+import io.swagger.client.model.SpecificFinancialOfferResponse;
 import io.swagger.client.model.SpecificFundingRequestResponse;
 import io.swagger.client.model.SpecificGoalResponse;
 import io.swagger.client.model.SpecificGoalTrackResponse;
@@ -362,6 +378,38 @@ public class NucleusApiTest {
     }
     
     /**
+     * Delete an aggregation account holding
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteAggregationAccountHoldingTest() throws ApiException {
+        UUID aggregationAccountHoldingId = null;
+        api.deleteAggregationAccountHolding(aggregationAccountHoldingId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete an aggregation account transaction
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteAggregationAccountTransactionTest() throws ApiException {
+        UUID aggregationAccountTransactionId = null;
+        api.deleteAggregationAccountTransaction(aggregationAccountTransactionId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Delete an allocation
      *
      * 
@@ -421,6 +469,22 @@ public class NucleusApiTest {
     public void deleteBenchmarkTest() throws ApiException {
         UUID benchmarkId = null;
         api.deleteBenchmark(benchmarkId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete a budget
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteBudgetTest() throws ApiException {
+        UUID budgetId = null;
+        api.deleteBudget(budgetId);
 
         // TODO: test validations
     }
@@ -501,6 +565,22 @@ public class NucleusApiTest {
     public void deleteDepositRequestTest() throws ApiException {
         UUID depositId = null;
         api.deleteDepositRequest(depositId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete a financial offer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteFinancialOfferTest() throws ApiException {
+        UUID financialOfferId = null;
+        api.deleteFinancialOffer(financialOfferId);
 
         // TODO: test validations
     }
@@ -1258,6 +1338,78 @@ public class NucleusApiTest {
     }
     
     /**
+     * Retrieve an aggregation account holding
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAggregationAccountHoldingTest() throws ApiException {
+        UUID aggregationAccountHoldingId = null;
+        SpecificAggregationAccountHoldingResponse response = api.getAggregationAccountHolding(aggregationAccountHoldingId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List all aggregation account holdings
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAggregationAccountHoldingsTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        String filter = null;
+        GetAggregationAccountHoldingsResponse response = api.getAggregationAccountHoldings(page, size, orderBy, ascending, filter);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve an aggregation account transaction
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAggregationAccountTransactionTest() throws ApiException {
+        UUID aggregationAccountTransactionId = null;
+        SpecificAggregationAccountTransactionResponse response = api.getAggregationAccountTransaction(aggregationAccountTransactionId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List all aggregation account transactions
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAggregationAccountTransactionsTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        String filter = null;
+        GetAggregationAccountTransactionResponse response = api.getAggregationAccountTransactions(page, size, orderBy, ascending, filter);
+
+        // TODO: test validations
+    }
+    
+    /**
      * List all aggregation accounts
      *
      * 
@@ -1519,6 +1671,42 @@ public class NucleusApiTest {
         Boolean ascending = null;
         String filter = null;
         GetBenchmarkResponse response = api.getBenchmarks(page, size, orderBy, ascending, filter);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve a budget
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getBudgetTest() throws ApiException {
+        UUID budgetId = null;
+        SpecificBudgetResponse response = api.getBudget(budgetId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List all budgets
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getBudgetsTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        String filter = null;
+        GetBudgetResponse response = api.getBudgets(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -1787,6 +1975,42 @@ public class NucleusApiTest {
         Boolean ascending = null;
         String filter = null;
         GetDepositRequestResponse response = api.getDepositRequests(page, size, orderBy, ascending, filter);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve a financial offer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getFinancialOfferTest() throws ApiException {
+        UUID financialOfferId = null;
+        SpecificFinancialOfferResponse response = api.getFinancialOffer(financialOfferId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List all financial offers
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getFinancialOffersTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        String filter = null;
+        GetFinancialOfferResponse response = api.getFinancialOffers(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -3052,6 +3276,38 @@ public class NucleusApiTest {
     }
     
     /**
+     * Create an aggregation account holding
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postAggregationAccountHoldingTest() throws ApiException {
+        AggregationAccountHoldingPayload payload = null;
+        CreateAggregationAccountHoldingResponse response = api.postAggregationAccountHolding(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create an aggregation account transaction
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postAggregationAccountTransactionTest() throws ApiException {
+        AggregationAccountTransactionPayload payload = null;
+        CreateAggregationAccountTransactionResponse response = api.postAggregationAccountTransaction(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Create an allocation
      *
      * 
@@ -3111,6 +3367,22 @@ public class NucleusApiTest {
     public void postBenchmarkTest() throws ApiException {
         BenchmarkPayload payload = null;
         CreateBenchmarkResponse response = api.postBenchmark(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a budget
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postBudgetTest() throws ApiException {
+        BudgetPayload payload = null;
+        CreateBudgetResponse response = api.postBudget(payload);
 
         // TODO: test validations
     }
@@ -3224,6 +3496,22 @@ public class NucleusApiTest {
     public void postDepositRequestTest() throws ApiException {
         DepositRequestPayload payload = null;
         CreateDepositRequestResponse response = api.postDepositRequest(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a financial offer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postFinancialOfferTest() throws ApiException {
+        FinancialOfferPayload payload = null;
+        CreateFinancialOfferResponse response = api.postFinancialOffer(payload);
 
         // TODO: test validations
     }
@@ -3866,6 +4154,40 @@ public class NucleusApiTest {
     }
     
     /**
+     * Update an aggregation account holding
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateAggregationAccountHoldingTest() throws ApiException {
+        UUID aggregationAccountHoldingId = null;
+        AggregationAccountHoldingPayload payload = null;
+        SpecificAggregationAccountHoldingResponse response = api.updateAggregationAccountHolding(aggregationAccountHoldingId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update an aggregation account transaction
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateAggregationAccountTransactionTest() throws ApiException {
+        UUID aggregationAccountTransactionId = null;
+        AggregationAccountTransactionPayload payload = null;
+        SpecificAggregationAccountTransactionResponse response = api.updateAggregationAccountTransaction(aggregationAccountTransactionId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update an allocation
      *
      * 
@@ -3929,6 +4251,23 @@ public class NucleusApiTest {
         UUID benchmarkId = null;
         BenchmarkPayload payload = null;
         SpecificBenchmarkResponse response = api.updateBenchmark(benchmarkId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a budget
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateBudgetTest() throws ApiException {
+        UUID budgetId = null;
+        BudgetPayload payload = null;
+        SpecificBudgetResponse response = api.updateBudget(budgetId, payload);
 
         // TODO: test validations
     }
@@ -4014,6 +4353,23 @@ public class NucleusApiTest {
         UUID depositId = null;
         DepositRequestPayload payload = null;
         SpecificDepositRequestResponse response = api.updateDepositRequest(depositId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a financial offer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateFinancialOfferTest() throws ApiException {
+        UUID financialOfferId = null;
+        FinancialOfferPayload payload = null;
+        SpecificFinancialOfferResponse response = api.updateFinancialOffer(financialOfferId, payload);
 
         // TODO: test validations
     }

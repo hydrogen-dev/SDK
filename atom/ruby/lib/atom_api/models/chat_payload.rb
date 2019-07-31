@@ -31,6 +31,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the chat in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -39,7 +42,8 @@ module AtomApi
         :'comments' => :'comments',
         :'is_notification' => :'is_notification',
         :'is_open' => :'is_open',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -51,7 +55,8 @@ module AtomApi
         :'comments' => :'String',
         :'is_notification' => :'BOOLEAN',
         :'is_open' => :'BOOLEAN',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -90,6 +95,10 @@ module AtomApi
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
       end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -120,7 +129,8 @@ module AtomApi
           comments == o.comments &&
           is_notification == o.is_notification &&
           is_open == o.is_open &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -132,7 +142,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [chat_log, assigned_to, comments, is_notification, is_open, secondary_id].hash
+      [chat_log, assigned_to, comments, is_notification, is_open, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

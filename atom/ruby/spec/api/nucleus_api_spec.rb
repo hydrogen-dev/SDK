@@ -120,6 +120,28 @@ describe 'NucleusApi' do
     end
   end
 
+  # unit tests for delete_aggregation_account_holding
+  # Delete an aggregation account holding
+  # @param aggregation_account_holding_id UUID of an aggregation account holding
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'delete_aggregation_account_holding test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_aggregation_account_transaction
+  # Delete an aggregation account transaction
+  # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'delete_aggregation_account_transaction test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for delete_allocation
   # Delete an allocation
   # @param allocation_id UUID of an allocation
@@ -159,6 +181,17 @@ describe 'NucleusApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_benchmark test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_budget
+  # Delete a budget
+  # @param budget_id UUID of a budget
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'delete_budget test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -214,6 +247,17 @@ describe 'NucleusApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_deposit_request test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_financial_offer
+  # Delete a financial offer
+  # @param financial_offer_id UUID of a financial offer
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'delete_financial_offer test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -746,6 +790,58 @@ describe 'NucleusApi' do
     end
   end
 
+  # unit tests for get_aggregation_account_holding
+  # Retrieve an aggregation account holding
+  # @param aggregation_account_holding_id UUID of an aggregation account holding
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificAggregationAccountHoldingResponse]
+  describe 'get_aggregation_account_holding test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_aggregation_account_holdings
+  # List all aggregation account holdings
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+  # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+  # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+  # @return [GetAggregationAccountHoldingsResponse]
+  describe 'get_aggregation_account_holdings test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_aggregation_account_transaction
+  # Retrieve an aggregation account transaction
+  # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificAggregationAccountTransactionResponse]
+  describe 'get_aggregation_account_transaction test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_aggregation_account_transactions
+  # List all aggregation account transactions
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+  # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+  # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+  # @return [GetAggregationAccountTransactionResponse]
+  describe 'get_aggregation_account_transactions test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_aggregation_accounts
   # List all aggregation accounts
   # @param [Hash] opts the optional parameters
@@ -932,6 +1028,32 @@ describe 'NucleusApi' do
   # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
   # @return [GetBenchmarkResponse]
   describe 'get_benchmarks test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_budget
+  # Retrieve a budget
+  # @param budget_id UUID of a budget
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificBudgetResponse]
+  describe 'get_budget test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_budgets
+  # List all budgets
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+  # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+  # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+  # @return [GetBudgetResponse]
+  describe 'get_budgets test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -1125,6 +1247,32 @@ describe 'NucleusApi' do
   # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
   # @return [GetDepositRequestResponse]
   describe 'get_deposit_requests test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_financial_offer
+  # Retrieve a financial offer
+  # @param financial_offer_id UUID of a financial offer
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificFinancialOfferResponse]
+  describe 'get_financial_offer test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_financial_offers
+  # List all financial offers
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+  # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+  # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @option opts [String] :filter Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+  # @return [GetFinancialOfferResponse]
+  describe 'get_financial_offers test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -2035,6 +2183,28 @@ describe 'NucleusApi' do
     end
   end
 
+  # unit tests for post_aggregation_account_holding
+  # Create an aggregation account holding
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [CreateAggregationAccountHoldingResponse]
+  describe 'post_aggregation_account_holding test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_aggregation_account_transaction
+  # Create an aggregation account transaction
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [CreateAggregationAccountTransactionResponse]
+  describe 'post_aggregation_account_transaction test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for post_allocation
   # Create an allocation
   # @param payload 
@@ -2074,6 +2244,17 @@ describe 'NucleusApi' do
   # @param [Hash] opts the optional parameters
   # @return [CreateBenchmarkResponse]
   describe 'post_benchmark test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_budget
+  # Create a budget
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [CreateBudgetResponse]
+  describe 'post_budget test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -2152,6 +2333,17 @@ describe 'NucleusApi' do
   # @param [Hash] opts the optional parameters
   # @return [CreateDepositRequestResponse]
   describe 'post_deposit_request test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_financial_offer
+  # Create a financial offer
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [CreateFinancialOfferResponse]
+  describe 'post_financial_offer test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -2599,6 +2791,30 @@ describe 'NucleusApi' do
     end
   end
 
+  # unit tests for update_aggregation_account_holding
+  # Update an aggregation account holding
+  # @param aggregation_account_holding_id UUID of an aggregation account holding
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificAggregationAccountHoldingResponse]
+  describe 'update_aggregation_account_holding test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_aggregation_account_transaction
+  # Update an aggregation account transaction
+  # @param aggregation_account_transaction_id UUID of an aggregation account transaction
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificAggregationAccountTransactionResponse]
+  describe 'update_aggregation_account_transaction test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for update_allocation
   # Update an allocation
   # @param allocation_id UUID of an allocation
@@ -2642,6 +2858,18 @@ describe 'NucleusApi' do
   # @param [Hash] opts the optional parameters
   # @return [SpecificBenchmarkResponse]
   describe 'update_benchmark test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_budget
+  # Update a budget
+  # @param budget_id UUID of a budget
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificBudgetResponse]
+  describe 'update_budget test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -2702,6 +2930,18 @@ describe 'NucleusApi' do
   # @param [Hash] opts the optional parameters
   # @return [SpecificDepositRequestResponse]
   describe 'update_deposit_request test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_financial_offer
+  # Update a financial offer
+  # @param financial_offer_id UUID of a financial offer
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [SpecificFinancialOfferResponse]
+  describe 'update_financial_offer test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -809,6 +809,200 @@ class NucleusApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_aggregation_account_holding(self, aggregation_account_holding_id, **kwargs):  # noqa: E501
+        """Delete an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_aggregation_account_holding(aggregation_account_holding_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_holding_id: UUID of an aggregation account holding (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_aggregation_account_holding_with_http_info(aggregation_account_holding_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_aggregation_account_holding_with_http_info(aggregation_account_holding_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_aggregation_account_holding_with_http_info(self, aggregation_account_holding_id, **kwargs):  # noqa: E501
+        """Delete an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_aggregation_account_holding_with_http_info(aggregation_account_holding_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_holding_id: UUID of an aggregation account holding (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['aggregation_account_holding_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_aggregation_account_holding" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'aggregation_account_holding_id' is set
+        if ('aggregation_account_holding_id' not in params or
+                params['aggregation_account_holding_id'] is None):
+            raise ValueError("Missing the required parameter `aggregation_account_holding_id` when calling `delete_aggregation_account_holding`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'aggregation_account_holding_id' in params:
+            path_params['aggregation_account_holding_id'] = params['aggregation_account_holding_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_aggregation_account_transaction(self, aggregation_account_transaction_id, **kwargs):  # noqa: E501
+        """Delete an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_aggregation_account_transaction(aggregation_account_transaction_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_transaction_id: UUID of an aggregation account transaction (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_aggregation_account_transaction_with_http_info(self, aggregation_account_transaction_id, **kwargs):  # noqa: E501
+        """Delete an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_transaction_id: UUID of an aggregation account transaction (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['aggregation_account_transaction_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_aggregation_account_transaction" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'aggregation_account_transaction_id' is set
+        if ('aggregation_account_transaction_id' not in params or
+                params['aggregation_account_transaction_id'] is None):
+            raise ValueError("Missing the required parameter `aggregation_account_transaction_id` when calling `delete_aggregation_account_transaction`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'aggregation_account_transaction_id' in params:
+            path_params['aggregation_account_transaction_id'] = params['aggregation_account_transaction_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_allocation(self, allocation_id, **kwargs):  # noqa: E501
         """Delete an allocation  # noqa: E501
 
@@ -1183,6 +1377,103 @@ class NucleusApi(object):
 
         return self.api_client.call_api(
             '/nucleus/v1/benchmark/{benchmark_id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_budget(self, budget_id, **kwargs):  # noqa: E501
+        """Delete a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_budget(budget_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str budget_id: UUID of a budget (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_budget_with_http_info(budget_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_budget_with_http_info(budget_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_budget_with_http_info(self, budget_id, **kwargs):  # noqa: E501
+        """Delete a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_budget_with_http_info(budget_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str budget_id: UUID of a budget (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['budget_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_budget" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'budget_id' is set
+        if ('budget_id' not in params or
+                params['budget_id'] is None):
+            raise ValueError("Missing the required parameter `budget_id` when calling `delete_budget`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'budget_id' in params:
+            path_params['budget_id'] = params['budget_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/budget/{budget_id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1668,6 +1959,103 @@ class NucleusApi(object):
 
         return self.api_client.call_api(
             '/nucleus/v1/deposit/{deposit_id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_financial_offer(self, financial_offer_id, **kwargs):  # noqa: E501
+        """Delete a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_financial_offer(financial_offer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str financial_offer_id: UUID of a financial offer (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_financial_offer_with_http_info(financial_offer_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_financial_offer_with_http_info(financial_offer_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_financial_offer_with_http_info(self, financial_offer_id, **kwargs):  # noqa: E501
+        """Delete a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_financial_offer_with_http_info(financial_offer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str financial_offer_id: UUID of a financial offer (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['financial_offer_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_financial_offer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'financial_offer_id' is set
+        if ('financial_offer_id' not in params or
+                params['financial_offer_id'] is None):
+            raise ValueError("Missing the required parameter `financial_offer_id` when calling `delete_financial_offer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'financial_offer_id' in params:
+            path_params['financial_offer_id'] = params['financial_offer_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/financial_offer/{financial_offer_id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -6179,6 +6567,426 @@ class NucleusApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_aggregation_account_holding(self, aggregation_account_holding_id, **kwargs):  # noqa: E501
+        """Retrieve an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_holding(aggregation_account_holding_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_holding_id: UUID of an aggregation account holding (required)
+        :return: SpecificAggregationAccountHoldingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_aggregation_account_holding_with_http_info(aggregation_account_holding_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_aggregation_account_holding_with_http_info(aggregation_account_holding_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_aggregation_account_holding_with_http_info(self, aggregation_account_holding_id, **kwargs):  # noqa: E501
+        """Retrieve an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_holding_with_http_info(aggregation_account_holding_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_holding_id: UUID of an aggregation account holding (required)
+        :return: SpecificAggregationAccountHoldingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['aggregation_account_holding_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_aggregation_account_holding" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'aggregation_account_holding_id' is set
+        if ('aggregation_account_holding_id' not in params or
+                params['aggregation_account_holding_id'] is None):
+            raise ValueError("Missing the required parameter `aggregation_account_holding_id` when calling `get_aggregation_account_holding`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'aggregation_account_holding_id' in params:
+            path_params['aggregation_account_holding_id'] = params['aggregation_account_holding_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificAggregationAccountHoldingResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_aggregation_account_holdings(self, **kwargs):  # noqa: E501
+        """List all aggregation account holdings  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_holdings(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetAggregationAccountHoldingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_aggregation_account_holdings_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_aggregation_account_holdings_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_aggregation_account_holdings_with_http_info(self, **kwargs):  # noqa: E501
+        """List all aggregation account holdings  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_holdings_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetAggregationAccountHoldingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_aggregation_account_holdings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_aggregation_account_holdings`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_aggregation_account_holdings`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_holding', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetAggregationAccountHoldingsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_aggregation_account_transaction(self, aggregation_account_transaction_id, **kwargs):  # noqa: E501
+        """Retrieve an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_transaction(aggregation_account_transaction_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_transaction_id: UUID of an aggregation account transaction (required)
+        :return: SpecificAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_aggregation_account_transaction_with_http_info(self, aggregation_account_transaction_id, **kwargs):  # noqa: E501
+        """Retrieve an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_transaction_id: UUID of an aggregation account transaction (required)
+        :return: SpecificAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['aggregation_account_transaction_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_aggregation_account_transaction" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'aggregation_account_transaction_id' is set
+        if ('aggregation_account_transaction_id' not in params or
+                params['aggregation_account_transaction_id'] is None):
+            raise ValueError("Missing the required parameter `aggregation_account_transaction_id` when calling `get_aggregation_account_transaction`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'aggregation_account_transaction_id' in params:
+            path_params['aggregation_account_transaction_id'] = params['aggregation_account_transaction_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificAggregationAccountTransactionResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_aggregation_account_transactions(self, **kwargs):  # noqa: E501
+        """List all aggregation account transactions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_transactions(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_aggregation_account_transactions_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_aggregation_account_transactions_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_aggregation_account_transactions_with_http_info(self, **kwargs):  # noqa: E501
+        """List all aggregation account transactions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_aggregation_account_transactions_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_aggregation_account_transactions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_aggregation_account_transactions`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_aggregation_account_transactions`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_transaction', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetAggregationAccountTransactionResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_aggregation_accounts(self, **kwargs):  # noqa: E501
         """List all aggregation accounts  # noqa: E501
 
@@ -7739,6 +8547,216 @@ class NucleusApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='GetBenchmarkResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_budget(self, budget_id, **kwargs):  # noqa: E501
+        """Retrieve a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_budget(budget_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str budget_id: UUID of a budget (required)
+        :return: SpecificBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_budget_with_http_info(budget_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_budget_with_http_info(budget_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_budget_with_http_info(self, budget_id, **kwargs):  # noqa: E501
+        """Retrieve a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_budget_with_http_info(budget_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str budget_id: UUID of a budget (required)
+        :return: SpecificBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['budget_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_budget" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'budget_id' is set
+        if ('budget_id' not in params or
+                params['budget_id'] is None):
+            raise ValueError("Missing the required parameter `budget_id` when calling `get_budget`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'budget_id' in params:
+            path_params['budget_id'] = params['budget_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/budget/{budget_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificBudgetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_budgets(self, **kwargs):  # noqa: E501
+        """List all budgets  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_budgets(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_budgets_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_budgets_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_budgets_with_http_info(self, **kwargs):  # noqa: E501
+        """List all budgets  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_budgets_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_budgets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_budgets`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_budgets`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/budget', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetBudgetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -9310,6 +10328,216 @@ class NucleusApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='GetDepositRequestResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_financial_offer(self, financial_offer_id, **kwargs):  # noqa: E501
+        """Retrieve a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_financial_offer(financial_offer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str financial_offer_id: UUID of a financial offer (required)
+        :return: SpecificFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_financial_offer_with_http_info(financial_offer_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_financial_offer_with_http_info(financial_offer_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_financial_offer_with_http_info(self, financial_offer_id, **kwargs):  # noqa: E501
+        """Retrieve a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_financial_offer_with_http_info(financial_offer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str financial_offer_id: UUID of a financial offer (required)
+        :return: SpecificFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['financial_offer_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_financial_offer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'financial_offer_id' is set
+        if ('financial_offer_id' not in params or
+                params['financial_offer_id'] is None):
+            raise ValueError("Missing the required parameter `financial_offer_id` when calling `get_financial_offer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'financial_offer_id' in params:
+            path_params['financial_offer_id'] = params['financial_offer_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/financial_offer/{financial_offer_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificFinancialOfferResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_financial_offers(self, **kwargs):  # noqa: E501
+        """List all financial offers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_financial_offers(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_financial_offers_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_financial_offers_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_financial_offers_with_http_info(self, **kwargs):  # noqa: E501
+        """List all financial offers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_financial_offers_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param str filter: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :return: GetFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_financial_offers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_financial_offers`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_financial_offers`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/financial_offer', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetFinancialOfferResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -16756,6 +17984,200 @@ class NucleusApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_aggregation_account_holding(self, payload, **kwargs):  # noqa: E501
+        """Create an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_aggregation_account_holding(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AggregationAccountHoldingPayload payload: (required)
+        :return: CreateAggregationAccountHoldingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_aggregation_account_holding_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_aggregation_account_holding_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_aggregation_account_holding_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Create an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_aggregation_account_holding_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AggregationAccountHoldingPayload payload: (required)
+        :return: CreateAggregationAccountHoldingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_aggregation_account_holding" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_aggregation_account_holding`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_holding', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateAggregationAccountHoldingResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_aggregation_account_transaction(self, payload, **kwargs):  # noqa: E501
+        """Create an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_aggregation_account_transaction(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AggregationAccountTransactionPayload payload: (required)
+        :return: CreateAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_aggregation_account_transaction_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_aggregation_account_transaction_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_aggregation_account_transaction_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Create an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_aggregation_account_transaction_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param AggregationAccountTransactionPayload payload: (required)
+        :return: CreateAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_aggregation_account_transaction" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_aggregation_account_transaction`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_transaction', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateAggregationAccountTransactionResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def post_allocation(self, payload, **kwargs):  # noqa: E501
         """Create an allocation  # noqa: E501
 
@@ -17137,6 +18559,103 @@ class NucleusApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='CreateBenchmarkResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_budget(self, payload, **kwargs):  # noqa: E501
+        """Create a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_budget(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BudgetPayload payload: (required)
+        :return: CreateBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_budget_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_budget_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_budget_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Create a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_budget_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BudgetPayload payload: (required)
+        :return: CreateBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_budget" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_budget`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/budget', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateBudgetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -17824,6 +19343,103 @@ class NucleusApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='CreateDepositRequestResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_financial_offer(self, payload, **kwargs):  # noqa: E501
+        """Create a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_financial_offer(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param FinancialOfferPayload payload: (required)
+        :return: CreateFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_financial_offer_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_financial_offer_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_financial_offer_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Create a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_financial_offer_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param FinancialOfferPayload payload: (required)
+        :return: CreateFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_financial_offer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_financial_offer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/financial_offer', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateFinancialOfferResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -21718,6 +23334,216 @@ class NucleusApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def update_aggregation_account_holding(self, aggregation_account_holding_id, payload, **kwargs):  # noqa: E501
+        """Update an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_aggregation_account_holding(aggregation_account_holding_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_holding_id: UUID of an aggregation account holding (required)
+        :param AggregationAccountHoldingPayload payload: (required)
+        :return: SpecificAggregationAccountHoldingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_aggregation_account_holding_with_http_info(aggregation_account_holding_id, payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_aggregation_account_holding_with_http_info(aggregation_account_holding_id, payload, **kwargs)  # noqa: E501
+            return data
+
+    def update_aggregation_account_holding_with_http_info(self, aggregation_account_holding_id, payload, **kwargs):  # noqa: E501
+        """Update an aggregation account holding  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_aggregation_account_holding_with_http_info(aggregation_account_holding_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_holding_id: UUID of an aggregation account holding (required)
+        :param AggregationAccountHoldingPayload payload: (required)
+        :return: SpecificAggregationAccountHoldingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['aggregation_account_holding_id', 'payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_aggregation_account_holding" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'aggregation_account_holding_id' is set
+        if ('aggregation_account_holding_id' not in params or
+                params['aggregation_account_holding_id'] is None):
+            raise ValueError("Missing the required parameter `aggregation_account_holding_id` when calling `update_aggregation_account_holding`")  # noqa: E501
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `update_aggregation_account_holding`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'aggregation_account_holding_id' in params:
+            path_params['aggregation_account_holding_id'] = params['aggregation_account_holding_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificAggregationAccountHoldingResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_aggregation_account_transaction(self, aggregation_account_transaction_id, payload, **kwargs):  # noqa: E501
+        """Update an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_aggregation_account_transaction(aggregation_account_transaction_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_transaction_id: UUID of an aggregation account transaction (required)
+        :param AggregationAccountTransactionPayload payload: (required)
+        :return: SpecificAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, payload, **kwargs)  # noqa: E501
+            return data
+
+    def update_aggregation_account_transaction_with_http_info(self, aggregation_account_transaction_id, payload, **kwargs):  # noqa: E501
+        """Update an aggregation account transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_aggregation_account_transaction_with_http_info(aggregation_account_transaction_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str aggregation_account_transaction_id: UUID of an aggregation account transaction (required)
+        :param AggregationAccountTransactionPayload payload: (required)
+        :return: SpecificAggregationAccountTransactionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['aggregation_account_transaction_id', 'payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_aggregation_account_transaction" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'aggregation_account_transaction_id' is set
+        if ('aggregation_account_transaction_id' not in params or
+                params['aggregation_account_transaction_id'] is None):
+            raise ValueError("Missing the required parameter `aggregation_account_transaction_id` when calling `update_aggregation_account_transaction`")  # noqa: E501
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `update_aggregation_account_transaction`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'aggregation_account_transaction_id' in params:
+            path_params['aggregation_account_transaction_id'] = params['aggregation_account_transaction_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificAggregationAccountTransactionResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_allocation(self, allocation_id, payload, **kwargs):  # noqa: E501
         """Update an allocation  # noqa: E501
 
@@ -22131,6 +23957,111 @@ class NucleusApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SpecificBenchmarkResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_budget(self, budget_id, payload, **kwargs):  # noqa: E501
+        """Update a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_budget(budget_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str budget_id: UUID of a budget (required)
+        :param BudgetPayload payload: (required)
+        :return: SpecificBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_budget_with_http_info(budget_id, payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_budget_with_http_info(budget_id, payload, **kwargs)  # noqa: E501
+            return data
+
+    def update_budget_with_http_info(self, budget_id, payload, **kwargs):  # noqa: E501
+        """Update a budget  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_budget_with_http_info(budget_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str budget_id: UUID of a budget (required)
+        :param BudgetPayload payload: (required)
+        :return: SpecificBudgetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['budget_id', 'payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_budget" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'budget_id' is set
+        if ('budget_id' not in params or
+                params['budget_id'] is None):
+            raise ValueError("Missing the required parameter `budget_id` when calling `update_budget`")  # noqa: E501
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `update_budget`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'budget_id' in params:
+            path_params['budget_id'] = params['budget_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/budget/{budget_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificBudgetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -22656,6 +24587,111 @@ class NucleusApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SpecificDepositRequestResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_financial_offer(self, financial_offer_id, payload, **kwargs):  # noqa: E501
+        """Update a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_financial_offer(financial_offer_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str financial_offer_id: UUID of a financial offer (required)
+        :param FinancialOfferPayload payload: (required)
+        :return: SpecificFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_financial_offer_with_http_info(financial_offer_id, payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_financial_offer_with_http_info(financial_offer_id, payload, **kwargs)  # noqa: E501
+            return data
+
+    def update_financial_offer_with_http_info(self, financial_offer_id, payload, **kwargs):  # noqa: E501
+        """Update a financial offer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_financial_offer_with_http_info(financial_offer_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str financial_offer_id: UUID of a financial offer (required)
+        :param FinancialOfferPayload payload: (required)
+        :return: SpecificFinancialOfferResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['financial_offer_id', 'payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_financial_offer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'financial_offer_id' is set
+        if ('financial_offer_id' not in params or
+                params['financial_offer_id'] is None):
+            raise ValueError("Missing the required parameter `financial_offer_id` when calling `update_financial_offer`")  # noqa: E501
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `update_financial_offer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'financial_offer_id' in params:
+            path_params['financial_offer_id'] = params['financial_offer_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/financial_offer/{financial_offer_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SpecificFinancialOfferResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

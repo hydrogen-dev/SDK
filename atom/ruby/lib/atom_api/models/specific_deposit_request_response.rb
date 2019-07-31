@@ -58,6 +58,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the deposit in the format key:value
+    attr_accessor :metadata
+
     # Datetime the deposit request was last updated
     attr_accessor :update_date
 
@@ -79,6 +82,7 @@ module AtomApi
         :'status_time_stamp' => :'status_time_stamp',
         :'type' => :'type',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'update_date' => :'update_date'
       }
     end
@@ -101,6 +105,7 @@ module AtomApi
         :'status_time_stamp' => :'String',
         :'type' => :'String',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'update_date' => :'String'
       }
     end
@@ -173,6 +178,10 @@ module AtomApi
         self.secondary_id = attributes[:'secondary_id']
       end
 
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
       if attributes.has_key?(:'update_date')
         self.update_date = attributes[:'update_date']
       end
@@ -231,6 +240,7 @@ module AtomApi
           status_time_stamp == o.status_time_stamp &&
           type == o.type &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           update_date == o.update_date
     end
 
@@ -243,7 +253,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, account_id, amount, funding_id, invested_date, account_number, comments, direction, last_request_date, received_date, status, status_time_stamp, type, secondary_id, update_date].hash
+      [id, create_date, account_id, amount, funding_id, invested_date, account_number, comments, direction, last_request_date, received_date, status, status_time_stamp, type, secondary_id, metadata, update_date].hash
     end
 
     # Builds the object from hash

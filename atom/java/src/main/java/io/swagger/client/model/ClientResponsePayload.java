@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * ClientResponsePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class ClientResponsePayload {
   @SerializedName("answer_id")
   private UUID answerId = null;
@@ -44,6 +44,9 @@ public class ClientResponsePayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public ClientResponsePayload answerId(UUID answerId) {
     this.answerId = answerId;
@@ -135,6 +138,24 @@ public class ClientResponsePayload {
     this.secondaryId = secondaryId;
   }
 
+  public ClientResponsePayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the client response in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the client response in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +170,13 @@ public class ClientResponsePayload {
         Objects.equals(this.answerValue, clientResponsePayload.answerValue) &&
         Objects.equals(this.clientId, clientResponsePayload.clientId) &&
         Objects.equals(this.accountId, clientResponsePayload.accountId) &&
-        Objects.equals(this.secondaryId, clientResponsePayload.secondaryId);
+        Objects.equals(this.secondaryId, clientResponsePayload.secondaryId) &&
+        Objects.equals(this.metadata, clientResponsePayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(answerId, answerValue, clientId, accountId, secondaryId);
+    return Objects.hash(answerId, answerValue, clientId, accountId, secondaryId, metadata);
   }
 
 
@@ -168,6 +190,7 @@ public class ClientResponsePayload {
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

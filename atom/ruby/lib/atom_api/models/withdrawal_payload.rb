@@ -55,6 +55,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the withdrawal in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -71,7 +74,8 @@ module AtomApi
         :'status' => :'status',
         :'status_time_stamp' => :'status_time_stamp',
         :'type' => :'type',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -91,7 +95,8 @@ module AtomApi
         :'status' => :'String',
         :'status_time_stamp' => :'String',
         :'type' => :'String',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -158,6 +163,10 @@ module AtomApi
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
       end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -211,7 +220,8 @@ module AtomApi
           status == o.status &&
           status_time_stamp == o.status_time_stamp &&
           type == o.type &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -223,7 +233,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, amount, funding_id, withdrawal_date, account_number, comments, direction, fees, last_request_date, received_date, status, status_time_stamp, type, secondary_id].hash
+      [account_id, amount, funding_id, withdrawal_date, account_number, comments, direction, fees, last_request_date, received_date, status, status_time_stamp, type, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

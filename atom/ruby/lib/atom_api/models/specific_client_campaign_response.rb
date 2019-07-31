@@ -31,6 +31,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the client campaign in the format key:value
+    attr_accessor :metadata
+
     # Datetime the client campaign record was last updated
     attr_accessor :update_date
 
@@ -43,6 +46,7 @@ module AtomApi
         :'client_id' => :'client_id',
         :'ip' => :'ip',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'update_date' => :'update_date'
       }
     end
@@ -56,6 +60,7 @@ module AtomApi
         :'client_id' => :'String',
         :'ip' => :'String',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'update_date' => :'String'
       }
     end
@@ -92,6 +97,10 @@ module AtomApi
         self.secondary_id = attributes[:'secondary_id']
       end
 
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
       if attributes.has_key?(:'update_date')
         self.update_date = attributes[:'update_date']
       end
@@ -126,6 +135,7 @@ module AtomApi
           client_id == o.client_id &&
           ip == o.ip &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           update_date == o.update_date
     end
 
@@ -138,7 +148,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, campaign_id, client_id, ip, secondary_id, update_date].hash
+      [id, create_date, campaign_id, client_id, ip, secondary_id, metadata, update_date].hash
     end
 
     # Builds the object from hash

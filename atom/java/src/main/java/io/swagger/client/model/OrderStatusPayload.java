@@ -27,13 +27,16 @@ import java.io.IOException;
 /**
  * OrderStatusPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class OrderStatusPayload {
   @SerializedName("status")
   private String status = null;
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public OrderStatusPayload status(String status) {
     this.status = status;
@@ -71,6 +74,24 @@ public class OrderStatusPayload {
     this.description = description;
   }
 
+  public OrderStatusPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the order status in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the order status in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +103,13 @@ public class OrderStatusPayload {
     }
     OrderStatusPayload orderStatusPayload = (OrderStatusPayload) o;
     return Objects.equals(this.status, orderStatusPayload.status) &&
-        Objects.equals(this.description, orderStatusPayload.description);
+        Objects.equals(this.description, orderStatusPayload.description) &&
+        Objects.equals(this.metadata, orderStatusPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, description);
+    return Objects.hash(status, description, metadata);
   }
 
 
@@ -98,6 +120,7 @@ public class OrderStatusPayload {
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

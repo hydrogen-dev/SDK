@@ -204,10 +204,6 @@ module AtomApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @account_id.nil?
-        invalid_properties.push('invalid value for "account_id", account_id cannot be nil.')
-      end
-
       if @bank_account_holder.nil?
         invalid_properties.push('invalid value for "bank_account_holder", bank_account_holder cannot be nil.')
       end
@@ -230,7 +226,6 @@ module AtomApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @account_id.nil?
       return false if @bank_account_holder.nil?
       return false if @bank_account_number.nil?
       return false if @name.nil?

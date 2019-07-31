@@ -32,6 +32,9 @@ module AtomApi
     # Indicator if the model_id is a core model for core-satellite investing. Defaults to false which means it is not a core model
     attr_accessor :core
 
+    # Custom information associated with the allocation composition in the format key:value
+    attr_accessor :metadata
+
     # ID of the allocation composition
     attr_accessor :id
 
@@ -47,6 +50,7 @@ module AtomApi
         :'strategic_weight' => :'strategic_weight',
         :'date' => :'date',
         :'core' => :'core',
+        :'metadata' => :'metadata',
         :'id' => :'id',
         :'create_date' => :'create_date'
       }
@@ -61,6 +65,7 @@ module AtomApi
         :'strategic_weight' => :'Float',
         :'date' => :'Date',
         :'core' => :'BOOLEAN',
+        :'metadata' => :'Object',
         :'id' => :'String',
         :'create_date' => :'String'
       }
@@ -98,6 +103,10 @@ module AtomApi
         self.core = attributes[:'core']
       else
         self.core = false
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
 
       if attributes.has_key?(:'id')
@@ -158,6 +167,7 @@ module AtomApi
           strategic_weight == o.strategic_weight &&
           date == o.date &&
           core == o.core &&
+          metadata == o.metadata &&
           id == o.id &&
           create_date == o.create_date
     end
@@ -171,7 +181,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allocation_id, model_id, current_weight, strategic_weight, date, core, id, create_date].hash
+      [allocation_id, model_id, current_weight, strategic_weight, date, core, metadata, id, create_date].hash
     end
 
     # Builds the object from hash

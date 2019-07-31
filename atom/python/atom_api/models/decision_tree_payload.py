@@ -35,21 +35,24 @@ class DecisionTreePayload(object):
     swagger_types = {
         'name': 'str',
         'description': 'str',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
         'name': 'name',
         'description': 'description',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, name=None, description=None, secondary_id=None):  # noqa: E501
+    def __init__(self, name=None, description=None, secondary_id=None, metadata=None):  # noqa: E501
         """DecisionTreePayload - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._description = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         self.name = name
@@ -57,6 +60,8 @@ class DecisionTreePayload(object):
             self.description = description
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def name(self):
@@ -126,6 +131,29 @@ class DecisionTreePayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this DecisionTreePayload.  # noqa: E501
+
+        Custom information associated with the decision tree in the format key:value  # noqa: E501
+
+        :return: The metadata of this DecisionTreePayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this DecisionTreePayload.
+
+        Custom information associated with the decision tree in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this DecisionTreePayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

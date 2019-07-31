@@ -47,6 +47,7 @@ class CreateTransferResponse(object):
         'status': 'str',
         'transfer_type': 'str',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -65,11 +66,12 @@ class CreateTransferResponse(object):
         'status': 'status',
         'transfer_type': 'transfer_type',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, account_id=None, account_holder=None, account_number=None, account_type_id=None, firm_name=None, transfer_all_cash=None, amount=None, comment=None, dtc_number=None, roth_five_year=None, status=None, transfer_type=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, account_id=None, account_holder=None, account_number=None, account_type_id=None, firm_name=None, transfer_all_cash=None, amount=None, comment=None, dtc_number=None, roth_five_year=None, status=None, transfer_type=None, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateTransferResponse - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -85,6 +87,7 @@ class CreateTransferResponse(object):
         self._status = None
         self._transfer_type = None
         self._secondary_id = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -109,6 +112,8 @@ class CreateTransferResponse(object):
             self.transfer_type = transfer_type
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -422,6 +427,29 @@ class CreateTransferResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateTransferResponse.  # noqa: E501
+
+        Custom information associated with the transfer in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateTransferResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateTransferResponse.
+
+        Custom information associated with the transfer in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateTransferResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CreateTransactionCodeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateTransactionCodeResponse {
   @SerializedName("transaction_code")
   private String transactionCode = null;
@@ -48,6 +48,9 @@ public class CreateTransactionCodeResponse {
 
   @SerializedName("is_buy")
   private Boolean isBuy = false;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -163,6 +166,24 @@ public class CreateTransactionCodeResponse {
     this.isBuy = isBuy;
   }
 
+  public CreateTransactionCodeResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the transaction code in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the transaction code in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public CreateTransactionCodeResponse id(UUID id) {
     this.id = id;
     return this;
@@ -215,13 +236,14 @@ public class CreateTransactionCodeResponse {
         Objects.equals(this.category, createTransactionCodeResponse.category) &&
         Objects.equals(this.subcategory, createTransactionCodeResponse.subcategory) &&
         Objects.equals(this.isBuy, createTransactionCodeResponse.isBuy) &&
+        Objects.equals(this.metadata, createTransactionCodeResponse.metadata) &&
         Objects.equals(this.id, createTransactionCodeResponse.id) &&
         Objects.equals(this.createDate, createTransactionCodeResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionCode, transactionCodeDescription, transactionType, category, subcategory, isBuy, id, createDate);
+    return Objects.hash(transactionCode, transactionCodeDescription, transactionType, category, subcategory, isBuy, metadata, id, createDate);
   }
 
 
@@ -236,6 +258,7 @@ public class CreateTransactionCodeResponse {
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    subcategory: ").append(toIndentedString(subcategory)).append("\n");
     sb.append("    isBuy: ").append(toIndentedString(isBuy)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

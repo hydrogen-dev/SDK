@@ -102,6 +102,12 @@ exports.prototype['status'] = undefined;
    */
 exports.prototype['description'] = undefined;
 
+  /**
+   * Custom information associated with the order status in the format key:value
+   * @member {Object} metadata
+   */
+exports.prototype['metadata'] = undefined;
+
 
 
   return exports;

@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * PortfolioWhatIfResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class PortfolioWhatIfResponse {
   @SerializedName("annualized_return")
   private PortfolioWhatIfStat annualizedReturn = null;

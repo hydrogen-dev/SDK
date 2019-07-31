@@ -161,15 +161,19 @@ Class | Method | HTTP request | Description
 *NucleusApi* | [**delete_account_type**](docs/NucleusApi.md#delete_account_type) | **DELETE** /nucleus/v1/account_type/{account_type_id} | Delete an account type
 *NucleusApi* | [**delete_aggregation_account**](docs/NucleusApi.md#delete_aggregation_account) | **DELETE** /nucleus/v1/aggregation_account/{aggregation_account_id} | Delete an aggregation account
 *NucleusApi* | [**delete_aggregation_account_balance**](docs/NucleusApi.md#delete_aggregation_account_balance) | **DELETE** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Delete an aggregation account balance
+*NucleusApi* | [**delete_aggregation_account_holding**](docs/NucleusApi.md#delete_aggregation_account_holding) | **DELETE** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Delete an aggregation account holding
+*NucleusApi* | [**delete_aggregation_account_transaction**](docs/NucleusApi.md#delete_aggregation_account_transaction) | **DELETE** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Delete an aggregation account transaction
 *NucleusApi* | [**delete_allocation**](docs/NucleusApi.md#delete_allocation) | **DELETE** /nucleus/v1/allocation/{allocation_id} | Delete an allocation
 *NucleusApi* | [**delete_allocation_composition**](docs/NucleusApi.md#delete_allocation_composition) | **DELETE** /nucleus/v1/allocation_composition/{allocation_composition_id} | Delete an allocation composition
 *NucleusApi* | [**delete_bank_link**](docs/NucleusApi.md#delete_bank_link) | **DELETE** /nucleus/v1/bank_link/{bank_link_id} | Delete a bank link
 *NucleusApi* | [**delete_benchmark**](docs/NucleusApi.md#delete_benchmark) | **DELETE** /nucleus/v1/benchmark/{benchmark_id} | Delete a benchmark
+*NucleusApi* | [**delete_budget**](docs/NucleusApi.md#delete_budget) | **DELETE** /nucleus/v1/budget/{budget_id} | Delete a budget
 *NucleusApi* | [**delete_client**](docs/NucleusApi.md#delete_client) | **DELETE** /nucleus/v1/client/{client_id} | Delete a client
 *NucleusApi* | [**delete_client_hydro**](docs/NucleusApi.md#delete_client_hydro) | **DELETE** /nucleus/v1/client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 *NucleusApi* | [**delete_client_response**](docs/NucleusApi.md#delete_client_response) | **DELETE** /nucleus/v1/client_response/{client_response_id} | Delete a client response
 *NucleusApi* | [**delete_decision_tree**](docs/NucleusApi.md#delete_decision_tree) | **DELETE** /nucleus/v1/decision_tree/{decision_tree_id} | Delete a decision tree
 *NucleusApi* | [**delete_deposit_request**](docs/NucleusApi.md#delete_deposit_request) | **DELETE** /nucleus/v1/deposit/{deposit_id} | Delete a deposit request
+*NucleusApi* | [**delete_financial_offer**](docs/NucleusApi.md#delete_financial_offer) | **DELETE** /nucleus/v1/financial_offer/{financial_offer_id} | Delete a financial offer
 *NucleusApi* | [**delete_funding_request**](docs/NucleusApi.md#delete_funding_request) | **DELETE** /nucleus/v1/funding/{funding_id} | Delete a funding request
 *NucleusApi* | [**delete_goal**](docs/NucleusApi.md#delete_goal) | **DELETE** /nucleus/v1/goal/{goal_id} | Delete a goal
 *NucleusApi* | [**delete_goal_track_record**](docs/NucleusApi.md#delete_goal_track_record) | **DELETE** /nucleus/v1/goal_track/{goal_track_id} | Delete a goal track record
@@ -215,6 +219,10 @@ Class | Method | HTTP request | Description
 *NucleusApi* | [**get_aggregation_account**](docs/NucleusApi.md#get_aggregation_account) | **GET** /nucleus/v1/aggregation_account/{aggregation_account_id} | Retrieve an aggregation account
 *NucleusApi* | [**get_aggregation_account_balance**](docs/NucleusApi.md#get_aggregation_account_balance) | **GET** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Retrieve an aggregation account balance
 *NucleusApi* | [**get_aggregation_account_balances**](docs/NucleusApi.md#get_aggregation_account_balances) | **GET** /nucleus/v1/aggregation_account_balance | List all aggregation account balances
+*NucleusApi* | [**get_aggregation_account_holding**](docs/NucleusApi.md#get_aggregation_account_holding) | **GET** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Retrieve an aggregation account holding
+*NucleusApi* | [**get_aggregation_account_holdings**](docs/NucleusApi.md#get_aggregation_account_holdings) | **GET** /nucleus/v1/aggregation_account_holding | List all aggregation account holdings
+*NucleusApi* | [**get_aggregation_account_transaction**](docs/NucleusApi.md#get_aggregation_account_transaction) | **GET** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Retrieve an aggregation account transaction
+*NucleusApi* | [**get_aggregation_account_transactions**](docs/NucleusApi.md#get_aggregation_account_transactions) | **GET** /nucleus/v1/aggregation_account_transaction | List all aggregation account transactions
 *NucleusApi* | [**get_aggregation_accounts**](docs/NucleusApi.md#get_aggregation_accounts) | **GET** /nucleus/v1/aggregation_account | List all aggregation accounts
 *NucleusApi* | [**get_allocation**](docs/NucleusApi.md#get_allocation) | **GET** /nucleus/v1/allocation/{allocation_id} | Retrieve an allocation
 *NucleusApi* | [**get_allocation_asset_sizes**](docs/NucleusApi.md#get_allocation_asset_sizes) | **GET** /nucleus/v1/allocation/{allocation_id}/asset_size | List all allocation asset sizes
@@ -230,6 +238,8 @@ Class | Method | HTTP request | Description
 *NucleusApi* | [**get_benchmark_asset_sizes**](docs/NucleusApi.md#get_benchmark_asset_sizes) | **GET** /nucleus/v1/benchmark/{benchmark_id}/asset_size | List all benchmark asset sizes
 *NucleusApi* | [**get_benchmark_performance**](docs/NucleusApi.md#get_benchmark_performance) | **GET** /nucleus/v1/benchmark/{benchmark_id}/performance | Get benchmark performance
 *NucleusApi* | [**get_benchmarks**](docs/NucleusApi.md#get_benchmarks) | **GET** /nucleus/v1/benchmark | List all benchmarks
+*NucleusApi* | [**get_budget**](docs/NucleusApi.md#get_budget) | **GET** /nucleus/v1/budget/{budget_id} | Retrieve a budget
+*NucleusApi* | [**get_budgets**](docs/NucleusApi.md#get_budgets) | **GET** /nucleus/v1/budget | List all budgets
 *NucleusApi* | [**get_bulk_orders**](docs/NucleusApi.md#get_bulk_orders) | **GET** /nucleus/v1/order_bulk | List all bulk orders
 *NucleusApi* | [**get_client**](docs/NucleusApi.md#get_client) | **GET** /nucleus/v1/client/{client_id} | Retrieve a client
 *NucleusApi* | [**get_client_asset_sizes**](docs/NucleusApi.md#get_client_asset_sizes) | **GET** /nucleus/v1/client/{client_id}/asset_size | List all client asset sizes
@@ -245,6 +255,8 @@ Class | Method | HTTP request | Description
 *NucleusApi* | [**get_decision_trees**](docs/NucleusApi.md#get_decision_trees) | **GET** /nucleus/v1/decision_tree | List all decision trees
 *NucleusApi* | [**get_deposit_request**](docs/NucleusApi.md#get_deposit_request) | **GET** /nucleus/v1/deposit/{deposit_id} | Retrieve a deposit request
 *NucleusApi* | [**get_deposit_requests**](docs/NucleusApi.md#get_deposit_requests) | **GET** /nucleus/v1/deposit | List all deposit requests
+*NucleusApi* | [**get_financial_offer**](docs/NucleusApi.md#get_financial_offer) | **GET** /nucleus/v1/financial_offer/{financial_offer_id} | Retrieve a financial offer
+*NucleusApi* | [**get_financial_offers**](docs/NucleusApi.md#get_financial_offers) | **GET** /nucleus/v1/financial_offer | List all financial offers
 *NucleusApi* | [**get_funding_request**](docs/NucleusApi.md#get_funding_request) | **GET** /nucleus/v1/funding/{funding_id} | Retrieve a funding request
 *NucleusApi* | [**get_funding_requests**](docs/NucleusApi.md#get_funding_requests) | **GET** /nucleus/v1/funding | List all funding requests
 *NucleusApi* | [**get_goal**](docs/NucleusApi.md#get_goal) | **GET** /nucleus/v1/goal/{goal_id} | Retrieve a goal
@@ -316,10 +328,13 @@ Class | Method | HTTP request | Description
 *NucleusApi* | [**post_account_type**](docs/NucleusApi.md#post_account_type) | **POST** /nucleus/v1/account_type | Create an account type
 *NucleusApi* | [**post_aggregation_account**](docs/NucleusApi.md#post_aggregation_account) | **POST** /nucleus/v1/aggregation_account | Create an aggregation account
 *NucleusApi* | [**post_aggregation_account_balance**](docs/NucleusApi.md#post_aggregation_account_balance) | **POST** /nucleus/v1/aggregation_account_balance | Create an aggregation account balance
+*NucleusApi* | [**post_aggregation_account_holding**](docs/NucleusApi.md#post_aggregation_account_holding) | **POST** /nucleus/v1/aggregation_account_holding | Create an aggregation account holding
+*NucleusApi* | [**post_aggregation_account_transaction**](docs/NucleusApi.md#post_aggregation_account_transaction) | **POST** /nucleus/v1/aggregation_account_transaction | Create an aggregation account transaction
 *NucleusApi* | [**post_allocation**](docs/NucleusApi.md#post_allocation) | **POST** /nucleus/v1/allocation | Create an allocation
 *NucleusApi* | [**post_allocation_composition**](docs/NucleusApi.md#post_allocation_composition) | **POST** /nucleus/v1/allocation_composition | Create an allocation composition
 *NucleusApi* | [**post_bank_link**](docs/NucleusApi.md#post_bank_link) | **POST** /nucleus/v1/bank_link | Create a bank link
 *NucleusApi* | [**post_benchmark**](docs/NucleusApi.md#post_benchmark) | **POST** /nucleus/v1/benchmark | Create a benchmark
+*NucleusApi* | [**post_budget**](docs/NucleusApi.md#post_budget) | **POST** /nucleus/v1/budget | Create a budget
 *NucleusApi* | [**post_bulk_order**](docs/NucleusApi.md#post_bulk_order) | **POST** /nucleus/v1/order_bulk | Bulk orders for your firm
 *NucleusApi* | [**post_client**](docs/NucleusApi.md#post_client) | **POST** /nucleus/v1/client | Create a client
 *NucleusApi* | [**post_client_bulk_order**](docs/NucleusApi.md#post_client_bulk_order) | **POST** /nucleus/v1/client/{client_id}/order_bulk | Bulk orders for a client
@@ -327,6 +342,7 @@ Class | Method | HTTP request | Description
 *NucleusApi* | [**post_client_response**](docs/NucleusApi.md#post_client_response) | **POST** /nucleus/v1/client_response | Create a client response
 *NucleusApi* | [**post_decision_tree**](docs/NucleusApi.md#post_decision_tree) | **POST** /nucleus/v1/decision_tree | Create a decision tree
 *NucleusApi* | [**post_deposit_request**](docs/NucleusApi.md#post_deposit_request) | **POST** /nucleus/v1/deposit | Create a deposit request
+*NucleusApi* | [**post_financial_offer**](docs/NucleusApi.md#post_financial_offer) | **POST** /nucleus/v1/financial_offer | Create a financial offer
 *NucleusApi* | [**post_funding_request**](docs/NucleusApi.md#post_funding_request) | **POST** /nucleus/v1/funding | Create a funding request
 *NucleusApi* | [**post_goal**](docs/NucleusApi.md#post_goal) | **POST** /nucleus/v1/goal | Create a goal
 *NucleusApi* | [**post_goal_track_record**](docs/NucleusApi.md#post_goal_track_record) | **POST** /nucleus/v1/goal_track | Create a goal track record
@@ -366,15 +382,19 @@ Class | Method | HTTP request | Description
 *NucleusApi* | [**update_account_type**](docs/NucleusApi.md#update_account_type) | **PUT** /nucleus/v1/account_type/{account_type_id} | Update an account type
 *NucleusApi* | [**update_aggregation_account**](docs/NucleusApi.md#update_aggregation_account) | **PUT** /nucleus/v1/aggregation_account/{aggregation_account_id} | Update an aggregation account
 *NucleusApi* | [**update_aggregation_account_balance**](docs/NucleusApi.md#update_aggregation_account_balance) | **PUT** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Update an aggregation account balance
+*NucleusApi* | [**update_aggregation_account_holding**](docs/NucleusApi.md#update_aggregation_account_holding) | **PUT** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Update an aggregation account holding
+*NucleusApi* | [**update_aggregation_account_transaction**](docs/NucleusApi.md#update_aggregation_account_transaction) | **PUT** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Update an aggregation account transaction
 *NucleusApi* | [**update_allocation**](docs/NucleusApi.md#update_allocation) | **PUT** /nucleus/v1/allocation/{allocation_id} | Update an allocation
 *NucleusApi* | [**update_allocation_composition**](docs/NucleusApi.md#update_allocation_composition) | **PUT** /nucleus/v1/allocation_composition/{allocation_composition_id} | Update an allocation composition
 *NucleusApi* | [**update_bank_link**](docs/NucleusApi.md#update_bank_link) | **PUT** /nucleus/v1/bank_link/{bank_link_id} | Update a bank link
 *NucleusApi* | [**update_benchmark**](docs/NucleusApi.md#update_benchmark) | **PUT** /nucleus/v1/benchmark/{benchmark_id} | Update a benchmark
+*NucleusApi* | [**update_budget**](docs/NucleusApi.md#update_budget) | **PUT** /nucleus/v1/budget/{budget_id} | Update a budget
 *NucleusApi* | [**update_client**](docs/NucleusApi.md#update_client) | **PUT** /nucleus/v1/client/{client_id} | Update a client
 *NucleusApi* | [**update_client_hydro**](docs/NucleusApi.md#update_client_hydro) | **PUT** /nucleus/v1/client_hydro/{client_hydro_id} | Update a client-hydro relationship
 *NucleusApi* | [**update_client_response**](docs/NucleusApi.md#update_client_response) | **PUT** /nucleus/v1/client_response/{client_response_id} | Update a client response
 *NucleusApi* | [**update_decision_tree**](docs/NucleusApi.md#update_decision_tree) | **PUT** /nucleus/v1/decision_tree/{decision_tree_id} | Update a decision tree
 *NucleusApi* | [**update_deposit_request**](docs/NucleusApi.md#update_deposit_request) | **PUT** /nucleus/v1/deposit/{deposit_id} | Update a deposit request
+*NucleusApi* | [**update_financial_offer**](docs/NucleusApi.md#update_financial_offer) | **PUT** /nucleus/v1/financial_offer/{financial_offer_id} | Update a financial offer
 *NucleusApi* | [**update_funding_request**](docs/NucleusApi.md#update_funding_request) | **PUT** /nucleus/v1/funding/{funding_id} | Update a funding request
 *NucleusApi* | [**update_goal**](docs/NucleusApi.md#update_goal) | **PUT** /nucleus/v1/goal/{goal_id} | Update a goal
 *NucleusApi* | [**update_goal_track_record**](docs/NucleusApi.md#update_goal_track_record) | **PUT** /nucleus/v1/goal_track/{goal_track_id} | Update a goal track record
@@ -407,6 +427,7 @@ Class | Method | HTTP request | Description
 *ProtonApi* | [**annuity_calculator_decumulation_horizon**](docs/ProtonApi.md#annuity_calculator_decumulation_horizon) | **POST** /proton/v1/annuity_calculator/decumulation_horizon | Annuity calculator - decumulation horizon
 *ProtonApi* | [**annuity_calculator_deposit_amount**](docs/ProtonApi.md#annuity_calculator_deposit_amount) | **POST** /proton/v1/annuity_calculator/deposit_amount | Annuity calculator - deposit amount
 *ProtonApi* | [**annuity_calculator_initial_balance**](docs/ProtonApi.md#annuity_calculator_initial_balance) | **POST** /proton/v1/annuity_calculator/initial_balance | Annuity calculator - initial balance
+*ProtonApi* | [**budget_calculator**](docs/ProtonApi.md#budget_calculator) | **POST** /proton/v1/budget_calculator | Budget Calculator
 *ProtonApi* | [**dimensional_risk_score**](docs/ProtonApi.md#dimensional_risk_score) | **POST** /proton/v1/dimensional_risk_score | Dimensional risk score
 *ProtonApi* | [**education_calculator_annual_cost**](docs/ProtonApi.md#education_calculator_annual_cost) | **POST** /proton/v1/education_calculator/annual_cost | Education calculator - total annual cost
 *ProtonApi* | [**education_calculator_deposit_amount**](docs/ProtonApi.md#education_calculator_deposit_amount) | **POST** /proton/v1/education_calculator/deposit_amount | Education calculator - deposit amount
@@ -414,6 +435,7 @@ Class | Method | HTTP request | Description
 *ProtonApi* | [**emergency_fund_calculator**](docs/ProtonApi.md#emergency_fund_calculator) | **POST** /proton/v1/emergency_fund_calculator | Emergency fund calculator
 *ProtonApi* | [**event_study**](docs/ProtonApi.md#event_study) | **POST** /proton/v1/event_study | Event study
 *ProtonApi* | [**financial_health_check**](docs/ProtonApi.md#financial_health_check) | **POST** /proton/v1/financial_health_check | Financial health check
+*ProtonApi* | [**financial_picture**](docs/ProtonApi.md#financial_picture) | **POST** /proton/v1/financial_picture | Financial Picture
 *ProtonApi* | [**goal_accumulation_allocation**](docs/ProtonApi.md#goal_accumulation_allocation) | **POST** /proton/v1/goal_accumulation/allocation | Goal accumulation allocation
 *ProtonApi* | [**goal_accumulation_recommendation**](docs/ProtonApi.md#goal_accumulation_recommendation) | **POST** /proton/v1/goal_accumulation/recommendation | Goal accumulation recommendation
 *ProtonApi* | [**goal_accumulation_status**](docs/ProtonApi.md#goal_accumulation_status) | **POST** /proton/v1/goal_accumulation/status | Goal accumulation status
@@ -442,6 +464,7 @@ Class | Method | HTTP request | Description
 *ProtonApi* | [**savings_calculator**](docs/ProtonApi.md#savings_calculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 *ProtonApi* | [**scenario_analysis**](docs/ProtonApi.md#scenario_analysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 *ProtonApi* | [**sensitivity_analysis**](docs/ProtonApi.md#sensitivity_analysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+*ProtonApi* | [**spending_analysis**](docs/ProtonApi.md#spending_analysis) | **POST** /proton/v1/spending_analysis | Spending Analysis
 *ProtonApi* | [**variable_annuity**](docs/ProtonApi.md#variable_annuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
@@ -464,7 +487,11 @@ Class | Method | HTTP request | Description
  - [AccountTypePayload](docs/AccountTypePayload.md)
  - [Address](docs/Address.md)
  - [AggregationAccountBalancePayload](docs/AggregationAccountBalancePayload.md)
+ - [AggregationAccountHoldingPayload](docs/AggregationAccountHoldingPayload.md)
  - [AggregationAccountPayload](docs/AggregationAccountPayload.md)
+ - [AggregationAccountTransactionPayload](docs/AggregationAccountTransactionPayload.md)
+ - [AggregationAccountTransactionPayloadBankCredit](docs/AggregationAccountTransactionPayloadBankCredit.md)
+ - [AggregationAccountTransactionPayloadInvestment](docs/AggregationAccountTransactionPayloadInvestment.md)
  - [AllocationAssetSizeResponse](docs/AllocationAssetSizeResponse.md)
  - [AllocationAssetSizeResponseInner](docs/AllocationAssetSizeResponseInner.md)
  - [AllocationCompositionPayload](docs/AllocationCompositionPayload.md)
@@ -493,6 +520,12 @@ Class | Method | HTTP request | Description
  - [BenchmarkPayload](docs/BenchmarkPayload.md)
  - [BenchmarkPayloadComposition](docs/BenchmarkPayloadComposition.md)
  - [BeneficiaryBequestConfig](docs/BeneficiaryBequestConfig.md)
+ - [BudgetCalculator](docs/BudgetCalculator.md)
+ - [BudgetCalculatorResponse](docs/BudgetCalculatorResponse.md)
+ - [BudgetCalculatorResponseInner](docs/BudgetCalculatorResponseInner.md)
+ - [BudgetCalculatorResponseInnerBudgetComponents](docs/BudgetCalculatorResponseInnerBudgetComponents.md)
+ - [BudgetPayload](docs/BudgetPayload.md)
+ - [BudgetPayloadBudget](docs/BudgetPayloadBudget.md)
  - [BulkOrderAccountPayload](docs/BulkOrderAccountPayload.md)
  - [BulkOrderClientPayload](docs/BulkOrderClientPayload.md)
  - [BulkOrderFirmPayload](docs/BulkOrderFirmPayload.md)
@@ -550,6 +583,27 @@ Class | Method | HTTP request | Description
  - [FaqPayload](docs/FaqPayload.md)
  - [FaqPayloadFaqKeywords](docs/FaqPayloadFaqKeywords.md)
  - [FinancialHealthCheck](docs/FinancialHealthCheck.md)
+ - [FinancialOfferPayload](docs/FinancialOfferPayload.md)
+ - [FinancialPicture](docs/FinancialPicture.md)
+ - [FinancialPictureResponse](docs/FinancialPictureResponse.md)
+ - [FinancialPictureResponseByCategory](docs/FinancialPictureResponseByCategory.md)
+ - [FinancialPictureResponseChange](docs/FinancialPictureResponseChange.md)
+ - [FinancialPictureResponseChangeTotalAssets](docs/FinancialPictureResponseChangeTotalAssets.md)
+ - [FinancialPictureResponseChangeTotalAssets180Day](docs/FinancialPictureResponseChangeTotalAssets180Day.md)
+ - [FinancialPictureResponseChangeTotalAssets1Day](docs/FinancialPictureResponseChangeTotalAssets1Day.md)
+ - [FinancialPictureResponseChangeTotalAssets30Day](docs/FinancialPictureResponseChangeTotalAssets30Day.md)
+ - [FinancialPictureResponseChangeTotalAssets365Day](docs/FinancialPictureResponseChangeTotalAssets365Day.md)
+ - [FinancialPictureResponseChangeTotalAssets7Day](docs/FinancialPictureResponseChangeTotalAssets7Day.md)
+ - [FinancialPictureResponseChangeTotalAssets90Day](docs/FinancialPictureResponseChangeTotalAssets90Day.md)
+ - [FinancialPictureResponseChangeTotalAssetsTotal](docs/FinancialPictureResponseChangeTotalAssetsTotal.md)
+ - [FinancialPictureResponseHistory](docs/FinancialPictureResponseHistory.md)
+ - [FinancialPictureResponseHistoryByCategory](docs/FinancialPictureResponseHistoryByCategory.md)
+ - [FinancialPictureResponseHistorySubcategories](docs/FinancialPictureResponseHistorySubcategories.md)
+ - [FinancialPictureResponseNetWorth](docs/FinancialPictureResponseNetWorth.md)
+ - [FinancialPictureResponseSnapshot](docs/FinancialPictureResponseSnapshot.md)
+ - [FinancialPictureResponseSubcategories](docs/FinancialPictureResponseSubcategories.md)
+ - [FinancialPictureResponseTotalAssets](docs/FinancialPictureResponseTotalAssets.md)
+ - [FinancialPictureResponseTotalLiabilities](docs/FinancialPictureResponseTotalLiabilities.md)
  - [FundingRequestPayload](docs/FundingRequestPayload.md)
  - [GetAccountAssetSizeResponse](docs/GetAccountAssetSizeResponse.md)
  - [GetAccountAssetSizeResponseInner](docs/GetAccountAssetSizeResponseInner.md)
@@ -684,6 +738,16 @@ Class | Method | HTTP request | Description
  - [SimpleSavingsCalculator](docs/SimpleSavingsCalculator.md)
  - [SpecificAccountStageResponse](docs/SpecificAccountStageResponse.md)
  - [SpecificAccountStatusResponse](docs/SpecificAccountStatusResponse.md)
+ - [SpendingAnalysis](docs/SpendingAnalysis.md)
+ - [SpendingAnalysisResponse](docs/SpendingAnalysisResponse.md)
+ - [SpendingAnalysisResponseIncome](docs/SpendingAnalysisResponseIncome.md)
+ - [SpendingAnalysisResponseNet](docs/SpendingAnalysisResponseNet.md)
+ - [SpendingAnalysisResponseOutlierTransactions](docs/SpendingAnalysisResponseOutlierTransactions.md)
+ - [SpendingAnalysisResponseSpending](docs/SpendingAnalysisResponseSpending.md)
+ - [SpendingAnalysisResponseSpendingByCategory](docs/SpendingAnalysisResponseSpendingByCategory.md)
+ - [SpendingAnalysisResponseSpendingByMerchant](docs/SpendingAnalysisResponseSpendingByMerchant.md)
+ - [SpendingAnalysisResponseSpendingHistory](docs/SpendingAnalysisResponseSpendingHistory.md)
+ - [SpendingAnalysisResponseSubcategories](docs/SpendingAnalysisResponseSubcategories.md)
  - [StatsDetail](docs/StatsDetail.md)
  - [SubscribeAccountResponse](docs/SubscribeAccountResponse.md)
  - [SubscribeAccountResponseInner](docs/SubscribeAccountResponseInner.md)
@@ -704,11 +768,14 @@ Class | Method | HTTP request | Description
  - [BulkOrderSubresponse](docs/BulkOrderSubresponse.md)
  - [ClientTransactionResponse](docs/ClientTransactionResponse.md)
  - [CreateAccountResponse](docs/CreateAccountResponse.md)
+ - [CreateAggregationAccountHoldingResponse](docs/CreateAggregationAccountHoldingResponse.md)
  - [CreateAggregationAccountResponse](docs/CreateAggregationAccountResponse.md)
+ - [CreateAggregationAccountTransactionResponse](docs/CreateAggregationAccountTransactionResponse.md)
  - [CreateAllocationCompositionResponse](docs/CreateAllocationCompositionResponse.md)
  - [CreateAllocationResponse](docs/CreateAllocationResponse.md)
  - [CreateBankLinkResponse](docs/CreateBankLinkResponse.md)
  - [CreateBenchmarkResponse](docs/CreateBenchmarkResponse.md)
+ - [CreateBudgetResponse](docs/CreateBudgetResponse.md)
  - [CreateCampaignDataResponse](docs/CreateCampaignDataResponse.md)
  - [CreateCampaignPlanResponse](docs/CreateCampaignPlanResponse.md)
  - [CreateCampaignResponse](docs/CreateCampaignResponse.md)
@@ -722,6 +789,7 @@ Class | Method | HTTP request | Description
  - [CreateDepositRequestResponse](docs/CreateDepositRequestResponse.md)
  - [CreateDocumentResponse](docs/CreateDocumentResponse.md)
  - [CreateFaqResponse](docs/CreateFaqResponse.md)
+ - [CreateFinancialOfferResponse](docs/CreateFinancialOfferResponse.md)
  - [CreateFundingRequestResponse](docs/CreateFundingRequestResponse.md)
  - [CreateGoalResponse](docs/CreateGoalResponse.md)
  - [CreateGoalTrackResponse](docs/CreateGoalTrackResponse.md)
@@ -758,11 +826,14 @@ Class | Method | HTTP request | Description
  - [GetAccountStatusResponse](docs/GetAccountStatusResponse.md)
  - [GetAccountTypeResponse](docs/GetAccountTypeResponse.md)
  - [GetAggregationAccountBalanceResponse](docs/GetAggregationAccountBalanceResponse.md)
+ - [GetAggregationAccountHoldingsResponse](docs/GetAggregationAccountHoldingsResponse.md)
+ - [GetAggregationAccountTransactionResponse](docs/GetAggregationAccountTransactionResponse.md)
  - [GetAggregationAccountsResponse](docs/GetAggregationAccountsResponse.md)
  - [GetAllocationCompositionResponse](docs/GetAllocationCompositionResponse.md)
  - [GetAllocationResponse](docs/GetAllocationResponse.md)
  - [GetBankLinkResponse](docs/GetBankLinkResponse.md)
  - [GetBenchmarkResponse](docs/GetBenchmarkResponse.md)
+ - [GetBudgetResponse](docs/GetBudgetResponse.md)
  - [GetBulkOrderResponse](docs/GetBulkOrderResponse.md)
  - [GetCampaignDataResponse](docs/GetCampaignDataResponse.md)
  - [GetCampaignPlanResponse](docs/GetCampaignPlanResponse.md)
@@ -777,6 +848,7 @@ Class | Method | HTTP request | Description
  - [GetDepositRequestResponse](docs/GetDepositRequestResponse.md)
  - [GetDocumentResponse](docs/GetDocumentResponse.md)
  - [GetFaqResponse](docs/GetFaqResponse.md)
+ - [GetFinancialOfferResponse](docs/GetFinancialOfferResponse.md)
  - [GetFundingRequestResponse](docs/GetFundingRequestResponse.md)
  - [GetGoalResponse](docs/GetGoalResponse.md)
  - [GetGoalTrackResponse](docs/GetGoalTrackResponse.md)
@@ -812,11 +884,14 @@ Class | Method | HTTP request | Description
  - [SpecificAggregationAccountBalanceResponse](docs/SpecificAggregationAccountBalanceResponse.md)
  - [SpecificTransferResponse](docs/SpecificTransferResponse.md)
  - [SpecificAccountResponse](docs/SpecificAccountResponse.md)
+ - [SpecificAggregationAccountHoldingResponse](docs/SpecificAggregationAccountHoldingResponse.md)
  - [SpecificAggregationAccountResponse](docs/SpecificAggregationAccountResponse.md)
+ - [SpecificAggregationAccountTransactionResponse](docs/SpecificAggregationAccountTransactionResponse.md)
  - [SpecificAllocationCompositionResponse](docs/SpecificAllocationCompositionResponse.md)
  - [SpecificAllocationResponse](docs/SpecificAllocationResponse.md)
  - [SpecificBankLinkResponse](docs/SpecificBankLinkResponse.md)
  - [SpecificBenchmarkResponse](docs/SpecificBenchmarkResponse.md)
+ - [SpecificBudgetResponse](docs/SpecificBudgetResponse.md)
  - [SpecificCampaignDataResponse](docs/SpecificCampaignDataResponse.md)
  - [SpecificCampaignPlanResponse](docs/SpecificCampaignPlanResponse.md)
  - [SpecificCampaignResponse](docs/SpecificCampaignResponse.md)
@@ -830,6 +905,7 @@ Class | Method | HTTP request | Description
  - [SpecificDepositRequestResponse](docs/SpecificDepositRequestResponse.md)
  - [SpecificDocumentResponse](docs/SpecificDocumentResponse.md)
  - [SpecificFaqResponse](docs/SpecificFaqResponse.md)
+ - [SpecificFinancialOfferResponse](docs/SpecificFinancialOfferResponse.md)
  - [SpecificFundingRequestResponse](docs/SpecificFundingRequestResponse.md)
  - [SpecificGoalResponse](docs/SpecificGoalResponse.md)
  - [SpecificGoalTrackResponse](docs/SpecificGoalTrackResponse.md)

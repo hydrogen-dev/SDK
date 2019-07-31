@@ -39,6 +39,7 @@ class SupportTicketCommentPayload(object):
         'has_attachment': 'bool',
         'is_admin': 'bool',
         'is_read': 'bool',
+        'metadata': 'object',
         'support_ticket_document': 'list[SupportTicketCommentPayloadSupportTicketDocument]',
         'secondary_id': 'SecondaryId'
     }
@@ -49,11 +50,12 @@ class SupportTicketCommentPayload(object):
         'has_attachment': 'has_attachment',
         'is_admin': 'is_admin',
         'is_read': 'is_read',
+        'metadata': 'metadata',
         'support_ticket_document': 'support_ticket_document',
         'secondary_id': 'secondary_id'
     }
 
-    def __init__(self, support_ticket_id=None, description=None, has_attachment=False, is_admin=False, is_read=False, support_ticket_document=None, secondary_id=None):  # noqa: E501
+    def __init__(self, support_ticket_id=None, description=None, has_attachment=False, is_admin=False, is_read=False, metadata=None, support_ticket_document=None, secondary_id=None):  # noqa: E501
         """SupportTicketCommentPayload - a model defined in Swagger"""  # noqa: E501
 
         self._support_ticket_id = None
@@ -61,6 +63,7 @@ class SupportTicketCommentPayload(object):
         self._has_attachment = None
         self._is_admin = None
         self._is_read = None
+        self._metadata = None
         self._support_ticket_document = None
         self._secondary_id = None
         self.discriminator = None
@@ -74,6 +77,8 @@ class SupportTicketCommentPayload(object):
             self.is_admin = is_admin
         if is_read is not None:
             self.is_read = is_read
+        if metadata is not None:
+            self.metadata = metadata
         if support_ticket_document is not None:
             self.support_ticket_document = support_ticket_document
         if secondary_id is not None:
@@ -195,6 +200,29 @@ class SupportTicketCommentPayload(object):
         """
 
         self._is_read = is_read
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this SupportTicketCommentPayload.  # noqa: E501
+
+        Custom information associated with the support ticket comment in the format key:value  # noqa: E501
+
+        :return: The metadata of this SupportTicketCommentPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this SupportTicketCommentPayload.
+
+        Custom information associated with the support ticket comment in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this SupportTicketCommentPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def support_ticket_document(self):

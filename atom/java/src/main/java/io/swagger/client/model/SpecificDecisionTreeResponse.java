@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificDecisionTreeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificDecisionTreeResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -45,6 +45,9 @@ public class SpecificDecisionTreeResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -139,6 +142,24 @@ public class SpecificDecisionTreeResponse {
     this.secondaryId = secondaryId;
   }
 
+  public SpecificDecisionTreeResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the decision tree in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the decision tree in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificDecisionTreeResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -172,12 +193,13 @@ public class SpecificDecisionTreeResponse {
         Objects.equals(this.name, specificDecisionTreeResponse.name) &&
         Objects.equals(this.description, specificDecisionTreeResponse.description) &&
         Objects.equals(this.secondaryId, specificDecisionTreeResponse.secondaryId) &&
+        Objects.equals(this.metadata, specificDecisionTreeResponse.metadata) &&
         Objects.equals(this.updateDate, specificDecisionTreeResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, name, description, secondaryId, updateDate);
+    return Objects.hash(id, createDate, name, description, secondaryId, metadata, updateDate);
   }
 
 
@@ -191,6 +213,7 @@ public class SpecificDecisionTreeResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

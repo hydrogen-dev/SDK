@@ -87,6 +87,17 @@ describe 'ProtonApi' do
     end
   end
 
+  # unit tests for budget_calculator
+  # Budget Calculator
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [BudgetCalculatorResponse]
+  describe 'budget_calculator test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for dimensional_risk_score
   # Dimensional risk score
   # @param payload 
@@ -159,6 +170,17 @@ describe 'ProtonApi' do
   # @param [Hash] opts the optional parameters
   # @return [HealthCheckResponse]
   describe 'financial_health_check test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for financial_picture
+  # Financial Picture
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [FinancialPictureResponse]
+  describe 'financial_picture test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -467,6 +489,17 @@ describe 'ProtonApi' do
   # @param [Hash] opts the optional parameters
   # @return [SensitivityAnalysisResponse]
   describe 'sensitivity_analysis test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for spending_analysis
+  # Spending Analysis
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [SpendingAnalysisResponse]
+  describe 'spending_analysis test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

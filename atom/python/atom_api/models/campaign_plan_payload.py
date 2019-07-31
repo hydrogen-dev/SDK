@@ -37,23 +37,26 @@ class CampaignPlanPayload(object):
         'description': 'str',
         'is_active': 'bool',
         'plan_rates': 'list[CampaignPlanPayloadPlanRates]',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
         'description': 'description',
         'is_active': 'is_active',
         'plan_rates': 'plan_rates',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, description=None, is_active=True, plan_rates=None, secondary_id=None):  # noqa: E501
+    def __init__(self, description=None, is_active=True, plan_rates=None, secondary_id=None, metadata=None):  # noqa: E501
         """CampaignPlanPayload - a model defined in Swagger"""  # noqa: E501
 
         self._description = None
         self._is_active = None
         self._plan_rates = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         self.description = description
@@ -63,6 +66,8 @@ class CampaignPlanPayload(object):
             self.plan_rates = plan_rates
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def description(self):
@@ -153,6 +158,29 @@ class CampaignPlanPayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CampaignPlanPayload.  # noqa: E501
+
+        Custom information associated with the campaign plan in the format key:value  # noqa: E501
+
+        :return: The metadata of this CampaignPlanPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CampaignPlanPayload.
+
+        Custom information associated with the campaign plan in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CampaignPlanPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

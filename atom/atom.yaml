@@ -92,6 +92,20 @@ parameters:
     format: uuid
     required: true
     description: UUID of an aggregation account balance
+  path_aggregation_account_transaction_uuid:
+    in: path
+    name: aggregation_account_transaction_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of an aggregation account transaction
+  path_aggregation_account_holding_uuid:
+    in: path
+    name: aggregation_account_holding_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of an aggregation account holding
   path_allocation_uuid:
     in: path
     name: allocation_id
@@ -113,6 +127,13 @@ parameters:
     format: uuid
     required: true
     description: UUID of a benchmark
+  path_budget_uuid:
+    in: path
+    name: budget_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a budget
   path_client_uuid:
     in: path
     name: client_id
@@ -190,6 +211,13 @@ parameters:
     format: uuid
     required: true
     description: UUID of an account transfer record
+  path_financial_offer_uuid:
+    in: path
+    name: financial_offer_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a financial offer
   path_goal_uuid:
     in: path
     name: goal_id
@@ -968,6 +996,34 @@ definitions:
             items:
               $ref: '#/definitions/specific_aggregation_account_response'
       - $ref: '#/definitions/pagination'
+  create_aggregation_account_transaction_response:
+    allOf:
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the aggregation account transaction
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the aggregation account transaction was created
+      - $ref: '#/definitions/aggregation_account_transaction_payload'
+  specific_aggregation_account_transaction_response:
+    allOf:
+      - $ref: '#/definitions/create_aggregation_account_transaction_response'
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the aggregation account transaction was last updated
+  get_aggregation_account_transaction_response:
+    allOf:
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/specific_aggregation_account_transaction_response'
+      - $ref: '#/definitions/pagination'
   create_aggregation_account_balance_response:
     properties:
       id:
@@ -1014,6 +1070,40 @@ definitions:
             type: array
             items:
               $ref: '#/definitions/specific_aggregation_account_balance_response'
+      - $ref: '#/definitions/pagination'
+  create_aggregation_account_holding_response:
+    allOf:
+      - type: object
+      - required:
+          - id
+          - create_date
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the aggregation account holding
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the aggregation account holding was created
+      - $ref: '#/definitions/aggregation_account_holding_payload'
+  specific_aggregation_account_holding_response:
+    allOf:
+      - type: object
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Latest datetime the aggregation account holding was updated
+      - $ref: '#/definitions/create_aggregation_account_holding_response'
+  get_aggregation_account_holdings_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/specific_aggregation_account_holding_response'
       - $ref: '#/definitions/pagination'
   create_allocation_response:
     allOf:
@@ -1201,6 +1291,34 @@ definitions:
           type: number
           format: double
           description: “Growth of a dollar” within the benchmark on the particular date
+  create_budget_response:
+    allOf:
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the budget
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the budget was created
+      - $ref: '#/definitions/budget_payload'
+  specific_budget_response:
+    allOf:
+      - $ref: '#/definitions/create_budget_response'
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the budget was last updated
+  get_budget_response:
+    allOf:
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/specific_budget_response'
+      - $ref: '#/definitions/pagination'
   create_client_response:
     allOf:
       - $ref: '#/definitions/client_payload'
@@ -1602,6 +1720,34 @@ definitions:
             type: array
             items:
               $ref: '#/definitions/specific_transfer_response'
+      - $ref: '#/definitions/pagination'
+  create_financial_offer_response:
+    allOf:
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the financial offer
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the financial offer was created
+      - $ref: '#/definitions/financial_offer_payload'
+  specific_financial_offer_response:
+    allOf:
+      - $ref: '#/definitions/create_financial_offer_response'
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the financial offer was last updated
+  get_financial_offer_response:
+    allOf:
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/specific_financial_offer_response'
       - $ref: '#/definitions/pagination'
   create_goal_response:
     allOf:
@@ -4391,6 +4537,636 @@ definitions:
         type: object
         additionalProperties:
           $ref: '#/definitions/variable_annuity_return_detail'
+  financial_picture_response:
+    type: object
+    required:
+      - snapshot
+    properties:
+      snapshot:
+        type: array
+        items:
+          type: object
+          properties:
+            total_assets:
+              type: object
+              properties:
+                balance:
+                  type: number
+                  format: double
+                  description: Value of the total assets
+                latest_balance_time_stamp:
+                  type: string
+                  format: datetime
+                  description: Date and time of the total assets record
+            total_liabilities:
+              type: object
+              properties:
+                balance:
+                  type: number
+                  format: double
+                  description: Value of the total liabilities
+                latest_balance_time_stamp:
+                  type: string
+                  format: datetime
+                  description: Date and time of the total liabilities record
+            net_worth:
+              type: object
+              properties:
+                balance:
+                  type: number
+                  format: double
+                  description: Value of the net worth
+                latest_balance_time_stamp:
+                  type: string
+                  format: datetime
+                  description: Date and time of the net worth record
+            by_category:
+              type: array
+              items:
+                type: object
+                properties:
+                  category:
+                    type: string
+                    description: Category of the aggregation accounts. These accounts are dependent on the `category` fields within the Nucleus Aggregation Account.
+                  balance:
+                    type: number
+                    format: double
+                    description: Total balance for this category
+                  latest_balance_time_stamp:
+                    type: string
+                    format: datetime
+                    description: Date and time of the balance record for this category
+                  subcategories:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        subcategory:
+                          type: string
+                          description: Subcategory of the aggregation accounts. These accounts are dependent on the `subcategory` fields within the Nucleus Aggregation Account.
+                        balance:
+                          type: number
+                          format: double
+                          description: Total balance for this subcategory
+                        latest_balance_time_stamp:
+                          type: string
+                          format: datetime
+                          description: Date and time of the balance record for this subcategory
+      change:
+        type: object
+        description: Change records of the client
+        properties:
+          analysis_start:
+            type: string
+            format: date
+            description: Start date of the available data used in the change analysis
+          analysis_end:
+            type: string
+            format: date
+            description: End date of the available data used in the change analysis
+          total_assets:
+            type: object
+            properties:
+              1_day:
+                type: object
+                description: 1-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 1-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 1-day percentage change as of the analysis end date
+              7_day:
+                type: object
+                description: 7-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 7-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 7-day percentage change as of the analysis end date
+              30_day:
+                type: object
+                description: 30-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 30-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 30-day percentage change as of the analysis end date
+              90_day:
+                type: object
+                description: 90-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 90-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 90-day percentage change as of the analysis end date
+              180_day:
+                type: object
+                description: 180-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 180-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 180-day percentage change as of the analysis end date
+              365_day:
+                type: object
+                description: 365-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 365-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 365-day percentage change as of the analysis end date
+              total:
+                type: object
+                description: Change record over the entire analysis date range
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: Total value change over the entire analysis date range
+                  percentage:
+                    type: number
+                    format: double
+                    description: Total percentage change over the entire analysis date range
+          total_liabilities:
+            type: object
+            properties:
+              1_day:
+                type: object
+                description: 1-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 1-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 1-day percentage change as of the analysis end date
+              7_day:
+                type: object
+                description: 7-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 7-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 7-day percentage change as of the analysis end date
+              30_day:
+                type: object
+                description: 30-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 30-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 30-day percentage change as of the analysis end date
+              90_day:
+                type: object
+                description: 90-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 90-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 90-day percentage change as of the analysis end date
+              180_day:
+                type: object
+                description: 180-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 180-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 180-day percentage change as of the analysis end date
+              365_day:
+                type: object
+                description: 365-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 365-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 365-day percentage change as of the analysis end date
+              total:
+                type: object
+                description: Change record over the entire analysis date range
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: Total value change over the entire analysis date range
+                  percentage:
+                    type: number
+                    format: double
+                    description: Total percentage change over the entire analysis date range
+          net_worth:
+            type: object
+            properties:
+              1_day:
+                type: object
+                description: 1-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 1-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 1-day percentage change as of the analysis end date
+              7_day:
+                type: object
+                description: 7-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 7-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 7-day percentage change as of the analysis end date
+              30_day:
+                type: object
+                description: 30-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 30-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 30-day percentage change as of the analysis end date
+              90_day:
+                type: object
+                description: 90-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 90-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 90-day percentage change as of the analysis end date
+              180_day:
+                type: object
+                description: 180-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 180-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 180-day percentage change as of the analysis end date
+              365_day:
+                type: object
+                description: 365-day change record as of the analysis end date
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: 365-day value change as of the analysis end date
+                  percentage:
+                    type: number
+                    format: double
+                    description: 365-day percentage change as of the analysis end date
+              total:
+                type: object
+                description: Change record over the entire analysis date range
+                properties:
+                  value:
+                    type: number
+                    format: double
+                    description: Total value change over the entire analysis date range
+                  percentage:
+                    type: number
+                    format: double
+                    description: Total percentage change over the entire analysis date range
+      history:
+        type: object
+        description: A historical record of the client’s financials for each date within the date range. This is an array of maps, with each map corresponding to a date.
+        properties:
+          date:
+            type: string
+            format: date
+            description: The date of the financial picture record
+          total_assets:
+            type: number
+            format: double
+            description: Total assets of the client on this date
+          total_liabilities:
+            type: number
+            format: double
+            description: Total liabilities of the client on this date
+          net_worth:
+            type: number
+            format: double
+            description: Net worth of the client on this date
+          by_category:
+            type: array
+            items:
+              type: object
+              properties:
+                category:
+                  type: string
+                  description: Category of the aggregation accounts. These accounts are dependent on the `category` fields within the Nucleus Aggregation Account.
+                balance:
+                  type: number
+                  format: double
+                  description: Total balance for this category on this date
+                subcategories:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      subcategory:
+                        type: string
+                        description: Subcategory of the aggregation accounts. These accounts are dependent on the `subcategory` fields within the Nucleus Aggregation Account.
+                      balance:
+                        type: number
+                        format: double
+                        description: Total balance for this subcategory on this date.
+  budget_calculator_response:
+    type: array
+    items:
+      type: object
+      properties:
+        budget_id:
+          type: string
+          format: uuid
+          description: The ID of the budget
+        budget_name:
+          type: string
+          description: The name of the budget
+        total_funds_available:
+          type: number
+          format: double
+          description: Total amount of funds originally available in the budget
+        total_funds_spent:
+          type: number
+          format: double
+          description: Total amount of funds spent
+        total_funds_remaining:
+          type: number
+          format: double
+          description: Total amount of funds remaining; delta of total_funds_available - total_funds_spent
+        budget_components:
+          type: array
+          description: Total funds spent per category
+          items:
+            type: object
+            properties:
+              category:
+                type: string
+                description: Name of the category
+              subcategory:
+                type: string
+                description: Name of the subcategory
+              funds_available:
+                type: number
+                format: double
+                description: Amount of funds originally available in the category
+              funds_spent:
+                type: number
+                format: double
+                description: Amount of funds spent in the category
+              funds_remaining:
+                type: number
+                format: double
+                description: Amount of funds remaining in the category; delta of funds_available - funds_spent
+        average_amount_budgeted:
+          type: number
+          format: double
+          description: Average amount budgeted for each budget component
+        average_amount_spent:
+          type: number
+          format: double
+          description: Average amount spent for each budget component
+  spending_analysis_response:
+    type: object
+    properties:
+      spending_history:
+        type: array
+        items:
+          type: object
+          properties:
+            period_income:
+              type: number
+              description: Cash inflows during the period
+            period_spending:
+              type: number
+              description: Cash outflows during the period
+            period_net:
+              type: number
+              description: Net cash inflows (outflows) during the period
+            cumulative_income:
+              type: number
+              description: Cumulative cash inflows up to and including this period
+            cumulative_spending:
+              type: number
+              description: Cumulative cash outflows up to and including this period
+            cumulative_net:
+              type: number
+              description: Cumulative net cash inflows (outflows) up to and including this period
+      benchmark_spending_history:
+        type: array
+        items:
+          type: object
+          properties:
+            period_income:
+              type: number
+              description: Cash inflows during the period
+            period_spending:
+              type: number
+              description: Cash outflows during the period
+            period_net:
+              type: number
+              description: Net cash inflows (outflows) during the period
+            cumulative_income:
+              type: number
+              description: Cumulative cash inflows up to and including this period
+            cumulative_spending:
+              type: number
+              description: Cumulative cash outflows up to and including this period
+            cumulative_net:
+              type: number
+              description: Cumulative net cash inflows (outflows) up to and including this period
+      income:
+        type: object
+        properties:
+          total:
+            type: number
+            description: Total cash inflows over the trend period
+          benchmark:
+            type: number
+            description: Total cash inflows over the benchmark trend period
+          change:
+            type: number
+            description: Difference in total cash inflows between the trend period and the benchmark trend period
+      spending:
+        type: object
+        properties:
+          total:
+            type: number
+            description: Total cash outflows over the trend period
+          benchmark:
+            type: number
+            description: Total cash outflows over the benchmark trend period
+          change:
+            type: number
+            description: Difference in total cash outflows between the trend period and the benchmark trend period
+      net:
+        type: object
+        properties:
+          total:
+            type: number
+            description: Total net cash inflows (outflows) over the trend period
+          benchmark:
+            type: number
+            description: Total net cash inflows (outflows) over the benchmark trend period
+          change:
+            type: number
+            description: Difference in total net cash inflows (outflows) between the trend period and the benchmark trend period
+      spending_by_category:
+        type: array
+        items:
+          type: object
+          properties:
+            category:
+              type: string
+              description: Spending category as defined in the Nucleus transactions
+            value:
+              type: number
+              description: Sum of all transactions over the period for the given category
+            weight:
+              type: number
+              description: The proportion of all spending over the period related to this category
+            benchmark_value:
+              type: number
+              description: Sum of all transactions over the benchmark period for the given category
+            benchmark_weight:
+              type: number
+              description: The proportion of all spending over the benchmark period related to this category
+            subcategories:
+              type: array
+              items:
+                type: object
+                properties:
+                  subcategory:
+                    type: string
+                    description: Spending subcategory as defined in the Nucleus transactions
+                  value:
+                    type: number
+                    description: Sum of all transactions over the period for the given subcategory
+                  weight:
+                    type: number
+                    description: The proportion of all spending over the period related to this subcategory
+                  benchmark_value:
+                    type: number
+                    description: The proportion of all spending over the benchmark period related to this subcategory
+                  benchmark_weight:
+                    type: number
+                    description: The proportion of all spending over the benchmark period related to this subcategory
+            spending_by_merchant:
+              type: array
+              items:
+                type: object
+                properties:
+                  merchant:
+                    type: string
+                    description: Merchant name as defined in the Nucleus transactions
+                  value:
+                    type: number
+                    description: Sum of all transactions over the period for the given merchant
+                  weight:
+                    type: number
+                    description: The proportion of all spending over the period related to this merchant
+                  benchmark_value:
+                    type: number
+                    description: Sum of all transactions over the benchmark period for the given merchant
+                  benchmark_weight:
+                    type: number
+                    description: The proportion of all spending over the benchmark period related to this merchant
+            outlier_transactions:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    description: The id for the aggregation account transaction record
+                  transaction_date:
+                    type: string
+                    format: datetime
+                    description: The date the transaction took place
+                  transaction_type:
+                    type: string
+                    description: Type of the transaction. Value may be Debit or Credit.
+                    enum:
+                      - Debit
+                      - Credit
+                  amount:
+                    type: number
+                    description: Amount of the transaction
+                  merchant:
+                    type: string
+                    description: The merchant for the transaction such as the merchant posted for a credit card charge
+                  category:
+                    type: string
+                    description: Category of the transaction
+                  subcategory:
+                    type: string
+                    description: Subcategory of the transaction
+                  description:
+                    type: string
+                    description: Description of the transaction
+                  memo:
+                    type: string
+                    description: Memo attached to the transaction
 # ********** Payloads: Nucleus **********
   account_create_client:
     type: object
@@ -4571,6 +5347,10 @@ definitions:
         description: Indicator for where along the process the account stage falls. Generally, the higher the order index, the further along the process
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the account stage in the format key:value
+        additionalProperties: true
   account_status_payload:
     type: object
     required:
@@ -4594,6 +5374,10 @@ definitions:
         description: Comments for the client regarding the status of their account
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the aggregation account in the format key:value
+        additionalProperties: true
   aggregation_account_payload:
     type: object
     required:
@@ -4665,6 +5449,158 @@ definitions:
         default: true
       secondary_id:
         $ref: '#/definitions/secondary_id'
+  aggregation_account_transaction_payload:
+    type: object
+    required:
+      - aggregation_account_id
+      - currency_code
+      - transaction_date
+    properties:
+      aggregation_account_id:
+        type: string
+        format: uuid
+        description: The ID of the aggregation account to which the transaction record belongs
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the currency of the transaction, limited to 3 characters
+      transaction_date:
+        type: string
+        format: datetime
+        description: The date the transaction took place
+      bank_credit:
+        type: object
+        description: Transaction information if from a bank of credit card account
+        required:
+          - transaction_type
+          - amount
+          - merchant
+        properties:
+          transaction_type:
+            type: string
+            description: Type of the transaction. Value may be Debit or Credit
+            enum:
+              - Debit
+              - Credit
+          amount:
+            type: number
+            format: double
+            description: Amount of the transaction
+          merchant:
+            type: string
+            description: The merchant for the transaction such as the merchant posted for a credit card charge
+          category:
+            type: string
+            description: Category of the transaction
+          subcategory:
+            type: string
+            description: Subcategory of the transaction
+          description:
+            type: string
+            description: Description of the transaction
+          memo:
+            type: string
+            description: Memo attached to the transaction
+      investment:
+        type: object
+        description: Transaction information if from an investment account
+        required:
+          - trade_signal
+          - ticker
+          - price
+          - quantity
+        properties:
+          trade_signal:
+            type: string
+            description: Trade signal for an investment transaction
+          ticker:
+            type: string
+            description: Ticker of the security for an investment transaction
+          ticker_name:
+            type: string
+            description: Ticker name of the security for an investment transaction
+          price:
+            type: number
+            format: double
+            description: Price of the security for an investment transaction
+          quantity:
+            type: number
+            format: double
+            description: The number of units involved in this transaction, as reported by the financial institution
+          fee:
+            type: number
+            format: double
+            description: Fee that is part of the transaction
+          status:
+            type: string
+            description: The position of an investment transaction within its lifecycle such as “Pending” or “Posted”
+          settle_date:
+            type: string
+            format: datetime
+            description: Date on which this transaction was finalized
+      is_excluded_analysis:
+        type: boolean
+        description: Indicates if this transaction will be excluded from any spending or income analysis done in Proton tools. Defaults to “false” which indicates it will not be excluded from Proton analyses
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the aggregation account transaction in the format key:value
+        additionalProperties: true
+  aggregation_account_holding_payload:
+    type: object
+    required:
+      - aggregation_account_id
+      - ticker
+      - ticker_name
+      - shares
+    properties:
+      aggregation_account_id:
+        type: string
+        format: uuid
+        description: The unique identifier of the aggregation account the holding belongs
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the currency of the holding, limited to 3 characters.
+      ticker:
+        type: string
+        description: Ticker of the security holding
+      ticker_name:
+        type: string
+        description: Ticker name of the security holding
+      shares:
+        type: number
+        format: double
+        description: Number of shares of the security holding
+      amount:
+        type: number
+        format: double
+        description: Monetary amount of the security holding
+      holding_type:
+        type: string
+        description: Describes the type of security holding such as “Equity”, “Fixed Income”, “Cash” or “Mutual Fund”
+      asset_class:
+        type: string
+        description: Asset class of the holding such as “US Equity” or “Fixed Income”
+      price:
+        type: number
+        format: double
+        description: Price of the security holding
+      cost_basis:
+        type: number
+        format: double
+        description: The original value of the asset used for tax purposes, usually the purchase price
+      exchange:
+        type: string
+        description: Financial exchange the security holding is traded on such as “NYSE or “NASDAQ”
+      cusip:
+        type: string
+        description: The CUSIP of the security holding
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the aggregation account transaction in the format key:value
+        additionalProperties: true
   allocation_payload:
     type: object
     required:
@@ -4739,6 +5675,10 @@ definitions:
         type: boolean
         description: Indicator if the model_id is a core model for core-satellite investing. Defaults to false which means it is not a core model
         default: false
+      metadata:
+        type: object
+        description: Custom information associated with the allocation composition in the format key:value
+        additionalProperties: true
   benchmark_payload:
     type: object
     required:
@@ -4775,6 +5715,81 @@ definitions:
         type: boolean
         description: Indicates if the benchmark is active. Defaults to true which means it is active
         default: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+  budget_payload:
+    type: object
+    required:
+      - name
+      - client_id
+      - currency_code
+      - budget
+      - frequency_unit
+    properties:
+      name:
+        type: string
+        description: Name of the budget
+      client_id:
+        type: string
+        format: uuid
+        description: The ID of the client the budget belongs to
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the budget, limited to 3 characters.
+      budget:
+        type: array
+        items:
+          type: object
+          required:
+            - category
+            - value
+          properties:
+            category:
+              type: string
+              description: Category of the budget
+            subcategory:
+              type: string
+              description: Subcategory of the budget
+            value:
+              type: number
+              format: double
+              description: Value amount of the budget
+      frequency_unit:
+        type: string
+        description: Frequency of the budget. Value may be daily, weekly, bi-weekly, monthly, semi-monthly, quarterly, or annually
+        enum:
+          - daily
+          - weekly
+          - bi-weekly
+          - monthly
+          - semi-monthly
+          - quarterly
+          - annually
+      frequency:
+        type: number
+        format: integer
+        description: Number of frequency_unit between each budget. For example, if the frequency_unit is weekly and the frequency is 2, this means the budget occurs every two weeks. Default is 1
+        default: 1
+      account_id:
+        type: string
+        format: uuid
+        description: The ID of the account the budget belongs to
+      goal_id:
+        type: string
+        format: uuid
+        description: The ID of a goal mapped to the budget
+      start_date:
+        type: string
+        format: date
+        description: The start date for the budget
+      end date:
+        type: string
+        format: date
+        description: The end date for the budget
+      metadata:
+        type: object
+        description: Custom information associated with the budget in the format key:value
+        additionalProperties: true
       secondary_id:
         $ref: '#/definitions/secondary_id'
   address:
@@ -4895,6 +5910,10 @@ definitions:
         description: In the case that the response applies to only one of a client’s accounts and not the client as a whole, the ID of the account to which the response belongs
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the client response in the format key:value
+        additionalProperties: true
   client_hydro_payload:
     type: object
     required:
@@ -4939,6 +5958,10 @@ definitions:
         description: Description for the decision tree such as “Tree to allocate clients to taxable portfolios”
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the decision tree in the format key:value
+        additionalProperties: true
   node_payload:
     type: object
     required:
@@ -4958,6 +5981,10 @@ definitions:
         default: false
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the node in the format key:value
+        additionalProperties: true
   node_relationship_payload:
     type: object
     required:
@@ -4990,6 +6017,10 @@ definitions:
         description: Indicator if the node relationship represents the last point in the decision tree branch. true indicates it is the last point and that is maps to an allocation or model
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the node relationship in the format key:value
+        additionalProperties: true
   funding_request_payload:
     type: object
     required:
@@ -5083,7 +6114,6 @@ definitions:
   bank_link_payload:
     type: object
     required:
-      - account_id
       - bank_account_holder
       - bank_account_number
       - name
@@ -5194,6 +6224,10 @@ definitions:
         description: Indicates the payment type such as “check, “wire”, etc.
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the deposit in the format key:value
+        additionalProperties: true
   withdrawal_payload:
     type: object
     required:
@@ -5250,6 +6284,10 @@ definitions:
         description: Indicates the payment type such as “check, “wire”, etc.
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the withdrawal in the format key:value
+        additionalProperties: true
   transfer_request_payload:
     type: object
     required:
@@ -5299,6 +6337,137 @@ definitions:
       transfer_type:
         type: string
         description: Type of transaction being made such as “wire” or “check”
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the transfer in the format key:value
+        additionalProperties: true
+  financial_offer_payload:
+    type: object
+    required:
+      - name
+      - institution_name
+      - offer_link
+    properties:
+      name:
+        type: string
+        description: Name of the financial offer
+      institution_name:
+        type: string
+        description: Name of the financial institution
+      offer_link:
+        type: string
+        description: Link to the associated financial offer
+      category:
+        type: string
+        description: Category of the financial offer. Value may be credit_card, savings, mortgage, loan, investment, tax, real_estate, brokerage, and other.
+        enum:
+          - credit_card
+          - savings
+          - mortgage
+          - loan
+          - investment
+          - tax
+          - real_estate
+          - brokerage
+          - other
+      subcategory:
+        type: string
+        description: Subcategory of the financial offer
+      description:
+        type: string
+        description: Description of the financial offer
+      image:
+        type: string
+        description: An image associated with the financial offer
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the entity, limited to 3 characters.
+      financial_rate:
+        type: number
+        format: double
+        description: The financial rate associated with the financial offer
+      financial_rate_type:
+        type: string
+        description: The financial rate type associated with the financial offer (i.e. percentage/ dollar amount)
+      financial_rate_term:
+        type: number
+        format: double
+        description: The fixed time period of the financial rate associated with the financial offer (i.e. 90)
+      financial_rate_term_unit:
+        type: string
+        description: The term unit of the financial rate. Value may be year, quarter, month, week, day
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      fee_amount:
+        type: number
+        format: double
+        description: Amount of the financial offer fee
+      fee_type:
+        type: string
+        description: Type of financial offer fee
+      offer_term:
+        type: number
+        format: double
+        description: The fixed time period for which the offer is intended to last, once it is accepted
+      offer_term_unit:
+        type: string
+        description: The term unit of the offer term. Value may be year, quarter, month, week, day
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      minimum_contribution:
+        type: number
+        format: double
+        description: The minimum contribution amount in order to receive the financial_incentive associated with the financial offer
+      minimum_contribution_term:
+        type: number
+        format: double
+        description: The fixed time period in which the customer must contribute the minimum contribution, in order to receive the financial incentive associated with the financial offer (i.e. 90)
+      minimum_contribution_term_unit:
+        type: string
+        description: The term unit of the minimum contribution. Value may be year, quarter, month, week, day
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      prerequisite:
+        type: string
+        description: Prerequisite associated with the financial offer
+      prerequisite_type:
+        type: string
+        description: Prerequisite associated with the financial offer (i.e. credit score threshold, income threshold)
+      affiliate_rate:
+        type: number
+        format: double
+        description: The payment value which will be received from the affiliate when the user purchases the offer
+      client_review:
+        type: string
+        description: Average of client reviews of the product
+      rating:
+        type: string
+        description: The rating of the product by the site displaying the offer
+      document_id:
+        type: string
+        description: Unique ID of the document associated with the financial offer
+      campaign_id:
+        type: string
+        format: uuid
+        description: Unique ID of the marketing campaign associated with the financial offer
+      metadata:
+        type: object
+        description: Custom information associated with the budget in the format key:value
+        additionalProperties: true
       secondary_id:
         $ref: '#/definitions/secondary_id'
   goal_payload:
@@ -5721,6 +6890,10 @@ definitions:
         type: string
         format: uuid
         description: The ID of the transaction code that will ultimately be used to denote the sell transactions
+      metadata:
+        type: object
+        description: Custom information associated with the bulk order in the format key:value
+        additionalProperties: true
   bulk_order_account_payload:
     type: object
     required:
@@ -5740,6 +6913,10 @@ definitions:
         type: string
         format: uuid
         description: The ID of the transaction code that will ultimately be used to denote the sell transactions
+      metadata:
+        type: object
+        description: Custom information associated with the bulk order in the format key:value
+        additionalProperties: true
   sell_all_account_payload:
     type: object
     required:
@@ -5840,6 +7017,10 @@ definitions:
       description:
         type: string
         description: Additional description of the order status
+      metadata:
+        type: object
+        description: Custom information associated with the order status in the format key:value
+        additionalProperties: true
   order_track_payload:
     type: object
     required:
@@ -6205,6 +7386,10 @@ definitions:
         type: boolean
         description: Indicates if the transaction is to buy securities. Defaults to false which means it is a sell transaction.
         default: false
+      metadata:
+        type: object
+        description: Custom information associated with the transaction code in the format key:value
+        additionalProperties: true
   portfolio_payload:
     type: object
     required:
@@ -6644,6 +7829,10 @@ definitions:
         description: The ID of the portfolio to which the security exclusion applies (if portfolio-specific)
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the security exclusion in the format key:value
+        additionalProperties: true
   account_permission_clients_payload:
     type: object
     required:
@@ -6756,6 +7945,10 @@ definitions:
         description: Indicator for whether or not this is a featured FAQ. Defaults to false indicating it is not featured
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the FAQ in the format key:value
+        additionalProperties: true
   campaign_management_payload:
     type: object
     required:
@@ -6855,6 +8048,10 @@ definitions:
               description: Pricing rate to be applied for this asset size range
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the campaign plan in the format key:value
+        additionalProperties: true
   campaign_data_payload:
     type: object
     required:
@@ -6892,6 +8089,10 @@ definitions:
         description: Total number of impressions measured in the campaign data record for a specific feature as a whole number
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the campaign data in the format key:value
+        additionalProperties: true
   client_campaign_payload:
     type: object
     required:
@@ -6910,6 +8111,10 @@ definitions:
         description: The IP address of the client that registered for your firm’s service. Recommended to provide if no value for client_id is provided
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the client campaign in the format key:value
+        additionalProperties: true
   support_ticket_payload:
     type: object
     required:
@@ -6949,6 +8154,10 @@ definitions:
         description: Title of the support ticket relating to the underlying issue
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the support ticket in the format key:value
+        additionalProperties: true
   support_ticket_comment_payload:
     type: object
     required:
@@ -6973,6 +8182,10 @@ definitions:
         type: boolean
         default: false
         description: Indicates if the support ticket comment has been read by the internal user to whom the support ticket is assigned for resolution. Defaults to false which indicates that it has not been read
+      metadata:
+        type: object
+        description: Custom information associated with the support ticket comment in the format key:value
+        additionalProperties: true
       support_ticket_document:
         type: array
         items:
@@ -7022,6 +8235,10 @@ definitions:
         description: Indicates if the chat is still open. Defaults to true which indicates that the chat is still open
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the chat in the format key:value
+        additionalProperties: true
   consultation_payload:
     type: object
     properties:
@@ -7101,6 +8318,10 @@ definitions:
         description: Information on how the client has requested the consultation
       secondary_id:
         $ref: '#/definitions/secondary_id'
+      metadata:
+        type: object
+        description: Custom information associated with the consultation in the format key:value
+        additionalProperties: true
   sales_payload:
     type: object
     required:
@@ -10324,6 +11545,77 @@ definitions:
         type: boolean
         description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
         default: false
+  financial_picture:
+    type: object
+    required:
+      - client_id
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        description: The ID of a client's financial picture
+      start_date:
+        type: string
+        format: date
+        description: Start date of the financial picture analysis. Defaults to earliest date there is data.
+      end_date:
+        type: string
+        format: date
+        description: End date of the financial picture analysis. Defaults to latest date there is data.
+      show_change:
+        type: boolean
+        description: Indicates whether to return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range. Defaults to FALSE which indicates it will not return these changes.
+        default: false
+      show_history:
+        type: boolean
+        description: Indicates whether to return a daily history of the user’s financial picture within the specified date range. Defaults to FALSE which indicates it will not return daily historical records.
+        default: false
+  budget_calculator:
+    type: object
+    required:
+      - client_id
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        description: The ID of a client to which a budget belongs
+      budget_id:
+        type: string
+        format: uuid
+        description: The ID of a budget if only one budget is needed. Otherwise, all budgets are returned for the given client_id
+      start_date:
+        type: string
+        format: date
+        description: Start date of the budget calculation and tracking
+      end_date:
+        type: string
+        format: date
+        description: End date of the budget calculation and tracking
+  spending_analysis:
+    type: object
+    required:
+      - client_id
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        description: The ID of the client’s cash flows
+      start_date:
+        type: string
+        format: date
+        description: Start date of the analysis period
+      end_date:
+        type: string
+        format: date
+        description: End date of the analysis period
+      benchmark_start_date:
+        type: string
+        format: date
+        description: Start date of the benchmark analysis period
+      benchmark_end_date:
+        type: string
+        format: date
+        description: End date of the benchmark analysis period
 paths:
 # ********** Nucleus **********
   /nucleus/v1/account:
@@ -11579,6 +12871,326 @@ paths:
           $ref: '#/responses/503'
     parameters:
       - $ref: '#/parameters/path_aggregation_account_balance_uuid'
+  /nucleus/v1/aggregation_account_transaction:
+    get:
+      operationId: getAggregationAccountTransactions
+      summary: List all aggregation account transactions
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#List-all-aggregation-account-transactions
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/get_aggregation_account_transaction_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
+    post:
+      operationId: postAggregationAccountTransaction
+      summary: Create an aggregation account transaction
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Create-an-aggregation-account-transaction
+      tags:
+        - Nucleus
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/aggregation_account_transaction_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/create_aggregation_account_transaction_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}:
+    get:
+      operationId: getAggregationAccountTransaction
+      summary: Retrieve an aggregation account transaction
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Retrieve-an-aggregation-account-transaction
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_aggregation_account_transaction_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateAggregationAccountTransaction
+      summary: Update an aggregation account transaction
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Update-an-aggregation-account-transaction
+      tags:
+        - Nucleus
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/aggregation_account_transaction_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_aggregation_account_transaction_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    delete:
+      operationId: deleteAggregationAccountTransaction
+      summary: Delete an aggregation account transaction
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Delete-an-aggregation-account-transaction
+      tags:
+        - Nucleus
+      responses:
+        204:
+          $ref: '#/responses/204'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_aggregation_account_transaction_uuid'
+  /nucleus/v1/aggregation_account_holding:
+    get:
+      operationId: getAggregationAccountHoldings
+      summary: List all aggregation account holdings
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#List-all-aggregation-account-holdings
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/get_aggregation_account_holdings_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
+    post:
+      operationId: postAggregationAccountHolding
+      summary: Create an aggregation account holding
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Create-an-aggregation-account-holding
+      tags:
+        - Nucleus
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/aggregation_account_holding_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/create_aggregation_account_holding_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}:
+    get:
+      operationId: getAggregationAccountHolding
+      summary: Retrieve an aggregation account holding
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Retrieve-an-aggregation-account-holding
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_aggregation_account_holding_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateAggregationAccountHolding
+      summary: Update an aggregation account holding
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Update-an-aggregation-account-holding
+      tags:
+        - Nucleus
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/aggregation_account_holding_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_aggregation_account_holding_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    delete:
+      operationId: deleteAggregationAccountHolding
+      summary: Delete an aggregation account holding
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Delete-an-aggregation-account-holding
+      tags:
+        - Nucleus
+      responses:
+        204:
+          $ref: '#/responses/204'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_aggregation_account_holding_uuid'
   /nucleus/v1/allocation:
     get:
       operationId: getAllocations
@@ -12187,6 +13799,166 @@ paths:
     parameters:
       - $ref: '#/parameters/path_benchmark_uuid'
       - $ref: '#/parameters/query_filter'
+  /nucleus/v1/budget:
+    get:
+      operationId: getBudgets
+      summary: List all budgets
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#List-all-budgets
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/get_budget_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
+    post:
+      operationId: postBudget
+      summary: Create a budget
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Create-a-budget
+      tags:
+        - Nucleus
+      parameters:
+      - name: payload
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/budget_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/create_budget_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /nucleus/v1/budget/{budget_id}:
+    get:
+      operationId: getBudget
+      summary: Retrieve a budget
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Retrieve-a-budget
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_budget_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateBudget
+      summary: Update a budget
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Update-a-budget
+      tags:
+        - Nucleus
+      parameters:
+      - name: payload
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/budget_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_budget_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    delete:
+      operationId: deleteBudget
+      summary: Delete a budget
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Delete-a-budget
+      tags:
+        - Nucleus
+      responses:
+        204:
+          $ref: '#/responses/204'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_budget_uuid'
   /nucleus/v1/client:
     get:
       operationId: getClients
@@ -14043,6 +15815,166 @@ paths:
           $ref: '#/responses/503'
     parameters:
       - $ref: '#/parameters/path_transfer_uuid'
+  /nucleus/v1/financial_offer:
+    get:
+      operationId: getFinancialOffers
+      summary: List all financial offers
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#List-all-financial-offers
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/get_financial_offer_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
+    post:
+      operationId: postFinancialOffer
+      summary: Create a financial offer
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/?#Create-a-financial-offer
+      tags:
+        - Nucleus
+      parameters:
+      - name: payload
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/financial_offer_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/create_financial_offer_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /nucleus/v1/financial_offer/{financial_offer_id}:
+    get:
+      operationId: getFinancialOffer
+      summary: Retrieve a financial offer
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Retrieve-a-financial-offer
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_financial_offer_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateFinancialOffer
+      summary: Update a financial offer
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Update-a-financial-offer
+      tags:
+        - Nucleus
+      parameters:
+      - name: payload
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/financial_offer_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_financial_offer_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    delete:
+      operationId: deleteFinancialOffer
+      summary: Delete a financial offer
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Delete-a-financial-offer
+      tags:
+        - Nucleus
+      responses:
+        204:
+          $ref: '#/responses/204'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_financial_offer_uuid'
   /nucleus/v1/goal:
     get:
       operationId: getGoals
@@ -21557,3 +23489,108 @@ paths:
           in: body
           schema:
             $ref: '#/definitions/variable_annuity_payload'
+  /proton/v1/financial_picture:
+    post:
+      operationId: financialPicture
+      summary: Financial Picture
+      security:
+        - oauth: [proton]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/proton/v1/#Financial-Picture
+      tags:
+        - Proton
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/financial_picture_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/financial_picture'
+  /proton/v1/budget_calculator:
+    post:
+      operationId: budgetCalculator
+      summary: Budget Calculator
+      security:
+        - oauth: [proton]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/proton/v1/#Budget-Calculator
+      tags:
+        - Proton
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/budget_calculator_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/budget_calculator'
+  /proton/v1/spending_analysis:
+    post:
+      operationId: spendingAnalysis
+      summary: Spending Analysis
+      security:
+        - oauth: [proton]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/proton/v1/#Spending-Analysis
+      tags:
+        - Proton
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/spending_analysis_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/spending_analysis'

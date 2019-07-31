@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificChatResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificChatResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -54,6 +54,9 @@ public class SpecificChatResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -202,6 +205,24 @@ public class SpecificChatResponse {
     this.secondaryId = secondaryId;
   }
 
+  public SpecificChatResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the chat in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the chat in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificChatResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -238,12 +259,13 @@ public class SpecificChatResponse {
         Objects.equals(this.isNotification, specificChatResponse.isNotification) &&
         Objects.equals(this.isOpen, specificChatResponse.isOpen) &&
         Objects.equals(this.secondaryId, specificChatResponse.secondaryId) &&
+        Objects.equals(this.metadata, specificChatResponse.metadata) &&
         Objects.equals(this.updateDate, specificChatResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, chatLog, assignedTo, comments, isNotification, isOpen, secondaryId, updateDate);
+    return Objects.hash(id, createDate, chatLog, assignedTo, comments, isNotification, isOpen, secondaryId, metadata, updateDate);
   }
 
 
@@ -260,6 +282,7 @@ public class SpecificChatResponse {
     sb.append("    isNotification: ").append(toIndentedString(isNotification)).append("\n");
     sb.append("    isOpen: ").append(toIndentedString(isOpen)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

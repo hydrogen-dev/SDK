@@ -22,12 +22,16 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the decision tree in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
         :'description' => :'description',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -36,7 +40,8 @@ module AtomApi
       {
         :'name' => :'String',
         :'description' => :'String',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -58,6 +63,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -86,7 +95,8 @@ module AtomApi
       self.class == o.class &&
           name == o.name &&
           description == o.description &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -98,7 +108,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, description, secondary_id].hash
+      [name, description, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

@@ -41,6 +41,7 @@ class CreateNodeRelationshipResponse(object):
         'node_child_id': 'str',
         'is_leaf': 'bool',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -53,11 +54,12 @@ class CreateNodeRelationshipResponse(object):
         'node_child_id': 'node_child_id',
         'is_leaf': 'is_leaf',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, answer_id=None, value=None, decision_tree_id=None, node_parent_id=None, node_child_id=None, is_leaf=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, answer_id=None, value=None, decision_tree_id=None, node_parent_id=None, node_child_id=None, is_leaf=None, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateNodeRelationshipResponse - a model defined in Swagger"""  # noqa: E501
 
         self._answer_id = None
@@ -67,6 +69,7 @@ class CreateNodeRelationshipResponse(object):
         self._node_child_id = None
         self._is_leaf = None
         self._secondary_id = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -81,6 +84,8 @@ class CreateNodeRelationshipResponse(object):
             self.is_leaf = is_leaf
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -252,6 +257,29 @@ class CreateNodeRelationshipResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateNodeRelationshipResponse.  # noqa: E501
+
+        Custom information associated with the node relationship in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateNodeRelationshipResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateNodeRelationshipResponse.
+
+        Custom information associated with the node relationship in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateNodeRelationshipResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

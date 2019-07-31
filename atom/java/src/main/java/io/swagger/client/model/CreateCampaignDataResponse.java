@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreateCampaignDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateCampaignDataResponse {
   @SerializedName("campaign_id")
   private UUID campaignId = null;
@@ -58,6 +58,9 @@ public class CreateCampaignDataResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -227,6 +230,24 @@ public class CreateCampaignDataResponse {
     this.secondaryId = secondaryId;
   }
 
+  public CreateCampaignDataResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the campaign data in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the campaign data in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public CreateCampaignDataResponse id(UUID id) {
     this.id = id;
     return this;
@@ -282,13 +303,14 @@ public class CreateCampaignDataResponse {
         Objects.equals(this.totalClicks, createCampaignDataResponse.totalClicks) &&
         Objects.equals(this.totalImpressions, createCampaignDataResponse.totalImpressions) &&
         Objects.equals(this.secondaryId, createCampaignDataResponse.secondaryId) &&
+        Objects.equals(this.metadata, createCampaignDataResponse.metadata) &&
         Objects.equals(this.id, createCampaignDataResponse.id) &&
         Objects.equals(this.createDate, createCampaignDataResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaignId, startDate, endDate, clickThroughRate, lineItem, publisherCampaignName, totalClicks, totalImpressions, secondaryId, id, createDate);
+    return Objects.hash(campaignId, startDate, endDate, clickThroughRate, lineItem, publisherCampaignName, totalClicks, totalImpressions, secondaryId, metadata, id, createDate);
   }
 
 
@@ -306,6 +328,7 @@ public class CreateCampaignDataResponse {
     sb.append("    totalClicks: ").append(toIndentedString(totalClicks)).append("\n");
     sb.append("    totalImpressions: ").append(toIndentedString(totalImpressions)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

@@ -37,6 +37,7 @@ class SpecificOrderStatusResponse(object):
         'create_date': 'str',
         'status': 'str',
         'description': 'str',
+        'metadata': 'object',
         'update_date': 'str'
     }
 
@@ -45,16 +46,18 @@ class SpecificOrderStatusResponse(object):
         'create_date': 'create_date',
         'status': 'status',
         'description': 'description',
+        'metadata': 'metadata',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, create_date=None, status=None, description=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, status=None, description=None, metadata=None, update_date=None):  # noqa: E501
         """SpecificOrderStatusResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._create_date = None
         self._status = None
         self._description = None
+        self._metadata = None
         self._update_date = None
         self.discriminator = None
 
@@ -64,6 +67,8 @@ class SpecificOrderStatusResponse(object):
             self.create_date = create_date
         self.status = status
         self.description = description
+        if metadata is not None:
+            self.metadata = metadata
         if update_date is not None:
             self.update_date = update_date
 
@@ -162,6 +167,29 @@ class SpecificOrderStatusResponse(object):
             raise ValueError("Invalid value for `description`, must not be `None`")  # noqa: E501
 
         self._description = description
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this SpecificOrderStatusResponse.  # noqa: E501
+
+        Custom information associated with the order status in the format key:value  # noqa: E501
+
+        :return: The metadata of this SpecificOrderStatusResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this SpecificOrderStatusResponse.
+
+        Custom information associated with the order status in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this SpecificOrderStatusResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def update_date(self):

@@ -28,6 +28,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the aggregation account in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -35,7 +38,8 @@ module AtomApi
         :'status' => :'status',
         :'stage_id' => :'stage_id',
         :'comments' => :'comments',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -46,7 +50,8 @@ module AtomApi
         :'status' => :'String',
         :'stage_id' => :'String',
         :'comments' => :'String',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -76,6 +81,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -116,7 +125,8 @@ module AtomApi
           status == o.status &&
           stage_id == o.stage_id &&
           comments == o.comments &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -128,7 +138,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, status, stage_id, comments, secondary_id].hash
+      [account_id, status, stage_id, comments, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

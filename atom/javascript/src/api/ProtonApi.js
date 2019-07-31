@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AnnuityAccumulationResponse', 'model/AnnuityAmountResponse', 'model/AnnuityCalculatorAccumulationHorizon', 'model/AnnuityCalculatorAnnuityAmount', 'model/AnnuityCalculatorDecumulationHorizon', 'model/AnnuityCalculatorDepositAmount', 'model/AnnuityCalculatorInitialBalance', 'model/AnnuityDecumulationResponse', 'model/AnnuityDepositamountResponse', 'model/AnnuityInitialbalanceResponse', 'model/Backtest', 'model/BacktestResponse', 'model/DimRiskScoreResponse', 'model/DimensionalRiskScore', 'model/DiversificationScore', 'model/EducationCalculatorAnnualCost', 'model/EducationCalculatorAnnualcostResponse', 'model/EducationCalculatorDepositAmount', 'model/EducationCalculatorDepositamountResponse', 'model/EducationCalculatorPctcoveredResponse', 'model/EducationCalculatorPercentCovered', 'model/EmergencyFundCalculator', 'model/EmergencyFundResponse', 'model/EventStudy', 'model/EventStudyResponse', 'model/FinancialHealthCheck', 'model/GoalAccumulationAllocation', 'model/GoalAccumulationRecommendation', 'model/GoalAccumulationStatus', 'model/GoalAllocationResponse', 'model/GoalDecumulationAllocation', 'model/GoalDecumulationRecommendation', 'model/GoalDecumulationStatus', 'model/GoalRecommendationResponse', 'model/GoalStatusResponse', 'model/HealthCheckResponse', 'model/LifeInsuranceCalculator', 'model/LifeInsuranceNeedsResponse', 'model/MonteCarlo', 'model/MonteCarloResponse', 'model/MortgageCalculatorDownPayment', 'model/MortgageCalculatorDownpaymentResponse', 'model/MortgageCalculatorHomePrice', 'model/MortgageCalculatorHomepriceResponse', 'model/MortgageCalculatorPeriodicPayment', 'model/MortgageCalculatorPeriodicpaymentResponse', 'model/MvoResponse', 'model/OptConfigPortfolio', 'model/OptimizationScore', 'model/PfloDiversificationScoreResponse', 'model/PfloOptimizationScoreResponse', 'model/PortfolioWhatIfResponse', 'model/PurchaseCalculatorAmount', 'model/PurchaseCalculatorDepositAmount', 'model/PurchaseCalculatorDepositamountResponse', 'model/PurchaseCalculatorHorizon', 'model/PurchaseCalculatorPurchaseamountResponse', 'model/PurchaseCalculatorPurchasehorizonResponse', 'model/Rebalance', 'model/RebalanceResponse', 'model/RetirementCalculatorDepositAmount', 'model/RetirementCalculatorDepositamountResponse', 'model/RetirementCalculatorExpenses', 'model/RetirementCalculatorExpensesResponse', 'model/RetirementCalculatorPctcoveredResponse', 'model/RetirementCalculatorPercentCovered', 'model/RiskAllocation', 'model/RiskAllocationResponse', 'model/RiskScore', 'model/RiskScoreResponse', 'model/SavingsCalculatorResponse', 'model/ScenarioAnalysis', 'model/ScenarioAnalysisResponse', 'model/SensitivityAnalysis', 'model/SensitivityAnalysisResponse', 'model/SimpleSavingsCalculator', 'model/VariableAnnuityPayload', 'model/VariableAnnuityResponse', 'model/WhatIfPortfolio'], factory);
+    define(['ApiClient', 'model/AnnuityAccumulationResponse', 'model/AnnuityAmountResponse', 'model/AnnuityCalculatorAccumulationHorizon', 'model/AnnuityCalculatorAnnuityAmount', 'model/AnnuityCalculatorDecumulationHorizon', 'model/AnnuityCalculatorDepositAmount', 'model/AnnuityCalculatorInitialBalance', 'model/AnnuityDecumulationResponse', 'model/AnnuityDepositamountResponse', 'model/AnnuityInitialbalanceResponse', 'model/Backtest', 'model/BacktestResponse', 'model/BudgetCalculator', 'model/BudgetCalculatorResponse', 'model/DimRiskScoreResponse', 'model/DimensionalRiskScore', 'model/DiversificationScore', 'model/EducationCalculatorAnnualCost', 'model/EducationCalculatorAnnualcostResponse', 'model/EducationCalculatorDepositAmount', 'model/EducationCalculatorDepositamountResponse', 'model/EducationCalculatorPctcoveredResponse', 'model/EducationCalculatorPercentCovered', 'model/EmergencyFundCalculator', 'model/EmergencyFundResponse', 'model/EventStudy', 'model/EventStudyResponse', 'model/FinancialHealthCheck', 'model/FinancialPicture', 'model/FinancialPictureResponse', 'model/GoalAccumulationAllocation', 'model/GoalAccumulationRecommendation', 'model/GoalAccumulationStatus', 'model/GoalAllocationResponse', 'model/GoalDecumulationAllocation', 'model/GoalDecumulationRecommendation', 'model/GoalDecumulationStatus', 'model/GoalRecommendationResponse', 'model/GoalStatusResponse', 'model/HealthCheckResponse', 'model/LifeInsuranceCalculator', 'model/LifeInsuranceNeedsResponse', 'model/MonteCarlo', 'model/MonteCarloResponse', 'model/MortgageCalculatorDownPayment', 'model/MortgageCalculatorDownpaymentResponse', 'model/MortgageCalculatorHomePrice', 'model/MortgageCalculatorHomepriceResponse', 'model/MortgageCalculatorPeriodicPayment', 'model/MortgageCalculatorPeriodicpaymentResponse', 'model/MvoResponse', 'model/OptConfigPortfolio', 'model/OptimizationScore', 'model/PfloDiversificationScoreResponse', 'model/PfloOptimizationScoreResponse', 'model/PortfolioWhatIfResponse', 'model/PurchaseCalculatorAmount', 'model/PurchaseCalculatorDepositAmount', 'model/PurchaseCalculatorDepositamountResponse', 'model/PurchaseCalculatorHorizon', 'model/PurchaseCalculatorPurchaseamountResponse', 'model/PurchaseCalculatorPurchasehorizonResponse', 'model/Rebalance', 'model/RebalanceResponse', 'model/RetirementCalculatorDepositAmount', 'model/RetirementCalculatorDepositamountResponse', 'model/RetirementCalculatorExpenses', 'model/RetirementCalculatorExpensesResponse', 'model/RetirementCalculatorPctcoveredResponse', 'model/RetirementCalculatorPercentCovered', 'model/RiskAllocation', 'model/RiskAllocationResponse', 'model/RiskScore', 'model/RiskScoreResponse', 'model/SavingsCalculatorResponse', 'model/ScenarioAnalysis', 'model/ScenarioAnalysisResponse', 'model/SensitivityAnalysis', 'model/SensitivityAnalysisResponse', 'model/SimpleSavingsCalculator', 'model/SpendingAnalysis', 'model/SpendingAnalysisResponse', 'model/VariableAnnuityPayload', 'model/VariableAnnuityResponse', 'model/WhatIfPortfolio'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AnnuityAccumulationResponse'), require('../model/AnnuityAmountResponse'), require('../model/AnnuityCalculatorAccumulationHorizon'), require('../model/AnnuityCalculatorAnnuityAmount'), require('../model/AnnuityCalculatorDecumulationHorizon'), require('../model/AnnuityCalculatorDepositAmount'), require('../model/AnnuityCalculatorInitialBalance'), require('../model/AnnuityDecumulationResponse'), require('../model/AnnuityDepositamountResponse'), require('../model/AnnuityInitialbalanceResponse'), require('../model/Backtest'), require('../model/BacktestResponse'), require('../model/DimRiskScoreResponse'), require('../model/DimensionalRiskScore'), require('../model/DiversificationScore'), require('../model/EducationCalculatorAnnualCost'), require('../model/EducationCalculatorAnnualcostResponse'), require('../model/EducationCalculatorDepositAmount'), require('../model/EducationCalculatorDepositamountResponse'), require('../model/EducationCalculatorPctcoveredResponse'), require('../model/EducationCalculatorPercentCovered'), require('../model/EmergencyFundCalculator'), require('../model/EmergencyFundResponse'), require('../model/EventStudy'), require('../model/EventStudyResponse'), require('../model/FinancialHealthCheck'), require('../model/GoalAccumulationAllocation'), require('../model/GoalAccumulationRecommendation'), require('../model/GoalAccumulationStatus'), require('../model/GoalAllocationResponse'), require('../model/GoalDecumulationAllocation'), require('../model/GoalDecumulationRecommendation'), require('../model/GoalDecumulationStatus'), require('../model/GoalRecommendationResponse'), require('../model/GoalStatusResponse'), require('../model/HealthCheckResponse'), require('../model/LifeInsuranceCalculator'), require('../model/LifeInsuranceNeedsResponse'), require('../model/MonteCarlo'), require('../model/MonteCarloResponse'), require('../model/MortgageCalculatorDownPayment'), require('../model/MortgageCalculatorDownpaymentResponse'), require('../model/MortgageCalculatorHomePrice'), require('../model/MortgageCalculatorHomepriceResponse'), require('../model/MortgageCalculatorPeriodicPayment'), require('../model/MortgageCalculatorPeriodicpaymentResponse'), require('../model/MvoResponse'), require('../model/OptConfigPortfolio'), require('../model/OptimizationScore'), require('../model/PfloDiversificationScoreResponse'), require('../model/PfloOptimizationScoreResponse'), require('../model/PortfolioWhatIfResponse'), require('../model/PurchaseCalculatorAmount'), require('../model/PurchaseCalculatorDepositAmount'), require('../model/PurchaseCalculatorDepositamountResponse'), require('../model/PurchaseCalculatorHorizon'), require('../model/PurchaseCalculatorPurchaseamountResponse'), require('../model/PurchaseCalculatorPurchasehorizonResponse'), require('../model/Rebalance'), require('../model/RebalanceResponse'), require('../model/RetirementCalculatorDepositAmount'), require('../model/RetirementCalculatorDepositamountResponse'), require('../model/RetirementCalculatorExpenses'), require('../model/RetirementCalculatorExpensesResponse'), require('../model/RetirementCalculatorPctcoveredResponse'), require('../model/RetirementCalculatorPercentCovered'), require('../model/RiskAllocation'), require('../model/RiskAllocationResponse'), require('../model/RiskScore'), require('../model/RiskScoreResponse'), require('../model/SavingsCalculatorResponse'), require('../model/ScenarioAnalysis'), require('../model/ScenarioAnalysisResponse'), require('../model/SensitivityAnalysis'), require('../model/SensitivityAnalysisResponse'), require('../model/SimpleSavingsCalculator'), require('../model/VariableAnnuityPayload'), require('../model/VariableAnnuityResponse'), require('../model/WhatIfPortfolio'));
+    module.exports = factory(require('../ApiClient'), require('../model/AnnuityAccumulationResponse'), require('../model/AnnuityAmountResponse'), require('../model/AnnuityCalculatorAccumulationHorizon'), require('../model/AnnuityCalculatorAnnuityAmount'), require('../model/AnnuityCalculatorDecumulationHorizon'), require('../model/AnnuityCalculatorDepositAmount'), require('../model/AnnuityCalculatorInitialBalance'), require('../model/AnnuityDecumulationResponse'), require('../model/AnnuityDepositamountResponse'), require('../model/AnnuityInitialbalanceResponse'), require('../model/Backtest'), require('../model/BacktestResponse'), require('../model/BudgetCalculator'), require('../model/BudgetCalculatorResponse'), require('../model/DimRiskScoreResponse'), require('../model/DimensionalRiskScore'), require('../model/DiversificationScore'), require('../model/EducationCalculatorAnnualCost'), require('../model/EducationCalculatorAnnualcostResponse'), require('../model/EducationCalculatorDepositAmount'), require('../model/EducationCalculatorDepositamountResponse'), require('../model/EducationCalculatorPctcoveredResponse'), require('../model/EducationCalculatorPercentCovered'), require('../model/EmergencyFundCalculator'), require('../model/EmergencyFundResponse'), require('../model/EventStudy'), require('../model/EventStudyResponse'), require('../model/FinancialHealthCheck'), require('../model/FinancialPicture'), require('../model/FinancialPictureResponse'), require('../model/GoalAccumulationAllocation'), require('../model/GoalAccumulationRecommendation'), require('../model/GoalAccumulationStatus'), require('../model/GoalAllocationResponse'), require('../model/GoalDecumulationAllocation'), require('../model/GoalDecumulationRecommendation'), require('../model/GoalDecumulationStatus'), require('../model/GoalRecommendationResponse'), require('../model/GoalStatusResponse'), require('../model/HealthCheckResponse'), require('../model/LifeInsuranceCalculator'), require('../model/LifeInsuranceNeedsResponse'), require('../model/MonteCarlo'), require('../model/MonteCarloResponse'), require('../model/MortgageCalculatorDownPayment'), require('../model/MortgageCalculatorDownpaymentResponse'), require('../model/MortgageCalculatorHomePrice'), require('../model/MortgageCalculatorHomepriceResponse'), require('../model/MortgageCalculatorPeriodicPayment'), require('../model/MortgageCalculatorPeriodicpaymentResponse'), require('../model/MvoResponse'), require('../model/OptConfigPortfolio'), require('../model/OptimizationScore'), require('../model/PfloDiversificationScoreResponse'), require('../model/PfloOptimizationScoreResponse'), require('../model/PortfolioWhatIfResponse'), require('../model/PurchaseCalculatorAmount'), require('../model/PurchaseCalculatorDepositAmount'), require('../model/PurchaseCalculatorDepositamountResponse'), require('../model/PurchaseCalculatorHorizon'), require('../model/PurchaseCalculatorPurchaseamountResponse'), require('../model/PurchaseCalculatorPurchasehorizonResponse'), require('../model/Rebalance'), require('../model/RebalanceResponse'), require('../model/RetirementCalculatorDepositAmount'), require('../model/RetirementCalculatorDepositamountResponse'), require('../model/RetirementCalculatorExpenses'), require('../model/RetirementCalculatorExpensesResponse'), require('../model/RetirementCalculatorPctcoveredResponse'), require('../model/RetirementCalculatorPercentCovered'), require('../model/RiskAllocation'), require('../model/RiskAllocationResponse'), require('../model/RiskScore'), require('../model/RiskScoreResponse'), require('../model/SavingsCalculatorResponse'), require('../model/ScenarioAnalysis'), require('../model/ScenarioAnalysisResponse'), require('../model/SensitivityAnalysis'), require('../model/SensitivityAnalysisResponse'), require('../model/SimpleSavingsCalculator'), require('../model/SpendingAnalysis'), require('../model/SpendingAnalysisResponse'), require('../model/VariableAnnuityPayload'), require('../model/VariableAnnuityResponse'), require('../model/WhatIfPortfolio'));
   } else {
     // Browser globals (root is window)
     if (!root.atom_api) {
       root.atom_api = {};
     }
-    root.atom_api.ProtonApi = factory(root.atom_api.ApiClient, root.atom_api.AnnuityAccumulationResponse, root.atom_api.AnnuityAmountResponse, root.atom_api.AnnuityCalculatorAccumulationHorizon, root.atom_api.AnnuityCalculatorAnnuityAmount, root.atom_api.AnnuityCalculatorDecumulationHorizon, root.atom_api.AnnuityCalculatorDepositAmount, root.atom_api.AnnuityCalculatorInitialBalance, root.atom_api.AnnuityDecumulationResponse, root.atom_api.AnnuityDepositamountResponse, root.atom_api.AnnuityInitialbalanceResponse, root.atom_api.Backtest, root.atom_api.BacktestResponse, root.atom_api.DimRiskScoreResponse, root.atom_api.DimensionalRiskScore, root.atom_api.DiversificationScore, root.atom_api.EducationCalculatorAnnualCost, root.atom_api.EducationCalculatorAnnualcostResponse, root.atom_api.EducationCalculatorDepositAmount, root.atom_api.EducationCalculatorDepositamountResponse, root.atom_api.EducationCalculatorPctcoveredResponse, root.atom_api.EducationCalculatorPercentCovered, root.atom_api.EmergencyFundCalculator, root.atom_api.EmergencyFundResponse, root.atom_api.EventStudy, root.atom_api.EventStudyResponse, root.atom_api.FinancialHealthCheck, root.atom_api.GoalAccumulationAllocation, root.atom_api.GoalAccumulationRecommendation, root.atom_api.GoalAccumulationStatus, root.atom_api.GoalAllocationResponse, root.atom_api.GoalDecumulationAllocation, root.atom_api.GoalDecumulationRecommendation, root.atom_api.GoalDecumulationStatus, root.atom_api.GoalRecommendationResponse, root.atom_api.GoalStatusResponse, root.atom_api.HealthCheckResponse, root.atom_api.LifeInsuranceCalculator, root.atom_api.LifeInsuranceNeedsResponse, root.atom_api.MonteCarlo, root.atom_api.MonteCarloResponse, root.atom_api.MortgageCalculatorDownPayment, root.atom_api.MortgageCalculatorDownpaymentResponse, root.atom_api.MortgageCalculatorHomePrice, root.atom_api.MortgageCalculatorHomepriceResponse, root.atom_api.MortgageCalculatorPeriodicPayment, root.atom_api.MortgageCalculatorPeriodicpaymentResponse, root.atom_api.MvoResponse, root.atom_api.OptConfigPortfolio, root.atom_api.OptimizationScore, root.atom_api.PfloDiversificationScoreResponse, root.atom_api.PfloOptimizationScoreResponse, root.atom_api.PortfolioWhatIfResponse, root.atom_api.PurchaseCalculatorAmount, root.atom_api.PurchaseCalculatorDepositAmount, root.atom_api.PurchaseCalculatorDepositamountResponse, root.atom_api.PurchaseCalculatorHorizon, root.atom_api.PurchaseCalculatorPurchaseamountResponse, root.atom_api.PurchaseCalculatorPurchasehorizonResponse, root.atom_api.Rebalance, root.atom_api.RebalanceResponse, root.atom_api.RetirementCalculatorDepositAmount, root.atom_api.RetirementCalculatorDepositamountResponse, root.atom_api.RetirementCalculatorExpenses, root.atom_api.RetirementCalculatorExpensesResponse, root.atom_api.RetirementCalculatorPctcoveredResponse, root.atom_api.RetirementCalculatorPercentCovered, root.atom_api.RiskAllocation, root.atom_api.RiskAllocationResponse, root.atom_api.RiskScore, root.atom_api.RiskScoreResponse, root.atom_api.SavingsCalculatorResponse, root.atom_api.ScenarioAnalysis, root.atom_api.ScenarioAnalysisResponse, root.atom_api.SensitivityAnalysis, root.atom_api.SensitivityAnalysisResponse, root.atom_api.SimpleSavingsCalculator, root.atom_api.VariableAnnuityPayload, root.atom_api.VariableAnnuityResponse, root.atom_api.WhatIfPortfolio);
+    root.atom_api.ProtonApi = factory(root.atom_api.ApiClient, root.atom_api.AnnuityAccumulationResponse, root.atom_api.AnnuityAmountResponse, root.atom_api.AnnuityCalculatorAccumulationHorizon, root.atom_api.AnnuityCalculatorAnnuityAmount, root.atom_api.AnnuityCalculatorDecumulationHorizon, root.atom_api.AnnuityCalculatorDepositAmount, root.atom_api.AnnuityCalculatorInitialBalance, root.atom_api.AnnuityDecumulationResponse, root.atom_api.AnnuityDepositamountResponse, root.atom_api.AnnuityInitialbalanceResponse, root.atom_api.Backtest, root.atom_api.BacktestResponse, root.atom_api.BudgetCalculator, root.atom_api.BudgetCalculatorResponse, root.atom_api.DimRiskScoreResponse, root.atom_api.DimensionalRiskScore, root.atom_api.DiversificationScore, root.atom_api.EducationCalculatorAnnualCost, root.atom_api.EducationCalculatorAnnualcostResponse, root.atom_api.EducationCalculatorDepositAmount, root.atom_api.EducationCalculatorDepositamountResponse, root.atom_api.EducationCalculatorPctcoveredResponse, root.atom_api.EducationCalculatorPercentCovered, root.atom_api.EmergencyFundCalculator, root.atom_api.EmergencyFundResponse, root.atom_api.EventStudy, root.atom_api.EventStudyResponse, root.atom_api.FinancialHealthCheck, root.atom_api.FinancialPicture, root.atom_api.FinancialPictureResponse, root.atom_api.GoalAccumulationAllocation, root.atom_api.GoalAccumulationRecommendation, root.atom_api.GoalAccumulationStatus, root.atom_api.GoalAllocationResponse, root.atom_api.GoalDecumulationAllocation, root.atom_api.GoalDecumulationRecommendation, root.atom_api.GoalDecumulationStatus, root.atom_api.GoalRecommendationResponse, root.atom_api.GoalStatusResponse, root.atom_api.HealthCheckResponse, root.atom_api.LifeInsuranceCalculator, root.atom_api.LifeInsuranceNeedsResponse, root.atom_api.MonteCarlo, root.atom_api.MonteCarloResponse, root.atom_api.MortgageCalculatorDownPayment, root.atom_api.MortgageCalculatorDownpaymentResponse, root.atom_api.MortgageCalculatorHomePrice, root.atom_api.MortgageCalculatorHomepriceResponse, root.atom_api.MortgageCalculatorPeriodicPayment, root.atom_api.MortgageCalculatorPeriodicpaymentResponse, root.atom_api.MvoResponse, root.atom_api.OptConfigPortfolio, root.atom_api.OptimizationScore, root.atom_api.PfloDiversificationScoreResponse, root.atom_api.PfloOptimizationScoreResponse, root.atom_api.PortfolioWhatIfResponse, root.atom_api.PurchaseCalculatorAmount, root.atom_api.PurchaseCalculatorDepositAmount, root.atom_api.PurchaseCalculatorDepositamountResponse, root.atom_api.PurchaseCalculatorHorizon, root.atom_api.PurchaseCalculatorPurchaseamountResponse, root.atom_api.PurchaseCalculatorPurchasehorizonResponse, root.atom_api.Rebalance, root.atom_api.RebalanceResponse, root.atom_api.RetirementCalculatorDepositAmount, root.atom_api.RetirementCalculatorDepositamountResponse, root.atom_api.RetirementCalculatorExpenses, root.atom_api.RetirementCalculatorExpensesResponse, root.atom_api.RetirementCalculatorPctcoveredResponse, root.atom_api.RetirementCalculatorPercentCovered, root.atom_api.RiskAllocation, root.atom_api.RiskAllocationResponse, root.atom_api.RiskScore, root.atom_api.RiskScoreResponse, root.atom_api.SavingsCalculatorResponse, root.atom_api.ScenarioAnalysis, root.atom_api.ScenarioAnalysisResponse, root.atom_api.SensitivityAnalysis, root.atom_api.SensitivityAnalysisResponse, root.atom_api.SimpleSavingsCalculator, root.atom_api.SpendingAnalysis, root.atom_api.SpendingAnalysisResponse, root.atom_api.VariableAnnuityPayload, root.atom_api.VariableAnnuityResponse, root.atom_api.WhatIfPortfolio);
   }
-}(this, function(ApiClient, AnnuityAccumulationResponse, AnnuityAmountResponse, AnnuityCalculatorAccumulationHorizon, AnnuityCalculatorAnnuityAmount, AnnuityCalculatorDecumulationHorizon, AnnuityCalculatorDepositAmount, AnnuityCalculatorInitialBalance, AnnuityDecumulationResponse, AnnuityDepositamountResponse, AnnuityInitialbalanceResponse, Backtest, BacktestResponse, DimRiskScoreResponse, DimensionalRiskScore, DiversificationScore, EducationCalculatorAnnualCost, EducationCalculatorAnnualcostResponse, EducationCalculatorDepositAmount, EducationCalculatorDepositamountResponse, EducationCalculatorPctcoveredResponse, EducationCalculatorPercentCovered, EmergencyFundCalculator, EmergencyFundResponse, EventStudy, EventStudyResponse, FinancialHealthCheck, GoalAccumulationAllocation, GoalAccumulationRecommendation, GoalAccumulationStatus, GoalAllocationResponse, GoalDecumulationAllocation, GoalDecumulationRecommendation, GoalDecumulationStatus, GoalRecommendationResponse, GoalStatusResponse, HealthCheckResponse, LifeInsuranceCalculator, LifeInsuranceNeedsResponse, MonteCarlo, MonteCarloResponse, MortgageCalculatorDownPayment, MortgageCalculatorDownpaymentResponse, MortgageCalculatorHomePrice, MortgageCalculatorHomepriceResponse, MortgageCalculatorPeriodicPayment, MortgageCalculatorPeriodicpaymentResponse, MvoResponse, OptConfigPortfolio, OptimizationScore, PfloDiversificationScoreResponse, PfloOptimizationScoreResponse, PortfolioWhatIfResponse, PurchaseCalculatorAmount, PurchaseCalculatorDepositAmount, PurchaseCalculatorDepositamountResponse, PurchaseCalculatorHorizon, PurchaseCalculatorPurchaseamountResponse, PurchaseCalculatorPurchasehorizonResponse, Rebalance, RebalanceResponse, RetirementCalculatorDepositAmount, RetirementCalculatorDepositamountResponse, RetirementCalculatorExpenses, RetirementCalculatorExpensesResponse, RetirementCalculatorPctcoveredResponse, RetirementCalculatorPercentCovered, RiskAllocation, RiskAllocationResponse, RiskScore, RiskScoreResponse, SavingsCalculatorResponse, ScenarioAnalysis, ScenarioAnalysisResponse, SensitivityAnalysis, SensitivityAnalysisResponse, SimpleSavingsCalculator, VariableAnnuityPayload, VariableAnnuityResponse, WhatIfPortfolio) {
+}(this, function(ApiClient, AnnuityAccumulationResponse, AnnuityAmountResponse, AnnuityCalculatorAccumulationHorizon, AnnuityCalculatorAnnuityAmount, AnnuityCalculatorDecumulationHorizon, AnnuityCalculatorDepositAmount, AnnuityCalculatorInitialBalance, AnnuityDecumulationResponse, AnnuityDepositamountResponse, AnnuityInitialbalanceResponse, Backtest, BacktestResponse, BudgetCalculator, BudgetCalculatorResponse, DimRiskScoreResponse, DimensionalRiskScore, DiversificationScore, EducationCalculatorAnnualCost, EducationCalculatorAnnualcostResponse, EducationCalculatorDepositAmount, EducationCalculatorDepositamountResponse, EducationCalculatorPctcoveredResponse, EducationCalculatorPercentCovered, EmergencyFundCalculator, EmergencyFundResponse, EventStudy, EventStudyResponse, FinancialHealthCheck, FinancialPicture, FinancialPictureResponse, GoalAccumulationAllocation, GoalAccumulationRecommendation, GoalAccumulationStatus, GoalAllocationResponse, GoalDecumulationAllocation, GoalDecumulationRecommendation, GoalDecumulationStatus, GoalRecommendationResponse, GoalStatusResponse, HealthCheckResponse, LifeInsuranceCalculator, LifeInsuranceNeedsResponse, MonteCarlo, MonteCarloResponse, MortgageCalculatorDownPayment, MortgageCalculatorDownpaymentResponse, MortgageCalculatorHomePrice, MortgageCalculatorHomepriceResponse, MortgageCalculatorPeriodicPayment, MortgageCalculatorPeriodicpaymentResponse, MvoResponse, OptConfigPortfolio, OptimizationScore, PfloDiversificationScoreResponse, PfloOptimizationScoreResponse, PortfolioWhatIfResponse, PurchaseCalculatorAmount, PurchaseCalculatorDepositAmount, PurchaseCalculatorDepositamountResponse, PurchaseCalculatorHorizon, PurchaseCalculatorPurchaseamountResponse, PurchaseCalculatorPurchasehorizonResponse, Rebalance, RebalanceResponse, RetirementCalculatorDepositAmount, RetirementCalculatorDepositamountResponse, RetirementCalculatorExpenses, RetirementCalculatorExpensesResponse, RetirementCalculatorPctcoveredResponse, RetirementCalculatorPercentCovered, RiskAllocation, RiskAllocationResponse, RiskScore, RiskScoreResponse, SavingsCalculatorResponse, ScenarioAnalysis, ScenarioAnalysisResponse, SensitivityAnalysis, SensitivityAnalysisResponse, SimpleSavingsCalculator, SpendingAnalysis, SpendingAnalysisResponse, VariableAnnuityPayload, VariableAnnuityResponse, WhatIfPortfolio) {
   'use strict';
 
   /**
@@ -273,6 +273,52 @@
 
       return this.apiClient.callApi(
         '/proton/v1/annuity_calculator/initial_balance', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the budgetCalculator operation.
+     * @callback module:api/ProtonApi~budgetCalculatorCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BudgetCalculatorResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Budget Calculator
+     * @param {module:model/BudgetCalculator} payload 
+     * @param {module:api/ProtonApi~budgetCalculatorCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BudgetCalculatorResponse}
+     */
+    this.budgetCalculator = function(payload, callback) {
+      var postBody = payload;
+
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling budgetCalculator");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = BudgetCalculatorResponse;
+
+      return this.apiClient.callApi(
+        '/proton/v1/budget_calculator', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -595,6 +641,52 @@
 
       return this.apiClient.callApi(
         '/proton/v1/financial_health_check', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the financialPicture operation.
+     * @callback module:api/ProtonApi~financialPictureCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/FinancialPictureResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Financial Picture
+     * @param {module:model/FinancialPicture} payload 
+     * @param {module:api/ProtonApi~financialPictureCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/FinancialPictureResponse}
+     */
+    this.financialPicture = function(payload, callback) {
+      var postBody = payload;
+
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling financialPicture");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = FinancialPictureResponse;
+
+      return this.apiClient.callApi(
+        '/proton/v1/financial_picture', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1883,6 +1975,52 @@
 
       return this.apiClient.callApi(
         '/proton/v1/sensitivity_analysis', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the spendingAnalysis operation.
+     * @callback module:api/ProtonApi~spendingAnalysisCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/SpendingAnalysisResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Spending Analysis
+     * @param {module:model/SpendingAnalysis} payload 
+     * @param {module:api/ProtonApi~spendingAnalysisCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/SpendingAnalysisResponse}
+     */
+    this.spendingAnalysis = function(payload, callback) {
+      var postBody = payload;
+
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling spendingAnalysis");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = SpendingAnalysisResponse;
+
+      return this.apiClient.callApi(
+        '/proton/v1/spending_analysis', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificNodeRelationshipResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SpecificNodeRelationshipResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -57,6 +57,9 @@ public class SpecificNodeRelationshipResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -223,6 +226,24 @@ public class SpecificNodeRelationshipResponse {
     this.secondaryId = secondaryId;
   }
 
+  public SpecificNodeRelationshipResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the node relationship in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the node relationship in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SpecificNodeRelationshipResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
@@ -260,12 +281,13 @@ public class SpecificNodeRelationshipResponse {
         Objects.equals(this.nodeChildId, specificNodeRelationshipResponse.nodeChildId) &&
         Objects.equals(this.isLeaf, specificNodeRelationshipResponse.isLeaf) &&
         Objects.equals(this.secondaryId, specificNodeRelationshipResponse.secondaryId) &&
+        Objects.equals(this.metadata, specificNodeRelationshipResponse.metadata) &&
         Objects.equals(this.updateDate, specificNodeRelationshipResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, answerId, value, decisionTreeId, nodeParentId, nodeChildId, isLeaf, secondaryId, updateDate);
+    return Objects.hash(id, createDate, answerId, value, decisionTreeId, nodeParentId, nodeChildId, isLeaf, secondaryId, metadata, updateDate);
   }
 
 
@@ -283,6 +305,7 @@ public class SpecificNodeRelationshipResponse {
     sb.append("    nodeChildId: ").append(toIndentedString(nodeChildId)).append("\n");
     sb.append("    isLeaf: ").append(toIndentedString(isLeaf)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

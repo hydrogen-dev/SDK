@@ -93,6 +93,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property metadata (base name: "metadata")', function() {
+      // uncomment below and update the code to test the property metadata
+      //var instance = new atom_api.ChatPayload();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

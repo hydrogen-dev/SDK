@@ -39,6 +39,7 @@ class CreateTransactionCodeResponse(object):
         'category': 'str',
         'subcategory': 'str',
         'is_buy': 'bool',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -50,11 +51,12 @@ class CreateTransactionCodeResponse(object):
         'category': 'category',
         'subcategory': 'subcategory',
         'is_buy': 'is_buy',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, transaction_code=None, transaction_code_description=None, transaction_type=None, category=None, subcategory=None, is_buy=False, id=None, create_date=None):  # noqa: E501
+    def __init__(self, transaction_code=None, transaction_code_description=None, transaction_type=None, category=None, subcategory=None, is_buy=False, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateTransactionCodeResponse - a model defined in Swagger"""  # noqa: E501
 
         self._transaction_code = None
@@ -63,6 +65,7 @@ class CreateTransactionCodeResponse(object):
         self._category = None
         self._subcategory = None
         self._is_buy = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -78,6 +81,8 @@ class CreateTransactionCodeResponse(object):
             self.subcategory = subcategory
         if is_buy is not None:
             self.is_buy = is_buy
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -222,6 +227,29 @@ class CreateTransactionCodeResponse(object):
         """
 
         self._is_buy = is_buy
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateTransactionCodeResponse.  # noqa: E501
+
+        Custom information associated with the transaction code in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateTransactionCodeResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateTransactionCodeResponse.
+
+        Custom information associated with the transaction code in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateTransactionCodeResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

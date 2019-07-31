@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreateSupportTicketResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class CreateSupportTicketResponse {
   @SerializedName("description")
   private String description = null;
@@ -58,6 +58,9 @@ public class CreateSupportTicketResponse {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -227,6 +230,24 @@ public class CreateSupportTicketResponse {
     this.secondaryId = secondaryId;
   }
 
+  public CreateSupportTicketResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the support ticket in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the support ticket in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public CreateSupportTicketResponse id(UUID id) {
     this.id = id;
     return this;
@@ -282,13 +303,14 @@ public class CreateSupportTicketResponse {
         Objects.equals(this.status, createSupportTicketResponse.status) &&
         Objects.equals(this.subject, createSupportTicketResponse.subject) &&
         Objects.equals(this.secondaryId, createSupportTicketResponse.secondaryId) &&
+        Objects.equals(this.metadata, createSupportTicketResponse.metadata) &&
         Objects.equals(this.id, createSupportTicketResponse.id) &&
         Objects.equals(this.createDate, createSupportTicketResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, clientId, accountId, openTime, closeTime, assignedTo, status, subject, secondaryId, id, createDate);
+    return Objects.hash(description, clientId, accountId, openTime, closeTime, assignedTo, status, subject, secondaryId, metadata, id, createDate);
   }
 
 
@@ -306,6 +328,7 @@ public class CreateSupportTicketResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("}");

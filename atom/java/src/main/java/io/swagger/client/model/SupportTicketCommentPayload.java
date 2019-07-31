@@ -31,7 +31,7 @@ import java.util.UUID;
 /**
  * SupportTicketCommentPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class SupportTicketCommentPayload {
   @SerializedName("support_ticket_id")
   private UUID supportTicketId = null;
@@ -47,6 +47,9 @@ public class SupportTicketCommentPayload {
 
   @SerializedName("is_read")
   private Boolean isRead = false;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   @SerializedName("support_ticket_document")
   private List<SupportTicketCommentPayloadSupportTicketDocument> supportTicketDocument = null;
@@ -144,6 +147,24 @@ public class SupportTicketCommentPayload {
     this.isRead = isRead;
   }
 
+  public SupportTicketCommentPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the support ticket comment in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the support ticket comment in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   public SupportTicketCommentPayload supportTicketDocument(List<SupportTicketCommentPayloadSupportTicketDocument> supportTicketDocument) {
     this.supportTicketDocument = supportTicketDocument;
     return this;
@@ -203,13 +224,14 @@ public class SupportTicketCommentPayload {
         Objects.equals(this.hasAttachment, supportTicketCommentPayload.hasAttachment) &&
         Objects.equals(this.isAdmin, supportTicketCommentPayload.isAdmin) &&
         Objects.equals(this.isRead, supportTicketCommentPayload.isRead) &&
+        Objects.equals(this.metadata, supportTicketCommentPayload.metadata) &&
         Objects.equals(this.supportTicketDocument, supportTicketCommentPayload.supportTicketDocument) &&
         Objects.equals(this.secondaryId, supportTicketCommentPayload.secondaryId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(supportTicketId, description, hasAttachment, isAdmin, isRead, supportTicketDocument, secondaryId);
+    return Objects.hash(supportTicketId, description, hasAttachment, isAdmin, isRead, metadata, supportTicketDocument, secondaryId);
   }
 
 
@@ -223,6 +245,7 @@ public class SupportTicketCommentPayload {
     sb.append("    hasAttachment: ").append(toIndentedString(hasAttachment)).append("\n");
     sb.append("    isAdmin: ").append(toIndentedString(isAdmin)).append("\n");
     sb.append("    isRead: ").append(toIndentedString(isRead)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    supportTicketDocument: ").append(toIndentedString(supportTicketDocument)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("}");

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * FaqPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class FaqPayload {
   @SerializedName("question")
   private String question = null;
@@ -61,6 +61,9 @@ public class FaqPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public FaqPayload question(String question) {
     this.question = question;
@@ -250,6 +253,24 @@ public class FaqPayload {
     this.secondaryId = secondaryId;
   }
 
+  public FaqPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the FAQ in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the FAQ in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -269,12 +290,13 @@ public class FaqPayload {
         Objects.equals(this.seoName, faqPayload.seoName) &&
         Objects.equals(this.faqKeywords, faqPayload.faqKeywords) &&
         Objects.equals(this.isFeatured, faqPayload.isFeatured) &&
-        Objects.equals(this.secondaryId, faqPayload.secondaryId);
+        Objects.equals(this.secondaryId, faqPayload.secondaryId) &&
+        Objects.equals(this.metadata, faqPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(question, answer, category, subcategory, isActive, number, seoName, faqKeywords, isFeatured, secondaryId);
+    return Objects.hash(question, answer, category, subcategory, isActive, number, seoName, faqKeywords, isFeatured, secondaryId, metadata);
   }
 
 
@@ -293,6 +315,7 @@ public class FaqPayload {
     sb.append("    faqKeywords: ").append(toIndentedString(faqKeywords)).append("\n");
     sb.append("    isFeatured: ").append(toIndentedString(isFeatured)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

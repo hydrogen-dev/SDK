@@ -45,6 +45,7 @@ class SpecificSupportTicketResponse(object):
         'status': 'str',
         'subject': 'str',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'update_date': 'str'
     }
 
@@ -60,10 +61,11 @@ class SpecificSupportTicketResponse(object):
         'status': 'status',
         'subject': 'subject',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, create_date=None, description=None, client_id=None, account_id=None, open_time=None, close_time=None, assigned_to=None, status=None, subject=None, secondary_id=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, description=None, client_id=None, account_id=None, open_time=None, close_time=None, assigned_to=None, status=None, subject=None, secondary_id=None, metadata=None, update_date=None):  # noqa: E501
         """SpecificSupportTicketResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -77,6 +79,7 @@ class SpecificSupportTicketResponse(object):
         self._status = None
         self._subject = None
         self._secondary_id = None
+        self._metadata = None
         self._update_date = None
         self.discriminator = None
 
@@ -98,6 +101,8 @@ class SpecificSupportTicketResponse(object):
             self.subject = subject
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if update_date is not None:
             self.update_date = update_date
 
@@ -359,6 +364,29 @@ class SpecificSupportTicketResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this SpecificSupportTicketResponse.  # noqa: E501
+
+        Custom information associated with the support ticket in the format key:value  # noqa: E501
+
+        :return: The metadata of this SpecificSupportTicketResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this SpecificSupportTicketResponse.
+
+        Custom information associated with the support ticket in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this SpecificSupportTicketResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def update_date(self):

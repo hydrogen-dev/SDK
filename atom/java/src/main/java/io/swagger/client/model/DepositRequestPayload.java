@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * DepositRequestPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class DepositRequestPayload {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -68,6 +68,9 @@ public class DepositRequestPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public DepositRequestPayload accountId(UUID accountId) {
     this.accountId = accountId;
@@ -303,6 +306,24 @@ public class DepositRequestPayload {
     this.secondaryId = secondaryId;
   }
 
+  public DepositRequestPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the deposit in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the deposit in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -325,12 +346,13 @@ public class DepositRequestPayload {
         Objects.equals(this.status, depositRequestPayload.status) &&
         Objects.equals(this.statusTimeStamp, depositRequestPayload.statusTimeStamp) &&
         Objects.equals(this.type, depositRequestPayload.type) &&
-        Objects.equals(this.secondaryId, depositRequestPayload.secondaryId);
+        Objects.equals(this.secondaryId, depositRequestPayload.secondaryId) &&
+        Objects.equals(this.metadata, depositRequestPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, amount, fundingId, investedDate, accountNumber, comments, direction, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId);
+    return Objects.hash(accountId, amount, fundingId, investedDate, accountNumber, comments, direction, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId, metadata);
   }
 
 
@@ -352,6 +374,7 @@ public class DepositRequestPayload {
     sb.append("    statusTimeStamp: ").append(toIndentedString(statusTimeStamp)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

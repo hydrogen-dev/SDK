@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * WithdrawalPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-26T19:23:27.650-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-31T19:17:39.885-04:00")
 public class WithdrawalPayload {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -71,6 +71,9 @@ public class WithdrawalPayload {
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
 
   public WithdrawalPayload accountId(UUID accountId) {
     this.accountId = accountId;
@@ -324,6 +327,24 @@ public class WithdrawalPayload {
     this.secondaryId = secondaryId;
   }
 
+  public WithdrawalPayload metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the withdrawal in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the withdrawal in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -347,12 +368,13 @@ public class WithdrawalPayload {
         Objects.equals(this.status, withdrawalPayload.status) &&
         Objects.equals(this.statusTimeStamp, withdrawalPayload.statusTimeStamp) &&
         Objects.equals(this.type, withdrawalPayload.type) &&
-        Objects.equals(this.secondaryId, withdrawalPayload.secondaryId);
+        Objects.equals(this.secondaryId, withdrawalPayload.secondaryId) &&
+        Objects.equals(this.metadata, withdrawalPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, amount, fundingId, withdrawalDate, accountNumber, comments, direction, fees, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId);
+    return Objects.hash(accountId, amount, fundingId, withdrawalDate, accountNumber, comments, direction, fees, lastRequestDate, receivedDate, status, statusTimeStamp, type, secondaryId, metadata);
   }
 
 
@@ -375,6 +397,7 @@ public class WithdrawalPayload {
     sb.append("    statusTimeStamp: ").append(toIndentedString(statusTimeStamp)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

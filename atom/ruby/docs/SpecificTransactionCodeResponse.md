@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **category** | **String** | Grouping of similar transaction codes | [optional] 
 **subcategory** | **String** | Sub-grouping of similar transaction codes | [optional] 
 **is_buy** | **BOOLEAN** | Indicates if the transaction is to buy securities. Defaults to false which means it is a sell transaction. | [optional] [default to false]
+**metadata** | **Object** | Custom information associated with the transaction code in the format key:value | [optional] 
 **update_date** | **String** | Datetime the transaction code was last updated | [optional] 
 
 

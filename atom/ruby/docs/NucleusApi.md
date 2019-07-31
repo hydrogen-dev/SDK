@@ -12,15 +12,19 @@ Method | HTTP request | Description
 [**delete_account_type**](NucleusApi.md#delete_account_type) | **DELETE** /nucleus/v1/account_type/{account_type_id} | Delete an account type
 [**delete_aggregation_account**](NucleusApi.md#delete_aggregation_account) | **DELETE** /nucleus/v1/aggregation_account/{aggregation_account_id} | Delete an aggregation account
 [**delete_aggregation_account_balance**](NucleusApi.md#delete_aggregation_account_balance) | **DELETE** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Delete an aggregation account balance
+[**delete_aggregation_account_holding**](NucleusApi.md#delete_aggregation_account_holding) | **DELETE** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Delete an aggregation account holding
+[**delete_aggregation_account_transaction**](NucleusApi.md#delete_aggregation_account_transaction) | **DELETE** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Delete an aggregation account transaction
 [**delete_allocation**](NucleusApi.md#delete_allocation) | **DELETE** /nucleus/v1/allocation/{allocation_id} | Delete an allocation
 [**delete_allocation_composition**](NucleusApi.md#delete_allocation_composition) | **DELETE** /nucleus/v1/allocation_composition/{allocation_composition_id} | Delete an allocation composition
 [**delete_bank_link**](NucleusApi.md#delete_bank_link) | **DELETE** /nucleus/v1/bank_link/{bank_link_id} | Delete a bank link
 [**delete_benchmark**](NucleusApi.md#delete_benchmark) | **DELETE** /nucleus/v1/benchmark/{benchmark_id} | Delete a benchmark
+[**delete_budget**](NucleusApi.md#delete_budget) | **DELETE** /nucleus/v1/budget/{budget_id} | Delete a budget
 [**delete_client**](NucleusApi.md#delete_client) | **DELETE** /nucleus/v1/client/{client_id} | Delete a client
 [**delete_client_hydro**](NucleusApi.md#delete_client_hydro) | **DELETE** /nucleus/v1/client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 [**delete_client_response**](NucleusApi.md#delete_client_response) | **DELETE** /nucleus/v1/client_response/{client_response_id} | Delete a client response
 [**delete_decision_tree**](NucleusApi.md#delete_decision_tree) | **DELETE** /nucleus/v1/decision_tree/{decision_tree_id} | Delete a decision tree
 [**delete_deposit_request**](NucleusApi.md#delete_deposit_request) | **DELETE** /nucleus/v1/deposit/{deposit_id} | Delete a deposit request
+[**delete_financial_offer**](NucleusApi.md#delete_financial_offer) | **DELETE** /nucleus/v1/financial_offer/{financial_offer_id} | Delete a financial offer
 [**delete_funding_request**](NucleusApi.md#delete_funding_request) | **DELETE** /nucleus/v1/funding/{funding_id} | Delete a funding request
 [**delete_goal**](NucleusApi.md#delete_goal) | **DELETE** /nucleus/v1/goal/{goal_id} | Delete a goal
 [**delete_goal_track_record**](NucleusApi.md#delete_goal_track_record) | **DELETE** /nucleus/v1/goal_track/{goal_track_id} | Delete a goal track record
@@ -66,6 +70,10 @@ Method | HTTP request | Description
 [**get_aggregation_account**](NucleusApi.md#get_aggregation_account) | **GET** /nucleus/v1/aggregation_account/{aggregation_account_id} | Retrieve an aggregation account
 [**get_aggregation_account_balance**](NucleusApi.md#get_aggregation_account_balance) | **GET** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Retrieve an aggregation account balance
 [**get_aggregation_account_balances**](NucleusApi.md#get_aggregation_account_balances) | **GET** /nucleus/v1/aggregation_account_balance | List all aggregation account balances
+[**get_aggregation_account_holding**](NucleusApi.md#get_aggregation_account_holding) | **GET** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Retrieve an aggregation account holding
+[**get_aggregation_account_holdings**](NucleusApi.md#get_aggregation_account_holdings) | **GET** /nucleus/v1/aggregation_account_holding | List all aggregation account holdings
+[**get_aggregation_account_transaction**](NucleusApi.md#get_aggregation_account_transaction) | **GET** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Retrieve an aggregation account transaction
+[**get_aggregation_account_transactions**](NucleusApi.md#get_aggregation_account_transactions) | **GET** /nucleus/v1/aggregation_account_transaction | List all aggregation account transactions
 [**get_aggregation_accounts**](NucleusApi.md#get_aggregation_accounts) | **GET** /nucleus/v1/aggregation_account | List all aggregation accounts
 [**get_allocation**](NucleusApi.md#get_allocation) | **GET** /nucleus/v1/allocation/{allocation_id} | Retrieve an allocation
 [**get_allocation_asset_sizes**](NucleusApi.md#get_allocation_asset_sizes) | **GET** /nucleus/v1/allocation/{allocation_id}/asset_size | List all allocation asset sizes
@@ -81,6 +89,8 @@ Method | HTTP request | Description
 [**get_benchmark_asset_sizes**](NucleusApi.md#get_benchmark_asset_sizes) | **GET** /nucleus/v1/benchmark/{benchmark_id}/asset_size | List all benchmark asset sizes
 [**get_benchmark_performance**](NucleusApi.md#get_benchmark_performance) | **GET** /nucleus/v1/benchmark/{benchmark_id}/performance | Get benchmark performance
 [**get_benchmarks**](NucleusApi.md#get_benchmarks) | **GET** /nucleus/v1/benchmark | List all benchmarks
+[**get_budget**](NucleusApi.md#get_budget) | **GET** /nucleus/v1/budget/{budget_id} | Retrieve a budget
+[**get_budgets**](NucleusApi.md#get_budgets) | **GET** /nucleus/v1/budget | List all budgets
 [**get_bulk_orders**](NucleusApi.md#get_bulk_orders) | **GET** /nucleus/v1/order_bulk | List all bulk orders
 [**get_client**](NucleusApi.md#get_client) | **GET** /nucleus/v1/client/{client_id} | Retrieve a client
 [**get_client_asset_sizes**](NucleusApi.md#get_client_asset_sizes) | **GET** /nucleus/v1/client/{client_id}/asset_size | List all client asset sizes
@@ -96,6 +106,8 @@ Method | HTTP request | Description
 [**get_decision_trees**](NucleusApi.md#get_decision_trees) | **GET** /nucleus/v1/decision_tree | List all decision trees
 [**get_deposit_request**](NucleusApi.md#get_deposit_request) | **GET** /nucleus/v1/deposit/{deposit_id} | Retrieve a deposit request
 [**get_deposit_requests**](NucleusApi.md#get_deposit_requests) | **GET** /nucleus/v1/deposit | List all deposit requests
+[**get_financial_offer**](NucleusApi.md#get_financial_offer) | **GET** /nucleus/v1/financial_offer/{financial_offer_id} | Retrieve a financial offer
+[**get_financial_offers**](NucleusApi.md#get_financial_offers) | **GET** /nucleus/v1/financial_offer | List all financial offers
 [**get_funding_request**](NucleusApi.md#get_funding_request) | **GET** /nucleus/v1/funding/{funding_id} | Retrieve a funding request
 [**get_funding_requests**](NucleusApi.md#get_funding_requests) | **GET** /nucleus/v1/funding | List all funding requests
 [**get_goal**](NucleusApi.md#get_goal) | **GET** /nucleus/v1/goal/{goal_id} | Retrieve a goal
@@ -167,10 +179,13 @@ Method | HTTP request | Description
 [**post_account_type**](NucleusApi.md#post_account_type) | **POST** /nucleus/v1/account_type | Create an account type
 [**post_aggregation_account**](NucleusApi.md#post_aggregation_account) | **POST** /nucleus/v1/aggregation_account | Create an aggregation account
 [**post_aggregation_account_balance**](NucleusApi.md#post_aggregation_account_balance) | **POST** /nucleus/v1/aggregation_account_balance | Create an aggregation account balance
+[**post_aggregation_account_holding**](NucleusApi.md#post_aggregation_account_holding) | **POST** /nucleus/v1/aggregation_account_holding | Create an aggregation account holding
+[**post_aggregation_account_transaction**](NucleusApi.md#post_aggregation_account_transaction) | **POST** /nucleus/v1/aggregation_account_transaction | Create an aggregation account transaction
 [**post_allocation**](NucleusApi.md#post_allocation) | **POST** /nucleus/v1/allocation | Create an allocation
 [**post_allocation_composition**](NucleusApi.md#post_allocation_composition) | **POST** /nucleus/v1/allocation_composition | Create an allocation composition
 [**post_bank_link**](NucleusApi.md#post_bank_link) | **POST** /nucleus/v1/bank_link | Create a bank link
 [**post_benchmark**](NucleusApi.md#post_benchmark) | **POST** /nucleus/v1/benchmark | Create a benchmark
+[**post_budget**](NucleusApi.md#post_budget) | **POST** /nucleus/v1/budget | Create a budget
 [**post_bulk_order**](NucleusApi.md#post_bulk_order) | **POST** /nucleus/v1/order_bulk | Bulk orders for your firm
 [**post_client**](NucleusApi.md#post_client) | **POST** /nucleus/v1/client | Create a client
 [**post_client_bulk_order**](NucleusApi.md#post_client_bulk_order) | **POST** /nucleus/v1/client/{client_id}/order_bulk | Bulk orders for a client
@@ -178,6 +193,7 @@ Method | HTTP request | Description
 [**post_client_response**](NucleusApi.md#post_client_response) | **POST** /nucleus/v1/client_response | Create a client response
 [**post_decision_tree**](NucleusApi.md#post_decision_tree) | **POST** /nucleus/v1/decision_tree | Create a decision tree
 [**post_deposit_request**](NucleusApi.md#post_deposit_request) | **POST** /nucleus/v1/deposit | Create a deposit request
+[**post_financial_offer**](NucleusApi.md#post_financial_offer) | **POST** /nucleus/v1/financial_offer | Create a financial offer
 [**post_funding_request**](NucleusApi.md#post_funding_request) | **POST** /nucleus/v1/funding | Create a funding request
 [**post_goal**](NucleusApi.md#post_goal) | **POST** /nucleus/v1/goal | Create a goal
 [**post_goal_track_record**](NucleusApi.md#post_goal_track_record) | **POST** /nucleus/v1/goal_track | Create a goal track record
@@ -217,15 +233,19 @@ Method | HTTP request | Description
 [**update_account_type**](NucleusApi.md#update_account_type) | **PUT** /nucleus/v1/account_type/{account_type_id} | Update an account type
 [**update_aggregation_account**](NucleusApi.md#update_aggregation_account) | **PUT** /nucleus/v1/aggregation_account/{aggregation_account_id} | Update an aggregation account
 [**update_aggregation_account_balance**](NucleusApi.md#update_aggregation_account_balance) | **PUT** /nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id} | Update an aggregation account balance
+[**update_aggregation_account_holding**](NucleusApi.md#update_aggregation_account_holding) | **PUT** /nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id} | Update an aggregation account holding
+[**update_aggregation_account_transaction**](NucleusApi.md#update_aggregation_account_transaction) | **PUT** /nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id} | Update an aggregation account transaction
 [**update_allocation**](NucleusApi.md#update_allocation) | **PUT** /nucleus/v1/allocation/{allocation_id} | Update an allocation
 [**update_allocation_composition**](NucleusApi.md#update_allocation_composition) | **PUT** /nucleus/v1/allocation_composition/{allocation_composition_id} | Update an allocation composition
 [**update_bank_link**](NucleusApi.md#update_bank_link) | **PUT** /nucleus/v1/bank_link/{bank_link_id} | Update a bank link
 [**update_benchmark**](NucleusApi.md#update_benchmark) | **PUT** /nucleus/v1/benchmark/{benchmark_id} | Update a benchmark
+[**update_budget**](NucleusApi.md#update_budget) | **PUT** /nucleus/v1/budget/{budget_id} | Update a budget
 [**update_client**](NucleusApi.md#update_client) | **PUT** /nucleus/v1/client/{client_id} | Update a client
 [**update_client_hydro**](NucleusApi.md#update_client_hydro) | **PUT** /nucleus/v1/client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**update_client_response**](NucleusApi.md#update_client_response) | **PUT** /nucleus/v1/client_response/{client_response_id} | Update a client response
 [**update_decision_tree**](NucleusApi.md#update_decision_tree) | **PUT** /nucleus/v1/decision_tree/{decision_tree_id} | Update a decision tree
 [**update_deposit_request**](NucleusApi.md#update_deposit_request) | **PUT** /nucleus/v1/deposit/{deposit_id} | Update a deposit request
+[**update_financial_offer**](NucleusApi.md#update_financial_offer) | **PUT** /nucleus/v1/financial_offer/{financial_offer_id} | Update a financial offer
 [**update_funding_request**](NucleusApi.md#update_funding_request) | **PUT** /nucleus/v1/funding/{funding_id} | Update a funding request
 [**update_goal**](NucleusApi.md#update_goal) | **PUT** /nucleus/v1/goal/{goal_id} | Update a goal
 [**update_goal_track_record**](NucleusApi.md#update_goal_track_record) | **PUT** /nucleus/v1/goal_track/{goal_track_id} | Update a goal track record
@@ -711,6 +731,120 @@ nil (empty response body)
 
 
 
+# **delete_aggregation_account_holding**
+> delete_aggregation_account_holding(aggregation_account_holding_id)
+
+Delete an aggregation account holding
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID of an aggregation account holding
+
+
+begin
+  #Delete an aggregation account holding
+  api_instance.delete_aggregation_account_holding(aggregation_account_holding_id)
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->delete_aggregation_account_holding: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregation_account_holding_id** | [**String**](.md)| UUID of an aggregation account holding | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete_aggregation_account_transaction**
+> delete_aggregation_account_transaction(aggregation_account_transaction_id)
+
+Delete an aggregation account transaction
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID of an aggregation account transaction
+
+
+begin
+  #Delete an aggregation account transaction
+  api_instance.delete_aggregation_account_transaction(aggregation_account_transaction_id)
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->delete_aggregation_account_transaction: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregation_account_transaction_id** | [**String**](.md)| UUID of an aggregation account transaction | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **delete_allocation**
 > delete_allocation(allocation_id, )
 
@@ -923,6 +1057,63 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **benchmark_id** | [**String**](.md)| UUID of a benchmark | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete_budget**
+> delete_budget(budget_id)
+
+Delete a budget
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+budget_id = 'budget_id_example' # String | UUID of a budget
+
+
+begin
+  #Delete a budget
+  api_instance.delete_budget(budget_id)
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->delete_budget: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budget_id** | [**String**](.md)| UUID of a budget | 
 
 ### Return type
 
@@ -1208,6 +1399,63 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deposit_id** | [**String**](.md)| UUID of a deposit record | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete_financial_offer**
+> delete_financial_offer(financial_offer_id)
+
+Delete a financial offer
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+financial_offer_id = 'financial_offer_id_example' # String | UUID of a financial offer
+
+
+begin
+  #Delete a financial offer
+  api_instance.delete_financial_offer(financial_offer_id)
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->delete_financial_offer: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **financial_offer_id** | [**String**](.md)| UUID of a financial offer | 
 
 ### Return type
 
@@ -3886,6 +4134,256 @@ Name | Type | Description  | Notes
 
 
 
+# **get_aggregation_account_holding**
+> SpecificAggregationAccountHoldingResponse get_aggregation_account_holding(aggregation_account_holding_id)
+
+Retrieve an aggregation account holding
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID of an aggregation account holding
+
+
+begin
+  #Retrieve an aggregation account holding
+  result = api_instance.get_aggregation_account_holding(aggregation_account_holding_id)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_aggregation_account_holding: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregation_account_holding_id** | [**String**](.md)| UUID of an aggregation account holding | 
+
+### Return type
+
+[**SpecificAggregationAccountHoldingResponse**](SpecificAggregationAccountHoldingResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_aggregation_account_holdings**
+> GetAggregationAccountHoldingsResponse get_aggregation_account_holdings(opts)
+
+List all aggregation account holdings
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+opts = { 
+  page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
+  order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  filter: 'filter_example' # String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+}
+
+begin
+  #List all aggregation account holdings
+  result = api_instance.get_aggregation_account_holdings(opts)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_aggregation_account_holdings: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**GetAggregationAccountHoldingsResponse**](GetAggregationAccountHoldingsResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_aggregation_account_transaction**
+> SpecificAggregationAccountTransactionResponse get_aggregation_account_transaction(aggregation_account_transaction_id)
+
+Retrieve an aggregation account transaction
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID of an aggregation account transaction
+
+
+begin
+  #Retrieve an aggregation account transaction
+  result = api_instance.get_aggregation_account_transaction(aggregation_account_transaction_id)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_aggregation_account_transaction: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregation_account_transaction_id** | [**String**](.md)| UUID of an aggregation account transaction | 
+
+### Return type
+
+[**SpecificAggregationAccountTransactionResponse**](SpecificAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_aggregation_account_transactions**
+> GetAggregationAccountTransactionResponse get_aggregation_account_transactions(opts)
+
+List all aggregation account transactions
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+opts = { 
+  page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
+  order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  filter: 'filter_example' # String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+}
+
+begin
+  #List all aggregation account transactions
+  result = api_instance.get_aggregation_account_transactions(opts)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_aggregation_account_transactions: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**GetAggregationAccountTransactionResponse**](GetAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **get_aggregation_accounts**
 > GetAggregationAccountsResponse get_aggregation_accounts(opts)
 
@@ -4811,6 +5309,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetBenchmarkResponse**](GetBenchmarkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_budget**
+> SpecificBudgetResponse get_budget(budget_id)
+
+Retrieve a budget
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+budget_id = 'budget_id_example' # String | UUID of a budget
+
+
+begin
+  #Retrieve a budget
+  result = api_instance.get_budget(budget_id)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_budget: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budget_id** | [**String**](.md)| UUID of a budget | 
+
+### Return type
+
+[**SpecificBudgetResponse**](SpecificBudgetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_budgets**
+> GetBudgetResponse get_budgets(opts)
+
+List all budgets
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+opts = { 
+  page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
+  order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  filter: 'filter_example' # String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+}
+
+begin
+  #List all budgets
+  result = api_instance.get_budgets(opts)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_budgets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**GetBudgetResponse**](GetBudgetResponse.md)
 
 ### Authorization
 
@@ -5750,6 +6373,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetDepositRequestResponse**](GetDepositRequestResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_financial_offer**
+> SpecificFinancialOfferResponse get_financial_offer(financial_offer_id)
+
+Retrieve a financial offer
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+financial_offer_id = 'financial_offer_id_example' # String | UUID of a financial offer
+
+
+begin
+  #Retrieve a financial offer
+  result = api_instance.get_financial_offer(financial_offer_id)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_financial_offer: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **financial_offer_id** | [**String**](.md)| UUID of a financial offer | 
+
+### Return type
+
+[**SpecificFinancialOfferResponse**](SpecificFinancialOfferResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_financial_offers**
+> GetFinancialOfferResponse get_financial_offers(opts)
+
+List all financial offers
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+opts = { 
+  page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
+  order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  filter: 'filter_example' # String | Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+}
+
+begin
+  #List all financial offers
+  result = api_instance.get_financial_offers(opts)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->get_financial_offers: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**GetFinancialOfferResponse**](GetFinancialOfferResponse.md)
 
 ### Authorization
 
@@ -10171,6 +10919,122 @@ Name | Type | Description  | Notes
 
 
 
+# **post_aggregation_account_holding**
+> CreateAggregationAccountHoldingResponse post_aggregation_account_holding(payload)
+
+Create an aggregation account holding
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+payload = AtomApi::AggregationAccountHoldingPayload.new # AggregationAccountHoldingPayload | 
+
+
+begin
+  #Create an aggregation account holding
+  result = api_instance.post_aggregation_account_holding(payload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->post_aggregation_account_holding: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**AggregationAccountHoldingPayload**](AggregationAccountHoldingPayload.md)|  | 
+
+### Return type
+
+[**CreateAggregationAccountHoldingResponse**](CreateAggregationAccountHoldingResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **post_aggregation_account_transaction**
+> CreateAggregationAccountTransactionResponse post_aggregation_account_transaction(payload)
+
+Create an aggregation account transaction
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+payload = AtomApi::AggregationAccountTransactionPayload.new # AggregationAccountTransactionPayload | 
+
+
+begin
+  #Create an aggregation account transaction
+  result = api_instance.post_aggregation_account_transaction(payload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->post_aggregation_account_transaction: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**AggregationAccountTransactionPayload**](AggregationAccountTransactionPayload.md)|  | 
+
+### Return type
+
+[**CreateAggregationAccountTransactionResponse**](CreateAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **post_allocation**
 > CreateAllocationResponse post_allocation(payload)
 
@@ -10391,6 +11255,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateBenchmarkResponse**](CreateBenchmarkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **post_budget**
+> CreateBudgetResponse post_budget(payload)
+
+Create a budget
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+payload = AtomApi::BudgetPayload.new # BudgetPayload | 
+
+
+begin
+  #Create a budget
+  result = api_instance.post_budget(payload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->post_budget: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**BudgetPayload**](BudgetPayload.md)|  | 
+
+### Return type
+
+[**CreateBudgetResponse**](CreateBudgetResponse.md)
 
 ### Authorization
 
@@ -10800,6 +11722,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateDepositRequestResponse**](CreateDepositRequestResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **post_financial_offer**
+> CreateFinancialOfferResponse post_financial_offer(payload)
+
+Create a financial offer
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+payload = AtomApi::FinancialOfferPayload.new # FinancialOfferPayload | 
+
+
+begin
+  #Create a financial offer
+  result = api_instance.post_financial_offer(payload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->post_financial_offer: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**FinancialOfferPayload**](FinancialOfferPayload.md)|  | 
+
+### Return type
+
+[**CreateFinancialOfferResponse**](CreateFinancialOfferResponse.md)
 
 ### Authorization
 
@@ -13113,6 +14093,128 @@ Name | Type | Description  | Notes
 
 
 
+# **update_aggregation_account_holding**
+> SpecificAggregationAccountHoldingResponse update_aggregation_account_holding(aggregation_account_holding_idpayload)
+
+Update an aggregation account holding
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID of an aggregation account holding
+
+payload = AtomApi::AggregationAccountHoldingPayload.new # AggregationAccountHoldingPayload | 
+
+
+begin
+  #Update an aggregation account holding
+  result = api_instance.update_aggregation_account_holding(aggregation_account_holding_idpayload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->update_aggregation_account_holding: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregation_account_holding_id** | [**String**](.md)| UUID of an aggregation account holding | 
+ **payload** | [**AggregationAccountHoldingPayload**](AggregationAccountHoldingPayload.md)|  | 
+
+### Return type
+
+[**SpecificAggregationAccountHoldingResponse**](SpecificAggregationAccountHoldingResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **update_aggregation_account_transaction**
+> SpecificAggregationAccountTransactionResponse update_aggregation_account_transaction(aggregation_account_transaction_idpayload)
+
+Update an aggregation account transaction
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID of an aggregation account transaction
+
+payload = AtomApi::AggregationAccountTransactionPayload.new # AggregationAccountTransactionPayload | 
+
+
+begin
+  #Update an aggregation account transaction
+  result = api_instance.update_aggregation_account_transaction(aggregation_account_transaction_idpayload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->update_aggregation_account_transaction: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aggregation_account_transaction_id** | [**String**](.md)| UUID of an aggregation account transaction | 
+ **payload** | [**AggregationAccountTransactionPayload**](AggregationAccountTransactionPayload.md)|  | 
+
+### Return type
+
+[**SpecificAggregationAccountTransactionResponse**](SpecificAggregationAccountTransactionResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **update_allocation**
 > SpecificAllocationResponse update_allocation(allocation_id, payload)
 
@@ -13345,6 +14447,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SpecificBenchmarkResponse**](SpecificBenchmarkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **update_budget**
+> SpecificBudgetResponse update_budget(budget_idpayload)
+
+Update a budget
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+budget_id = 'budget_id_example' # String | UUID of a budget
+
+payload = AtomApi::BudgetPayload.new # BudgetPayload | 
+
+
+begin
+  #Update a budget
+  result = api_instance.update_budget(budget_idpayload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->update_budget: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budget_id** | [**String**](.md)| UUID of a budget | 
+ **payload** | [**BudgetPayload**](BudgetPayload.md)|  | 
+
+### Return type
+
+[**SpecificBudgetResponse**](SpecificBudgetResponse.md)
 
 ### Authorization
 
@@ -13650,6 +14813,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SpecificDepositRequestResponse**](SpecificDepositRequestResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **update_financial_offer**
+> SpecificFinancialOfferResponse update_financial_offer(financial_offer_idpayload)
+
+Update a financial offer
+
+### Example
+```ruby
+# load the gem
+require 'atom_api'
+
+# Configuration
+AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = AtomApi::NucleusApi.new
+
+financial_offer_id = 'financial_offer_id_example' # String | UUID of a financial offer
+
+payload = AtomApi::FinancialOfferPayload.new # FinancialOfferPayload | 
+
+
+begin
+  #Update a financial offer
+  result = api_instance.update_financial_offer(financial_offer_idpayload)
+  p result
+rescue AtomApi::ApiError => e
+  puts "Exception when calling NucleusApi->update_financial_offer: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **financial_offer_id** | [**String**](.md)| UUID of a financial offer | 
+ **payload** | [**FinancialOfferPayload**](FinancialOfferPayload.md)|  | 
+
+### Return type
+
+[**SpecificFinancialOfferResponse**](SpecificFinancialOfferResponse.md)
 
 ### Authorization
 

@@ -52,6 +52,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the transfer in the format key:value
+    attr_accessor :metadata
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -67,7 +70,8 @@ module AtomApi
         :'roth_five_year' => :'roth_five_year',
         :'status' => :'status',
         :'transfer_type' => :'transfer_type',
-        :'secondary_id' => :'secondary_id'
+        :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata'
       }
     end
 
@@ -86,7 +90,8 @@ module AtomApi
         :'roth_five_year' => :'Integer',
         :'status' => :'String',
         :'transfer_type' => :'String',
-        :'secondary_id' => :'SecondaryId'
+        :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object'
       }
     end
 
@@ -148,6 +153,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -211,7 +220,8 @@ module AtomApi
           roth_five_year == o.roth_five_year &&
           status == o.status &&
           transfer_type == o.transfer_type &&
-          secondary_id == o.secondary_id
+          secondary_id == o.secondary_id &&
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -223,7 +233,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, account_holder, account_number, account_type_id, firm_name, transfer_all_cash, amount, comment, dtc_number, roth_five_year, status, transfer_type, secondary_id].hash
+      [account_id, account_holder, account_number, account_type_id, firm_name, transfer_all_cash, amount, comment, dtc_number, roth_five_year, status, transfer_type, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

@@ -36,23 +36,26 @@ class NodePayload(object):
         'name': 'str',
         'question_id': 'str',
         'is_first': 'bool',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
         'name': 'name',
         'question_id': 'question_id',
         'is_first': 'is_first',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, name=None, question_id=None, is_first=False, secondary_id=None):  # noqa: E501
+    def __init__(self, name=None, question_id=None, is_first=False, secondary_id=None, metadata=None):  # noqa: E501
         """NodePayload - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._question_id = None
         self._is_first = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         self.name = name
@@ -61,6 +64,8 @@ class NodePayload(object):
             self.is_first = is_first
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def name(self):
@@ -155,6 +160,29 @@ class NodePayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this NodePayload.  # noqa: E501
+
+        Custom information associated with the node in the format key:value  # noqa: E501
+
+        :return: The metadata of this NodePayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this NodePayload.
+
+        Custom information associated with the node in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this NodePayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

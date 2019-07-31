@@ -45,7 +45,8 @@ class DepositRequestPayload(object):
         'status': 'str',
         'status_time_stamp': 'str',
         'type': 'str',
-        'secondary_id': 'SecondaryId'
+        'secondary_id': 'SecondaryId',
+        'metadata': 'object'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class DepositRequestPayload(object):
         'status': 'status',
         'status_time_stamp': 'status_time_stamp',
         'type': 'type',
-        'secondary_id': 'secondary_id'
+        'secondary_id': 'secondary_id',
+        'metadata': 'metadata'
     }
 
-    def __init__(self, account_id=None, amount=None, funding_id=None, invested_date=None, account_number=None, comments=None, direction=None, last_request_date=None, received_date=None, status=None, status_time_stamp=None, type=None, secondary_id=None):  # noqa: E501
+    def __init__(self, account_id=None, amount=None, funding_id=None, invested_date=None, account_number=None, comments=None, direction=None, last_request_date=None, received_date=None, status=None, status_time_stamp=None, type=None, secondary_id=None, metadata=None):  # noqa: E501
         """DepositRequestPayload - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -80,6 +82,7 @@ class DepositRequestPayload(object):
         self._status_time_stamp = None
         self._type = None
         self._secondary_id = None
+        self._metadata = None
         self.discriminator = None
 
         self.account_id = account_id
@@ -104,6 +107,8 @@ class DepositRequestPayload(object):
             self.type = type
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
 
     @property
     def account_id(self):
@@ -409,6 +414,29 @@ class DepositRequestPayload(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this DepositRequestPayload.  # noqa: E501
+
+        Custom information associated with the deposit in the format key:value  # noqa: E501
+
+        :return: The metadata of this DepositRequestPayload.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this DepositRequestPayload.
+
+        Custom information associated with the deposit in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this DepositRequestPayload.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

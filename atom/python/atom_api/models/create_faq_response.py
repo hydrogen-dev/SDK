@@ -45,6 +45,7 @@ class CreateFaqResponse(object):
         'faq_keywords': 'list[FaqPayloadFaqKeywords]',
         'is_featured': 'bool',
         'secondary_id': 'SecondaryId',
+        'metadata': 'object',
         'id': 'str',
         'create_date': 'str'
     }
@@ -60,11 +61,12 @@ class CreateFaqResponse(object):
         'faq_keywords': 'faq_keywords',
         'is_featured': 'is_featured',
         'secondary_id': 'secondary_id',
+        'metadata': 'metadata',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, question=None, answer=None, category=None, subcategory=None, is_active=True, number=None, seo_name=None, faq_keywords=None, is_featured=False, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, question=None, answer=None, category=None, subcategory=None, is_active=True, number=None, seo_name=None, faq_keywords=None, is_featured=False, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateFaqResponse - a model defined in Swagger"""  # noqa: E501
 
         self._question = None
@@ -77,6 +79,7 @@ class CreateFaqResponse(object):
         self._faq_keywords = None
         self._is_featured = None
         self._secondary_id = None
+        self._metadata = None
         self._id = None
         self._create_date = None
         self.discriminator = None
@@ -99,6 +102,8 @@ class CreateFaqResponse(object):
             self.is_featured = is_featured
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if metadata is not None:
+            self.metadata = metadata
         if id is not None:
             self.id = id
         if create_date is not None:
@@ -333,6 +338,29 @@ class CreateFaqResponse(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CreateFaqResponse.  # noqa: E501
+
+        Custom information associated with the FAQ in the format key:value  # noqa: E501
+
+        :return: The metadata of this CreateFaqResponse.  # noqa: E501
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CreateFaqResponse.
+
+        Custom information associated with the FAQ in the format key:value  # noqa: E501
+
+        :param metadata: The metadata of this CreateFaqResponse.  # noqa: E501
+        :type: object
+        """
+
+        self._metadata = metadata
 
     @property
     def id(self):

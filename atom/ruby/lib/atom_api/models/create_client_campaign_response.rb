@@ -25,6 +25,9 @@ module AtomApi
 
     attr_accessor :secondary_id
 
+    # Custom information associated with the client campaign in the format key:value
+    attr_accessor :metadata
+
     # The ID of the campaign through which the client registered for your firm’s service
     attr_accessor :id
 
@@ -38,6 +41,7 @@ module AtomApi
         :'client_id' => :'client_id',
         :'ip' => :'ip',
         :'secondary_id' => :'secondary_id',
+        :'metadata' => :'metadata',
         :'id' => :'id',
         :'create_date' => :'create_date'
       }
@@ -50,6 +54,7 @@ module AtomApi
         :'client_id' => :'String',
         :'ip' => :'String',
         :'secondary_id' => :'SecondaryId',
+        :'metadata' => :'Object',
         :'id' => :'String',
         :'create_date' => :'String'
       }
@@ -77,6 +82,10 @@ module AtomApi
 
       if attributes.has_key?(:'secondary_id')
         self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
 
       if attributes.has_key?(:'id')
@@ -115,6 +124,7 @@ module AtomApi
           client_id == o.client_id &&
           ip == o.ip &&
           secondary_id == o.secondary_id &&
+          metadata == o.metadata &&
           id == o.id &&
           create_date == o.create_date
     end
@@ -128,7 +138,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [campaign_id, client_id, ip, secondary_id, id, create_date].hash
+      [campaign_id, client_id, ip, secondary_id, metadata, id, create_date].hash
     end
 
     # Builds the object from hash

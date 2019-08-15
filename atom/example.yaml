@@ -1,0 +1,443 @@
+# Swagger/OAS version
+swagger: "2.0"
+
+# API-level general info
+info:
+  title: Example Hydrogen Atom API
+  description: The Hydrogen Atom API
+  termsOfService: https://www.hydrogenplatform.com/legal/terms
+  contact:
+    name: Hydrogen Technology Corporation
+    url: https://www.hydrogenplatform.com/contact
+    email: info@hydrogenplatform.com
+  version: "1.0.1"
+host: sandbox.hydrogenplatform.com
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: Nucleus
+    description: Nucleus API
+    externalDocs:
+      url: https://www.hydrogenplatform.com/docs/nucleus/v1/
+
+# API authentication details
+securityDefinitions:
+  oauth:
+    type: oauth2
+    flow: application
+    tokenUrl: https://sandbox.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+    scopes:
+      nucleus: access nucleus endpoints
+
+
+# ********** Paths: describe endpoints and associated methods, parameters, payloads, and responses **********
+paths:
+  /nucleus/v1/account:
+  # GET & POST for all Account resources
+    get:
+      operationId: getAccounts
+      summary: Get information for all accounts for all clients defined for your firm
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#List-all-accounts
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/get_account_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
+    post:
+      operationId: postAccount
+      summary: Create an account under a client
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Create-an-account
+      tags:
+        - Nucleus
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/account_create_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/create_account_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /nucleus/v1/account/{account_id}/:
+  # GET, PUT, and DELETE for a specific Account resource
+    get:
+      operationId: getAccount
+      summary: Retrieve an account
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Retrieve-an-account
+      tags:
+        - Nucleus
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_account_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateAccount
+      summary: Update an account
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Update-an-account
+      tags:
+        - Nucleus
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/account_create_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/specific_account_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    delete:
+      operationId: deleteAccount
+      summary: Delete an account
+      security:
+        - oauth: [nucleus]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/nucleus/v1/#Delete-an-account
+      tags:
+        - Nucleus
+      responses:
+        204:
+          $ref: '#/responses/204'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_account_uuid'
+
+
+# ********** Parameters: describe variables that may appear in the request URL **********
+parameters:
+
+  # Pagination query params
+  query_pagination_page:
+    in: query
+    name: page
+    description: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    required: false
+    type: integer
+    default: 0
+    minimum: 0
+  query_pagination_size:
+    in: query
+    name: size
+    description: The number or records to be included per page. The default is 25. There is no max value.
+    required: false
+    type: integer
+    default: 25
+    minimum: 0
+  query_pagination_orderby:
+    in: query
+    name: order_by
+    description: The field in the response body to order the list by. Default is update_date.
+    required: false
+    type: string
+    default: update_date
+  query_pagination_ascending:
+    in: query
+    name: ascending
+    description: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    required: false
+    type: boolean
+    default: false
+
+  # Filter query params
+  query_filter:
+    in: query
+    name: filter
+    description: Every field within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    required: false
+    type: string
+
+  # Resource path params
+  path_account_uuid:
+    in: path
+    name: account_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of an account
+
+
+# ********** Responses: describe possible response codes **********
+responses:
+    200:
+      description: Successful response
+    204:
+      description: No content
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden
+    404:
+      description: Not found
+    429:
+      description: Too many requests
+    500:
+      description: Internal server error
+    503:
+      description: Service unavailable
+
+
+# ********** Definitions: define request & response objects available for reference throughout the file **********
+definitions:
+
+  # General
+  secondary_id:
+    type: string
+    description: Alternate ID that can be used to identify the object such as an internal id
+
+  # Pagination
+  pagination:
+    type: object
+    properties:
+      last:
+        type: boolean
+        description: If true, the last record in the result set is shown
+      total_pages:
+        type: integer
+        description: Total number of pages in the result set
+      total_elements:
+        type: integer
+        description: Total number of elements in the result set
+      sort:
+        type: array
+        description: Details of the sort
+        items:
+          type: object
+          properties:
+            direction:
+              type: string
+              description: ASC if ascending sort, DESC if descending sort
+              enum:
+                - ASC
+                - DESC
+            property:
+              type: string
+              description: Property on which the records are sorted
+            ignore_case:
+              type: boolean
+              description: If true, ignore case when sorting
+            null_handling:
+              type: string
+              description: Type of null handling applied
+            descending:
+              type: boolean
+              description: If true, data is sorted in ascending order
+            ascending:
+              type: boolean
+              description: If true, data is sorted in descending order
+      first:
+        type: boolean
+        description: If true, the first record in the result set is shown
+      number_of_elements:
+        type: integer
+        description: Number of elements per page
+      size:
+        type: integer
+        description: The number or records to be included per page. The default is 25. There is no max value.
+        default: 25
+      number:
+        type: integer
+        description: Number of the first result shown
+
+  # Response objects
+  get_account_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/specific_account_response'
+      - $ref: '#/definitions/pagination'
+  create_account_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the account record
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the account record was created
+      - $ref: '#/definitions/account_create_payload'
+      - $ref: '#/definitions/pagination'
+  specific_account_response:
+    allOf:
+      - type: object
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+      - $ref: '#/definitions/create_account_response'
+
+  # Request payloads
+  account_create_client:
+    type: object
+    required:
+      - client_id
+      - client_account_association_type
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        description: The ID of a client associated with the account
+      client_account_association_type:
+        type: string
+        description: The role of the client as it relates to the account defined by your firm. Roles may be joint, owner, trustee, viewer, or admin. Only the owner will be able to execute transactions and trades on the account
+      signature_data:
+        type: string
+        description: Stored signature for the client on the account such as a Base30 or Base64 string
+  account_create_goal:
+    type: object
+    required:
+      - goal_id
+    properties:
+      goal_id:
+        type: string
+        format: uuid
+        description: The ID of a goal mapped to the account
+      goal_amount:
+        type: number
+        format: double
+        description: Monetary amount provided by the client as the target amount to be reached within the goal horizon. May be used in conjunction with the Proton API. Option to also store under the goal entity
+      accumulation_horizon:
+        type: number
+        format: double
+        description: Time horizon of the goal during the accumulation phase, in years. May be used in conjunction with the Proton API. Option to also store under the goal entity
+      decumulation_horizon:
+        type: number
+        format: double
+        description: Time horizon of the goal during the decumulation phase, in years. If the goal is an accumulation goal, then this can be 0 or omitted entirely. May be used in conjunction with the Proton API. Option to also store under the goal entity
+  account_create_payload:
+    type: object
+    required:
+      - name
+      - account_type_id
+    properties:
+      name:
+        type: string
+        description: Name of the account
+      account_type_id:
+        type: string
+        format: uuid
+        description: The ID of the account type for the account. Account types are defined by your firm
+      managed:
+        type: boolean
+        description: Indicates if the account is managed or self directed. Defaults to true, or that it’s managed
+        default: true
+      clients:
+          type: array
+          description: List of clients associated with the account and their association type as well as signature data
+          items:
+            $ref: '#/definitions/account_create_client'
+      goals:
+          type: array
+          description: List of goals mapped to the account with information such as goal amount and horizon
+          items:
+            $ref: '#/definitions/account_create_goal'
+      metadata:
+        type: object
+        description: Custom information associated with the account in the format key:value
+        additionalProperties: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'

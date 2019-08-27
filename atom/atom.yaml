@@ -4540,78 +4540,80 @@ definitions:
   financial_picture_response:
     type: object
     required:
+      - currency_code
       - snapshot
     properties:
+      currency_code:
+        type: string
+        description: Currency code associated with monetary response values
       snapshot:
-        type: array
-        items:
-          type: object
-          properties:
-            total_assets:
+        type: object
+        properties:
+          total_assets:
+            type: object
+            properties:
+              balance:
+                type: number
+                format: double
+                description: Value of the total assets
+              latest_balance_time_stamp:
+                type: string
+                format: datetime
+                description: Date and time of the total assets record
+          total_liabilities:
+            type: object
+            properties:
+              balance:
+                type: number
+                format: double
+                description: Value of the total liabilities
+              latest_balance_time_stamp:
+                type: string
+                format: datetime
+                description: Date and time of the total liabilities record
+          net_worth:
+            type: object
+            properties:
+              balance:
+                type: number
+                format: double
+                description: Value of the net worth
+              latest_balance_time_stamp:
+                type: string
+                format: datetime
+                description: Date and time of the net worth record
+          by_category:
+            type: array
+            items:
               type: object
               properties:
+                category:
+                  type: string
+                  description: Category of the aggregation accounts. These accounts are dependent on the `category` fields within the Nucleus Aggregation Account.
                 balance:
                   type: number
                   format: double
-                  description: Value of the total assets
+                  description: Total balance for this category
                 latest_balance_time_stamp:
                   type: string
                   format: datetime
-                  description: Date and time of the total assets record
-            total_liabilities:
-              type: object
-              properties:
-                balance:
-                  type: number
-                  format: double
-                  description: Value of the total liabilities
-                latest_balance_time_stamp:
-                  type: string
-                  format: datetime
-                  description: Date and time of the total liabilities record
-            net_worth:
-              type: object
-              properties:
-                balance:
-                  type: number
-                  format: double
-                  description: Value of the net worth
-                latest_balance_time_stamp:
-                  type: string
-                  format: datetime
-                  description: Date and time of the net worth record
-            by_category:
-              type: array
-              items:
-                type: object
-                properties:
-                  category:
-                    type: string
-                    description: Category of the aggregation accounts. These accounts are dependent on the `category` fields within the Nucleus Aggregation Account.
-                  balance:
-                    type: number
-                    format: double
-                    description: Total balance for this category
-                  latest_balance_time_stamp:
-                    type: string
-                    format: datetime
-                    description: Date and time of the balance record for this category
-                  subcategories:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        subcategory:
-                          type: string
-                          description: Subcategory of the aggregation accounts. These accounts are dependent on the `subcategory` fields within the Nucleus Aggregation Account.
-                        balance:
-                          type: number
-                          format: double
-                          description: Total balance for this subcategory
-                        latest_balance_time_stamp:
-                          type: string
-                          format: datetime
-                          description: Date and time of the balance record for this subcategory
+                  description: Date and time of the balance record for this category
+                subcategories:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      subcategory:
+                        type: string
+                        description: Subcategory of the aggregation accounts. These accounts are dependent on the `subcategory` fields within the Nucleus Aggregation Account.
+                      balance:
+                        type: number
+                        format: double
+                        description: Total balance for this subcategory
+                      latest_balance_time_stamp:
+                        type: string
+                        format: datetime
+                        description: Date and time of the balance record for this subcategory
       change:
         type: object
         description: Change records of the client
@@ -4886,37 +4888,268 @@ definitions:
                     format: double
                     description: Total percentage change over the entire analysis date range
       history:
-        type: object
+        type: array
         description: A historical record of the client’s financials for each date within the date range. This is an array of maps, with each map corresponding to a date.
+        items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+                description: The date of the financial picture record
+              total_assets:
+                type: number
+                format: double
+                description: Total assets of the client on this date
+              total_liabilities:
+                type: number
+                format: double
+                description: Total liabilities of the client on this date
+              net_worth:
+                type: number
+                format: double
+                description: Net worth of the client on this date
+              by_category:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    category:
+                      type: string
+                      description: Category of the aggregation accounts. These accounts are dependent on the `category` fields within the Nucleus Aggregation Account.
+                    balance:
+                      type: number
+                      format: double
+                      description: Total balance for this category on this date
+                    subcategories:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          subcategory:
+                            type: string
+                            description: Subcategory of the aggregation accounts. These accounts are dependent on the `subcategory` fields within the Nucleus Aggregation Account.
+                          balance:
+                            type: number
+                            format: double
+                            description: Total balance for this subcategory on this date.
+  budget_calculator_response:
+    type: object
+    required:
+      - currency_code
+      - budget_track
+    properties:
+      currency_code:
+        type: string
+        description: Currency code associated with monetary response values
+      budget_track:
+        type: array
+        description: Analysis of spending versus budget for each budget period
+        items:
+          type: object
+          properties:
+            period_start:
+              type: string
+              format: date
+              description: Start date of the budget period
+            period_end:
+              type: string
+              format: date
+              description: End date of the budget period
+            total_funds_budgeted:
+              type: number
+              format: double
+              description: Total amount of funds originally budgeted
+            total_funds_spent:
+              type: number
+              format: double
+              description: Total amount of funds spent
+            total_funds_remaining:
+              type: number
+              format: double
+              description: Total amount of funds remaining; delta of total_funds_budgeted - total_funds_spent
+            budget_components:
+              type: array
+              description: Details about each item defined in the budget
+              items:
+                type: object
+                properties:
+                  category:
+                    type: string
+                    description: Name of the category
+                  subcategory:
+                    type: string
+                    description: Name of the subcategory
+                  funds_budgeted:
+                    type: number
+                    format: double
+                    description: Amount of funds originally budgeted in the category
+                  funds_spent:
+                    type: number
+                    format: double
+                    description: Amount of funds spent in the category
+                  funds_remaining:
+                    type: number
+                    format: double
+                    description: Amount of funds remaining in the category; delta of funds_budgeted - funds_spent
+  cash_flow_analysis_response:
+    type: object
+    required:
+      - currency_code
+      - income_summary
+      - spending_summary
+      - net_summary
+    properties:
+      currency_code:
+        type: string
+        description: Currency associated with monetary response values
+      income_summary:
+        type: object
+        description: Aggregate view of income over the analysis period
         properties:
-          date:
-            type: string
-            format: date
-            description: The date of the financial picture record
-          total_assets:
+          total:
             type: number
-            format: double
-            description: Total assets of the client on this date
-          total_liabilities:
+            description: Total income over the base time period
+          benchmark_total:
             type: number
-            format: double
-            description: Total liabilities of the client on this date
-          net_worth:
+            description: Total income over the benchmark time period
+          change:
+            type: object
+            properties:
+              value:
+                type: number
+                description: Absolute difference in total income between the base time period and the benchmark time period
+              percentage:
+                type: number
+                description: Percentage difference in total income between the base time period and the benchmark time period
+      spending_summary:
+        type: object
+        description: Aggregate view of spending over the analysis period
+        properties:
+          total:
             type: number
-            format: double
-            description: Net worth of the client on this date
+            description: Total spending over the base time period
+          benchmark_total:
+            type: number
+            description: Total spending over the benchmark time period
+          change:
+            type: object
+            properties:
+              value:
+                type: number
+                description: Absolute difference in total spending between the base time period and the benchmark time period
+              percentage:
+                type: number
+                description: Percentage difference in total spending between the base time period and the benchmark time period
+      net_summary:
+        type: object
+        description: Aggregate view of net cash flow over the analysis period
+        properties:
+          total:
+            type: number
+            description: Total net cash flow over the base time period
+          benchmark_total:
+            type: number
+            description: Total net cash flow over the benchmark time period
+          change:
+            type: object
+            properties:
+              value:
+                type: number
+                description: Absolute difference in total net cash flow between the base time period and the benchmark time period
+              percentage:
+                type: number
+                description: Percentage difference in total net cash flow between the base time period and the benchmark time period
+      history:
+        type: array
+        description: Cash flow values over time during the base period
+        items:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+              description: The date associated with the entry
+            period_income:
+              type: number
+              description: Income during the period
+            period_spending:
+              type: number
+              description: Spending during the period
+            period_net:
+              type: number
+              description: Income net of spending during the period
+            cumulative_income:
+              type: number
+              description: Income up to and including this period
+            cumulative_spending:
+              type: number
+              description: Spending up to and including this period
+            cumulative_net:
+              type: number
+              description: Income net of spending up to and including this period
+      benchmark_history:
+        type: array
+        description: Cash flow values over time during the benchmark period
+        items:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+              description: The date associated with the entry
+            period_income:
+              type: number
+              description: Income during the period
+            period_spending:
+              type: number
+              description: Spending during the period
+            period_net:
+              type: number
+              description: Income net of spending during the period
+            cumulative_income:
+              type: number
+              description: Income up to and including this period
+            cumulative_spending:
+              type: number
+              description: Spending up to and including this period
+            cumulative_net:
+              type: number
+              description: Income net of spending up to and including this period
+      spending_details:
+        type: object
+        description: Advanced details on spending over the time period
+        properties:
           by_category:
             type: array
+            description: Breakdown of spending by category
             items:
               type: object
               properties:
                 category:
                   type: string
-                  description: Category of the aggregation accounts. These accounts are dependent on the `category` fields within the Nucleus Aggregation Account.
-                balance:
+                  description: Spending category as defined in the Nucleus transactions
+                value:
                   type: number
-                  format: double
-                  description: Total balance for this category on this date
+                  description: Sum of all transactions over the period for the given category
+                benchmark_value:
+                  type: number
+                  description: Sum of all transactions over the benchmark period for the given category
+                change:
+                  type: object
+                  properties:
+                    value:
+                      type: number
+                      description: Absolute difference in category spending between the base time period and the benchmark time period
+                    percentage:
+                      type: number
+                      description: Percentage difference in category spending between the base time period and the benchmark time period
+                weight:
+                  type: number
+                  description: The proportion of all spending over the period related to this category
+                benchmark_weight:
+                  type: number
+                  description: The proportion of all spending over the benchmark period related to this category
                 subcategories:
                   type: array
                   items:
@@ -4924,249 +5157,64 @@ definitions:
                     properties:
                       subcategory:
                         type: string
-                        description: Subcategory of the aggregation accounts. These accounts are dependent on the `subcategory` fields within the Nucleus Aggregation Account.
-                      balance:
+                        description: Spending subcategory as defined in the Nucleus transactions
+                      value:
                         type: number
-                        format: double
-                        description: Total balance for this subcategory on this date.
-  budget_calculator_response:
-    type: array
-    items:
-      type: object
-      properties:
-        budget_id:
-          type: string
-          format: uuid
-          description: The ID of the budget
-        budget_name:
-          type: string
-          description: The name of the budget
-        total_funds_available:
-          type: number
-          format: double
-          description: Total amount of funds originally available in the budget
-        total_funds_spent:
-          type: number
-          format: double
-          description: Total amount of funds spent
-        total_funds_remaining:
-          type: number
-          format: double
-          description: Total amount of funds remaining; delta of total_funds_available - total_funds_spent
-        budget_components:
-          type: array
-          description: Total funds spent per category
-          items:
-            type: object
-            properties:
-              category:
-                type: string
-                description: Name of the category
-              subcategory:
-                type: string
-                description: Name of the subcategory
-              funds_available:
-                type: number
-                format: double
-                description: Amount of funds originally available in the category
-              funds_spent:
-                type: number
-                format: double
-                description: Amount of funds spent in the category
-              funds_remaining:
-                type: number
-                format: double
-                description: Amount of funds remaining in the category; delta of funds_available - funds_spent
-        average_amount_budgeted:
-          type: number
-          format: double
-          description: Average amount budgeted for each budget component
-        average_amount_spent:
-          type: number
-          format: double
-          description: Average amount spent for each budget component
-  spending_analysis_response:
-    type: object
-    properties:
-      spending_history:
-        type: array
-        items:
-          type: object
-          properties:
-            period_income:
-              type: number
-              description: Cash inflows during the period
-            period_spending:
-              type: number
-              description: Cash outflows during the period
-            period_net:
-              type: number
-              description: Net cash inflows (outflows) during the period
-            cumulative_income:
-              type: number
-              description: Cumulative cash inflows up to and including this period
-            cumulative_spending:
-              type: number
-              description: Cumulative cash outflows up to and including this period
-            cumulative_net:
-              type: number
-              description: Cumulative net cash inflows (outflows) up to and including this period
-      benchmark_spending_history:
-        type: array
-        items:
-          type: object
-          properties:
-            period_income:
-              type: number
-              description: Cash inflows during the period
-            period_spending:
-              type: number
-              description: Cash outflows during the period
-            period_net:
-              type: number
-              description: Net cash inflows (outflows) during the period
-            cumulative_income:
-              type: number
-              description: Cumulative cash inflows up to and including this period
-            cumulative_spending:
-              type: number
-              description: Cumulative cash outflows up to and including this period
-            cumulative_net:
-              type: number
-              description: Cumulative net cash inflows (outflows) up to and including this period
-      income:
-        type: object
-        properties:
-          total:
-            type: number
-            description: Total cash inflows over the trend period
-          benchmark:
-            type: number
-            description: Total cash inflows over the benchmark trend period
-          change:
-            type: number
-            description: Difference in total cash inflows between the trend period and the benchmark trend period
-      spending:
-        type: object
-        properties:
-          total:
-            type: number
-            description: Total cash outflows over the trend period
-          benchmark:
-            type: number
-            description: Total cash outflows over the benchmark trend period
-          change:
-            type: number
-            description: Difference in total cash outflows between the trend period and the benchmark trend period
-      net:
-        type: object
-        properties:
-          total:
-            type: number
-            description: Total net cash inflows (outflows) over the trend period
-          benchmark:
-            type: number
-            description: Total net cash inflows (outflows) over the benchmark trend period
-          change:
-            type: number
-            description: Difference in total net cash inflows (outflows) between the trend period and the benchmark trend period
-      spending_by_category:
-        type: array
-        items:
-          type: object
-          properties:
-            category:
-              type: string
-              description: Spending category as defined in the Nucleus transactions
-            value:
-              type: number
-              description: Sum of all transactions over the period for the given category
-            weight:
-              type: number
-              description: The proportion of all spending over the period related to this category
-            benchmark_value:
-              type: number
-              description: Sum of all transactions over the benchmark period for the given category
-            benchmark_weight:
-              type: number
-              description: The proportion of all spending over the benchmark period related to this category
-            subcategories:
-              type: array
-              items:
-                type: object
-                properties:
-                  subcategory:
-                    type: string
-                    description: Spending subcategory as defined in the Nucleus transactions
-                  value:
-                    type: number
-                    description: Sum of all transactions over the period for the given subcategory
-                  weight:
-                    type: number
-                    description: The proportion of all spending over the period related to this subcategory
-                  benchmark_value:
-                    type: number
-                    description: The proportion of all spending over the benchmark period related to this subcategory
-                  benchmark_weight:
-                    type: number
-                    description: The proportion of all spending over the benchmark period related to this subcategory
-            spending_by_merchant:
-              type: array
-              items:
-                type: object
-                properties:
-                  merchant:
-                    type: string
-                    description: Merchant name as defined in the Nucleus transactions
-                  value:
-                    type: number
-                    description: Sum of all transactions over the period for the given merchant
-                  weight:
-                    type: number
-                    description: The proportion of all spending over the period related to this merchant
-                  benchmark_value:
-                    type: number
-                    description: Sum of all transactions over the benchmark period for the given merchant
-                  benchmark_weight:
-                    type: number
-                    description: The proportion of all spending over the benchmark period related to this merchant
-            outlier_transactions:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                    format: uuid
-                    description: The id for the aggregation account transaction record
-                  transaction_date:
-                    type: string
-                    format: datetime
-                    description: The date the transaction took place
-                  transaction_type:
-                    type: string
-                    description: Type of the transaction. Value may be Debit or Credit.
-                    enum:
-                      - Debit
-                      - Credit
-                  amount:
-                    type: number
-                    description: Amount of the transaction
-                  merchant:
-                    type: string
-                    description: The merchant for the transaction such as the merchant posted for a credit card charge
-                  category:
-                    type: string
-                    description: Category of the transaction
-                  subcategory:
-                    type: string
-                    description: Subcategory of the transaction
-                  description:
-                    type: string
-                    description: Description of the transaction
-                  memo:
-                    type: string
-                    description: Memo attached to the transaction
+                        description: Sum of all transactions over the period for the given subcategory
+                      benchmark_value:
+                        type: number
+                        description: The proportion of all spending over the benchmark period related to this subcategory
+                      change:
+                        type: object
+                        properties:
+                          value:
+                            type: number
+                            description: Absolute difference in subcategory spending between the base time period and the benchmark time period
+                          percentage:
+                            type: number
+                            description: Percentage difference in subcategory spending between the base time period and the benchmark time period
+                      weight:
+                        type: number
+                        description: The proportion of all spending over the period related to this subcategory
+                      benchmark_weight:
+                        type: number
+                        description: The proportion of all spending over the benchmark period related to this subcategory
+          by_merchant:
+            type: array
+            description: Breakdown of spending by merchant
+            items:
+              type: object
+              properties:
+                merchant:
+                  type: string
+                  description: Merchant name as defined in the Nucleus transactions
+                value:
+                  type: number
+                  description: Sum of all transactions over the period for the given merchant
+                benchmark_value:
+                  type: number
+                  description: Sum of all transactions over the benchmark period for the given merchant
+                change:
+                  type: object
+                  properties:
+                    value:
+                      type: number
+                      description: Absolute difference in merchant spending between the base time period and the benchmark time period
+                    percentage:
+                      type: number
+                      description: Percentage difference in merchant spending between the base time period and the benchmark time period
+                weight:
+                  type: number
+                  description: The proportion of all spending over the period related to this merchant
+                benchmark_weight:
+                  type: number
+                  description: The proportion of all spending over the benchmark period related to this merchant
+          outliers:
+            type: array
+            description: Outlying spending transactions
+            items:
+              $ref: '#/definitions/specific_aggregation_account_transaction_response'
+
 # ********** Payloads: Nucleus **********
   account_create_client:
     type: object
@@ -5480,7 +5528,9 @@ definitions:
             description: Type of the transaction. Value may be Debit or Credit
             enum:
               - Debit
+              - debit
               - Credit
+              - credit
           amount:
             type: number
             format: double
@@ -9582,9 +9632,6 @@ definitions:
           type: number
   risk_score:
     type: object
-    required:
-      - answers
-      - max_answers
     properties:
       answers:
         type: array
@@ -9601,6 +9648,10 @@ definitions:
         description: Weights for each answer
         items:
           type: number
+    required:
+      - answers
+      - max_answers
+      - weights
   dimensional_risk_score:
     type: object
     required:
@@ -11545,10 +11596,15 @@ definitions:
         type: boolean
         description: If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false.
         default: false
-  financial_picture:
+  financial_picture_payload:
     type: object
     required:
       - client_id
+      - start_date
+      - end_date
+      - currency_code
+      - show_history
+      - show_change
     properties:
       client_id:
         type: string
@@ -11562,36 +11618,37 @@ definitions:
         type: string
         format: date
         description: End date of the financial picture analysis. Defaults to latest date there is data.
-      show_change:
-        type: boolean
-        description: Indicates whether to return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range. Defaults to FALSE which indicates it will not return these changes.
-        default: false
+      currency_code:
+        type: string
+        description: Currency code used conduct the analysis. Only aggregation account records with this currency code will be considered
+        default: 'USD'
       show_history:
         type: boolean
-        description: Indicates whether to return a daily history of the user’s financial picture within the specified date range. Defaults to FALSE which indicates it will not return daily historical records.
-        default: false
-  budget_calculator:
+        description: If true, return a daily history of the user’s financial picture within the specified date range
+      show_change:
+        type: boolean
+        description: If true, return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range
+  budget_calculator_payload:
     type: object
     required:
-      - client_id
+      - budget_id
     properties:
-      client_id:
-        type: string
-        format: uuid
-        description: The ID of a client to which a budget belongs
       budget_id:
         type: string
         format: uuid
-        description: The ID of a budget if only one budget is needed. Otherwise, all budgets are returned for the given client_id
-      start_date:
+        description: Identifier for a budget defined in Nucleus
+      as_of_date:
         type: string
         format: date
-        description: Start date of the budget calculation and tracking
-      end_date:
-        type: string
-        format: date
-        description: End date of the budget calculation and tracking
-  spending_analysis:
+        description: Reference date of the analysis. Calculations will run through the earlier of this date and budget.end_date
+      lookback_periods:
+        type: integer
+        format: int32
+        description: Number of lookback periods to analyze. Each period length is defined by the combination of budget.frequency and budget.frequency_unit
+      relative_lookback:
+        type: boolean
+        description: If true, determine dates using a relative calendar basis
+  cash_flow_analysis_payload:
     type: object
     required:
       - client_id
@@ -11616,6 +11673,17 @@ definitions:
         type: string
         format: date
         description: End date of the benchmark analysis period
+      currency_code:
+        type: string
+        description: Currency code used conduct the analysis. Only aggregation account records with this currency code will be considered
+      show_history:
+        type: boolean
+        description: If true, return a daily history of cash flow values
+        default: false
+      show_spending_details:
+        type: boolean
+        description: If true, return advanced details on spending over the analysis period
+        default: false
 paths:
 # ********** Nucleus **********
   /nucleus/v1/account:
@@ -23523,7 +23591,7 @@ paths:
           required: true
           in: body
           schema:
-            $ref: '#/definitions/financial_picture'
+            $ref: '#/definitions/financial_picture_payload'
   /proton/v1/budget_calculator:
     post:
       operationId: budgetCalculator
@@ -23558,22 +23626,22 @@ paths:
           required: true
           in: body
           schema:
-            $ref: '#/definitions/budget_calculator'
-  /proton/v1/spending_analysis:
+            $ref: '#/definitions/budget_calculator_payload'
+  /proton/v1/cash_flow_analysis:
     post:
-      operationId: spendingAnalysis
-      summary: Spending Analysis
+      operationId: cashFlowAnalysis
+      summary: Cash Flow Analysis
       security:
         - oauth: [proton]
       externalDocs:
-        url: https://www.hydrogenplatform.com/docs/proton/v1/#Spending-Analysis
+        url: https://www.hydrogenplatform.com/docs/proton/v1/#Cash-Flow-Analysis
       tags:
         - Proton
       responses:
         200:
           description: Successful response
           schema:
-            $ref: '#/definitions/spending_analysis_response'
+            $ref: '#/definitions/cash_flow_analysis_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -23593,4 +23661,4 @@ paths:
           required: true
           in: body
           schema:
-            $ref: '#/definitions/spending_analysis'
+            $ref: '#/definitions/cash_flow_analysis_payload'

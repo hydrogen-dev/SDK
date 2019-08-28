@@ -5527,9 +5527,7 @@ definitions:
             type: string
             description: Type of the transaction. Value may be Debit or Credit
             enum:
-              - Debit
               - debit
-              - Credit
               - credit
           amount:
             type: number

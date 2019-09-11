@@ -5826,6 +5826,16 @@ definitions:
         type: string
         format: uuid
         description: The ID of a goal mapped to the budget
+      aggregation_accounts:
+        type: array
+        items:
+          type: object
+          required:
+            - aggregation_account_id
+          properties:
+            aggregation_account_id:
+              type: string
+              format: uuid
       start_date:
         type: string
         format: date
@@ -6186,9 +6196,16 @@ definitions:
       routing_wire:
         type: string
         description: Routing number of the bank for the bank link used for wire transfers
+      mask:
+        type: string
+        description: Masked version of the bank account number for this bank link
       bank_account_name:
         type: string
         description: Name of the bank account, e.g. Mike’s HSBC Checking
+      client_id:
+        type: string
+        format: uuid
+        description: ID of the client to which the bank link belongs
       currency_code:
         type: string
         description: Alphabetic currency code for the base currency of the bank account linked, limited to 3 characters
@@ -9630,6 +9647,9 @@ definitions:
           type: number
   risk_score:
     type: object
+    required:
+      - answers
+      - max_answers
     properties:
       answers:
         type: array
@@ -9646,10 +9666,6 @@ definitions:
         description: Weights for each answer
         items:
           type: number
-    required:
-      - answers
-      - max_answers
-      - weights
   dimensional_risk_score:
     type: object
     required:

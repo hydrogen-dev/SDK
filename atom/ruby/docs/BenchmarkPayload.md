@@ -1,0 +1,13 @@
+# AtomApi::BenchmarkPayload
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **String** | Name of the benchmark | 
+**composition** | [**Array&lt;BenchmarkPayloadComposition&gt;**](BenchmarkPayloadComposition.md) |  | [optional] 
+**description** | **String** | Description of the benchmark such as the market segment that it represents | [optional] 
+**client_id** | **String** | The ID of the client to which the benchmark belongs, if any | [optional] 
+**is_active** | **BOOLEAN** | Indicates if the benchmark is active. Defaults to true which means it is active | [optional] [default to true]
+**secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+
+

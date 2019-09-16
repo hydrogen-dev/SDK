@@ -19,8 +19,8 @@ Python 2.7 and 3.4+
 *Recommended: Use a virtualenv (or conda env) for installation and usage of the package*
 
 ```sh
-virtualenv atom-api
-source atom-api/bin/activate
+virtualenv molecule-api
+source molecule-api/bin/activate
 ```
 
 ### pip install

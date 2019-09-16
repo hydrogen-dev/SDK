@@ -62,7 +62,7 @@ describe 'TokenSpecificResponse' do
     end
   end
 
-  describe 'test attribute "owner_id"' do
+  describe 'test attribute "owner_wallet_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

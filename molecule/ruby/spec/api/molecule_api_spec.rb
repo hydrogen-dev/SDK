@@ -104,31 +104,6 @@ describe 'MoleculeApi' do
     end
   end
 
-  # unit tests for get_token_restriction
-  # Retrieve a token restriction
-  # @param token_restriction_id UUID of a token restriction
-  # @param [Hash] opts the optional parameters
-  # @return [TokenRestrictionSpecificResponse]
-  describe 'get_token_restriction test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_token_restrictions
-  # Get information for all token restrictions defined for your firm
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
-  # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
-  # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
-  # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  # @return [TokenRestrictionGetResponse]
-  describe 'get_token_restrictions test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_token_supplies
   # Get information for all token supplies defined for your application.
   # @param [Hash] opts the optional parameters
@@ -262,17 +237,6 @@ describe 'MoleculeApi' do
     end
   end
 
-  # unit tests for post_token_restriction
-  # Create a token restriction under your firm.
-  # @param payload 
-  # @param [Hash] opts the optional parameters
-  # @return [TokenRestrictionCreateResponse]
-  describe 'post_token_restriction test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for post_token_whitelist
   # Add an investor to a token&#39;s whitelist
   # @param payload 
@@ -324,18 +288,6 @@ describe 'MoleculeApi' do
   # @param [Hash] opts the optional parameters
   # @return [TokenSpecificResponse]
   describe 'update_token test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for update_token_restriction
-  # Update a token restriction
-  # @param token_restriction_id UUID of a token restriction
-  # @param payload 
-  # @param [Hash] opts the optional parameters
-  # @return [TokenRestrictionSpecificResponse]
-  describe 'update_token_restriction test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

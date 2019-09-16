@@ -30,7 +30,7 @@ module MoleculeApi
     attr_accessor :nucleus_model_id
 
     # The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
-    attr_accessor :owner_id
+    attr_accessor :owner_wallet_id
 
     # The total supply of the security token
     attr_accessor :total_supply
@@ -44,7 +44,6 @@ module MoleculeApi
     # The crowdsale address of the security token on the Ethereum blockchain
     attr_accessor :crowdsale_address
 
-    # The array of token restrictions applied on this token.
     attr_accessor :restrictions
 
     attr_accessor :offering_settings
@@ -65,7 +64,7 @@ module MoleculeApi
         :'symbol' => :'symbol',
         :'name' => :'name',
         :'nucleus_model_id' => :'nucleus_model_id',
-        :'owner_id' => :'owner_id',
+        :'owner_wallet_id' => :'owner_wallet_id',
         :'total_supply' => :'total_supply',
         :'circulating_supply' => :'circulating_supply',
         :'conract_address' => :'conract_address',
@@ -86,12 +85,12 @@ module MoleculeApi
         :'symbol' => :'String',
         :'name' => :'String',
         :'nucleus_model_id' => :'String',
-        :'owner_id' => :'String',
+        :'owner_wallet_id' => :'String',
         :'total_supply' => :'Integer',
         :'circulating_supply' => :'Integer',
         :'conract_address' => :'String',
         :'crowdsale_address' => :'String',
-        :'restrictions' => :'Array<String>',
+        :'restrictions' => :'TokenCreatePayloadRestrictions',
         :'offering_settings' => :'TokenCreatePayloadOfferingSettings',
         :'metadata' => :'Object',
         :'secondary_id' => :'SecondaryId',
@@ -127,8 +126,8 @@ module MoleculeApi
         self.nucleus_model_id = attributes[:'nucleus_model_id']
       end
 
-      if attributes.has_key?(:'owner_id')
-        self.owner_id = attributes[:'owner_id']
+      if attributes.has_key?(:'owner_wallet_id')
+        self.owner_wallet_id = attributes[:'owner_wallet_id']
       end
 
       if attributes.has_key?(:'total_supply')
@@ -148,9 +147,7 @@ module MoleculeApi
       end
 
       if attributes.has_key?(:'restrictions')
-        if (value = attributes[:'restrictions']).is_a?(Array)
-          self.restrictions = value
-        end
+        self.restrictions = attributes[:'restrictions']
       end
 
       if attributes.has_key?(:'offering_settings')
@@ -186,8 +183,8 @@ module MoleculeApi
         invalid_properties.push('invalid value for "nucleus_model_id", nucleus_model_id cannot be nil.')
       end
 
-      if @owner_id.nil?
-        invalid_properties.push('invalid value for "owner_id", owner_id cannot be nil.')
+      if @owner_wallet_id.nil?
+        invalid_properties.push('invalid value for "owner_wallet_id", owner_wallet_id cannot be nil.')
       end
 
       if @total_supply.nil?
@@ -203,7 +200,7 @@ module MoleculeApi
       return false if @symbol.nil?
       return false if @name.nil?
       return false if @nucleus_model_id.nil?
-      return false if @owner_id.nil?
+      return false if @owner_wallet_id.nil?
       return false if @total_supply.nil?
       true
     end
@@ -218,7 +215,7 @@ module MoleculeApi
           symbol == o.symbol &&
           name == o.name &&
           nucleus_model_id == o.nucleus_model_id &&
-          owner_id == o.owner_id &&
+          owner_wallet_id == o.owner_wallet_id &&
           total_supply == o.total_supply &&
           circulating_supply == o.circulating_supply &&
           conract_address == o.conract_address &&
@@ -239,7 +236,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, symbol, name, nucleus_model_id, owner_id, total_supply, circulating_supply, conract_address, crowdsale_address, restrictions, offering_settings, metadata, secondary_id, update_date].hash
+      [id, create_date, symbol, name, nucleus_model_id, owner_wallet_id, total_supply, circulating_supply, conract_address, crowdsale_address, restrictions, offering_settings, metadata, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

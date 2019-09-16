@@ -24,10 +24,6 @@ import io.swagger.client.model.TokenCrowdsalePayload;
 import io.swagger.client.model.TokenDeployPayload;
 import io.swagger.client.model.TokenGetResponse;
 import io.swagger.client.model.TokenPurchasePayload;
-import io.swagger.client.model.TokenRestrictionCreatePayload;
-import io.swagger.client.model.TokenRestrictionCreateResponse;
-import io.swagger.client.model.TokenRestrictionGetResponse;
-import io.swagger.client.model.TokenRestrictionSpecificResponse;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
@@ -157,41 +153,6 @@ public class MoleculeApiTest {
         String orderBy = null;
         Boolean ascending = null;
         TokenBalanceGetResponse response = api.getTokenBalances(page, size, orderBy, ascending);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Retrieve a token restriction
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getTokenRestrictionTest() throws ApiException {
-        UUID tokenRestrictionId = null;
-        TokenRestrictionSpecificResponse response = api.getTokenRestriction(tokenRestrictionId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get information for all token restrictions defined for your firm
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getTokenRestrictionsTest() throws ApiException {
-        Integer page = null;
-        Integer size = null;
-        String orderBy = null;
-        Boolean ascending = null;
-        TokenRestrictionGetResponse response = api.getTokenRestrictions(page, size, orderBy, ascending);
 
         // TODO: test validations
     }
@@ -385,22 +346,6 @@ public class MoleculeApiTest {
     }
     
     /**
-     * Create a token restriction under your firm.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void postTokenRestrictionTest() throws ApiException {
-        TokenRestrictionCreatePayload payload = null;
-        TokenRestrictionCreateResponse response = api.postTokenRestriction(payload);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Add an investor to a token&#39;s whitelist
      *
      * 
@@ -477,23 +422,6 @@ public class MoleculeApiTest {
         UUID tokenId = null;
         TokenCreatePayload payload = null;
         TokenSpecificResponse response = api.updateToken(tokenId, payload);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update a token restriction
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateTokenRestrictionTest() throws ApiException {
-        UUID tokenRestrictionId = null;
-        TokenRestrictionCreatePayload payload = null;
-        TokenRestrictionSpecificResponse response = api.updateTokenRestriction(tokenRestrictionId, payload);
 
         // TODO: test validations
     }

@@ -10,8 +10,6 @@ Method | HTTP request | Description
 [**get_token**](MoleculeApi.md#get_token) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 [**get_token_balance**](MoleculeApi.md#get_token_balance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 [**get_token_balances**](MoleculeApi.md#get_token_balances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
-[**get_token_restriction**](MoleculeApi.md#get_token_restriction) | **GET** /molecule/v1/token_restriction/{token_restriction_id}/ | Retrieve a token restriction
-[**get_token_restrictions**](MoleculeApi.md#get_token_restrictions) | **GET** /molecule/v1/token_restriction | Get information for all token restrictions defined for your firm
 [**get_token_supplies**](MoleculeApi.md#get_token_supplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 [**get_token_supply**](MoleculeApi.md#get_token_supply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
 [**get_tokens**](MoleculeApi.md#get_tokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
@@ -23,13 +21,11 @@ Method | HTTP request | Description
 [**post_token_crowdsale**](MoleculeApi.md#post_token_crowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 [**post_token_deploy**](MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 [**post_token_purchase**](MoleculeApi.md#post_token_purchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
-[**post_token_restriction**](MoleculeApi.md#post_token_restriction) | **POST** /molecule/v1/token_restriction | Create a token restriction under your firm.
 [**post_token_whitelist**](MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**post_wallet**](MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**post_wallet_key**](MoleculeApi.md#post_wallet_key) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**post_wallet_key_generator**](MoleculeApi.md#post_wallet_key_generator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 [**update_token**](MoleculeApi.md#update_token) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
-[**update_token_restriction**](MoleculeApi.md#update_token_restriction) | **PUT** /molecule/v1/token_restriction/{token_restriction_id}/ | Update a token restriction
 [**update_wallet**](MoleculeApi.md#update_wallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
 
 
@@ -42,6 +38,19 @@ Delete a token
 ```ruby
 # load the gem
 require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
 
 api_instance = MoleculeApi::MoleculeApi.new
 
@@ -68,7 +77,7 @@ nil (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -369,129 +378,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenBalanceGetResponse**](TokenBalanceGetResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_token_restriction**
-> TokenRestrictionSpecificResponse get_token_restriction(token_restriction_id, )
-
-Retrieve a token restriction
-
-### Example
-```ruby
-# load the gem
-require 'molecule_api'
-
-# Configuration
-MoleculeApi.configure do |config|
-  # Set the environment (optional, defaults to sandbox)
-  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-  config.set_environment("sandbox")
-
-  # Configure OAuth2 access token for authorization: oauth
-  # Method 1: Fetch and set access token with client_id and client_secret
-  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
-  # Method 2: Set access token using an existing token
-  config.access_token = 'MYACCESSTOKEN'
-end
-
-api_instance = MoleculeApi::MoleculeApi.new
-
-token_restriction_id = 'token_restriction_id_example' # String | UUID of a token restriction
-
-
-begin
-  #Retrieve a token restriction
-  result = api_instance.get_token_restriction(token_restriction_id, )
-  p result
-rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->get_token_restriction: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token_restriction_id** | [**String**](.md)| UUID of a token restriction | 
-
-### Return type
-
-[**TokenRestrictionSpecificResponse**](TokenRestrictionSpecificResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **get_token_restrictions**
-> TokenRestrictionGetResponse get_token_restrictions(opts)
-
-Get information for all token restrictions defined for your firm
-
-### Example
-```ruby
-# load the gem
-require 'molecule_api'
-
-# Configuration
-MoleculeApi.configure do |config|
-  # Set the environment (optional, defaults to sandbox)
-  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-  config.set_environment("sandbox")
-
-  # Configure OAuth2 access token for authorization: oauth
-  # Method 1: Fetch and set access token with client_id and client_secret
-  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
-  # Method 2: Set access token using an existing token
-  config.access_token = 'MYACCESSTOKEN'
-end
-
-api_instance = MoleculeApi::MoleculeApi.new
-
-opts = { 
-  page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
-  size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
-  order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-}
-
-begin
-  #Get information for all token restrictions defined for your firm
-  result = api_instance.get_token_restrictions(opts)
-  p result
-rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->get_token_restrictions: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
- **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
- **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
- **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
-
-### Return type
-
-[**TokenRestrictionGetResponse**](TokenRestrictionGetResponse.md)
 
 ### Authorization
 
@@ -1117,51 +1003,6 @@ No authorization required
 
 
 
-# **post_token_restriction**
-> TokenRestrictionCreateResponse post_token_restriction(payload)
-
-Create a token restriction under your firm.
-
-### Example
-```ruby
-# load the gem
-require 'molecule_api'
-
-api_instance = MoleculeApi::MoleculeApi.new
-
-payload = MoleculeApi::TokenRestrictionCreatePayload.new # TokenRestrictionCreatePayload | 
-
-
-begin
-  #Create a token restriction under your firm.
-  result = api_instance.post_token_restriction(payload)
-  p result
-rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->post_token_restriction: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenRestrictionCreatePayload**](TokenRestrictionCreatePayload.md)|  | 
-
-### Return type
-
-[**TokenRestrictionCreateResponse**](TokenRestrictionCreateResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **post_token_whitelist**
 > post_token_whitelist(payload)
 
@@ -1390,67 +1231,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenSpecificResponse**](TokenSpecificResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **update_token_restriction**
-> TokenRestrictionSpecificResponse update_token_restriction(token_restriction_id, payload)
-
-Update a token restriction
-
-### Example
-```ruby
-# load the gem
-require 'molecule_api'
-
-# Configuration
-MoleculeApi.configure do |config|
-  # Set the environment (optional, defaults to sandbox)
-  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-  config.set_environment("sandbox")
-
-  # Configure OAuth2 access token for authorization: oauth
-  # Method 1: Fetch and set access token with client_id and client_secret
-  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
-  # Method 2: Set access token using an existing token
-  config.access_token = 'MYACCESSTOKEN'
-end
-
-api_instance = MoleculeApi::MoleculeApi.new
-
-token_restriction_id = 'token_restriction_id_example' # String | UUID of a token restriction
-
-payload = MoleculeApi::TokenRestrictionCreatePayload.new # TokenRestrictionCreatePayload | 
-
-
-begin
-  #Update a token restriction
-  result = api_instance.update_token_restriction(token_restriction_id, payload)
-  p result
-rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->update_token_restriction: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token_restriction_id** | [**String**](.md)| UUID of a token restriction | 
- **payload** | [**TokenRestrictionCreatePayload**](TokenRestrictionCreatePayload.md)|  | 
-
-### Return type
-
-[**TokenRestrictionSpecificResponse**](TokenRestrictionSpecificResponse.md)
 
 ### Authorization
 

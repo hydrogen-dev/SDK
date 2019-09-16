@@ -72,6 +72,12 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
 api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 token_id = 'token_id_example' # str | UUID of a token
@@ -98,8 +104,6 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**get_token**](docs/MoleculeApi.md#get_token) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 *MoleculeApi* | [**get_token_balance**](docs/MoleculeApi.md#get_token_balance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 *MoleculeApi* | [**get_token_balances**](docs/MoleculeApi.md#get_token_balances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
-*MoleculeApi* | [**get_token_restriction**](docs/MoleculeApi.md#get_token_restriction) | **GET** /molecule/v1/token_restriction/{token_restriction_id}/ | Retrieve a token restriction
-*MoleculeApi* | [**get_token_restrictions**](docs/MoleculeApi.md#get_token_restrictions) | **GET** /molecule/v1/token_restriction | Get information for all token restrictions defined for your firm
 *MoleculeApi* | [**get_token_supplies**](docs/MoleculeApi.md#get_token_supplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 *MoleculeApi* | [**get_token_supply**](docs/MoleculeApi.md#get_token_supply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
 *MoleculeApi* | [**get_tokens**](docs/MoleculeApi.md#get_tokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
@@ -111,13 +115,11 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**post_token_crowdsale**](docs/MoleculeApi.md#post_token_crowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 *MoleculeApi* | [**post_token_deploy**](docs/MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 *MoleculeApi* | [**post_token_purchase**](docs/MoleculeApi.md#post_token_purchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
-*MoleculeApi* | [**post_token_restriction**](docs/MoleculeApi.md#post_token_restriction) | **POST** /molecule/v1/token_restriction | Create a token restriction under your firm.
 *MoleculeApi* | [**post_token_whitelist**](docs/MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 *MoleculeApi* | [**post_wallet**](docs/MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 *MoleculeApi* | [**post_wallet_key**](docs/MoleculeApi.md#post_wallet_key) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 *MoleculeApi* | [**post_wallet_key_generator**](docs/MoleculeApi.md#post_wallet_key_generator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 *MoleculeApi* | [**update_token**](docs/MoleculeApi.md#update_token) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
-*MoleculeApi* | [**update_token_restriction**](docs/MoleculeApi.md#update_token_restriction) | **PUT** /molecule/v1/token_restriction/{token_restriction_id}/ | Update a token restriction
 *MoleculeApi* | [**update_wallet**](docs/MoleculeApi.md#update_wallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
 
 
@@ -130,10 +132,10 @@ Class | Method | HTTP request | Description
  - [TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [TokenCreatePayload](docs/TokenCreatePayload.md)
  - [TokenCreatePayloadOfferingSettings](docs/TokenCreatePayloadOfferingSettings.md)
+ - [TokenCreatePayloadRestrictions](docs/TokenCreatePayloadRestrictions.md)
  - [TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [TokenDeployPayload](docs/TokenDeployPayload.md)
  - [TokenPurchasePayload](docs/TokenPurchasePayload.md)
- - [TokenRestrictionCreatePayload](docs/TokenRestrictionCreatePayload.md)
  - [TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
  - [TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
  - [WalletCreateClient](docs/WalletCreateClient.md)
@@ -147,13 +149,10 @@ Class | Method | HTTP request | Description
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)
  - [TokenGetResponse](docs/TokenGetResponse.md)
- - [TokenRestrictionCreateResponse](docs/TokenRestrictionCreateResponse.md)
- - [TokenRestrictionGetResponse](docs/TokenRestrictionGetResponse.md)
  - [TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
  - [WalletCreateResponse](docs/WalletCreateResponse.md)
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
- - [TokenRestrictionSpecificResponse](docs/TokenRestrictionSpecificResponse.md)
  - [TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [WalletSpecificResponse](docs/WalletSpecificResponse.md)
 

@@ -2,7 +2,7 @@
 
 Hydrogen Molecule API
 - API version: 1.0.0
-  - Build date: 2019-09-11T18:23:25.119-04:00
+  - Build date: 2019-09-16T11:10:59.915-04:00
 
 The Hydrogen Molecule API
 
@@ -88,7 +88,20 @@ import java.util.*;
 public class MoleculeApiExample {
 
     public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        // Set the environment (optional, defaults to sandbox)
+        // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+        defaultClient.setEnvironment("sandbox");
+
         
+        // Configure OAuth2 access token for authorization: oauth
+        OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+        // Method 1: Fetch and set access token with client_id and client_secret
+        String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+        oauth.setAccessToken(token);
+        // Method 2: Set access token using an existing token
+        oauth.setAccessToken("MYACCESSTOKEN");
+
         MoleculeApi apiInstance = new MoleculeApi();
         UUID tokenId = new UUID(); // UUID | UUID of a token
         try {
@@ -116,8 +129,6 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**getToken**](docs/MoleculeApi.md#getToken) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 *MoleculeApi* | [**getTokenBalance**](docs/MoleculeApi.md#getTokenBalance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 *MoleculeApi* | [**getTokenBalances**](docs/MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
-*MoleculeApi* | [**getTokenRestriction**](docs/MoleculeApi.md#getTokenRestriction) | **GET** /molecule/v1/token_restriction/{token_restriction_id}/ | Retrieve a token restriction
-*MoleculeApi* | [**getTokenRestrictions**](docs/MoleculeApi.md#getTokenRestrictions) | **GET** /molecule/v1/token_restriction | Get information for all token restrictions defined for your firm
 *MoleculeApi* | [**getTokenSupplies**](docs/MoleculeApi.md#getTokenSupplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 *MoleculeApi* | [**getTokenSupply**](docs/MoleculeApi.md#getTokenSupply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
 *MoleculeApi* | [**getTokens**](docs/MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
@@ -129,13 +140,11 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**postTokenCrowdsale**](docs/MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 *MoleculeApi* | [**postTokenDeploy**](docs/MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 *MoleculeApi* | [**postTokenPurchase**](docs/MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
-*MoleculeApi* | [**postTokenRestriction**](docs/MoleculeApi.md#postTokenRestriction) | **POST** /molecule/v1/token_restriction | Create a token restriction under your firm.
 *MoleculeApi* | [**postTokenWhitelist**](docs/MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 *MoleculeApi* | [**postWallet**](docs/MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 *MoleculeApi* | [**postWalletKey**](docs/MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 *MoleculeApi* | [**postWalletKeyGenerator**](docs/MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 *MoleculeApi* | [**updateToken**](docs/MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
-*MoleculeApi* | [**updateTokenRestriction**](docs/MoleculeApi.md#updateTokenRestriction) | **PUT** /molecule/v1/token_restriction/{token_restriction_id}/ | Update a token restriction
 *MoleculeApi* | [**updateWallet**](docs/MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
 
 
@@ -147,10 +156,10 @@ Class | Method | HTTP request | Description
  - [TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [TokenCreatePayload](docs/TokenCreatePayload.md)
  - [TokenCreatePayloadOfferingSettings](docs/TokenCreatePayloadOfferingSettings.md)
+ - [TokenCreatePayloadRestrictions](docs/TokenCreatePayloadRestrictions.md)
  - [TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [TokenDeployPayload](docs/TokenDeployPayload.md)
  - [TokenPurchasePayload](docs/TokenPurchasePayload.md)
- - [TokenRestrictionCreatePayload](docs/TokenRestrictionCreatePayload.md)
  - [TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
  - [TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
  - [WalletCreateClient](docs/WalletCreateClient.md)
@@ -164,13 +173,10 @@ Class | Method | HTTP request | Description
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)
  - [TokenGetResponse](docs/TokenGetResponse.md)
- - [TokenRestrictionCreateResponse](docs/TokenRestrictionCreateResponse.md)
- - [TokenRestrictionGetResponse](docs/TokenRestrictionGetResponse.md)
  - [TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
  - [WalletCreateResponse](docs/WalletCreateResponse.md)
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
- - [TokenRestrictionSpecificResponse](docs/TokenRestrictionSpecificResponse.md)
  - [TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [WalletSpecificResponse](docs/WalletSpecificResponse.md)
 

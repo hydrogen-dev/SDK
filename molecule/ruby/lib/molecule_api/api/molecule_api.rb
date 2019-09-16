@@ -58,7 +58,7 @@ module MoleculeApi
 
       # http body (model)
       post_body = nil
-      auth_names = []
+      auth_names = ['oauth']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -355,124 +355,6 @@ module MoleculeApi
         :return_type => 'TokenBalanceGetResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#get_token_balances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-    # Retrieve a token restriction
-    # @param token_restriction_id UUID of a token restriction
-    # @param [Hash] opts the optional parameters
-    # @return [TokenRestrictionSpecificResponse]
-    def get_token_restriction(token_restriction_id, opts = {})
-      data, _status_code, _headers = get_token_restriction_with_http_info(token_restriction_id, opts)
-      data
-    end
-
-    # Retrieve a token restriction
-    # @param token_restriction_id UUID of a token restriction
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(TokenRestrictionSpecificResponse, Fixnum, Hash)>] TokenRestrictionSpecificResponse data, response status code and response headers
-    def get_token_restriction_with_http_info(token_restriction_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_token_restriction ...'
-      end
-      # verify the required parameter 'token_restriction_id' is set
-      if @api_client.config.client_side_validation && token_restriction_id.nil?
-        fail ArgumentError, "Missing the required parameter 'token_restriction_id' when calling MoleculeApi.get_token_restriction"
-      end
-      # resource path
-      local_var_path = '/molecule/v1/token_restriction/{token_restriction_id}/'.sub('{' + 'token_restriction_id' + '}', token_restriction_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['oauth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'TokenRestrictionSpecificResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#get_token_restriction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-    # Get information for all token restrictions defined for your firm
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
-    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
-    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
-    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-    # @return [TokenRestrictionGetResponse]
-    def get_token_restrictions(opts = {})
-      data, _status_code, _headers = get_token_restrictions_with_http_info(opts)
-      data
-    end
-
-    # Get information for all token restrictions defined for your firm
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
-    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
-    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
-    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-    # @return [Array<(TokenRestrictionGetResponse, Fixnum, Hash)>] TokenRestrictionGetResponse data, response status code and response headers
-    def get_token_restrictions_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_token_restrictions ...'
-      end
-      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
-        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_token_restrictions, must be greater than or equal to 0.'
-      end
-
-      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
-        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_token_restrictions, must be greater than or equal to 0.'
-      end
-
-      # resource path
-      local_var_path = '/molecule/v1/token_restriction'
-
-      # query parameters
-      query_params = {}
-      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
-      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
-      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
-      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = nil
-      auth_names = ['oauth']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'TokenRestrictionGetResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#get_token_restrictions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1103,58 +985,6 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
-    # Create a token restriction under your firm.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [TokenRestrictionCreateResponse]
-    def post_token_restriction(payload, opts = {})
-      data, _status_code, _headers = post_token_restriction_with_http_info(payload, opts)
-      data
-    end
-
-    # Create a token restriction under your firm.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(TokenRestrictionCreateResponse, Fixnum, Hash)>] TokenRestrictionCreateResponse data, response status code and response headers
-    def post_token_restriction_with_http_info(payload, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_restriction ...'
-      end
-      # verify the required parameter 'payload' is set
-      if @api_client.config.client_side_validation && payload.nil?
-        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_restriction"
-      end
-      # resource path
-      local_var_path = '/molecule/v1/token_restriction'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(payload)
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'TokenRestrictionCreateResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#post_token_restriction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
     # Add an investor to a token's whitelist
     # @param payload 
     # @param [Hash] opts the optional parameters
@@ -1417,64 +1247,6 @@ module MoleculeApi
         :return_type => 'TokenSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#update_token\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-    # Update a token restriction
-    # @param token_restriction_id UUID of a token restriction
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [TokenRestrictionSpecificResponse]
-    def update_token_restriction(token_restriction_id, payload, opts = {})
-      data, _status_code, _headers = update_token_restriction_with_http_info(token_restriction_id, payload, opts)
-      data
-    end
-
-    # Update a token restriction
-    # @param token_restriction_id UUID of a token restriction
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(TokenRestrictionSpecificResponse, Fixnum, Hash)>] TokenRestrictionSpecificResponse data, response status code and response headers
-    def update_token_restriction_with_http_info(token_restriction_id, payload, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.update_token_restriction ...'
-      end
-      # verify the required parameter 'token_restriction_id' is set
-      if @api_client.config.client_side_validation && token_restriction_id.nil?
-        fail ArgumentError, "Missing the required parameter 'token_restriction_id' when calling MoleculeApi.update_token_restriction"
-      end
-      # verify the required parameter 'payload' is set
-      if @api_client.config.client_side_validation && payload.nil?
-        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.update_token_restriction"
-      end
-      # resource path
-      local_var_path = '/molecule/v1/token_restriction/{token_restriction_id}/'.sub('{' + 'token_restriction_id' + '}', token_restriction_id.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(payload)
-      auth_names = ['oauth']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'TokenRestrictionSpecificResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#update_token_restriction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

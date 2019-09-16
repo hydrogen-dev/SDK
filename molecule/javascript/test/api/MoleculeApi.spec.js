@@ -111,26 +111,6 @@
         done();
       });
     });
-    describe('getTokenRestriction', function() {
-      it('should call getTokenRestriction successfully', function(done) {
-        //uncomment below and update the code to test getTokenRestriction
-        //instance.getTokenRestriction(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getTokenRestrictions', function() {
-      it('should call getTokenRestrictions successfully', function(done) {
-        //uncomment below and update the code to test getTokenRestrictions
-        //instance.getTokenRestrictions(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getTokenSupplies', function() {
       it('should call getTokenSupplies successfully', function(done) {
         //uncomment below and update the code to test getTokenSupplies
@@ -241,16 +221,6 @@
         done();
       });
     });
-    describe('postTokenRestriction', function() {
-      it('should call postTokenRestriction successfully', function(done) {
-        //uncomment below and update the code to test postTokenRestriction
-        //instance.postTokenRestriction(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('postTokenWhitelist', function() {
       it('should call postTokenWhitelist successfully', function(done) {
         //uncomment below and update the code to test postTokenWhitelist
@@ -295,16 +265,6 @@
       it('should call updateToken successfully', function(done) {
         //uncomment below and update the code to test updateToken
         //instance.updateToken(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateTokenRestriction', function() {
-      it('should call updateTokenRestriction successfully', function(done) {
-        //uncomment below and update the code to test updateTokenRestriction
-        //instance.updateTokenRestriction(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

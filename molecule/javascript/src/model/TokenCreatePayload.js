@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/SecondaryId', 'model/TokenCreatePayloadOfferingSettings'], factory);
+    define(['ApiClient', 'model/SecondaryId', 'model/TokenCreatePayloadOfferingSettings', 'model/TokenCreatePayloadRestrictions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./SecondaryId'), require('./TokenCreatePayloadOfferingSettings'));
+    module.exports = factory(require('../ApiClient'), require('./SecondaryId'), require('./TokenCreatePayloadOfferingSettings'), require('./TokenCreatePayloadRestrictions'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.TokenCreatePayload = factory(root.molecule_api.ApiClient, root.molecule_api.SecondaryId, root.molecule_api.TokenCreatePayloadOfferingSettings);
+    root.molecule_api.TokenCreatePayload = factory(root.molecule_api.ApiClient, root.molecule_api.SecondaryId, root.molecule_api.TokenCreatePayloadOfferingSettings, root.molecule_api.TokenCreatePayloadRestrictions);
   }
-}(this, function(ApiClient, SecondaryId, TokenCreatePayloadOfferingSettings) {
+}(this, function(ApiClient, SecondaryId, TokenCreatePayloadOfferingSettings, TokenCreatePayloadRestrictions) {
   'use strict';
 
 
@@ -47,16 +47,16 @@
    * @param symbol {String} The symbol of the security token. Could be 3 or 4 characters long.
    * @param name {String} Name of the security token.
    * @param nucleusModelId {String} The id of the associated Nucleus model for this security token
-   * @param ownerId {String} The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
+   * @param ownerWalletId {String} The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
    * @param totalSupply {Number} The total supply of the security token
    */
-  var exports = function(symbol, name, nucleusModelId, ownerId, totalSupply) {
+  var exports = function(symbol, name, nucleusModelId, ownerWalletId, totalSupply) {
     var _this = this;
 
     _this['symbol'] = symbol;
     _this['name'] = name;
     _this['nucleus_model_id'] = nucleusModelId;
-    _this['owner_id'] = ownerId;
+    _this['owner_wallet_id'] = ownerWalletId;
     _this['total_supply'] = totalSupply;
 
 
@@ -87,8 +87,8 @@
       if (data.hasOwnProperty('nucleus_model_id')) {
         obj['nucleus_model_id'] = ApiClient.convertToType(data['nucleus_model_id'], 'String');
       }
-      if (data.hasOwnProperty('owner_id')) {
-        obj['owner_id'] = ApiClient.convertToType(data['owner_id'], 'String');
+      if (data.hasOwnProperty('owner_wallet_id')) {
+        obj['owner_wallet_id'] = ApiClient.convertToType(data['owner_wallet_id'], 'String');
       }
       if (data.hasOwnProperty('total_supply')) {
         obj['total_supply'] = ApiClient.convertToType(data['total_supply'], 'Number');
@@ -103,7 +103,7 @@
         obj['crowdsale_address'] = ApiClient.convertToType(data['crowdsale_address'], 'String');
       }
       if (data.hasOwnProperty('restrictions')) {
-        obj['restrictions'] = ApiClient.convertToType(data['restrictions'], ['String']);
+        obj['restrictions'] = TokenCreatePayloadRestrictions.constructFromObject(data['restrictions']);
       }
       if (data.hasOwnProperty('offering_settings')) {
         obj['offering_settings'] = TokenCreatePayloadOfferingSettings.constructFromObject(data['offering_settings']);
@@ -135,9 +135,9 @@
   exports.prototype['nucleus_model_id'] = undefined;
   /**
    * The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
-   * @member {String} owner_id
+   * @member {String} owner_wallet_id
    */
-  exports.prototype['owner_id'] = undefined;
+  exports.prototype['owner_wallet_id'] = undefined;
   /**
    * The total supply of the security token
    * @member {Number} total_supply
@@ -159,8 +159,7 @@
    */
   exports.prototype['crowdsale_address'] = undefined;
   /**
-   * The array of token restrictions applied on this token.
-   * @member {Array.<String>} restrictions
+   * @member {module:model/TokenCreatePayloadRestrictions} restrictions
    */
   exports.prototype['restrictions'] = undefined;
   /**

@@ -75,8 +75,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property ownerId (base name: "owner_id")', function() {
-      // uncomment below and update the code to test the property ownerId
+    it('should have the property ownerWalletId (base name: "owner_wallet_id")', function() {
+      // uncomment below and update the code to test the property ownerWalletId
       //var instance = new molecule_api.TokenCreatePayload();
       //expect(instance).to.be();
     });

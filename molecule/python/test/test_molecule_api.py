@@ -71,20 +71,6 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
-    def test_get_token_restriction(self):
-        """Test case for get_token_restriction
-
-        Retrieve a token restriction  # noqa: E501
-        """
-        pass
-
-    def test_get_token_restrictions(self):
-        """Test case for get_token_restrictions
-
-        Get information for all token restrictions defined for your firm  # noqa: E501
-        """
-        pass
-
     def test_get_token_supplies(self):
         """Test case for get_token_supplies
 
@@ -162,13 +148,6 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
-    def test_post_token_restriction(self):
-        """Test case for post_token_restriction
-
-        Create a token restriction under your firm.  # noqa: E501
-        """
-        pass
-
     def test_post_token_whitelist(self):
         """Test case for post_token_whitelist
 
@@ -201,13 +180,6 @@ class TestMoleculeApi(unittest.TestCase):
         """Test case for update_token
 
         Update a token  # noqa: E501
-        """
-        pass
-
-    def test_update_token_restriction(self):
-        """Test case for update_token_restriction
-
-        Update a token restriction  # noqa: E501
         """
         pass
 

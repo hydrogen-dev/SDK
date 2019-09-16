@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/SecondaryId', 'model/TokenCreatePayloadOfferingSettings', 'model/TokenCreateResponse'], factory);
+    define(['ApiClient', 'model/SecondaryId', 'model/TokenCreatePayloadOfferingSettings', 'model/TokenCreatePayloadRestrictions', 'model/TokenCreateResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./SecondaryId'), require('./TokenCreatePayloadOfferingSettings'), require('./TokenCreateResponse'));
+    module.exports = factory(require('../ApiClient'), require('./SecondaryId'), require('./TokenCreatePayloadOfferingSettings'), require('./TokenCreatePayloadRestrictions'), require('./TokenCreateResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.TokenSpecificResponse = factory(root.molecule_api.ApiClient, root.molecule_api.SecondaryId, root.molecule_api.TokenCreatePayloadOfferingSettings, root.molecule_api.TokenCreateResponse);
+    root.molecule_api.TokenSpecificResponse = factory(root.molecule_api.ApiClient, root.molecule_api.SecondaryId, root.molecule_api.TokenCreatePayloadOfferingSettings, root.molecule_api.TokenCreatePayloadRestrictions, root.molecule_api.TokenCreateResponse);
   }
-}(this, function(ApiClient, SecondaryId, TokenCreatePayloadOfferingSettings, TokenCreateResponse) {
+}(this, function(ApiClient, SecondaryId, TokenCreatePayloadOfferingSettings, TokenCreatePayloadRestrictions, TokenCreateResponse) {
   'use strict';
 
 
@@ -48,13 +48,13 @@
    * @param symbol {String} The symbol of the security token. Could be 3 or 4 characters long.
    * @param name {String} Name of the security token.
    * @param nucleusModelId {String} The id of the associated Nucleus model for this security token
-   * @param ownerId {String} The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
+   * @param ownerWalletId {String} The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
    * @param totalSupply {Number} The total supply of the security token
    */
-  var exports = function(symbol, name, nucleusModelId, ownerId, totalSupply) {
+  var exports = function(symbol, name, nucleusModelId, ownerWalletId, totalSupply) {
     var _this = this;
 
-    TokenCreateResponse.call(_this, symbol, name, nucleusModelId, ownerId, totalSupply);
+    TokenCreateResponse.call(_this, symbol, name, nucleusModelId, ownerWalletId, totalSupply);
 
   };
 
@@ -104,9 +104,9 @@ exports.prototype['nucleus_model_id'] = undefined;
 
   /**
    * The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
-   * @member {String} owner_id
+   * @member {String} owner_wallet_id
    */
-exports.prototype['owner_id'] = undefined;
+exports.prototype['owner_wallet_id'] = undefined;
 
   /**
    * The total supply of the security token
@@ -133,8 +133,7 @@ exports.prototype['conract_address'] = undefined;
 exports.prototype['crowdsale_address'] = undefined;
 
   /**
-   * The array of token restrictions applied on this token.
-   * @member {Array.<String>} restrictions
+   * @member {module:model/TokenCreatePayloadRestrictions} restrictions
    */
 exports.prototype['restrictions'] = undefined;
 

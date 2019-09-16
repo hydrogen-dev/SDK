@@ -575,13 +575,29 @@ paths:
     delete:
       operationId: deleteToken
       summary: Delete a token
+      security:
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-token
       tags:
         - Molecule
       responses:
-        405:
-          $ref: '#/responses/405'
+        200:
+          description: 'Successful response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
     parameters:
       - $ref: '#/parameters/path_token_uuid'
 
@@ -725,140 +741,6 @@ paths:
         503:
           $ref: '#/responses/503'
 
-  /molecule/v1/token_restriction:
-    get:
-      operationId: getTokenRestrictions
-      summary: Get information for all token restrictions defined for your firm
-      security:
-        - oauth: [molecule]
-      externalDocs:
-        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-restrictions
-      tags:
-        - Molecule
-      responses:
-        200:
-          description: 'Successful response'
-          schema:
-            $ref: '#/definitions/token_restriction_get_response'
-        400:
-          $ref: '#/responses/400'
-        401:
-          $ref: '#/responses/401'
-        403:
-          $ref: '#/responses/403'
-        404:
-          $ref: '#/responses/404'
-        429:
-          $ref: '#/responses/429'
-        500:
-          $ref: '#/responses/500'
-        503:
-          $ref: '#/responses/503'
-      parameters:
-        - $ref: '#/parameters/query_pagination_page'
-        - $ref: '#/parameters/query_pagination_size'
-        - $ref: '#/parameters/query_pagination_orderby'
-        - $ref: '#/parameters/query_pagination_ascending'
-    post:
-      operationId: postTokenRestriction
-      summary: Create a token restriction under your firm.
-      security:
-        - ouath: [molecule]
-      externalDocs:
-        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-restriction
-      tags:
-        - Molecule
-      parameters:
-        - name: payload
-          required: true
-          in: body
-          schema:
-            $ref: '#definitions/token_restriction_create_payload'
-      responses:
-        200:
-          description: 'Successful response'
-          schema:
-            $ref: '#/definitions/token_restriction_create_response'
-        400:
-          $ref: '#/responses/400'
-        401:
-          $ref: '#/responses/401'
-        403:
-          $ref: '#/responses/403'
-        404:
-          $ref: '#/responses/404'
-        429:
-          $ref: '#/responses/429'
-        500:
-          $ref: '#/responses/500'
-        503:
-          $ref: '#/responses/503'
-  /molecule/v1/token_restriction/{token_restriction_id}/:
-    get:
-      operationId: getTokenRestriction
-      summary: Retrieve a token restriction
-      security:
-        - oauth: [molecule]
-      externalDocs:
-        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-restriction
-      tags:
-        - Molecule
-      responses:
-        200:
-          description: 'Successful response'
-          schema:
-            $ref: '#/definitions/token_restriction_specific_response'
-        400:
-          $ref: '#/responses/400'
-        401:
-          $ref: '#/responses/401'
-        403:
-          $ref: '#/responses/403'
-        404:
-          $ref: '#/responses/404'
-        429:
-          $ref: '#/responses/429'
-        500:
-          $ref: '#/responses/500'
-        503:
-          $ref: '#/responses/503'
-    put:
-      operationId: updateTokenRestriction
-      summary: Update a token restriction
-      security:
-        - oauth: [molecule]
-      externalDocs:
-        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-restriction
-      tags:
-        - Molecule
-      parameters:
-        - name: payload
-          required: true
-          in: body
-          schema:
-            $ref: '#/definitions/token_restriction_create_payload'
-      responses:
-        200:
-          description: 'Successful response'
-          schema:
-            $ref: '#/definitions/token_restriction_specific_response'
-        400:
-          $ref: '#/responses/400'
-        401:
-          $ref: '#/responses/401'
-        403:
-          $ref: '#/responses/403'
-        404:
-          $ref: '#/responses/404'
-        429:
-          $ref: '#/responses/429'
-        500:
-          $ref: '#/responses/500'
-        503:
-          $ref: '#/responses/503'
-    parameters:
-      - $ref: '#/parameters/path_token_restriction_uuid'
-
   /molecule/v1/token_supply:
     get:
       operationId: getTokenSupplies
@@ -998,13 +880,6 @@ parameters:
     format: uuid
     required: true
     description: UUID of a token
-  path_token_restriction_uuid:
-    in: path
-    name: token_restriction_id
-    type: string
-    format: uuid
-    required: true
-    description: UUID of a token restriction
   path_token_supply_uuid:
     in: path
     name: token_supply_id
@@ -1283,40 +1158,6 @@ definitions:
             format: datetime
             description: Datetime the token record was created
       - $ref: '#/definitions/token_create_payload'
-  token_restriction_get_response:
-    allOf:
-      - type: object
-      - properties:
-          content:
-            type: array
-            items:
-              $ref: '#/definitions/token_restriction_specific_response'
-      - $ref: '#/definitions/pagination'
-  token_restriction_specific_response:
-    allOf:
-      - type: object
-      - properties:
-          update_date:
-            type: string
-            format: datetime
-            description: Datetime the token restriction record was updated
-      - $ref: '#/definitions/token_restriction_create_response'
-  token_restriction_create_response:
-    allOf:
-      - type: object
-      - properties:
-          id:
-            type: string
-            format: uuid
-            description: ID of the wallet record
-          label:
-            type: string
-            description: The unique label for the token restriction
-          create_date:
-            type: string
-            format: datetime
-            description: Datetime the wallet record was created
-      - $ref: '#/definitions/token_restriction_create_payload'
   token_supply_get_response:
     allOf:
       - type: object
@@ -1449,7 +1290,7 @@ definitions:
       - symbol
       - name
       - nucleus_model_id
-      - owner_id
+      - owner_wallet_id
       - total_supply
     properties:
       symbol:
@@ -1462,7 +1303,7 @@ definitions:
         type: string
         format: uuid
         description: The id of the associated Nucleus model for this security token
-      owner_id:
+      owner_wallet_id:
         type: string
         format: uuid
         description: The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
@@ -1480,10 +1321,45 @@ definitions:
         type: string
         description: The crowdsale address of the security token on the Ethereum blockchain
       restrictions:
-        type: array
+        type: object
         description: The array of token restrictions applied on this token.
-        items:
-          type: string
+        properties:
+          min_age:
+            type: number
+            description: Investors older than this age will be allowed to invest
+          max_age:
+            type: number
+            description: Investors younger than this age will be allowed to invest
+          min_annual_income:
+            type: number
+            description: Investors with an annual income higher than this number will be allowed to invest
+          max_annual_income:
+            type: number
+            description: Investors with an annual income lower than this number will be allowed to invest
+          min_household_income:
+            type: number
+            description: Investors with an household income higher than this number will be allowed to invest
+          max_household_income:
+            type: number
+            description: Investors with an household income lower than this number will be allowed to invest
+          min_net_worth:
+            type: number
+            description: Investors with a net worth higher than this number will be allowed to invest
+          max_net_worth:
+            type: number
+            description: Investors with a net worth lower than this number will be allowed to invest
+          min_credit_score:
+            type: number
+            description: Investors with a credit score higher than this number will be allowed to invest
+          max_credit_score:
+            type: number
+            description: Investors with a credit score lower than this number will be allowed to invest
+          accreditation_required:
+            type: boolean
+            description: Only accredited investors will be allowed to invest
+          kyc_required:
+            type: boolean
+            description: Investors who are verified by a Know-Your-Customer vendor will be allowed to invest
       offering_settings:
         type: object
         description: The array of security token offering settings applied on this token
@@ -1561,15 +1437,3 @@ definitions:
       amount:
         type: number
         description: Amount of tokens to be purchased.
-  token_restriction_create_payload:
-    type: object
-    required:
-      - type
-      - value
-    properties:
-      type:
-        type: string
-        description: The type of the token restriction.
-      value:
-        type: string
-        description: The value assigned for the restriction

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenCrowdsalePayload', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenPurchasePayload', 'model/TokenRestrictionCreatePayload', 'model/TokenRestrictionCreateResponse', 'model/TokenRestrictionGetResponse', 'model/TokenRestrictionSpecificResponse', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenWhitelistPayload', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse'], factory);
+    define(['ApiClient', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenCrowdsalePayload', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenPurchasePayload', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenWhitelistPayload', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenCrowdsalePayload'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenPurchasePayload'), require('../model/TokenRestrictionCreatePayload'), require('../model/TokenRestrictionCreateResponse'), require('../model/TokenRestrictionGetResponse'), require('../model/TokenRestrictionSpecificResponse'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenWhitelistPayload'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'));
+    module.exports = factory(require('../ApiClient'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenCrowdsalePayload'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenPurchasePayload'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenWhitelistPayload'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenCrowdsalePayload, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenPurchasePayload, root.molecule_api.TokenRestrictionCreatePayload, root.molecule_api.TokenRestrictionCreateResponse, root.molecule_api.TokenRestrictionGetResponse, root.molecule_api.TokenRestrictionSpecificResponse, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenWhitelistPayload, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse);
+    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenCrowdsalePayload, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenPurchasePayload, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenWhitelistPayload, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse);
   }
-}(this, function(ApiClient, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenCrowdsalePayload, TokenDeployPayload, TokenGetResponse, TokenPurchasePayload, TokenRestrictionCreatePayload, TokenRestrictionCreateResponse, TokenRestrictionGetResponse, TokenRestrictionSpecificResponse, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenWhitelistPayload, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse) {
+}(this, function(ApiClient, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenCrowdsalePayload, TokenDeployPayload, TokenGetResponse, TokenPurchasePayload, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenWhitelistPayload, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse) {
   'use strict';
 
   /**
@@ -82,7 +82,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -330,103 +330,6 @@
 
       return this.apiClient.callApi(
         '/molecule/v1/token_balance', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getTokenRestriction operation.
-     * @callback module:api/MoleculeApi~getTokenRestrictionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TokenRestrictionSpecificResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve a token restriction
-     * @param {String} tokenRestrictionId UUID of a token restriction
-     * @param {module:api/MoleculeApi~getTokenRestrictionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenRestrictionSpecificResponse}
-     */
-    this.getTokenRestriction = function(tokenRestrictionId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'tokenRestrictionId' is set
-      if (tokenRestrictionId === undefined || tokenRestrictionId === null) {
-        throw new Error("Missing the required parameter 'tokenRestrictionId' when calling getTokenRestriction");
-      }
-
-
-      var pathParams = {
-        'token_restriction_id': tokenRestrictionId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TokenRestrictionSpecificResponse;
-
-      return this.apiClient.callApi(
-        '/molecule/v1/token_restriction/{token_restriction_id}/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getTokenRestrictions operation.
-     * @callback module:api/MoleculeApi~getTokenRestrictionsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TokenRestrictionGetResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get information for all token restrictions defined for your firm
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
-     * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
-     * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
-     * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {module:api/MoleculeApi~getTokenRestrictionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenRestrictionGetResponse}
-     */
-    this.getTokenRestrictions = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'page': opts['page'],
-        'size': opts['size'],
-        'order_by': opts['orderBy'],
-        'ascending': opts['ascending'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TokenRestrictionGetResponse;
-
-      return this.apiClient.callApi(
-        '/molecule/v1/token_restriction', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -957,52 +860,6 @@
     }
 
     /**
-     * Callback function to receive the result of the postTokenRestriction operation.
-     * @callback module:api/MoleculeApi~postTokenRestrictionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TokenRestrictionCreateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create a token restriction under your firm.
-     * @param {module:model/TokenRestrictionCreatePayload} payload 
-     * @param {module:api/MoleculeApi~postTokenRestrictionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenRestrictionCreateResponse}
-     */
-    this.postTokenRestriction = function(payload, callback) {
-      var postBody = payload;
-
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postTokenRestriction");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TokenRestrictionCreateResponse;
-
-      return this.apiClient.callApi(
-        '/molecule/v1/token_restriction', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the postTokenWhitelist operation.
      * @callback module:api/MoleculeApi~postTokenWhitelistCallback
      * @param {String} error Error message, if any.
@@ -1233,59 +1090,6 @@
 
       return this.apiClient.callApi(
         '/molecule/v1/token/{token_id}/', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the updateTokenRestriction operation.
-     * @callback module:api/MoleculeApi~updateTokenRestrictionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TokenRestrictionSpecificResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Update a token restriction
-     * @param {String} tokenRestrictionId UUID of a token restriction
-     * @param {module:model/TokenRestrictionCreatePayload} payload 
-     * @param {module:api/MoleculeApi~updateTokenRestrictionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenRestrictionSpecificResponse}
-     */
-    this.updateTokenRestriction = function(tokenRestrictionId, payload, callback) {
-      var postBody = payload;
-
-      // verify the required parameter 'tokenRestrictionId' is set
-      if (tokenRestrictionId === undefined || tokenRestrictionId === null) {
-        throw new Error("Missing the required parameter 'tokenRestrictionId' when calling updateTokenRestriction");
-      }
-
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling updateTokenRestriction");
-      }
-
-
-      var pathParams = {
-        'token_restriction_id': tokenRestrictionId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TokenRestrictionSpecificResponse;
-
-      return this.apiClient.callApi(
-        '/molecule/v1/token_restriction/{token_restriction_id}/', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

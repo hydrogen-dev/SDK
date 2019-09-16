@@ -24,15 +24,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.TokenCreatePayload;
 import io.swagger.client.model.TokenCreatePayloadOfferingSettings;
+import io.swagger.client.model.TokenCreatePayloadRestrictions;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 /**
  * TokenCreateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-11T18:23:25.119-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T11:10:59.915-04:00")
 public class TokenCreateResponse {
   @SerializedName("symbol")
   private String symbol = null;
@@ -43,8 +42,8 @@ public class TokenCreateResponse {
   @SerializedName("nucleus_model_id")
   private UUID nucleusModelId = null;
 
-  @SerializedName("owner_id")
-  private UUID ownerId = null;
+  @SerializedName("owner_wallet_id")
+  private UUID ownerWalletId = null;
 
   @SerializedName("total_supply")
   private Integer totalSupply = null;
@@ -59,7 +58,7 @@ public class TokenCreateResponse {
   private String crowdsaleAddress = null;
 
   @SerializedName("restrictions")
-  private List<String> restrictions = null;
+  private TokenCreatePayloadRestrictions restrictions = null;
 
   @SerializedName("offering_settings")
   private TokenCreatePayloadOfferingSettings offeringSettings = null;
@@ -130,22 +129,22 @@ public class TokenCreateResponse {
     this.nucleusModelId = nucleusModelId;
   }
 
-  public TokenCreateResponse ownerId(UUID ownerId) {
-    this.ownerId = ownerId;
+  public TokenCreateResponse ownerWalletId(UUID ownerWalletId) {
+    this.ownerWalletId = ownerWalletId;
     return this;
   }
 
    /**
    * The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
-   * @return ownerId
+   * @return ownerWalletId
   **/
   @ApiModelProperty(required = true, value = "The wallet id of the token owner. This wallet has the privileges to do on-chain modifications")
-  public UUID getOwnerId() {
-    return ownerId;
+  public UUID getOwnerWalletId() {
+    return ownerWalletId;
   }
 
-  public void setOwnerId(UUID ownerId) {
-    this.ownerId = ownerId;
+  public void setOwnerWalletId(UUID ownerWalletId) {
+    this.ownerWalletId = ownerWalletId;
   }
 
   public TokenCreateResponse totalSupply(Integer totalSupply) {
@@ -220,29 +219,21 @@ public class TokenCreateResponse {
     this.crowdsaleAddress = crowdsaleAddress;
   }
 
-  public TokenCreateResponse restrictions(List<String> restrictions) {
+  public TokenCreateResponse restrictions(TokenCreatePayloadRestrictions restrictions) {
     this.restrictions = restrictions;
     return this;
   }
 
-  public TokenCreateResponse addRestrictionsItem(String restrictionsItem) {
-    if (this.restrictions == null) {
-      this.restrictions = new ArrayList<String>();
-    }
-    this.restrictions.add(restrictionsItem);
-    return this;
-  }
-
    /**
-   * The array of token restrictions applied on this token.
+   * Get restrictions
    * @return restrictions
   **/
-  @ApiModelProperty(value = "The array of token restrictions applied on this token.")
-  public List<String> getRestrictions() {
+  @ApiModelProperty(value = "")
+  public TokenCreatePayloadRestrictions getRestrictions() {
     return restrictions;
   }
 
-  public void setRestrictions(List<String> restrictions) {
+  public void setRestrictions(TokenCreatePayloadRestrictions restrictions) {
     this.restrictions = restrictions;
   }
 
@@ -349,7 +340,7 @@ public class TokenCreateResponse {
     return Objects.equals(this.symbol, tokenCreateResponse.symbol) &&
         Objects.equals(this.name, tokenCreateResponse.name) &&
         Objects.equals(this.nucleusModelId, tokenCreateResponse.nucleusModelId) &&
-        Objects.equals(this.ownerId, tokenCreateResponse.ownerId) &&
+        Objects.equals(this.ownerWalletId, tokenCreateResponse.ownerWalletId) &&
         Objects.equals(this.totalSupply, tokenCreateResponse.totalSupply) &&
         Objects.equals(this.circulatingSupply, tokenCreateResponse.circulatingSupply) &&
         Objects.equals(this.conractAddress, tokenCreateResponse.conractAddress) &&
@@ -364,7 +355,7 @@ public class TokenCreateResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbol, name, nucleusModelId, ownerId, totalSupply, circulatingSupply, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId, id, createDate);
+    return Objects.hash(symbol, name, nucleusModelId, ownerWalletId, totalSupply, circulatingSupply, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId, id, createDate);
   }
 
 
@@ -376,7 +367,7 @@ public class TokenCreateResponse {
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nucleusModelId: ").append(toIndentedString(nucleusModelId)).append("\n");
-    sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
+    sb.append("    ownerWalletId: ").append(toIndentedString(ownerWalletId)).append("\n");
     sb.append("    totalSupply: ").append(toIndentedString(totalSupply)).append("\n");
     sb.append("    circulatingSupply: ").append(toIndentedString(circulatingSupply)).append("\n");
     sb.append("    conractAddress: ").append(toIndentedString(conractAddress)).append("\n");

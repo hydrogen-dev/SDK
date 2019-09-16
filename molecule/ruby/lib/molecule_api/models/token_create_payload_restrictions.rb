@@ -13,60 +13,77 @@ Swagger Codegen version: 2.4.8-SNAPSHOT
 require 'date'
 
 module MoleculeApi
-  class TokenRestrictionGetResponse
-    # If true, the last record in the result set is shown
-    attr_accessor :last
+  # The array of token restrictions applied on this token.
+  class TokenCreatePayloadRestrictions
+    # Investors older than this age will be allowed to invest
+    attr_accessor :min_age
 
-    # Total number of pages in the result set
-    attr_accessor :total_pages
+    # Investors younger than this age will be allowed to invest
+    attr_accessor :max_age
 
-    # Total number of elements in the result set
-    attr_accessor :total_elements
+    # Investors with an annual income higher than this number will be allowed to invest
+    attr_accessor :min_annual_income
 
-    # Details of the sort
-    attr_accessor :sort
+    # Investors with an annual income lower than this number will be allowed to invest
+    attr_accessor :max_annual_income
 
-    # If true, the first record in the result set is shown
-    attr_accessor :first
+    # Investors with an household income higher than this number will be allowed to invest
+    attr_accessor :min_household_income
 
-    # Number of elements per page
-    attr_accessor :number_of_elements
+    # Investors with an household income lower than this number will be allowed to invest
+    attr_accessor :max_household_income
 
-    # The number or records to be included per page. The default is 25. There is no max value.
-    attr_accessor :size
+    # Investors with a net worth higher than this number will be allowed to invest
+    attr_accessor :min_net_worth
 
-    # Number of the first result shown
-    attr_accessor :number
+    # Investors with a net worth lower than this number will be allowed to invest
+    attr_accessor :max_net_worth
 
-    attr_accessor :content
+    # Investors with a credit score higher than this number will be allowed to invest
+    attr_accessor :min_credit_score
+
+    # Investors with a credit score lower than this number will be allowed to invest
+    attr_accessor :max_credit_score
+
+    # Only accredited investors will be allowed to invest
+    attr_accessor :accreditation_required
+
+    # Investors who are verified by a Know-Your-Customer vendor will be allowed to invest
+    attr_accessor :kyc_required
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'last' => :'last',
-        :'total_pages' => :'total_pages',
-        :'total_elements' => :'total_elements',
-        :'sort' => :'sort',
-        :'first' => :'first',
-        :'number_of_elements' => :'number_of_elements',
-        :'size' => :'size',
-        :'number' => :'number',
-        :'content' => :'content'
+        :'min_age' => :'min_age',
+        :'max_age' => :'max_age',
+        :'min_annual_income' => :'min_annual_income',
+        :'max_annual_income' => :'max_annual_income',
+        :'min_household_income' => :'min_household_income',
+        :'max_household_income' => :'max_household_income',
+        :'min_net_worth' => :'min_net_worth',
+        :'max_net_worth' => :'max_net_worth',
+        :'min_credit_score' => :'min_credit_score',
+        :'max_credit_score' => :'max_credit_score',
+        :'accreditation_required' => :'accreditation_required',
+        :'kyc_required' => :'kyc_required'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'last' => :'BOOLEAN',
-        :'total_pages' => :'Integer',
-        :'total_elements' => :'Integer',
-        :'sort' => :'Array<PaginationSort>',
-        :'first' => :'BOOLEAN',
-        :'number_of_elements' => :'Integer',
-        :'size' => :'Integer',
-        :'number' => :'Integer',
-        :'content' => :'Array<TokenRestrictionSpecificResponse>'
+        :'min_age' => :'Float',
+        :'max_age' => :'Float',
+        :'min_annual_income' => :'Float',
+        :'max_annual_income' => :'Float',
+        :'min_household_income' => :'Float',
+        :'max_household_income' => :'Float',
+        :'min_net_worth' => :'Float',
+        :'max_net_worth' => :'Float',
+        :'min_credit_score' => :'Float',
+        :'max_credit_score' => :'Float',
+        :'accreditation_required' => :'BOOLEAN',
+        :'kyc_required' => :'BOOLEAN'
       }
     end
 
@@ -78,44 +95,52 @@ module MoleculeApi
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'last')
-        self.last = attributes[:'last']
+      if attributes.has_key?(:'min_age')
+        self.min_age = attributes[:'min_age']
       end
 
-      if attributes.has_key?(:'total_pages')
-        self.total_pages = attributes[:'total_pages']
+      if attributes.has_key?(:'max_age')
+        self.max_age = attributes[:'max_age']
       end
 
-      if attributes.has_key?(:'total_elements')
-        self.total_elements = attributes[:'total_elements']
+      if attributes.has_key?(:'min_annual_income')
+        self.min_annual_income = attributes[:'min_annual_income']
       end
 
-      if attributes.has_key?(:'sort')
-        if (value = attributes[:'sort']).is_a?(Array)
-          self.sort = value
-        end
+      if attributes.has_key?(:'max_annual_income')
+        self.max_annual_income = attributes[:'max_annual_income']
       end
 
-      if attributes.has_key?(:'first')
-        self.first = attributes[:'first']
+      if attributes.has_key?(:'min_household_income')
+        self.min_household_income = attributes[:'min_household_income']
       end
 
-      if attributes.has_key?(:'number_of_elements')
-        self.number_of_elements = attributes[:'number_of_elements']
+      if attributes.has_key?(:'max_household_income')
+        self.max_household_income = attributes[:'max_household_income']
       end
 
-      if attributes.has_key?(:'size')
-        self.size = attributes[:'size']
+      if attributes.has_key?(:'min_net_worth')
+        self.min_net_worth = attributes[:'min_net_worth']
       end
 
-      if attributes.has_key?(:'number')
-        self.number = attributes[:'number']
+      if attributes.has_key?(:'max_net_worth')
+        self.max_net_worth = attributes[:'max_net_worth']
       end
 
-      if attributes.has_key?(:'content')
-        if (value = attributes[:'content']).is_a?(Array)
-          self.content = value
-        end
+      if attributes.has_key?(:'min_credit_score')
+        self.min_credit_score = attributes[:'min_credit_score']
+      end
+
+      if attributes.has_key?(:'max_credit_score')
+        self.max_credit_score = attributes[:'max_credit_score']
+      end
+
+      if attributes.has_key?(:'accreditation_required')
+        self.accreditation_required = attributes[:'accreditation_required']
+      end
+
+      if attributes.has_key?(:'kyc_required')
+        self.kyc_required = attributes[:'kyc_required']
       end
     end
 
@@ -137,15 +162,18 @@ module MoleculeApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          last == o.last &&
-          total_pages == o.total_pages &&
-          total_elements == o.total_elements &&
-          sort == o.sort &&
-          first == o.first &&
-          number_of_elements == o.number_of_elements &&
-          size == o.size &&
-          number == o.number &&
-          content == o.content
+          min_age == o.min_age &&
+          max_age == o.max_age &&
+          min_annual_income == o.min_annual_income &&
+          max_annual_income == o.max_annual_income &&
+          min_household_income == o.min_household_income &&
+          max_household_income == o.max_household_income &&
+          min_net_worth == o.min_net_worth &&
+          max_net_worth == o.max_net_worth &&
+          min_credit_score == o.min_credit_score &&
+          max_credit_score == o.max_credit_score &&
+          accreditation_required == o.accreditation_required &&
+          kyc_required == o.kyc_required
     end
 
     # @see the `==` method
@@ -157,7 +185,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [last, total_pages, total_elements, sort, first, number_of_elements, size, number, content].hash
+      [min_age, max_age, min_annual_income, max_annual_income, min_household_income, max_household_income, min_net_worth, max_net_worth, min_credit_score, max_credit_score, accreditation_required, kyc_required].hash
     end
 
     # Builds the object from hash

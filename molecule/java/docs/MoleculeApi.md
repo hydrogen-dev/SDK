@@ -10,8 +10,6 @@ Method | HTTP request | Description
 [**getToken**](MoleculeApi.md#getToken) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 [**getTokenBalance**](MoleculeApi.md#getTokenBalance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 [**getTokenBalances**](MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
-[**getTokenRestriction**](MoleculeApi.md#getTokenRestriction) | **GET** /molecule/v1/token_restriction/{token_restriction_id}/ | Retrieve a token restriction
-[**getTokenRestrictions**](MoleculeApi.md#getTokenRestrictions) | **GET** /molecule/v1/token_restriction | Get information for all token restrictions defined for your firm
 [**getTokenSupplies**](MoleculeApi.md#getTokenSupplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 [**getTokenSupply**](MoleculeApi.md#getTokenSupply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
@@ -23,13 +21,11 @@ Method | HTTP request | Description
 [**postTokenCrowdsale**](MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 [**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 [**postTokenPurchase**](MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
-[**postTokenRestriction**](MoleculeApi.md#postTokenRestriction) | **POST** /molecule/v1/token_restriction | Create a token restriction under your firm.
 [**postTokenWhitelist**](MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**postWalletKey**](MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**postWalletKeyGenerator**](MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 [**updateToken**](MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
-[**updateTokenRestriction**](MoleculeApi.md#updateTokenRestriction) | **PUT** /molecule/v1/token_restriction/{token_restriction_id}/ | Update a token restriction
 [**updateWallet**](MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
 
 
@@ -42,9 +38,26 @@ Delete a token
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 UUID tokenId = new UUID(); // UUID | UUID of a token
@@ -68,7 +81,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -377,132 +390,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenBalanceGetResponse**](TokenBalanceGetResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getTokenRestriction"></a>
-# **getTokenRestriction**
-> TokenRestrictionSpecificResponse getTokenRestriction(tokenRestrictionId)
-
-Retrieve a token restriction
-
-### Example
-```java
-// Import classes:
-//import molecule_api.ApiClient;
-//import molecule_api.ApiException;
-//import molecule_api.Configuration;
-//import molecule_api.auth.*;
-//import io.swagger.client.api.MoleculeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Set the environment (optional, defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.setEnvironment("sandbox");
-
-
-// Configure OAuth2 access token for authorization: oauth
-OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
-// Method 1: Fetch and set access token with client_id and client_secret
-String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
-oauth.setAccessToken(token);
-// Method 2: Set access token using an existing token
-oauth.setAccessToken("MYACCESSTOKEN");
-
-MoleculeApi apiInstance = new MoleculeApi();
-UUID tokenRestrictionId = new UUID(); // UUID | UUID of a token restriction
-try {
-    TokenRestrictionSpecificResponse result = apiInstance.getTokenRestriction(tokenRestrictionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#getTokenRestriction");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tokenRestrictionId** | [**UUID**](.md)| UUID of a token restriction |
-
-### Return type
-
-[**TokenRestrictionSpecificResponse**](TokenRestrictionSpecificResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getTokenRestrictions"></a>
-# **getTokenRestrictions**
-> TokenRestrictionGetResponse getTokenRestrictions(page, size, orderBy, ascending)
-
-Get information for all token restrictions defined for your firm
-
-### Example
-```java
-// Import classes:
-//import molecule_api.ApiClient;
-//import molecule_api.ApiException;
-//import molecule_api.Configuration;
-//import molecule_api.auth.*;
-//import io.swagger.client.api.MoleculeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Set the environment (optional, defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.setEnvironment("sandbox");
-
-
-// Configure OAuth2 access token for authorization: oauth
-OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
-// Method 1: Fetch and set access token with client_id and client_secret
-String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
-oauth.setAccessToken(token);
-// Method 2: Set access token using an existing token
-oauth.setAccessToken("MYACCESSTOKEN");
-
-MoleculeApi apiInstance = new MoleculeApi();
-Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
-Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
-String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
-Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-try {
-    TokenRestrictionGetResponse result = apiInstance.getTokenRestrictions(page, size, orderBy, ascending);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#getTokenRestrictions");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
- **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
- **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
- **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
-
-### Return type
-
-[**TokenRestrictionGetResponse**](TokenRestrictionGetResponse.md)
 
 ### Authorization
 
@@ -1128,49 +1015,6 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postTokenRestriction"></a>
-# **postTokenRestriction**
-> TokenRestrictionCreateResponse postTokenRestriction(payload)
-
-Create a token restriction under your firm.
-
-### Example
-```java
-// Import classes:
-//import molecule_api.ApiException;
-//import io.swagger.client.api.MoleculeApi;
-
-
-MoleculeApi apiInstance = new MoleculeApi();
-TokenRestrictionCreatePayload payload = new TokenRestrictionCreatePayload(); // TokenRestrictionCreatePayload | 
-try {
-    TokenRestrictionCreateResponse result = apiInstance.postTokenRestriction(payload);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#postTokenRestriction");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenRestrictionCreatePayload**](TokenRestrictionCreatePayload.md)|  |
-
-### Return type
-
-[**TokenRestrictionCreateResponse**](TokenRestrictionCreateResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="postTokenWhitelist"></a>
 # **postTokenWhitelist**
 > postTokenWhitelist(payload)
@@ -1394,68 +1238,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenSpecificResponse**](TokenSpecificResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="updateTokenRestriction"></a>
-# **updateTokenRestriction**
-> TokenRestrictionSpecificResponse updateTokenRestriction(tokenRestrictionId, payload)
-
-Update a token restriction
-
-### Example
-```java
-// Import classes:
-//import molecule_api.ApiClient;
-//import molecule_api.ApiException;
-//import molecule_api.Configuration;
-//import molecule_api.auth.*;
-//import io.swagger.client.api.MoleculeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Set the environment (optional, defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.setEnvironment("sandbox");
-
-
-// Configure OAuth2 access token for authorization: oauth
-OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
-// Method 1: Fetch and set access token with client_id and client_secret
-String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
-oauth.setAccessToken(token);
-// Method 2: Set access token using an existing token
-oauth.setAccessToken("MYACCESSTOKEN");
-
-MoleculeApi apiInstance = new MoleculeApi();
-UUID tokenRestrictionId = new UUID(); // UUID | UUID of a token restriction
-TokenRestrictionCreatePayload payload = new TokenRestrictionCreatePayload(); // TokenRestrictionCreatePayload | 
-try {
-    TokenRestrictionSpecificResponse result = apiInstance.updateTokenRestriction(tokenRestrictionId, payload);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#updateTokenRestriction");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tokenRestrictionId** | [**UUID**](.md)| UUID of a token restriction |
- **payload** | [**TokenRestrictionCreatePayload**](TokenRestrictionCreatePayload.md)|  |
-
-### Return type
-
-[**TokenRestrictionSpecificResponse**](TokenRestrictionSpecificResponse.md)
 
 ### Authorization
 

@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import molecule_api
-from molecule_api.models.token_restriction_create_response import TokenRestrictionCreateResponse  # noqa: E501
+from molecule_api.models.token_create_payload_restrictions import TokenCreatePayloadRestrictions  # noqa: E501
 from molecule_api.rest import ApiException
 
 
-class TestTokenRestrictionCreateResponse(unittest.TestCase):
-    """TokenRestrictionCreateResponse unit test stubs"""
+class TestTokenCreatePayloadRestrictions(unittest.TestCase):
+    """TokenCreatePayloadRestrictions unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestTokenRestrictionCreateResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTokenRestrictionCreateResponse(self):
-        """Test TokenRestrictionCreateResponse"""
+    def testTokenCreatePayloadRestrictions(self):
+        """Test TokenCreatePayloadRestrictions"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = molecule_api.models.token_restriction_create_response.TokenRestrictionCreateResponse()  # noqa: E501
+        # model = molecule_api.models.token_create_payload_restrictions.TokenCreatePayloadRestrictions()  # noqa: E501
         pass
 
 

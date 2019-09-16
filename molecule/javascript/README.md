@@ -108,6 +108,18 @@ Please follow the [installation](#installation) instructions and execute the fol
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
 
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
 var api = new molecule_api.MoleculeApi();
 
 var tokenId = "tokenId_example"; // {String} UUID of a token
@@ -138,8 +150,6 @@ Class | Method | HTTP request | Description
 *molecule_api.MoleculeApi* | [**getToken**](docs/MoleculeApi.md#getToken) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 *molecule_api.MoleculeApi* | [**getTokenBalance**](docs/MoleculeApi.md#getTokenBalance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 *molecule_api.MoleculeApi* | [**getTokenBalances**](docs/MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
-*molecule_api.MoleculeApi* | [**getTokenRestriction**](docs/MoleculeApi.md#getTokenRestriction) | **GET** /molecule/v1/token_restriction/{token_restriction_id}/ | Retrieve a token restriction
-*molecule_api.MoleculeApi* | [**getTokenRestrictions**](docs/MoleculeApi.md#getTokenRestrictions) | **GET** /molecule/v1/token_restriction | Get information for all token restrictions defined for your firm
 *molecule_api.MoleculeApi* | [**getTokenSupplies**](docs/MoleculeApi.md#getTokenSupplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 *molecule_api.MoleculeApi* | [**getTokenSupply**](docs/MoleculeApi.md#getTokenSupply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
 *molecule_api.MoleculeApi* | [**getTokens**](docs/MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
@@ -151,13 +161,11 @@ Class | Method | HTTP request | Description
 *molecule_api.MoleculeApi* | [**postTokenCrowdsale**](docs/MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 *molecule_api.MoleculeApi* | [**postTokenDeploy**](docs/MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 *molecule_api.MoleculeApi* | [**postTokenPurchase**](docs/MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
-*molecule_api.MoleculeApi* | [**postTokenRestriction**](docs/MoleculeApi.md#postTokenRestriction) | **POST** /molecule/v1/token_restriction | Create a token restriction under your firm.
 *molecule_api.MoleculeApi* | [**postTokenWhitelist**](docs/MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 *molecule_api.MoleculeApi* | [**postWallet**](docs/MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 *molecule_api.MoleculeApi* | [**postWalletKey**](docs/MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 *molecule_api.MoleculeApi* | [**postWalletKeyGenerator**](docs/MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 *molecule_api.MoleculeApi* | [**updateToken**](docs/MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
-*molecule_api.MoleculeApi* | [**updateTokenRestriction**](docs/MoleculeApi.md#updateTokenRestriction) | **PUT** /molecule/v1/token_restriction/{token_restriction_id}/ | Update a token restriction
 *molecule_api.MoleculeApi* | [**updateWallet**](docs/MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
 
 
@@ -170,10 +178,10 @@ Class | Method | HTTP request | Description
  - [molecule_api.TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [molecule_api.TokenCreatePayload](docs/TokenCreatePayload.md)
  - [molecule_api.TokenCreatePayloadOfferingSettings](docs/TokenCreatePayloadOfferingSettings.md)
+ - [molecule_api.TokenCreatePayloadRestrictions](docs/TokenCreatePayloadRestrictions.md)
  - [molecule_api.TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [molecule_api.TokenDeployPayload](docs/TokenDeployPayload.md)
  - [molecule_api.TokenPurchasePayload](docs/TokenPurchasePayload.md)
- - [molecule_api.TokenRestrictionCreatePayload](docs/TokenRestrictionCreatePayload.md)
  - [molecule_api.TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
  - [molecule_api.TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
  - [molecule_api.WalletCreateClient](docs/WalletCreateClient.md)
@@ -187,13 +195,10 @@ Class | Method | HTTP request | Description
  - [molecule_api.TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [molecule_api.TokenCreateResponse](docs/TokenCreateResponse.md)
  - [molecule_api.TokenGetResponse](docs/TokenGetResponse.md)
- - [molecule_api.TokenRestrictionCreateResponse](docs/TokenRestrictionCreateResponse.md)
- - [molecule_api.TokenRestrictionGetResponse](docs/TokenRestrictionGetResponse.md)
  - [molecule_api.TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
  - [molecule_api.WalletCreateResponse](docs/WalletCreateResponse.md)
  - [molecule_api.WalletGetResponse](docs/WalletGetResponse.md)
  - [molecule_api.WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
- - [molecule_api.TokenRestrictionSpecificResponse](docs/TokenRestrictionSpecificResponse.md)
  - [molecule_api.TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [molecule_api.WalletSpecificResponse](docs/WalletSpecificResponse.md)
 

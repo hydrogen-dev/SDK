@@ -19,6 +19,7 @@ import six
 from molecule_api.models.secondary_id import SecondaryId  # noqa: F401,E501
 from molecule_api.models.token_create_payload import TokenCreatePayload  # noqa: F401,E501
 from molecule_api.models.token_create_payload_offering_settings import TokenCreatePayloadOfferingSettings  # noqa: F401,E501
+from molecule_api.models.token_create_payload_restrictions import TokenCreatePayloadRestrictions  # noqa: F401,E501
 
 
 class TokenCreateResponse(object):
@@ -38,12 +39,12 @@ class TokenCreateResponse(object):
         'symbol': 'str',
         'name': 'str',
         'nucleus_model_id': 'str',
-        'owner_id': 'str',
+        'owner_wallet_id': 'str',
         'total_supply': 'int',
         'circulating_supply': 'int',
         'conract_address': 'str',
         'crowdsale_address': 'str',
-        'restrictions': 'list[str]',
+        'restrictions': 'TokenCreatePayloadRestrictions',
         'offering_settings': 'TokenCreatePayloadOfferingSettings',
         'metadata': 'object',
         'secondary_id': 'SecondaryId',
@@ -55,7 +56,7 @@ class TokenCreateResponse(object):
         'symbol': 'symbol',
         'name': 'name',
         'nucleus_model_id': 'nucleus_model_id',
-        'owner_id': 'owner_id',
+        'owner_wallet_id': 'owner_wallet_id',
         'total_supply': 'total_supply',
         'circulating_supply': 'circulating_supply',
         'conract_address': 'conract_address',
@@ -68,13 +69,13 @@ class TokenCreateResponse(object):
         'create_date': 'create_date'
     }
 
-    def __init__(self, symbol=None, name=None, nucleus_model_id=None, owner_id=None, total_supply=None, circulating_supply=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, symbol=None, name=None, nucleus_model_id=None, owner_wallet_id=None, total_supply=None, circulating_supply=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
         """TokenCreateResponse - a model defined in Swagger"""  # noqa: E501
 
         self._symbol = None
         self._name = None
         self._nucleus_model_id = None
-        self._owner_id = None
+        self._owner_wallet_id = None
         self._total_supply = None
         self._circulating_supply = None
         self._conract_address = None
@@ -90,7 +91,7 @@ class TokenCreateResponse(object):
         self.symbol = symbol
         self.name = name
         self.nucleus_model_id = nucleus_model_id
-        self.owner_id = owner_id
+        self.owner_wallet_id = owner_wallet_id
         self.total_supply = total_supply
         if circulating_supply is not None:
             self.circulating_supply = circulating_supply
@@ -187,29 +188,29 @@ class TokenCreateResponse(object):
         self._nucleus_model_id = nucleus_model_id
 
     @property
-    def owner_id(self):
-        """Gets the owner_id of this TokenCreateResponse.  # noqa: E501
+    def owner_wallet_id(self):
+        """Gets the owner_wallet_id of this TokenCreateResponse.  # noqa: E501
 
         The wallet id of the token owner. This wallet has the privileges to do on-chain modifications  # noqa: E501
 
-        :return: The owner_id of this TokenCreateResponse.  # noqa: E501
+        :return: The owner_wallet_id of this TokenCreateResponse.  # noqa: E501
         :rtype: str
         """
-        return self._owner_id
+        return self._owner_wallet_id
 
-    @owner_id.setter
-    def owner_id(self, owner_id):
-        """Sets the owner_id of this TokenCreateResponse.
+    @owner_wallet_id.setter
+    def owner_wallet_id(self, owner_wallet_id):
+        """Sets the owner_wallet_id of this TokenCreateResponse.
 
         The wallet id of the token owner. This wallet has the privileges to do on-chain modifications  # noqa: E501
 
-        :param owner_id: The owner_id of this TokenCreateResponse.  # noqa: E501
+        :param owner_wallet_id: The owner_wallet_id of this TokenCreateResponse.  # noqa: E501
         :type: str
         """
-        if owner_id is None:
-            raise ValueError("Invalid value for `owner_id`, must not be `None`")  # noqa: E501
+        if owner_wallet_id is None:
+            raise ValueError("Invalid value for `owner_wallet_id`, must not be `None`")  # noqa: E501
 
-        self._owner_id = owner_id
+        self._owner_wallet_id = owner_wallet_id
 
     @property
     def total_supply(self):
@@ -309,10 +310,9 @@ class TokenCreateResponse(object):
     def restrictions(self):
         """Gets the restrictions of this TokenCreateResponse.  # noqa: E501
 
-        The array of token restrictions applied on this token.  # noqa: E501
 
         :return: The restrictions of this TokenCreateResponse.  # noqa: E501
-        :rtype: list[str]
+        :rtype: TokenCreatePayloadRestrictions
         """
         return self._restrictions
 
@@ -320,10 +320,9 @@ class TokenCreateResponse(object):
     def restrictions(self, restrictions):
         """Sets the restrictions of this TokenCreateResponse.
 
-        The array of token restrictions applied on this token.  # noqa: E501
 
         :param restrictions: The restrictions of this TokenCreateResponse.  # noqa: E501
-        :type: list[str]
+        :type: TokenCreatePayloadRestrictions
         """
 
         self._restrictions = restrictions

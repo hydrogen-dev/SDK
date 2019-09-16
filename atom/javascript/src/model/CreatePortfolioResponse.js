@@ -123,6 +123,12 @@ exports.prototype['percentage'] = undefined;
 exports.prototype['description'] = undefined;
 
   /**
+   * Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
+   * @member {String} currency_code
+   */
+exports.prototype['currency_code'] = undefined;
+
+  /**
    * Custom information associated with the portfolio in the format key:value
    * @member {Object} metadata
    */

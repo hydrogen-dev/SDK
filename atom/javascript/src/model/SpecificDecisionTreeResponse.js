@@ -87,6 +87,18 @@
 exports.prototype['name'] = undefined;
 
   /**
+   * A category for the decision tree such as “Onboarding” or “Risk Profile”
+   * @member {String} category
+   */
+exports.prototype['category'] = undefined;
+
+  /**
+   * A subcategory for the decision tree such as “Income-related”
+   * @member {String} subcategory
+   */
+exports.prototype['subcategory'] = undefined;
+
+  /**
    * Description for the decision tree such as “Tree to allocate clients to taxable portfolios”
    * @member {String} description
    */

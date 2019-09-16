@@ -34,6 +34,9 @@ module AtomApi
 
     attr_accessor :node_map
 
+    # Alphabetic currency code for the base currency of the model, limited to 3 characters
+    attr_accessor :currency_code
+
     # Indicates for whether or not the model is active. Defaults to true which indicates that it is currently active
     attr_accessor :is_active
 
@@ -55,6 +58,7 @@ module AtomApi
         :'description' => :'description',
         :'client_id' => :'client_id',
         :'node_map' => :'node_map',
+        :'currency_code' => :'currency_code',
         :'is_active' => :'is_active',
         :'metadata' => :'metadata',
         :'secondary_id' => :'secondary_id',
@@ -72,6 +76,7 @@ module AtomApi
         :'description' => :'String',
         :'client_id' => :'String',
         :'node_map' => :'Array<String>',
+        :'currency_code' => :'String',
         :'is_active' => :'BOOLEAN',
         :'metadata' => :'Object',
         :'secondary_id' => :'SecondaryId',
@@ -115,6 +120,10 @@ module AtomApi
         if (value = attributes[:'node_map']).is_a?(Array)
           self.node_map = value
         end
+      end
+
+      if attributes.has_key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
       if attributes.has_key?(:'is_active')
@@ -166,6 +175,7 @@ module AtomApi
           description == o.description &&
           client_id == o.client_id &&
           node_map == o.node_map &&
+          currency_code == o.currency_code &&
           is_active == o.is_active &&
           metadata == o.metadata &&
           secondary_id == o.secondary_id &&
@@ -181,7 +191,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, name, category, description, client_id, node_map, is_active, metadata, secondary_id, update_date].hash
+      [id, create_date, name, category, description, client_id, node_map, currency_code, is_active, metadata, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

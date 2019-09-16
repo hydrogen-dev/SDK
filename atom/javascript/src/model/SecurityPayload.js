@@ -60,6 +60,8 @@
 
 
 
+
+
   };
 
   /**
@@ -93,6 +95,12 @@
       }
       if (data.hasOwnProperty('exchange')) {
         obj['exchange'] = ApiClient.convertToType(data['exchange'], 'String');
+      }
+      if (data.hasOwnProperty('proxy_id')) {
+        obj['proxy_id'] = ApiClient.convertToType(data['proxy_id'], 'String');
+      }
+      if (data.hasOwnProperty('currency_code')) {
+        obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
       }
       if (data.hasOwnProperty('is_active')) {
         obj['is_active'] = ApiClient.convertToType(data['is_active'], 'Boolean');
@@ -142,6 +150,16 @@
    * @member {String} exchange
    */
   exports.prototype['exchange'] = undefined;
+  /**
+   * ID of a security that will serve as a proxy in financial analytics
+   * @member {String} proxy_id
+   */
+  exports.prototype['proxy_id'] = undefined;
+  /**
+   * Alphabetic currency code for the base currency of the security, limited to 3 characters
+   * @member {String} currency_code
+   */
+  exports.prototype['currency_code'] = undefined;
   /**
    * Indicates if the security is active. Defaults to true which indicates that the it is active
    * @member {Boolean} is_active

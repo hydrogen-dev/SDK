@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **date_of_birth** | **date** | Date of birth of the client in the ISO 8601 format YYYY-MM-DD | [optional] 
 **identification_number** | **str** | National or local identification number for a client such as Social Security Number, frequently used for Know-Your-Customer (KYC) purposes | [optional] 
 **country_of_residence** | **str** | The country of residence of a client, often corresponding to the country issuing the identification number provided above using the ISO ALPHA-2 Code, frequently used for Know-Your-Customer (KYC) purposes | [optional] 
+**income** | **int** | The total income for the client | [optional] 
 **is_verified** | **bool** | Indicator if the identifying details provided by the client have been verified by a Know-Your-Customer (KYC) vendor. Defaults to false which indicates it is not verified | [optional] [default to False]
 **hydro_id** | **str** | The Hydro ID associated with the client (if applicable). Corresponds to the Client Hydro entity | [optional] 
 **is_active** | **bool** | Indicates if the client is currently active. Defaults to true which indicates it is active | [optional] [default to True]

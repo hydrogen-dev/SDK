@@ -87,6 +87,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isDefault (base name: "is_default")', function() {
+      // uncomment below and update the code to test the property isDefault
+      //var instance = new atom_api.QuestionnairePayloadAnswers();
+      //expect(instance).to.be();
+    });
+
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
       //var instance = new atom_api.QuestionnairePayloadAnswers();

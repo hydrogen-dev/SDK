@@ -123,8 +123,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property statusTimeStamp (base name: "status_time_stamp")', function() {
+      // uncomment below and update the code to test the property statusTimeStamp
+      //var instance = new atom_api.TransferRequestPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property transferType (base name: "transfer_type")', function() {
       // uncomment below and update the code to test the property transferType
+      //var instance = new atom_api.TransferRequestPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property transferDate (base name: "transfer_date")', function() {
+      // uncomment below and update the code to test the property transferDate
+      //var instance = new atom_api.TransferRequestPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property receivedDate (base name: "received_date")', function() {
+      // uncomment below and update the code to test the property receivedDate
       //var instance = new atom_api.TransferRequestPayload();
       //expect(instance).to.be();
     });

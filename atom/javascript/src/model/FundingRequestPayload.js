@@ -70,6 +70,8 @@
 
 
 
+
+
   };
 
   /**
@@ -103,6 +105,12 @@
       }
       if (data.hasOwnProperty('end_date')) {
         obj['end_date'] = ApiClient.convertToType(data['end_date'], 'Date');
+      }
+      if (data.hasOwnProperty('last_request_date')) {
+        obj['last_request_date'] = ApiClient.convertToType(data['last_request_date'], 'Date');
+      }
+      if (data.hasOwnProperty('next_request_date')) {
+        obj['next_request_date'] = ApiClient.convertToType(data['next_request_date'], 'Date');
       }
       if (data.hasOwnProperty('frequency')) {
         obj['frequency'] = ApiClient.convertToType(data['frequency'], 'Number');
@@ -170,6 +178,16 @@
    * @member {Date} end_date
    */
   exports.prototype['end_date'] = undefined;
+  /**
+   * The last date a recurring deposit or withdrawal was made to/from an account
+   * @member {Date} last_request_date
+   */
+  exports.prototype['last_request_date'] = undefined;
+  /**
+   * The next date a recurring deposit or withdrawal is scheduled to/from an account
+   * @member {Date} next_request_date
+   */
+  exports.prototype['next_request_date'] = undefined;
   /**
    * Number of frequency_unit between each request. For example, if the frequency_unit is weekly and the frequency is 2, this means the funding request occurs every two weeks. Default is 1
    * @member {Number} frequency

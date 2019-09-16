@@ -44,6 +44,8 @@ class SpecificSecurityResponse(object):
         'industry': 'str',
         'security_class': 'str',
         'exchange': 'str',
+        'proxy_id': 'str',
+        'currency_code': 'str',
         'is_active': 'bool',
         'security_composition': 'list[SecurityPayloadSecurityComposition]',
         'security_country': 'list[SecurityPayloadSecurityCountry]',
@@ -60,13 +62,15 @@ class SpecificSecurityResponse(object):
         'industry': 'industry',
         'security_class': 'security_class',
         'exchange': 'exchange',
+        'proxy_id': 'proxy_id',
+        'currency_code': 'currency_code',
         'is_active': 'is_active',
         'security_composition': 'security_composition',
         'security_country': 'security_country',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, create_date=None, name=None, ticker=None, asset_class=None, sector=None, industry=None, security_class=None, exchange=None, is_active=True, security_composition=None, security_country=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, name=None, ticker=None, asset_class=None, sector=None, industry=None, security_class=None, exchange=None, proxy_id=None, currency_code=None, is_active=True, security_composition=None, security_country=None, update_date=None):  # noqa: E501
         """SpecificSecurityResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -78,6 +82,8 @@ class SpecificSecurityResponse(object):
         self._industry = None
         self._security_class = None
         self._exchange = None
+        self._proxy_id = None
+        self._currency_code = None
         self._is_active = None
         self._security_composition = None
         self._security_country = None
@@ -100,6 +106,10 @@ class SpecificSecurityResponse(object):
             self.security_class = security_class
         if exchange is not None:
             self.exchange = exchange
+        if proxy_id is not None:
+            self.proxy_id = proxy_id
+        if currency_code is not None:
+            self.currency_code = currency_code
         if is_active is not None:
             self.is_active = is_active
         if security_composition is not None:
@@ -319,6 +329,52 @@ class SpecificSecurityResponse(object):
         """
 
         self._exchange = exchange
+
+    @property
+    def proxy_id(self):
+        """Gets the proxy_id of this SpecificSecurityResponse.  # noqa: E501
+
+        ID of a security that will serve as a proxy in financial analytics  # noqa: E501
+
+        :return: The proxy_id of this SpecificSecurityResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._proxy_id
+
+    @proxy_id.setter
+    def proxy_id(self, proxy_id):
+        """Sets the proxy_id of this SpecificSecurityResponse.
+
+        ID of a security that will serve as a proxy in financial analytics  # noqa: E501
+
+        :param proxy_id: The proxy_id of this SpecificSecurityResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._proxy_id = proxy_id
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this SpecificSecurityResponse.  # noqa: E501
+
+        Alphabetic currency code for the base currency of the security, limited to 3 characters  # noqa: E501
+
+        :return: The currency_code of this SpecificSecurityResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this SpecificSecurityResponse.
+
+        Alphabetic currency code for the base currency of the security, limited to 3 characters  # noqa: E501
+
+        :param currency_code: The currency_code of this SpecificSecurityResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
 
     @property
     def is_active(self):

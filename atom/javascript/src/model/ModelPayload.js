@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
       }
       if (data.hasOwnProperty('node_map')) {
         obj['node_map'] = ApiClient.convertToType(data['node_map'], ['String']);
+      }
+      if (data.hasOwnProperty('currency_code')) {
+        obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
       }
       if (data.hasOwnProperty('is_active')) {
         obj['is_active'] = ApiClient.convertToType(data['is_active'], 'Boolean');
@@ -122,6 +126,11 @@
    * @member {Array.<String>} node_map
    */
   exports.prototype['node_map'] = undefined;
+  /**
+   * Alphabetic currency code for the base currency of the model, limited to 3 characters
+   * @member {String} currency_code
+   */
+  exports.prototype['currency_code'] = undefined;
   /**
    * Indicates for whether or not the model is active. Defaults to true which indicates that it is currently active
    * @member {Boolean} is_active

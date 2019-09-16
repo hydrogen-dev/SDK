@@ -99,6 +99,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property proxyId (base name: "proxy_id")', function() {
+      // uncomment below and update the code to test the property proxyId
+      //var instance = new atom_api.SecurityPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property currencyCode (base name: "currency_code")', function() {
+      // uncomment below and update the code to test the property currencyCode
+      //var instance = new atom_api.SecurityPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
       //var instance = new atom_api.SecurityPayload();

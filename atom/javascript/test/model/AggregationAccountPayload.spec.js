@@ -93,6 +93,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property accountHolder (base name: "account_holder")', function() {
+      // uncomment below and update the code to test the property accountHolder
+      //var instance = new atom_api.AggregationAccountPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property mask (base name: "mask")', function() {
       // uncomment below and update the code to test the property mask
       //var instance = new atom_api.AggregationAccountPayload();
@@ -101,6 +107,18 @@
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
+      //var instance = new atom_api.AggregationAccountPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isAsset (base name: "is_asset")', function() {
+      // uncomment below and update the code to test the property isAsset
+      //var instance = new atom_api.AggregationAccountPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property financialOfferId (base name: "financial_offer_id")', function() {
+      // uncomment below and update the code to test the property financialOfferId
       //var instance = new atom_api.AggregationAccountPayload();
       //expect(instance).to.be();
     });

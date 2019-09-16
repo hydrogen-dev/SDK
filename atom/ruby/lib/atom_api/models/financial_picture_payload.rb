@@ -84,10 +84,14 @@ module AtomApi
 
       if attributes.has_key?(:'show_history')
         self.show_history = attributes[:'show_history']
+      else
+        self.show_history = false
       end
 
       if attributes.has_key?(:'show_change')
         self.show_change = attributes[:'show_change']
+      else
+        self.show_change = false
       end
     end
 
@@ -99,26 +103,6 @@ module AtomApi
         invalid_properties.push('invalid value for "client_id", client_id cannot be nil.')
       end
 
-      if @start_date.nil?
-        invalid_properties.push('invalid value for "start_date", start_date cannot be nil.')
-      end
-
-      if @end_date.nil?
-        invalid_properties.push('invalid value for "end_date", end_date cannot be nil.')
-      end
-
-      if @currency_code.nil?
-        invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
-      end
-
-      if @show_history.nil?
-        invalid_properties.push('invalid value for "show_history", show_history cannot be nil.')
-      end
-
-      if @show_change.nil?
-        invalid_properties.push('invalid value for "show_change", show_change cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -126,11 +110,6 @@ module AtomApi
     # @return true if the model is valid
     def valid?
       return false if @client_id.nil?
-      return false if @start_date.nil?
-      return false if @end_date.nil?
-      return false if @currency_code.nil?
-      return false if @show_history.nil?
-      return false if @show_change.nil?
       true
     end
 

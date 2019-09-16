@@ -5280,6 +5280,9 @@ definitions:
           description: List of goals mapped to the account with information such as goal amount and horizon
           items:
             $ref: '#/definitions/account_create_goal'
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the account, limited to 3 characters
       metadata:
         type: object
         description: Custom information associated with the account in the format key:value
@@ -5452,12 +5455,22 @@ definitions:
       account_number:
         type: string
         description: The account number of the held-away account for this aggregation account record
+      account_holder:
+        type: string
+        description: The owner of the held-away account
       mask:
         type: string
         description: The masked version of the account number of the held-away account for this aggregation account record
       currency_code:
         type: string
         description: Alphabetic currency code for the base currency of the account linked, limited to 3 characters
+      is_asset:
+        type: boolean
+        description: A flag to represent if this account is an asset or liability. Defaults to true which indicates it is an asset. If false this account is categorized as a liability
+      financial_offer_id:
+        type: string
+        format: uuid
+        description: ID of the financial offer this account matches. Useful so you don’t show clients offers for accounts they already have
       is_active:
         type: boolean
         description: Indicates if the aggregation account record is active. Defaults to true which indicates it is active
@@ -5924,6 +5937,9 @@ definitions:
       country_of_residence:
         type: string
         description: The country of residence of a client, often corresponding to the country issuing the identification number provided above using the ISO ALPHA-2 Code, frequently used for Know-Your-Customer (KYC) purposes
+      income:
+        type: integer
+        description: The total income for the client
       is_verified:
         type: boolean
         description: Indicator if the identifying details provided by the client have been verified by a Know-Your-Customer (KYC) vendor. Defaults to false which indicates it is not verified
@@ -6011,6 +6027,12 @@ definitions:
       name:
         type: string
         description: Name of the decision tree
+      category:
+        type: string
+        description: A category for the decision tree such as “Onboarding” or “Risk Profile”
+      subcategory:
+        type: string
+        description: A subcategory for the decision tree such as “Income-related”
       description:
         type: string
         description: Description for the decision tree such as “Tree to allocate clients to taxable portfolios”
@@ -6137,6 +6159,14 @@ definitions:
         type: string
         format: date
         description: In the case that the funding request is recurring, the date that the funding request should stop occurring
+      last_request_date:
+        type: string
+        format: date
+        description: The last date a recurring deposit or withdrawal was made to/from an account
+      next_request_date:
+        type: string
+        format: date
+        description: The next date a recurring deposit or withdrawal is scheduled to/from an account
       frequency:
         type: integer
         description: Number of frequency_unit between each request. For example, if the frequency_unit is weekly and the frequency is 2, this means the funding request occurs every two weeks. Default is 1
@@ -6399,9 +6429,21 @@ definitions:
       status:
         type: string
         description: Status of the transfer such as “Pending”
+      status_time_stamp:
+        type: string
+        format: datetime
+        description: Time stamp associated with the transfer status
       transfer_type:
         type: string
         description: Type of transaction being made such as “wire” or “check”
+      transfer_date:
+        type: string
+        format: date
+        description: Date that the transfer will be initiated. Defaults to the current date
+      received_date:
+        type: string
+        format: date
+        description: Date that the transfer was received
       secondary_id:
         $ref: '#/definitions/secondary_id'
       metadata:
@@ -6680,6 +6722,9 @@ definitions:
           type: string
           format: uuid
           description: The ID of the last node in the branch of a decision tree that maps to the model
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the model, limited to 3 characters
       is_active:
         type: boolean
         description: Indicates for whether or not the model is active. Defaults to true which indicates that it is currently active
@@ -6766,6 +6811,9 @@ definitions:
         type: string
         format: uuid
         description: The ID of the model for the asset size record
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the model, limited to 3 characters
       secondary_id:
         $ref: '#/definitions/secondary_id'
   model_holding_payload:
@@ -7481,6 +7529,9 @@ definitions:
       description:
         type: string
         description: Description for the portfolio such as “Stock Portfolio”
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
       metadata:
         type: object
         description: Custom information associated with the portfolio in the format key:value
@@ -7511,6 +7562,9 @@ definitions:
         type: string
         format: uuid
         description: The ID of the portfolio that the asset size record falls under
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
       secondary_id:
         $ref: '#/definitions/secondary_id'
   portfolio_holding_payload:
@@ -7696,6 +7750,9 @@ definitions:
                     type: number
                     format: double
                     description: The weight of the answer option as a percentage of the total questionnaire score if each answer does not contribute equally when calculating the final “score”; ex. 20 representing 20%. Weights of all the answers for a question must add up to 100
+                  is_default:
+                    type: boolean
+                    description: Indicates the default answer to a question in a questionnaire when the UI is displayed to a user. Defaults to false
                   metadata:
                     type: object
                     description: Custom information associated with the answer option in the format key:value
@@ -7790,6 +7847,13 @@ definitions:
       exchange:
         type: string
         description: The exchange on which the security is traded
+      proxy_id:
+        type: string
+        format: uuid
+        description: ID of a security that will serve as a proxy in financial analytics
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the security, limited to 3 characters
       is_active:
         type: boolean
         description: Indicates if the security is active. Defaults to true which indicates that the it is active
@@ -7860,6 +7924,9 @@ definitions:
         type: number
         format: double
         description: Value for the adjusted price of the security
+      currency_code:
+        type: string
+        description: Alphabetic currency code for the base currency of the security, limited to 3 characters
       secondary_id:
         $ref: '#/definitions/secondary_id'
   security_exclusion_payload:
@@ -11614,11 +11681,6 @@ definitions:
     type: object
     required:
       - client_id
-      - start_date
-      - end_date
-      - currency_code
-      - show_history
-      - show_change
     properties:
       client_id:
         type: string
@@ -11639,9 +11701,11 @@ definitions:
       show_history:
         type: boolean
         description: If true, return a daily history of the user’s financial picture within the specified date range
+        default: false
       show_change:
         type: boolean
         description: If true, return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range
+        default: false
   budget_calculator_payload:
     type: object
     required:

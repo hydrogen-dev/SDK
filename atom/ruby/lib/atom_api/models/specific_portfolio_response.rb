@@ -35,6 +35,9 @@ module AtomApi
     # Description for the portfolio such as “Stock Portfolio”
     attr_accessor :description
 
+    # Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
+    attr_accessor :currency_code
+
     # Custom information associated with the portfolio in the format key:value
     attr_accessor :metadata
 
@@ -53,6 +56,7 @@ module AtomApi
         :'model_id' => :'model_id',
         :'percentage' => :'percentage',
         :'description' => :'description',
+        :'currency_code' => :'currency_code',
         :'metadata' => :'metadata',
         :'secondary_id' => :'secondary_id',
         :'update_date' => :'update_date'
@@ -69,6 +73,7 @@ module AtomApi
         :'model_id' => :'String',
         :'percentage' => :'Float',
         :'description' => :'String',
+        :'currency_code' => :'String',
         :'metadata' => :'Object',
         :'secondary_id' => :'SecondaryId',
         :'update_date' => :'String'
@@ -109,6 +114,10 @@ module AtomApi
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
       if attributes.has_key?(:'metadata')
@@ -169,6 +178,7 @@ module AtomApi
           model_id == o.model_id &&
           percentage == o.percentage &&
           description == o.description &&
+          currency_code == o.currency_code &&
           metadata == o.metadata &&
           secondary_id == o.secondary_id &&
           update_date == o.update_date
@@ -183,7 +193,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, name, account_id, model_id, percentage, description, metadata, secondary_id, update_date].hash
+      [id, create_date, name, account_id, model_id, percentage, description, currency_code, metadata, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

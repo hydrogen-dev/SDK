@@ -87,6 +87,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property currencyCode (base name: "currency_code")', function() {
+      // uncomment below and update the code to test the property currencyCode
+      //var instance = new atom_api.AccountCreatePayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
       //var instance = new atom_api.AccountCreatePayload();

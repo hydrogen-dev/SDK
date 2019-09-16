@@ -57,6 +57,7 @@
 
 
 
+
   };
 
   /**
@@ -84,6 +85,9 @@
       }
       if (data.hasOwnProperty('goals')) {
         obj['goals'] = ApiClient.convertToType(data['goals'], [AccountCreateGoal]);
+      }
+      if (data.hasOwnProperty('currency_code')) {
+        obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
       }
       if (data.hasOwnProperty('metadata')) {
         obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
@@ -121,6 +125,11 @@
    * @member {Array.<module:model/AccountCreateGoal>} goals
    */
   exports.prototype['goals'] = undefined;
+  /**
+   * Alphabetic currency code for the base currency of the account, limited to 3 characters
+   * @member {String} currency_code
+   */
+  exports.prototype['currency_code'] = undefined;
   /**
    * Custom information associated with the account in the format key:value
    * @member {Object} metadata

@@ -29,7 +29,7 @@ import org.threeten.bp.LocalDate;
 /**
  * FinancialPicturePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class FinancialPicturePayload {
   @SerializedName("client_id")
   private UUID clientId = null;
@@ -44,10 +44,10 @@ public class FinancialPicturePayload {
   private String currencyCode = "USD";
 
   @SerializedName("show_history")
-  private Boolean showHistory = null;
+  private Boolean showHistory = false;
 
   @SerializedName("show_change")
-  private Boolean showChange = null;
+  private Boolean showChange = false;
 
   public FinancialPicturePayload clientId(UUID clientId) {
     this.clientId = clientId;
@@ -76,7 +76,7 @@ public class FinancialPicturePayload {
    * Start date of the financial picture analysis. Defaults to earliest date there is data.
    * @return startDate
   **/
-  @ApiModelProperty(required = true, value = "Start date of the financial picture analysis. Defaults to earliest date there is data.")
+  @ApiModelProperty(value = "Start date of the financial picture analysis. Defaults to earliest date there is data.")
   public LocalDate getStartDate() {
     return startDate;
   }
@@ -94,7 +94,7 @@ public class FinancialPicturePayload {
    * End date of the financial picture analysis. Defaults to latest date there is data.
    * @return endDate
   **/
-  @ApiModelProperty(required = true, value = "End date of the financial picture analysis. Defaults to latest date there is data.")
+  @ApiModelProperty(value = "End date of the financial picture analysis. Defaults to latest date there is data.")
   public LocalDate getEndDate() {
     return endDate;
   }
@@ -112,7 +112,7 @@ public class FinancialPicturePayload {
    * Currency code used conduct the analysis. Only aggregation account records with this currency code will be considered
    * @return currencyCode
   **/
-  @ApiModelProperty(required = true, value = "Currency code used conduct the analysis. Only aggregation account records with this currency code will be considered")
+  @ApiModelProperty(value = "Currency code used conduct the analysis. Only aggregation account records with this currency code will be considered")
   public String getCurrencyCode() {
     return currencyCode;
   }
@@ -130,7 +130,7 @@ public class FinancialPicturePayload {
    * If true, return a daily history of the user’s financial picture within the specified date range
    * @return showHistory
   **/
-  @ApiModelProperty(required = true, value = "If true, return a daily history of the user’s financial picture within the specified date range")
+  @ApiModelProperty(value = "If true, return a daily history of the user’s financial picture within the specified date range")
   public Boolean isShowHistory() {
     return showHistory;
   }
@@ -148,7 +148,7 @@ public class FinancialPicturePayload {
    * If true, return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range
    * @return showChange
   **/
-  @ApiModelProperty(required = true, value = "If true, return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range")
+  @ApiModelProperty(value = "If true, return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range")
   public Boolean isShowChange() {
     return showChange;
   }

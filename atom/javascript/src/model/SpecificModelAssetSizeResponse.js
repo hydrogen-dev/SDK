@@ -108,6 +108,12 @@ exports.prototype['is_reconciled'] = undefined;
 exports.prototype['model_id'] = undefined;
 
   /**
+   * Alphabetic currency code for the base currency of the model, limited to 3 characters
+   * @member {String} currency_code
+   */
+exports.prototype['currency_code'] = undefined;
+
+  /**
    * @member {module:model/SecondaryId} secondary_id
    */
 exports.prototype['secondary_id'] = undefined;

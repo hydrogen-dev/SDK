@@ -57,6 +57,7 @@
     _this['is_reconciled'] = isReconciled;
     _this['model_id'] = modelId;
 
+
   };
 
   /**
@@ -81,6 +82,9 @@
       }
       if (data.hasOwnProperty('model_id')) {
         obj['model_id'] = ApiClient.convertToType(data['model_id'], 'String');
+      }
+      if (data.hasOwnProperty('currency_code')) {
+        obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
       }
       if (data.hasOwnProperty('secondary_id')) {
         obj['secondary_id'] = SecondaryId.constructFromObject(data['secondary_id']);
@@ -109,6 +113,11 @@
    * @member {String} model_id
    */
   exports.prototype['model_id'] = undefined;
+  /**
+   * Alphabetic currency code for the base currency of the model, limited to 3 characters
+   * @member {String} currency_code
+   */
+  exports.prototype['currency_code'] = undefined;
   /**
    * @member {module:model/SecondaryId} secondary_id
    */

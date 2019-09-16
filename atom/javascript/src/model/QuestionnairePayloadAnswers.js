@@ -55,6 +55,7 @@
 
 
 
+
   };
 
   /**
@@ -82,6 +83,9 @@
       }
       if (data.hasOwnProperty('weight')) {
         obj['weight'] = ApiClient.convertToType(data['weight'], 'Number');
+      }
+      if (data.hasOwnProperty('is_default')) {
+        obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
       }
       if (data.hasOwnProperty('metadata')) {
         obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
@@ -115,6 +119,11 @@
    * @member {Number} weight
    */
   exports.prototype['weight'] = undefined;
+  /**
+   * Indicates the default answer to a question in a questionnaire when the UI is displayed to a user. Defaults to false
+   * @member {Boolean} is_default
+   */
+  exports.prototype['is_default'] = undefined;
   /**
    * Custom information associated with the answer option in the format key:value
    * @member {Object} metadata

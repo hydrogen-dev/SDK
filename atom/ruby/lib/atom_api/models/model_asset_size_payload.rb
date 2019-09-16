@@ -26,6 +26,9 @@ module AtomApi
     # The ID of the model for the asset size record
     attr_accessor :model_id
 
+    # Alphabetic currency code for the base currency of the model, limited to 3 characters
+    attr_accessor :currency_code
+
     attr_accessor :secondary_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -35,6 +38,7 @@ module AtomApi
         :'asset_size' => :'asset_size',
         :'is_reconciled' => :'is_reconciled',
         :'model_id' => :'model_id',
+        :'currency_code' => :'currency_code',
         :'secondary_id' => :'secondary_id'
       }
     end
@@ -46,6 +50,7 @@ module AtomApi
         :'asset_size' => :'Float',
         :'is_reconciled' => :'BOOLEAN',
         :'model_id' => :'String',
+        :'currency_code' => :'String',
         :'secondary_id' => :'SecondaryId'
       }
     end
@@ -72,6 +77,10 @@ module AtomApi
 
       if attributes.has_key?(:'model_id')
         self.model_id = attributes[:'model_id']
+      end
+
+      if attributes.has_key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
       if attributes.has_key?(:'secondary_id')
@@ -121,6 +130,7 @@ module AtomApi
           asset_size == o.asset_size &&
           is_reconciled == o.is_reconciled &&
           model_id == o.model_id &&
+          currency_code == o.currency_code &&
           secondary_id == o.secondary_id
     end
 
@@ -133,7 +143,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [date, asset_size, is_reconciled, model_id, secondary_id].hash
+      [date, asset_size, is_reconciled, model_id, currency_code, secondary_id].hash
     end
 
     # Builds the object from hash

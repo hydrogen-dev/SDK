@@ -123,6 +123,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property income (base name: "income")', function() {
+      // uncomment below and update the code to test the property income
+      //var instance = new atom_api.ClientPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property isVerified (base name: "is_verified")', function() {
       // uncomment below and update the code to test the property isVerified
       //var instance = new atom_api.ClientPayload();

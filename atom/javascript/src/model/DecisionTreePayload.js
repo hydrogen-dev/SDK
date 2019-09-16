@@ -53,6 +53,8 @@
 
 
 
+
+
   };
 
   /**
@@ -68,6 +70,12 @@
 
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('category')) {
+        obj['category'] = ApiClient.convertToType(data['category'], 'String');
+      }
+      if (data.hasOwnProperty('subcategory')) {
+        obj['subcategory'] = ApiClient.convertToType(data['subcategory'], 'String');
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -87,6 +95,16 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * A category for the decision tree such as “Onboarding” or “Risk Profile”
+   * @member {String} category
+   */
+  exports.prototype['category'] = undefined;
+  /**
+   * A subcategory for the decision tree such as “Income-related”
+   * @member {String} subcategory
+   */
+  exports.prototype['subcategory'] = undefined;
   /**
    * Description for the decision tree such as “Tree to allocate clients to taxable portfolios”
    * @member {String} description

@@ -161,10 +161,28 @@ exports.prototype['roth_five_year'] = undefined;
 exports.prototype['status'] = undefined;
 
   /**
+   * Time stamp associated with the transfer status
+   * @member {String} status_time_stamp
+   */
+exports.prototype['status_time_stamp'] = undefined;
+
+  /**
    * Type of transaction being made such as “wire” or “check”
    * @member {String} transfer_type
    */
 exports.prototype['transfer_type'] = undefined;
+
+  /**
+   * Date that the transfer will be initiated. Defaults to the current date
+   * @member {Date} transfer_date
+   */
+exports.prototype['transfer_date'] = undefined;
+
+  /**
+   * Date that the transfer was received
+   * @member {Date} received_date
+   */
+exports.prototype['received_date'] = undefined;
 
   /**
    * @member {module:model/SecondaryId} secondary_id

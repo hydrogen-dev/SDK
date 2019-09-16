@@ -26,6 +26,9 @@ module AtomApi
     # The ID of the portfolio that the asset size record falls under
     attr_accessor :portfolio_id
 
+    # Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
+    attr_accessor :currency_code
+
     attr_accessor :secondary_id
 
     # ID of the portfolio asset size record
@@ -41,6 +44,7 @@ module AtomApi
         :'asset_size' => :'asset_size',
         :'cash_flow' => :'cash_flow',
         :'portfolio_id' => :'portfolio_id',
+        :'currency_code' => :'currency_code',
         :'secondary_id' => :'secondary_id',
         :'id' => :'id',
         :'create_date' => :'create_date'
@@ -54,6 +58,7 @@ module AtomApi
         :'asset_size' => :'Float',
         :'cash_flow' => :'Float',
         :'portfolio_id' => :'String',
+        :'currency_code' => :'String',
         :'secondary_id' => :'SecondaryId',
         :'id' => :'String',
         :'create_date' => :'String'
@@ -82,6 +87,10 @@ module AtomApi
 
       if attributes.has_key?(:'portfolio_id')
         self.portfolio_id = attributes[:'portfolio_id']
+      end
+
+      if attributes.has_key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
       if attributes.has_key?(:'secondary_id')
@@ -139,6 +148,7 @@ module AtomApi
           asset_size == o.asset_size &&
           cash_flow == o.cash_flow &&
           portfolio_id == o.portfolio_id &&
+          currency_code == o.currency_code &&
           secondary_id == o.secondary_id &&
           id == o.id &&
           create_date == o.create_date
@@ -153,7 +163,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [date, asset_size, cash_flow, portfolio_id, secondary_id, id, create_date].hash
+      [date, asset_size, cash_flow, portfolio_id, currency_code, secondary_id, id, create_date].hash
     end
 
     # Builds the object from hash

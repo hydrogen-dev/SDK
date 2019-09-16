@@ -40,6 +40,7 @@ class AccountCreatePayload(object):
         'managed': 'bool',
         'clients': 'list[AccountCreateClient]',
         'goals': 'list[AccountCreateGoal]',
+        'currency_code': 'str',
         'metadata': 'object',
         'secondary_id': 'SecondaryId'
     }
@@ -50,11 +51,12 @@ class AccountCreatePayload(object):
         'managed': 'managed',
         'clients': 'clients',
         'goals': 'goals',
+        'currency_code': 'currency_code',
         'metadata': 'metadata',
         'secondary_id': 'secondary_id'
     }
 
-    def __init__(self, name=None, account_type_id=None, managed=True, clients=None, goals=None, metadata=None, secondary_id=None):  # noqa: E501
+    def __init__(self, name=None, account_type_id=None, managed=True, clients=None, goals=None, currency_code=None, metadata=None, secondary_id=None):  # noqa: E501
         """AccountCreatePayload - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -62,6 +64,7 @@ class AccountCreatePayload(object):
         self._managed = None
         self._clients = None
         self._goals = None
+        self._currency_code = None
         self._metadata = None
         self._secondary_id = None
         self.discriminator = None
@@ -74,6 +77,8 @@ class AccountCreatePayload(object):
             self.clients = clients
         if goals is not None:
             self.goals = goals
+        if currency_code is not None:
+            self.currency_code = currency_code
         if metadata is not None:
             self.metadata = metadata
         if secondary_id is not None:
@@ -197,6 +202,29 @@ class AccountCreatePayload(object):
         """
 
         self._goals = goals
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this AccountCreatePayload.  # noqa: E501
+
+        Alphabetic currency code for the base currency of the account, limited to 3 characters  # noqa: E501
+
+        :return: The currency_code of this AccountCreatePayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this AccountCreatePayload.
+
+        Alphabetic currency code for the base currency of the account, limited to 3 characters  # noqa: E501
+
+        :param currency_code: The currency_code of this AccountCreatePayload.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
 
     @property
     def metadata(self):

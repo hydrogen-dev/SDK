@@ -68,6 +68,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -114,8 +117,17 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
+      if (data.hasOwnProperty('status_time_stamp')) {
+        obj['status_time_stamp'] = ApiClient.convertToType(data['status_time_stamp'], 'String');
+      }
       if (data.hasOwnProperty('transfer_type')) {
         obj['transfer_type'] = ApiClient.convertToType(data['transfer_type'], 'String');
+      }
+      if (data.hasOwnProperty('transfer_date')) {
+        obj['transfer_date'] = ApiClient.convertToType(data['transfer_date'], 'Date');
+      }
+      if (data.hasOwnProperty('received_date')) {
+        obj['received_date'] = ApiClient.convertToType(data['received_date'], 'Date');
       }
       if (data.hasOwnProperty('secondary_id')) {
         obj['secondary_id'] = SecondaryId.constructFromObject(data['secondary_id']);
@@ -183,10 +195,25 @@
    */
   exports.prototype['status'] = undefined;
   /**
+   * Time stamp associated with the transfer status
+   * @member {String} status_time_stamp
+   */
+  exports.prototype['status_time_stamp'] = undefined;
+  /**
    * Type of transaction being made such as “wire” or “check”
    * @member {String} transfer_type
    */
   exports.prototype['transfer_type'] = undefined;
+  /**
+   * Date that the transfer will be initiated. Defaults to the current date
+   * @member {Date} transfer_date
+   */
+  exports.prototype['transfer_date'] = undefined;
+  /**
+   * Date that the transfer was received
+   * @member {Date} received_date
+   */
+  exports.prototype['received_date'] = undefined;
   /**
    * @member {module:model/SecondaryId} secondary_id
    */

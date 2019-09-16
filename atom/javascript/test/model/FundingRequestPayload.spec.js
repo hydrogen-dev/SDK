@@ -99,6 +99,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lastRequestDate (base name: "last_request_date")', function() {
+      // uncomment below and update the code to test the property lastRequestDate
+      //var instance = new atom_api.FundingRequestPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property nextRequestDate (base name: "next_request_date")', function() {
+      // uncomment below and update the code to test the property nextRequestDate
+      //var instance = new atom_api.FundingRequestPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property frequency (base name: "frequency")', function() {
       // uncomment below and update the code to test the property frequency
       //var instance = new atom_api.FundingRequestPayload();

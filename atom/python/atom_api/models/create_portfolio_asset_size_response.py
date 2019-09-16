@@ -38,6 +38,7 @@ class CreatePortfolioAssetSizeResponse(object):
         'asset_size': 'float',
         'cash_flow': 'float',
         'portfolio_id': 'str',
+        'currency_code': 'str',
         'secondary_id': 'SecondaryId',
         'id': 'str',
         'create_date': 'str'
@@ -48,18 +49,20 @@ class CreatePortfolioAssetSizeResponse(object):
         'asset_size': 'asset_size',
         'cash_flow': 'cash_flow',
         'portfolio_id': 'portfolio_id',
+        'currency_code': 'currency_code',
         'secondary_id': 'secondary_id',
         'id': 'id',
         'create_date': 'create_date'
     }
 
-    def __init__(self, _date=None, asset_size=None, cash_flow=None, portfolio_id=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, _date=None, asset_size=None, cash_flow=None, portfolio_id=None, currency_code=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
         """CreatePortfolioAssetSizeResponse - a model defined in Swagger"""  # noqa: E501
 
         self.__date = None
         self._asset_size = None
         self._cash_flow = None
         self._portfolio_id = None
+        self._currency_code = None
         self._secondary_id = None
         self._id = None
         self._create_date = None
@@ -69,6 +72,8 @@ class CreatePortfolioAssetSizeResponse(object):
         self.asset_size = asset_size
         self.cash_flow = cash_flow
         self.portfolio_id = portfolio_id
+        if currency_code is not None:
+            self.currency_code = currency_code
         if secondary_id is not None:
             self.secondary_id = secondary_id
         if id is not None:
@@ -175,6 +180,29 @@ class CreatePortfolioAssetSizeResponse(object):
             raise ValueError("Invalid value for `portfolio_id`, must not be `None`")  # noqa: E501
 
         self._portfolio_id = portfolio_id
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this CreatePortfolioAssetSizeResponse.  # noqa: E501
+
+        Alphabetic currency code for the base currency of the portfolio, limited to 3 characters  # noqa: E501
+
+        :return: The currency_code of this CreatePortfolioAssetSizeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this CreatePortfolioAssetSizeResponse.
+
+        Alphabetic currency code for the base currency of the portfolio, limited to 3 characters  # noqa: E501
+
+        :param currency_code: The currency_code of this CreatePortfolioAssetSizeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
 
     @property
     def secondary_id(self):

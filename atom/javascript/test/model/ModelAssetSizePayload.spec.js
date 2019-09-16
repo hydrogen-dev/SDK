@@ -81,6 +81,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property currencyCode (base name: "currency_code")', function() {
+      // uncomment below and update the code to test the property currencyCode
+      //var instance = new atom_api.ModelAssetSizePayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
       //var instance = new atom_api.ModelAssetSizePayload();

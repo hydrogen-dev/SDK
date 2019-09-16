@@ -48,7 +48,7 @@ class FinancialPicturePayload(object):
         'show_change': 'show_change'
     }
 
-    def __init__(self, client_id=None, start_date=None, end_date=None, currency_code='USD', show_history=None, show_change=None):  # noqa: E501
+    def __init__(self, client_id=None, start_date=None, end_date=None, currency_code='USD', show_history=False, show_change=False):  # noqa: E501
         """FinancialPicturePayload - a model defined in Swagger"""  # noqa: E501
 
         self._client_id = None
@@ -60,11 +60,16 @@ class FinancialPicturePayload(object):
         self.discriminator = None
 
         self.client_id = client_id
-        self.start_date = start_date
-        self.end_date = end_date
-        self.currency_code = currency_code
-        self.show_history = show_history
-        self.show_change = show_change
+        if start_date is not None:
+            self.start_date = start_date
+        if end_date is not None:
+            self.end_date = end_date
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if show_history is not None:
+            self.show_history = show_history
+        if show_change is not None:
+            self.show_change = show_change
 
     @property
     def client_id(self):
@@ -111,8 +116,6 @@ class FinancialPicturePayload(object):
         :param start_date: The start_date of this FinancialPicturePayload.  # noqa: E501
         :type: date
         """
-        if start_date is None:
-            raise ValueError("Invalid value for `start_date`, must not be `None`")  # noqa: E501
 
         self._start_date = start_date
 
@@ -136,8 +139,6 @@ class FinancialPicturePayload(object):
         :param end_date: The end_date of this FinancialPicturePayload.  # noqa: E501
         :type: date
         """
-        if end_date is None:
-            raise ValueError("Invalid value for `end_date`, must not be `None`")  # noqa: E501
 
         self._end_date = end_date
 
@@ -161,8 +162,6 @@ class FinancialPicturePayload(object):
         :param currency_code: The currency_code of this FinancialPicturePayload.  # noqa: E501
         :type: str
         """
-        if currency_code is None:
-            raise ValueError("Invalid value for `currency_code`, must not be `None`")  # noqa: E501
 
         self._currency_code = currency_code
 
@@ -186,8 +185,6 @@ class FinancialPicturePayload(object):
         :param show_history: The show_history of this FinancialPicturePayload.  # noqa: E501
         :type: bool
         """
-        if show_history is None:
-            raise ValueError("Invalid value for `show_history`, must not be `None`")  # noqa: E501
 
         self._show_history = show_history
 
@@ -211,8 +208,6 @@ class FinancialPicturePayload(object):
         :param show_change: The show_change of this FinancialPicturePayload.  # noqa: E501
         :type: bool
         """
-        if show_change is None:
-            raise ValueError("Invalid value for `show_change`, must not be `None`")  # noqa: E501
 
         self._show_change = show_change
 

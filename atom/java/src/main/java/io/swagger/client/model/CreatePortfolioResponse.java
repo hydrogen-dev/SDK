@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CreatePortfolioResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class CreatePortfolioResponse {
   @SerializedName("name")
   private String name = null;
@@ -45,6 +45,9 @@ public class CreatePortfolioResponse {
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("metadata")
   private Object metadata = null;
@@ -148,6 +151,24 @@ public class CreatePortfolioResponse {
     this.description = description;
   }
 
+  public CreatePortfolioResponse currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the portfolio, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public CreatePortfolioResponse metadata(Object metadata) {
     this.metadata = metadata;
     return this;
@@ -235,6 +256,7 @@ public class CreatePortfolioResponse {
         Objects.equals(this.modelId, createPortfolioResponse.modelId) &&
         Objects.equals(this.percentage, createPortfolioResponse.percentage) &&
         Objects.equals(this.description, createPortfolioResponse.description) &&
+        Objects.equals(this.currencyCode, createPortfolioResponse.currencyCode) &&
         Objects.equals(this.metadata, createPortfolioResponse.metadata) &&
         Objects.equals(this.secondaryId, createPortfolioResponse.secondaryId) &&
         Objects.equals(this.id, createPortfolioResponse.id) &&
@@ -243,7 +265,7 @@ public class CreatePortfolioResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, accountId, modelId, percentage, description, metadata, secondaryId, id, createDate);
+    return Objects.hash(name, accountId, modelId, percentage, description, currencyCode, metadata, secondaryId, id, createDate);
   }
 
 
@@ -257,6 +279,7 @@ public class CreatePortfolioResponse {
     sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

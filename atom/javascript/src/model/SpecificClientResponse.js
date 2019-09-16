@@ -147,6 +147,12 @@ exports.prototype['identification_number'] = undefined;
 exports.prototype['country_of_residence'] = undefined;
 
   /**
+   * The total income for the client
+   * @member {Number} income
+   */
+exports.prototype['income'] = undefined;
+
+  /**
    * Indicator if the identifying details provided by the client have been verified by a Know-Your-Customer (KYC) vendor. Defaults to false which indicates it is not verified
    * @member {Boolean} is_verified
    * @default false

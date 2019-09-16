@@ -37,6 +37,7 @@ class ModelAssetSizePayload(object):
         'asset_size': 'float',
         'is_reconciled': 'bool',
         'model_id': 'str',
+        'currency_code': 'str',
         'secondary_id': 'SecondaryId'
     }
 
@@ -45,16 +46,18 @@ class ModelAssetSizePayload(object):
         'asset_size': 'asset_size',
         'is_reconciled': 'is_reconciled',
         'model_id': 'model_id',
+        'currency_code': 'currency_code',
         'secondary_id': 'secondary_id'
     }
 
-    def __init__(self, _date=None, asset_size=None, is_reconciled=None, model_id=None, secondary_id=None):  # noqa: E501
+    def __init__(self, _date=None, asset_size=None, is_reconciled=None, model_id=None, currency_code=None, secondary_id=None):  # noqa: E501
         """ModelAssetSizePayload - a model defined in Swagger"""  # noqa: E501
 
         self.__date = None
         self._asset_size = None
         self._is_reconciled = None
         self._model_id = None
+        self._currency_code = None
         self._secondary_id = None
         self.discriminator = None
 
@@ -62,6 +65,8 @@ class ModelAssetSizePayload(object):
         self.asset_size = asset_size
         self.is_reconciled = is_reconciled
         self.model_id = model_id
+        if currency_code is not None:
+            self.currency_code = currency_code
         if secondary_id is not None:
             self.secondary_id = secondary_id
 
@@ -164,6 +169,29 @@ class ModelAssetSizePayload(object):
             raise ValueError("Invalid value for `model_id`, must not be `None`")  # noqa: E501
 
         self._model_id = model_id
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this ModelAssetSizePayload.  # noqa: E501
+
+        Alphabetic currency code for the base currency of the model, limited to 3 characters  # noqa: E501
+
+        :return: The currency_code of this ModelAssetSizePayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this ModelAssetSizePayload.
+
+        Alphabetic currency code for the base currency of the model, limited to 3 characters  # noqa: E501
+
+        :param currency_code: The currency_code of this ModelAssetSizePayload.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
 
     @property
     def secondary_id(self):

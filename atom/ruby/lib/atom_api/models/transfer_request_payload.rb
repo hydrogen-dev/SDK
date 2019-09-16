@@ -47,8 +47,17 @@ module AtomApi
     # Status of the transfer such as “Pending”
     attr_accessor :status
 
+    # Time stamp associated with the transfer status
+    attr_accessor :status_time_stamp
+
     # Type of transaction being made such as “wire” or “check”
     attr_accessor :transfer_type
+
+    # Date that the transfer will be initiated. Defaults to the current date
+    attr_accessor :transfer_date
+
+    # Date that the transfer was received
+    attr_accessor :received_date
 
     attr_accessor :secondary_id
 
@@ -69,7 +78,10 @@ module AtomApi
         :'dtc_number' => :'dtc_number',
         :'roth_five_year' => :'roth_five_year',
         :'status' => :'status',
+        :'status_time_stamp' => :'status_time_stamp',
         :'transfer_type' => :'transfer_type',
+        :'transfer_date' => :'transfer_date',
+        :'received_date' => :'received_date',
         :'secondary_id' => :'secondary_id',
         :'metadata' => :'metadata'
       }
@@ -89,7 +101,10 @@ module AtomApi
         :'dtc_number' => :'String',
         :'roth_five_year' => :'Integer',
         :'status' => :'String',
+        :'status_time_stamp' => :'String',
         :'transfer_type' => :'String',
+        :'transfer_date' => :'Date',
+        :'received_date' => :'Date',
         :'secondary_id' => :'SecondaryId',
         :'metadata' => :'Object'
       }
@@ -147,8 +162,20 @@ module AtomApi
         self.status = attributes[:'status']
       end
 
+      if attributes.has_key?(:'status_time_stamp')
+        self.status_time_stamp = attributes[:'status_time_stamp']
+      end
+
       if attributes.has_key?(:'transfer_type')
         self.transfer_type = attributes[:'transfer_type']
+      end
+
+      if attributes.has_key?(:'transfer_date')
+        self.transfer_date = attributes[:'transfer_date']
+      end
+
+      if attributes.has_key?(:'received_date')
+        self.received_date = attributes[:'received_date']
       end
 
       if attributes.has_key?(:'secondary_id')
@@ -219,7 +246,10 @@ module AtomApi
           dtc_number == o.dtc_number &&
           roth_five_year == o.roth_five_year &&
           status == o.status &&
+          status_time_stamp == o.status_time_stamp &&
           transfer_type == o.transfer_type &&
+          transfer_date == o.transfer_date &&
+          received_date == o.received_date &&
           secondary_id == o.secondary_id &&
           metadata == o.metadata
     end
@@ -233,7 +263,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, account_holder, account_number, account_type_id, firm_name, transfer_all_cash, amount, comment, dtc_number, roth_five_year, status, transfer_type, secondary_id, metadata].hash
+      [account_id, account_holder, account_number, account_type_id, firm_name, transfer_all_cash, amount, comment, dtc_number, roth_five_year, status, status_time_stamp, transfer_type, transfer_date, received_date, secondary_id, metadata].hash
     end
 
     # Builds the object from hash

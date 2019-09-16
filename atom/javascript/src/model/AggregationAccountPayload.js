@@ -62,6 +62,9 @@
 
 
 
+
+
+
   };
 
   /**
@@ -93,11 +96,20 @@
       if (data.hasOwnProperty('account_number')) {
         obj['account_number'] = ApiClient.convertToType(data['account_number'], 'String');
       }
+      if (data.hasOwnProperty('account_holder')) {
+        obj['account_holder'] = ApiClient.convertToType(data['account_holder'], 'String');
+      }
       if (data.hasOwnProperty('mask')) {
         obj['mask'] = ApiClient.convertToType(data['mask'], 'String');
       }
       if (data.hasOwnProperty('currency_code')) {
         obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
+      }
+      if (data.hasOwnProperty('is_asset')) {
+        obj['is_asset'] = ApiClient.convertToType(data['is_asset'], 'Boolean');
+      }
+      if (data.hasOwnProperty('financial_offer_id')) {
+        obj['financial_offer_id'] = ApiClient.convertToType(data['financial_offer_id'], 'String');
       }
       if (data.hasOwnProperty('is_active')) {
         obj['is_active'] = ApiClient.convertToType(data['is_active'], 'Boolean');
@@ -143,6 +155,11 @@
    */
   exports.prototype['account_number'] = undefined;
   /**
+   * The owner of the held-away account
+   * @member {String} account_holder
+   */
+  exports.prototype['account_holder'] = undefined;
+  /**
    * The masked version of the account number of the held-away account for this aggregation account record
    * @member {String} mask
    */
@@ -152,6 +169,16 @@
    * @member {String} currency_code
    */
   exports.prototype['currency_code'] = undefined;
+  /**
+   * A flag to represent if this account is an asset or liability. Defaults to true which indicates it is an asset. If false this account is categorized as a liability
+   * @member {Boolean} is_asset
+   */
+  exports.prototype['is_asset'] = undefined;
+  /**
+   * ID of the financial offer this account matches. Useful so you don’t show clients offers for accounts they already have
+   * @member {String} financial_offer_id
+   */
+  exports.prototype['financial_offer_id'] = undefined;
   /**
    * Indicates if the aggregation account record is active. Defaults to true which indicates it is active
    * @member {Boolean} is_active

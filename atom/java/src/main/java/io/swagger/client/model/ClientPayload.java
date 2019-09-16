@@ -31,7 +31,7 @@ import org.threeten.bp.LocalDate;
 /**
  * ClientPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class ClientPayload {
   @SerializedName("username")
   private String username = null;
@@ -116,6 +116,9 @@ public class ClientPayload {
 
   @SerializedName("country_of_residence")
   private String countryOfResidence = null;
+
+  @SerializedName("income")
+  private Integer income = null;
 
   @SerializedName("is_verified")
   private Boolean isVerified = false;
@@ -333,6 +336,24 @@ public class ClientPayload {
     this.countryOfResidence = countryOfResidence;
   }
 
+  public ClientPayload income(Integer income) {
+    this.income = income;
+    return this;
+  }
+
+   /**
+   * The total income for the client
+   * @return income
+  **/
+  @ApiModelProperty(value = "The total income for the client")
+  public Integer getIncome() {
+    return income;
+  }
+
+  public void setIncome(Integer income) {
+    this.income = income;
+  }
+
   public ClientPayload isVerified(Boolean isVerified) {
     this.isVerified = isVerified;
     return this;
@@ -470,6 +491,7 @@ public class ClientPayload {
         Objects.equals(this.dateOfBirth, clientPayload.dateOfBirth) &&
         Objects.equals(this.identificationNumber, clientPayload.identificationNumber) &&
         Objects.equals(this.countryOfResidence, clientPayload.countryOfResidence) &&
+        Objects.equals(this.income, clientPayload.income) &&
         Objects.equals(this.isVerified, clientPayload.isVerified) &&
         Objects.equals(this.hydroId, clientPayload.hydroId) &&
         Objects.equals(this.isActive, clientPayload.isActive) &&
@@ -480,7 +502,7 @@ public class ClientPayload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, clientType, email, title, firstName, middleName, lastName, phoneNumber, dateOfBirth, identificationNumber, countryOfResidence, isVerified, hydroId, isActive, address, metadata, secondaryId);
+    return Objects.hash(username, clientType, email, title, firstName, middleName, lastName, phoneNumber, dateOfBirth, identificationNumber, countryOfResidence, income, isVerified, hydroId, isActive, address, metadata, secondaryId);
   }
 
 
@@ -500,6 +522,7 @@ public class ClientPayload {
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    identificationNumber: ").append(toIndentedString(identificationNumber)).append("\n");
     sb.append("    countryOfResidence: ").append(toIndentedString(countryOfResidence)).append("\n");
+    sb.append("    income: ").append(toIndentedString(income)).append("\n");
     sb.append("    isVerified: ").append(toIndentedString(isVerified)).append("\n");
     sb.append("    hydroId: ").append(toIndentedString(hydroId)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");

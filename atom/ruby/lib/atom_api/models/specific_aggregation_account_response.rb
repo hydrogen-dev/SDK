@@ -38,11 +38,20 @@ module AtomApi
     # The account number of the held-away account for this aggregation account record
     attr_accessor :account_number
 
+    # The owner of the held-away account
+    attr_accessor :account_holder
+
     # The masked version of the account number of the held-away account for this aggregation account record
     attr_accessor :mask
 
     # Alphabetic currency code for the base currency of the account linked, limited to 3 characters
     attr_accessor :currency_code
+
+    # A flag to represent if this account is an asset or liability. Defaults to true which indicates it is an asset. If false this account is categorized as a liability
+    attr_accessor :is_asset
+
+    # ID of the financial offer this account matches. Useful so you don’t show clients offers for accounts they already have
+    attr_accessor :financial_offer_id
 
     # Indicates if the aggregation account record is active. Defaults to true which indicates it is active
     attr_accessor :is_active
@@ -66,8 +75,11 @@ module AtomApi
         :'category' => :'category',
         :'subcategory' => :'subcategory',
         :'account_number' => :'account_number',
+        :'account_holder' => :'account_holder',
         :'mask' => :'mask',
         :'currency_code' => :'currency_code',
+        :'is_asset' => :'is_asset',
+        :'financial_offer_id' => :'financial_offer_id',
         :'is_active' => :'is_active',
         :'metadata' => :'metadata',
         :'secondary_id' => :'secondary_id',
@@ -86,8 +98,11 @@ module AtomApi
         :'category' => :'String',
         :'subcategory' => :'String',
         :'account_number' => :'String',
+        :'account_holder' => :'String',
         :'mask' => :'String',
         :'currency_code' => :'String',
+        :'is_asset' => :'BOOLEAN',
+        :'financial_offer_id' => :'String',
         :'is_active' => :'BOOLEAN',
         :'metadata' => :'Object',
         :'secondary_id' => :'SecondaryId',
@@ -135,12 +150,24 @@ module AtomApi
         self.account_number = attributes[:'account_number']
       end
 
+      if attributes.has_key?(:'account_holder')
+        self.account_holder = attributes[:'account_holder']
+      end
+
       if attributes.has_key?(:'mask')
         self.mask = attributes[:'mask']
       end
 
       if attributes.has_key?(:'currency_code')
         self.currency_code = attributes[:'currency_code']
+      end
+
+      if attributes.has_key?(:'is_asset')
+        self.is_asset = attributes[:'is_asset']
+      end
+
+      if attributes.has_key?(:'financial_offer_id')
+        self.financial_offer_id = attributes[:'financial_offer_id']
       end
 
       if attributes.has_key?(:'is_active')
@@ -203,8 +230,11 @@ module AtomApi
           category == o.category &&
           subcategory == o.subcategory &&
           account_number == o.account_number &&
+          account_holder == o.account_holder &&
           mask == o.mask &&
           currency_code == o.currency_code &&
+          is_asset == o.is_asset &&
+          financial_offer_id == o.financial_offer_id &&
           is_active == o.is_active &&
           metadata == o.metadata &&
           secondary_id == o.secondary_id &&
@@ -220,7 +250,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, client_id, account_name, institution_name, category, subcategory, account_number, mask, currency_code, is_active, metadata, secondary_id, update_date].hash
+      [id, create_date, client_id, account_name, institution_name, category, subcategory, account_number, account_holder, mask, currency_code, is_asset, financial_offer_id, is_active, metadata, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

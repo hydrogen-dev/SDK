@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * QuestionnairePayloadAnswers
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class QuestionnairePayloadAnswers {
   @SerializedName("value")
   private String value = null;
@@ -43,6 +43,9 @@ public class QuestionnairePayloadAnswers {
 
   @SerializedName("weight")
   private Double weight = null;
+
+  @SerializedName("is_default")
+  private Boolean isDefault = null;
 
   @SerializedName("metadata")
   private Object metadata = null;
@@ -137,6 +140,24 @@ public class QuestionnairePayloadAnswers {
     this.weight = weight;
   }
 
+  public QuestionnairePayloadAnswers isDefault(Boolean isDefault) {
+    this.isDefault = isDefault;
+    return this;
+  }
+
+   /**
+   * Indicates the default answer to a question in a questionnaire when the UI is displayed to a user. Defaults to false
+   * @return isDefault
+  **/
+  @ApiModelProperty(value = "Indicates the default answer to a question in a questionnaire when the UI is displayed to a user. Defaults to false")
+  public Boolean isIsDefault() {
+    return isDefault;
+  }
+
+  public void setIsDefault(Boolean isDefault) {
+    this.isDefault = isDefault;
+  }
+
   public QuestionnairePayloadAnswers metadata(Object metadata) {
     this.metadata = metadata;
     return this;
@@ -170,12 +191,13 @@ public class QuestionnairePayloadAnswers {
         Objects.equals(this.label, questionnairePayloadAnswers.label) &&
         Objects.equals(this.image, questionnairePayloadAnswers.image) &&
         Objects.equals(this.weight, questionnairePayloadAnswers.weight) &&
+        Objects.equals(this.isDefault, questionnairePayloadAnswers.isDefault) &&
         Objects.equals(this.metadata, questionnairePayloadAnswers.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, orderIndex, label, image, weight, metadata);
+    return Objects.hash(value, orderIndex, label, image, weight, isDefault, metadata);
   }
 
 
@@ -189,6 +211,7 @@ public class QuestionnairePayloadAnswers {
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+    sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

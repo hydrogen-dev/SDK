@@ -107,6 +107,12 @@ exports.prototype['date'] = undefined;
 exports.prototype['adjusted_price'] = undefined;
 
   /**
+   * Alphabetic currency code for the base currency of the security, limited to 3 characters
+   * @member {String} currency_code
+   */
+exports.prototype['currency_code'] = undefined;
+
+  /**
    * @member {module:model/SecondaryId} secondary_id
    */
 exports.prototype['secondary_id'] = undefined;

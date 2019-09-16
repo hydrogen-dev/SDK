@@ -63,6 +63,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property category (base name: "category")', function() {
+      // uncomment below and update the code to test the property category
+      //var instance = new atom_api.DecisionTreePayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subcategory (base name: "subcategory")', function() {
+      // uncomment below and update the code to test the property subcategory
+      //var instance = new atom_api.DecisionTreePayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instance = new atom_api.DecisionTreePayload();

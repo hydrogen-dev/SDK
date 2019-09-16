@@ -57,6 +57,7 @@
     _this['cash_flow'] = cashFlow;
     _this['portfolio_id'] = portfolioId;
 
+
   };
 
   /**
@@ -81,6 +82,9 @@
       }
       if (data.hasOwnProperty('portfolio_id')) {
         obj['portfolio_id'] = ApiClient.convertToType(data['portfolio_id'], 'String');
+      }
+      if (data.hasOwnProperty('currency_code')) {
+        obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
       }
       if (data.hasOwnProperty('secondary_id')) {
         obj['secondary_id'] = SecondaryId.constructFromObject(data['secondary_id']);
@@ -109,6 +113,11 @@
    * @member {String} portfolio_id
    */
   exports.prototype['portfolio_id'] = undefined;
+  /**
+   * Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
+   * @member {String} currency_code
+   */
+  exports.prototype['currency_code'] = undefined;
   /**
    * @member {module:model/SecondaryId} secondary_id
    */

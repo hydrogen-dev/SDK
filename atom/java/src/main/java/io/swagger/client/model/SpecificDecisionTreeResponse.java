@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificDecisionTreeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class SpecificDecisionTreeResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -39,6 +39,12 @@ public class SpecificDecisionTreeResponse {
 
   @SerializedName("name")
   private String name = null;
+
+  @SerializedName("category")
+  private String category = null;
+
+  @SerializedName("subcategory")
+  private String subcategory = null;
 
   @SerializedName("description")
   private String description = null;
@@ -104,6 +110,42 @@ public class SpecificDecisionTreeResponse {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public SpecificDecisionTreeResponse category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * A category for the decision tree such as “Onboarding” or “Risk Profile”
+   * @return category
+  **/
+  @ApiModelProperty(value = "A category for the decision tree such as “Onboarding” or “Risk Profile”")
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public SpecificDecisionTreeResponse subcategory(String subcategory) {
+    this.subcategory = subcategory;
+    return this;
+  }
+
+   /**
+   * A subcategory for the decision tree such as “Income-related”
+   * @return subcategory
+  **/
+  @ApiModelProperty(value = "A subcategory for the decision tree such as “Income-related”")
+  public String getSubcategory() {
+    return subcategory;
+  }
+
+  public void setSubcategory(String subcategory) {
+    this.subcategory = subcategory;
   }
 
   public SpecificDecisionTreeResponse description(String description) {
@@ -191,6 +233,8 @@ public class SpecificDecisionTreeResponse {
     return Objects.equals(this.id, specificDecisionTreeResponse.id) &&
         Objects.equals(this.createDate, specificDecisionTreeResponse.createDate) &&
         Objects.equals(this.name, specificDecisionTreeResponse.name) &&
+        Objects.equals(this.category, specificDecisionTreeResponse.category) &&
+        Objects.equals(this.subcategory, specificDecisionTreeResponse.subcategory) &&
         Objects.equals(this.description, specificDecisionTreeResponse.description) &&
         Objects.equals(this.secondaryId, specificDecisionTreeResponse.secondaryId) &&
         Objects.equals(this.metadata, specificDecisionTreeResponse.metadata) &&
@@ -199,7 +243,7 @@ public class SpecificDecisionTreeResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, name, description, secondaryId, metadata, updateDate);
+    return Objects.hash(id, createDate, name, category, subcategory, description, secondaryId, metadata, updateDate);
   }
 
 
@@ -211,6 +255,8 @@ public class SpecificDecisionTreeResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    subcategory: ").append(toIndentedString(subcategory)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");

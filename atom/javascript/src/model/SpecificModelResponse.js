@@ -110,6 +110,12 @@ exports.prototype['client_id'] = undefined;
 exports.prototype['node_map'] = undefined;
 
   /**
+   * Alphabetic currency code for the base currency of the model, limited to 3 characters
+   * @member {String} currency_code
+   */
+exports.prototype['currency_code'] = undefined;
+
+  /**
    * Indicates for whether or not the model is active. Defaults to true which indicates that it is currently active
    * @member {Boolean} is_active
    * @default true

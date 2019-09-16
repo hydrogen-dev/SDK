@@ -27,10 +27,16 @@ import java.io.IOException;
 /**
  * DecisionTreePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class DecisionTreePayload {
   @SerializedName("name")
   private String name = null;
+
+  @SerializedName("category")
+  private String category = null;
+
+  @SerializedName("subcategory")
+  private String subcategory = null;
 
   @SerializedName("description")
   private String description = null;
@@ -57,6 +63,42 @@ public class DecisionTreePayload {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public DecisionTreePayload category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * A category for the decision tree such as “Onboarding” or “Risk Profile”
+   * @return category
+  **/
+  @ApiModelProperty(value = "A category for the decision tree such as “Onboarding” or “Risk Profile”")
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public DecisionTreePayload subcategory(String subcategory) {
+    this.subcategory = subcategory;
+    return this;
+  }
+
+   /**
+   * A subcategory for the decision tree such as “Income-related”
+   * @return subcategory
+  **/
+  @ApiModelProperty(value = "A subcategory for the decision tree such as “Income-related”")
+  public String getSubcategory() {
+    return subcategory;
+  }
+
+  public void setSubcategory(String subcategory) {
+    this.subcategory = subcategory;
   }
 
   public DecisionTreePayload description(String description) {
@@ -124,6 +166,8 @@ public class DecisionTreePayload {
     }
     DecisionTreePayload decisionTreePayload = (DecisionTreePayload) o;
     return Objects.equals(this.name, decisionTreePayload.name) &&
+        Objects.equals(this.category, decisionTreePayload.category) &&
+        Objects.equals(this.subcategory, decisionTreePayload.subcategory) &&
         Objects.equals(this.description, decisionTreePayload.description) &&
         Objects.equals(this.secondaryId, decisionTreePayload.secondaryId) &&
         Objects.equals(this.metadata, decisionTreePayload.metadata);
@@ -131,7 +175,7 @@ public class DecisionTreePayload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, secondaryId, metadata);
+    return Objects.hash(name, category, subcategory, description, secondaryId, metadata);
   }
 
 
@@ -141,6 +185,8 @@ public class DecisionTreePayload {
     sb.append("class DecisionTreePayload {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    subcategory: ").append(toIndentedString(subcategory)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");

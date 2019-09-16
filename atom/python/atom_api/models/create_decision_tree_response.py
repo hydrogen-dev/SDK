@@ -35,6 +35,8 @@ class CreateDecisionTreeResponse(object):
     """
     swagger_types = {
         'name': 'str',
+        'category': 'str',
+        'subcategory': 'str',
         'description': 'str',
         'secondary_id': 'SecondaryId',
         'metadata': 'object',
@@ -44,6 +46,8 @@ class CreateDecisionTreeResponse(object):
 
     attribute_map = {
         'name': 'name',
+        'category': 'category',
+        'subcategory': 'subcategory',
         'description': 'description',
         'secondary_id': 'secondary_id',
         'metadata': 'metadata',
@@ -51,10 +55,12 @@ class CreateDecisionTreeResponse(object):
         'create_date': 'create_date'
     }
 
-    def __init__(self, name=None, description=None, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, name=None, category=None, subcategory=None, description=None, secondary_id=None, metadata=None, id=None, create_date=None):  # noqa: E501
         """CreateDecisionTreeResponse - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
+        self._category = None
+        self._subcategory = None
         self._description = None
         self._secondary_id = None
         self._metadata = None
@@ -63,6 +69,10 @@ class CreateDecisionTreeResponse(object):
         self.discriminator = None
 
         self.name = name
+        if category is not None:
+            self.category = category
+        if subcategory is not None:
+            self.subcategory = subcategory
         if description is not None:
             self.description = description
         if secondary_id is not None:
@@ -98,6 +108,52 @@ class CreateDecisionTreeResponse(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def category(self):
+        """Gets the category of this CreateDecisionTreeResponse.  # noqa: E501
+
+        A category for the decision tree such as “Onboarding” or “Risk Profile”  # noqa: E501
+
+        :return: The category of this CreateDecisionTreeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """Sets the category of this CreateDecisionTreeResponse.
+
+        A category for the decision tree such as “Onboarding” or “Risk Profile”  # noqa: E501
+
+        :param category: The category of this CreateDecisionTreeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._category = category
+
+    @property
+    def subcategory(self):
+        """Gets the subcategory of this CreateDecisionTreeResponse.  # noqa: E501
+
+        A subcategory for the decision tree such as “Income-related”  # noqa: E501
+
+        :return: The subcategory of this CreateDecisionTreeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._subcategory
+
+    @subcategory.setter
+    def subcategory(self, subcategory):
+        """Sets the subcategory of this CreateDecisionTreeResponse.
+
+        A subcategory for the decision tree such as “Income-related”  # noqa: E501
+
+        :param subcategory: The subcategory of this CreateDecisionTreeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._subcategory = subcategory
 
     @property
     def description(self):

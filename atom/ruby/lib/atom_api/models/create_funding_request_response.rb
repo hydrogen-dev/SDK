@@ -35,6 +35,12 @@ module AtomApi
     # In the case that the funding request is recurring, the date that the funding request should stop occurring
     attr_accessor :end_date
 
+    # The last date a recurring deposit or withdrawal was made to/from an account
+    attr_accessor :last_request_date
+
+    # The next date a recurring deposit or withdrawal is scheduled to/from an account
+    attr_accessor :next_request_date
+
     # Number of frequency_unit between each request. For example, if the frequency_unit is weekly and the frequency is 2, this means the funding request occurs every two weeks. Default is 1
     attr_accessor :frequency
 
@@ -99,6 +105,8 @@ module AtomApi
         :'is_deposit' => :'is_deposit',
         :'start_date' => :'start_date',
         :'end_date' => :'end_date',
+        :'last_request_date' => :'last_request_date',
+        :'next_request_date' => :'next_request_date',
         :'frequency' => :'frequency',
         :'description' => :'description',
         :'amount' => :'amount',
@@ -123,6 +131,8 @@ module AtomApi
         :'is_deposit' => :'BOOLEAN',
         :'start_date' => :'Date',
         :'end_date' => :'Date',
+        :'last_request_date' => :'Date',
+        :'next_request_date' => :'Date',
         :'frequency' => :'Integer',
         :'description' => :'String',
         :'amount' => :'Float',
@@ -171,6 +181,14 @@ module AtomApi
 
       if attributes.has_key?(:'end_date')
         self.end_date = attributes[:'end_date']
+      end
+
+      if attributes.has_key?(:'last_request_date')
+        self.last_request_date = attributes[:'last_request_date']
+      end
+
+      if attributes.has_key?(:'next_request_date')
+        self.next_request_date = attributes[:'next_request_date']
       end
 
       if attributes.has_key?(:'frequency')
@@ -311,6 +329,8 @@ module AtomApi
           is_deposit == o.is_deposit &&
           start_date == o.start_date &&
           end_date == o.end_date &&
+          last_request_date == o.last_request_date &&
+          next_request_date == o.next_request_date &&
           frequency == o.frequency &&
           description == o.description &&
           amount == o.amount &&
@@ -333,7 +353,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, funding_type, funding_status, frequency_unit, is_deposit, start_date, end_date, frequency, description, amount, bank_link_id, transfer_id, support_ticket_id, is_active, metadata, secondary_id, id, create_date].hash
+      [account_id, funding_type, funding_status, frequency_unit, is_deposit, start_date, end_date, last_request_date, next_request_date, frequency, description, amount, bank_link_id, transfer_id, support_ticket_id, is_active, metadata, secondary_id, id, create_date].hash
     end
 
     # Builds the object from hash

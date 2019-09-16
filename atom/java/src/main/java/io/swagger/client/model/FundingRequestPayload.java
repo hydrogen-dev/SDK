@@ -29,7 +29,7 @@ import org.threeten.bp.LocalDate;
 /**
  * FundingRequestPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class FundingRequestPayload {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -223,6 +223,12 @@ public class FundingRequestPayload {
   @SerializedName("end_date")
   private LocalDate endDate = null;
 
+  @SerializedName("last_request_date")
+  private LocalDate lastRequestDate = null;
+
+  @SerializedName("next_request_date")
+  private LocalDate nextRequestDate = null;
+
   @SerializedName("frequency")
   private Integer frequency = null;
 
@@ -374,6 +380,42 @@ public class FundingRequestPayload {
 
   public void setEndDate(LocalDate endDate) {
     this.endDate = endDate;
+  }
+
+  public FundingRequestPayload lastRequestDate(LocalDate lastRequestDate) {
+    this.lastRequestDate = lastRequestDate;
+    return this;
+  }
+
+   /**
+   * The last date a recurring deposit or withdrawal was made to/from an account
+   * @return lastRequestDate
+  **/
+  @ApiModelProperty(value = "The last date a recurring deposit or withdrawal was made to/from an account")
+  public LocalDate getLastRequestDate() {
+    return lastRequestDate;
+  }
+
+  public void setLastRequestDate(LocalDate lastRequestDate) {
+    this.lastRequestDate = lastRequestDate;
+  }
+
+  public FundingRequestPayload nextRequestDate(LocalDate nextRequestDate) {
+    this.nextRequestDate = nextRequestDate;
+    return this;
+  }
+
+   /**
+   * The next date a recurring deposit or withdrawal is scheduled to/from an account
+   * @return nextRequestDate
+  **/
+  @ApiModelProperty(value = "The next date a recurring deposit or withdrawal is scheduled to/from an account")
+  public LocalDate getNextRequestDate() {
+    return nextRequestDate;
+  }
+
+  public void setNextRequestDate(LocalDate nextRequestDate) {
+    this.nextRequestDate = nextRequestDate;
   }
 
   public FundingRequestPayload frequency(Integer frequency) {
@@ -555,6 +597,8 @@ public class FundingRequestPayload {
         Objects.equals(this.isDeposit, fundingRequestPayload.isDeposit) &&
         Objects.equals(this.startDate, fundingRequestPayload.startDate) &&
         Objects.equals(this.endDate, fundingRequestPayload.endDate) &&
+        Objects.equals(this.lastRequestDate, fundingRequestPayload.lastRequestDate) &&
+        Objects.equals(this.nextRequestDate, fundingRequestPayload.nextRequestDate) &&
         Objects.equals(this.frequency, fundingRequestPayload.frequency) &&
         Objects.equals(this.description, fundingRequestPayload.description) &&
         Objects.equals(this.amount, fundingRequestPayload.amount) &&
@@ -568,7 +612,7 @@ public class FundingRequestPayload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, fundingType, fundingStatus, frequencyUnit, isDeposit, startDate, endDate, frequency, description, amount, bankLinkId, transferId, supportTicketId, isActive, metadata, secondaryId);
+    return Objects.hash(accountId, fundingType, fundingStatus, frequencyUnit, isDeposit, startDate, endDate, lastRequestDate, nextRequestDate, frequency, description, amount, bankLinkId, transferId, supportTicketId, isActive, metadata, secondaryId);
   }
 
 
@@ -584,6 +628,8 @@ public class FundingRequestPayload {
     sb.append("    isDeposit: ").append(toIndentedString(isDeposit)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    lastRequestDate: ").append(toIndentedString(lastRequestDate)).append("\n");
+    sb.append("    nextRequestDate: ").append(toIndentedString(nextRequestDate)).append("\n");
     sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");

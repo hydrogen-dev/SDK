@@ -24,11 +24,12 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.UUID;
+import org.threeten.bp.LocalDate;
 
 /**
  * TransferRequestPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class TransferRequestPayload {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -63,8 +64,17 @@ public class TransferRequestPayload {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("status_time_stamp")
+  private String statusTimeStamp = null;
+
   @SerializedName("transfer_type")
   private String transferType = null;
+
+  @SerializedName("transfer_date")
+  private LocalDate transferDate = null;
+
+  @SerializedName("received_date")
+  private LocalDate receivedDate = null;
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
@@ -270,6 +280,24 @@ public class TransferRequestPayload {
     this.status = status;
   }
 
+  public TransferRequestPayload statusTimeStamp(String statusTimeStamp) {
+    this.statusTimeStamp = statusTimeStamp;
+    return this;
+  }
+
+   /**
+   * Time stamp associated with the transfer status
+   * @return statusTimeStamp
+  **/
+  @ApiModelProperty(value = "Time stamp associated with the transfer status")
+  public String getStatusTimeStamp() {
+    return statusTimeStamp;
+  }
+
+  public void setStatusTimeStamp(String statusTimeStamp) {
+    this.statusTimeStamp = statusTimeStamp;
+  }
+
   public TransferRequestPayload transferType(String transferType) {
     this.transferType = transferType;
     return this;
@@ -286,6 +314,42 @@ public class TransferRequestPayload {
 
   public void setTransferType(String transferType) {
     this.transferType = transferType;
+  }
+
+  public TransferRequestPayload transferDate(LocalDate transferDate) {
+    this.transferDate = transferDate;
+    return this;
+  }
+
+   /**
+   * Date that the transfer will be initiated. Defaults to the current date
+   * @return transferDate
+  **/
+  @ApiModelProperty(value = "Date that the transfer will be initiated. Defaults to the current date")
+  public LocalDate getTransferDate() {
+    return transferDate;
+  }
+
+  public void setTransferDate(LocalDate transferDate) {
+    this.transferDate = transferDate;
+  }
+
+  public TransferRequestPayload receivedDate(LocalDate receivedDate) {
+    this.receivedDate = receivedDate;
+    return this;
+  }
+
+   /**
+   * Date that the transfer was received
+   * @return receivedDate
+  **/
+  @ApiModelProperty(value = "Date that the transfer was received")
+  public LocalDate getReceivedDate() {
+    return receivedDate;
+  }
+
+  public void setReceivedDate(LocalDate receivedDate) {
+    this.receivedDate = receivedDate;
   }
 
   public TransferRequestPayload secondaryId(String secondaryId) {
@@ -345,14 +409,17 @@ public class TransferRequestPayload {
         Objects.equals(this.dtcNumber, transferRequestPayload.dtcNumber) &&
         Objects.equals(this.rothFiveYear, transferRequestPayload.rothFiveYear) &&
         Objects.equals(this.status, transferRequestPayload.status) &&
+        Objects.equals(this.statusTimeStamp, transferRequestPayload.statusTimeStamp) &&
         Objects.equals(this.transferType, transferRequestPayload.transferType) &&
+        Objects.equals(this.transferDate, transferRequestPayload.transferDate) &&
+        Objects.equals(this.receivedDate, transferRequestPayload.receivedDate) &&
         Objects.equals(this.secondaryId, transferRequestPayload.secondaryId) &&
         Objects.equals(this.metadata, transferRequestPayload.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, accountHolder, accountNumber, accountTypeId, firmName, transferAllCash, amount, comment, dtcNumber, rothFiveYear, status, transferType, secondaryId, metadata);
+    return Objects.hash(accountId, accountHolder, accountNumber, accountTypeId, firmName, transferAllCash, amount, comment, dtcNumber, rothFiveYear, status, statusTimeStamp, transferType, transferDate, receivedDate, secondaryId, metadata);
   }
 
 
@@ -372,7 +439,10 @@ public class TransferRequestPayload {
     sb.append("    dtcNumber: ").append(toIndentedString(dtcNumber)).append("\n");
     sb.append("    rothFiveYear: ").append(toIndentedString(rothFiveYear)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    statusTimeStamp: ").append(toIndentedString(statusTimeStamp)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
+    sb.append("    transferDate: ").append(toIndentedString(transferDate)).append("\n");
+    sb.append("    receivedDate: ").append(toIndentedString(receivedDate)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");

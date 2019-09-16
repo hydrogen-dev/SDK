@@ -26,6 +26,9 @@ module AtomApi
     # Value for the adjusted price of the security
     attr_accessor :adjusted_price
 
+    # Alphabetic currency code for the base currency of the security, limited to 3 characters
+    attr_accessor :currency_code
+
     attr_accessor :secondary_id
 
     # ID of the security price
@@ -41,6 +44,7 @@ module AtomApi
         :'price' => :'price',
         :'date' => :'date',
         :'adjusted_price' => :'adjusted_price',
+        :'currency_code' => :'currency_code',
         :'secondary_id' => :'secondary_id',
         :'id' => :'id',
         :'create_date' => :'create_date'
@@ -54,6 +58,7 @@ module AtomApi
         :'price' => :'Float',
         :'date' => :'String',
         :'adjusted_price' => :'Float',
+        :'currency_code' => :'String',
         :'secondary_id' => :'SecondaryId',
         :'id' => :'String',
         :'create_date' => :'String'
@@ -82,6 +87,10 @@ module AtomApi
 
       if attributes.has_key?(:'adjusted_price')
         self.adjusted_price = attributes[:'adjusted_price']
+      end
+
+      if attributes.has_key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
       if attributes.has_key?(:'secondary_id')
@@ -134,6 +143,7 @@ module AtomApi
           price == o.price &&
           date == o.date &&
           adjusted_price == o.adjusted_price &&
+          currency_code == o.currency_code &&
           secondary_id == o.secondary_id &&
           id == o.id &&
           create_date == o.create_date
@@ -148,7 +158,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [security_id, price, date, adjusted_price, secondary_id, id, create_date].hash
+      [security_id, price, date, adjusted_price, currency_code, secondary_id, id, create_date].hash
     end
 
     # Builds the object from hash

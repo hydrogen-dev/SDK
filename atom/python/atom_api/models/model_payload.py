@@ -38,6 +38,7 @@ class ModelPayload(object):
         'description': 'str',
         'client_id': 'str',
         'node_map': 'list[str]',
+        'currency_code': 'str',
         'is_active': 'bool',
         'metadata': 'object',
         'secondary_id': 'SecondaryId'
@@ -49,12 +50,13 @@ class ModelPayload(object):
         'description': 'description',
         'client_id': 'client_id',
         'node_map': 'node_map',
+        'currency_code': 'currency_code',
         'is_active': 'is_active',
         'metadata': 'metadata',
         'secondary_id': 'secondary_id'
     }
 
-    def __init__(self, name=None, category=None, description=None, client_id=None, node_map=None, is_active=True, metadata=None, secondary_id=None):  # noqa: E501
+    def __init__(self, name=None, category=None, description=None, client_id=None, node_map=None, currency_code=None, is_active=True, metadata=None, secondary_id=None):  # noqa: E501
         """ModelPayload - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -62,6 +64,7 @@ class ModelPayload(object):
         self._description = None
         self._client_id = None
         self._node_map = None
+        self._currency_code = None
         self._is_active = None
         self._metadata = None
         self._secondary_id = None
@@ -76,6 +79,8 @@ class ModelPayload(object):
             self.client_id = client_id
         if node_map is not None:
             self.node_map = node_map
+        if currency_code is not None:
+            self.currency_code = currency_code
         if is_active is not None:
             self.is_active = is_active
         if metadata is not None:
@@ -197,6 +202,29 @@ class ModelPayload(object):
         """
 
         self._node_map = node_map
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this ModelPayload.  # noqa: E501
+
+        Alphabetic currency code for the base currency of the model, limited to 3 characters  # noqa: E501
+
+        :return: The currency_code of this ModelPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this ModelPayload.
+
+        Alphabetic currency code for the base currency of the model, limited to 3 characters  # noqa: E501
+
+        :param currency_code: The currency_code of this ModelPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
 
     @property
     def is_active(self):

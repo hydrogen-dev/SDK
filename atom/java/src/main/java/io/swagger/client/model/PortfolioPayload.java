@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * PortfolioPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class PortfolioPayload {
   @SerializedName("name")
   private String name = null;
@@ -44,6 +44,9 @@ public class PortfolioPayload {
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("metadata")
   private Object metadata = null;
@@ -141,6 +144,24 @@ public class PortfolioPayload {
     this.description = description;
   }
 
+  public PortfolioPayload currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the portfolio, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public PortfolioPayload metadata(Object metadata) {
     this.metadata = metadata;
     return this;
@@ -192,13 +213,14 @@ public class PortfolioPayload {
         Objects.equals(this.modelId, portfolioPayload.modelId) &&
         Objects.equals(this.percentage, portfolioPayload.percentage) &&
         Objects.equals(this.description, portfolioPayload.description) &&
+        Objects.equals(this.currencyCode, portfolioPayload.currencyCode) &&
         Objects.equals(this.metadata, portfolioPayload.metadata) &&
         Objects.equals(this.secondaryId, portfolioPayload.secondaryId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, accountId, modelId, percentage, description, metadata, secondaryId);
+    return Objects.hash(name, accountId, modelId, percentage, description, currencyCode, metadata, secondaryId);
   }
 
 
@@ -212,6 +234,7 @@ public class PortfolioPayload {
     sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("}");

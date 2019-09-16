@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CreateSecurityPriceResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class CreateSecurityPriceResponse {
   @SerializedName("security_id")
   private UUID securityId = null;
@@ -42,6 +42,9 @@ public class CreateSecurityPriceResponse {
 
   @SerializedName("adjusted_price")
   private Double adjustedPrice = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
@@ -124,6 +127,24 @@ public class CreateSecurityPriceResponse {
     this.adjustedPrice = adjustedPrice;
   }
 
+  public CreateSecurityPriceResponse currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the security, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the security, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public CreateSecurityPriceResponse secondaryId(String secondaryId) {
     this.secondaryId = secondaryId;
     return this;
@@ -192,6 +213,7 @@ public class CreateSecurityPriceResponse {
         Objects.equals(this.price, createSecurityPriceResponse.price) &&
         Objects.equals(this.date, createSecurityPriceResponse.date) &&
         Objects.equals(this.adjustedPrice, createSecurityPriceResponse.adjustedPrice) &&
+        Objects.equals(this.currencyCode, createSecurityPriceResponse.currencyCode) &&
         Objects.equals(this.secondaryId, createSecurityPriceResponse.secondaryId) &&
         Objects.equals(this.id, createSecurityPriceResponse.id) &&
         Objects.equals(this.createDate, createSecurityPriceResponse.createDate);
@@ -199,7 +221,7 @@ public class CreateSecurityPriceResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(securityId, price, date, adjustedPrice, secondaryId, id, createDate);
+    return Objects.hash(securityId, price, date, adjustedPrice, currencyCode, secondaryId, id, createDate);
   }
 
 
@@ -212,6 +234,7 @@ public class CreateSecurityPriceResponse {
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    adjustedPrice: ").append(toIndentedString(adjustedPrice)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");

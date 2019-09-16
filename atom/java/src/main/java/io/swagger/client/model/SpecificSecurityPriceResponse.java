@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificSecurityPriceResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class SpecificSecurityPriceResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -48,6 +48,9 @@ public class SpecificSecurityPriceResponse {
 
   @SerializedName("adjusted_price")
   private Double adjustedPrice = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
@@ -163,6 +166,24 @@ public class SpecificSecurityPriceResponse {
     this.adjustedPrice = adjustedPrice;
   }
 
+  public SpecificSecurityPriceResponse currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the security, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the security, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public SpecificSecurityPriceResponse secondaryId(String secondaryId) {
     this.secondaryId = secondaryId;
     return this;
@@ -215,13 +236,14 @@ public class SpecificSecurityPriceResponse {
         Objects.equals(this.price, specificSecurityPriceResponse.price) &&
         Objects.equals(this.date, specificSecurityPriceResponse.date) &&
         Objects.equals(this.adjustedPrice, specificSecurityPriceResponse.adjustedPrice) &&
+        Objects.equals(this.currencyCode, specificSecurityPriceResponse.currencyCode) &&
         Objects.equals(this.secondaryId, specificSecurityPriceResponse.secondaryId) &&
         Objects.equals(this.updateDate, specificSecurityPriceResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, securityId, price, date, adjustedPrice, secondaryId, updateDate);
+    return Objects.hash(id, createDate, securityId, price, date, adjustedPrice, currencyCode, secondaryId, updateDate);
   }
 
 
@@ -236,6 +258,7 @@ public class SpecificSecurityPriceResponse {
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    adjustedPrice: ").append(toIndentedString(adjustedPrice)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

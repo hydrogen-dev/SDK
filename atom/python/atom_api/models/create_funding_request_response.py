@@ -41,6 +41,8 @@ class CreateFundingRequestResponse(object):
         'is_deposit': 'bool',
         'start_date': 'date',
         'end_date': 'date',
+        'last_request_date': 'date',
+        'next_request_date': 'date',
         'frequency': 'int',
         'description': 'str',
         'amount': 'float',
@@ -62,6 +64,8 @@ class CreateFundingRequestResponse(object):
         'is_deposit': 'is_deposit',
         'start_date': 'start_date',
         'end_date': 'end_date',
+        'last_request_date': 'last_request_date',
+        'next_request_date': 'next_request_date',
         'frequency': 'frequency',
         'description': 'description',
         'amount': 'amount',
@@ -75,7 +79,7 @@ class CreateFundingRequestResponse(object):
         'create_date': 'create_date'
     }
 
-    def __init__(self, account_id=None, funding_type=None, funding_status=None, frequency_unit=None, is_deposit=None, start_date=None, end_date=None, frequency=None, description=None, amount=None, bank_link_id=None, transfer_id=None, support_ticket_id=None, is_active=True, metadata=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, account_id=None, funding_type=None, funding_status=None, frequency_unit=None, is_deposit=None, start_date=None, end_date=None, last_request_date=None, next_request_date=None, frequency=None, description=None, amount=None, bank_link_id=None, transfer_id=None, support_ticket_id=None, is_active=True, metadata=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
         """CreateFundingRequestResponse - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -85,6 +89,8 @@ class CreateFundingRequestResponse(object):
         self._is_deposit = None
         self._start_date = None
         self._end_date = None
+        self._last_request_date = None
+        self._next_request_date = None
         self._frequency = None
         self._description = None
         self._amount = None
@@ -106,6 +112,10 @@ class CreateFundingRequestResponse(object):
         self.start_date = start_date
         if end_date is not None:
             self.end_date = end_date
+        if last_request_date is not None:
+            self.last_request_date = last_request_date
+        if next_request_date is not None:
+            self.next_request_date = next_request_date
         if frequency is not None:
             self.frequency = frequency
         if description is not None:
@@ -319,6 +329,52 @@ class CreateFundingRequestResponse(object):
         """
 
         self._end_date = end_date
+
+    @property
+    def last_request_date(self):
+        """Gets the last_request_date of this CreateFundingRequestResponse.  # noqa: E501
+
+        The last date a recurring deposit or withdrawal was made to/from an account  # noqa: E501
+
+        :return: The last_request_date of this CreateFundingRequestResponse.  # noqa: E501
+        :rtype: date
+        """
+        return self._last_request_date
+
+    @last_request_date.setter
+    def last_request_date(self, last_request_date):
+        """Sets the last_request_date of this CreateFundingRequestResponse.
+
+        The last date a recurring deposit or withdrawal was made to/from an account  # noqa: E501
+
+        :param last_request_date: The last_request_date of this CreateFundingRequestResponse.  # noqa: E501
+        :type: date
+        """
+
+        self._last_request_date = last_request_date
+
+    @property
+    def next_request_date(self):
+        """Gets the next_request_date of this CreateFundingRequestResponse.  # noqa: E501
+
+        The next date a recurring deposit or withdrawal is scheduled to/from an account  # noqa: E501
+
+        :return: The next_request_date of this CreateFundingRequestResponse.  # noqa: E501
+        :rtype: date
+        """
+        return self._next_request_date
+
+    @next_request_date.setter
+    def next_request_date(self, next_request_date):
+        """Sets the next_request_date of this CreateFundingRequestResponse.
+
+        The next date a recurring deposit or withdrawal is scheduled to/from an account  # noqa: E501
+
+        :param next_request_date: The next_request_date of this CreateFundingRequestResponse.  # noqa: E501
+        :type: date
+        """
+
+        self._next_request_date = next_request_date
 
     @property
     def frequency(self):

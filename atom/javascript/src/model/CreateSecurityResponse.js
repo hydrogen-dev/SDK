@@ -133,6 +133,18 @@ exports.prototype['security_class'] = undefined;
 exports.prototype['exchange'] = undefined;
 
   /**
+   * ID of a security that will serve as a proxy in financial analytics
+   * @member {String} proxy_id
+   */
+exports.prototype['proxy_id'] = undefined;
+
+  /**
+   * Alphabetic currency code for the base currency of the security, limited to 3 characters
+   * @member {String} currency_code
+   */
+exports.prototype['currency_code'] = undefined;
+
+  /**
    * Indicates if the security is active. Defaults to true which indicates that the it is active
    * @member {Boolean} is_active
    * @default true

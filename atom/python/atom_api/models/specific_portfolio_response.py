@@ -41,6 +41,7 @@ class SpecificPortfolioResponse(object):
         'model_id': 'str',
         'percentage': 'float',
         'description': 'str',
+        'currency_code': 'str',
         'metadata': 'object',
         'secondary_id': 'SecondaryId',
         'update_date': 'str'
@@ -54,12 +55,13 @@ class SpecificPortfolioResponse(object):
         'model_id': 'model_id',
         'percentage': 'percentage',
         'description': 'description',
+        'currency_code': 'currency_code',
         'metadata': 'metadata',
         'secondary_id': 'secondary_id',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, create_date=None, name=None, account_id=None, model_id=None, percentage=None, description=None, metadata=None, secondary_id=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, name=None, account_id=None, model_id=None, percentage=None, description=None, currency_code=None, metadata=None, secondary_id=None, update_date=None):  # noqa: E501
         """SpecificPortfolioResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -69,6 +71,7 @@ class SpecificPortfolioResponse(object):
         self._model_id = None
         self._percentage = None
         self._description = None
+        self._currency_code = None
         self._metadata = None
         self._secondary_id = None
         self._update_date = None
@@ -84,6 +87,8 @@ class SpecificPortfolioResponse(object):
         self.percentage = percentage
         if description is not None:
             self.description = description
+        if currency_code is not None:
+            self.currency_code = currency_code
         if metadata is not None:
             self.metadata = metadata
         if secondary_id is not None:
@@ -259,6 +264,29 @@ class SpecificPortfolioResponse(object):
         """
 
         self._description = description
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this SpecificPortfolioResponse.  # noqa: E501
+
+        Alphabetic currency code for the base currency of the portfolio, limited to 3 characters  # noqa: E501
+
+        :return: The currency_code of this SpecificPortfolioResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this SpecificPortfolioResponse.
+
+        Alphabetic currency code for the base currency of the portfolio, limited to 3 characters  # noqa: E501
+
+        :param currency_code: The currency_code of this SpecificPortfolioResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
 
     @property
     def metadata(self):

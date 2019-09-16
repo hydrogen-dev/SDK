@@ -67,6 +67,7 @@
 
 
 
+
   };
 
   /**
@@ -112,6 +113,9 @@
       }
       if (data.hasOwnProperty('country_of_residence')) {
         obj['country_of_residence'] = ApiClient.convertToType(data['country_of_residence'], 'String');
+      }
+      if (data.hasOwnProperty('income')) {
+        obj['income'] = ApiClient.convertToType(data['income'], 'Number');
       }
       if (data.hasOwnProperty('is_verified')) {
         obj['is_verified'] = ApiClient.convertToType(data['is_verified'], 'Boolean');
@@ -189,6 +193,11 @@
    * @member {String} country_of_residence
    */
   exports.prototype['country_of_residence'] = undefined;
+  /**
+   * The total income for the client
+   * @member {Number} income
+   */
+  exports.prototype['income'] = undefined;
   /**
    * Indicator if the identifying details provided by the client have been verified by a Know-Your-Customer (KYC) vendor. Defaults to false which indicates it is not verified
    * @member {Boolean} is_verified

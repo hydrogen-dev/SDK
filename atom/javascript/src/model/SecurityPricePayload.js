@@ -56,6 +56,7 @@
     _this['date'] = _date;
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('adjusted_price')) {
         obj['adjusted_price'] = ApiClient.convertToType(data['adjusted_price'], 'Number');
+      }
+      if (data.hasOwnProperty('currency_code')) {
+        obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
       }
       if (data.hasOwnProperty('secondary_id')) {
         obj['secondary_id'] = SecondaryId.constructFromObject(data['secondary_id']);
@@ -108,6 +112,11 @@
    * @member {Number} adjusted_price
    */
   exports.prototype['adjusted_price'] = undefined;
+  /**
+   * Alphabetic currency code for the base currency of the security, limited to 3 characters
+   * @member {String} currency_code
+   */
+  exports.prototype['currency_code'] = undefined;
   /**
    * @member {module:model/SecondaryId} secondary_id
    */

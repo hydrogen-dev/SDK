@@ -35,7 +35,7 @@ import java.util.UUID;
 /**
  * CreateAccountResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class CreateAccountResponse {
   @SerializedName("name")
   private String name = null;
@@ -51,6 +51,9 @@ public class CreateAccountResponse {
 
   @SerializedName("goals")
   private List<AccountCreateGoal> goals = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("metadata")
   private Object metadata = null;
@@ -192,6 +195,24 @@ public class CreateAccountResponse {
 
   public void setGoals(List<AccountCreateGoal> goals) {
     this.goals = goals;
+  }
+
+  public CreateAccountResponse currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the account, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the account, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
   }
 
   public CreateAccountResponse metadata(Object metadata) {
@@ -433,6 +454,7 @@ public class CreateAccountResponse {
         Objects.equals(this.managed, createAccountResponse.managed) &&
         Objects.equals(this.clients, createAccountResponse.clients) &&
         Objects.equals(this.goals, createAccountResponse.goals) &&
+        Objects.equals(this.currencyCode, createAccountResponse.currencyCode) &&
         Objects.equals(this.metadata, createAccountResponse.metadata) &&
         Objects.equals(this.secondaryId, createAccountResponse.secondaryId) &&
         Objects.equals(this.last, createAccountResponse.last) &&
@@ -449,7 +471,7 @@ public class CreateAccountResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, accountTypeId, managed, clients, goals, metadata, secondaryId, last, totalPages, totalElements, sort, first, numberOfElements, size, number, id, createDate);
+    return Objects.hash(name, accountTypeId, managed, clients, goals, currencyCode, metadata, secondaryId, last, totalPages, totalElements, sort, first, numberOfElements, size, number, id, createDate);
   }
 
 
@@ -463,6 +485,7 @@ public class CreateAccountResponse {
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
     sb.append("    clients: ").append(toIndentedString(clients)).append("\n");
     sb.append("    goals: ").append(toIndentedString(goals)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    last: ").append(toIndentedString(last)).append("\n");

@@ -27,11 +27,12 @@ import io.swagger.client.model.SecurityPayloadSecurityCountry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * SecurityPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class SecurityPayload {
   @SerializedName("name")
   private String name = null;
@@ -53,6 +54,12 @@ public class SecurityPayload {
 
   @SerializedName("exchange")
   private String exchange = null;
+
+  @SerializedName("proxy_id")
+  private UUID proxyId = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("is_active")
   private Boolean isActive = true;
@@ -189,6 +196,42 @@ public class SecurityPayload {
     this.exchange = exchange;
   }
 
+  public SecurityPayload proxyId(UUID proxyId) {
+    this.proxyId = proxyId;
+    return this;
+  }
+
+   /**
+   * ID of a security that will serve as a proxy in financial analytics
+   * @return proxyId
+  **/
+  @ApiModelProperty(value = "ID of a security that will serve as a proxy in financial analytics")
+  public UUID getProxyId() {
+    return proxyId;
+  }
+
+  public void setProxyId(UUID proxyId) {
+    this.proxyId = proxyId;
+  }
+
+  public SecurityPayload currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the security, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the security, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public SecurityPayload isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
@@ -276,6 +319,8 @@ public class SecurityPayload {
         Objects.equals(this.industry, securityPayload.industry) &&
         Objects.equals(this.securityClass, securityPayload.securityClass) &&
         Objects.equals(this.exchange, securityPayload.exchange) &&
+        Objects.equals(this.proxyId, securityPayload.proxyId) &&
+        Objects.equals(this.currencyCode, securityPayload.currencyCode) &&
         Objects.equals(this.isActive, securityPayload.isActive) &&
         Objects.equals(this.securityComposition, securityPayload.securityComposition) &&
         Objects.equals(this.securityCountry, securityPayload.securityCountry);
@@ -283,7 +328,7 @@ public class SecurityPayload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, ticker, assetClass, sector, industry, securityClass, exchange, isActive, securityComposition, securityCountry);
+    return Objects.hash(name, ticker, assetClass, sector, industry, securityClass, exchange, proxyId, currencyCode, isActive, securityComposition, securityCountry);
   }
 
 
@@ -299,6 +344,8 @@ public class SecurityPayload {
     sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
     sb.append("    securityClass: ").append(toIndentedString(securityClass)).append("\n");
     sb.append("    exchange: ").append(toIndentedString(exchange)).append("\n");
+    sb.append("    proxyId: ").append(toIndentedString(proxyId)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    securityComposition: ").append(toIndentedString(securityComposition)).append("\n");
     sb.append("    securityCountry: ").append(toIndentedString(securityCountry)).append("\n");

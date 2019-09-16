@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * CreatePortfolioAssetSizeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class CreatePortfolioAssetSizeResponse {
   @SerializedName("date")
   private LocalDate date = null;
@@ -43,6 +43,9 @@ public class CreatePortfolioAssetSizeResponse {
 
   @SerializedName("portfolio_id")
   private UUID portfolioId = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
@@ -125,6 +128,24 @@ public class CreatePortfolioAssetSizeResponse {
     this.portfolioId = portfolioId;
   }
 
+  public CreatePortfolioAssetSizeResponse currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the portfolio, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the portfolio, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public CreatePortfolioAssetSizeResponse secondaryId(String secondaryId) {
     this.secondaryId = secondaryId;
     return this;
@@ -193,6 +214,7 @@ public class CreatePortfolioAssetSizeResponse {
         Objects.equals(this.assetSize, createPortfolioAssetSizeResponse.assetSize) &&
         Objects.equals(this.cashFlow, createPortfolioAssetSizeResponse.cashFlow) &&
         Objects.equals(this.portfolioId, createPortfolioAssetSizeResponse.portfolioId) &&
+        Objects.equals(this.currencyCode, createPortfolioAssetSizeResponse.currencyCode) &&
         Objects.equals(this.secondaryId, createPortfolioAssetSizeResponse.secondaryId) &&
         Objects.equals(this.id, createPortfolioAssetSizeResponse.id) &&
         Objects.equals(this.createDate, createPortfolioAssetSizeResponse.createDate);
@@ -200,7 +222,7 @@ public class CreatePortfolioAssetSizeResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, assetSize, cashFlow, portfolioId, secondaryId, id, createDate);
+    return Objects.hash(date, assetSize, cashFlow, portfolioId, currencyCode, secondaryId, id, createDate);
   }
 
 
@@ -213,6 +235,7 @@ public class CreatePortfolioAssetSizeResponse {
     sb.append("    assetSize: ").append(toIndentedString(assetSize)).append("\n");
     sb.append("    cashFlow: ").append(toIndentedString(cashFlow)).append("\n");
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");

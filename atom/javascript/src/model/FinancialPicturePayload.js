@@ -45,21 +45,16 @@
    * @alias module:model/FinancialPicturePayload
    * @class
    * @param clientId {String} The ID of a client's financial picture
-   * @param startDate {Date} Start date of the financial picture analysis. Defaults to earliest date there is data.
-   * @param endDate {Date} End date of the financial picture analysis. Defaults to latest date there is data.
-   * @param currencyCode {String} Currency code used conduct the analysis. Only aggregation account records with this currency code will be considered
-   * @param showHistory {Boolean} If true, return a daily history of the user’s financial picture within the specified date range
-   * @param showChange {Boolean} If true, return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range
    */
-  var exports = function(clientId, startDate, endDate, currencyCode, showHistory, showChange) {
+  var exports = function(clientId) {
     var _this = this;
 
     _this['client_id'] = clientId;
-    _this['start_date'] = startDate;
-    _this['end_date'] = endDate;
-    _this['currency_code'] = currencyCode;
-    _this['show_history'] = showHistory;
-    _this['show_change'] = showChange;
+
+
+
+
+
   };
 
   /**
@@ -119,13 +114,15 @@
   /**
    * If true, return a daily history of the user’s financial picture within the specified date range
    * @member {Boolean} show_history
+   * @default false
    */
-  exports.prototype['show_history'] = undefined;
+  exports.prototype['show_history'] = false;
   /**
    * If true, return cumulative changes in the user’s total assets, total liabilities, and net worth over time, within the specified date range
    * @member {Boolean} show_change
+   * @default false
    */
-  exports.prototype['show_change'] = undefined;
+  exports.prototype['show_change'] = false;
 
 
 

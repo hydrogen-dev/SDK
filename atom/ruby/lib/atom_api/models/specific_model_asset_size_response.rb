@@ -32,6 +32,9 @@ module AtomApi
     # The ID of the model for the asset size record
     attr_accessor :model_id
 
+    # Alphabetic currency code for the base currency of the model, limited to 3 characters
+    attr_accessor :currency_code
+
     attr_accessor :secondary_id
 
     # Datetime when the model asset size was last updated
@@ -46,6 +49,7 @@ module AtomApi
         :'asset_size' => :'asset_size',
         :'is_reconciled' => :'is_reconciled',
         :'model_id' => :'model_id',
+        :'currency_code' => :'currency_code',
         :'secondary_id' => :'secondary_id',
         :'update_date' => :'update_date'
       }
@@ -60,6 +64,7 @@ module AtomApi
         :'asset_size' => :'Float',
         :'is_reconciled' => :'BOOLEAN',
         :'model_id' => :'String',
+        :'currency_code' => :'String',
         :'secondary_id' => :'SecondaryId',
         :'update_date' => :'String'
       }
@@ -95,6 +100,10 @@ module AtomApi
 
       if attributes.has_key?(:'model_id')
         self.model_id = attributes[:'model_id']
+      end
+
+      if attributes.has_key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
       if attributes.has_key?(:'secondary_id')
@@ -150,6 +159,7 @@ module AtomApi
           asset_size == o.asset_size &&
           is_reconciled == o.is_reconciled &&
           model_id == o.model_id &&
+          currency_code == o.currency_code &&
           secondary_id == o.secondary_id &&
           update_date == o.update_date
     end
@@ -163,7 +173,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, date, asset_size, is_reconciled, model_id, secondary_id, update_date].hash
+      [id, create_date, date, asset_size, is_reconciled, model_id, currency_code, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

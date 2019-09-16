@@ -14,7 +14,10 @@ Name | Type | Description | Notes
 **dtc_number** | **String** | Number of the Deposit Trust Company (DTC)’s that held or holds the external account usually in the case of an Individual Retirement Account (IRA) in the United States | [optional] 
 **roth_five_year** | **Integer** | In the case that the account is a United States Roth IRA account, the year it was opened (e.g. 2010) | [optional] 
 **status** | **String** | Status of the transfer such as “Pending” | [optional] 
+**status_time_stamp** | **String** | Time stamp associated with the transfer status | [optional] 
 **transfer_type** | **String** | Type of transaction being made such as “wire” or “check” | [optional] 
+**transfer_date** | **Date** | Date that the transfer will be initiated. Defaults to the current date | [optional] 
+**received_date** | **Date** | Date that the transfer was received | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
 **metadata** | **Object** | Custom information associated with the transfer in the format key:value | [optional] 
 

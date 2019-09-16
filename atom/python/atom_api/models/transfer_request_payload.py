@@ -44,7 +44,10 @@ class TransferRequestPayload(object):
         'dtc_number': 'str',
         'roth_five_year': 'int',
         'status': 'str',
+        'status_time_stamp': 'str',
         'transfer_type': 'str',
+        'transfer_date': 'date',
+        'received_date': 'date',
         'secondary_id': 'SecondaryId',
         'metadata': 'object'
     }
@@ -61,12 +64,15 @@ class TransferRequestPayload(object):
         'dtc_number': 'dtc_number',
         'roth_five_year': 'roth_five_year',
         'status': 'status',
+        'status_time_stamp': 'status_time_stamp',
         'transfer_type': 'transfer_type',
+        'transfer_date': 'transfer_date',
+        'received_date': 'received_date',
         'secondary_id': 'secondary_id',
         'metadata': 'metadata'
     }
 
-    def __init__(self, account_id=None, account_holder=None, account_number=None, account_type_id=None, firm_name=None, transfer_all_cash=None, amount=None, comment=None, dtc_number=None, roth_five_year=None, status=None, transfer_type=None, secondary_id=None, metadata=None):  # noqa: E501
+    def __init__(self, account_id=None, account_holder=None, account_number=None, account_type_id=None, firm_name=None, transfer_all_cash=None, amount=None, comment=None, dtc_number=None, roth_five_year=None, status=None, status_time_stamp=None, transfer_type=None, transfer_date=None, received_date=None, secondary_id=None, metadata=None):  # noqa: E501
         """TransferRequestPayload - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -80,7 +86,10 @@ class TransferRequestPayload(object):
         self._dtc_number = None
         self._roth_five_year = None
         self._status = None
+        self._status_time_stamp = None
         self._transfer_type = None
+        self._transfer_date = None
+        self._received_date = None
         self._secondary_id = None
         self._metadata = None
         self.discriminator = None
@@ -101,8 +110,14 @@ class TransferRequestPayload(object):
             self.roth_five_year = roth_five_year
         if status is not None:
             self.status = status
+        if status_time_stamp is not None:
+            self.status_time_stamp = status_time_stamp
         if transfer_type is not None:
             self.transfer_type = transfer_type
+        if transfer_date is not None:
+            self.transfer_date = transfer_date
+        if received_date is not None:
+            self.received_date = received_date
         if secondary_id is not None:
             self.secondary_id = secondary_id
         if metadata is not None:
@@ -374,6 +389,29 @@ class TransferRequestPayload(object):
         self._status = status
 
     @property
+    def status_time_stamp(self):
+        """Gets the status_time_stamp of this TransferRequestPayload.  # noqa: E501
+
+        Time stamp associated with the transfer status  # noqa: E501
+
+        :return: The status_time_stamp of this TransferRequestPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._status_time_stamp
+
+    @status_time_stamp.setter
+    def status_time_stamp(self, status_time_stamp):
+        """Sets the status_time_stamp of this TransferRequestPayload.
+
+        Time stamp associated with the transfer status  # noqa: E501
+
+        :param status_time_stamp: The status_time_stamp of this TransferRequestPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._status_time_stamp = status_time_stamp
+
+    @property
     def transfer_type(self):
         """Gets the transfer_type of this TransferRequestPayload.  # noqa: E501
 
@@ -395,6 +433,52 @@ class TransferRequestPayload(object):
         """
 
         self._transfer_type = transfer_type
+
+    @property
+    def transfer_date(self):
+        """Gets the transfer_date of this TransferRequestPayload.  # noqa: E501
+
+        Date that the transfer will be initiated. Defaults to the current date  # noqa: E501
+
+        :return: The transfer_date of this TransferRequestPayload.  # noqa: E501
+        :rtype: date
+        """
+        return self._transfer_date
+
+    @transfer_date.setter
+    def transfer_date(self, transfer_date):
+        """Sets the transfer_date of this TransferRequestPayload.
+
+        Date that the transfer will be initiated. Defaults to the current date  # noqa: E501
+
+        :param transfer_date: The transfer_date of this TransferRequestPayload.  # noqa: E501
+        :type: date
+        """
+
+        self._transfer_date = transfer_date
+
+    @property
+    def received_date(self):
+        """Gets the received_date of this TransferRequestPayload.  # noqa: E501
+
+        Date that the transfer was received  # noqa: E501
+
+        :return: The received_date of this TransferRequestPayload.  # noqa: E501
+        :rtype: date
+        """
+        return self._received_date
+
+    @received_date.setter
+    def received_date(self, received_date):
+        """Sets the received_date of this TransferRequestPayload.
+
+        Date that the transfer was received  # noqa: E501
+
+        :param received_date: The received_date of this TransferRequestPayload.  # noqa: E501
+        :type: date
+        """
+
+        self._received_date = received_date
 
     @property
     def secondary_id(self):

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * SpecificAggregationAccountResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class SpecificAggregationAccountResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -55,11 +55,20 @@ public class SpecificAggregationAccountResponse {
   @SerializedName("account_number")
   private String accountNumber = null;
 
+  @SerializedName("account_holder")
+  private String accountHolder = null;
+
   @SerializedName("mask")
   private String mask = null;
 
   @SerializedName("currency_code")
   private String currencyCode = null;
+
+  @SerializedName("is_asset")
+  private Boolean isAsset = null;
+
+  @SerializedName("financial_offer_id")
+  private UUID financialOfferId = null;
 
   @SerializedName("is_active")
   private Boolean isActive = true;
@@ -217,6 +226,24 @@ public class SpecificAggregationAccountResponse {
     this.accountNumber = accountNumber;
   }
 
+  public SpecificAggregationAccountResponse accountHolder(String accountHolder) {
+    this.accountHolder = accountHolder;
+    return this;
+  }
+
+   /**
+   * The owner of the held-away account
+   * @return accountHolder
+  **/
+  @ApiModelProperty(value = "The owner of the held-away account")
+  public String getAccountHolder() {
+    return accountHolder;
+  }
+
+  public void setAccountHolder(String accountHolder) {
+    this.accountHolder = accountHolder;
+  }
+
   public SpecificAggregationAccountResponse mask(String mask) {
     this.mask = mask;
     return this;
@@ -251,6 +278,42 @@ public class SpecificAggregationAccountResponse {
 
   public void setCurrencyCode(String currencyCode) {
     this.currencyCode = currencyCode;
+  }
+
+  public SpecificAggregationAccountResponse isAsset(Boolean isAsset) {
+    this.isAsset = isAsset;
+    return this;
+  }
+
+   /**
+   * A flag to represent if this account is an asset or liability. Defaults to true which indicates it is an asset. If false this account is categorized as a liability
+   * @return isAsset
+  **/
+  @ApiModelProperty(value = "A flag to represent if this account is an asset or liability. Defaults to true which indicates it is an asset. If false this account is categorized as a liability")
+  public Boolean isIsAsset() {
+    return isAsset;
+  }
+
+  public void setIsAsset(Boolean isAsset) {
+    this.isAsset = isAsset;
+  }
+
+  public SpecificAggregationAccountResponse financialOfferId(UUID financialOfferId) {
+    this.financialOfferId = financialOfferId;
+    return this;
+  }
+
+   /**
+   * ID of the financial offer this account matches. Useful so you don’t show clients offers for accounts they already have
+   * @return financialOfferId
+  **/
+  @ApiModelProperty(value = "ID of the financial offer this account matches. Useful so you don’t show clients offers for accounts they already have")
+  public UUID getFinancialOfferId() {
+    return financialOfferId;
+  }
+
+  public void setFinancialOfferId(UUID financialOfferId) {
+    this.financialOfferId = financialOfferId;
   }
 
   public SpecificAggregationAccountResponse isActive(Boolean isActive) {
@@ -343,8 +406,11 @@ public class SpecificAggregationAccountResponse {
         Objects.equals(this.category, specificAggregationAccountResponse.category) &&
         Objects.equals(this.subcategory, specificAggregationAccountResponse.subcategory) &&
         Objects.equals(this.accountNumber, specificAggregationAccountResponse.accountNumber) &&
+        Objects.equals(this.accountHolder, specificAggregationAccountResponse.accountHolder) &&
         Objects.equals(this.mask, specificAggregationAccountResponse.mask) &&
         Objects.equals(this.currencyCode, specificAggregationAccountResponse.currencyCode) &&
+        Objects.equals(this.isAsset, specificAggregationAccountResponse.isAsset) &&
+        Objects.equals(this.financialOfferId, specificAggregationAccountResponse.financialOfferId) &&
         Objects.equals(this.isActive, specificAggregationAccountResponse.isActive) &&
         Objects.equals(this.metadata, specificAggregationAccountResponse.metadata) &&
         Objects.equals(this.secondaryId, specificAggregationAccountResponse.secondaryId) &&
@@ -353,7 +419,7 @@ public class SpecificAggregationAccountResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, clientId, accountName, institutionName, category, subcategory, accountNumber, mask, currencyCode, isActive, metadata, secondaryId, updateDate);
+    return Objects.hash(id, createDate, clientId, accountName, institutionName, category, subcategory, accountNumber, accountHolder, mask, currencyCode, isAsset, financialOfferId, isActive, metadata, secondaryId, updateDate);
   }
 
 
@@ -370,8 +436,11 @@ public class SpecificAggregationAccountResponse {
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    subcategory: ").append(toIndentedString(subcategory)).append("\n");
     sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
+    sb.append("    accountHolder: ").append(toIndentedString(accountHolder)).append("\n");
     sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
     sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    isAsset: ").append(toIndentedString(isAsset)).append("\n");
+    sb.append("    financialOfferId: ").append(toIndentedString(financialOfferId)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");

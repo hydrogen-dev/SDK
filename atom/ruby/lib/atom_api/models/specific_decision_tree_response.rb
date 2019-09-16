@@ -23,6 +23,12 @@ module AtomApi
     # Name of the decision tree
     attr_accessor :name
 
+    # A category for the decision tree such as “Onboarding” or “Risk Profile”
+    attr_accessor :category
+
+    # A subcategory for the decision tree such as “Income-related”
+    attr_accessor :subcategory
+
     # Description for the decision tree such as “Tree to allocate clients to taxable portfolios”
     attr_accessor :description
 
@@ -40,6 +46,8 @@ module AtomApi
         :'id' => :'id',
         :'create_date' => :'create_date',
         :'name' => :'name',
+        :'category' => :'category',
+        :'subcategory' => :'subcategory',
         :'description' => :'description',
         :'secondary_id' => :'secondary_id',
         :'metadata' => :'metadata',
@@ -53,6 +61,8 @@ module AtomApi
         :'id' => :'String',
         :'create_date' => :'String',
         :'name' => :'String',
+        :'category' => :'String',
+        :'subcategory' => :'String',
         :'description' => :'String',
         :'secondary_id' => :'SecondaryId',
         :'metadata' => :'Object',
@@ -78,6 +88,14 @@ module AtomApi
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'category')
+        self.category = attributes[:'category']
+      end
+
+      if attributes.has_key?(:'subcategory')
+        self.subcategory = attributes[:'subcategory']
       end
 
       if attributes.has_key?(:'description')
@@ -123,6 +141,8 @@ module AtomApi
           id == o.id &&
           create_date == o.create_date &&
           name == o.name &&
+          category == o.category &&
+          subcategory == o.subcategory &&
           description == o.description &&
           secondary_id == o.secondary_id &&
           metadata == o.metadata &&
@@ -138,7 +158,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, name, description, secondary_id, metadata, update_date].hash
+      [id, create_date, name, category, subcategory, description, secondary_id, metadata, update_date].hash
     end
 
     # Builds the object from hash

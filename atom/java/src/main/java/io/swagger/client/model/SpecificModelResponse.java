@@ -31,7 +31,7 @@ import java.util.UUID;
 /**
  * SpecificModelResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class SpecificModelResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -53,6 +53,9 @@ public class SpecificModelResponse {
 
   @SerializedName("node_map")
   private List<UUID> nodeMap = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("is_active")
   private Boolean isActive = true;
@@ -200,6 +203,24 @@ public class SpecificModelResponse {
     this.nodeMap = nodeMap;
   }
 
+  public SpecificModelResponse currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the model, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the model, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public SpecificModelResponse isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
@@ -289,6 +310,7 @@ public class SpecificModelResponse {
         Objects.equals(this.description, specificModelResponse.description) &&
         Objects.equals(this.clientId, specificModelResponse.clientId) &&
         Objects.equals(this.nodeMap, specificModelResponse.nodeMap) &&
+        Objects.equals(this.currencyCode, specificModelResponse.currencyCode) &&
         Objects.equals(this.isActive, specificModelResponse.isActive) &&
         Objects.equals(this.metadata, specificModelResponse.metadata) &&
         Objects.equals(this.secondaryId, specificModelResponse.secondaryId) &&
@@ -297,7 +319,7 @@ public class SpecificModelResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, name, category, description, clientId, nodeMap, isActive, metadata, secondaryId, updateDate);
+    return Objects.hash(id, createDate, name, category, description, clientId, nodeMap, currencyCode, isActive, metadata, secondaryId, updateDate);
   }
 
 
@@ -313,6 +335,7 @@ public class SpecificModelResponse {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    nodeMap: ").append(toIndentedString(nodeMap)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");

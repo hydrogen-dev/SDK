@@ -33,7 +33,7 @@ import org.threeten.bp.LocalDate;
 /**
  * SpecificClientResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class SpecificClientResponse {
   @SerializedName("username")
   private String username = null;
@@ -118,6 +118,9 @@ public class SpecificClientResponse {
 
   @SerializedName("country_of_residence")
   private String countryOfResidence = null;
+
+  @SerializedName("income")
+  private Integer income = null;
 
   @SerializedName("is_verified")
   private Boolean isVerified = false;
@@ -344,6 +347,24 @@ public class SpecificClientResponse {
     this.countryOfResidence = countryOfResidence;
   }
 
+  public SpecificClientResponse income(Integer income) {
+    this.income = income;
+    return this;
+  }
+
+   /**
+   * The total income for the client
+   * @return income
+  **/
+  @ApiModelProperty(value = "The total income for the client")
+  public Integer getIncome() {
+    return income;
+  }
+
+  public void setIncome(Integer income) {
+    this.income = income;
+  }
+
   public SpecificClientResponse isVerified(Boolean isVerified) {
     this.isVerified = isVerified;
     return this;
@@ -535,6 +556,7 @@ public class SpecificClientResponse {
         Objects.equals(this.dateOfBirth, specificClientResponse.dateOfBirth) &&
         Objects.equals(this.identificationNumber, specificClientResponse.identificationNumber) &&
         Objects.equals(this.countryOfResidence, specificClientResponse.countryOfResidence) &&
+        Objects.equals(this.income, specificClientResponse.income) &&
         Objects.equals(this.isVerified, specificClientResponse.isVerified) &&
         Objects.equals(this.hydroId, specificClientResponse.hydroId) &&
         Objects.equals(this.isActive, specificClientResponse.isActive) &&
@@ -548,7 +570,7 @@ public class SpecificClientResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, clientType, email, title, firstName, middleName, lastName, phoneNumber, dateOfBirth, identificationNumber, countryOfResidence, isVerified, hydroId, isActive, address, metadata, secondaryId, id, createDate, updateDate);
+    return Objects.hash(username, clientType, email, title, firstName, middleName, lastName, phoneNumber, dateOfBirth, identificationNumber, countryOfResidence, income, isVerified, hydroId, isActive, address, metadata, secondaryId, id, createDate, updateDate);
   }
 
 
@@ -568,6 +590,7 @@ public class SpecificClientResponse {
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    identificationNumber: ").append(toIndentedString(identificationNumber)).append("\n");
     sb.append("    countryOfResidence: ").append(toIndentedString(countryOfResidence)).append("\n");
+    sb.append("    income: ").append(toIndentedString(income)).append("\n");
     sb.append("    isVerified: ").append(toIndentedString(isVerified)).append("\n");
     sb.append("    hydroId: ").append(toIndentedString(hydroId)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");

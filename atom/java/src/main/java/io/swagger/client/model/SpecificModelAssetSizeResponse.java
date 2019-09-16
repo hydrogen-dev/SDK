@@ -30,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * SpecificModelAssetSizeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class SpecificModelAssetSizeResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -49,6 +49,9 @@ public class SpecificModelAssetSizeResponse {
 
   @SerializedName("model_id")
   private UUID modelId = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
@@ -164,6 +167,24 @@ public class SpecificModelAssetSizeResponse {
     this.modelId = modelId;
   }
 
+  public SpecificModelAssetSizeResponse currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Alphabetic currency code for the base currency of the model, limited to 3 characters
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "Alphabetic currency code for the base currency of the model, limited to 3 characters")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
   public SpecificModelAssetSizeResponse secondaryId(String secondaryId) {
     this.secondaryId = secondaryId;
     return this;
@@ -216,13 +237,14 @@ public class SpecificModelAssetSizeResponse {
         Objects.equals(this.assetSize, specificModelAssetSizeResponse.assetSize) &&
         Objects.equals(this.isReconciled, specificModelAssetSizeResponse.isReconciled) &&
         Objects.equals(this.modelId, specificModelAssetSizeResponse.modelId) &&
+        Objects.equals(this.currencyCode, specificModelAssetSizeResponse.currencyCode) &&
         Objects.equals(this.secondaryId, specificModelAssetSizeResponse.secondaryId) &&
         Objects.equals(this.updateDate, specificModelAssetSizeResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createDate, date, assetSize, isReconciled, modelId, secondaryId, updateDate);
+    return Objects.hash(id, createDate, date, assetSize, isReconciled, modelId, currencyCode, secondaryId, updateDate);
   }
 
 
@@ -237,6 +259,7 @@ public class SpecificModelAssetSizeResponse {
     sb.append("    assetSize: ").append(toIndentedString(assetSize)).append("\n");
     sb.append("    isReconciled: ").append(toIndentedString(isReconciled)).append("\n");
     sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

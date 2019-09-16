@@ -41,6 +41,12 @@ module AtomApi
     # The exchange on which the security is traded
     attr_accessor :exchange
 
+    # ID of a security that will serve as a proxy in financial analytics
+    attr_accessor :proxy_id
+
+    # Alphabetic currency code for the base currency of the security, limited to 3 characters
+    attr_accessor :currency_code
+
     # Indicates if the security is active. Defaults to true which indicates that the it is active
     attr_accessor :is_active
 
@@ -65,6 +71,8 @@ module AtomApi
         :'industry' => :'industry',
         :'security_class' => :'security_class',
         :'exchange' => :'exchange',
+        :'proxy_id' => :'proxy_id',
+        :'currency_code' => :'currency_code',
         :'is_active' => :'is_active',
         :'security_composition' => :'security_composition',
         :'security_country' => :'security_country',
@@ -84,6 +92,8 @@ module AtomApi
         :'industry' => :'String',
         :'security_class' => :'String',
         :'exchange' => :'String',
+        :'proxy_id' => :'String',
+        :'currency_code' => :'String',
         :'is_active' => :'BOOLEAN',
         :'security_composition' => :'Array<SecurityPayloadSecurityComposition>',
         :'security_country' => :'Array<SecurityPayloadSecurityCountry>',
@@ -133,6 +143,14 @@ module AtomApi
 
       if attributes.has_key?(:'exchange')
         self.exchange = attributes[:'exchange']
+      end
+
+      if attributes.has_key?(:'proxy_id')
+        self.proxy_id = attributes[:'proxy_id']
+      end
+
+      if attributes.has_key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
       if attributes.has_key?(:'is_active')
@@ -195,6 +213,8 @@ module AtomApi
           industry == o.industry &&
           security_class == o.security_class &&
           exchange == o.exchange &&
+          proxy_id == o.proxy_id &&
+          currency_code == o.currency_code &&
           is_active == o.is_active &&
           security_composition == o.security_composition &&
           security_country == o.security_country &&
@@ -210,7 +230,7 @@ module AtomApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, name, ticker, asset_class, sector, industry, security_class, exchange, is_active, security_composition, security_country, update_date].hash
+      [id, create_date, name, ticker, asset_class, sector, industry, security_class, exchange, proxy_id, currency_code, is_active, security_composition, security_country, update_date].hash
     end
 
     # Builds the object from hash

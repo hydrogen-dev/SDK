@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * RatioTargets
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-12T10:03:00.746-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T14:10:50.140-04:00")
 public class RatioTargets {
   @SerializedName("liquidity_ratio_expenses")
   private BigDecimal liquidityRatioExpenses = null;

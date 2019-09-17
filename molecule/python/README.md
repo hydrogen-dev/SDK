@@ -19,8 +19,8 @@ Python 2.7 and 3.4+
 *Recommended: Use a virtualenv (or conda env) for installation and usage of the package*
 
 ```sh
-virtualenv molecule-api
-source molecule-api/bin/activate
+virtualenv atom-api
+source atom-api/bin/activate
 ```
 
 ### pip install
@@ -144,7 +144,6 @@ Class | Method | HTTP request | Description
  - [WalletKeyCreatePayload](docs/WalletKeyCreatePayload.md)
  - [WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
- - [WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)
@@ -153,6 +152,7 @@ Class | Method | HTTP request | Description
  - [WalletCreateResponse](docs/WalletCreateResponse.md)
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
+ - [WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [WalletSpecificResponse](docs/WalletSpecificResponse.md)
 

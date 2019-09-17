@@ -105,12 +105,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property updateDate (base name: "update_date")', function() {
-      // uncomment below and update the code to test the property updateDate
-      //var instance = new molecule_api.WalletKeyCreateResponse();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

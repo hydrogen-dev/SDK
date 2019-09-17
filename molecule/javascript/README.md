@@ -110,7 +110,7 @@ var molecule_api = require('hydrogen-molecule-api');
 
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -190,7 +190,6 @@ Class | Method | HTTP request | Description
  - [molecule_api.WalletKeyCreatePayload](docs/WalletKeyCreatePayload.md)
  - [molecule_api.WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [molecule_api.WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
- - [molecule_api.WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [molecule_api.CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
  - [molecule_api.TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [molecule_api.TokenCreateResponse](docs/TokenCreateResponse.md)
@@ -199,6 +198,7 @@ Class | Method | HTTP request | Description
  - [molecule_api.WalletCreateResponse](docs/WalletCreateResponse.md)
  - [molecule_api.WalletGetResponse](docs/WalletGetResponse.md)
  - [molecule_api.WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
+ - [molecule_api.WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [molecule_api.TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [molecule_api.WalletSpecificResponse](docs/WalletSpecificResponse.md)
 

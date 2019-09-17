@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * WalletKeyCreateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T11:10:59.915-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T19:10:53.474-04:00")
 public class WalletKeyCreateResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -53,9 +53,6 @@ public class WalletKeyCreateResponse {
 
   @SerializedName("create_date")
   private String createDate = null;
-
-  @SerializedName("update_date")
-  private String updateDate = null;
 
   public WalletKeyCreateResponse id(UUID id) {
     this.id = id;
@@ -201,24 +198,6 @@ public class WalletKeyCreateResponse {
     this.createDate = createDate;
   }
 
-  public WalletKeyCreateResponse updateDate(String updateDate) {
-    this.updateDate = updateDate;
-    return this;
-  }
-
-   /**
-   * Datetime the wallet key record was updated
-   * @return updateDate
-  **/
-  @ApiModelProperty(value = "Datetime the wallet key record was updated")
-  public String getUpdateDate() {
-    return updateDate;
-  }
-
-  public void setUpdateDate(String updateDate) {
-    this.updateDate = updateDate;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,13 +215,12 @@ public class WalletKeyCreateResponse {
         Objects.equals(this.privateKey, walletKeyCreateResponse.privateKey) &&
         Objects.equals(this.metadata, walletKeyCreateResponse.metadata) &&
         Objects.equals(this.secondaryId, walletKeyCreateResponse.secondaryId) &&
-        Objects.equals(this.createDate, walletKeyCreateResponse.createDate) &&
-        Objects.equals(this.updateDate, walletKeyCreateResponse.updateDate);
+        Objects.equals(this.createDate, walletKeyCreateResponse.createDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, keyId, keyServer, address, privateKey, metadata, secondaryId, createDate, updateDate);
+    return Objects.hash(id, keyId, keyServer, address, privateKey, metadata, secondaryId, createDate);
   }
 
 
@@ -259,7 +237,6 @@ public class WalletKeyCreateResponse {
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
-    sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

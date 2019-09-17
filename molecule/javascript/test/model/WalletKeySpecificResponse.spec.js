@@ -57,8 +57,8 @@
       //expect(instance).to.be.a(molecule_api.WalletKeySpecificResponse);
     });
 
-    it('should have the property content (base name: "content")', function() {
-      // uncomment below and update the code to test the property content
+    it('should have the property updateDate (base name: "update_date")', function() {
+      // uncomment below and update the code to test the property updateDate
       //var instance = new molecule_api.WalletKeySpecificResponse();
       //expect(instance).to.be();
     });

@@ -40,8 +40,7 @@ class WalletKeyCreateResponse(object):
         'private_key': 'str',
         'metadata': 'object',
         'secondary_id': 'SecondaryId',
-        'create_date': 'str',
-        'update_date': 'str'
+        'create_date': 'str'
     }
 
     attribute_map = {
@@ -52,11 +51,10 @@ class WalletKeyCreateResponse(object):
         'private_key': 'private_key',
         'metadata': 'metadata',
         'secondary_id': 'secondary_id',
-        'create_date': 'create_date',
-        'update_date': 'update_date'
+        'create_date': 'create_date'
     }
 
-    def __init__(self, id=None, key_id=None, key_server=None, address=None, private_key=None, metadata=None, secondary_id=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, key_id=None, key_server=None, address=None, private_key=None, metadata=None, secondary_id=None, create_date=None):  # noqa: E501
         """WalletKeyCreateResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -67,7 +65,6 @@ class WalletKeyCreateResponse(object):
         self._metadata = None
         self._secondary_id = None
         self._create_date = None
-        self._update_date = None
         self.discriminator = None
 
         if id is not None:
@@ -86,8 +83,6 @@ class WalletKeyCreateResponse(object):
             self.secondary_id = secondary_id
         if create_date is not None:
             self.create_date = create_date
-        if update_date is not None:
-            self.update_date = update_date
 
     @property
     def id(self):
@@ -270,29 +265,6 @@ class WalletKeyCreateResponse(object):
         """
 
         self._create_date = create_date
-
-    @property
-    def update_date(self):
-        """Gets the update_date of this WalletKeyCreateResponse.  # noqa: E501
-
-        Datetime the wallet key record was updated  # noqa: E501
-
-        :return: The update_date of this WalletKeyCreateResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._update_date
-
-    @update_date.setter
-    def update_date(self, update_date):
-        """Sets the update_date of this WalletKeyCreateResponse.
-
-        Datetime the wallet key record was updated  # noqa: E501
-
-        :param update_date: The update_date of this WalletKeyCreateResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._update_date = update_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

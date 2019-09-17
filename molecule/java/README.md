@@ -2,7 +2,7 @@
 
 Hydrogen Molecule API
 - API version: 1.0.0
-  - Build date: 2019-09-16T11:10:59.915-04:00
+  - Build date: 2019-09-17T19:10:53.474-04:00
 
 The Hydrogen Molecule API
 
@@ -168,7 +168,6 @@ Class | Method | HTTP request | Description
  - [WalletKeyCreatePayload](docs/WalletKeyCreatePayload.md)
  - [WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
- - [WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)
@@ -177,6 +176,7 @@ Class | Method | HTTP request | Description
  - [WalletCreateResponse](docs/WalletCreateResponse.md)
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
+ - [WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [WalletSpecificResponse](docs/WalletSpecificResponse.md)
 

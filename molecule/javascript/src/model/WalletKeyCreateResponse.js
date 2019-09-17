@@ -56,7 +56,6 @@
 
 
 
-
   };
 
   /**
@@ -93,9 +92,6 @@
       }
       if (data.hasOwnProperty('create_date')) {
         obj['create_date'] = ApiClient.convertToType(data['create_date'], 'String');
-      }
-      if (data.hasOwnProperty('update_date')) {
-        obj['update_date'] = ApiClient.convertToType(data['update_date'], 'String');
       }
     }
     return obj;
@@ -140,11 +136,6 @@
    * @member {String} create_date
    */
   exports.prototype['create_date'] = undefined;
-  /**
-   * Datetime the wallet key record was updated
-   * @member {String} update_date
-   */
-  exports.prototype['update_date'] = undefined;
 
 
 

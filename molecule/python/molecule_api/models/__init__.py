@@ -34,7 +34,6 @@ from molecule_api.models.wallet_create_whitelist import WalletCreateWhitelist
 from molecule_api.models.wallet_key_create_payload import WalletKeyCreatePayload
 from molecule_api.models.wallet_key_create_response import WalletKeyCreateResponse
 from molecule_api.models.wallet_key_generator_payload import WalletKeyGeneratorPayload
-from molecule_api.models.wallet_key_specific_response import WalletKeySpecificResponse
 from molecule_api.models.currency_balance_get_response import CurrencyBalanceGetResponse
 from molecule_api.models.token_balance_get_response import TokenBalanceGetResponse
 from molecule_api.models.token_create_response import TokenCreateResponse
@@ -43,5 +42,6 @@ from molecule_api.models.token_supply_get_response import TokenSupplyGetResponse
 from molecule_api.models.wallet_create_response import WalletCreateResponse
 from molecule_api.models.wallet_get_response import WalletGetResponse
 from molecule_api.models.wallet_key_get_response import WalletKeyGetResponse
+from molecule_api.models.wallet_key_specific_response import WalletKeySpecificResponse
 from molecule_api.models.token_specific_response import TokenSpecificResponse
 from molecule_api.models.wallet_specific_response import WalletSpecificResponse

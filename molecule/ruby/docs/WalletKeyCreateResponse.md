@@ -11,6 +11,5 @@ Name | Type | Description | Notes
 **metadata** | **Object** | Custom information associated with the account in the format key:value | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
 **create_date** | **String** | Datetime the wallet key record was created | [optional] 
-**update_date** | **String** | Datetime the wallet key record was updated | [optional] 
 
 

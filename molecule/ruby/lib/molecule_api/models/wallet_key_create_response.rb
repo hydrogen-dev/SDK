@@ -37,9 +37,6 @@ module MoleculeApi
     # Datetime the wallet key record was created
     attr_accessor :create_date
 
-    # Datetime the wallet key record was updated
-    attr_accessor :update_date
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -50,8 +47,7 @@ module MoleculeApi
         :'private_key' => :'private_key',
         :'metadata' => :'metadata',
         :'secondary_id' => :'secondary_id',
-        :'create_date' => :'create_date',
-        :'update_date' => :'update_date'
+        :'create_date' => :'create_date'
       }
     end
 
@@ -65,8 +61,7 @@ module MoleculeApi
         :'private_key' => :'String',
         :'metadata' => :'Object',
         :'secondary_id' => :'SecondaryId',
-        :'create_date' => :'String',
-        :'update_date' => :'String'
+        :'create_date' => :'String'
       }
     end
 
@@ -109,10 +104,6 @@ module MoleculeApi
       if attributes.has_key?(:'create_date')
         self.create_date = attributes[:'create_date']
       end
-
-      if attributes.has_key?(:'update_date')
-        self.update_date = attributes[:'update_date']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -140,8 +131,7 @@ module MoleculeApi
           private_key == o.private_key &&
           metadata == o.metadata &&
           secondary_id == o.secondary_id &&
-          create_date == o.create_date &&
-          update_date == o.update_date
+          create_date == o.create_date
     end
 
     # @see the `==` method
@@ -153,7 +143,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, key_id, key_server, address, private_key, metadata, secondary_id, create_date, update_date].hash
+      [id, key_id, key_server, address, private_key, metadata, secondary_id, create_date].hash
     end
 
     # Builds the object from hash

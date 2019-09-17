@@ -14,19 +14,59 @@ require 'date'
 
 module MoleculeApi
   class WalletKeySpecificResponse
-    attr_accessor :content
+    # ID of the wallet key record
+    attr_accessor :id
+
+    # The ID of the associated key within the Key Server
+    attr_accessor :key_id
+
+    # Name of the Key Server in use by the client
+    attr_accessor :key_server
+
+    # Public address of the key pair getting stored
+    attr_accessor :address
+
+    # Private key of the key pair getting stored
+    attr_accessor :private_key
+
+    # Custom information associated with the account in the format key:value
+    attr_accessor :metadata
+
+    attr_accessor :secondary_id
+
+    # Datetime the wallet key record was created
+    attr_accessor :create_date
+
+    # Datetime the wallet key record was updated
+    attr_accessor :update_date
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'content' => :'content'
+        :'id' => :'id',
+        :'key_id' => :'key_id',
+        :'key_server' => :'key_server',
+        :'address' => :'address',
+        :'private_key' => :'private_key',
+        :'metadata' => :'metadata',
+        :'secondary_id' => :'secondary_id',
+        :'create_date' => :'create_date',
+        :'update_date' => :'update_date'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'content' => :'Array<WalletKeyCreateResponse>'
+        :'id' => :'String',
+        :'key_id' => :'String',
+        :'key_server' => :'String',
+        :'address' => :'String',
+        :'private_key' => :'String',
+        :'metadata' => :'Object',
+        :'secondary_id' => :'SecondaryId',
+        :'create_date' => :'String',
+        :'update_date' => :'String'
       }
     end
 
@@ -38,10 +78,40 @@ module MoleculeApi
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'content')
-        if (value = attributes[:'content']).is_a?(Array)
-          self.content = value
-        end
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'key_id')
+        self.key_id = attributes[:'key_id']
+      end
+
+      if attributes.has_key?(:'key_server')
+        self.key_server = attributes[:'key_server']
+      end
+
+      if attributes.has_key?(:'address')
+        self.address = attributes[:'address']
+      end
+
+      if attributes.has_key?(:'private_key')
+        self.private_key = attributes[:'private_key']
+      end
+
+      if attributes.has_key?(:'metadata')
+        self.metadata = attributes[:'metadata']
+      end
+
+      if attributes.has_key?(:'secondary_id')
+        self.secondary_id = attributes[:'secondary_id']
+      end
+
+      if attributes.has_key?(:'create_date')
+        self.create_date = attributes[:'create_date']
+      end
+
+      if attributes.has_key?(:'update_date')
+        self.update_date = attributes[:'update_date']
       end
     end
 
@@ -63,7 +133,15 @@ module MoleculeApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          content == o.content
+          id == o.id &&
+          key_id == o.key_id &&
+          key_server == o.key_server &&
+          address == o.address &&
+          private_key == o.private_key &&
+          metadata == o.metadata &&
+          secondary_id == o.secondary_id &&
+          create_date == o.create_date &&
+          update_date == o.update_date
     end
 
     # @see the `==` method
@@ -75,7 +153,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [content].hash
+      [id, key_id, key_server, address, private_key, metadata, secondary_id, create_date, update_date].hash
     end
 
     # Builds the object from hash

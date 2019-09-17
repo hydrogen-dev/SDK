@@ -140,7 +140,6 @@ Class | Method | HTTP request | Description
  - [MoleculeApi::WalletKeyCreatePayload](docs/WalletKeyCreatePayload.md)
  - [MoleculeApi::WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [MoleculeApi::WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
- - [MoleculeApi::WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [MoleculeApi::CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
  - [MoleculeApi::TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [MoleculeApi::TokenCreateResponse](docs/TokenCreateResponse.md)
@@ -149,6 +148,7 @@ Class | Method | HTTP request | Description
  - [MoleculeApi::WalletCreateResponse](docs/WalletCreateResponse.md)
  - [MoleculeApi::WalletGetResponse](docs/WalletGetResponse.md)
  - [MoleculeApi::WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
+ - [MoleculeApi::WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
  - [MoleculeApi::TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [MoleculeApi::WalletSpecificResponse](docs/WalletSpecificResponse.md)
 

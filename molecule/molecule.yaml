@@ -1018,10 +1018,11 @@ definitions:
     allOf:
       - type: object
       - properties:
-          content:
-            type: array
-            items:
-              $ref: '#/definitions/wallet_key_create_response'
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the wallet key record was updated
+      - $ref: '#/definitions/wallet_key_create_response'
   wallet_key_create_response:
     allOf:
       - type: object
@@ -1052,10 +1053,6 @@ definitions:
             type: string
             format: datetime
             description: Datetime the wallet key record was created
-          update_date:
-            type: string
-            format: datetime
-            description: Datetime the wallet key record was updated
   currency_balance_get_response:
     allOf:
       - type: object

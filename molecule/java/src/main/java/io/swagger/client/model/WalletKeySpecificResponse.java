@@ -24,41 +24,200 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.WalletKeyCreateResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.UUID;
 
 /**
  * WalletKeySpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-16T11:10:59.915-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T19:10:53.474-04:00")
 public class WalletKeySpecificResponse {
-  @SerializedName("content")
-  private List<WalletKeyCreateResponse> content = null;
+  @SerializedName("id")
+  private UUID id = null;
 
-  public WalletKeySpecificResponse content(List<WalletKeyCreateResponse> content) {
-    this.content = content;
-    return this;
-  }
+  @SerializedName("key_id")
+  private String keyId = null;
 
-  public WalletKeySpecificResponse addContentItem(WalletKeyCreateResponse contentItem) {
-    if (this.content == null) {
-      this.content = new ArrayList<WalletKeyCreateResponse>();
-    }
-    this.content.add(contentItem);
+  @SerializedName("key_server")
+  private String keyServer = null;
+
+  @SerializedName("address")
+  private String address = null;
+
+  @SerializedName("private_key")
+  private String privateKey = null;
+
+  @SerializedName("metadata")
+  private Object metadata = null;
+
+  @SerializedName("secondary_id")
+  private String secondaryId = null;
+
+  @SerializedName("create_date")
+  private String createDate = null;
+
+  @SerializedName("update_date")
+  private String updateDate = null;
+
+  public WalletKeySpecificResponse id(UUID id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get content
-   * @return content
+   * ID of the wallet key record
+   * @return id
   **/
-  @ApiModelProperty(value = "")
-  public List<WalletKeyCreateResponse> getContent() {
-    return content;
+  @ApiModelProperty(value = "ID of the wallet key record")
+  public UUID getId() {
+    return id;
   }
 
-  public void setContent(List<WalletKeyCreateResponse> content) {
-    this.content = content;
+  public void setId(UUID id) {
+    this.id = id;
+  }
+
+  public WalletKeySpecificResponse keyId(String keyId) {
+    this.keyId = keyId;
+    return this;
+  }
+
+   /**
+   * The ID of the associated key within the Key Server
+   * @return keyId
+  **/
+  @ApiModelProperty(value = "The ID of the associated key within the Key Server")
+  public String getKeyId() {
+    return keyId;
+  }
+
+  public void setKeyId(String keyId) {
+    this.keyId = keyId;
+  }
+
+  public WalletKeySpecificResponse keyServer(String keyServer) {
+    this.keyServer = keyServer;
+    return this;
+  }
+
+   /**
+   * Name of the Key Server in use by the client
+   * @return keyServer
+  **/
+  @ApiModelProperty(value = "Name of the Key Server in use by the client")
+  public String getKeyServer() {
+    return keyServer;
+  }
+
+  public void setKeyServer(String keyServer) {
+    this.keyServer = keyServer;
+  }
+
+  public WalletKeySpecificResponse address(String address) {
+    this.address = address;
+    return this;
+  }
+
+   /**
+   * Public address of the key pair getting stored
+   * @return address
+  **/
+  @ApiModelProperty(value = "Public address of the key pair getting stored")
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public WalletKeySpecificResponse privateKey(String privateKey) {
+    this.privateKey = privateKey;
+    return this;
+  }
+
+   /**
+   * Private key of the key pair getting stored
+   * @return privateKey
+  **/
+  @ApiModelProperty(value = "Private key of the key pair getting stored")
+  public String getPrivateKey() {
+    return privateKey;
+  }
+
+  public void setPrivateKey(String privateKey) {
+    this.privateKey = privateKey;
+  }
+
+  public WalletKeySpecificResponse metadata(Object metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Custom information associated with the account in the format key:value
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Custom information associated with the account in the format key:value")
+  public Object getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
+  public WalletKeySpecificResponse secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
+   /**
+   * Get secondaryId
+   * @return secondaryId
+  **/
+  @ApiModelProperty(value = "")
+  public String getSecondaryId() {
+    return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+  }
+
+  public WalletKeySpecificResponse createDate(String createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
+   /**
+   * Datetime the wallet key record was created
+   * @return createDate
+  **/
+  @ApiModelProperty(value = "Datetime the wallet key record was created")
+  public String getCreateDate() {
+    return createDate;
+  }
+
+  public void setCreateDate(String createDate) {
+    this.createDate = createDate;
+  }
+
+  public WalletKeySpecificResponse updateDate(String updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
+   /**
+   * Datetime the wallet key record was updated
+   * @return updateDate
+  **/
+  @ApiModelProperty(value = "Datetime the wallet key record was updated")
+  public String getUpdateDate() {
+    return updateDate;
+  }
+
+  public void setUpdateDate(String updateDate) {
+    this.updateDate = updateDate;
   }
 
 
@@ -71,12 +230,20 @@ public class WalletKeySpecificResponse {
       return false;
     }
     WalletKeySpecificResponse walletKeySpecificResponse = (WalletKeySpecificResponse) o;
-    return Objects.equals(this.content, walletKeySpecificResponse.content);
+    return Objects.equals(this.id, walletKeySpecificResponse.id) &&
+        Objects.equals(this.keyId, walletKeySpecificResponse.keyId) &&
+        Objects.equals(this.keyServer, walletKeySpecificResponse.keyServer) &&
+        Objects.equals(this.address, walletKeySpecificResponse.address) &&
+        Objects.equals(this.privateKey, walletKeySpecificResponse.privateKey) &&
+        Objects.equals(this.metadata, walletKeySpecificResponse.metadata) &&
+        Objects.equals(this.secondaryId, walletKeySpecificResponse.secondaryId) &&
+        Objects.equals(this.createDate, walletKeySpecificResponse.createDate) &&
+        Objects.equals(this.updateDate, walletKeySpecificResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content);
+    return Objects.hash(id, keyId, keyServer, address, privateKey, metadata, secondaryId, createDate, updateDate);
   }
 
 
@@ -85,7 +252,15 @@ public class WalletKeySpecificResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletKeySpecificResponse {\n");
     
-    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
+    sb.append("    keyServer: ").append(toIndentedString(keyServer)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
+    sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

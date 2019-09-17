@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | [**[WalletKeyCreateResponse]**](WalletKeyCreateResponse.md) |  | [optional] 
+**updateDate** | **String** | Datetime the wallet key record was updated | [optional] 
 
 

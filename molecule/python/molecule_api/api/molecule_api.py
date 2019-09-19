@@ -1445,7 +1445,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/token', 'POST',
@@ -1542,7 +1542,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/token/crowdsale', 'POST',
@@ -1639,7 +1639,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/token/deploy', 'POST',
@@ -1736,7 +1736,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/token/purchase', 'POST',
@@ -1833,7 +1833,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/token/whitelist', 'POST',
@@ -1930,7 +1930,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/wallet', 'POST',
@@ -2027,7 +2027,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/wallet_key', 'POST',
@@ -2124,7 +2124,7 @@ class MoleculeApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
             '/molecule/v1/wallet_key/generator', 'POST',

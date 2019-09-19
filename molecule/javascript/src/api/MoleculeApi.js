@@ -710,7 +710,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = TokenCreateResponse;
@@ -756,7 +756,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = TokenCreateResponse;
@@ -802,7 +802,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = TokenCreateResponse;
@@ -847,7 +847,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -892,7 +892,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -938,7 +938,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = WalletCreateResponse;
@@ -984,7 +984,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = WalletKeyCreateResponse;
@@ -1030,7 +1030,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = WalletKeyCreateResponse;

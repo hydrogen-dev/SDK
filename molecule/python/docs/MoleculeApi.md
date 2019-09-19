@@ -865,8 +865,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.TokenCreatePayload() # TokenCreatePayload | 
 
 try:
@@ -889,7 +895,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -919,8 +925,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.TokenCrowdsalePayload() # TokenCrowdsalePayload | 
 
 try:
@@ -943,7 +955,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -973,8 +985,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.TokenDeployPayload() # TokenDeployPayload | 
 
 try:
@@ -997,7 +1015,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1027,8 +1045,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.TokenPurchasePayload() # TokenPurchasePayload | 
 
 try:
@@ -1050,7 +1074,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1080,8 +1104,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.TokenWhitelistPayload() # TokenWhitelistPayload | 
 
 try:
@@ -1103,7 +1133,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1133,8 +1163,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.WalletCreatePayload() # WalletCreatePayload | 
 
 try:
@@ -1157,7 +1193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1187,8 +1223,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.WalletKeyCreatePayload() # WalletKeyCreatePayload | 
 
 try:
@@ -1211,7 +1253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1241,8 +1283,14 @@ configuration = molecule_api.Configuration()
 configuration.set_environment("sandbox")
 
 
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
 # create an instance of the API class
-api_instance = molecule_api.MoleculeApi()
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 payload = molecule_api.WalletKeyGeneratorPayload() # WalletKeyGeneratorPayload | 
 
 try:
@@ -1265,7 +1313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

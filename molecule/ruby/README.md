@@ -165,7 +165,7 @@ Please see [this page](https://www.hydrogenplatform.com/docs/proton/v1/#Authenti
 
 - **Type**: OAuth
 - **Flow**: application
-- **Token URL**: https://dev.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+- **Token URL**: https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
 
 
 ## Author

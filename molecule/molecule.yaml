@@ -29,10 +29,9 @@ securityDefinitions:
   oauth:
     type: oauth2
     flow: application
-    tokenUrl: https://dev.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+    tokenUrl: https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
     scopes:
       molecule: access molecule endpoints
-      nucleus: access nucleus endpoints
 
 # ********** Paths: describe endpoints and associated methods, parameters, payloads, and responses **********
 paths:
@@ -42,7 +41,7 @@ paths:
       operationId: getWallets
       summary: Get information for all wallets defined for your firm
       security:
-        - oauth: [molecule, nucleus]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets
       tags:
@@ -75,7 +74,7 @@ paths:
       operationId: postWallet
       summary: Create a wallet under your firm.
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-wallet
       tags:
@@ -210,7 +209,7 @@ paths:
       operationId: postWalletKey
       summary: Associate an existing key pair with a wallet defined for your firm.
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Store-an-existing-key
       tags:
@@ -245,7 +244,7 @@ paths:
       operationId: postWalletKeyGenerator
       summary: Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Generate-and-store-a-key
       tags:
@@ -479,7 +478,7 @@ paths:
       operationId: postToken
       summary: Create a token under your firm.
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-token
       tags:
@@ -607,7 +606,7 @@ paths:
       operationId: postTokenDeploy
       summary: Deploy a secuirty token contract and its crowdsale contract to blockchain.
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token
       tags:
@@ -643,7 +642,7 @@ paths:
       operationId: postTokenCrowdsale
       summary: Transfer tokens to a token's crowdsale address.
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token
       tags:
@@ -679,7 +678,7 @@ paths:
       operationId: postTokenWhitelist
       summary: Add an investor to a token's whitelist
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor
       tags:
@@ -713,7 +712,7 @@ paths:
       operationId: postTokenPurchase
       summary: Participate in a token's crowdsale and purchase tokens.
       security:
-        - ouath: [molecule]
+        - oauth: [molecule]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token
       tags:

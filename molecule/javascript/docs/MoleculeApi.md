@@ -40,7 +40,7 @@ Delete a token
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -95,7 +95,7 @@ Retrieve a currency balance
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -150,7 +150,7 @@ Get information for all currency balances defined for your application.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -212,7 +212,7 @@ Retrieve a token
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -267,7 +267,7 @@ Retrieve a token balance
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -322,7 +322,7 @@ Get information for all token balances defined for your application.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -384,7 +384,7 @@ Get information for all token supplies defined for your application.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -446,7 +446,7 @@ Retrieve a token supply
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -501,7 +501,7 @@ Get information for all tokens defined for your firm
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -563,7 +563,7 @@ Retrieve a wallet
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -618,7 +618,7 @@ Retrieve a wallet key
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -673,7 +673,7 @@ Get all wallet keys associated with wallets defined for your firm.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -735,7 +735,7 @@ Get information for all wallets defined for your firm
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -795,6 +795,17 @@ Create a token under your firm.
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -823,7 +834,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -839,6 +850,17 @@ Transfer tokens to a token&#39;s crowdsale address.
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -867,7 +889,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -883,6 +905,17 @@ Deploy a secuirty token contract and its crowdsale contract to blockchain.
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -911,7 +944,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -927,6 +960,17 @@ Participate in a token&#39;s crowdsale and purchase tokens.
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -955,7 +999,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -971,6 +1015,17 @@ Add an investor to a token&#39;s whitelist
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -999,7 +1054,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1015,6 +1070,17 @@ Create a wallet under your firm.
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -1043,7 +1109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1059,6 +1125,17 @@ Associate an existing key pair with a wallet defined for your firm.
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -1087,7 +1164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1103,6 +1180,17 @@ Generate a wallet key using the Key Service and associate with a wallet defined 
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
@@ -1131,7 +1219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1149,7 +1237,7 @@ Update a token
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -1207,7 +1295,7 @@ Update a wallet
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 

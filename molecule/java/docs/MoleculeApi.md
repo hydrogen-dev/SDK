@@ -853,9 +853,26 @@ Create a token under your firm.
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 TokenCreatePayload payload = new TokenCreatePayload(); // TokenCreatePayload | 
@@ -880,7 +897,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -896,9 +913,26 @@ Transfer tokens to a token&#39;s crowdsale address.
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 TokenCrowdsalePayload payload = new TokenCrowdsalePayload(); // TokenCrowdsalePayload | 
@@ -923,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -939,9 +973,26 @@ Deploy a secuirty token contract and its crowdsale contract to blockchain.
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 TokenDeployPayload payload = new TokenDeployPayload(); // TokenDeployPayload | 
@@ -966,7 +1017,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -982,9 +1033,26 @@ Participate in a token&#39;s crowdsale and purchase tokens.
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 TokenPurchasePayload payload = new TokenPurchasePayload(); // TokenPurchasePayload | 
@@ -1008,7 +1076,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1024,9 +1092,26 @@ Add an investor to a token&#39;s whitelist
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 TokenWhitelistPayload payload = new TokenWhitelistPayload(); // TokenWhitelistPayload | 
@@ -1050,7 +1135,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1066,9 +1151,26 @@ Create a wallet under your firm.
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 WalletCreatePayload payload = new WalletCreatePayload(); // WalletCreatePayload | 
@@ -1093,7 +1195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1109,9 +1211,26 @@ Associate an existing key pair with a wallet defined for your firm.
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 WalletKeyCreatePayload payload = new WalletKeyCreatePayload(); // WalletKeyCreatePayload | 
@@ -1136,7 +1255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1152,9 +1271,26 @@ Generate a wallet key using the Key Service and associate with a wallet defined 
 ### Example
 ```java
 // Import classes:
+//import molecule_api.ApiClient;
 //import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
 //import io.swagger.client.api.MoleculeApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 WalletKeyGeneratorPayload payload = new WalletKeyGeneratorPayload(); // WalletKeyGeneratorPayload | 
@@ -1179,7 +1315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

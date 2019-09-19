@@ -172,17 +172,19 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [molecule_api.CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
+ - [molecule_api.OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
+ - [molecule_api.OfferingSettingsUpdatePayload](docs/OfferingSettingsUpdatePayload.md)
  - [molecule_api.Pagination](docs/Pagination.md)
  - [molecule_api.PaginationSort](docs/PaginationSort.md)
  - [molecule_api.SecondaryId](docs/SecondaryId.md)
  - [molecule_api.TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [molecule_api.TokenCreatePayload](docs/TokenCreatePayload.md)
- - [molecule_api.TokenCreatePayloadOfferingSettings](docs/TokenCreatePayloadOfferingSettings.md)
- - [molecule_api.TokenCreatePayloadRestrictions](docs/TokenCreatePayloadRestrictions.md)
  - [molecule_api.TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [molecule_api.TokenDeployPayload](docs/TokenDeployPayload.md)
  - [molecule_api.TokenPurchasePayload](docs/TokenPurchasePayload.md)
+ - [molecule_api.TokenRestrictionsPayload](docs/TokenRestrictionsPayload.md)
  - [molecule_api.TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
+ - [molecule_api.TokenUpdatePayload](docs/TokenUpdatePayload.md)
  - [molecule_api.TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
  - [molecule_api.WalletCreateClient](docs/WalletCreateClient.md)
  - [molecule_api.WalletCreatePayload](docs/WalletCreatePayload.md)
@@ -190,6 +192,7 @@ Class | Method | HTTP request | Description
  - [molecule_api.WalletKeyCreatePayload](docs/WalletKeyCreatePayload.md)
  - [molecule_api.WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [molecule_api.WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
+ - [molecule_api.WalletUpdatePayload](docs/WalletUpdatePayload.md)
  - [molecule_api.CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
  - [molecule_api.TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [molecule_api.TokenCreateResponse](docs/TokenCreateResponse.md)
@@ -212,7 +215,7 @@ Please see [this page](https://www.hydrogenplatform.com/docs/nucleus/v1/#Authent
 
 - **Type**: OAuth
 - **Flow**: application
-- **Token URL**: https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+- **Token URL**: https://dev.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
 
 
 ## Author

@@ -1163,7 +1163,7 @@ var apiInstance = new molecule_api.MoleculeApi();
 
 var tokenId = "tokenId_example"; // String | UUID of a token
 
-var payload = new molecule_api.TokenCreatePayload(); // TokenCreatePayload | 
+var payload = new molecule_api.TokenUpdatePayload(); // TokenUpdatePayload | 
 
 
 var callback = function(error, data, response) {
@@ -1181,7 +1181,7 @@ apiInstance.updateToken(tokenIdpayload, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | [**String**](.md)| UUID of a token | 
- **payload** | [**TokenCreatePayload**](TokenCreatePayload.md)|  | 
+ **payload** | [**TokenUpdatePayload**](TokenUpdatePayload.md)|  | 
 
 ### Return type
 
@@ -1221,7 +1221,7 @@ var apiInstance = new molecule_api.MoleculeApi();
 
 var walletId = "walletId_example"; // String | UUID of a wallet
 
-var payload = new molecule_api.WalletCreatePayload(); // WalletCreatePayload | 
+var payload = new molecule_api.WalletUpdatePayload(); // WalletUpdatePayload | 
 
 
 var callback = function(error, data, response) {
@@ -1239,7 +1239,7 @@ apiInstance.updateWallet(walletId, payload, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **walletId** | [**String**](.md)| UUID of a wallet | 
- **payload** | [**WalletCreatePayload**](WalletCreatePayload.md)|  | 
+ **payload** | [**WalletUpdatePayload**](WalletUpdatePayload.md)|  | 
 
 ### Return type
 

@@ -1218,7 +1218,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 UUID tokenId = new UUID(); // UUID | UUID of a token
-TokenCreatePayload payload = new TokenCreatePayload(); // TokenCreatePayload | 
+TokenUpdatePayload payload = new TokenUpdatePayload(); // TokenUpdatePayload | 
 try {
     TokenSpecificResponse result = apiInstance.updateToken(tokenId, payload);
     System.out.println(result);
@@ -1233,7 +1233,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | [**UUID**](.md)| UUID of a token |
- **payload** | [**TokenCreatePayload**](TokenCreatePayload.md)|  |
+ **payload** | [**TokenUpdatePayload**](TokenUpdatePayload.md)|  |
 
 ### Return type
 
@@ -1280,7 +1280,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
 UUID walletId = new UUID(); // UUID | UUID of a wallet
-WalletCreatePayload payload = new WalletCreatePayload(); // WalletCreatePayload | 
+WalletUpdatePayload payload = new WalletUpdatePayload(); // WalletUpdatePayload | 
 try {
     WalletSpecificResponse result = apiInstance.updateWallet(walletId, payload);
     System.out.println(result);
@@ -1295,7 +1295,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **walletId** | [**UUID**](.md)| UUID of a wallet |
- **payload** | [**WalletCreatePayload**](WalletCreatePayload.md)|  |
+ **payload** | [**WalletUpdatePayload**](WalletUpdatePayload.md)|  |
 
 ### Return type
 

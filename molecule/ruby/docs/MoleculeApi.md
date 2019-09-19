@@ -1209,7 +1209,7 @@ api_instance = MoleculeApi::MoleculeApi.new
 
 token_id = 'token_id_example' # String | UUID of a token
 
-payload = MoleculeApi::TokenCreatePayload.new # TokenCreatePayload | 
+payload = MoleculeApi::TokenUpdatePayload.new # TokenUpdatePayload | 
 
 
 begin
@@ -1226,7 +1226,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token_id** | [**String**](.md)| UUID of a token | 
- **payload** | [**TokenCreatePayload**](TokenCreatePayload.md)|  | 
+ **payload** | [**TokenUpdatePayload**](TokenUpdatePayload.md)|  | 
 
 ### Return type
 
@@ -1270,7 +1270,7 @@ api_instance = MoleculeApi::MoleculeApi.new
 
 wallet_id = 'wallet_id_example' # String | UUID of a wallet
 
-payload = MoleculeApi::WalletCreatePayload.new # WalletCreatePayload | 
+payload = MoleculeApi::WalletUpdatePayload.new # WalletUpdatePayload | 
 
 
 begin
@@ -1287,7 +1287,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **wallet_id** | [**String**](.md)| UUID of a wallet | 
- **payload** | [**WalletCreatePayload**](WalletCreatePayload.md)|  | 
+ **payload** | [**WalletUpdatePayload**](WalletUpdatePayload.md)|  | 
 
 ### Return type
 

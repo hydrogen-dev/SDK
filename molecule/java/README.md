@@ -2,7 +2,7 @@
 
 Hydrogen Molecule API
 - API version: 1.0.0
-  - Build date: 2019-09-17T19:10:53.474-04:00
+  - Build date: 2019-09-19T14:21:38.871-04:00
 
 The Hydrogen Molecule API
 
@@ -151,16 +151,18 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
+ - [OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
+ - [OfferingSettingsUpdatePayload](docs/OfferingSettingsUpdatePayload.md)
  - [Pagination](docs/Pagination.md)
  - [PaginationSort](docs/PaginationSort.md)
  - [TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [TokenCreatePayload](docs/TokenCreatePayload.md)
- - [TokenCreatePayloadOfferingSettings](docs/TokenCreatePayloadOfferingSettings.md)
- - [TokenCreatePayloadRestrictions](docs/TokenCreatePayloadRestrictions.md)
  - [TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [TokenDeployPayload](docs/TokenDeployPayload.md)
  - [TokenPurchasePayload](docs/TokenPurchasePayload.md)
+ - [TokenRestrictionsPayload](docs/TokenRestrictionsPayload.md)
  - [TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
+ - [TokenUpdatePayload](docs/TokenUpdatePayload.md)
  - [TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
  - [WalletCreateClient](docs/WalletCreateClient.md)
  - [WalletCreatePayload](docs/WalletCreatePayload.md)
@@ -168,6 +170,7 @@ Class | Method | HTTP request | Description
  - [WalletKeyCreatePayload](docs/WalletKeyCreatePayload.md)
  - [WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
+ - [WalletUpdatePayload](docs/WalletUpdatePayload.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)
@@ -190,7 +193,7 @@ Authentication schemes defined for the API:
 
 - **Type**: OAuth
 - **Flow**: application
-- **Token URL**: https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+- **Token URL**: https://dev.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
 
 
 ## Recommendation

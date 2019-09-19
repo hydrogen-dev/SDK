@@ -29,9 +29,10 @@ securityDefinitions:
   oauth:
     type: oauth2
     flow: application
-    tokenUrl: https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+    tokenUrl: https://dev.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
     scopes:
       molecule: access molecule endpoints
+      nucleus: access nucleus endpoints
 
 # ********** Paths: describe endpoints and associated methods, parameters, payloads, and responses **********
 paths:
@@ -41,7 +42,7 @@ paths:
       operationId: getWallets
       summary: Get information for all wallets defined for your firm
       security:
-        - oauth: [molecule] #?????
+        - oauth: [molecule, nucleus]
       externalDocs:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets
       tags:
@@ -148,7 +149,7 @@ paths:
           required: true
           in: body
           schema:
-            $ref: '#/definitions/wallet_create_payload'
+            $ref: '#/definitions/wallet_update_payload'
       responses:
         200:
           description: 'Successful response'
@@ -552,7 +553,7 @@ paths:
           required: true
           in: body
           schema:
-            $ref: '#/definitions/token_create_payload'
+            $ref: '#/definitions/token_update_payload'
       responses:
         200:
           description: 'Successful response'
@@ -1221,6 +1222,35 @@ definitions:
         type: string
         format: datetime
         description: The date when the buy restrictions should be lifted for the wallet
+  wallet_update_payload:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of the wallet
+      type:
+        type: string
+        description: Type of the wallet. Can be individual, business, trust, or contract
+      clients:
+          type: array
+          description: List of nucleus clients associated with the wallet and their association type
+          items:
+            $ref: '#/definitions/wallet_create_client'
+      token_whitelists:
+          type: array
+          description: List of tokens where the wallet is whitelisted
+          items:
+            $ref: '#/definitions/wallet_create_whitelist'
+      is_active:
+        type: boolean
+        description: Indicates if the wallet is active. Defaults to true which indicates it is active and available to be used
+        default: true
+      metadata:
+        type: object
+        description: Custom information associated with the account in the format key:value
+        additionalProperties: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
   wallet_create_payload:
     type: object
     required:
@@ -1318,68 +1348,127 @@ definitions:
         type: string
         description: The crowdsale address of the security token on the Ethereum blockchain
       restrictions:
-        type: object
-        description: The array of token restrictions applied on this token.
-        properties:
-          min_age:
-            type: number
-            description: Investors older than this age will be allowed to invest
-          max_age:
-            type: number
-            description: Investors younger than this age will be allowed to invest
-          min_annual_income:
-            type: number
-            description: Investors with an annual income higher than this number will be allowed to invest
-          max_annual_income:
-            type: number
-            description: Investors with an annual income lower than this number will be allowed to invest
-          min_household_income:
-            type: number
-            description: Investors with an household income higher than this number will be allowed to invest
-          max_household_income:
-            type: number
-            description: Investors with an household income lower than this number will be allowed to invest
-          min_net_worth:
-            type: number
-            description: Investors with a net worth higher than this number will be allowed to invest
-          max_net_worth:
-            type: number
-            description: Investors with a net worth lower than this number will be allowed to invest
-          min_credit_score:
-            type: number
-            description: Investors with a credit score higher than this number will be allowed to invest
-          max_credit_score:
-            type: number
-            description: Investors with a credit score lower than this number will be allowed to invest
-          accreditation_required:
-            type: boolean
-            description: Only accredited investors will be allowed to invest
-          kyc_required:
-            type: boolean
-            description: Investors who are verified by a Know-Your-Customer vendor will be allowed to invest
+        $ref: '#/definitions/token_restrictions_payload'
       offering_settings:
-        type: object
-        description: The array of security token offering settings applied on this token
-        required:
-          - rate
-        properties:
-          rate:
-            type: number
-            description: The exchange rate of the token during the token offering.
-          start_date:
-            type: string
-            format: datetime
-            description: The date the security token offering will go live
-          end_date:
-            type: string
-            format: datetime
-            description: The date the security token offering will end
+        $ref: '#/definitions/offering_settings_create_payload'
       metadata:
         type: object
         description: Custom information associated with the account in the format key:value
         additionalProperties: true
       secondary_id:
         $ref: '#/definitions/secondary_id'
+  token_update_payload:
+    type: object
+    properties:
+      symbol:
+        type: string
+        description: The symbol of the security token. Could be 3 or 4 characters long.
+      name:
+        type: string
+        description: Name of the security token.
+      nucleus_model_id:
+        type: string
+        format: uuid
+        description: The id of the associated Nucleus model for this security token
+      owner_wallet_id:
+        type: string
+        format: uuid
+        description: The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
+      total_supply:
+        type: integer
+        description: The total supply of the security token
+      circulating_supply:
+        type: integer
+        description: The amount of tokens in circulation. Defaults to 0
+        default: 0
+      conract_address:
+        type: string
+        description: The contract address of the security token on the Ethereum blockchain
+      crowdsale_address:
+        type: string
+        description: The crowdsale address of the security token on the Ethereum blockchain
+      restrictions:
+        $ref: '#/definitions/token_restrictions_payload'
+      offering_settings:
+        $ref: '#/definitions/offering_settings_update_payload'
+      metadata:
+        type: object
+        description: Custom information associated with the account in the format key:value
+        additionalProperties: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+  offering_settings_create_payload:
+    type: object
+    description: The array of security token offering settings applied on this token
+    required:
+      - rate
+    properties:
+      rate:
+        type: number
+        description: The exchange rate of the token during the token offering.
+      start_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will go live
+      end_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will end
+  offering_settings_update_payload:
+    type: object
+    description: The array of security token offering settings applied on this token
+    properties:
+      rate:
+        type: number
+        description: The exchange rate of the token during the token offering.
+      start_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will go live
+      end_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will end
+  token_restrictions_payload:
+    type: object
+    description: The array of token restrictions applied on this token.
+    properties:
+      min_age:
+        type: number
+        description: Investors older than this age will be allowed to invest
+      max_age:
+        type: number
+        description: Investors younger than this age will be allowed to invest
+      min_annual_income:
+        type: number
+        description: Investors with an annual income higher than this number will be allowed to invest
+      max_annual_income:
+        type: number
+        description: Investors with an annual income lower than this number will be allowed to invest
+      min_household_income:
+        type: number
+        description: Investors with an household income higher than this number will be allowed to invest
+      max_household_income:
+        type: number
+        description: Investors with an household income lower than this number will be allowed to invest
+      min_net_worth:
+        type: number
+        description: Investors with a net worth higher than this number will be allowed to invest
+      max_net_worth:
+        type: number
+        description: Investors with a net worth lower than this number will be allowed to invest
+      min_credit_score:
+        type: number
+        description: Investors with a credit score higher than this number will be allowed to invest
+      max_credit_score:
+        type: number
+        description: Investors with a credit score lower than this number will be allowed to invest
+      accreditation_required:
+        type: boolean
+        description: Only accredited investors will be allowed to invest
+      kyc_required:
+        type: boolean
+        description: Investors who are verified by a Know-Your-Customer vendor will be allowed to invest
   token_deploy_payload:
     type: object
     required:

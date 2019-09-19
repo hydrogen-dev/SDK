@@ -22,15 +22,15 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.TokenCreatePayloadOfferingSettings;
-import io.swagger.client.model.TokenCreatePayloadRestrictions;
+import io.swagger.client.model.OfferingSettingsCreatePayload;
+import io.swagger.client.model.TokenRestrictionsPayload;
 import java.io.IOException;
 import java.util.UUID;
 
 /**
  * TokenCreatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T19:10:53.474-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:21:38.871-04:00")
 public class TokenCreatePayload {
   @SerializedName("symbol")
   private String symbol = null;
@@ -57,10 +57,10 @@ public class TokenCreatePayload {
   private String crowdsaleAddress = null;
 
   @SerializedName("restrictions")
-  private TokenCreatePayloadRestrictions restrictions = null;
+  private TokenRestrictionsPayload restrictions = null;
 
   @SerializedName("offering_settings")
-  private TokenCreatePayloadOfferingSettings offeringSettings = null;
+  private OfferingSettingsCreatePayload offeringSettings = null;
 
   @SerializedName("metadata")
   private Object metadata = null;
@@ -212,7 +212,7 @@ public class TokenCreatePayload {
     this.crowdsaleAddress = crowdsaleAddress;
   }
 
-  public TokenCreatePayload restrictions(TokenCreatePayloadRestrictions restrictions) {
+  public TokenCreatePayload restrictions(TokenRestrictionsPayload restrictions) {
     this.restrictions = restrictions;
     return this;
   }
@@ -222,15 +222,15 @@ public class TokenCreatePayload {
    * @return restrictions
   **/
   @ApiModelProperty(value = "")
-  public TokenCreatePayloadRestrictions getRestrictions() {
+  public TokenRestrictionsPayload getRestrictions() {
     return restrictions;
   }
 
-  public void setRestrictions(TokenCreatePayloadRestrictions restrictions) {
+  public void setRestrictions(TokenRestrictionsPayload restrictions) {
     this.restrictions = restrictions;
   }
 
-  public TokenCreatePayload offeringSettings(TokenCreatePayloadOfferingSettings offeringSettings) {
+  public TokenCreatePayload offeringSettings(OfferingSettingsCreatePayload offeringSettings) {
     this.offeringSettings = offeringSettings;
     return this;
   }
@@ -240,11 +240,11 @@ public class TokenCreatePayload {
    * @return offeringSettings
   **/
   @ApiModelProperty(value = "")
-  public TokenCreatePayloadOfferingSettings getOfferingSettings() {
+  public OfferingSettingsCreatePayload getOfferingSettings() {
     return offeringSettings;
   }
 
-  public void setOfferingSettings(TokenCreatePayloadOfferingSettings offeringSettings) {
+  public void setOfferingSettings(OfferingSettingsCreatePayload offeringSettings) {
     this.offeringSettings = offeringSettings;
   }
 

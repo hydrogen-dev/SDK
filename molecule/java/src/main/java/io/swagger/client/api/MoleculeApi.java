@@ -40,6 +40,7 @@ import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
+import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
 import java.util.UUID;
 import io.swagger.client.model.WalletCreatePayload;
@@ -51,6 +52,7 @@ import io.swagger.client.model.WalletKeyGeneratorPayload;
 import io.swagger.client.model.WalletKeyGetResponse;
 import io.swagger.client.model.WalletKeySpecificResponse;
 import io.swagger.client.model.WalletSpecificResponse;
+import io.swagger.client.model.WalletUpdatePayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -2903,7 +2905,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-token">Update a token Documentation</a>
      */
-    public com.squareup.okhttp.Call updateTokenCall(UUID tokenId, TokenCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateTokenCall(UUID tokenId, TokenUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
 
         // create path and map variables
@@ -2946,7 +2948,7 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateTokenValidateBeforeCall(UUID tokenId, TokenCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateTokenValidateBeforeCall(UUID tokenId, TokenUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'tokenId' is set
         if (tokenId == null) {
@@ -2974,7 +2976,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-token">Update a token Documentation</a>
      */
-    public TokenSpecificResponse updateToken(UUID tokenId, TokenCreatePayload payload) throws ApiException {
+    public TokenSpecificResponse updateToken(UUID tokenId, TokenUpdatePayload payload) throws ApiException {
         ApiResponse<TokenSpecificResponse> resp = updateTokenWithHttpInfo(tokenId, payload);
         return resp.getData();
     }
@@ -2989,7 +2991,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-token">Update a token Documentation</a>
      */
-    public ApiResponse<TokenSpecificResponse> updateTokenWithHttpInfo(UUID tokenId, TokenCreatePayload payload) throws ApiException {
+    public ApiResponse<TokenSpecificResponse> updateTokenWithHttpInfo(UUID tokenId, TokenUpdatePayload payload) throws ApiException {
         com.squareup.okhttp.Call call = updateTokenValidateBeforeCall(tokenId, payload, null, null);
         Type localVarReturnType = new TypeToken<TokenSpecificResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3006,7 +3008,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-token">Update a token Documentation</a>
      */
-    public com.squareup.okhttp.Call updateTokenAsync(UUID tokenId, TokenCreatePayload payload, final ApiCallback<TokenSpecificResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateTokenAsync(UUID tokenId, TokenUpdatePayload payload, final ApiCallback<TokenSpecificResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3043,7 +3045,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-wallet">Update a wallet Documentation</a>
      */
-    public com.squareup.okhttp.Call updateWalletCall(UUID walletId, WalletCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateWalletCall(UUID walletId, WalletUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
 
         // create path and map variables
@@ -3086,7 +3088,7 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateWalletValidateBeforeCall(UUID walletId, WalletCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateWalletValidateBeforeCall(UUID walletId, WalletUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'walletId' is set
         if (walletId == null) {
@@ -3114,7 +3116,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-wallet">Update a wallet Documentation</a>
      */
-    public WalletSpecificResponse updateWallet(UUID walletId, WalletCreatePayload payload) throws ApiException {
+    public WalletSpecificResponse updateWallet(UUID walletId, WalletUpdatePayload payload) throws ApiException {
         ApiResponse<WalletSpecificResponse> resp = updateWalletWithHttpInfo(walletId, payload);
         return resp.getData();
     }
@@ -3129,7 +3131,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-wallet">Update a wallet Documentation</a>
      */
-    public ApiResponse<WalletSpecificResponse> updateWalletWithHttpInfo(UUID walletId, WalletCreatePayload payload) throws ApiException {
+    public ApiResponse<WalletSpecificResponse> updateWalletWithHttpInfo(UUID walletId, WalletUpdatePayload payload) throws ApiException {
         com.squareup.okhttp.Call call = updateWalletValidateBeforeCall(walletId, payload, null, null);
         Type localVarReturnType = new TypeToken<WalletSpecificResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3146,7 +3148,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-wallet">Update a wallet Documentation</a>
      */
-    public com.squareup.okhttp.Call updateWalletAsync(UUID walletId, WalletCreatePayload payload, final ApiCallback<WalletSpecificResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateWalletAsync(UUID walletId, WalletUpdatePayload payload, final ApiCallback<WalletSpecificResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

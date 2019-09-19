@@ -1304,7 +1304,7 @@ configuration.access_token = 'MYACCESSTOKEN'
 # create an instance of the API class
 api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 token_id = 'token_id_example' # str | UUID of a token
-payload = molecule_api.TokenCreatePayload() # TokenCreatePayload | 
+payload = molecule_api.TokenUpdatePayload() # TokenUpdatePayload | 
 
 try:
     # Update a token
@@ -1319,7 +1319,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token_id** | [**str**](.md)| UUID of a token | 
- **payload** | [**TokenCreatePayload**](TokenCreatePayload.md)|  | 
+ **payload** | [**TokenUpdatePayload**](TokenUpdatePayload.md)|  | 
 
 ### Return type
 
@@ -1366,7 +1366,7 @@ configuration.access_token = 'MYACCESSTOKEN'
 # create an instance of the API class
 api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
 wallet_id = 'wallet_id_example' # str | UUID of a wallet
-payload = molecule_api.WalletCreatePayload() # WalletCreatePayload | 
+payload = molecule_api.WalletUpdatePayload() # WalletUpdatePayload | 
 
 try:
     # Update a wallet
@@ -1381,7 +1381,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **wallet_id** | [**str**](.md)| UUID of a wallet | 
- **payload** | [**WalletCreatePayload**](WalletCreatePayload.md)|  | 
+ **payload** | [**WalletUpdatePayload**](WalletUpdatePayload.md)|  | 
 
 ### Return type
 

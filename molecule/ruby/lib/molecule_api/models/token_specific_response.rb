@@ -90,8 +90,8 @@ module MoleculeApi
         :'circulating_supply' => :'Integer',
         :'conract_address' => :'String',
         :'crowdsale_address' => :'String',
-        :'restrictions' => :'TokenCreatePayloadRestrictions',
-        :'offering_settings' => :'TokenCreatePayloadOfferingSettings',
+        :'restrictions' => :'TokenRestrictionsPayload',
+        :'offering_settings' => :'OfferingSettingsCreatePayload',
         :'metadata' => :'Object',
         :'secondary_id' => :'SecondaryId',
         :'update_date' => :'String'

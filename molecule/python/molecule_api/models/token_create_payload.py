@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
+from molecule_api.models.offering_settings_create_payload import OfferingSettingsCreatePayload  # noqa: F401,E501
 from molecule_api.models.secondary_id import SecondaryId  # noqa: F401,E501
-from molecule_api.models.token_create_payload_offering_settings import TokenCreatePayloadOfferingSettings  # noqa: F401,E501
-from molecule_api.models.token_create_payload_restrictions import TokenCreatePayloadRestrictions  # noqa: F401,E501
+from molecule_api.models.token_restrictions_payload import TokenRestrictionsPayload  # noqa: F401,E501
 
 
 class TokenCreatePayload(object):
@@ -43,8 +43,8 @@ class TokenCreatePayload(object):
         'circulating_supply': 'int',
         'conract_address': 'str',
         'crowdsale_address': 'str',
-        'restrictions': 'TokenCreatePayloadRestrictions',
-        'offering_settings': 'TokenCreatePayloadOfferingSettings',
+        'restrictions': 'TokenRestrictionsPayload',
+        'offering_settings': 'OfferingSettingsCreatePayload',
         'metadata': 'object',
         'secondary_id': 'SecondaryId'
     }
@@ -301,7 +301,7 @@ class TokenCreatePayload(object):
 
 
         :return: The restrictions of this TokenCreatePayload.  # noqa: E501
-        :rtype: TokenCreatePayloadRestrictions
+        :rtype: TokenRestrictionsPayload
         """
         return self._restrictions
 
@@ -311,7 +311,7 @@ class TokenCreatePayload(object):
 
 
         :param restrictions: The restrictions of this TokenCreatePayload.  # noqa: E501
-        :type: TokenCreatePayloadRestrictions
+        :type: TokenRestrictionsPayload
         """
 
         self._restrictions = restrictions
@@ -322,7 +322,7 @@ class TokenCreatePayload(object):
 
 
         :return: The offering_settings of this TokenCreatePayload.  # noqa: E501
-        :rtype: TokenCreatePayloadOfferingSettings
+        :rtype: OfferingSettingsCreatePayload
         """
         return self._offering_settings
 
@@ -332,7 +332,7 @@ class TokenCreatePayload(object):
 
 
         :param offering_settings: The offering_settings of this TokenCreatePayload.  # noqa: E501
-        :type: TokenCreatePayloadOfferingSettings
+        :type: OfferingSettingsCreatePayload
         """
 
         self._offering_settings = offering_settings

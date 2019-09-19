@@ -22,16 +22,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.OfferingSettingsCreatePayload;
 import io.swagger.client.model.TokenCreatePayload;
-import io.swagger.client.model.TokenCreatePayloadOfferingSettings;
-import io.swagger.client.model.TokenCreatePayloadRestrictions;
+import io.swagger.client.model.TokenRestrictionsPayload;
 import java.io.IOException;
 import java.util.UUID;
 
 /**
  * TokenCreateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T19:10:53.474-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:21:38.871-04:00")
 public class TokenCreateResponse {
   @SerializedName("symbol")
   private String symbol = null;
@@ -58,10 +58,10 @@ public class TokenCreateResponse {
   private String crowdsaleAddress = null;
 
   @SerializedName("restrictions")
-  private TokenCreatePayloadRestrictions restrictions = null;
+  private TokenRestrictionsPayload restrictions = null;
 
   @SerializedName("offering_settings")
-  private TokenCreatePayloadOfferingSettings offeringSettings = null;
+  private OfferingSettingsCreatePayload offeringSettings = null;
 
   @SerializedName("metadata")
   private Object metadata = null;
@@ -219,7 +219,7 @@ public class TokenCreateResponse {
     this.crowdsaleAddress = crowdsaleAddress;
   }
 
-  public TokenCreateResponse restrictions(TokenCreatePayloadRestrictions restrictions) {
+  public TokenCreateResponse restrictions(TokenRestrictionsPayload restrictions) {
     this.restrictions = restrictions;
     return this;
   }
@@ -229,15 +229,15 @@ public class TokenCreateResponse {
    * @return restrictions
   **/
   @ApiModelProperty(value = "")
-  public TokenCreatePayloadRestrictions getRestrictions() {
+  public TokenRestrictionsPayload getRestrictions() {
     return restrictions;
   }
 
-  public void setRestrictions(TokenCreatePayloadRestrictions restrictions) {
+  public void setRestrictions(TokenRestrictionsPayload restrictions) {
     this.restrictions = restrictions;
   }
 
-  public TokenCreateResponse offeringSettings(TokenCreatePayloadOfferingSettings offeringSettings) {
+  public TokenCreateResponse offeringSettings(OfferingSettingsCreatePayload offeringSettings) {
     this.offeringSettings = offeringSettings;
     return this;
   }
@@ -247,11 +247,11 @@ public class TokenCreateResponse {
    * @return offeringSettings
   **/
   @ApiModelProperty(value = "")
-  public TokenCreatePayloadOfferingSettings getOfferingSettings() {
+  public OfferingSettingsCreatePayload getOfferingSettings() {
     return offeringSettings;
   }
 
-  public void setOfferingSettings(TokenCreatePayloadOfferingSettings offeringSettings) {
+  public void setOfferingSettings(OfferingSettingsCreatePayload offeringSettings) {
     this.offeringSettings = offeringSettings;
   }
 

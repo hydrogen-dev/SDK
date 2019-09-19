@@ -2152,7 +2152,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param str token_id: UUID of a token (required)
-        :param TokenCreatePayload payload: (required)
+        :param TokenUpdatePayload payload: (required)
         :return: TokenSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2174,7 +2174,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param str token_id: UUID of a token (required)
-        :param TokenCreatePayload payload: (required)
+        :param TokenUpdatePayload payload: (required)
         :return: TokenSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2257,7 +2257,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param str wallet_id: UUID of a wallet (required)
-        :param WalletCreatePayload payload: (required)
+        :param WalletUpdatePayload payload: (required)
         :return: WalletSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2279,7 +2279,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param str wallet_id: UUID of a wallet (required)
-        :param WalletCreatePayload payload: (required)
+        :param WalletUpdatePayload payload: (required)
         :return: WalletSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.

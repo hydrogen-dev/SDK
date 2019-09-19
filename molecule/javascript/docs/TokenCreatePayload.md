@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **circulatingSupply** | **Number** | The amount of tokens in circulation. Defaults to 0 | [optional] 
 **conractAddress** | **String** | The contract address of the security token on the Ethereum blockchain | [optional] 
 **crowdsaleAddress** | **String** | The crowdsale address of the security token on the Ethereum blockchain | [optional] 
-**restrictions** | [**TokenCreatePayloadRestrictions**](TokenCreatePayloadRestrictions.md) |  | [optional] 
-**offeringSettings** | [**TokenCreatePayloadOfferingSettings**](TokenCreatePayloadOfferingSettings.md) |  | [optional] 
+**restrictions** | [**TokenRestrictionsPayload**](TokenRestrictionsPayload.md) |  | [optional] 
+**offeringSettings** | [**OfferingSettingsCreatePayload**](OfferingSettingsCreatePayload.md) |  | [optional] 
 **metadata** | **Object** | Custom information associated with the account in the format key:value | [optional] 
 **secondaryId** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
 

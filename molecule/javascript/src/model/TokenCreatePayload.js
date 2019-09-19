@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/SecondaryId', 'model/TokenCreatePayloadOfferingSettings', 'model/TokenCreatePayloadRestrictions'], factory);
+    define(['ApiClient', 'model/OfferingSettingsCreatePayload', 'model/SecondaryId', 'model/TokenRestrictionsPayload'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./SecondaryId'), require('./TokenCreatePayloadOfferingSettings'), require('./TokenCreatePayloadRestrictions'));
+    module.exports = factory(require('../ApiClient'), require('./OfferingSettingsCreatePayload'), require('./SecondaryId'), require('./TokenRestrictionsPayload'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.TokenCreatePayload = factory(root.molecule_api.ApiClient, root.molecule_api.SecondaryId, root.molecule_api.TokenCreatePayloadOfferingSettings, root.molecule_api.TokenCreatePayloadRestrictions);
+    root.molecule_api.TokenCreatePayload = factory(root.molecule_api.ApiClient, root.molecule_api.OfferingSettingsCreatePayload, root.molecule_api.SecondaryId, root.molecule_api.TokenRestrictionsPayload);
   }
-}(this, function(ApiClient, SecondaryId, TokenCreatePayloadOfferingSettings, TokenCreatePayloadRestrictions) {
+}(this, function(ApiClient, OfferingSettingsCreatePayload, SecondaryId, TokenRestrictionsPayload) {
   'use strict';
 
 
@@ -103,10 +103,10 @@
         obj['crowdsale_address'] = ApiClient.convertToType(data['crowdsale_address'], 'String');
       }
       if (data.hasOwnProperty('restrictions')) {
-        obj['restrictions'] = TokenCreatePayloadRestrictions.constructFromObject(data['restrictions']);
+        obj['restrictions'] = TokenRestrictionsPayload.constructFromObject(data['restrictions']);
       }
       if (data.hasOwnProperty('offering_settings')) {
-        obj['offering_settings'] = TokenCreatePayloadOfferingSettings.constructFromObject(data['offering_settings']);
+        obj['offering_settings'] = OfferingSettingsCreatePayload.constructFromObject(data['offering_settings']);
       }
       if (data.hasOwnProperty('metadata')) {
         obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
@@ -159,11 +159,11 @@
    */
   exports.prototype['crowdsale_address'] = undefined;
   /**
-   * @member {module:model/TokenCreatePayloadRestrictions} restrictions
+   * @member {module:model/TokenRestrictionsPayload} restrictions
    */
   exports.prototype['restrictions'] = undefined;
   /**
-   * @member {module:model/TokenCreatePayloadOfferingSettings} offering_settings
+   * @member {module:model/OfferingSettingsCreatePayload} offering_settings
    */
   exports.prototype['offering_settings'] = undefined;
   /**

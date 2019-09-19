@@ -27,6 +27,7 @@ import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
+import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
 import java.util.UUID;
 import io.swagger.client.model.WalletCreatePayload;
@@ -38,6 +39,7 @@ import io.swagger.client.model.WalletKeyGeneratorPayload;
 import io.swagger.client.model.WalletKeyGetResponse;
 import io.swagger.client.model.WalletKeySpecificResponse;
 import io.swagger.client.model.WalletSpecificResponse;
+import io.swagger.client.model.WalletUpdatePayload;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -420,7 +422,7 @@ public class MoleculeApiTest {
     @Test
     public void updateTokenTest() throws ApiException {
         UUID tokenId = null;
-        TokenCreatePayload payload = null;
+        TokenUpdatePayload payload = null;
         TokenSpecificResponse response = api.updateToken(tokenId, payload);
 
         // TODO: test validations
@@ -437,7 +439,7 @@ public class MoleculeApiTest {
     @Test
     public void updateWalletTest() throws ApiException {
         UUID walletId = null;
-        WalletCreatePayload payload = null;
+        WalletUpdatePayload payload = null;
         WalletSpecificResponse response = api.updateWallet(walletId, payload);
 
         // TODO: test validations

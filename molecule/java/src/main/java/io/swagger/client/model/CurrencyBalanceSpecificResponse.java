@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CurrencyBalanceSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T19:10:53.474-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:21:38.871-04:00")
 public class CurrencyBalanceSpecificResponse {
   @SerializedName("id")
   private UUID id = null;

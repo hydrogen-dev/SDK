@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * WalletKeySpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:24:11.956-04:00")
 public class WalletKeySpecificResponse {
   @SerializedName("id")
   private UUID id = null;

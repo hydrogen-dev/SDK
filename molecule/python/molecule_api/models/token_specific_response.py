@@ -42,8 +42,8 @@ class TokenSpecificResponse(object):
         'name': 'str',
         'nucleus_model_id': 'str',
         'owner_wallet_id': 'str',
-        'total_supply': 'int',
-        'circulating_supply': 'int',
+        'total_supply': 'float',
+        'circulating_supply': 'float',
         'conract_address': 'str',
         'crowdsale_address': 'str',
         'restrictions': 'TokenRestrictionsPayload',
@@ -270,7 +270,7 @@ class TokenSpecificResponse(object):
         The total supply of the security token  # noqa: E501
 
         :return: The total_supply of this TokenSpecificResponse.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._total_supply
 
@@ -281,7 +281,7 @@ class TokenSpecificResponse(object):
         The total supply of the security token  # noqa: E501
 
         :param total_supply: The total_supply of this TokenSpecificResponse.  # noqa: E501
-        :type: int
+        :type: float
         """
         if total_supply is None:
             raise ValueError("Invalid value for `total_supply`, must not be `None`")  # noqa: E501
@@ -295,7 +295,7 @@ class TokenSpecificResponse(object):
         The amount of tokens in circulation. Defaults to 0  # noqa: E501
 
         :return: The circulating_supply of this TokenSpecificResponse.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._circulating_supply
 
@@ -306,7 +306,7 @@ class TokenSpecificResponse(object):
         The amount of tokens in circulation. Defaults to 0  # noqa: E501
 
         :param circulating_supply: The circulating_supply of this TokenSpecificResponse.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._circulating_supply = circulating_supply

@@ -26,12 +26,13 @@ import io.swagger.client.model.OfferingSettingsCreatePayload;
 import io.swagger.client.model.TokenCreateResponse;
 import io.swagger.client.model.TokenRestrictionsPayload;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
  * TokenSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:24:11.956-04:00")
 public class TokenSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -52,10 +53,10 @@ public class TokenSpecificResponse {
   private UUID ownerWalletId = null;
 
   @SerializedName("total_supply")
-  private Integer totalSupply = null;
+  private BigDecimal totalSupply = null;
 
   @SerializedName("circulating_supply")
-  private Integer circulatingSupply = null;
+  private BigDecimal circulatingSupply = null;
 
   @SerializedName("conract_address")
   private String conractAddress = null;
@@ -186,7 +187,7 @@ public class TokenSpecificResponse {
     this.ownerWalletId = ownerWalletId;
   }
 
-  public TokenSpecificResponse totalSupply(Integer totalSupply) {
+  public TokenSpecificResponse totalSupply(BigDecimal totalSupply) {
     this.totalSupply = totalSupply;
     return this;
   }
@@ -196,15 +197,15 @@ public class TokenSpecificResponse {
    * @return totalSupply
   **/
   @ApiModelProperty(required = true, value = "The total supply of the security token")
-  public Integer getTotalSupply() {
+  public BigDecimal getTotalSupply() {
     return totalSupply;
   }
 
-  public void setTotalSupply(Integer totalSupply) {
+  public void setTotalSupply(BigDecimal totalSupply) {
     this.totalSupply = totalSupply;
   }
 
-  public TokenSpecificResponse circulatingSupply(Integer circulatingSupply) {
+  public TokenSpecificResponse circulatingSupply(BigDecimal circulatingSupply) {
     this.circulatingSupply = circulatingSupply;
     return this;
   }
@@ -214,11 +215,11 @@ public class TokenSpecificResponse {
    * @return circulatingSupply
   **/
   @ApiModelProperty(value = "The amount of tokens in circulation. Defaults to 0")
-  public Integer getCirculatingSupply() {
+  public BigDecimal getCirculatingSupply() {
     return circulatingSupply;
   }
 
-  public void setCirculatingSupply(Integer circulatingSupply) {
+  public void setCirculatingSupply(BigDecimal circulatingSupply) {
     this.circulatingSupply = circulatingSupply;
   }
 

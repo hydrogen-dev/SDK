@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**getTokenBalances**](MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
 [**getTokenSupplies**](MoleculeApi.md#getTokenSupplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 [**getTokenSupply**](MoleculeApi.md#getTokenSupply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
+[**getTokenTransfer**](MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
+[**getTokenTransfers**](MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
@@ -21,6 +23,7 @@ Method | HTTP request | Description
 [**postTokenCrowdsale**](MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 [**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 [**postTokenPurchase**](MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+[**postTokenTransfer**](MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**postTokenWhitelist**](MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**postWalletKey**](MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
@@ -516,6 +519,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenSupplySpecificResponse**](TokenSupplySpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTokenTransfer"></a>
+# **getTokenTransfer**
+> TokenTransferSpecificResponse getTokenTransfer(tokenTransferId)
+
+Retrieve a token transfer
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+UUID tokenTransferId = new UUID(); // UUID | UUID of a token transfer
+try {
+    TokenTransferSpecificResponse result = apiInstance.getTokenTransfer(tokenTransferId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getTokenTransfer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tokenTransferId** | [**UUID**](.md)| UUID of a token transfer |
+
+### Return type
+
+[**TokenTransferSpecificResponse**](TokenTransferSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTokenTransfers"></a>
+# **getTokenTransfers**
+> TokenTransferGetResponse getTokenTransfers(page, size, orderBy, ascending)
+
+Get information for all token transfers
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+try {
+    TokenTransferGetResponse result = apiInstance.getTokenTransfers(page, size, orderBy, ascending);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getTokenTransfers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+
+### Return type
+
+[**TokenTransferGetResponse**](TokenTransferGetResponse.md)
 
 ### Authorization
 
@@ -1060,6 +1189,65 @@ try {
     apiInstance.postTokenPurchase(payload);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postTokenPurchase");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postTokenTransfer"></a>
+# **postTokenTransfer**
+> postTokenTransfer(payload)
+
+Transfer tokens between wallets
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+TokenPurchasePayload payload = new TokenPurchasePayload(); // TokenPurchasePayload | 
+try {
+    apiInstance.postTokenTransfer(payload);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#postTokenTransfer");
     e.printStackTrace();
 }
 ```

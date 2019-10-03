@@ -129,6 +129,31 @@ describe 'MoleculeApi' do
     end
   end
 
+  # unit tests for get_token_transfer
+  # Retrieve a token transfer
+  # @param token_transfer_id UUID of a token transfer
+  # @param [Hash] opts the optional parameters
+  # @return [TokenTransferSpecificResponse]
+  describe 'get_token_transfer test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_token_transfers
+  # Get information for all token transfers
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+  # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+  # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @return [TokenTransferGetResponse]
+  describe 'get_token_transfers test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_tokens
   # Get information for all tokens defined for your firm
   # @param [Hash] opts the optional parameters
@@ -232,6 +257,17 @@ describe 'MoleculeApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'post_token_purchase test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_token_transfer
+  # Transfer tokens between wallets
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'post_token_transfer test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

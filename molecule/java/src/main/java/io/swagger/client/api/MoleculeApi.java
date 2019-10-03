@@ -40,6 +40,8 @@ import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
+import io.swagger.client.model.TokenTransferGetResponse;
+import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
 import java.util.UUID;
@@ -1162,6 +1164,282 @@ public class MoleculeApi {
 
         com.squareup.okhttp.Call call = getTokenSupplyValidateBeforeCall(tokenSupplyId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TokenSupplySpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getTokenTransfer
+     * @param tokenTransferId UUID of a token transfer (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokenTransferCall(UUID tokenTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/token_transfer/{token_transfer_id}"
+            .replaceAll("\\{" + "token_transfer_id" + "\\}", apiClient.escapeString(tokenTransferId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getTokenTransferValidateBeforeCall(UUID tokenTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'tokenTransferId' is set
+        if (tokenTransferId == null) {
+            throw new ApiException("Missing the required parameter 'tokenTransferId' when calling getTokenTransfer(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getTokenTransferCall(tokenTransferId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve a token transfer
+     * 
+     * @param tokenTransferId UUID of a token transfer (required)
+     * @return TokenTransferSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     */
+    public TokenTransferSpecificResponse getTokenTransfer(UUID tokenTransferId) throws ApiException {
+        ApiResponse<TokenTransferSpecificResponse> resp = getTokenTransferWithHttpInfo(tokenTransferId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a token transfer
+     * 
+     * @param tokenTransferId UUID of a token transfer (required)
+     * @return ApiResponse&lt;TokenTransferSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     */
+    public ApiResponse<TokenTransferSpecificResponse> getTokenTransferWithHttpInfo(UUID tokenTransferId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenTransferValidateBeforeCall(tokenTransferId, null, null);
+        Type localVarReturnType = new TypeToken<TokenTransferSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a token transfer (asynchronously)
+     * 
+     * @param tokenTransferId UUID of a token transfer (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokenTransferAsync(UUID tokenTransferId, final ApiCallback<TokenTransferSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getTokenTransferValidateBeforeCall(tokenTransferId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TokenTransferSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getTokenTransfers
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokenTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/token_transfer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getTokenTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getTokenTransfersCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all token transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @return TokenTransferGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     */
+    public TokenTransferGetResponse getTokenTransfers(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
+        ApiResponse<TokenTransferGetResponse> resp = getTokenTransfersWithHttpInfo(page, size, orderBy, ascending);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all token transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @return ApiResponse&lt;TokenTransferGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     */
+    public ApiResponse<TokenTransferGetResponse> getTokenTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, null, null);
+        Type localVarReturnType = new TypeToken<TokenTransferGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all token transfers (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokenTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<TokenTransferGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TokenTransferGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2375,6 +2653,132 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = postTokenPurchaseValidateBeforeCall(payload, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for postTokenTransfer
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
+     */
+    public com.squareup.okhttp.Call postTokenTransferCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/token_transfer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postTokenTransferValidateBeforeCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postTokenTransfer(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postTokenTransferCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Transfer tokens between wallets
+     * 
+     * @param payload  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
+     */
+    public void postTokenTransfer(TokenPurchasePayload payload) throws ApiException {
+        postTokenTransferWithHttpInfo(payload);
+    }
+
+    /**
+     * Transfer tokens between wallets
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
+     */
+    public ApiResponse<Void> postTokenTransferWithHttpInfo(TokenPurchasePayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postTokenTransferValidateBeforeCall(payload, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Transfer tokens between wallets (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
+     */
+    public com.squareup.okhttp.Call postTokenTransferAsync(TokenPurchasePayload payload, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postTokenTransferValidateBeforeCall(payload, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

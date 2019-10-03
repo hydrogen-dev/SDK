@@ -27,6 +27,8 @@ import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
+import io.swagger.client.model.TokenTransferGetResponse;
+import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
 import java.util.UUID;
@@ -195,6 +197,41 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Retrieve a token transfer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTokenTransferTest() throws ApiException {
+        UUID tokenTransferId = null;
+        TokenTransferSpecificResponse response = api.getTokenTransfer(tokenTransferId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all token transfers
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTokenTransfersTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        TokenTransferGetResponse response = api.getTokenTransfers(page, size, orderBy, ascending);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get information for all tokens defined for your firm
      *
      * 
@@ -343,6 +380,22 @@ public class MoleculeApiTest {
     public void postTokenPurchaseTest() throws ApiException {
         TokenPurchasePayload payload = null;
         api.postTokenPurchase(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Transfer tokens between wallets
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postTokenTransferTest() throws ApiException {
+        TokenPurchasePayload payload = null;
+        api.postTokenTransfer(payload);
 
         // TODO: test validations
     }

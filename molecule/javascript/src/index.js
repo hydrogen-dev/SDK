@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CurrencyBalanceSpecificResponse', 'model/OfferingSettingsCreatePayload', 'model/OfferingSettingsUpdatePayload', 'model/Pagination', 'model/PaginationSort', 'model/SecondaryId', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCrowdsalePayload', 'model/TokenDeployPayload', 'model/TokenPurchasePayload', 'model/TokenRestrictionsPayload', 'model/TokenSupplySpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/WalletCreateClient', 'model/WalletCreatePayload', 'model/WalletCreateWhitelist', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletUpdatePayload', 'model/CurrencyBalanceGetResponse', 'model/TokenBalanceGetResponse', 'model/TokenCreateResponse', 'model/TokenGetResponse', 'model/TokenSupplyGetResponse', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/TokenSpecificResponse', 'model/WalletSpecificResponse', 'api/MoleculeApi'], factory);
+    define(['ApiClient', 'model/CurrencyBalanceSpecificResponse', 'model/OfferingSettingsCreatePayload', 'model/OfferingSettingsUpdatePayload', 'model/Pagination', 'model/PaginationSort', 'model/SecondaryId', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCrowdsalePayload', 'model/TokenDeployPayload', 'model/TokenPurchasePayload', 'model/TokenRestrictionsPayload', 'model/TokenSupplySpecificResponse', 'model/TokenTransferPayload', 'model/TokenTransferSpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/WalletCreateClient', 'model/WalletCreatePayload', 'model/WalletCreateWhitelist', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletUpdatePayload', 'model/CurrencyBalanceGetResponse', 'model/TokenBalanceGetResponse', 'model/TokenCreateResponse', 'model/TokenGetResponse', 'model/TokenSupplyGetResponse', 'model/TokenTransferGetResponse', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/TokenSpecificResponse', 'model/WalletSpecificResponse', 'api/MoleculeApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/CurrencyBalanceSpecificResponse'), require('./model/OfferingSettingsCreatePayload'), require('./model/OfferingSettingsUpdatePayload'), require('./model/Pagination'), require('./model/PaginationSort'), require('./model/SecondaryId'), require('./model/TokenBalanceSpecificResponse'), require('./model/TokenCreatePayload'), require('./model/TokenCrowdsalePayload'), require('./model/TokenDeployPayload'), require('./model/TokenPurchasePayload'), require('./model/TokenRestrictionsPayload'), require('./model/TokenSupplySpecificResponse'), require('./model/TokenUpdatePayload'), require('./model/TokenWhitelistPayload'), require('./model/WalletCreateClient'), require('./model/WalletCreatePayload'), require('./model/WalletCreateWhitelist'), require('./model/WalletKeyCreatePayload'), require('./model/WalletKeyCreateResponse'), require('./model/WalletKeyGeneratorPayload'), require('./model/WalletUpdatePayload'), require('./model/CurrencyBalanceGetResponse'), require('./model/TokenBalanceGetResponse'), require('./model/TokenCreateResponse'), require('./model/TokenGetResponse'), require('./model/TokenSupplyGetResponse'), require('./model/WalletCreateResponse'), require('./model/WalletGetResponse'), require('./model/WalletKeyGetResponse'), require('./model/WalletKeySpecificResponse'), require('./model/TokenSpecificResponse'), require('./model/WalletSpecificResponse'), require('./api/MoleculeApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/CurrencyBalanceSpecificResponse'), require('./model/OfferingSettingsCreatePayload'), require('./model/OfferingSettingsUpdatePayload'), require('./model/Pagination'), require('./model/PaginationSort'), require('./model/SecondaryId'), require('./model/TokenBalanceSpecificResponse'), require('./model/TokenCreatePayload'), require('./model/TokenCrowdsalePayload'), require('./model/TokenDeployPayload'), require('./model/TokenPurchasePayload'), require('./model/TokenRestrictionsPayload'), require('./model/TokenSupplySpecificResponse'), require('./model/TokenTransferPayload'), require('./model/TokenTransferSpecificResponse'), require('./model/TokenUpdatePayload'), require('./model/TokenWhitelistPayload'), require('./model/WalletCreateClient'), require('./model/WalletCreatePayload'), require('./model/WalletCreateWhitelist'), require('./model/WalletKeyCreatePayload'), require('./model/WalletKeyCreateResponse'), require('./model/WalletKeyGeneratorPayload'), require('./model/WalletUpdatePayload'), require('./model/CurrencyBalanceGetResponse'), require('./model/TokenBalanceGetResponse'), require('./model/TokenCreateResponse'), require('./model/TokenGetResponse'), require('./model/TokenSupplyGetResponse'), require('./model/TokenTransferGetResponse'), require('./model/WalletCreateResponse'), require('./model/WalletGetResponse'), require('./model/WalletKeyGetResponse'), require('./model/WalletKeySpecificResponse'), require('./model/TokenSpecificResponse'), require('./model/WalletSpecificResponse'), require('./api/MoleculeApi'));
   }
-}(function(ApiClient, CurrencyBalanceSpecificResponse, OfferingSettingsCreatePayload, OfferingSettingsUpdatePayload, Pagination, PaginationSort, SecondaryId, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCrowdsalePayload, TokenDeployPayload, TokenPurchasePayload, TokenRestrictionsPayload, TokenSupplySpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, WalletCreateClient, WalletCreatePayload, WalletCreateWhitelist, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletUpdatePayload, CurrencyBalanceGetResponse, TokenBalanceGetResponse, TokenCreateResponse, TokenGetResponse, TokenSupplyGetResponse, WalletCreateResponse, WalletGetResponse, WalletKeyGetResponse, WalletKeySpecificResponse, TokenSpecificResponse, WalletSpecificResponse, MoleculeApi) {
+}(function(ApiClient, CurrencyBalanceSpecificResponse, OfferingSettingsCreatePayload, OfferingSettingsUpdatePayload, Pagination, PaginationSort, SecondaryId, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCrowdsalePayload, TokenDeployPayload, TokenPurchasePayload, TokenRestrictionsPayload, TokenSupplySpecificResponse, TokenTransferPayload, TokenTransferSpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, WalletCreateClient, WalletCreatePayload, WalletCreateWhitelist, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletUpdatePayload, CurrencyBalanceGetResponse, TokenBalanceGetResponse, TokenCreateResponse, TokenGetResponse, TokenSupplyGetResponse, TokenTransferGetResponse, WalletCreateResponse, WalletGetResponse, WalletKeyGetResponse, WalletKeySpecificResponse, TokenSpecificResponse, WalletSpecificResponse, MoleculeApi) {
   'use strict';
 
   /**
@@ -128,6 +128,16 @@
      */
     TokenSupplySpecificResponse: TokenSupplySpecificResponse,
     /**
+     * The TokenTransferPayload model constructor.
+     * @property {module:model/TokenTransferPayload}
+     */
+    TokenTransferPayload: TokenTransferPayload,
+    /**
+     * The TokenTransferSpecificResponse model constructor.
+     * @property {module:model/TokenTransferSpecificResponse}
+     */
+    TokenTransferSpecificResponse: TokenTransferSpecificResponse,
+    /**
      * The TokenUpdatePayload model constructor.
      * @property {module:model/TokenUpdatePayload}
      */
@@ -197,6 +207,11 @@
      * @property {module:model/TokenSupplyGetResponse}
      */
     TokenSupplyGetResponse: TokenSupplyGetResponse,
+    /**
+     * The TokenTransferGetResponse model constructor.
+     * @property {module:model/TokenTransferGetResponse}
+     */
+    TokenTransferGetResponse: TokenTransferGetResponse,
     /**
      * The WalletCreateResponse model constructor.
      * @property {module:model/WalletCreateResponse}

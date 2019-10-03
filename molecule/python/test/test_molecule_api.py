@@ -85,6 +85,20 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_token_transfer(self):
+        """Test case for get_token_transfer
+
+        Retrieve a token transfer  # noqa: E501
+        """
+        pass
+
+    def test_get_token_transfers(self):
+        """Test case for get_token_transfers
+
+        Get information for all token transfers  # noqa: E501
+        """
+        pass
+
     def test_get_tokens(self):
         """Test case for get_tokens
 
@@ -145,6 +159,13 @@ class TestMoleculeApi(unittest.TestCase):
         """Test case for post_token_purchase
 
         Participate in a token's crowdsale and purchase tokens.  # noqa: E501
+        """
+        pass
+
+    def test_post_token_transfer(self):
+        """Test case for post_token_transfer
+
+        Transfer tokens between wallets  # noqa: E501
         """
         pass
 

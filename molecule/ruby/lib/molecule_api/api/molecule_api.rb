@@ -476,6 +476,124 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Retrieve a token transfer
+    # @param token_transfer_id UUID of a token transfer
+    # @param [Hash] opts the optional parameters
+    # @return [TokenTransferSpecificResponse]
+    def get_token_transfer(token_transfer_id, opts = {})
+      data, _status_code, _headers = get_token_transfer_with_http_info(token_transfer_id, opts)
+      data
+    end
+
+    # Retrieve a token transfer
+    # @param token_transfer_id UUID of a token transfer
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TokenTransferSpecificResponse, Fixnum, Hash)>] TokenTransferSpecificResponse data, response status code and response headers
+    def get_token_transfer_with_http_info(token_transfer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_token_transfer ...'
+      end
+      # verify the required parameter 'token_transfer_id' is set
+      if @api_client.config.client_side_validation && token_transfer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'token_transfer_id' when calling MoleculeApi.get_token_transfer"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/token_transfer/{token_transfer_id}'.sub('{' + 'token_transfer_id' + '}', token_transfer_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TokenTransferSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_token_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get information for all token transfers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @return [TokenTransferGetResponse]
+    def get_token_transfers(opts = {})
+      data, _status_code, _headers = get_token_transfers_with_http_info(opts)
+      data
+    end
+
+    # Get information for all token transfers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @return [Array<(TokenTransferGetResponse, Fixnum, Hash)>] TokenTransferGetResponse data, response status code and response headers
+    def get_token_transfers_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_token_transfers ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_token_transfers, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_token_transfers, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/token_transfer'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TokenTransferGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_token_transfers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Get information for all tokens defined for your firm
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
@@ -982,6 +1100,57 @@ module MoleculeApi
         :auth_names => auth_names)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_purchase\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Transfer tokens between wallets
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def post_token_transfer(payload, opts = {})
+      post_token_transfer_with_http_info(payload, opts)
+      nil
+    end
+
+    # Transfer tokens between wallets
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def post_token_transfer_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_transfer ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_transfer"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/token_transfer'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_token_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

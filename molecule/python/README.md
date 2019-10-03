@@ -106,6 +106,8 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**get_token_balances**](docs/MoleculeApi.md#get_token_balances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
 *MoleculeApi* | [**get_token_supplies**](docs/MoleculeApi.md#get_token_supplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 *MoleculeApi* | [**get_token_supply**](docs/MoleculeApi.md#get_token_supply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
+*MoleculeApi* | [**get_token_transfer**](docs/MoleculeApi.md#get_token_transfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
+*MoleculeApi* | [**get_token_transfers**](docs/MoleculeApi.md#get_token_transfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 *MoleculeApi* | [**get_tokens**](docs/MoleculeApi.md#get_tokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
 *MoleculeApi* | [**get_wallet**](docs/MoleculeApi.md#get_wallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 *MoleculeApi* | [**get_wallet_key**](docs/MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
@@ -115,6 +117,7 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**post_token_crowdsale**](docs/MoleculeApi.md#post_token_crowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 *MoleculeApi* | [**post_token_deploy**](docs/MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 *MoleculeApi* | [**post_token_purchase**](docs/MoleculeApi.md#post_token_purchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+*MoleculeApi* | [**post_token_transfer**](docs/MoleculeApi.md#post_token_transfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 *MoleculeApi* | [**post_token_whitelist**](docs/MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 *MoleculeApi* | [**post_wallet**](docs/MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 *MoleculeApi* | [**post_wallet_key**](docs/MoleculeApi.md#post_wallet_key) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
@@ -138,6 +141,8 @@ Class | Method | HTTP request | Description
  - [TokenPurchasePayload](docs/TokenPurchasePayload.md)
  - [TokenRestrictionsPayload](docs/TokenRestrictionsPayload.md)
  - [TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
+ - [TokenTransferPayload](docs/TokenTransferPayload.md)
+ - [TokenTransferSpecificResponse](docs/TokenTransferSpecificResponse.md)
  - [TokenUpdatePayload](docs/TokenUpdatePayload.md)
  - [TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
  - [WalletCreateClient](docs/WalletCreateClient.md)
@@ -152,6 +157,7 @@ Class | Method | HTTP request | Description
  - [TokenCreateResponse](docs/TokenCreateResponse.md)
  - [TokenGetResponse](docs/TokenGetResponse.md)
  - [TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
+ - [TokenTransferGetResponse](docs/TokenTransferGetResponse.md)
  - [WalletCreateResponse](docs/WalletCreateResponse.md)
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)

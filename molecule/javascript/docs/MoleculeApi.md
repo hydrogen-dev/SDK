@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**getTokenBalances**](MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
 [**getTokenSupplies**](MoleculeApi.md#getTokenSupplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 [**getTokenSupply**](MoleculeApi.md#getTokenSupply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
+[**getTokenTransfer**](MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
+[**getTokenTransfers**](MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
@@ -21,6 +23,7 @@ Method | HTTP request | Description
 [**postTokenCrowdsale**](MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 [**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 [**postTokenPurchase**](MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+[**postTokenTransfer**](MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**postTokenWhitelist**](MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**postWalletKey**](MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
@@ -480,6 +483,123 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenSupplySpecificResponse**](TokenSupplySpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTokenTransfer"></a>
+# **getTokenTransfer**
+> TokenTransferSpecificResponse getTokenTransfer(tokenTransferId)
+
+Retrieve a token transfer
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var tokenTransferId = "tokenTransferId_example"; // String | UUID of a token transfer
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTokenTransfer(tokenTransferId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tokenTransferId** | [**String**](.md)| UUID of a token transfer | 
+
+### Return type
+
+[**TokenTransferSpecificResponse**](TokenTransferSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTokenTransfers"></a>
+# **getTokenTransfers**
+> TokenTransferGetResponse getTokenTransfers(opts)
+
+Get information for all token transfers
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTokenTransfers(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+
+### Return type
+
+[**TokenTransferGetResponse**](TokenTransferGetResponse.md)
 
 ### Authorization
 
@@ -985,6 +1105,61 @@ var callback = function(error, data, response) {
   }
 };
 apiInstance.postTokenPurchase(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postTokenTransfer"></a>
+# **postTokenTransfer**
+> postTokenTransfer(payload)
+
+Transfer tokens between wallets
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.TokenPurchasePayload(); // TokenPurchasePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.postTokenTransfer(payload, callback);
 ```
 
 ### Parameters

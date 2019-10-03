@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * TokenCrowdsalePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:24:11.956-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:50:03.983-04:00")
 public class TokenCrowdsalePayload {
   @SerializedName("token_id")
   private UUID tokenId = null;

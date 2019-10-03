@@ -131,6 +131,26 @@
         done();
       });
     });
+    describe('getTokenTransfer', function() {
+      it('should call getTokenTransfer successfully', function(done) {
+        //uncomment below and update the code to test getTokenTransfer
+        //instance.getTokenTransfer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTokenTransfers', function() {
+      it('should call getTokenTransfers successfully', function(done) {
+        //uncomment below and update the code to test getTokenTransfers
+        //instance.getTokenTransfers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getTokens', function() {
       it('should call getTokens successfully', function(done) {
         //uncomment below and update the code to test getTokens
@@ -215,6 +235,16 @@
       it('should call postTokenPurchase successfully', function(done) {
         //uncomment below and update the code to test postTokenPurchase
         //instance.postTokenPurchase(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postTokenTransfer', function() {
+      it('should call postTokenTransfer successfully', function(done) {
+        //uncomment below and update the code to test postTokenTransfer
+        //instance.postTokenTransfer(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

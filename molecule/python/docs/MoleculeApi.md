@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**get_token_balances**](MoleculeApi.md#get_token_balances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
 [**get_token_supplies**](MoleculeApi.md#get_token_supplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 [**get_token_supply**](MoleculeApi.md#get_token_supply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
+[**get_token_transfer**](MoleculeApi.md#get_token_transfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
+[**get_token_transfers**](MoleculeApi.md#get_token_transfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**get_tokens**](MoleculeApi.md#get_tokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
 [**get_wallet**](MoleculeApi.md#get_wallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**get_wallet_key**](MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
@@ -21,6 +23,7 @@ Method | HTTP request | Description
 [**post_token_crowdsale**](MoleculeApi.md#post_token_crowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 [**post_token_deploy**](MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
 [**post_token_purchase**](MoleculeApi.md#post_token_purchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+[**post_token_transfer**](MoleculeApi.md#post_token_transfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**post_token_whitelist**](MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**post_wallet**](MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**post_wallet_key**](MoleculeApi.md#post_wallet_key) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
@@ -514,6 +517,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenSupplySpecificResponse**](TokenSupplySpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_token_transfer**
+> TokenTransferSpecificResponse get_token_transfer(token_transfer_id)
+
+Retrieve a token transfer
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+token_transfer_id = 'token_transfer_id_example' # str | UUID of a token transfer
+
+try:
+    # Retrieve a token transfer
+    api_response = api_instance.get_token_transfer(token_transfer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_token_transfer: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token_transfer_id** | [**str**](.md)| UUID of a token transfer | 
+
+### Return type
+
+[**TokenTransferSpecificResponse**](TokenTransferSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_token_transfers**
+> TokenTransferGetResponse get_token_transfers(page=page, size=size, order_by=order_by, ascending=ascending)
+
+Get information for all token transfers
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+page = 0 # int | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional) (default to 0)
+size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
+order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
+ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+
+try:
+    # Get information for all token transfers
+    api_response = api_instance.get_token_transfers(page=page, size=size, order_by=order_by, ascending=ascending)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_token_transfers: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+
+### Return type
+
+[**TokenTransferGetResponse**](TokenTransferGetResponse.md)
 
 ### Authorization
 
@@ -1060,6 +1189,65 @@ try:
     api_instance.post_token_purchase(payload)
 except ApiException as e:
     print("Exception when calling MoleculeApi->post_token_purchase: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_token_transfer**
+> post_token_transfer(payload)
+
+Transfer tokens between wallets
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+payload = molecule_api.TokenPurchasePayload() # TokenPurchasePayload | 
+
+try:
+    # Transfer tokens between wallets
+    api_instance.post_token_transfer(payload)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->post_token_transfer: %s\n" % e)
 ```
 
 ### Parameters

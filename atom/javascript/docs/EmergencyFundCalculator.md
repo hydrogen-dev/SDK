@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **debtPayments** | **Number** | Debt payments such as credit cards or loans | [optional] 
 **transportationCosts** | **Number** | Transportation costs such as gasoline or car payments | [optional] 
 **foodCosts** | **Number** | Food costs such as groceries or restaurants | [optional] 
-**otherExpenses** | **Object** | Other expenses to cover in the emergency fund | [optional] 
+**otherExpenses** | **{String: Number}** | Other expenses to cover in the emergency fund | [optional] 
 **currentEmergencyFundBalance** | **Number** | The user&#39;s current emergency fund balance | [optional] 
 **interestRate** | **Number** | Annualized interest rate earned on the current fund balance | [optional] 
 **savingsHorizon** | **[Number]** | Periods in the savings horizon to be used in the recommendation schedule | [optional] 

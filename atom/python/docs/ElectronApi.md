@@ -1,6 +1,6 @@
 # atom_api.ElectronApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -74,8 +74,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -126,8 +133,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -178,8 +192,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -230,8 +251,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -282,8 +310,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -334,8 +369,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -386,8 +428,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -438,8 +487,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -490,8 +546,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -542,8 +605,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -594,8 +664,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -646,8 +723,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -699,8 +783,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -752,8 +843,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -813,8 +911,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -866,8 +971,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -927,8 +1039,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -988,8 +1107,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1041,8 +1167,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1102,8 +1235,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1155,8 +1295,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1216,8 +1363,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1269,8 +1423,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1330,8 +1491,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1383,8 +1551,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1444,8 +1619,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1497,8 +1679,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1558,8 +1747,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1619,8 +1815,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1672,8 +1875,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1725,8 +1935,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1778,8 +1995,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1839,8 +2063,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1900,8 +2131,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -1953,8 +2191,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2006,8 +2251,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2059,8 +2311,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2112,8 +2371,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2165,8 +2431,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2218,8 +2491,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2271,8 +2551,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2324,8 +2611,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2377,8 +2671,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2430,8 +2731,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2483,8 +2791,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2538,8 +2853,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2593,8 +2915,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2648,8 +2977,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2703,8 +3039,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2758,8 +3101,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2813,8 +3163,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2868,8 +3225,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2923,8 +3287,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -2978,8 +3349,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token
@@ -3033,8 +3411,15 @@ import atom_api
 from atom_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: oauth
+# Initialize configuration
 configuration = atom_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
 # Method 1: Fetch and set access token with client_id and client_secret
 configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
 # Method 2: Set access token using an existing token

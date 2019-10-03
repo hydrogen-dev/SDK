@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **reminded** | **Boolean** | Indicates if a reminder of the consultation was sent to the client. Defaults to false which indicates it has not been sent |  [optional]
 **source** | **String** | Information on how the client has requested the consultation |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**metadata** | **Object** | Custom information associated with the consultation in the format key:value |  [optional]
 **id** | [**UUID**](UUID.md) | The ID of the consultation request |  [optional]
 **createDate** | **String** | Datetime the consultation request was created |  [optional]
 

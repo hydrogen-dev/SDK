@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **statusTimeStamp** | **String** | Date and time that the record was last updated |  [optional]
 **type** | **String** | Indicates the payment type such as “check, “wire”, etc. |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**metadata** | **Object** | Custom information associated with the deposit in the format key:value |  [optional]
 
 
 

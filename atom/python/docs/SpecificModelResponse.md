@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of what types of investments are represented in the model | [optional] 
 **client_id** | **str** | If the model is to be used by a specific client such as an advisor, the ID of the client | [optional] 
 **node_map** | **list[str]** |  | [optional] 
+**currency_code** | **str** | Alphabetic currency code for the base currency of the model, limited to 3 characters | [optional] 
 **is_active** | **bool** | Indicates for whether or not the model is active. Defaults to true which indicates that it is currently active | [optional] [default to True]
 **metadata** | **object** | Custom information associated with the model in the format key:value. | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 

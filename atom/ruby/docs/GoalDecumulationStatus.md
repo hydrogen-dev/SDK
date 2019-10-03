@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **horizon_frequency** | **String** | Frequency in relation to the horizon | 
 **withdrawal_config** | [**Array&lt;GoalWithdrawalConfig&gt;**](GoalWithdrawalConfig.md) | The withdrawal attributes | 
 **deposit_config** | [**Array&lt;GoalDepositConfig&gt;**](GoalDepositConfig.md) | The deposit attributes | [optional] 
-**recommendation_config** | **Object** |  | [optional] 
+**recommendation_config** | [**GoalRecommendationConfigStatus**](GoalRecommendationConfigStatus.md) |  | [optional] 
 **recommend_type** | **String** | The type of recommended action | [optional] [default to &#39;horizon&#39;]
 **conf_tgt** | **Float** | The confidence target | [optional] 
 **n** | **Integer** | The number of Monte Carlo simulations to run | [optional] 

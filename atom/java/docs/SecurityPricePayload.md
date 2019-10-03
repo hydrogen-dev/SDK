@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **price** | **Double** | Value for the price of the security | 
 **date** | **String** | Date and for when the particular price was applicable for this security | 
 **adjustedPrice** | **Double** | Value for the adjusted price of the security |  [optional]
+**currencyCode** | **String** | Alphabetic currency code for the base currency of the security, limited to 3 characters |  [optional]
 **secondaryId** | **String** |  |  [optional]
 
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **status** | **str** | Status of the support ticket such as closed | [optional] 
 **subject** | **str** | Title of the support ticket relating to the underlying issue | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the support ticket in the format key:value | [optional] 
 **id** | **str** | The ID of the support ticket | [optional] 
 **create_date** | **str** | Datetime the support ticket was created | [optional] 
 

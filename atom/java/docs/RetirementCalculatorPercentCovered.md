@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **retirementAge** | **Integer** | The age of retirement |  [optional]
 **retirementSavings** | [**BigDecimal**](BigDecimal.md) | Current amount of retirement savings |  [optional]
 **retirementIncome** | [**BigDecimal**](BigDecimal.md) | Expected retirement income |  [optional]
-**depositSchedule** | **Object** |  |  [optional]
+**depositSchedule** | [**DepositSchedule**](DepositSchedule.md) |  |  [optional]
 **inflationRate** | [**BigDecimal**](BigDecimal.md) | The annualized inflation rate |  [optional]
 **retirementTax** | [**BigDecimal**](BigDecimal.md) | The expected tax rate in retirement |  [optional]
 

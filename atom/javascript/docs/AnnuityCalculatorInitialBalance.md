@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **annuityFrequencyInterval** | **String** | The frequency interval of the annuity | [optional] [default to &#39;year&#39;]
 **inflationRate** | **Number** | The annualized inflation rate | [optional] 
 **taxRate** | **Number** | The tax rate on withdrawals | [optional] 
-**depositSchedule** | **Object** |  | [optional] 
+**depositSchedule** | [**AnnuityDepositSchedule**](AnnuityDepositSchedule.md) |  | [optional] 
 
 
 <a name="AnnuityFrequencyIntervalEnum"></a>

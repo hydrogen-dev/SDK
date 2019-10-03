@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **educationInflationRate** | **Number** | The inflation rate for education prices | [optional] 
 **generalInflationRate** | **Number** | The annualized general inflation rate | [optional] 
 **taxRate** | **Number** | The tax rate for withdrawals from the account | [optional] 
-**depositSchedule** | **Object** |  | [optional] 
+**depositSchedule** | [**EducationCalculatorDepositScheduleDepAmt**](EducationCalculatorDepositScheduleDepAmt.md) |  | [optional] 
 
 

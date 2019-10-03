@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **accountId** | [**UUID**](UUID.md) | The ID of the account to which the security exclusion applies (if account-specific) |  [optional]
 **portfolioId** | [**UUID**](UUID.md) | The ID of the portfolio to which the security exclusion applies (if portfolio-specific) |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**metadata** | **Object** | Custom information associated with the security exclusion in the format key:value |  [optional]
 **id** | [**UUID**](UUID.md) | ID of the security exclusion |  [optional]
 **createDate** | **String** | Datetime the security exclusion was created |  [optional]
 

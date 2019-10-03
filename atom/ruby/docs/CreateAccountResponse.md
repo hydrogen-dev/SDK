@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **managed** | **BOOLEAN** | Indicates if the account is managed or self directed. Defaults to true, or that it’s managed | [optional] [default to true]
 **clients** | [**Array&lt;AccountCreateClient&gt;**](AccountCreateClient.md) | List of clients associated with the account and their association type as well as signature data | [optional] 
 **goals** | [**Array&lt;AccountCreateGoal&gt;**](AccountCreateGoal.md) | List of goals mapped to the account with information such as goal amount and horizon | [optional] 
+**currency_code** | **String** | Alphabetic currency code for the base currency of the account, limited to 3 characters | [optional] 
 **metadata** | **Object** | Custom information associated with the account in the format key:value | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
 **last** | **BOOLEAN** | If true, the last record in the result set is shown | [optional] 

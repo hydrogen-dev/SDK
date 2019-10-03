@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **status** | **String** | Status of the support ticket such as closed | [optional] 
 **subject** | **String** | Title of the support ticket relating to the underlying issue | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **Object** | Custom information associated with the support ticket in the format key:value | [optional] 
 **update_date** | **String** | Datetime the support ticket was last updated | [optional] 
 
 

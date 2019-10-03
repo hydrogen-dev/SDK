@@ -5,13 +5,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | ID of the bank link | [optional] 
 **create_date** | **str** | Datetime the bank link was created | [optional] 
-**account_id** | **str** | The ID for the account to which the bank link belongs | 
+**account_id** | **str** | The ID for the account to which the bank link belongs | [optional] 
 **bank_account_holder** | **str** | Name of the individual that owns the bank account | 
 **bank_account_number** | **str** | Account number of the bank account | 
 **name** | **str** | Name of the bank for the bank link, e.g. HSBC | 
 **routing** | **str** | Routing number of the bank for the bank link | 
 **routing_wire** | **str** | Routing number of the bank for the bank link used for wire transfers | [optional] 
+**mask** | **str** | Masked version of the bank account number for this bank link | [optional] 
 **bank_account_name** | **str** | Name of the bank account, e.g. Mike’s HSBC Checking | [optional] 
+**client_id** | **str** | ID of the client to which the bank link belongs | [optional] 
 **currency_code** | **str** | Alphabetic currency code for the base currency of the bank account linked, limited to 3 characters | [optional] 
 **balance** | **str** | Current balance of the bank account | [optional] 
 **available_balance** | **str** | Available balance of the bank account, usually taking into consideration pending transactions or available overdraft | [optional] 

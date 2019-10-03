@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **isDeposit** | **Boolean** | Indicates if the funding request is a deposit. true indicates it is a deposit, false a withdrawal | 
 **startDate** | [**LocalDate**](LocalDate.md) | The date that the funding request should start | 
 **endDate** | [**LocalDate**](LocalDate.md) | In the case that the funding request is recurring, the date that the funding request should stop occurring |  [optional]
+**lastRequestDate** | [**LocalDate**](LocalDate.md) | The last date a recurring deposit or withdrawal was made to/from an account |  [optional]
+**nextRequestDate** | [**LocalDate**](LocalDate.md) | The next date a recurring deposit or withdrawal is scheduled to/from an account |  [optional]
 **frequency** | **Integer** | Number of frequency_unit between each request. For example, if the frequency_unit is weekly and the frequency is 2, this means the funding request occurs every two weeks. Default is 1 |  [optional]
 **description** | **String** | Description for the request, such as “Initial Funding” |  [optional]
 **amount** | **Double** | Amount that is included in the funding request |  [optional]

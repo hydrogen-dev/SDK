@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **faq_keywords** | [**list[FaqPayloadFaqKeywords]**](FaqPayloadFaqKeywords.md) |  | [optional] 
 **is_featured** | **bool** | Indicator for whether or not this is a featured FAQ. Defaults to false indicating it is not featured | [optional] [default to False]
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the FAQ in the format key:value | [optional] 
 **update_date** | **str** | Datetime the FAQ was last updated | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

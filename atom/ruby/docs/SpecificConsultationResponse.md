@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **reminded** | **BOOLEAN** | Indicates if a reminder of the consultation was sent to the client. Defaults to false which indicates it has not been sent | [optional] [default to false]
 **source** | **String** | Information on how the client has requested the consultation | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **Object** | Custom information associated with the consultation in the format key:value | [optional] 
 **update_date** | **String** | Datetime the consultation request was last updated | [optional] 
 
 

@@ -5,7 +5,7 @@
     <artifactId>hydrogen-atom-api</artifactId>
     <packaging>jar</packaging>
     <name>hydrogen-atom-api</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Swagger Java</description>
     <scm>

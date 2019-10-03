@@ -1,6 +1,6 @@
 # ElectronApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -78,13 +78,18 @@ Delete a marketing campaign
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignId = new UUID(); // UUID | UUID of a marketing campaign
@@ -132,13 +137,18 @@ Delete a marketing campaign data record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignDataId = new UUID(); // UUID | UUID of a campaign data record
@@ -186,13 +196,18 @@ Delete a marketing campaign plan
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignPlanId = new UUID(); // UUID | UUID of a campaign plan
@@ -240,13 +255,18 @@ Delete a chat log
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID chatId = new UUID(); // UUID | UUID of a chat record
@@ -294,13 +314,18 @@ Remove a client from a campaign
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID clientCampaignId = new UUID(); // UUID | UUID of a client campaign record
@@ -348,13 +373,18 @@ Delete a consultation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID consultationId = new UUID(); // UUID | UUID of a consultation record
@@ -402,13 +432,18 @@ Delete a document
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID documentId = new UUID(); // UUID | UUID of a document
@@ -456,13 +491,18 @@ Delete a FAQ
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID faqId = new UUID(); // UUID | UUID of a FAQ
@@ -510,13 +550,18 @@ Delete a sales inquiry
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID salesId = new UUID(); // UUID | UUID of a sales record
@@ -564,13 +609,18 @@ Delete a support ticket
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID supportTicketId = new UUID(); // UUID | UUID of a support ticket
@@ -618,13 +668,18 @@ Delete a support ticket comment
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID supportTicketCommentId = new UUID(); // UUID | UUID of a support ticket comment
@@ -672,13 +727,18 @@ Retrieve a marketing campaign
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignId = new UUID(); // UUID | UUID of a marketing campaign
@@ -727,13 +787,18 @@ Retrieve a marketing campaign data record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignDataId = new UUID(); // UUID | UUID of a campaign data record
@@ -782,13 +847,18 @@ List all marketing campaign data records
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -845,13 +915,18 @@ Retrieve a marketing campaign plan
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignPlanId = new UUID(); // UUID | UUID of a campaign plan
@@ -900,13 +975,18 @@ List all marketing campaign plans
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -963,13 +1043,18 @@ List all marketing campaigns
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1026,13 +1111,18 @@ Retrieve a chat log
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID chatId = new UUID(); // UUID | UUID of a chat record
@@ -1081,13 +1171,18 @@ List all chat logs
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1144,13 +1239,18 @@ Retrieve a client assigned to a campaign
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID clientCampaignId = new UUID(); // UUID | UUID of a client campaign record
@@ -1199,13 +1299,18 @@ List information for all clients that are assigned to a marketing campaign defin
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1262,13 +1367,18 @@ Retrieve a consultation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID consultationId = new UUID(); // UUID | UUID of a consultation record
@@ -1317,13 +1427,18 @@ List all consultations
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1380,13 +1495,18 @@ Retrieve a document
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID documentId = new UUID(); // UUID | UUID of a document
@@ -1435,13 +1555,18 @@ List all documents
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1498,13 +1623,18 @@ Retrieve a FAQ
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID faqId = new UUID(); // UUID | UUID of a FAQ
@@ -1553,13 +1683,18 @@ List all FAQs
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1616,13 +1751,18 @@ List all sales inquiries
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1679,13 +1819,18 @@ Retrieve a sales inquiry
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID salesId = new UUID(); // UUID | UUID of a sales record
@@ -1734,13 +1879,18 @@ Retrieve a support ticket
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID supportTicketId = new UUID(); // UUID | UUID of a support ticket
@@ -1789,13 +1939,18 @@ Retrieve a support ticket comment
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID supportTicketCommentId = new UUID(); // UUID | UUID of a support ticket comment
@@ -1844,13 +1999,18 @@ List all support ticket comments
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1907,13 +2067,18 @@ List all support tickets
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -1970,13 +2135,18 @@ Create a marketing campaign
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 CampaignManagementPayload payload = new CampaignManagementPayload(); // CampaignManagementPayload | 
@@ -2025,13 +2195,18 @@ Create a marketing campaign data record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 CampaignDataPayload payload = new CampaignDataPayload(); // CampaignDataPayload | 
@@ -2080,13 +2255,18 @@ Create a marketing campaign plan
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 CampaignPlanPayload payload = new CampaignPlanPayload(); // CampaignPlanPayload | 
@@ -2135,13 +2315,18 @@ Create a chat log
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 ChatPayload payload = new ChatPayload(); // ChatPayload | 
@@ -2190,13 +2375,18 @@ Assign a client to a campaign to indicate the client has registered through the 
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 ClientCampaignPayload payload = new ClientCampaignPayload(); // ClientCampaignPayload | 
@@ -2245,13 +2435,18 @@ Create a consultation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 ConsultationPayload payload = new ConsultationPayload(); // ConsultationPayload | 
@@ -2300,13 +2495,18 @@ Create a document
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 DocumentPayload payload = new DocumentPayload(); // DocumentPayload | 
@@ -2355,13 +2555,18 @@ Create a faq
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 FaqPayload payload = new FaqPayload(); // FaqPayload | 
@@ -2410,13 +2615,18 @@ Create a sales inquiry
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 SalesPayload payload = new SalesPayload(); // SalesPayload | 
@@ -2465,13 +2675,18 @@ Create a support ticket
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 SupportTicketPayload payload = new SupportTicketPayload(); // SupportTicketPayload | 
@@ -2520,13 +2735,18 @@ Create a support ticket comment
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 SupportTicketCommentPayload payload = new SupportTicketCommentPayload(); // SupportTicketCommentPayload | 
@@ -2575,13 +2795,18 @@ Update a marketing campaign
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignId = new UUID(); // UUID | UUID of a marketing campaign
@@ -2632,13 +2857,18 @@ Update a marketing campaign data record
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignDataId = new UUID(); // UUID | UUID of a campaign data record
@@ -2689,13 +2919,18 @@ Update a marketing campaign plan
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID campaignPlanId = new UUID(); // UUID | UUID of a campaign plan
@@ -2746,13 +2981,18 @@ Update a chat log
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID chatId = new UUID(); // UUID | UUID of a chat record
@@ -2803,13 +3043,18 @@ Update a client assigned to a campaign
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID clientCampaignId = new UUID(); // UUID | UUID of a client campaign record
@@ -2860,13 +3105,18 @@ Update a consultation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID consultationId = new UUID(); // UUID | UUID of a consultation record
@@ -2917,13 +3167,18 @@ Update a document
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID documentId = new UUID(); // UUID | UUID of a document
@@ -2974,13 +3229,18 @@ Update a FAQ
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID faqId = new UUID(); // UUID | UUID of a FAQ
@@ -3031,13 +3291,18 @@ Update a sales inquiry
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID salesId = new UUID(); // UUID | UUID of a sales record
@@ -3088,13 +3353,18 @@ Update a support ticket
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID supportTicketId = new UUID(); // UUID | UUID of a support ticket
@@ -3145,13 +3415,18 @@ Update a support ticket comment
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ElectronApi apiInstance = new ElectronApi();
 UUID supportTicketCommentId = new UUID(); // UUID | UUID of a support ticket comment

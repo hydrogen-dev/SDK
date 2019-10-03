@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **percent_of_expenses_covered** | **float** | The percentage of current expenses needed in retirement. If excluded, defaults to 0.70. | [optional] 
 **retirement_savings** | **float** | Current amount of retirement savings | [optional] 
 **retirement_income** | **float** | Expected retirement income | [optional] 
-**deposit_schedule** | **object** |  | [optional] 
+**deposit_schedule** | [**DepositSchedule**](DepositSchedule.md) |  | [optional] 
 **inflation_rate** | **float** | The annualized inflation rate | [optional] 
 **retirement_tax** | **float** | The expected tax rate in retirement | [optional] 
 

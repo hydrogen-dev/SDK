@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **debt_payments** | **Float** | Debt payments such as credit cards or loans | [optional] 
 **transportation_costs** | **Float** | Transportation costs such as gasoline or car payments | [optional] 
 **food_costs** | **Float** | Food costs such as groceries or restaurants | [optional] 
-**other_expenses** | **Object** | Other expenses to cover in the emergency fund | [optional] 
+**other_expenses** | **Hash&lt;String, Float&gt;** | Other expenses to cover in the emergency fund | [optional] 
 **current_emergency_fund_balance** | **Float** | The user&#39;s current emergency fund balance | [optional] 
 **interest_rate** | **Float** | Annualized interest rate earned on the current fund balance | [optional] 
 **savings_horizon** | **Array&lt;Integer&gt;** | Periods in the savings horizon to be used in the recommendation schedule | [optional] 

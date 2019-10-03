@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **category** | **str** | Grouping of similar transaction codes | [optional] 
 **subcategory** | **str** | Sub-grouping of similar transaction codes | [optional] 
 **is_buy** | **bool** | Indicates if the transaction is to buy securities. Defaults to false which means it is a sell transaction. | [optional] [default to False]
+**metadata** | **object** | Custom information associated with the transaction code in the format key:value | [optional] 
 **update_date** | **str** | Datetime the transaction code was last updated | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

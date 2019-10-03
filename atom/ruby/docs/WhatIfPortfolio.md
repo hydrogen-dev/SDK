@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **altered_portfolio_weights** | **Array&lt;Float&gt;** | Weights of altered portfolio holdings | 
 **start_date** | **Date** | Start date of portfolio returns for the comparison | [optional] 
 **end_date** | **Date** | End date of portfolio returns for the comparison | [optional] 
+**use_proxy_data** | **BOOLEAN** | If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false. | [optional] [default to false]
 
 

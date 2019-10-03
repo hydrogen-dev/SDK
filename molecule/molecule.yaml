@@ -1334,10 +1334,10 @@ definitions:
         format: uuid
         description: The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
       total_supply:
-        type: integer
+        type: number
         description: The total supply of the security token
       circulating_supply:
-        type: integer
+        type: number
         description: The amount of tokens in circulation. Defaults to 0
         default: 0
       conract_address:
@@ -1374,10 +1374,10 @@ definitions:
         format: uuid
         description: The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
       total_supply:
-        type: integer
+        type: number
         description: The total supply of the security token
       circulating_supply:
-        type: integer
+        type: number
         description: The amount of tokens in circulation. Defaults to 0
         default: 0
       conract_address:
@@ -1403,7 +1403,7 @@ definitions:
       - rate
     properties:
       rate:
-        type: number
+        type: integer
         description: The exchange rate of the token during the token offering.
       start_date:
         type: string
@@ -1418,7 +1418,7 @@ definitions:
     description: The array of security token offering settings applied on this token
     properties:
       rate:
-        type: number
+        type: integer
         description: The exchange rate of the token during the token offering.
       start_date:
         type: string

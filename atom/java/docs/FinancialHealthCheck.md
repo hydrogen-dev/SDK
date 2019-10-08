@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **grossAnnualIncome** | [**BigDecimal**](BigDecimal.md) | Gross annual income |  [optional]
 **netMonthlyIncome** | [**BigDecimal**](BigDecimal.md) | Net monthly income |  [optional]
 **monthlyExpenses** | [**BigDecimal**](BigDecimal.md) | Monthly expenses |  [optional]
-**ratioTargets** | **Object** |  |  [optional]
+**ratioTargets** | [**RatioTargets**](RatioTargets.md) |  |  [optional]
 
 
 

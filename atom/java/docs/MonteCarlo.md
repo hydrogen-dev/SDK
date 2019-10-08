@@ -13,6 +13,10 @@ Name | Type | Description | Notes
 **removeOutliers** | **Boolean** | If true, remove outlying results |  [optional]
 **resultType** | [**ResultTypeEnum**](#ResultTypeEnum) | The type of simulation results to display in the output |  [optional]
 **p** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) | Custom result percentiles |  [optional]
+**minBal** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) | A lower bound to enforce on the periodic balance. Each item in the array corresponds to a period in the simulation. If the length of the array is less than the number of simulation periods, it is conformed to the appropriate length by persisting the final value in the array. |  [optional]
+**maxBal** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) | An upper bound to enforce on the periodic balance. Each item in the array corresponds to a period in the simulation. If the length of the array is less than the number of simulation periods, it is conformed to the appropriate length by persisting the final value in the array. |  [optional]
+**minSample** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) | A lower bound to enforce on the randomly sampled periodic return. Each item in the array corresponds to a period in the simulation. If the length of the array is less than the number of simulation periods, it is conformed to the appropriate length by persisting the final value in the array. |  [optional]
+**maxSample** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) | An upper bound to enforce on the randomly sampled periodic return. Each item in the array corresponds to a period in the simulation. If the length of the array is less than the number of simulation periods, it is conformed to the appropriate length by persisting the final value in the array. |  [optional]
 
 
 <a name="ResultTypeEnum"></a>

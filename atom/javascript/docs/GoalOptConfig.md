@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tickers** | **[String]** | List of symbols for securities included in the portfolio | 
 **minAssets** | **Number** | Minimum number of portfolio assets, excluding cash | 
-**wConfig** | **Object** |  | [optional] 
-**wAssetConfig** | **Object** |  | [optional] 
+**wConfig** | [**GoalWeightConfig**](GoalWeightConfig.md) |  | [optional] 
+**wAssetConfig** | **{String: Number}** | Weight constraints for asset classes | [optional] 
 **secTypes** | **[String]** | List of each security&#39;s type | 
 **startDate** | **Date** | Start date for historical prices | 
 **endDate** | **Date** | End date for historical prices | 

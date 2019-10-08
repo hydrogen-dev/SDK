@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **portfolioTickers** | **List&lt;String&gt;** | Tickers of portfolio holdings | 
 **portfolioWeights** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) | Weights of portfolio holdings | 
 **events** | [**List&lt;EventsEnum&gt;**](#List&lt;EventsEnum&gt;) | Historical events to analyze |  [optional]
+**useProxyData** | **Boolean** | If true, incorporate proxy price data as defined at the Security level in the Nucleus API. Proxy data is merged with base security data to form a continuous price history. Defaults to false. |  [optional]
 
 
 <a name="List<EventsEnum>"></a>

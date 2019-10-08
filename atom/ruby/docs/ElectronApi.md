@@ -1,6 +1,6 @@
 # AtomApi::ElectronApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,8 +70,13 @@ Delete a marketing campaign
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -122,8 +127,13 @@ Delete a marketing campaign data record
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -174,8 +184,13 @@ Delete a marketing campaign plan
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -226,8 +241,13 @@ Delete a chat log
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -278,8 +298,13 @@ Remove a client from a campaign
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -330,8 +355,13 @@ Delete a consultation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -382,8 +412,13 @@ Delete a document
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -434,8 +469,13 @@ Delete a FAQ
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -486,8 +526,13 @@ Delete a sales inquiry
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -538,8 +583,13 @@ Delete a support ticket
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -590,8 +640,13 @@ Delete a support ticket comment
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -642,8 +697,13 @@ Retrieve a marketing campaign
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -695,8 +755,13 @@ Retrieve a marketing campaign data record
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -748,8 +813,13 @@ List all marketing campaign data records
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -810,8 +880,13 @@ Retrieve a marketing campaign plan
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -863,8 +938,13 @@ List all marketing campaign plans
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -925,8 +1005,13 @@ List all marketing campaigns
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -987,8 +1072,13 @@ Retrieve a chat log
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1040,8 +1130,13 @@ List all chat logs
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1102,8 +1197,13 @@ Retrieve a client assigned to a campaign
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1155,8 +1255,13 @@ List information for all clients that are assigned to a marketing campaign defin
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1217,8 +1322,13 @@ Retrieve a consultation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1270,8 +1380,13 @@ List all consultations
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1332,8 +1447,13 @@ Retrieve a document
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1385,8 +1505,13 @@ List all documents
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1447,8 +1572,13 @@ Retrieve a FAQ
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1500,8 +1630,13 @@ List all FAQs
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1562,8 +1697,13 @@ List all sales inquiries
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1624,8 +1764,13 @@ Retrieve a sales inquiry
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1677,8 +1822,13 @@ Retrieve a support ticket
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1730,8 +1880,13 @@ Retrieve a support ticket comment
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1783,8 +1938,13 @@ List all support ticket comments
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1845,8 +2005,13 @@ List all support tickets
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1907,8 +2072,13 @@ Create a marketing campaign
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -1960,8 +2130,13 @@ Create a marketing campaign data record
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2013,8 +2188,13 @@ Create a marketing campaign plan
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2066,8 +2246,13 @@ Create a chat log
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2119,8 +2304,13 @@ Assign a client to a campaign to indicate the client has registered through the 
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2172,8 +2362,13 @@ Create a consultation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2225,8 +2420,13 @@ Create a document
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2278,8 +2478,13 @@ Create a faq
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2331,8 +2536,13 @@ Create a sales inquiry
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2384,8 +2594,13 @@ Create a support ticket
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2437,8 +2652,13 @@ Create a support ticket comment
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2490,8 +2710,13 @@ Update a marketing campaign
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2546,8 +2771,13 @@ Update a marketing campaign data record
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2602,8 +2832,13 @@ Update a marketing campaign plan
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2658,8 +2893,13 @@ Update a chat log
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2714,8 +2954,13 @@ Update a client assigned to a campaign
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2770,8 +3015,13 @@ Update a consultation
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2826,8 +3076,13 @@ Update a document
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2882,8 +3137,13 @@ Update a FAQ
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2938,8 +3198,13 @@ Update a sales inquiry
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -2994,8 +3259,13 @@ Update a support ticket
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
@@ -3050,8 +3320,13 @@ Update a support ticket comment
 ```ruby
 # load the gem
 require 'atom_api'
-# setup authorization
+
+# Configuration
 AtomApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
   # Configure OAuth2 access token for authorization: oauth
   # Method 1: Fetch and set access token with client_id and client_secret
   config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')

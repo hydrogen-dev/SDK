@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **asset_size** | **float** | “Growth of a dollar” within the model on the particular date | 
 **is_reconciled** | **bool** | Indicates the asset size record is reconciled. true means it is reconciled | 
 **model_id** | **str** | The ID of the model for the asset size record | 
+**currency_code** | **str** | Alphabetic currency code for the base currency of the model, limited to 3 characters | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
 **update_date** | **str** | Datetime when the model asset size was last updated | [optional] 
 

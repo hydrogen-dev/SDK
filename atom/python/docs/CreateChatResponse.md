@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **is_notification** | **bool** | Indicates if there is a notification associated with the chat log. Defaults to true or that there is a notification | [optional] [default to True]
 **is_open** | **bool** | Indicates if the chat is still open. Defaults to true which indicates that the chat is still open | [optional] [default to True]
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the chat in the format key:value | [optional] 
 **id** | **str** | The ID of the chat log | [optional] 
 **create_date** | **str** | Datetime the chat log was created | [optional] 
 

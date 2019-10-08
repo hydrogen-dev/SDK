@@ -270,7 +270,7 @@ public class TokenBalanceGetResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenBalanceGetResponse {\n");
-    
+
     sb.append("    last: ").append(toIndentedString(last)).append("\n");
     sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
     sb.append("    totalElements: ").append(toIndentedString(totalElements)).append("\n");
@@ -296,4 +296,3 @@ public class TokenBalanceGetResponse {
   }
 
 }
-

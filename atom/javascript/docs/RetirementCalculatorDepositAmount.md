@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **percentOfExpensesCovered** | **Number** | Percentage of current expenses needed during retirement | [optional] 
 **retirementSavings** | **Number** | Current amount of retirement savings | [optional] 
 **retirementIncome** | **Number** | Expected retirement income | [optional] 
-**depositSchedule** | **Object** |  | [optional] 
+**depositSchedule** | [**DepositSchedule**](DepositSchedule.md) |  | [optional] 
 **inflationRate** | **Number** | The annualized inflation rate | [optional] 
 **retirementTax** | **Number** | The expected tax rate in retirement | [optional] 
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **portfolio_return** | **float** | The annualized portfolio return | 
 **horizon_frequency_interval** | **str** | The horizon frequency interval | [optional] [default to 'year']
 **current_savings** | **float** | The current savings amount | [optional] 
-**deposit_schedule** | **object** |  | [optional] 
+**deposit_schedule** | [**DepositScheduleMajorPurchaseDepAmt**](DepositScheduleMajorPurchaseDepAmt.md) |  | [optional] 
 **inflation_rate** | **float** | The inflation rate | [optional] 
 **investment_tax** | **float** | The tax on investments used for the major purchase | [optional] 
 

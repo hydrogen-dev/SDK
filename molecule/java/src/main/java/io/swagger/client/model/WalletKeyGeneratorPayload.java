@@ -74,7 +74,7 @@ public class WalletKeyGeneratorPayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletKeyGeneratorPayload {\n");
-    
+
     sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -92,4 +92,3 @@ public class WalletKeyGeneratorPayload {
   }
 
 }
-

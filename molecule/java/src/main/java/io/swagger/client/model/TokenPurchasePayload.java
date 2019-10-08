@@ -119,7 +119,7 @@ public class TokenPurchasePayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenPurchasePayload {\n");
-    
+
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
@@ -139,4 +139,3 @@ public class TokenPurchasePayload {
   }
 
 }
-

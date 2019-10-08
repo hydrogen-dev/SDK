@@ -319,7 +319,7 @@ public class TokenUpdatePayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenUpdatePayload {\n");
-    
+
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nucleusModelId: ").append(toIndentedString(nucleusModelId)).append("\n");
@@ -348,4 +348,3 @@ public class TokenUpdatePayload {
   }
 
 }
-

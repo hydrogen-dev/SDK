@@ -74,7 +74,7 @@ public class TokenDeployPayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenDeployPayload {\n");
-    
+
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -92,4 +92,3 @@ public class TokenDeployPayload {
   }
 
 }
-

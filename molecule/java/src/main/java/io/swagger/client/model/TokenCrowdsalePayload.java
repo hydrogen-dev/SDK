@@ -97,7 +97,7 @@ public class TokenCrowdsalePayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenCrowdsalePayload {\n");
-    
+
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    supply: ").append(toIndentedString(supply)).append("\n");
     sb.append("}");
@@ -116,4 +116,3 @@ public class TokenCrowdsalePayload {
   }
 
 }
-

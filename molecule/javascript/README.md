@@ -110,7 +110,7 @@ var molecule_api = require('hydrogen-molecule-api');
 
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
 // This changes the URL for requests to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 

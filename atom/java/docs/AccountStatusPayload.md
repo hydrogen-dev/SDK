@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **stageId** | [**UUID**](UUID.md) | Refers to the stage the client is in. Useful for sign-up funnels | 
 **comments** | **String** | Comments for the client regarding the status of their account |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**metadata** | **Object** | Custom information associated with the aggregation account in the format key:value |  [optional]
 
 
 

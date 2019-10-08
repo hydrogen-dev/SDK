@@ -118,7 +118,7 @@ public class OfferingSettingsUpdatePayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OfferingSettingsUpdatePayload {\n");
-    
+
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
@@ -138,4 +138,3 @@ public class OfferingSettingsUpdatePayload {
   }
 
 }
-

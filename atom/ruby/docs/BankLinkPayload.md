@@ -3,13 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **String** | The ID for the account to which the bank link belongs | 
+**account_id** | **String** | The ID for the account to which the bank link belongs | [optional] 
 **bank_account_holder** | **String** | Name of the individual that owns the bank account | 
 **bank_account_number** | **String** | Account number of the bank account | 
 **name** | **String** | Name of the bank for the bank link, e.g. HSBC | 
 **routing** | **String** | Routing number of the bank for the bank link | 
 **routing_wire** | **String** | Routing number of the bank for the bank link used for wire transfers | [optional] 
+**mask** | **String** | Masked version of the bank account number for this bank link | [optional] 
 **bank_account_name** | **String** | Name of the bank account, e.g. Mike’s HSBC Checking | [optional] 
+**client_id** | **String** | ID of the client to which the bank link belongs | [optional] 
 **currency_code** | **String** | Alphabetic currency code for the base currency of the bank account linked, limited to 3 characters | [optional] 
 **balance** | **String** | Current balance of the bank account | [optional] 
 **available_balance** | **String** | Available balance of the bank account, usually taking into consideration pending transactions or available overdraft | [optional] 

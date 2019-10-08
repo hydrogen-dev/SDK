@@ -1,6 +1,6 @@
 # ProtonApi
 
-All URIs are relative to *https://api.hydrogenplatform.com*
+All URIs are relative to *https://sandbox.hydrogenplatform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**annuityCalculatorDecumulationHorizon**](ProtonApi.md#annuityCalculatorDecumulationHorizon) | **POST** /proton/v1/annuity_calculator/decumulation_horizon | Annuity calculator - decumulation horizon
 [**annuityCalculatorDepositAmount**](ProtonApi.md#annuityCalculatorDepositAmount) | **POST** /proton/v1/annuity_calculator/deposit_amount | Annuity calculator - deposit amount
 [**annuityCalculatorInitialBalance**](ProtonApi.md#annuityCalculatorInitialBalance) | **POST** /proton/v1/annuity_calculator/initial_balance | Annuity calculator - initial balance
+[**budgetCalculator**](ProtonApi.md#budgetCalculator) | **POST** /proton/v1/budget_calculator | Budget Calculator
+[**cashFlowAnalysis**](ProtonApi.md#cashFlowAnalysis) | **POST** /proton/v1/cash_flow_analysis | Cash Flow Analysis
 [**dimensionalRiskScore**](ProtonApi.md#dimensionalRiskScore) | **POST** /proton/v1/dimensional_risk_score | Dimensional risk score
 [**educationCalculatorAnnualCost**](ProtonApi.md#educationCalculatorAnnualCost) | **POST** /proton/v1/education_calculator/annual_cost | Education calculator - total annual cost
 [**educationCalculatorDepositAmount**](ProtonApi.md#educationCalculatorDepositAmount) | **POST** /proton/v1/education_calculator/deposit_amount | Education calculator - deposit amount
@@ -16,6 +18,7 @@ Method | HTTP request | Description
 [**emergencyFundCalculator**](ProtonApi.md#emergencyFundCalculator) | **POST** /proton/v1/emergency_fund_calculator | Emergency fund calculator
 [**eventStudy**](ProtonApi.md#eventStudy) | **POST** /proton/v1/event_study | Event study
 [**financialHealthCheck**](ProtonApi.md#financialHealthCheck) | **POST** /proton/v1/financial_health_check | Financial health check
+[**financialPicture**](ProtonApi.md#financialPicture) | **POST** /proton/v1/financial_picture | Financial Picture
 [**goalAccumulationAllocation**](ProtonApi.md#goalAccumulationAllocation) | **POST** /proton/v1/goal_accumulation/allocation | Goal accumulation allocation
 [**goalAccumulationRecommendation**](ProtonApi.md#goalAccumulationRecommendation) | **POST** /proton/v1/goal_accumulation/recommendation | Goal accumulation recommendation
 [**goalAccumulationStatus**](ProtonApi.md#goalAccumulationStatus) | **POST** /proton/v1/goal_accumulation/status | Goal accumulation status
@@ -44,6 +47,7 @@ Method | HTTP request | Description
 [**savingsCalculator**](ProtonApi.md#savingsCalculator) | **POST** /proton/v1/savings_calculator | Savings calculator
 [**scenarioAnalysis**](ProtonApi.md#scenarioAnalysis) | **POST** /proton/v1/scenario_analysis | Scenario analysis
 [**sensitivityAnalysis**](ProtonApi.md#sensitivityAnalysis) | **POST** /proton/v1/sensitivity_analysis | Sensitivity analysis
+[**variableAnnuity**](ProtonApi.md#variableAnnuity) | **POST** /proton/v1/variable_annuity | Variable annuity
 
 
 <a name="annuityCalculatorAccumulationHorizon"></a>
@@ -63,13 +67,18 @@ Annuity calculator - accumulation horizon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 AnnuityCalculatorAccumulationHorizon payload = new AnnuityCalculatorAccumulationHorizon(); // AnnuityCalculatorAccumulationHorizon | 
@@ -118,13 +127,18 @@ Annuity calculator - annuity amount
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 AnnuityCalculatorAnnuityAmount payload = new AnnuityCalculatorAnnuityAmount(); // AnnuityCalculatorAnnuityAmount | 
@@ -173,13 +187,18 @@ Annuity calculator - decumulation horizon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 AnnuityCalculatorDecumulationHorizon payload = new AnnuityCalculatorDecumulationHorizon(); // AnnuityCalculatorDecumulationHorizon | 
@@ -228,13 +247,18 @@ Annuity calculator - deposit amount
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 AnnuityCalculatorDepositAmount payload = new AnnuityCalculatorDepositAmount(); // AnnuityCalculatorDepositAmount | 
@@ -283,13 +307,18 @@ Annuity calculator - initial balance
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 AnnuityCalculatorInitialBalance payload = new AnnuityCalculatorInitialBalance(); // AnnuityCalculatorInitialBalance | 
@@ -321,6 +350,126 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="budgetCalculator"></a>
+# **budgetCalculator**
+> BudgetCalculatorResponse budgetCalculator(payload)
+
+Budget Calculator
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+BudgetCalculatorPayload payload = new BudgetCalculatorPayload(); // BudgetCalculatorPayload | 
+try {
+    BudgetCalculatorResponse result = apiInstance.budgetCalculator(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#budgetCalculator");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**BudgetCalculatorPayload**](BudgetCalculatorPayload.md)|  |
+
+### Return type
+
+[**BudgetCalculatorResponse**](BudgetCalculatorResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cashFlowAnalysis"></a>
+# **cashFlowAnalysis**
+> CashFlowAnalysisResponse cashFlowAnalysis(payload)
+
+Cash Flow Analysis
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+CashFlowAnalysisPayload payload = new CashFlowAnalysisPayload(); // CashFlowAnalysisPayload | 
+try {
+    CashFlowAnalysisResponse result = apiInstance.cashFlowAnalysis(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#cashFlowAnalysis");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CashFlowAnalysisPayload**](CashFlowAnalysisPayload.md)|  |
+
+### Return type
+
+[**CashFlowAnalysisResponse**](CashFlowAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="dimensionalRiskScore"></a>
 # **dimensionalRiskScore**
 > DimRiskScoreResponse dimensionalRiskScore(payload)
@@ -338,13 +487,18 @@ Dimensional risk score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 DimensionalRiskScore payload = new DimensionalRiskScore(); // DimensionalRiskScore | 
@@ -393,13 +547,18 @@ Education calculator - total annual cost
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 EducationCalculatorAnnualCost payload = new EducationCalculatorAnnualCost(); // EducationCalculatorAnnualCost | 
@@ -448,13 +607,18 @@ Education calculator - deposit amount
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 EducationCalculatorDepositAmount payload = new EducationCalculatorDepositAmount(); // EducationCalculatorDepositAmount | 
@@ -503,13 +667,18 @@ Education calculator - percent covered
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 EducationCalculatorPercentCovered payload = new EducationCalculatorPercentCovered(); // EducationCalculatorPercentCovered | 
@@ -558,13 +727,18 @@ Emergency fund calculator
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 EmergencyFundCalculator payload = new EmergencyFundCalculator(); // EmergencyFundCalculator | 
@@ -613,13 +787,18 @@ Event study
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 EventStudy payload = new EventStudy(); // EventStudy | 
@@ -668,13 +847,18 @@ Financial health check
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 FinancialHealthCheck payload = new FinancialHealthCheck(); // FinancialHealthCheck | 
@@ -706,6 +890,66 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="financialPicture"></a>
+# **financialPicture**
+> FinancialPictureResponse financialPicture(payload)
+
+Financial Picture
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+FinancialPicturePayload payload = new FinancialPicturePayload(); // FinancialPicturePayload | 
+try {
+    FinancialPictureResponse result = apiInstance.financialPicture(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#financialPicture");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**FinancialPicturePayload**](FinancialPicturePayload.md)|  |
+
+### Return type
+
+[**FinancialPictureResponse**](FinancialPictureResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="goalAccumulationAllocation"></a>
 # **goalAccumulationAllocation**
 > GoalAllocationResponse goalAccumulationAllocation(payload)
@@ -723,13 +967,18 @@ Goal accumulation allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 GoalAccumulationAllocation payload = new GoalAccumulationAllocation(); // GoalAccumulationAllocation | 
@@ -778,13 +1027,18 @@ Goal accumulation recommendation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 GoalAccumulationRecommendation payload = new GoalAccumulationRecommendation(); // GoalAccumulationRecommendation | 
@@ -833,13 +1087,18 @@ Goal accumulation status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 GoalAccumulationStatus payload = new GoalAccumulationStatus(); // GoalAccumulationStatus | 
@@ -888,13 +1147,18 @@ Goal decumulation allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 GoalDecumulationAllocation payload = new GoalDecumulationAllocation(); // GoalDecumulationAllocation | 
@@ -943,13 +1207,18 @@ Goal decumulation recommendation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 GoalDecumulationRecommendation payload = new GoalDecumulationRecommendation(); // GoalDecumulationRecommendation | 
@@ -998,13 +1267,18 @@ Goal decumulation status
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 GoalDecumulationStatus payload = new GoalDecumulationStatus(); // GoalDecumulationStatus | 
@@ -1053,13 +1327,18 @@ Life insurance needs calculator
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 LifeInsuranceCalculator payload = new LifeInsuranceCalculator(); // LifeInsuranceCalculator | 
@@ -1108,13 +1387,18 @@ Model backtest
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 Backtest payload = new Backtest(); // Backtest | 
@@ -1163,13 +1447,18 @@ Monte Carlo
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 MonteCarlo payload = new MonteCarlo(); // MonteCarlo | 
@@ -1218,13 +1507,18 @@ Mortgage calculator - down payment
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 MortgageCalculatorDownPayment payload = new MortgageCalculatorDownPayment(); // MortgageCalculatorDownPayment | 
@@ -1273,13 +1567,18 @@ Mortgage calculator - home price
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 MortgageCalculatorHomePrice payload = new MortgageCalculatorHomePrice(); // MortgageCalculatorHomePrice | 
@@ -1328,13 +1627,18 @@ Mortgage calculator - periodic payment
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 MortgageCalculatorPeriodicPayment payload = new MortgageCalculatorPeriodicPayment(); // MortgageCalculatorPeriodicPayment | 
@@ -1383,13 +1687,18 @@ Mean-variance optimization
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 OptConfigPortfolio payload = new OptConfigPortfolio(); // OptConfigPortfolio | 
@@ -1438,13 +1747,18 @@ Portfolio diversification score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 DiversificationScore payload = new DiversificationScore(); // DiversificationScore | 
@@ -1493,13 +1807,18 @@ Portfolio optimization score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 OptimizationScore payload = new OptimizationScore(); // OptimizationScore | 
@@ -1548,13 +1867,18 @@ Portfolio what-if
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 WhatIfPortfolio payload = new WhatIfPortfolio(); // WhatIfPortfolio | 
@@ -1603,13 +1927,18 @@ Purchase calculator - deposit amount
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 PurchaseCalculatorDepositAmount payload = new PurchaseCalculatorDepositAmount(); // PurchaseCalculatorDepositAmount | 
@@ -1658,13 +1987,18 @@ Purchase calculator - horizon
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 PurchaseCalculatorHorizon payload = new PurchaseCalculatorHorizon(); // PurchaseCalculatorHorizon | 
@@ -1713,13 +2047,18 @@ Purchase calculator - purchase amount
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 PurchaseCalculatorAmount payload = new PurchaseCalculatorAmount(); // PurchaseCalculatorAmount | 
@@ -1768,13 +2107,18 @@ Rebalancing
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 Rebalance payload = new Rebalance(); // Rebalance | 
@@ -1823,13 +2167,18 @@ Retirement calculator - deposit amount
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 RetirementCalculatorDepositAmount payload = new RetirementCalculatorDepositAmount(); // RetirementCalculatorDepositAmount | 
@@ -1878,13 +2227,18 @@ Retirement calculator - expenses
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 RetirementCalculatorExpenses payload = new RetirementCalculatorExpenses(); // RetirementCalculatorExpenses | 
@@ -1933,13 +2287,18 @@ Retirement calculator - percent of costs covered
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 RetirementCalculatorPercentCovered payload = new RetirementCalculatorPercentCovered(); // RetirementCalculatorPercentCovered | 
@@ -1988,13 +2347,18 @@ Risk allocation
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 RiskAllocation payload = new RiskAllocation(); // RiskAllocation | 
@@ -2043,13 +2407,18 @@ Risk score
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 RiskScore payload = new RiskScore(); // RiskScore | 
@@ -2098,13 +2467,18 @@ Savings calculator
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 SimpleSavingsCalculator payload = new SimpleSavingsCalculator(); // SimpleSavingsCalculator | 
@@ -2153,13 +2527,18 @@ Scenario analysis
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 ScenarioAnalysis payload = new ScenarioAnalysis(); // ScenarioAnalysis | 
@@ -2208,13 +2587,18 @@ Sensitivity analysis
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
 // Configure OAuth2 access token for authorization: oauth
 OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
 // Method 1: Fetch and set access token with client_id and client_secret
 String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
 oauth.setAccessToken(token);
 // Method 2: Set access token using an existing token
-oauth.setAccessToken("YOUR ACCESS TOKEN");
+oauth.setAccessToken("MYACCESSTOKEN");
 
 ProtonApi apiInstance = new ProtonApi();
 SensitivityAnalysis payload = new SensitivityAnalysis(); // SensitivityAnalysis | 
@@ -2236,6 +2620,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitivityAnalysisResponse**](SensitivityAnalysisResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="variableAnnuity"></a>
+# **variableAnnuity**
+> VariableAnnuityResponse variableAnnuity(payload)
+
+Variable annuity
+
+### Example
+```java
+// Import classes:
+//import atom_api.ApiClient;
+//import atom_api.ApiException;
+//import atom_api.Configuration;
+//import atom_api.auth.*;
+//import io.swagger.client.api.ProtonApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+ProtonApi apiInstance = new ProtonApi();
+VariableAnnuityPayload payload = new VariableAnnuityPayload(); // VariableAnnuityPayload | 
+try {
+    VariableAnnuityResponse result = apiInstance.variableAnnuity(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ProtonApi#variableAnnuity");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**VariableAnnuityPayload**](VariableAnnuityPayload.md)|  |
+
+### Return type
+
+[**VariableAnnuityResponse**](VariableAnnuityResponse.md)
 
 ### Authorization
 

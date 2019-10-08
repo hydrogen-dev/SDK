@@ -118,7 +118,7 @@ public class WalletKeyCreatePayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletKeyCreatePayload {\n");
-    
+
     sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
@@ -138,4 +138,3 @@ public class WalletKeyCreatePayload {
   }
 
 }
-

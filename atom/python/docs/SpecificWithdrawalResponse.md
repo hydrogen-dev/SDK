@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **status_time_stamp** | **str** | Date and time that the status of the record was last updated | [optional] 
 **type** | **str** | Indicates the payment type such as “check, “wire”, etc. | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the withdrawal in the format key:value | [optional] 
 **update_date** | **str** | Datetime the withdrawal request was last updated | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

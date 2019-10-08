@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **total_clicks** | **Integer** | Total number of clicks measured in the campaign data record for a specific feature as a whole number | [optional] 
 **total_impressions** | **Integer** | Total number of impressions measured in the campaign data record for a specific feature as a whole number | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **Object** | Custom information associated with the campaign data in the format key:value | [optional] 
 **id** | **String** | ID of the marketing campaign data record | [optional] 
 **create_date** | **String** | Datetime the marketing campaign data record was created | [optional] 
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **horizonFrequency** | [**HorizonFrequencyEnum**](#HorizonFrequencyEnum) | Frequency in relation to the horizon | 
 **withdrawalConfig** | [**List&lt;GoalWithdrawalConfig&gt;**](GoalWithdrawalConfig.md) | The withdrawal attributes | 
 **depositConfig** | [**List&lt;GoalDepositConfig&gt;**](GoalDepositConfig.md) | The deposit attributes |  [optional]
-**recommendationConfig** | **Object** |  |  [optional]
+**recommendationConfig** | [**GoalRecommendationConfigRec**](GoalRecommendationConfigRec.md) |  |  [optional]
 **recommendType** | [**RecommendTypeEnum**](#RecommendTypeEnum) | The type of recommended action |  [optional]
 **confTgt** | [**BigDecimal**](BigDecimal.md) | The confidence target |  [optional]
 **n** | **Integer** | The number of Monte Carlo simulations to run |  [optional]

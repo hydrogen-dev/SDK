@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **total_clicks** | **int** | Total number of clicks measured in the campaign data record for a specific feature as a whole number | [optional] 
 **total_impressions** | **int** | Total number of impressions measured in the campaign data record for a specific feature as a whole number | [optional] 
 **secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
+**metadata** | **object** | Custom information associated with the campaign data in the format key:value | [optional] 
 **update_date** | **str** | Datetime the marketing campaign data record was last updated | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

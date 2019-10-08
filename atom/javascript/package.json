@@ -1,6 +1,6 @@
 {
   "name": "hydrogen-atom-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript wrapper for Hydrogen Atom API",
   "license": "Unlicense",
   "main": "src/index.js",

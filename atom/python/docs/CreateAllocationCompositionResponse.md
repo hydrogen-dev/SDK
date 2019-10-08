@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **strategic_weight** | **float** | The strategic weight of the model as a percentage of the allocation’s total value; ex. 20 representing 20%. The strategic weights of all the models must add up to 100. If the model is the only one, enter 100 | 
 **_date** | **date** | The date for this allocation composition record | 
 **core** | **bool** | Indicator if the model_id is a core model for core-satellite investing. Defaults to false which means it is not a core model | [optional] [default to False]
+**metadata** | **object** | Custom information associated with the allocation composition in the format key:value | [optional] 
 **id** | **str** | ID of the allocation composition | [optional] 
 **create_date** | **str** | Datetime the allocation composition was created | [optional] 
 

@@ -251,7 +251,7 @@ public class WalletKeySpecificResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletKeySpecificResponse {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
     sb.append("    keyServer: ").append(toIndentedString(keyServer)).append("\n");
@@ -277,4 +277,3 @@ public class WalletKeySpecificResponse {
   }
 
 }
-

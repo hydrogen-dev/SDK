@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **debtPayments** | [**BigDecimal**](BigDecimal.md) | Debt payments such as credit cards or loans |  [optional]
 **transportationCosts** | [**BigDecimal**](BigDecimal.md) | Transportation costs such as gasoline or car payments |  [optional]
 **foodCosts** | [**BigDecimal**](BigDecimal.md) | Food costs such as groceries or restaurants |  [optional]
-**otherExpenses** | **Object** | Other expenses to cover in the emergency fund |  [optional]
+**otherExpenses** | [**Map&lt;String, BigDecimal&gt;**](BigDecimal.md) | Other expenses to cover in the emergency fund |  [optional]
 **currentEmergencyFundBalance** | [**BigDecimal**](BigDecimal.md) | The user&#39;s current emergency fund balance |  [optional]
 **interestRate** | [**BigDecimal**](BigDecimal.md) | Annualized interest rate earned on the current fund balance |  [optional]
 **savingsHorizon** | **List&lt;Integer&gt;** | Periods in the savings horizon to be used in the recommendation schedule |  [optional]

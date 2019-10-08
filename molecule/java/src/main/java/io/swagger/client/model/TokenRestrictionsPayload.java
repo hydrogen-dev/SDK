@@ -317,7 +317,7 @@ public class TokenRestrictionsPayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenRestrictionsPayload {\n");
-    
+
     sb.append("    minAge: ").append(toIndentedString(minAge)).append("\n");
     sb.append("    maxAge: ").append(toIndentedString(maxAge)).append("\n");
     sb.append("    minAnnualIncome: ").append(toIndentedString(minAnnualIncome)).append("\n");
@@ -346,4 +346,3 @@ public class TokenRestrictionsPayload {
   }
 
 }
-

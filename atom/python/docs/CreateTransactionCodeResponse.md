@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **category** | **str** | Grouping of similar transaction codes | [optional] 
 **subcategory** | **str** | Sub-grouping of similar transaction codes | [optional] 
 **is_buy** | **bool** | Indicates if the transaction is to buy securities. Defaults to false which means it is a sell transaction. | [optional] [default to False]
+**metadata** | **object** | Custom information associated with the transaction code in the format key:value | [optional] 
 **id** | **str** | ID of the transaction code | [optional] 
 **create_date** | **str** | Datetime the transaction code was created | [optional] 
 

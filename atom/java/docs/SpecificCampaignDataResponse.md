@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **totalClicks** | **Integer** | Total number of clicks measured in the campaign data record for a specific feature as a whole number |  [optional]
 **totalImpressions** | **Integer** | Total number of impressions measured in the campaign data record for a specific feature as a whole number |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**metadata** | **Object** | Custom information associated with the campaign data in the format key:value |  [optional]
 **updateDate** | **String** | Datetime the marketing campaign data record was last updated |  [optional]
 
 

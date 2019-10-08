@@ -140,7 +140,7 @@ public class WalletCreateWhitelist {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletCreateWhitelist {\n");
-    
+
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    sellRestrictionDate: ").append(toIndentedString(sellRestrictionDate)).append("\n");
@@ -161,4 +161,3 @@ public class WalletCreateWhitelist {
   }
 
 }
-

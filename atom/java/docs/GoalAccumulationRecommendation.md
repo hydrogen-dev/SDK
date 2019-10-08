@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **currInv** | [**BigDecimal**](BigDecimal.md) | The current amount invested | 
 **horizon** | **Integer** | The accumulation goal horizon | 
 **horizonFrequency** | [**HorizonFrequencyEnum**](#HorizonFrequencyEnum) | Frequency in relation to the horizon | 
-**goalConfig** | **Object** |  | 
+**goalConfig** | [**GoalConfig**](GoalConfig.md) |  | 
 **depositConfig** | [**List&lt;GoalDepositConfig&gt;**](GoalDepositConfig.md) | The deposit attributes |  [optional]
-**recommendationConfig** | **Object** |  |  [optional]
+**recommendationConfig** | [**GoalRecommendationConfigRec**](GoalRecommendationConfigRec.md) |  |  [optional]
 **recommendType** | [**RecommendTypeEnum**](#RecommendTypeEnum) | The type of recommended action |  [optional]
 **confTgt** | [**BigDecimal**](BigDecimal.md) | The confidence target |  [optional]
 **n** | **Integer** | The number of Monte Carlo simulations to run |  [optional]

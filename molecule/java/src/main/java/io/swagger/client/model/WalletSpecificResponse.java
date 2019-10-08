@@ -293,7 +293,7 @@ public class WalletSpecificResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletSpecificResponse {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -320,4 +320,3 @@ public class WalletSpecificResponse {
   }
 
 }
-

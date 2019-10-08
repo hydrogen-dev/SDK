@@ -163,7 +163,7 @@ public class TokenSupplySpecificResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenSupplySpecificResponse {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    availableSupply: ").append(toIndentedString(availableSupply)).append("\n");
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
@@ -185,4 +185,3 @@ public class TokenSupplySpecificResponse {
   }
 
 }
-

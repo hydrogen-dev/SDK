@@ -16,6 +16,3 @@ Name | Type | Description | Notes
 **offeringSettings** | [**OfferingSettingsUpdatePayload**](OfferingSettingsUpdatePayload.md) |  |  [optional]
 **metadata** | **Object** | Custom information associated with the account in the format key:value |  [optional]
 **secondaryId** | **String** |  |  [optional]
-
-
-

@@ -96,7 +96,7 @@ public class WalletCreateClient {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletCreateClient {\n");
-    
+
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
     sb.append("    clientWalletAssociationType: ").append(toIndentedString(clientWalletAssociationType)).append("\n");
     sb.append("}");
@@ -115,4 +115,3 @@ public class WalletCreateClient {
   }
 
 }
-

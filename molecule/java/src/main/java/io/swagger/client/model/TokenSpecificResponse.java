@@ -386,7 +386,7 @@ public class TokenSpecificResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenSpecificResponse {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
@@ -418,4 +418,3 @@ public class TokenSpecificResponse {
   }
 
 }
-

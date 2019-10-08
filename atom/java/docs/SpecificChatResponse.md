@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **isNotification** | **Boolean** | Indicates if there is a notification associated with the chat log. Defaults to true or that there is a notification |  [optional]
 **isOpen** | **Boolean** | Indicates if the chat is still open. Defaults to true which indicates that the chat is still open |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**metadata** | **Object** | Custom information associated with the chat in the format key:value |  [optional]
 **updateDate** | **String** | Datetime the chat log was last updated |  [optional]
 
 

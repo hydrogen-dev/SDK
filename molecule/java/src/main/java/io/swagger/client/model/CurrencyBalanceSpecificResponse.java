@@ -185,7 +185,7 @@ public class CurrencyBalanceSpecificResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CurrencyBalanceSpecificResponse {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
@@ -208,4 +208,3 @@ public class CurrencyBalanceSpecificResponse {
   }
 
 }
-

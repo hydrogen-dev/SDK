@@ -35,7 +35,7 @@ public class PaginationSort {
   @JsonAdapter(DirectionEnum.Adapter.class)
   public enum DirectionEnum {
     ASC("ASC"),
-    
+
     DESC("DESC");
 
     private String value;
@@ -230,7 +230,7 @@ public class PaginationSort {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaginationSort {\n");
-    
+
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("    ignoreCase: ").append(toIndentedString(ignoreCase)).append("\n");
@@ -253,4 +253,3 @@ public class PaginationSort {
   }
 
 }
-

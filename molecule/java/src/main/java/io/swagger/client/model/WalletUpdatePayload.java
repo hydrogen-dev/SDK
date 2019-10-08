@@ -225,7 +225,7 @@ public class WalletUpdatePayload {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WalletUpdatePayload {\n");
-    
+
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    clients: ").append(toIndentedString(clients)).append("\n");
@@ -249,4 +249,3 @@ public class WalletUpdatePayload {
   }
 
 }
-

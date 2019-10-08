@@ -101,6 +101,8 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**delete_token**](docs/MoleculeApi.md#delete_token) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 *MoleculeApi* | [**get_currency_balance**](docs/MoleculeApi.md#get_currency_balance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 *MoleculeApi* | [**get_currency_balances**](docs/MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances defined for your application.
+*MoleculeApi* | [**get_currency_transfer**](docs/MoleculeApi.md#get_currency_transfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
+*MoleculeApi* | [**get_currency_transfers**](docs/MoleculeApi.md#get_currency_transfers) | **GET** /molecule/v1/currency_transfer | Get information for all currency transfers
 *MoleculeApi* | [**get_token**](docs/MoleculeApi.md#get_token) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 *MoleculeApi* | [**get_token_balance**](docs/MoleculeApi.md#get_token_balance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 *MoleculeApi* | [**get_token_balances**](docs/MoleculeApi.md#get_token_balances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
@@ -113,6 +115,7 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**get_wallet_key**](docs/MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *MoleculeApi* | [**get_wallet_keys**](docs/MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 *MoleculeApi* | [**get_wallets**](docs/MoleculeApi.md#get_wallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+*MoleculeApi* | [**post_currency_transfer**](docs/MoleculeApi.md#post_currency_transfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 *MoleculeApi* | [**post_token**](docs/MoleculeApi.md#post_token) | **POST** /molecule/v1/token | Create a token under your firm.
 *MoleculeApi* | [**post_token_crowdsale**](docs/MoleculeApi.md#post_token_crowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 *MoleculeApi* | [**post_token_deploy**](docs/MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
@@ -129,6 +132,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
+ - [CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
+ - [CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
  - [OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
  - [OfferingSettingsUpdatePayload](docs/OfferingSettingsUpdatePayload.md)
  - [Pagination](docs/Pagination.md)
@@ -153,6 +158,7 @@ Class | Method | HTTP request | Description
  - [WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
  - [WalletUpdatePayload](docs/WalletUpdatePayload.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
+ - [CurrencyTransferGetResponse](docs/CurrencyTransferGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)
  - [TokenGetResponse](docs/TokenGetResponse.md)

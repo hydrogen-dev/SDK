@@ -112,7 +112,7 @@ class TokenTransferPayload(object):
     def token_id(self):
         """Gets the token_id of this TokenTransferPayload.  # noqa: E501
 
-        The uuid of the token being transfered.  # noqa: E501
+        The uuid of the token being transferred.  # noqa: E501
 
         :return: The token_id of this TokenTransferPayload.  # noqa: E501
         :rtype: str
@@ -123,7 +123,7 @@ class TokenTransferPayload(object):
     def token_id(self, token_id):
         """Sets the token_id of this TokenTransferPayload.
 
-        The uuid of the token being transfered.  # noqa: E501
+        The uuid of the token being transferred.  # noqa: E501
 
         :param token_id: The token_id of this TokenTransferPayload.  # noqa: E501
         :type: str
@@ -137,7 +137,7 @@ class TokenTransferPayload(object):
     def amount(self):
         """Gets the amount of this TokenTransferPayload.  # noqa: E501
 
-        Amount of tokens to be transfered.  # noqa: E501
+        Amount of tokens to be transferred.  # noqa: E501
 
         :return: The amount of this TokenTransferPayload.  # noqa: E501
         :rtype: float
@@ -148,7 +148,7 @@ class TokenTransferPayload(object):
     def amount(self, amount):
         """Sets the amount of this TokenTransferPayload.
 
-        Amount of tokens to be transfered.  # noqa: E501
+        Amount of tokens to be transferred.  # noqa: E501
 
         :param amount: The amount of this TokenTransferPayload.  # noqa: E501
         :type: float

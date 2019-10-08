@@ -16,6 +16,8 @@ from __future__ import absolute_import
 
 # import models into model package
 from molecule_api.models.currency_balance_specific_response import CurrencyBalanceSpecificResponse
+from molecule_api.models.currency_transfer_payload import CurrencyTransferPayload
+from molecule_api.models.currency_transfer_specific_response import CurrencyTransferSpecificResponse
 from molecule_api.models.offering_settings_create_payload import OfferingSettingsCreatePayload
 from molecule_api.models.offering_settings_update_payload import OfferingSettingsUpdatePayload
 from molecule_api.models.pagination import Pagination
@@ -40,6 +42,7 @@ from molecule_api.models.wallet_key_create_response import WalletKeyCreateRespon
 from molecule_api.models.wallet_key_generator_payload import WalletKeyGeneratorPayload
 from molecule_api.models.wallet_update_payload import WalletUpdatePayload
 from molecule_api.models.currency_balance_get_response import CurrencyBalanceGetResponse
+from molecule_api.models.currency_transfer_get_response import CurrencyTransferGetResponse
 from molecule_api.models.token_balance_get_response import TokenBalanceGetResponse
 from molecule_api.models.token_create_response import TokenCreateResponse
 from molecule_api.models.token_get_response import TokenGetResponse

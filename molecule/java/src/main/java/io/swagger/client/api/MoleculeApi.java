@@ -29,6 +29,9 @@ import java.io.IOException;
 
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
+import io.swagger.client.model.CurrencyTransferGetResponse;
+import io.swagger.client.model.CurrencyTransferPayload;
+import io.swagger.client.model.CurrencyTransferSpecificResponse;
 import io.swagger.client.model.TokenBalanceGetResponse;
 import io.swagger.client.model.TokenBalanceSpecificResponse;
 import io.swagger.client.model.TokenCreatePayload;
@@ -41,6 +44,7 @@ import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
 import io.swagger.client.model.TokenTransferGetResponse;
+import io.swagger.client.model.TokenTransferPayload;
 import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
@@ -481,6 +485,282 @@ public class MoleculeApi {
 
         com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CurrencyBalanceGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrencyTransfer
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransferCall(UUID currencyTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency_transfer/{currency_transfer_id}"
+            .replaceAll("\\{" + "currency_transfer_id" + "\\}", apiClient.escapeString(currencyTransferId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrencyTransferValidateBeforeCall(UUID currencyTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'currencyTransferId' is set
+        if (currencyTransferId == null) {
+            throw new ApiException("Missing the required parameter 'currencyTransferId' when calling getCurrencyTransfer(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCurrencyTransferCall(currencyTransferId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve a currency transfer
+     * 
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @return CurrencyTransferSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     */
+    public CurrencyTransferSpecificResponse getCurrencyTransfer(UUID currencyTransferId) throws ApiException {
+        ApiResponse<CurrencyTransferSpecificResponse> resp = getCurrencyTransferWithHttpInfo(currencyTransferId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a currency transfer
+     * 
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @return ApiResponse&lt;CurrencyTransferSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     */
+    public ApiResponse<CurrencyTransferSpecificResponse> getCurrencyTransferWithHttpInfo(UUID currencyTransferId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyTransferValidateBeforeCall(currencyTransferId, null, null);
+        Type localVarReturnType = new TypeToken<CurrencyTransferSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a currency transfer (asynchronously)
+     * 
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransferAsync(UUID currencyTransferId, final ApiCallback<CurrencyTransferSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrencyTransferValidateBeforeCall(currencyTransferId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencyTransferSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrencyTransfers
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency_transfer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrencyTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getCurrencyTransfersCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all currency transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @return CurrencyTransferGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     */
+    public CurrencyTransferGetResponse getCurrencyTransfers(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
+        ApiResponse<CurrencyTransferGetResponse> resp = getCurrencyTransfersWithHttpInfo(page, size, orderBy, ascending);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all currency transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @return ApiResponse&lt;CurrencyTransferGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     */
+    public ApiResponse<CurrencyTransferGetResponse> getCurrencyTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, null, null);
+        Type localVarReturnType = new TypeToken<CurrencyTransferGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all currency transfers (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<CurrencyTransferGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencyTransferGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2141,6 +2421,132 @@ public class MoleculeApi {
         return call;
     }
     /**
+     * Build call for postCurrencyTransfer
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCurrencyTransferCall(CurrencyTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency_transfer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCurrencyTransferValidateBeforeCall(CurrencyTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCurrencyTransfer(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCurrencyTransferCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Transfer currency between wallets
+     * 
+     * @param payload  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public void postCurrencyTransfer(CurrencyTransferPayload payload) throws ApiException {
+        postCurrencyTransferWithHttpInfo(payload);
+    }
+
+    /**
+     * Transfer currency between wallets
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public ApiResponse<Void> postCurrencyTransferWithHttpInfo(CurrencyTransferPayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCurrencyTransferValidateBeforeCall(payload, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Transfer currency between wallets (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCurrencyTransferAsync(CurrencyTransferPayload payload, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCurrencyTransferValidateBeforeCall(payload, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for postToken
      * @param payload  (required)
      * @param progressListener Progress listener
@@ -2666,7 +3072,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenTransferCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postTokenTransferCall(TokenTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
 
         // create path and map variables
@@ -2708,7 +3114,7 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postTokenTransferValidateBeforeCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postTokenTransferValidateBeforeCall(TokenTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'payload' is set
         if (payload == null) {
@@ -2729,7 +3135,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public void postTokenTransfer(TokenPurchasePayload payload) throws ApiException {
+    public void postTokenTransfer(TokenTransferPayload payload) throws ApiException {
         postTokenTransferWithHttpInfo(payload);
     }
 
@@ -2742,7 +3148,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public ApiResponse<Void> postTokenTransferWithHttpInfo(TokenPurchasePayload payload) throws ApiException {
+    public ApiResponse<Void> postTokenTransferWithHttpInfo(TokenTransferPayload payload) throws ApiException {
         com.squareup.okhttp.Call call = postTokenTransferValidateBeforeCall(payload, null, null);
         return apiClient.execute(call);
     }
@@ -2757,7 +3163,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenTransferAsync(TokenPurchasePayload payload, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postTokenTransferAsync(TokenTransferPayload payload, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

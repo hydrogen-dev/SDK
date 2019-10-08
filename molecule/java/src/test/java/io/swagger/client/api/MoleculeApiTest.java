@@ -16,6 +16,9 @@ package io.swagger.client.api;
 import molecule_api.ApiException;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
+import io.swagger.client.model.CurrencyTransferGetResponse;
+import io.swagger.client.model.CurrencyTransferPayload;
+import io.swagger.client.model.CurrencyTransferSpecificResponse;
 import io.swagger.client.model.TokenBalanceGetResponse;
 import io.swagger.client.model.TokenBalanceSpecificResponse;
 import io.swagger.client.model.TokenCreatePayload;
@@ -28,6 +31,7 @@ import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
 import io.swagger.client.model.TokenTransferGetResponse;
+import io.swagger.client.model.TokenTransferPayload;
 import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
@@ -106,6 +110,41 @@ public class MoleculeApiTest {
         String orderBy = null;
         Boolean ascending = null;
         CurrencyBalanceGetResponse response = api.getCurrencyBalances(page, size, orderBy, ascending);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve a currency transfer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrencyTransferTest() throws ApiException {
+        UUID currencyTransferId = null;
+        CurrencyTransferSpecificResponse response = api.getCurrencyTransfer(currencyTransferId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all currency transfers
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrencyTransfersTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        CurrencyTransferGetResponse response = api.getCurrencyTransfers(page, size, orderBy, ascending);
 
         // TODO: test validations
     }
@@ -321,6 +360,22 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Transfer currency between wallets
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCurrencyTransferTest() throws ApiException {
+        CurrencyTransferPayload payload = null;
+        api.postCurrencyTransfer(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Create a token under your firm.
      *
      * 
@@ -394,7 +449,7 @@ public class MoleculeApiTest {
      */
     @Test
     public void postTokenTransferTest() throws ApiException {
-        TokenPurchasePayload payload = null;
+        TokenTransferPayload payload = null;
         api.postTokenTransfer(payload);
 
         // TODO: test validations

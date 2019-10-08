@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**deleteToken**](MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 [**getCurrencyBalance**](MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 [**getCurrencyBalances**](MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances defined for your application.
+[**getCurrencyTransfer**](MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
+[**getCurrencyTransfers**](MoleculeApi.md#getCurrencyTransfers) | **GET** /molecule/v1/currency_transfer | Get information for all currency transfers
 [**getToken**](MoleculeApi.md#getToken) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 [**getTokenBalance**](MoleculeApi.md#getTokenBalance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 [**getTokenBalances**](MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
@@ -19,6 +21,7 @@ Method | HTTP request | Description
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**getWallets**](MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**postCurrencyTransfer**](MoleculeApi.md#postCurrencyTransfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 [**postToken**](MoleculeApi.md#postToken) | **POST** /molecule/v1/token | Create a token under your firm.
 [**postTokenCrowdsale**](MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
 [**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
@@ -207,6 +210,132 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CurrencyBalanceGetResponse**](CurrencyBalanceGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrencyTransfer"></a>
+# **getCurrencyTransfer**
+> CurrencyTransferSpecificResponse getCurrencyTransfer(currencyTransferId)
+
+Retrieve a currency transfer
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+UUID currencyTransferId = new UUID(); // UUID | UUID of a currency transfer
+try {
+    CurrencyTransferSpecificResponse result = apiInstance.getCurrencyTransfer(currencyTransferId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getCurrencyTransfer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyTransferId** | [**UUID**](.md)| UUID of a currency transfer |
+
+### Return type
+
+[**CurrencyTransferSpecificResponse**](CurrencyTransferSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrencyTransfers"></a>
+# **getCurrencyTransfers**
+> CurrencyTransferGetResponse getCurrencyTransfers(page, size, orderBy, ascending)
+
+Get information for all currency transfers
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+try {
+    CurrencyTransferGetResponse result = apiInstance.getCurrencyTransfers(page, size, orderBy, ascending);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getCurrencyTransfers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+
+### Return type
+
+[**CurrencyTransferGetResponse**](CurrencyTransferGetResponse.md)
 
 ### Authorization
 
@@ -973,6 +1102,65 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postCurrencyTransfer"></a>
+# **postCurrencyTransfer**
+> postCurrencyTransfer(payload)
+
+Transfer currency between wallets
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+CurrencyTransferPayload payload = new CurrencyTransferPayload(); // CurrencyTransferPayload | 
+try {
+    apiInstance.postCurrencyTransfer(payload);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#postCurrencyTransfer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CurrencyTransferPayload**](CurrencyTransferPayload.md)|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postToken"></a>
 # **postToken**
 > TokenCreateResponse postToken(payload)
@@ -1243,7 +1431,7 @@ oauth.setAccessToken(token);
 oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
-TokenPurchasePayload payload = new TokenPurchasePayload(); // TokenPurchasePayload | 
+TokenTransferPayload payload = new TokenTransferPayload(); // TokenTransferPayload | 
 try {
     apiInstance.postTokenTransfer(payload);
 } catch (ApiException e) {
@@ -1256,7 +1444,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  |
+ **payload** | [**TokenTransferPayload**](TokenTransferPayload.md)|  |
 
 ### Return type
 

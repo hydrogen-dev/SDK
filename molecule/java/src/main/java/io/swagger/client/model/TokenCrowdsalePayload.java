@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * TokenCrowdsalePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:50:03.983-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-08T11:09:45.105-04:00")
 public class TokenCrowdsalePayload {
   @SerializedName("token_id")
   private UUID tokenId = null;
@@ -61,10 +61,10 @@ public class TokenCrowdsalePayload {
   }
 
    /**
-   * Amount of token supply to be transfered to the crowdsale contract.
+   * Amount of token supply to be transferred to the crowdsale contract.
    * @return supply
   **/
-  @ApiModelProperty(required = true, value = "Amount of token supply to be transfered to the crowdsale contract.")
+  @ApiModelProperty(required = true, value = "Amount of token supply to be transferred to the crowdsale contract.")
   public BigDecimal getSupply() {
     return supply;
   }

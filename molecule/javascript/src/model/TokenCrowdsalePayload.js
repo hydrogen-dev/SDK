@@ -45,7 +45,7 @@
    * @alias module:model/TokenCrowdsalePayload
    * @class
    * @param tokenId {String} The uuid of the token being deployed.
-   * @param supply {Number} Amount of token supply to be transfered to the crowdsale contract.
+   * @param supply {Number} Amount of token supply to be transferred to the crowdsale contract.
    */
   var exports = function(tokenId, supply) {
     var _this = this;
@@ -81,7 +81,7 @@
    */
   exports.prototype['token_id'] = undefined;
   /**
-   * Amount of token supply to be transfered to the crowdsale contract.
+   * Amount of token supply to be transferred to the crowdsale contract.
    * @member {Number} supply
    */
   exports.prototype['supply'] = undefined;

@@ -823,7 +823,7 @@ paths:
           required: true
           in: body
           schema:
-            $ref: '#definitions/token_purchase_payload'
+            $ref: '#definitions/token_transfer_payload'
       responses:
         200:
           $ref: '#/responses/200'
@@ -906,6 +906,105 @@ paths:
           $ref: '#/responses/503'
     parameters:
       - $ref: '#/parameters/path_token_transfer_uuid'
+
+  /molecule/v1/currency_transfer:
+    post:
+      operationId: postCurrencyTransfer
+      summary: Transfer currency between wallets
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/currency_transfer_payload'
+      responses:
+        200:
+          $ref: '#/responses/200'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    get:
+      operationId: getCurrencyTransfers
+      summary: Get information for all currency transfers
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_transfer_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+
+  /molecule/v1/currency_transfer/{currency_transfer_id}:
+    get:
+      operationId: getCurrencyTransfer
+      summary: Retrieve a currency transfer
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_transfer_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_currency_transfer_uuid'
 
 # ********** Parameters: describe variables that may appear in the request URL **********
 parameters:
@@ -994,6 +1093,13 @@ parameters:
     format: uuid
     required: true
     description: UUID of a token transfer
+  path_currency_transfer_uuid:
+    in: path
+    name: currency_transfer_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a currency transfer
 
 # ********** Responses: describe possible response codes **********
 responses:
@@ -1226,11 +1332,11 @@ definitions:
           create_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was created
+            description: Datetime the token balance record was created
           update_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was updated
+            description: Datetime the token balance record was updated
   token_get_response:
     allOf:
       - type: object
@@ -1289,11 +1395,11 @@ definitions:
           create_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was created
+            description: Datetime the token supply record was created
           update_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was updated
+            description: Datetime the token supply record was updated
   token_transfer_get_response:
     allOf:
       - type: object
@@ -1322,21 +1428,63 @@ definitions:
           token_id:
             type: string
             format: uuid
-            description: ID of the token being transfered
+            description: ID of the token being transferred
           amount:
             type: number
-            description: Amount of token's being transfered
+            description: Amount of tokens being transferred
           tx_hash:
             type: string
             description: Hash of the transfer transaction
           create_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was created
+            description: Datetime the token transfer record was created
           update_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was updated
+            description: Datetime the token transfer record was updated
+  currency_transfer_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/currency_transfer_specific_response'
+      - $ref: '#/definitions/pagination'
+  currency_transfer_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the token supply
+          sender_wallet_id:
+            type: string
+            format: uuid
+            description: ID of the sender wallet
+          receiver_wallet_id:
+            type: string
+            format: uuid
+            description: ID of the receiver wallet
+          currency_symbol:
+            type: string
+            description: Symbol of the currency being transferred
+          amount:
+            type: number
+            description: Amount of currencies being transferred
+          tx_hash:
+            type: string
+            description: Hash of the transfer transaction
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the currency transfer record was created
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the currency transfer record was updated
 
   # Request payloads
   wallet_create_client:
@@ -1640,7 +1788,7 @@ definitions:
         description: The uuid of the token being deployed.
       supply:
         type: number
-        description: Amount of token supply to be transfered to the crowdsale contract.
+        description: Amount of token supply to be transferred to the crowdsale contract.
   token_whitelist_payload:
     type: object
     required:
@@ -1692,7 +1840,29 @@ definitions:
       token_id:
         type: string
         format: uuid
-        description: The uuid of the token being transfered.
+        description: The uuid of the token being transferred.
       amount:
         type: number
-        description: Amount of tokens to be transfered.
+        description: Amount of tokens to be transferred.
+  currency_transfer_payload:
+    type: object
+    required:
+      - sender_wallet_id
+      - receiver_wallet_id
+      - currency_symbol
+      - amount
+    properties:
+      sender_wallet_id:
+        type: string
+        format: uuid
+        description: The uuid of the sender wallet.
+      receiver_wallet_id:
+        type: string
+        format: uuid
+        description: The uuid of the receiver wallet.
+      currency_symbol:
+        type: string
+        description: The uuid of the token being transferred.
+      amount:
+        type: number
+        description: Amount of tokens to be transferred.

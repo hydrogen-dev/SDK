@@ -46,8 +46,8 @@
    * @class
    * @param senderWalletId {String} The uuid of the sender wallet.
    * @param receiverWalletId {String} The uuid of the receiver wallet.
-   * @param tokenId {String} The uuid of the token being transfered.
-   * @param amount {Number} Amount of tokens to be transfered.
+   * @param tokenId {String} The uuid of the token being transferred.
+   * @param amount {Number} Amount of tokens to be transferred.
    */
   var exports = function(senderWalletId, receiverWalletId, tokenId, amount) {
     var _this = this;
@@ -96,12 +96,12 @@
    */
   exports.prototype['receiver_wallet_id'] = undefined;
   /**
-   * The uuid of the token being transfered.
+   * The uuid of the token being transferred.
    * @member {String} token_id
    */
   exports.prototype['token_id'] = undefined;
   /**
-   * Amount of tokens to be transfered.
+   * Amount of tokens to be transferred.
    * @member {Number} amount
    */
   exports.prototype['amount'] = undefined;

@@ -113,12 +113,12 @@
    */
   exports.prototype['receiver_wallet_id'] = undefined;
   /**
-   * ID of the token being transfered
+   * ID of the token being transferred
    * @member {String} token_id
    */
   exports.prototype['token_id'] = undefined;
   /**
-   * Amount of token's being transfered
+   * Amount of tokens being transferred
    * @member {Number} amount
    */
   exports.prototype['amount'] = undefined;
@@ -128,12 +128,12 @@
    */
   exports.prototype['tx_hash'] = undefined;
   /**
-   * Datetime the currency balance record was created
+   * Datetime the token transfer record was created
    * @member {String} create_date
    */
   exports.prototype['create_date'] = undefined;
   /**
-   * Datetime the currency balance record was updated
+   * Datetime the token transfer record was updated
    * @member {String} update_date
    */
   exports.prototype['update_date'] = undefined;

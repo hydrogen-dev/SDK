@@ -23,19 +23,19 @@ module MoleculeApi
     # ID of the receiver wallet
     attr_accessor :receiver_wallet_id
 
-    # ID of the token being transfered
+    # ID of the token being transferred
     attr_accessor :token_id
 
-    # Amount of token's being transfered
+    # Amount of tokens being transferred
     attr_accessor :amount
 
     # Hash of the transfer transaction
     attr_accessor :tx_hash
 
-    # Datetime the currency balance record was created
+    # Datetime the token transfer record was created
     attr_accessor :create_date
 
-    # Datetime the currency balance record was updated
+    # Datetime the token transfer record was updated
     attr_accessor :update_date
 
     # Attribute mapping from ruby-style variable name to JSON key.

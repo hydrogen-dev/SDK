@@ -140,7 +140,7 @@ class TokenSupplySpecificResponse(object):
     def create_date(self):
         """Gets the create_date of this TokenSupplySpecificResponse.  # noqa: E501
 
-        Datetime the currency balance record was created  # noqa: E501
+        Datetime the token supply record was created  # noqa: E501
 
         :return: The create_date of this TokenSupplySpecificResponse.  # noqa: E501
         :rtype: str
@@ -151,7 +151,7 @@ class TokenSupplySpecificResponse(object):
     def create_date(self, create_date):
         """Sets the create_date of this TokenSupplySpecificResponse.
 
-        Datetime the currency balance record was created  # noqa: E501
+        Datetime the token supply record was created  # noqa: E501
 
         :param create_date: The create_date of this TokenSupplySpecificResponse.  # noqa: E501
         :type: str
@@ -163,7 +163,7 @@ class TokenSupplySpecificResponse(object):
     def update_date(self):
         """Gets the update_date of this TokenSupplySpecificResponse.  # noqa: E501
 
-        Datetime the currency balance record was updated  # noqa: E501
+        Datetime the token supply record was updated  # noqa: E501
 
         :return: The update_date of this TokenSupplySpecificResponse.  # noqa: E501
         :rtype: str
@@ -174,7 +174,7 @@ class TokenSupplySpecificResponse(object):
     def update_date(self, update_date):
         """Sets the update_date of this TokenSupplySpecificResponse.
 
-        Datetime the currency balance record was updated  # noqa: E501
+        Datetime the token supply record was updated  # noqa: E501
 
         :param update_date: The update_date of this TokenSupplySpecificResponse.  # noqa: E501
         :type: str

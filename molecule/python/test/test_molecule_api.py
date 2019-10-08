@@ -50,6 +50,20 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_currency_transfer(self):
+        """Test case for get_currency_transfer
+
+        Retrieve a currency transfer  # noqa: E501
+        """
+        pass
+
+    def test_get_currency_transfers(self):
+        """Test case for get_currency_transfers
+
+        Get information for all currency transfers  # noqa: E501
+        """
+        pass
+
     def test_get_token(self):
         """Test case for get_token
 
@@ -131,6 +145,13 @@ class TestMoleculeApi(unittest.TestCase):
         """Test case for get_wallets
 
         Get information for all wallets defined for your firm  # noqa: E501
+        """
+        pass
+
+    def test_post_currency_transfer(self):
+        """Test case for post_currency_transfer
+
+        Transfer currency between wallets  # noqa: E501
         """
         pass
 

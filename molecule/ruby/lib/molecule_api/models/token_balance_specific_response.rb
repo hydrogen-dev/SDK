@@ -26,10 +26,10 @@ module MoleculeApi
     # The ID of the associated token.
     attr_accessor :token_id
 
-    # Datetime the currency balance record was created
+    # Datetime the token balance record was created
     attr_accessor :create_date
 
-    # Datetime the currency balance record was updated
+    # Datetime the token balance record was updated
     attr_accessor :update_date
 
     # Attribute mapping from ruby-style variable name to JSON key.

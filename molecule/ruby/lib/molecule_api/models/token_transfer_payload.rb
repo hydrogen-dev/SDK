@@ -20,10 +20,10 @@ module MoleculeApi
     # The uuid of the receiver wallet.
     attr_accessor :receiver_wallet_id
 
-    # The uuid of the token being transfered.
+    # The uuid of the token being transferred.
     attr_accessor :token_id
 
-    # Amount of tokens to be transfered.
+    # Amount of tokens to be transferred.
     attr_accessor :amount
 
     # Attribute mapping from ruby-style variable name to JSON key.

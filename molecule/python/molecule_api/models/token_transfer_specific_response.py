@@ -155,7 +155,7 @@ class TokenTransferSpecificResponse(object):
     def token_id(self):
         """Gets the token_id of this TokenTransferSpecificResponse.  # noqa: E501
 
-        ID of the token being transfered  # noqa: E501
+        ID of the token being transferred  # noqa: E501
 
         :return: The token_id of this TokenTransferSpecificResponse.  # noqa: E501
         :rtype: str
@@ -166,7 +166,7 @@ class TokenTransferSpecificResponse(object):
     def token_id(self, token_id):
         """Sets the token_id of this TokenTransferSpecificResponse.
 
-        ID of the token being transfered  # noqa: E501
+        ID of the token being transferred  # noqa: E501
 
         :param token_id: The token_id of this TokenTransferSpecificResponse.  # noqa: E501
         :type: str
@@ -178,7 +178,7 @@ class TokenTransferSpecificResponse(object):
     def amount(self):
         """Gets the amount of this TokenTransferSpecificResponse.  # noqa: E501
 
-        Amount of token's being transfered  # noqa: E501
+        Amount of tokens being transferred  # noqa: E501
 
         :return: The amount of this TokenTransferSpecificResponse.  # noqa: E501
         :rtype: float
@@ -189,7 +189,7 @@ class TokenTransferSpecificResponse(object):
     def amount(self, amount):
         """Sets the amount of this TokenTransferSpecificResponse.
 
-        Amount of token's being transfered  # noqa: E501
+        Amount of tokens being transferred  # noqa: E501
 
         :param amount: The amount of this TokenTransferSpecificResponse.  # noqa: E501
         :type: float
@@ -224,7 +224,7 @@ class TokenTransferSpecificResponse(object):
     def create_date(self):
         """Gets the create_date of this TokenTransferSpecificResponse.  # noqa: E501
 
-        Datetime the currency balance record was created  # noqa: E501
+        Datetime the token transfer record was created  # noqa: E501
 
         :return: The create_date of this TokenTransferSpecificResponse.  # noqa: E501
         :rtype: str
@@ -235,7 +235,7 @@ class TokenTransferSpecificResponse(object):
     def create_date(self, create_date):
         """Sets the create_date of this TokenTransferSpecificResponse.
 
-        Datetime the currency balance record was created  # noqa: E501
+        Datetime the token transfer record was created  # noqa: E501
 
         :param create_date: The create_date of this TokenTransferSpecificResponse.  # noqa: E501
         :type: str
@@ -247,7 +247,7 @@ class TokenTransferSpecificResponse(object):
     def update_date(self):
         """Gets the update_date of this TokenTransferSpecificResponse.  # noqa: E501
 
-        Datetime the currency balance record was updated  # noqa: E501
+        Datetime the token transfer record was updated  # noqa: E501
 
         :return: The update_date of this TokenTransferSpecificResponse.  # noqa: E501
         :rtype: str
@@ -258,7 +258,7 @@ class TokenTransferSpecificResponse(object):
     def update_date(self, update_date):
         """Sets the update_date of this TokenTransferSpecificResponse.
 
-        Datetime the currency balance record was updated  # noqa: E501
+        Datetime the token transfer record was updated  # noqa: E501
 
         :param update_date: The update_date of this TokenTransferSpecificResponse.  # noqa: E501
         :type: str

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * TokenTransferSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:50:03.983-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-08T11:09:45.105-04:00")
 public class TokenTransferSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -115,10 +115,10 @@ public class TokenTransferSpecificResponse {
   }
 
    /**
-   * ID of the token being transfered
+   * ID of the token being transferred
    * @return tokenId
   **/
-  @ApiModelProperty(value = "ID of the token being transfered")
+  @ApiModelProperty(value = "ID of the token being transferred")
   public UUID getTokenId() {
     return tokenId;
   }
@@ -133,10 +133,10 @@ public class TokenTransferSpecificResponse {
   }
 
    /**
-   * Amount of token&#39;s being transfered
+   * Amount of tokens being transferred
    * @return amount
   **/
-  @ApiModelProperty(value = "Amount of token's being transfered")
+  @ApiModelProperty(value = "Amount of tokens being transferred")
   public BigDecimal getAmount() {
     return amount;
   }
@@ -169,10 +169,10 @@ public class TokenTransferSpecificResponse {
   }
 
    /**
-   * Datetime the currency balance record was created
+   * Datetime the token transfer record was created
    * @return createDate
   **/
-  @ApiModelProperty(value = "Datetime the currency balance record was created")
+  @ApiModelProperty(value = "Datetime the token transfer record was created")
   public String getCreateDate() {
     return createDate;
   }
@@ -187,10 +187,10 @@ public class TokenTransferSpecificResponse {
   }
 
    /**
-   * Datetime the currency balance record was updated
+   * Datetime the token transfer record was updated
    * @return updateDate
   **/
-  @ApiModelProperty(value = "Datetime the currency balance record was updated")
+  @ApiModelProperty(value = "Datetime the token transfer record was updated")
   public String getUpdateDate() {
     return updateDate;
   }

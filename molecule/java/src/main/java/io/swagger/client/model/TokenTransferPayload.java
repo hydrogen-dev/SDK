@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * TokenTransferPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:50:03.983-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-08T11:09:45.105-04:00")
 public class TokenTransferPayload {
   @SerializedName("sender_wallet_id")
   private UUID senderWalletId = null;
@@ -85,10 +85,10 @@ public class TokenTransferPayload {
   }
 
    /**
-   * The uuid of the token being transfered.
+   * The uuid of the token being transferred.
    * @return tokenId
   **/
-  @ApiModelProperty(required = true, value = "The uuid of the token being transfered.")
+  @ApiModelProperty(required = true, value = "The uuid of the token being transferred.")
   public UUID getTokenId() {
     return tokenId;
   }
@@ -103,10 +103,10 @@ public class TokenTransferPayload {
   }
 
    /**
-   * Amount of tokens to be transfered.
+   * Amount of tokens to be transferred.
    * @return amount
   **/
-  @ApiModelProperty(required = true, value = "Amount of tokens to be transfered.")
+  @ApiModelProperty(required = true, value = "Amount of tokens to be transferred.")
   public BigDecimal getAmount() {
     return amount;
   }

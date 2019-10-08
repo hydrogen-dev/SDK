@@ -81,6 +81,26 @@
         done();
       });
     });
+    describe('getCurrencyTransfer', function() {
+      it('should call getCurrencyTransfer successfully', function(done) {
+        //uncomment below and update the code to test getCurrencyTransfer
+        //instance.getCurrencyTransfer(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCurrencyTransfers', function() {
+      it('should call getCurrencyTransfers successfully', function(done) {
+        //uncomment below and update the code to test getCurrencyTransfers
+        //instance.getCurrencyTransfers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getToken', function() {
       it('should call getToken successfully', function(done) {
         //uncomment below and update the code to test getToken
@@ -195,6 +215,16 @@
       it('should call getWallets successfully', function(done) {
         //uncomment below and update the code to test getWallets
         //instance.getWallets(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCurrencyTransfer', function() {
+      it('should call postCurrencyTransfer successfully', function(done) {
+        //uncomment below and update the code to test postCurrencyTransfer
+        //instance.postCurrencyTransfer(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

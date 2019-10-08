@@ -14,6 +14,17 @@ Please see the official Atom API documentation: [Nucleus](https://www.hydrogenpl
 
 Atom SDKs are generated from the [Atom Swagger specification](atom/atom.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
 
+## Molecule
+Molecule SDKs are offered in:
+* [Java](molecule/java)
+* [Javascript/Node](molecule/javascript)
+* [Python](molecule/python)
+* [Ruby](molecule/ruby)
+
+Please see the official Molecule API documentation: [Molecule](https://www.hydrogenplatform.com/docs/molecule/v1/)
+
+Molecule SDKs are generated from the [Molecule Swagger specification](molecule/molecule.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
+
 ## Hydro - Raindrop
 Hydro Raindrop SDKs are offered in:
 * [Java](hydro/raindrop/java)

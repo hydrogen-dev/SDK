@@ -1,0 +1,1524 @@
+# Swagger/OAS version
+swagger: "2.0"
+
+# API-level general info
+info:
+  title: Hydrogen Molecule API
+  description: The Hydrogen Molecule API
+  termsOfService: https://www.hydrogenplatform.com/legal/terms
+  contact:
+    name: Hydrogen Technology Corporation
+    url: https://www.hydrogenplatform.com/contact
+    email: info@hydrogenplatform.com
+  version: "1.0.0"
+host: api.hydrogenplatform.com
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: Molecule
+    description: Molecule API
+    externalDocs:
+      url: https://www.hydrogenplatform.com/docs/molecule/v1/
+
+# API authentication details
+securityDefinitions:
+  oauth:
+    type: oauth2
+    flow: application
+    tokenUrl: https://api.hydrogenplatform.com/authorization/v1/oauth/token?grant_type=client_credentials
+    scopes:
+      molecule: access molecule endpoints
+
+# ********** Paths: describe endpoints and associated methods, parameters, payloads, and responses **********
+paths:
+  /molecule/v1/wallet:
+  # GET & POST for all Wallet resources
+    get:
+      operationId: getWallets
+      summary: Get information for all wallets defined for your firm
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+    post:
+      operationId: postWallet
+      summary: Create a wallet under your firm.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-wallet
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/wallet_create_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /molecule/v1/wallet/{wallet_id}/:
+  # GET, PUT, and DELETE for a specific Wallet resource
+    get:
+      operationId: getWallet
+      summary: Retrieve a wallet
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-wallet
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateWallet
+      summary: Update a wallet
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-wallet
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/wallet_update_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_wallet_uuid'
+
+  /molecule/v1/wallet_key:
+    get:
+      operationId: getWalletKeys
+      summary: Get all wallet keys associated with wallets defined for your firm.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_key_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+    post:
+      operationId: postWalletKey
+      summary: Associate an existing key pair with a wallet defined for your firm.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Store-an-existing-key
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/wallet_key_create_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_key_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /molecule/v1/wallet_key/generator:
+    post:
+      operationId: postWalletKeyGenerator
+      summary: Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Generate-and-store-a-key
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/wallet_key_generator_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_key_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+  /molecule/v1/wallet_key/{wallet_key_id}/:
+    get:
+      operationId: getWalletKey
+      summary: Retrieve a wallet key
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-wallet-key
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_key_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_wallet_key_uuid'
+
+  /molecule/v1/currency_balance:
+    get:
+      operationId: getCurrencyBalances
+      summary: Get information for all currency balances defined for your application.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_balance_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+
+  /molecule/v1/currency_balance/{currency_balance_id}:
+    get:
+      operationId: getCurrencyBalance
+      summary: Retrieve a currency balance
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-balance
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_balance_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_currency_balance_uuid'
+
+  /molecule/v1/token_balance:
+    get:
+      operationId: getTokenBalances
+      summary: Get information for all token balances defined for your application.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_balance_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+
+  /molecule/v1/token_balance/{token_balance_id}:
+    get:
+      operationId: getTokenBalance
+      summary: Retrieve a token balance
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-balance
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_balance_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_token_balance_uuid'
+
+  /molecule/v1/token:
+    get:
+      operationId: getTokens
+      summary: Get information for all tokens defined for your firm
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+    post:
+      operationId: postToken
+      summary: Create a token under your firm.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-token
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/token_create_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
+  /molecule/v1/token/{token_id}/:
+    get:
+      operationId: getToken
+      summary: Retrieve a token
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateToken
+      summary: Update a token
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-token
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/token_update_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    delete:
+      operationId: deleteToken
+      summary: Delete a token
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-token
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_token_uuid'
+
+  /molecule/v1/token/deploy:
+    post:
+      operationId: postTokenDeploy
+      summary: Deploy a secuirty token contract and its crowdsale contract to blockchain.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/token_deploy_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
+  /molecule/v1/token/crowdsale:
+    post:
+      operationId: postTokenCrowdsale
+      summary: Transfer tokens to a token's crowdsale address.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/token_crowdsale_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
+  /molecule/v1/token/whitelist:
+    post:
+      operationId: postTokenWhitelist
+      summary: Add an investor to a token's whitelist
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/token_whitelist_payload'
+      responses:
+        200:
+          $ref: '#/responses/200'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
+  /molecule/v1/token/purchase:
+    post:
+      operationId: postTokenPurchase
+      summary: Participate in a token's crowdsale and purchase tokens.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/token_purchase_payload'
+      responses:
+        200:
+          $ref: '#/responses/200'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
+  /molecule/v1/token_supply:
+    get:
+      operationId: getTokenSupplies
+      summary: Get information for all token supplies defined for your application.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_supply_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+
+  /molecule/v1/token_supply/{token_supply_id}:
+    get:
+      operationId: getTokenSupply
+      summary: Retrieve a token supply
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-supply
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_supply_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_token_supply_uuid'
+# ********** Parameters: describe variables that may appear in the request URL **********
+parameters:
+
+  # Pagination query params
+  query_pagination_page:
+    in: query
+    name: page
+    description: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    required: false
+    type: integer
+    default: 0
+    minimum: 0
+  query_pagination_size:
+    in: query
+    name: size
+    description: The number or records to be included per page. The default is 25. There is no max value.
+    required: false
+    type: integer
+    default: 25
+    minimum: 0
+  query_pagination_orderby:
+    in: query
+    name: order_by
+    description: The field in the response body to order the list by. Default is update_date.
+    required: false
+    type: string
+    default: update_date
+  query_pagination_ascending:
+    in: query
+    name: ascending
+    description: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    required: false
+    type: boolean
+    default: false
+
+  # Filter query params
+
+  # Resource path params
+  path_wallet_uuid:
+    in: path
+    name: wallet_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a wallet
+  path_wallet_key_uuid:
+    in: path
+    name: wallet_key_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a wallet key
+  path_currency_balance_uuid:
+    in: path
+    name: currency_balance_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a currency balance
+  path_token_balance_uuid:
+    in: path
+    name: token_balance_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a token balance
+  path_token_uuid:
+    in: path
+    name: token_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a token
+  path_token_supply_uuid:
+    in: path
+    name: token_supply_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a token supply
+
+# ********** Responses: describe possible response codes **********
+responses:
+    200:
+      description: Successful response
+    204:
+      description: No content
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden
+    404:
+      description: Not found
+    405:
+      description: Not allowed
+    429:
+      description: Too many requests
+    500:
+      description: Internal server error
+    503:
+      description: Service unavailable
+
+# ********** Definitions: define request & response objects available for reference throughout the file **********
+definitions:
+
+  # General
+  secondary_id:
+    type: string
+    description: Alternate ID that can be used to identify the object such as an internal id
+
+  # Pagination
+  pagination:
+    type: object
+    properties:
+      last:
+        type: boolean
+        description: If true, the last record in the result set is shown
+      total_pages:
+        type: integer
+        description: Total number of pages in the result set
+      total_elements:
+        type: integer
+        description: Total number of elements in the result set
+      sort:
+        type: array
+        description: Details of the sort
+        items:
+          type: object
+          properties:
+            direction:
+              type: string
+              description: ASC if ascending sort, DESC if descending sort
+              enum:
+                - ASC
+                - DESC
+            property:
+              type: string
+              description: Property on which the records are sorted
+            ignore_case:
+              type: boolean
+              description: If true, ignore case when sorting
+            null_handling:
+              type: string
+              description: Type of null handling applied
+            descending:
+              type: boolean
+              description: If true, data is sorted in ascending order
+            ascending:
+              type: boolean
+              description: If true, data is sorted in descending order
+      first:
+        type: boolean
+        description: If true, the first record in the result set is shown
+      number_of_elements:
+        type: integer
+        description: Number of elements per page
+      size:
+        type: integer
+        description: The number or records to be included per page. The default is 25. There is no max value.
+        default: 25
+      number:
+        type: integer
+        description: Number of the first result shown
+
+  # Response objects
+  wallet_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/wallet_specific_response'
+      - $ref: '#/definitions/pagination'
+  wallet_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the wallet record was updated
+      - $ref: '#/definitions/wallet_create_response'
+  wallet_create_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the wallet record
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the wallet record was created
+      - $ref: '#/definitions/wallet_create_payload'
+  wallet_key_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/wallet_key_specific_response'
+      - $ref: '#/definitions/pagination'
+  wallet_key_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the wallet key record was updated
+      - $ref: '#/definitions/wallet_key_create_response'
+  wallet_key_create_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the wallet key record
+          key_id:
+            type: string
+            description: The ID of the associated key within the Key Server
+          key_server:
+            type: string
+            description: Name of the Key Server in use by the client
+          address:
+            type: string
+            description: Public address of the key pair getting stored
+          private_key:
+            type: string
+            description: Private key of the key pair getting stored
+          metadata:
+            type: object
+            description: Custom information associated with the account in the format key:value
+            additionalProperties: true
+          secondary_id:
+            $ref: '#/definitions/secondary_id'
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the wallet key record was created
+  currency_balance_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/currency_balance_specific_response'
+      - $ref: '#/definitions/pagination'
+  currency_balance_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the currency balance
+          balance:
+            type: number
+            description: Balance of the wallet
+          wallet_id:
+            type: string
+            format: uuid
+            description: The ID of the associated wallet
+          ticker:
+            type: string
+            description: The ticker of the currency. Currently supports ETH only.
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the currency balance record was created
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the currency balance record was updated
+  token_balance_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/token_balance_specific_response'
+      - $ref: '#/definitions/pagination'
+  token_balance_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the token balance
+          balance:
+            type: number
+            description: Token balance of the wallet
+          wallet_id:
+            type: string
+            format: uuid
+            description: The ID of the associated wallet
+          token_id:
+            type: string
+            format: uuid
+            description: The ID of the associated token.
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the currency balance record was created
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the currency balance record was updated
+  token_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/token_specific_response'
+      - $ref: '#/definitions/pagination'
+  token_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the token record was updated
+      - $ref: '#/definitions/token_create_response'
+  token_create_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the token record
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the token record was created
+      - $ref: '#/definitions/token_create_payload'
+  token_supply_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/token_supply_specific_response'
+      - $ref: '#/definitions/pagination'
+  token_supply_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the token supply
+          available_supply:
+            type: number
+            description: Available supply in a token's crowdsale contract
+          token_id:
+            type: string
+            format: uuid
+            description: The ID of the associated token.
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the currency balance record was created
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the currency balance record was updated
+  # Request payloads
+  wallet_create_client:
+    type: object
+    required:
+      - nucleus_client_id
+      - client_wallet_association_type
+    properties:
+      nucleus_client_id:
+        type: string
+        format: uuid
+        description: The ID of a nucleus client associated with the wallet
+      client_wallet_association_type:
+        type: string
+        description: The role of the client as it relates to the wallet defined by your firm. Roles may be joint, owner, trustee, viewer, or admin.
+  wallet_create_whitelist:
+    type: object
+    required:
+      - token_id
+    properties:
+      token_id:
+        type: string
+        format: uuid
+        description: The ID of the token whitelisted
+      role:
+        type: string
+        description: The role of the wallet over the token
+      sell_restriction:
+        type: string
+        format: datetime
+        description: The date when resale restrictions should be lifted for the wallet
+      buy_restriction:
+        type: string
+        format: datetime
+        description: The date when the buy restrictions should be lifted for the wallet
+  wallet_update_payload:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of the wallet
+      type:
+        type: string
+        description: Type of the wallet. Can be individual, business, trust, or contract
+      clients:
+          type: array
+          description: List of nucleus clients associated with the wallet and their association type
+          items:
+            $ref: '#/definitions/wallet_create_client'
+      token_whitelists:
+          type: array
+          description: List of tokens where the wallet is whitelisted
+          items:
+            $ref: '#/definitions/wallet_create_whitelist'
+      is_active:
+        type: boolean
+        description: Indicates if the wallet is active. Defaults to true which indicates it is active and available to be used
+        default: true
+      metadata:
+        type: object
+        description: Custom information associated with the account in the format key:value
+        additionalProperties: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+  wallet_create_payload:
+    type: object
+    required:
+      - name
+      - type
+    properties:
+      name:
+        type: string
+        description: Name of the wallet
+      type:
+        type: string
+        description: Type of the wallet. Can be individual, business, trust, or contract
+      clients:
+          type: array
+          description: List of nucleus clients associated with the wallet and their association type
+          items:
+            $ref: '#/definitions/wallet_create_client'
+      token_whitelists:
+          type: array
+          description: List of tokens where the wallet is whitelisted
+          items:
+            $ref: '#/definitions/wallet_create_whitelist'
+      is_active:
+        type: boolean
+        description: Indicates if the wallet is active. Defaults to true which indicates it is active and available to be used
+        default: true
+      metadata:
+        type: object
+        description: Custom information associated with the account in the format key:value
+        additionalProperties: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+  wallet_key_generator_payload:
+    type: object
+    required:
+      - wallet_id
+    properties:
+      wallet_id:
+        type: string
+        format: uuid
+        description: The ID of the wallet the keys are generating for
+  wallet_key_create_payload:
+    type: object
+    required:
+      - wallet_id
+      - address
+      - private_key
+    properties:
+      wallet_id:
+        type: string
+        format: uuid
+        description: The ID of the wallet the keys are generating for
+      address:
+        type: string
+        format: hex
+        description: Public address of the key pair getting stored
+      private_key:
+        type: string
+        format: hex
+        description: Private key of the key pair getting stored
+  token_create_payload:
+    type: object
+    required:
+      - symbol
+      - name
+      - nucleus_model_id
+      - owner_wallet_id
+      - total_supply
+    properties:
+      symbol:
+        type: string
+        description: The symbol of the security token. Could be 3 or 4 characters long.
+      name:
+        type: string
+        description: Name of the security token.
+      nucleus_model_id:
+        type: string
+        format: uuid
+        description: The id of the associated Nucleus model for this security token
+      owner_wallet_id:
+        type: string
+        format: uuid
+        description: The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
+      total_supply:
+        type: integer
+        description: The total supply of the security token
+      circulating_supply:
+        type: integer
+        description: The amount of tokens in circulation. Defaults to 0
+        default: 0
+      conract_address:
+        type: string
+        description: The contract address of the security token on the Ethereum blockchain
+      crowdsale_address:
+        type: string
+        description: The crowdsale address of the security token on the Ethereum blockchain
+      restrictions:
+        $ref: '#/definitions/token_restrictions_payload'
+      offering_settings:
+        $ref: '#/definitions/offering_settings_create_payload'
+      metadata:
+        type: object
+        description: Custom information associated with the account in the format key:value
+        additionalProperties: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+  token_update_payload:
+    type: object
+    properties:
+      symbol:
+        type: string
+        description: The symbol of the security token. Could be 3 or 4 characters long.
+      name:
+        type: string
+        description: Name of the security token.
+      nucleus_model_id:
+        type: string
+        format: uuid
+        description: The id of the associated Nucleus model for this security token
+      owner_wallet_id:
+        type: string
+        format: uuid
+        description: The wallet id of the token owner. This wallet has the privileges to do on-chain modifications
+      total_supply:
+        type: integer
+        description: The total supply of the security token
+      circulating_supply:
+        type: integer
+        description: The amount of tokens in circulation. Defaults to 0
+        default: 0
+      conract_address:
+        type: string
+        description: The contract address of the security token on the Ethereum blockchain
+      crowdsale_address:
+        type: string
+        description: The crowdsale address of the security token on the Ethereum blockchain
+      restrictions:
+        $ref: '#/definitions/token_restrictions_payload'
+      offering_settings:
+        $ref: '#/definitions/offering_settings_update_payload'
+      metadata:
+        type: object
+        description: Custom information associated with the account in the format key:value
+        additionalProperties: true
+      secondary_id:
+        $ref: '#/definitions/secondary_id'
+  offering_settings_create_payload:
+    type: object
+    description: The array of security token offering settings applied on this token
+    required:
+      - rate
+    properties:
+      rate:
+        type: number
+        description: The exchange rate of the token during the token offering.
+      start_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will go live
+      end_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will end
+  offering_settings_update_payload:
+    type: object
+    description: The array of security token offering settings applied on this token
+    properties:
+      rate:
+        type: number
+        description: The exchange rate of the token during the token offering.
+      start_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will go live
+      end_date:
+        type: string
+        format: datetime
+        description: The date the security token offering will end
+  token_restrictions_payload:
+    type: object
+    description: The array of token restrictions applied on this token.
+    properties:
+      min_age:
+        type: number
+        description: Investors older than this age will be allowed to invest
+      max_age:
+        type: number
+        description: Investors younger than this age will be allowed to invest
+      min_annual_income:
+        type: number
+        description: Investors with an annual income higher than this number will be allowed to invest
+      max_annual_income:
+        type: number
+        description: Investors with an annual income lower than this number will be allowed to invest
+      min_household_income:
+        type: number
+        description: Investors with an household income higher than this number will be allowed to invest
+      max_household_income:
+        type: number
+        description: Investors with an household income lower than this number will be allowed to invest
+      min_net_worth:
+        type: number
+        description: Investors with a net worth higher than this number will be allowed to invest
+      max_net_worth:
+        type: number
+        description: Investors with a net worth lower than this number will be allowed to invest
+      min_credit_score:
+        type: number
+        description: Investors with a credit score higher than this number will be allowed to invest
+      max_credit_score:
+        type: number
+        description: Investors with a credit score lower than this number will be allowed to invest
+      accreditation_required:
+        type: boolean
+        description: Only accredited investors will be allowed to invest
+      kyc_required:
+        type: boolean
+        description: Investors who are verified by a Know-Your-Customer vendor will be allowed to invest
+  token_deploy_payload:
+    type: object
+    required:
+      - token_id
+    properties:
+      token_id:
+        type: string
+        format: uuid
+        description: The uuid of the token being deployed.
+  token_crowdsale_payload:
+    type: object
+    required:
+      - token_id
+      - supply
+    properties:
+      token_id:
+        type: string
+        format: uuid
+        description: The uuid of the token being deployed.
+      supply:
+        type: number
+        description: Amount of token supply to be transfered to the crowdsale contract.
+  token_whitelist_payload:
+    type: object
+    required:
+      - token_id
+      - wallet_id
+    properties:
+      token_id:
+        type: string
+        format: uuid
+        description: The uuid of the specified token.
+      wallet_id:
+        type: string
+        format: uuid
+        description: The uuid of wallet to be whitelisted.
+  token_purchase_payload:
+    type: object
+    required:
+      - token_id
+      - wallet_id
+      - amount
+    properties:
+      token_id:
+        type: string
+        format: uuid
+        description: The uuid of the specified token.
+      wallet_id:
+        type: string
+        format: uuid
+        description: The uuid of wallet to be whitelisted.
+      amount:
+        type: number
+        description: Amount of tokens to be purchased.

@@ -1119,11 +1119,11 @@ definitions:
           create_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was created
+            description: Datetime the token balance record was created
           update_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was updated
+            description: Datetime the token balance record was updated
   token_get_response:
     allOf:
       - type: object
@@ -1182,11 +1182,11 @@ definitions:
           create_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was created
+            description: Datetime the token supply record was created
           update_date:
             type: string
             format: datetime
-            description: Datetime the currency balance record was updated
+            description: Datetime the token supply record was updated
   # Request payloads
   wallet_create_client:
     type: object
@@ -1213,11 +1213,11 @@ definitions:
       role:
         type: string
         description: The role of the wallet over the token
-      sell_restriction:
+      sell_restriction_date:
         type: string
         format: datetime
         description: The date when resale restrictions should be lifted for the wallet
-      buy_restriction:
+      buy_restriction_date:
         type: string
         format: datetime
         description: The date when the buy restrictions should be lifted for the wallet
@@ -1489,7 +1489,7 @@ definitions:
         description: The uuid of the token being deployed.
       supply:
         type: number
-        description: Amount of token supply to be transfered to the crowdsale contract.
+        description: Amount of token supply to be transferred to the crowdsale contract.
   token_whitelist_payload:
     type: object
     required:

@@ -17,7 +17,7 @@ module MoleculeApi
     # The uuid of the token being deployed.
     attr_accessor :token_id
 
-    # Amount of token supply to be transfered to the crowdsale contract.
+    # Amount of token supply to be transferred to the crowdsale contract.
     attr_accessor :supply
 
     # Attribute mapping from ruby-style variable name to JSON key.

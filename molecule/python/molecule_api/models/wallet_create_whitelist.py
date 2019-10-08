@@ -33,33 +33,33 @@ class WalletCreateWhitelist(object):
     swagger_types = {
         'token_id': 'str',
         'role': 'str',
-        'sell_restriction': 'str',
-        'buy_restriction': 'str'
+        'sell_restriction_date': 'str',
+        'buy_restriction_date': 'str'
     }
 
     attribute_map = {
         'token_id': 'token_id',
         'role': 'role',
-        'sell_restriction': 'sell_restriction',
-        'buy_restriction': 'buy_restriction'
+        'sell_restriction_date': 'sell_restriction_date',
+        'buy_restriction_date': 'buy_restriction_date'
     }
 
-    def __init__(self, token_id=None, role=None, sell_restriction=None, buy_restriction=None):  # noqa: E501
+    def __init__(self, token_id=None, role=None, sell_restriction_date=None, buy_restriction_date=None):  # noqa: E501
         """WalletCreateWhitelist - a model defined in Swagger"""  # noqa: E501
 
         self._token_id = None
         self._role = None
-        self._sell_restriction = None
-        self._buy_restriction = None
+        self._sell_restriction_date = None
+        self._buy_restriction_date = None
         self.discriminator = None
 
         self.token_id = token_id
         if role is not None:
             self.role = role
-        if sell_restriction is not None:
-            self.sell_restriction = sell_restriction
-        if buy_restriction is not None:
-            self.buy_restriction = buy_restriction
+        if sell_restriction_date is not None:
+            self.sell_restriction_date = sell_restriction_date
+        if buy_restriction_date is not None:
+            self.buy_restriction_date = buy_restriction_date
 
     @property
     def token_id(self):
@@ -110,50 +110,50 @@ class WalletCreateWhitelist(object):
         self._role = role
 
     @property
-    def sell_restriction(self):
-        """Gets the sell_restriction of this WalletCreateWhitelist.  # noqa: E501
+    def sell_restriction_date(self):
+        """Gets the sell_restriction_date of this WalletCreateWhitelist.  # noqa: E501
 
         The date when resale restrictions should be lifted for the wallet  # noqa: E501
 
-        :return: The sell_restriction of this WalletCreateWhitelist.  # noqa: E501
+        :return: The sell_restriction_date of this WalletCreateWhitelist.  # noqa: E501
         :rtype: str
         """
-        return self._sell_restriction
+        return self._sell_restriction_date
 
-    @sell_restriction.setter
-    def sell_restriction(self, sell_restriction):
-        """Sets the sell_restriction of this WalletCreateWhitelist.
+    @sell_restriction_date.setter
+    def sell_restriction_date(self, sell_restriction_date):
+        """Sets the sell_restriction_date of this WalletCreateWhitelist.
 
         The date when resale restrictions should be lifted for the wallet  # noqa: E501
 
-        :param sell_restriction: The sell_restriction of this WalletCreateWhitelist.  # noqa: E501
+        :param sell_restriction_date: The sell_restriction_date of this WalletCreateWhitelist.  # noqa: E501
         :type: str
         """
 
-        self._sell_restriction = sell_restriction
+        self._sell_restriction_date = sell_restriction_date
 
     @property
-    def buy_restriction(self):
-        """Gets the buy_restriction of this WalletCreateWhitelist.  # noqa: E501
+    def buy_restriction_date(self):
+        """Gets the buy_restriction_date of this WalletCreateWhitelist.  # noqa: E501
 
         The date when the buy restrictions should be lifted for the wallet  # noqa: E501
 
-        :return: The buy_restriction of this WalletCreateWhitelist.  # noqa: E501
+        :return: The buy_restriction_date of this WalletCreateWhitelist.  # noqa: E501
         :rtype: str
         """
-        return self._buy_restriction
+        return self._buy_restriction_date
 
-    @buy_restriction.setter
-    def buy_restriction(self, buy_restriction):
-        """Sets the buy_restriction of this WalletCreateWhitelist.
+    @buy_restriction_date.setter
+    def buy_restriction_date(self, buy_restriction_date):
+        """Sets the buy_restriction_date of this WalletCreateWhitelist.
 
         The date when the buy restrictions should be lifted for the wallet  # noqa: E501
 
-        :param buy_restriction: The buy_restriction of this WalletCreateWhitelist.  # noqa: E501
+        :param buy_restriction_date: The buy_restriction_date of this WalletCreateWhitelist.  # noqa: E501
         :type: str
         """
 
-        self._buy_restriction = buy_restriction
+        self._buy_restriction_date = buy_restriction_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * TokenBalanceSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:24:11.956-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-08T16:49:05.819-04:00")
 public class TokenBalanceSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -127,10 +127,10 @@ public class TokenBalanceSpecificResponse {
   }
 
    /**
-   * Datetime the currency balance record was created
+   * Datetime the token balance record was created
    * @return createDate
   **/
-  @ApiModelProperty(value = "Datetime the currency balance record was created")
+  @ApiModelProperty(value = "Datetime the token balance record was created")
   public String getCreateDate() {
     return createDate;
   }
@@ -145,10 +145,10 @@ public class TokenBalanceSpecificResponse {
   }
 
    /**
-   * Datetime the currency balance record was updated
+   * Datetime the token balance record was updated
    * @return updateDate
   **/
-  @ApiModelProperty(value = "Datetime the currency balance record was updated")
+  @ApiModelProperty(value = "Datetime the token balance record was updated")
   public String getUpdateDate() {
     return updateDate;
   }

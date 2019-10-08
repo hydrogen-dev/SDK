@@ -21,18 +21,18 @@ module MoleculeApi
     attr_accessor :role
 
     # The date when resale restrictions should be lifted for the wallet
-    attr_accessor :sell_restriction
+    attr_accessor :sell_restriction_date
 
     # The date when the buy restrictions should be lifted for the wallet
-    attr_accessor :buy_restriction
+    attr_accessor :buy_restriction_date
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'token_id' => :'token_id',
         :'role' => :'role',
-        :'sell_restriction' => :'sell_restriction',
-        :'buy_restriction' => :'buy_restriction'
+        :'sell_restriction_date' => :'sell_restriction_date',
+        :'buy_restriction_date' => :'buy_restriction_date'
       }
     end
 
@@ -41,8 +41,8 @@ module MoleculeApi
       {
         :'token_id' => :'String',
         :'role' => :'String',
-        :'sell_restriction' => :'String',
-        :'buy_restriction' => :'String'
+        :'sell_restriction_date' => :'String',
+        :'buy_restriction_date' => :'String'
       }
     end
 
@@ -62,12 +62,12 @@ module MoleculeApi
         self.role = attributes[:'role']
       end
 
-      if attributes.has_key?(:'sell_restriction')
-        self.sell_restriction = attributes[:'sell_restriction']
+      if attributes.has_key?(:'sell_restriction_date')
+        self.sell_restriction_date = attributes[:'sell_restriction_date']
       end
 
-      if attributes.has_key?(:'buy_restriction')
-        self.buy_restriction = attributes[:'buy_restriction']
+      if attributes.has_key?(:'buy_restriction_date')
+        self.buy_restriction_date = attributes[:'buy_restriction_date']
       end
     end
 
@@ -96,8 +96,8 @@ module MoleculeApi
       self.class == o.class &&
           token_id == o.token_id &&
           role == o.role &&
-          sell_restriction == o.sell_restriction &&
-          buy_restriction == o.buy_restriction
+          sell_restriction_date == o.sell_restriction_date &&
+          buy_restriction_date == o.buy_restriction_date
     end
 
     # @see the `==` method
@@ -109,7 +109,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [token_id, role, sell_restriction, buy_restriction].hash
+      [token_id, role, sell_restriction_date, buy_restriction_date].hash
     end
 
     # Builds the object from hash

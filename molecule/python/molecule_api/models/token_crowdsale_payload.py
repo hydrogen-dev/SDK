@@ -79,7 +79,7 @@ class TokenCrowdsalePayload(object):
     def supply(self):
         """Gets the supply of this TokenCrowdsalePayload.  # noqa: E501
 
-        Amount of token supply to be transfered to the crowdsale contract.  # noqa: E501
+        Amount of token supply to be transferred to the crowdsale contract.  # noqa: E501
 
         :return: The supply of this TokenCrowdsalePayload.  # noqa: E501
         :rtype: float
@@ -90,7 +90,7 @@ class TokenCrowdsalePayload(object):
     def supply(self, supply):
         """Sets the supply of this TokenCrowdsalePayload.
 
-        Amount of token supply to be transfered to the crowdsale contract.  # noqa: E501
+        Amount of token supply to be transferred to the crowdsale contract.  # noqa: E501
 
         :param supply: The supply of this TokenCrowdsalePayload.  # noqa: E501
         :type: float

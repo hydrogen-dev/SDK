@@ -44,13 +44,13 @@ describe 'WalletCreateWhitelist' do
     end
   end
 
-  describe 'test attribute "sell_restriction"' do
+  describe 'test attribute "sell_restriction_date"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "buy_restriction"' do
+  describe 'test attribute "buy_restriction_date"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

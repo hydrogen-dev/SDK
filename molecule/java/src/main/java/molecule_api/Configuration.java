@@ -13,7 +13,7 @@
 
 package molecule_api;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-03T13:24:11.956-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-08T16:49:05.819-04:00")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

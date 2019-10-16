@@ -55,7 +55,7 @@ describe 'MoleculeApi' do
   end
 
   # unit tests for get_currency_balances
-  # Get information for all currency balances defined for your application.
+  # Get information for all currency balances recorded in your application.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.

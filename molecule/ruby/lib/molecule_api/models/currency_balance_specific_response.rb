@@ -17,14 +17,14 @@ module MoleculeApi
     # ID of the currency balance
     attr_accessor :id
 
-    # Balance of the wallet
+    # Currency balance of the wallet
     attr_accessor :balance
 
     # The ID of the associated wallet
     attr_accessor :wallet_id
 
-    # The ticker of the currency. Currently supports ETH only.
-    attr_accessor :ticker
+    # The symbol of the currency. Currently supports ETH only.
+    attr_accessor :symbol
 
     # Datetime the currency balance record was created
     attr_accessor :create_date
@@ -38,7 +38,7 @@ module MoleculeApi
         :'id' => :'id',
         :'balance' => :'balance',
         :'wallet_id' => :'wallet_id',
-        :'ticker' => :'ticker',
+        :'symbol' => :'symbol',
         :'create_date' => :'create_date',
         :'update_date' => :'update_date'
       }
@@ -50,7 +50,7 @@ module MoleculeApi
         :'id' => :'String',
         :'balance' => :'Float',
         :'wallet_id' => :'String',
-        :'ticker' => :'String',
+        :'symbol' => :'String',
         :'create_date' => :'String',
         :'update_date' => :'String'
       }
@@ -76,8 +76,8 @@ module MoleculeApi
         self.wallet_id = attributes[:'wallet_id']
       end
 
-      if attributes.has_key?(:'ticker')
-        self.ticker = attributes[:'ticker']
+      if attributes.has_key?(:'symbol')
+        self.symbol = attributes[:'symbol']
       end
 
       if attributes.has_key?(:'create_date')
@@ -110,7 +110,7 @@ module MoleculeApi
           id == o.id &&
           balance == o.balance &&
           wallet_id == o.wallet_id &&
-          ticker == o.ticker &&
+          symbol == o.symbol &&
           create_date == o.create_date &&
           update_date == o.update_date
     end
@@ -124,7 +124,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, balance, wallet_id, ticker, create_date, update_date].hash
+      [id, balance, wallet_id, symbol, create_date, update_date].hash
     end
 
     # Builds the object from hash

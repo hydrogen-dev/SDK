@@ -309,7 +309,7 @@ paths:
   /molecule/v1/currency_balance:
     get:
       operationId: getCurrencyBalances
-      summary: Get information for all currency balances defined for your application.
+      summary: Get information for all currency balances recorded in your application.
       security:
         - oauth: [molecule]
       externalDocs:
@@ -1285,14 +1285,14 @@ definitions:
             description: ID of the currency balance
           balance:
             type: number
-            description: Balance of the wallet
+            description: Currency balance of the wallet
           wallet_id:
             type: string
             format: uuid
             description: The ID of the associated wallet
-          ticker:
+          symbol:
             type: string
-            description: The ticker of the currency. Currently supports ETH only.
+            description: The symbol of the currency. Currently supports ETH only.
           create_date:
             type: string
             format: datetime

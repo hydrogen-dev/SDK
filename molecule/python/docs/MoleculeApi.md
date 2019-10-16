@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_token**](MoleculeApi.md#delete_token) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 [**get_currency_balance**](MoleculeApi.md#get_currency_balance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
-[**get_currency_balances**](MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances defined for your application.
+[**get_currency_balances**](MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 [**get_currency_transfer**](MoleculeApi.md#get_currency_transfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
 [**get_currency_transfers**](MoleculeApi.md#get_currency_transfers) | **GET** /molecule/v1/currency_transfer | Get information for all currency transfers
 [**get_token**](MoleculeApi.md#get_token) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 # **get_currency_balances**
 > CurrencyBalanceGetResponse get_currency_balances(page=page, size=size, order_by=order_by, ascending=ascending)
 
-Get information for all currency balances defined for your application.
+Get information for all currency balances recorded in your application.
 
 ### Example
 ```python
@@ -189,7 +189,7 @@ order_by = 'update_date' # str | The field in the response body to order the lis
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
 
 try:
-    # Get information for all currency balances defined for your application.
+    # Get information for all currency balances recorded in your application.
     api_response = api_instance.get_currency_balances(page=page, size=size, order_by=order_by, ascending=ascending)
     pprint(api_response)
 except ApiException as e:

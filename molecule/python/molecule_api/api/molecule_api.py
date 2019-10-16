@@ -228,7 +228,7 @@ class MoleculeApi(object):
             collection_formats=collection_formats)
 
     def get_currency_balances(self, **kwargs):  # noqa: E501
-        """Get information for all currency balances defined for your application.  # noqa: E501
+        """Get information for all currency balances recorded in your application.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -252,7 +252,7 @@ class MoleculeApi(object):
             return data
 
     def get_currency_balances_with_http_info(self, **kwargs):  # noqa: E501
-        """Get information for all currency balances defined for your application.  # noqa: E501
+        """Get information for all currency balances recorded in your application.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

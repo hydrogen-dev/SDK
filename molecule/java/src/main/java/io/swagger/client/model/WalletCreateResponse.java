@@ -33,7 +33,7 @@ import java.util.UUID;
 /**
  * WalletCreateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-08T11:09:45.105-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-16T10:57:52.457-04:00")
 public class WalletCreateResponse {
   @SerializedName("name")
   private String name = null;

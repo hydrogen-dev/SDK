@@ -34,7 +34,7 @@ class CurrencyBalanceSpecificResponse(object):
         'id': 'str',
         'balance': 'float',
         'wallet_id': 'str',
-        'ticker': 'str',
+        'symbol': 'str',
         'create_date': 'str',
         'update_date': 'str'
     }
@@ -43,18 +43,18 @@ class CurrencyBalanceSpecificResponse(object):
         'id': 'id',
         'balance': 'balance',
         'wallet_id': 'wallet_id',
-        'ticker': 'ticker',
+        'symbol': 'symbol',
         'create_date': 'create_date',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, balance=None, wallet_id=None, ticker=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, balance=None, wallet_id=None, symbol=None, create_date=None, update_date=None):  # noqa: E501
         """CurrencyBalanceSpecificResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._balance = None
         self._wallet_id = None
-        self._ticker = None
+        self._symbol = None
         self._create_date = None
         self._update_date = None
         self.discriminator = None
@@ -65,8 +65,8 @@ class CurrencyBalanceSpecificResponse(object):
             self.balance = balance
         if wallet_id is not None:
             self.wallet_id = wallet_id
-        if ticker is not None:
-            self.ticker = ticker
+        if symbol is not None:
+            self.symbol = symbol
         if create_date is not None:
             self.create_date = create_date
         if update_date is not None:
@@ -99,7 +99,7 @@ class CurrencyBalanceSpecificResponse(object):
     def balance(self):
         """Gets the balance of this CurrencyBalanceSpecificResponse.  # noqa: E501
 
-        Balance of the wallet  # noqa: E501
+        Currency balance of the wallet  # noqa: E501
 
         :return: The balance of this CurrencyBalanceSpecificResponse.  # noqa: E501
         :rtype: float
@@ -110,7 +110,7 @@ class CurrencyBalanceSpecificResponse(object):
     def balance(self, balance):
         """Sets the balance of this CurrencyBalanceSpecificResponse.
 
-        Balance of the wallet  # noqa: E501
+        Currency balance of the wallet  # noqa: E501
 
         :param balance: The balance of this CurrencyBalanceSpecificResponse.  # noqa: E501
         :type: float
@@ -142,27 +142,27 @@ class CurrencyBalanceSpecificResponse(object):
         self._wallet_id = wallet_id
 
     @property
-    def ticker(self):
-        """Gets the ticker of this CurrencyBalanceSpecificResponse.  # noqa: E501
+    def symbol(self):
+        """Gets the symbol of this CurrencyBalanceSpecificResponse.  # noqa: E501
 
-        The ticker of the currency. Currently supports ETH only.  # noqa: E501
+        The symbol of the currency. Currently supports ETH only.  # noqa: E501
 
-        :return: The ticker of this CurrencyBalanceSpecificResponse.  # noqa: E501
+        :return: The symbol of this CurrencyBalanceSpecificResponse.  # noqa: E501
         :rtype: str
         """
-        return self._ticker
+        return self._symbol
 
-    @ticker.setter
-    def ticker(self, ticker):
-        """Sets the ticker of this CurrencyBalanceSpecificResponse.
+    @symbol.setter
+    def symbol(self, symbol):
+        """Sets the symbol of this CurrencyBalanceSpecificResponse.
 
-        The ticker of the currency. Currently supports ETH only.  # noqa: E501
+        The symbol of the currency. Currently supports ETH only.  # noqa: E501
 
-        :param ticker: The ticker of this CurrencyBalanceSpecificResponse.  # noqa: E501
+        :param symbol: The symbol of this CurrencyBalanceSpecificResponse.  # noqa: E501
         :type: str
         """
 
-        self._ticker = ticker
+        self._symbol = symbol
 
     @property
     def create_date(self):

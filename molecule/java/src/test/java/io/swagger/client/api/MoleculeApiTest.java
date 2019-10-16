@@ -96,7 +96,7 @@ public class MoleculeApiTest {
     }
     
     /**
-     * Get information for all currency balances defined for your application.
+     * Get information for all currency balances recorded in your application.
      *
      * 
      *

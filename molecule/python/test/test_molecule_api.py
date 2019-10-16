@@ -46,7 +46,7 @@ class TestMoleculeApi(unittest.TestCase):
     def test_get_currency_balances(self):
         """Test case for get_currency_balances
 
-        Get information for all currency balances defined for your application.  # noqa: E501
+        Get information for all currency balances recorded in your application.  # noqa: E501
         """
         pass
 

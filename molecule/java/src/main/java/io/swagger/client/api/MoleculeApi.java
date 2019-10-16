@@ -354,7 +354,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
     public com.squareup.okhttp.Call getCurrencyBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -415,7 +415,7 @@ public class MoleculeApi {
     }
 
     /**
-     * Get information for all currency balances defined for your application.
+     * Get information for all currency balances recorded in your application.
      * 
      * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
@@ -424,7 +424,7 @@ public class MoleculeApi {
      * @return CurrencyBalanceGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
     public CurrencyBalanceGetResponse getCurrencyBalances(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
         ApiResponse<CurrencyBalanceGetResponse> resp = getCurrencyBalancesWithHttpInfo(page, size, orderBy, ascending);
@@ -432,7 +432,7 @@ public class MoleculeApi {
     }
 
     /**
-     * Get information for all currency balances defined for your application.
+     * Get information for all currency balances recorded in your application.
      * 
      * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
@@ -441,7 +441,7 @@ public class MoleculeApi {
      * @return ApiResponse&lt;CurrencyBalanceGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
     public ApiResponse<CurrencyBalanceGetResponse> getCurrencyBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
         com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, null, null);
@@ -450,7 +450,7 @@ public class MoleculeApi {
     }
 
     /**
-     * Get information for all currency balances defined for your application. (asynchronously)
+     * Get information for all currency balances recorded in your application. (asynchronously)
      * 
      * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
@@ -460,7 +460,7 @@ public class MoleculeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
     public com.squareup.okhttp.Call getCurrencyBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<CurrencyBalanceGetResponse> callback) throws ApiException {
 

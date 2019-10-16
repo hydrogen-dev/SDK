@@ -76,8 +76,8 @@
       if (data.hasOwnProperty('wallet_id')) {
         obj['wallet_id'] = ApiClient.convertToType(data['wallet_id'], 'String');
       }
-      if (data.hasOwnProperty('ticker')) {
-        obj['ticker'] = ApiClient.convertToType(data['ticker'], 'String');
+      if (data.hasOwnProperty('symbol')) {
+        obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
       }
       if (data.hasOwnProperty('create_date')) {
         obj['create_date'] = ApiClient.convertToType(data['create_date'], 'String');
@@ -95,7 +95,7 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * Balance of the wallet
+   * Currency balance of the wallet
    * @member {Number} balance
    */
   exports.prototype['balance'] = undefined;
@@ -105,10 +105,10 @@
    */
   exports.prototype['wallet_id'] = undefined;
   /**
-   * The ticker of the currency. Currently supports ETH only.
-   * @member {String} ticker
+   * The symbol of the currency. Currently supports ETH only.
+   * @member {String} symbol
    */
-  exports.prototype['ticker'] = undefined;
+  exports.prototype['symbol'] = undefined;
   /**
    * Datetime the currency balance record was created
    * @member {String} create_date

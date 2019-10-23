@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/SecondaryId'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./SecondaryId'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.WalletKeyCreateResponse = factory(root.molecule_api.ApiClient, root.molecule_api.SecondaryId);
+    root.molecule_api.WalletKeyCreateResponse = factory(root.molecule_api.ApiClient);
   }
-}(this, function(ApiClient, SecondaryId) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -47,8 +47,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
 
@@ -84,12 +82,6 @@
       if (data.hasOwnProperty('private_key')) {
         obj['private_key'] = ApiClient.convertToType(data['private_key'], 'String');
       }
-      if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
-      }
-      if (data.hasOwnProperty('secondary_id')) {
-        obj['secondary_id'] = SecondaryId.constructFromObject(data['secondary_id']);
-      }
       if (data.hasOwnProperty('create_date')) {
         obj['create_date'] = ApiClient.convertToType(data['create_date'], 'String');
       }
@@ -122,15 +114,6 @@
    * @member {String} private_key
    */
   exports.prototype['private_key'] = undefined;
-  /**
-   * Custom information associated with the account in the format key:value
-   * @member {Object} metadata
-   */
-  exports.prototype['metadata'] = undefined;
-  /**
-   * @member {module:model/SecondaryId} secondary_id
-   */
-  exports.prototype['secondary_id'] = undefined;
   /**
    * Datetime the wallet key record was created
    * @member {String} create_date

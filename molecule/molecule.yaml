@@ -1256,12 +1256,6 @@ definitions:
           private_key:
             type: string
             description: Private key of the key pair getting stored
-          metadata:
-            type: object
-            description: Custom information associated with the account in the format key:value
-            additionalProperties: true
-          secondary_id:
-            $ref: '#/definitions/secondary_id'
           create_date:
             type: string
             format: datetime

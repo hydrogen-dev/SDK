@@ -29,11 +29,6 @@ module MoleculeApi
     # Private key of the key pair getting stored
     attr_accessor :private_key
 
-    # Custom information associated with the account in the format key:value
-    attr_accessor :metadata
-
-    attr_accessor :secondary_id
-
     # Datetime the wallet key record was created
     attr_accessor :create_date
 
@@ -48,8 +43,6 @@ module MoleculeApi
         :'key_server' => :'key_server',
         :'address' => :'address',
         :'private_key' => :'private_key',
-        :'metadata' => :'metadata',
-        :'secondary_id' => :'secondary_id',
         :'create_date' => :'create_date',
         :'update_date' => :'update_date'
       }
@@ -63,8 +56,6 @@ module MoleculeApi
         :'key_server' => :'String',
         :'address' => :'String',
         :'private_key' => :'String',
-        :'metadata' => :'Object',
-        :'secondary_id' => :'SecondaryId',
         :'create_date' => :'String',
         :'update_date' => :'String'
       }
@@ -96,14 +87,6 @@ module MoleculeApi
 
       if attributes.has_key?(:'private_key')
         self.private_key = attributes[:'private_key']
-      end
-
-      if attributes.has_key?(:'metadata')
-        self.metadata = attributes[:'metadata']
-      end
-
-      if attributes.has_key?(:'secondary_id')
-        self.secondary_id = attributes[:'secondary_id']
       end
 
       if attributes.has_key?(:'create_date')
@@ -138,8 +121,6 @@ module MoleculeApi
           key_server == o.key_server &&
           address == o.address &&
           private_key == o.private_key &&
-          metadata == o.metadata &&
-          secondary_id == o.secondary_id &&
           create_date == o.create_date &&
           update_date == o.update_date
     end
@@ -153,7 +134,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, key_id, key_server, address, private_key, metadata, secondary_id, create_date, update_date].hash
+      [id, key_id, key_server, address, private_key, create_date, update_date].hash
     end
 
     # Builds the object from hash

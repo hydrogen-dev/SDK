@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **key_server** | **str** | Name of the Key Server in use by the client | [optional] 
 **address** | **str** | Public address of the key pair getting stored | [optional] 
 **private_key** | **str** | Private key of the key pair getting stored | [optional] 
-**metadata** | **object** | Custom information associated with the account in the format key:value | [optional] 
-**secondary_id** | [**SecondaryId**](SecondaryId.md) |  | [optional] 
 **create_date** | **str** | Datetime the wallet key record was created | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

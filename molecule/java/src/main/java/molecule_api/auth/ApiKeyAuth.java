@@ -18,7 +18,7 @@ import molecule_api.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-16T10:57:52.457-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-23T14:48:32.517-04:00")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

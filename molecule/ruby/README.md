@@ -111,11 +111,12 @@ Class | Method | HTTP request | Description
 *MoleculeApi::MoleculeApi* | [**get_wallet_key**](docs/MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *MoleculeApi::MoleculeApi* | [**get_wallet_keys**](docs/MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 *MoleculeApi::MoleculeApi* | [**get_wallets**](docs/MoleculeApi.md#get_wallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+*MoleculeApi::MoleculeApi* | [**post_crowdsale_deploy**](docs/MoleculeApi.md#post_crowdsale_deploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token's crowdsale contract.
+*MoleculeApi::MoleculeApi* | [**post_crowdsale_fund**](docs/MoleculeApi.md#post_crowdsale_fund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token's crowdsale address.
+*MoleculeApi::MoleculeApi* | [**post_crowdsale_purchase**](docs/MoleculeApi.md#post_crowdsale_purchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
 *MoleculeApi::MoleculeApi* | [**post_currency_transfer**](docs/MoleculeApi.md#post_currency_transfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 *MoleculeApi::MoleculeApi* | [**post_token**](docs/MoleculeApi.md#post_token) | **POST** /molecule/v1/token | Create a token under your firm.
-*MoleculeApi::MoleculeApi* | [**post_token_crowdsale**](docs/MoleculeApi.md#post_token_crowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token's crowdsale address.
-*MoleculeApi::MoleculeApi* | [**post_token_deploy**](docs/MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
-*MoleculeApi::MoleculeApi* | [**post_token_purchase**](docs/MoleculeApi.md#post_token_purchase) | **POST** /molecule/v1/token/purchase | Participate in a token's crowdsale and purchase tokens.
+*MoleculeApi::MoleculeApi* | [**post_token_deploy**](docs/MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
 *MoleculeApi::MoleculeApi* | [**post_token_transfer**](docs/MoleculeApi.md#post_token_transfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 *MoleculeApi::MoleculeApi* | [**post_token_whitelist**](docs/MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token's whitelist
 *MoleculeApi::MoleculeApi* | [**post_wallet**](docs/MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
@@ -127,6 +128,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [MoleculeApi::AsyncOperationResponse](docs/AsyncOperationResponse.md)
+ - [MoleculeApi::CrowdsaleDeployPayload](docs/CrowdsaleDeployPayload.md)
+ - [MoleculeApi::CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
+ - [MoleculeApi::CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)
  - [MoleculeApi::CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
  - [MoleculeApi::CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
  - [MoleculeApi::CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
@@ -137,9 +142,7 @@ Class | Method | HTTP request | Description
  - [MoleculeApi::SecondaryId](docs/SecondaryId.md)
  - [MoleculeApi::TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [MoleculeApi::TokenCreatePayload](docs/TokenCreatePayload.md)
- - [MoleculeApi::TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [MoleculeApi::TokenDeployPayload](docs/TokenDeployPayload.md)
- - [MoleculeApi::TokenPurchasePayload](docs/TokenPurchasePayload.md)
  - [MoleculeApi::TokenRestrictionsPayload](docs/TokenRestrictionsPayload.md)
  - [MoleculeApi::TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
  - [MoleculeApi::TokenTransferPayload](docs/TokenTransferPayload.md)

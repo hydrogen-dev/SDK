@@ -1,4 +1,4 @@
-# molecule_api.TokenCrowdsalePayload
+# molecule_api.CrowdsaleFundPayload
 
 ## Properties
 Name | Type | Description | Notes

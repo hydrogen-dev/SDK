@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ownerWalletId** | [**UUID**](UUID.md) | The wallet id of the token owner. This wallet has the privileges to do on-chain modifications | 
 **totalSupply** | [**BigDecimal**](BigDecimal.md) | The total supply of the security token | 
 **circulatingSupply** | [**BigDecimal**](BigDecimal.md) | The amount of tokens in circulation. Defaults to 0 |  [optional]
+**whitelistAddress** | **String** | The whitelist address of the security token on the Ethereum blockchain |  [optional]
 **conractAddress** | **String** | The contract address of the security token on the Ethereum blockchain |  [optional]
 **crowdsaleAddress** | **String** | The crowdsale address of the security token on the Ethereum blockchain |  [optional]
 **restrictions** | [**TokenRestrictionsPayload**](TokenRestrictionsPayload.md) |  |  [optional]

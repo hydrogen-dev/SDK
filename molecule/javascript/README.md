@@ -161,11 +161,12 @@ Class | Method | HTTP request | Description
 *molecule_api.MoleculeApi* | [**getWalletKey**](docs/MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *molecule_api.MoleculeApi* | [**getWalletKeys**](docs/MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 *molecule_api.MoleculeApi* | [**getWallets**](docs/MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+*molecule_api.MoleculeApi* | [**postCrowdsaleDeploy**](docs/MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
+*molecule_api.MoleculeApi* | [**postCrowdsaleFund**](docs/MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
+*molecule_api.MoleculeApi* | [**postCrowdsalePurchase**](docs/MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
 *molecule_api.MoleculeApi* | [**postCurrencyTransfer**](docs/MoleculeApi.md#postCurrencyTransfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 *molecule_api.MoleculeApi* | [**postToken**](docs/MoleculeApi.md#postToken) | **POST** /molecule/v1/token | Create a token under your firm.
-*molecule_api.MoleculeApi* | [**postTokenCrowdsale**](docs/MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
-*molecule_api.MoleculeApi* | [**postTokenDeploy**](docs/MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
-*molecule_api.MoleculeApi* | [**postTokenPurchase**](docs/MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+*molecule_api.MoleculeApi* | [**postTokenDeploy**](docs/MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
 *molecule_api.MoleculeApi* | [**postTokenTransfer**](docs/MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 *molecule_api.MoleculeApi* | [**postTokenWhitelist**](docs/MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 *molecule_api.MoleculeApi* | [**postWallet**](docs/MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
@@ -177,6 +178,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [molecule_api.AsyncOperationResponse](docs/AsyncOperationResponse.md)
+ - [molecule_api.CrowdsaleDeployPayload](docs/CrowdsaleDeployPayload.md)
+ - [molecule_api.CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
+ - [molecule_api.CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)
  - [molecule_api.CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
  - [molecule_api.CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
  - [molecule_api.CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
@@ -187,9 +192,7 @@ Class | Method | HTTP request | Description
  - [molecule_api.SecondaryId](docs/SecondaryId.md)
  - [molecule_api.TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [molecule_api.TokenCreatePayload](docs/TokenCreatePayload.md)
- - [molecule_api.TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [molecule_api.TokenDeployPayload](docs/TokenDeployPayload.md)
- - [molecule_api.TokenPurchasePayload](docs/TokenPurchasePayload.md)
  - [molecule_api.TokenRestrictionsPayload](docs/TokenRestrictionsPayload.md)
  - [molecule_api.TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
  - [molecule_api.TokenTransferPayload](docs/TokenTransferPayload.md)

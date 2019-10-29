@@ -1014,19 +1014,175 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Deploy a token's crowdsale contract.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [AsyncOperationResponse]
+    def post_crowdsale_deploy(payload, opts = {})
+      data, _status_code, _headers = post_crowdsale_deploy_with_http_info(payload, opts)
+      data
+    end
+
+    # Deploy a token&#39;s crowdsale contract.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    def post_crowdsale_deploy_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_deploy ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_crowdsale_deploy"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/crowdsale/deploy'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AsyncOperationResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_deploy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Transfer tokens to a token's crowdsale address.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [AsyncOperationResponse]
+    def post_crowdsale_fund(payload, opts = {})
+      data, _status_code, _headers = post_crowdsale_fund_with_http_info(payload, opts)
+      data
+    end
+
+    # Transfer tokens to a token&#39;s crowdsale address.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    def post_crowdsale_fund_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_fund ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_crowdsale_fund"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/crowdsale/fund'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AsyncOperationResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_fund\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Purchase tokens from a crowdsale contract
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [AsyncOperationResponse]
+    def post_crowdsale_purchase(payload, opts = {})
+      data, _status_code, _headers = post_crowdsale_purchase_with_http_info(payload, opts)
+      data
+    end
+
+    # Purchase tokens from a crowdsale contract
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    def post_crowdsale_purchase_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_purchase ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_crowdsale_purchase"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/crowdsale/purchase'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'AsyncOperationResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_purchase\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Transfer currency between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [AsyncOperationResponse]
     def post_currency_transfer(payload, opts = {})
-      post_currency_transfer_with_http_info(payload, opts)
-      nil
+      data, _status_code, _headers = post_currency_transfer_with_http_info(payload, opts)
+      data
     end
 
     # Transfer currency between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
     def post_currency_transfer_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_currency_transfer ...'
@@ -1059,7 +1215,8 @@ module MoleculeApi
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'AsyncOperationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_currency_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1117,71 +1274,19 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
-    # Transfer tokens to a token's crowdsale address.
+    # Deploy a security token contract to blockchain.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [TokenCreateResponse]
-    def post_token_crowdsale(payload, opts = {})
-      data, _status_code, _headers = post_token_crowdsale_with_http_info(payload, opts)
-      data
-    end
-
-    # Transfer tokens to a token&#39;s crowdsale address.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(TokenCreateResponse, Fixnum, Hash)>] TokenCreateResponse data, response status code and response headers
-    def post_token_crowdsale_with_http_info(payload, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_crowdsale ...'
-      end
-      # verify the required parameter 'payload' is set
-      if @api_client.config.client_side_validation && payload.nil?
-        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_crowdsale"
-      end
-      # resource path
-      local_var_path = '/molecule/v1/token/crowdsale'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(payload)
-      auth_names = ['oauth']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'TokenCreateResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#post_token_crowdsale\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-    # Deploy a secuirty token contract and its crowdsale contract to blockchain.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [TokenCreateResponse]
+    # @return [AsyncOperationResponse]
     def post_token_deploy(payload, opts = {})
       data, _status_code, _headers = post_token_deploy_with_http_info(payload, opts)
       data
     end
 
-    # Deploy a secuirty token contract and its crowdsale contract to blockchain.
+    # Deploy a security token contract to blockchain.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(TokenCreateResponse, Fixnum, Hash)>] TokenCreateResponse data, response status code and response headers
+    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
     def post_token_deploy_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_deploy ...'
@@ -1215,76 +1320,25 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'TokenCreateResponse')
+        :return_type => 'AsyncOperationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_deploy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
-    # Participate in a token's crowdsale and purchase tokens.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def post_token_purchase(payload, opts = {})
-      post_token_purchase_with_http_info(payload, opts)
-      nil
-    end
-
-    # Participate in a token&#39;s crowdsale and purchase tokens.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def post_token_purchase_with_http_info(payload, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_purchase ...'
-      end
-      # verify the required parameter 'payload' is set
-      if @api_client.config.client_side_validation && payload.nil?
-        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_purchase"
-      end
-      # resource path
-      local_var_path = '/molecule/v1/token/purchase'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(payload)
-      auth_names = ['oauth']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#post_token_purchase\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
     # Transfer tokens between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [AsyncOperationResponse]
     def post_token_transfer(payload, opts = {})
-      post_token_transfer_with_http_info(payload, opts)
-      nil
+      data, _status_code, _headers = post_token_transfer_with_http_info(payload, opts)
+      data
     end
 
     # Transfer tokens between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
     def post_token_transfer_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_transfer ...'
@@ -1317,7 +1371,8 @@ module MoleculeApi
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'AsyncOperationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1326,16 +1381,16 @@ module MoleculeApi
     # Add an investor to a token's whitelist
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [AsyncOperationResponse]
     def post_token_whitelist(payload, opts = {})
-      post_token_whitelist_with_http_info(payload, opts)
-      nil
+      data, _status_code, _headers = post_token_whitelist_with_http_info(payload, opts)
+      data
     end
 
     # Add an investor to a token&#39;s whitelist
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
     def post_token_whitelist_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_whitelist ...'
@@ -1368,7 +1423,8 @@ module MoleculeApi
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'AsyncOperationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_whitelist\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -26,7 +26,7 @@
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.TokenPurchasePayload = factory(root.molecule_api.ApiClient);
+    root.molecule_api.CrowdsaleFundPayload = factory(root.molecule_api.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,33 +35,31 @@
 
 
   /**
-   * The TokenPurchasePayload model module.
-   * @module model/TokenPurchasePayload
+   * The CrowdsaleFundPayload model module.
+   * @module model/CrowdsaleFundPayload
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>TokenPurchasePayload</code>.
-   * @alias module:model/TokenPurchasePayload
+   * Constructs a new <code>CrowdsaleFundPayload</code>.
+   * @alias module:model/CrowdsaleFundPayload
    * @class
-   * @param tokenId {String} The uuid of the specified token.
-   * @param walletId {String} The uuid of wallet to be whitelisted.
-   * @param amount {Number} Amount of tokens to be purchased.
+   * @param tokenId {String} The uuid of the token being deployed.
+   * @param supply {Number} Amount of token supply to be transferred to the crowdsale contract.
    */
-  var exports = function(tokenId, walletId, amount) {
+  var exports = function(tokenId, supply) {
     var _this = this;
 
     _this['token_id'] = tokenId;
-    _this['wallet_id'] = walletId;
-    _this['amount'] = amount;
+    _this['supply'] = supply;
   };
 
   /**
-   * Constructs a <code>TokenPurchasePayload</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CrowdsaleFundPayload</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TokenPurchasePayload} obj Optional instance to populate.
-   * @return {module:model/TokenPurchasePayload} The populated <code>TokenPurchasePayload</code> instance.
+   * @param {module:model/CrowdsaleFundPayload} obj Optional instance to populate.
+   * @return {module:model/CrowdsaleFundPayload} The populated <code>CrowdsaleFundPayload</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -70,31 +68,23 @@
       if (data.hasOwnProperty('token_id')) {
         obj['token_id'] = ApiClient.convertToType(data['token_id'], 'String');
       }
-      if (data.hasOwnProperty('wallet_id')) {
-        obj['wallet_id'] = ApiClient.convertToType(data['wallet_id'], 'String');
-      }
-      if (data.hasOwnProperty('amount')) {
-        obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
+      if (data.hasOwnProperty('supply')) {
+        obj['supply'] = ApiClient.convertToType(data['supply'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * The uuid of the specified token.
+   * The uuid of the token being deployed.
    * @member {String} token_id
    */
   exports.prototype['token_id'] = undefined;
   /**
-   * The uuid of wallet to be whitelisted.
-   * @member {String} wallet_id
+   * Amount of token supply to be transferred to the crowdsale contract.
+   * @member {Number} supply
    */
-  exports.prototype['wallet_id'] = undefined;
-  /**
-   * Amount of tokens to be purchased.
-   * @member {Number} amount
-   */
-  exports.prototype['amount'] = undefined;
+  exports.prototype['supply'] = undefined;
 
 
 

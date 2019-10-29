@@ -21,11 +21,12 @@ Method | HTTP request | Description
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**getWallets**](MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**postCrowdsaleDeploy**](MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
+[**postCrowdsaleFund**](MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
+[**postCrowdsalePurchase**](MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
 [**postCurrencyTransfer**](MoleculeApi.md#postCurrencyTransfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 [**postToken**](MoleculeApi.md#postToken) | **POST** /molecule/v1/token | Create a token under your firm.
-[**postTokenCrowdsale**](MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
-[**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
-[**postTokenPurchase**](MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+[**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
 [**postTokenTransfer**](MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**postTokenWhitelist**](MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
@@ -1102,9 +1103,189 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postCrowdsaleDeploy"></a>
+# **postCrowdsaleDeploy**
+> AsyncOperationResponse postCrowdsaleDeploy(payload)
+
+Deploy a token&#39;s crowdsale contract.
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+CrowdsaleDeployPayload payload = new CrowdsaleDeployPayload(); // CrowdsaleDeployPayload | 
+try {
+    AsyncOperationResponse result = apiInstance.postCrowdsaleDeploy(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#postCrowdsaleDeploy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleDeployPayload**](CrowdsaleDeployPayload.md)|  |
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCrowdsaleFund"></a>
+# **postCrowdsaleFund**
+> AsyncOperationResponse postCrowdsaleFund(payload)
+
+Transfer tokens to a token&#39;s crowdsale address.
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+CrowdsaleFundPayload payload = new CrowdsaleFundPayload(); // CrowdsaleFundPayload | 
+try {
+    AsyncOperationResponse result = apiInstance.postCrowdsaleFund(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#postCrowdsaleFund");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleFundPayload**](CrowdsaleFundPayload.md)|  |
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCrowdsalePurchase"></a>
+# **postCrowdsalePurchase**
+> AsyncOperationResponse postCrowdsalePurchase(payload)
+
+Purchase tokens from a crowdsale contract
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+CrowdsalePurchasePayload payload = new CrowdsalePurchasePayload(); // CrowdsalePurchasePayload | 
+try {
+    AsyncOperationResponse result = apiInstance.postCrowdsalePurchase(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#postCrowdsalePurchase");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsalePurchasePayload**](CrowdsalePurchasePayload.md)|  |
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postCurrencyTransfer"></a>
 # **postCurrencyTransfer**
-> postCurrencyTransfer(payload)
+> AsyncOperationResponse postCurrencyTransfer(payload)
 
 Transfer currency between wallets
 
@@ -1135,7 +1316,8 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 CurrencyTransferPayload payload = new CurrencyTransferPayload(); // CurrencyTransferPayload | 
 try {
-    apiInstance.postCurrencyTransfer(payload);
+    AsyncOperationResponse result = apiInstance.postCurrencyTransfer(payload);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postCurrencyTransfer");
     e.printStackTrace();
@@ -1150,7 +1332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1221,71 +1403,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postTokenCrowdsale"></a>
-# **postTokenCrowdsale**
-> TokenCreateResponse postTokenCrowdsale(payload)
-
-Transfer tokens to a token&#39;s crowdsale address.
-
-### Example
-```java
-// Import classes:
-//import molecule_api.ApiClient;
-//import molecule_api.ApiException;
-//import molecule_api.Configuration;
-//import molecule_api.auth.*;
-//import io.swagger.client.api.MoleculeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Set the environment (optional, defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.setEnvironment("sandbox");
-
-
-// Configure OAuth2 access token for authorization: oauth
-OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
-// Method 1: Fetch and set access token with client_id and client_secret
-String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
-oauth.setAccessToken(token);
-// Method 2: Set access token using an existing token
-oauth.setAccessToken("MYACCESSTOKEN");
-
-MoleculeApi apiInstance = new MoleculeApi();
-TokenCrowdsalePayload payload = new TokenCrowdsalePayload(); // TokenCrowdsalePayload | 
-try {
-    TokenCreateResponse result = apiInstance.postTokenCrowdsale(payload);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#postTokenCrowdsale");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenCrowdsalePayload**](TokenCrowdsalePayload.md)|  |
-
-### Return type
-
-[**TokenCreateResponse**](TokenCreateResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="postTokenDeploy"></a>
 # **postTokenDeploy**
-> TokenCreateResponse postTokenDeploy(payload)
+> AsyncOperationResponse postTokenDeploy(payload)
 
-Deploy a secuirty token contract and its crowdsale contract to blockchain.
+Deploy a security token contract to blockchain.
 
 ### Example
 ```java
@@ -1314,7 +1436,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 TokenDeployPayload payload = new TokenDeployPayload(); // TokenDeployPayload | 
 try {
-    TokenCreateResponse result = apiInstance.postTokenDeploy(payload);
+    AsyncOperationResponse result = apiInstance.postTokenDeploy(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postTokenDeploy");
@@ -1330,66 +1452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenCreateResponse**](TokenCreateResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="postTokenPurchase"></a>
-# **postTokenPurchase**
-> postTokenPurchase(payload)
-
-Participate in a token&#39;s crowdsale and purchase tokens.
-
-### Example
-```java
-// Import classes:
-//import molecule_api.ApiClient;
-//import molecule_api.ApiException;
-//import molecule_api.Configuration;
-//import molecule_api.auth.*;
-//import io.swagger.client.api.MoleculeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Set the environment (optional, defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.setEnvironment("sandbox");
-
-
-// Configure OAuth2 access token for authorization: oauth
-OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
-// Method 1: Fetch and set access token with client_id and client_secret
-String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
-oauth.setAccessToken(token);
-// Method 2: Set access token using an existing token
-oauth.setAccessToken("MYACCESSTOKEN");
-
-MoleculeApi apiInstance = new MoleculeApi();
-TokenPurchasePayload payload = new TokenPurchasePayload(); // TokenPurchasePayload | 
-try {
-    apiInstance.postTokenPurchase(payload);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#postTokenPurchase");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  |
-
-### Return type
-
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1402,7 +1465,7 @@ null (empty response body)
 
 <a name="postTokenTransfer"></a>
 # **postTokenTransfer**
-> postTokenTransfer(payload)
+> AsyncOperationResponse postTokenTransfer(payload)
 
 Transfer tokens between wallets
 
@@ -1433,7 +1496,8 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 TokenTransferPayload payload = new TokenTransferPayload(); // TokenTransferPayload | 
 try {
-    apiInstance.postTokenTransfer(payload);
+    AsyncOperationResponse result = apiInstance.postTokenTransfer(payload);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postTokenTransfer");
     e.printStackTrace();
@@ -1448,7 +1512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1461,7 +1525,7 @@ null (empty response body)
 
 <a name="postTokenWhitelist"></a>
 # **postTokenWhitelist**
-> postTokenWhitelist(payload)
+> AsyncOperationResponse postTokenWhitelist(payload)
 
 Add an investor to a token&#39;s whitelist
 
@@ -1492,7 +1556,8 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 TokenWhitelistPayload payload = new TokenWhitelistPayload(); // TokenWhitelistPayload | 
 try {
-    apiInstance.postTokenWhitelist(payload);
+    AsyncOperationResponse result = apiInstance.postTokenWhitelist(payload);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postTokenWhitelist");
     e.printStackTrace();
@@ -1507,7 +1572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 

@@ -23,54 +23,32 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
- * TokenCrowdsalePayload
+ * CrowdsaleDeployPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-23T14:48:32.517-04:00")
-public class TokenCrowdsalePayload {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:55:11.320-04:00")
+public class CrowdsaleDeployPayload {
   @SerializedName("token_id")
   private UUID tokenId = null;
 
-  @SerializedName("supply")
-  private BigDecimal supply = null;
-
-  public TokenCrowdsalePayload tokenId(UUID tokenId) {
+  public CrowdsaleDeployPayload tokenId(UUID tokenId) {
     this.tokenId = tokenId;
     return this;
   }
 
    /**
-   * The uuid of the token being deployed.
+   * The uuid of the token being crowdsaled.
    * @return tokenId
   **/
-  @ApiModelProperty(required = true, value = "The uuid of the token being deployed.")
+  @ApiModelProperty(required = true, value = "The uuid of the token being crowdsaled.")
   public UUID getTokenId() {
     return tokenId;
   }
 
   public void setTokenId(UUID tokenId) {
     this.tokenId = tokenId;
-  }
-
-  public TokenCrowdsalePayload supply(BigDecimal supply) {
-    this.supply = supply;
-    return this;
-  }
-
-   /**
-   * Amount of token supply to be transferred to the crowdsale contract.
-   * @return supply
-  **/
-  @ApiModelProperty(required = true, value = "Amount of token supply to be transferred to the crowdsale contract.")
-  public BigDecimal getSupply() {
-    return supply;
-  }
-
-  public void setSupply(BigDecimal supply) {
-    this.supply = supply;
   }
 
 
@@ -82,24 +60,22 @@ public class TokenCrowdsalePayload {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TokenCrowdsalePayload tokenCrowdsalePayload = (TokenCrowdsalePayload) o;
-    return Objects.equals(this.tokenId, tokenCrowdsalePayload.tokenId) &&
-        Objects.equals(this.supply, tokenCrowdsalePayload.supply);
+    CrowdsaleDeployPayload crowdsaleDeployPayload = (CrowdsaleDeployPayload) o;
+    return Objects.equals(this.tokenId, crowdsaleDeployPayload.tokenId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tokenId, supply);
+    return Objects.hash(tokenId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TokenCrowdsalePayload {\n");
+    sb.append("class CrowdsaleDeployPayload {\n");
     
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
-    sb.append("    supply: ").append(toIndentedString(supply)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,6 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.swagger.client.model.AsyncOperationResponse;
+import io.swagger.client.model.CrowdsaleDeployPayload;
+import io.swagger.client.model.CrowdsaleFundPayload;
+import io.swagger.client.model.CrowdsalePurchasePayload;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
 import io.swagger.client.model.CurrencyTransferGetResponse;
@@ -36,10 +40,8 @@ import io.swagger.client.model.TokenBalanceGetResponse;
 import io.swagger.client.model.TokenBalanceSpecificResponse;
 import io.swagger.client.model.TokenCreatePayload;
 import io.swagger.client.model.TokenCreateResponse;
-import io.swagger.client.model.TokenCrowdsalePayload;
 import io.swagger.client.model.TokenDeployPayload;
 import io.swagger.client.model.TokenGetResponse;
-import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
@@ -496,7 +498,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
      */
     public com.squareup.okhttp.Call getCurrencyTransferCall(UUID currencyTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -561,7 +563,7 @@ public class MoleculeApi {
      * @return CurrencyTransferSpecificResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
      */
     public CurrencyTransferSpecificResponse getCurrencyTransfer(UUID currencyTransferId) throws ApiException {
         ApiResponse<CurrencyTransferSpecificResponse> resp = getCurrencyTransferWithHttpInfo(currencyTransferId);
@@ -575,7 +577,7 @@ public class MoleculeApi {
      * @return ApiResponse&lt;CurrencyTransferSpecificResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
      */
     public ApiResponse<CurrencyTransferSpecificResponse> getCurrencyTransferWithHttpInfo(UUID currencyTransferId) throws ApiException {
         com.squareup.okhttp.Call call = getCurrencyTransferValidateBeforeCall(currencyTransferId, null, null);
@@ -591,7 +593,7 @@ public class MoleculeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer">Retrieve a currency transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
      */
     public com.squareup.okhttp.Call getCurrencyTransferAsync(UUID currencyTransferId, final ApiCallback<CurrencyTransferSpecificResponse> callback) throws ApiException {
 
@@ -630,7 +632,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
     public com.squareup.okhttp.Call getCurrencyTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -700,7 +702,7 @@ public class MoleculeApi {
      * @return CurrencyTransferGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
     public CurrencyTransferGetResponse getCurrencyTransfers(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
         ApiResponse<CurrencyTransferGetResponse> resp = getCurrencyTransfersWithHttpInfo(page, size, orderBy, ascending);
@@ -717,7 +719,7 @@ public class MoleculeApi {
      * @return ApiResponse&lt;CurrencyTransferGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
     public ApiResponse<CurrencyTransferGetResponse> getCurrencyTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
         com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, null, null);
@@ -736,7 +738,7 @@ public class MoleculeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfers">Get information for all currency transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
     public com.squareup.okhttp.Call getCurrencyTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<CurrencyTransferGetResponse> callback) throws ApiException {
 
@@ -1455,7 +1457,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
     public com.squareup.okhttp.Call getTokenTransferCall(UUID tokenTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -1520,7 +1522,7 @@ public class MoleculeApi {
      * @return TokenTransferSpecificResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
     public TokenTransferSpecificResponse getTokenTransfer(UUID tokenTransferId) throws ApiException {
         ApiResponse<TokenTransferSpecificResponse> resp = getTokenTransferWithHttpInfo(tokenTransferId);
@@ -1534,7 +1536,7 @@ public class MoleculeApi {
      * @return ApiResponse&lt;TokenTransferSpecificResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
     public ApiResponse<TokenTransferSpecificResponse> getTokenTransferWithHttpInfo(UUID tokenTransferId) throws ApiException {
         com.squareup.okhttp.Call call = getTokenTransferValidateBeforeCall(tokenTransferId, null, null);
@@ -1550,7 +1552,7 @@ public class MoleculeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer">Retrieve a token transfer Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
     public com.squareup.okhttp.Call getTokenTransferAsync(UUID tokenTransferId, final ApiCallback<TokenTransferSpecificResponse> callback) throws ApiException {
 
@@ -1589,7 +1591,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
     public com.squareup.okhttp.Call getTokenTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -1659,7 +1661,7 @@ public class MoleculeApi {
      * @return TokenTransferGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
     public TokenTransferGetResponse getTokenTransfers(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
         ApiResponse<TokenTransferGetResponse> resp = getTokenTransfersWithHttpInfo(page, size, orderBy, ascending);
@@ -1676,7 +1678,7 @@ public class MoleculeApi {
      * @return ApiResponse&lt;TokenTransferGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
     public ApiResponse<TokenTransferGetResponse> getTokenTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
         com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, null, null);
@@ -1695,7 +1697,7 @@ public class MoleculeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfers">Get information for all token transfers Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
     public com.squareup.okhttp.Call getTokenTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<TokenTransferGetResponse> callback) throws ApiException {
 
@@ -2421,6 +2423,396 @@ public class MoleculeApi {
         return call;
     }
     /**
+     * Build call for postCrowdsaleDeploy
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleDeployCall(CrowdsaleDeployPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/crowdsale/deploy";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCrowdsaleDeployValidateBeforeCall(CrowdsaleDeployPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCrowdsaleDeploy(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCrowdsaleDeployCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Deploy a token&#39;s crowdsale contract.
+     * 
+     * @param payload  (required)
+     * @return AsyncOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public AsyncOperationResponse postCrowdsaleDeploy(CrowdsaleDeployPayload payload) throws ApiException {
+        ApiResponse<AsyncOperationResponse> resp = postCrowdsaleDeployWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Deploy a token&#39;s crowdsale contract.
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;AsyncOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public ApiResponse<AsyncOperationResponse> postCrowdsaleDeployWithHttpInfo(CrowdsaleDeployPayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCrowdsaleDeployValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Deploy a token&#39;s crowdsale contract. (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleDeployAsync(CrowdsaleDeployPayload payload, final ApiCallback<AsyncOperationResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCrowdsaleDeployValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postCrowdsaleFund
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleFundCall(CrowdsaleFundPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/crowdsale/fund";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCrowdsaleFundValidateBeforeCall(CrowdsaleFundPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCrowdsaleFund(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCrowdsaleFundCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address.
+     * 
+     * @param payload  (required)
+     * @return AsyncOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public AsyncOperationResponse postCrowdsaleFund(CrowdsaleFundPayload payload) throws ApiException {
+        ApiResponse<AsyncOperationResponse> resp = postCrowdsaleFundWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address.
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;AsyncOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public ApiResponse<AsyncOperationResponse> postCrowdsaleFundWithHttpInfo(CrowdsaleFundPayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCrowdsaleFundValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address. (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleFundAsync(CrowdsaleFundPayload payload, final ApiCallback<AsyncOperationResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCrowdsaleFundValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postCrowdsalePurchase
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsalePurchaseCall(CrowdsalePurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/crowdsale/purchase";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCrowdsalePurchaseValidateBeforeCall(CrowdsalePurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCrowdsalePurchase(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCrowdsalePurchaseCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Purchase tokens from a crowdsale contract
+     * 
+     * @param payload  (required)
+     * @return AsyncOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public AsyncOperationResponse postCrowdsalePurchase(CrowdsalePurchasePayload payload) throws ApiException {
+        ApiResponse<AsyncOperationResponse> resp = postCrowdsalePurchaseWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Purchase tokens from a crowdsale contract
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;AsyncOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public ApiResponse<AsyncOperationResponse> postCrowdsalePurchaseWithHttpInfo(CrowdsalePurchasePayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCrowdsalePurchaseValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Purchase tokens from a crowdsale contract (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsalePurchaseAsync(CrowdsalePurchasePayload payload, final ApiCallback<AsyncOperationResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCrowdsalePurchaseValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for postCurrencyTransfer
      * @param payload  (required)
      * @param progressListener Progress listener
@@ -2489,26 +2881,29 @@ public class MoleculeApi {
      * Transfer currency between wallets
      * 
      * @param payload  (required)
+     * @return AsyncOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
      */
-    public void postCurrencyTransfer(CurrencyTransferPayload payload) throws ApiException {
-        postCurrencyTransferWithHttpInfo(payload);
+    public AsyncOperationResponse postCurrencyTransfer(CurrencyTransferPayload payload) throws ApiException {
+        ApiResponse<AsyncOperationResponse> resp = postCurrencyTransferWithHttpInfo(payload);
+        return resp.getData();
     }
 
     /**
      * Transfer currency between wallets
      * 
      * @param payload  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;AsyncOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
      */
-    public ApiResponse<Void> postCurrencyTransferWithHttpInfo(CurrencyTransferPayload payload) throws ApiException {
+    public ApiResponse<AsyncOperationResponse> postCurrencyTransferWithHttpInfo(CurrencyTransferPayload payload) throws ApiException {
         com.squareup.okhttp.Call call = postCurrencyTransferValidateBeforeCall(payload, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -2521,7 +2916,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
      */
-    public com.squareup.okhttp.Call postCurrencyTransferAsync(CurrencyTransferPayload payload, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postCurrencyTransferAsync(CurrencyTransferPayload payload, final ApiCallback<AsyncOperationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2543,7 +2938,8 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = postCurrencyTransferValidateBeforeCall(payload, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
@@ -2677,136 +3073,6 @@ public class MoleculeApi {
         return call;
     }
     /**
-     * Build call for postTokenCrowdsale
-     * @param payload  (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public com.squareup.okhttp.Call postTokenCrowdsaleCall(TokenCrowdsalePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = payload;
-
-        // create path and map variables
-        String localVarPath = "/molecule/v1/token/crowdsale";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postTokenCrowdsaleValidateBeforeCall(TokenCrowdsalePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'payload' is set
-        if (payload == null) {
-            throw new ApiException("Missing the required parameter 'payload' when calling postTokenCrowdsale(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = postTokenCrowdsaleCall(payload, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Transfer tokens to a token&#39;s crowdsale address.
-     * 
-     * @param payload  (required)
-     * @return TokenCreateResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public TokenCreateResponse postTokenCrowdsale(TokenCrowdsalePayload payload) throws ApiException {
-        ApiResponse<TokenCreateResponse> resp = postTokenCrowdsaleWithHttpInfo(payload);
-        return resp.getData();
-    }
-
-    /**
-     * Transfer tokens to a token&#39;s crowdsale address.
-     * 
-     * @param payload  (required)
-     * @return ApiResponse&lt;TokenCreateResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public ApiResponse<TokenCreateResponse> postTokenCrowdsaleWithHttpInfo(TokenCrowdsalePayload payload) throws ApiException {
-        com.squareup.okhttp.Call call = postTokenCrowdsaleValidateBeforeCall(payload, null, null);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Transfer tokens to a token&#39;s crowdsale address. (asynchronously)
-     * 
-     * @param payload  (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public com.squareup.okhttp.Call postTokenCrowdsaleAsync(TokenCrowdsalePayload payload, final ApiCallback<TokenCreateResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = postTokenCrowdsaleValidateBeforeCall(payload, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for postTokenDeploy
      * @param payload  (required)
      * @param progressListener Progress listener
@@ -2814,7 +3080,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
     public com.squareup.okhttp.Call postTokenDeployCall(TokenDeployPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
@@ -2872,45 +3138,45 @@ public class MoleculeApi {
     }
 
     /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain.
+     * Deploy a security token contract to blockchain.
      * 
      * @param payload  (required)
-     * @return TokenCreateResponse
+     * @return AsyncOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
-    public TokenCreateResponse postTokenDeploy(TokenDeployPayload payload) throws ApiException {
-        ApiResponse<TokenCreateResponse> resp = postTokenDeployWithHttpInfo(payload);
+    public AsyncOperationResponse postTokenDeploy(TokenDeployPayload payload) throws ApiException {
+        ApiResponse<AsyncOperationResponse> resp = postTokenDeployWithHttpInfo(payload);
         return resp.getData();
     }
 
     /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain.
+     * Deploy a security token contract to blockchain.
      * 
      * @param payload  (required)
-     * @return ApiResponse&lt;TokenCreateResponse&gt;
+     * @return ApiResponse&lt;AsyncOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
-    public ApiResponse<TokenCreateResponse> postTokenDeployWithHttpInfo(TokenDeployPayload payload) throws ApiException {
+    public ApiResponse<AsyncOperationResponse> postTokenDeployWithHttpInfo(TokenDeployPayload payload) throws ApiException {
         com.squareup.okhttp.Call call = postTokenDeployValidateBeforeCall(payload, null, null);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain. (asynchronously)
+     * Deploy a security token contract to blockchain. (asynchronously)
      * 
      * @param payload  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenDeployAsync(TokenDeployPayload payload, final ApiCallback<TokenCreateResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call postTokenDeployAsync(TokenDeployPayload payload, final ApiCallback<AsyncOperationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2932,134 +3198,8 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = postTokenDeployValidateBeforeCall(payload, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for postTokenPurchase
-     * @param payload  (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
-     */
-    public com.squareup.okhttp.Call postTokenPurchaseCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = payload;
-
-        // create path and map variables
-        String localVarPath = "/molecule/v1/token/purchase";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postTokenPurchaseValidateBeforeCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'payload' is set
-        if (payload == null) {
-            throw new ApiException("Missing the required parameter 'payload' when calling postTokenPurchase(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = postTokenPurchaseCall(payload, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Participate in a token&#39;s crowdsale and purchase tokens.
-     * 
-     * @param payload  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
-     */
-    public void postTokenPurchase(TokenPurchasePayload payload) throws ApiException {
-        postTokenPurchaseWithHttpInfo(payload);
-    }
-
-    /**
-     * Participate in a token&#39;s crowdsale and purchase tokens.
-     * 
-     * @param payload  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
-     */
-    public ApiResponse<Void> postTokenPurchaseWithHttpInfo(TokenPurchasePayload payload) throws ApiException {
-        com.squareup.okhttp.Call call = postTokenPurchaseValidateBeforeCall(payload, null, null);
-        return apiClient.execute(call);
-    }
-
-    /**
-     * Participate in a token&#39;s crowdsale and purchase tokens. (asynchronously)
-     * 
-     * @param payload  (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
-     */
-    public com.squareup.okhttp.Call postTokenPurchaseAsync(TokenPurchasePayload payload, final ApiCallback<Void> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = postTokenPurchaseValidateBeforeCall(payload, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
         return call;
     }
     /**
@@ -3131,26 +3271,29 @@ public class MoleculeApi {
      * Transfer tokens between wallets
      * 
      * @param payload  (required)
+     * @return AsyncOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public void postTokenTransfer(TokenTransferPayload payload) throws ApiException {
-        postTokenTransferWithHttpInfo(payload);
+    public AsyncOperationResponse postTokenTransfer(TokenTransferPayload payload) throws ApiException {
+        ApiResponse<AsyncOperationResponse> resp = postTokenTransferWithHttpInfo(payload);
+        return resp.getData();
     }
 
     /**
      * Transfer tokens between wallets
      * 
      * @param payload  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;AsyncOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public ApiResponse<Void> postTokenTransferWithHttpInfo(TokenTransferPayload payload) throws ApiException {
+    public ApiResponse<AsyncOperationResponse> postTokenTransferWithHttpInfo(TokenTransferPayload payload) throws ApiException {
         com.squareup.okhttp.Call call = postTokenTransferValidateBeforeCall(payload, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -3163,7 +3306,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenTransferAsync(TokenTransferPayload payload, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postTokenTransferAsync(TokenTransferPayload payload, final ApiCallback<AsyncOperationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3185,7 +3328,8 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = postTokenTransferValidateBeforeCall(payload, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
@@ -3196,7 +3340,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
     public com.squareup.okhttp.Call postTokenWhitelistCall(TokenWhitelistPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
@@ -3257,26 +3401,29 @@ public class MoleculeApi {
      * Add an investor to a token&#39;s whitelist
      * 
      * @param payload  (required)
+     * @return AsyncOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
-    public void postTokenWhitelist(TokenWhitelistPayload payload) throws ApiException {
-        postTokenWhitelistWithHttpInfo(payload);
+    public AsyncOperationResponse postTokenWhitelist(TokenWhitelistPayload payload) throws ApiException {
+        ApiResponse<AsyncOperationResponse> resp = postTokenWhitelistWithHttpInfo(payload);
+        return resp.getData();
     }
 
     /**
      * Add an investor to a token&#39;s whitelist
      * 
      * @param payload  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;AsyncOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
-    public ApiResponse<Void> postTokenWhitelistWithHttpInfo(TokenWhitelistPayload payload) throws ApiException {
+    public ApiResponse<AsyncOperationResponse> postTokenWhitelistWithHttpInfo(TokenWhitelistPayload payload) throws ApiException {
         com.squareup.okhttp.Call call = postTokenWhitelistValidateBeforeCall(payload, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -3287,9 +3434,9 @@ public class MoleculeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenWhitelistAsync(TokenWhitelistPayload payload, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postTokenWhitelistAsync(TokenWhitelistPayload payload, final ApiCallback<AsyncOperationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3311,7 +3458,8 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = postTokenWhitelistValidateBeforeCall(payload, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<AsyncOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**

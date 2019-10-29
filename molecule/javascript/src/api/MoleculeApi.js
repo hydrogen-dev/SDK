@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/CurrencyTransferGetResponse', 'model/CurrencyTransferPayload', 'model/CurrencyTransferSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenCrowdsalePayload', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenPurchasePayload', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenTransferGetResponse', 'model/TokenTransferPayload', 'model/TokenTransferSpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse', 'model/WalletUpdatePayload'], factory);
+    define(['ApiClient', 'model/AsyncOperationResponse', 'model/CrowdsaleDeployPayload', 'model/CrowdsaleFundPayload', 'model/CrowdsalePurchasePayload', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/CurrencyTransferGetResponse', 'model/CurrencyTransferPayload', 'model/CurrencyTransferSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenTransferGetResponse', 'model/TokenTransferPayload', 'model/TokenTransferSpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse', 'model/WalletUpdatePayload'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/CurrencyTransferGetResponse'), require('../model/CurrencyTransferPayload'), require('../model/CurrencyTransferSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenCrowdsalePayload'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenPurchasePayload'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenTransferGetResponse'), require('../model/TokenTransferPayload'), require('../model/TokenTransferSpecificResponse'), require('../model/TokenUpdatePayload'), require('../model/TokenWhitelistPayload'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'), require('../model/WalletUpdatePayload'));
+    module.exports = factory(require('../ApiClient'), require('../model/AsyncOperationResponse'), require('../model/CrowdsaleDeployPayload'), require('../model/CrowdsaleFundPayload'), require('../model/CrowdsalePurchasePayload'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/CurrencyTransferGetResponse'), require('../model/CurrencyTransferPayload'), require('../model/CurrencyTransferSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenTransferGetResponse'), require('../model/TokenTransferPayload'), require('../model/TokenTransferSpecificResponse'), require('../model/TokenUpdatePayload'), require('../model/TokenWhitelistPayload'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'), require('../model/WalletUpdatePayload'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.CurrencyTransferGetResponse, root.molecule_api.CurrencyTransferPayload, root.molecule_api.CurrencyTransferSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenCrowdsalePayload, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenPurchasePayload, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenTransferGetResponse, root.molecule_api.TokenTransferPayload, root.molecule_api.TokenTransferSpecificResponse, root.molecule_api.TokenUpdatePayload, root.molecule_api.TokenWhitelistPayload, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse, root.molecule_api.WalletUpdatePayload);
+    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.AsyncOperationResponse, root.molecule_api.CrowdsaleDeployPayload, root.molecule_api.CrowdsaleFundPayload, root.molecule_api.CrowdsalePurchasePayload, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.CurrencyTransferGetResponse, root.molecule_api.CurrencyTransferPayload, root.molecule_api.CurrencyTransferSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenTransferGetResponse, root.molecule_api.TokenTransferPayload, root.molecule_api.TokenTransferSpecificResponse, root.molecule_api.TokenUpdatePayload, root.molecule_api.TokenWhitelistPayload, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse, root.molecule_api.WalletUpdatePayload);
   }
-}(this, function(ApiClient, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, CurrencyTransferGetResponse, CurrencyTransferPayload, CurrencyTransferSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenCrowdsalePayload, TokenDeployPayload, TokenGetResponse, TokenPurchasePayload, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenTransferGetResponse, TokenTransferPayload, TokenTransferSpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse, WalletUpdatePayload) {
+}(this, function(ApiClient, AsyncOperationResponse, CrowdsaleDeployPayload, CrowdsaleFundPayload, CrowdsalePurchasePayload, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, CurrencyTransferGetResponse, CurrencyTransferPayload, CurrencyTransferSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenDeployPayload, TokenGetResponse, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenTransferGetResponse, TokenTransferPayload, TokenTransferSpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse, WalletUpdatePayload) {
   'use strict';
 
   /**
@@ -871,10 +871,148 @@
     }
 
     /**
+     * Callback function to receive the result of the postCrowdsaleDeploy operation.
+     * @callback module:api/MoleculeApi~postCrowdsaleDeployCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AsyncOperationResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deploy a token&#39;s crowdsale contract.
+     * @param {module:model/CrowdsaleDeployPayload} payload 
+     * @param {module:api/MoleculeApi~postCrowdsaleDeployCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AsyncOperationResponse}
+     */
+    this.postCrowdsaleDeploy = function(payload, callback) {
+      var postBody = payload;
+
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling postCrowdsaleDeploy");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = AsyncOperationResponse;
+
+      return this.apiClient.callApi(
+        '/molecule/v1/crowdsale/deploy', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the postCrowdsaleFund operation.
+     * @callback module:api/MoleculeApi~postCrowdsaleFundCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AsyncOperationResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address.
+     * @param {module:model/CrowdsaleFundPayload} payload 
+     * @param {module:api/MoleculeApi~postCrowdsaleFundCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AsyncOperationResponse}
+     */
+    this.postCrowdsaleFund = function(payload, callback) {
+      var postBody = payload;
+
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling postCrowdsaleFund");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = AsyncOperationResponse;
+
+      return this.apiClient.callApi(
+        '/molecule/v1/crowdsale/fund', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the postCrowdsalePurchase operation.
+     * @callback module:api/MoleculeApi~postCrowdsalePurchaseCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AsyncOperationResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Purchase tokens from a crowdsale contract
+     * @param {module:model/CrowdsalePurchasePayload} payload 
+     * @param {module:api/MoleculeApi~postCrowdsalePurchaseCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AsyncOperationResponse}
+     */
+    this.postCrowdsalePurchase = function(payload, callback) {
+      var postBody = payload;
+
+      // verify the required parameter 'payload' is set
+      if (payload === undefined || payload === null) {
+        throw new Error("Missing the required parameter 'payload' when calling postCrowdsalePurchase");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = AsyncOperationResponse;
+
+      return this.apiClient.callApi(
+        '/molecule/v1/crowdsale/purchase', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the postCurrencyTransfer operation.
      * @callback module:api/MoleculeApi~postCurrencyTransferCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/AsyncOperationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -882,6 +1020,7 @@
      * Transfer currency between wallets
      * @param {module:model/CurrencyTransferPayload} payload 
      * @param {module:api/MoleculeApi~postCurrencyTransferCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AsyncOperationResponse}
      */
     this.postCurrencyTransfer = function(payload, callback) {
       var postBody = payload;
@@ -906,7 +1045,7 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = AsyncOperationResponse;
 
       return this.apiClient.callApi(
         '/molecule/v1/currency_transfer', 'POST',
@@ -962,64 +1101,18 @@
     }
 
     /**
-     * Callback function to receive the result of the postTokenCrowdsale operation.
-     * @callback module:api/MoleculeApi~postTokenCrowdsaleCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TokenCreateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Transfer tokens to a token&#39;s crowdsale address.
-     * @param {module:model/TokenCrowdsalePayload} payload 
-     * @param {module:api/MoleculeApi~postTokenCrowdsaleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenCreateResponse}
-     */
-    this.postTokenCrowdsale = function(payload, callback) {
-      var postBody = payload;
-
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postTokenCrowdsale");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = TokenCreateResponse;
-
-      return this.apiClient.callApi(
-        '/molecule/v1/token/crowdsale', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the postTokenDeploy operation.
      * @callback module:api/MoleculeApi~postTokenDeployCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TokenCreateResponse} data The data returned by the service call.
+     * @param {module:model/AsyncOperationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain.
+     * Deploy a security token contract to blockchain.
      * @param {module:model/TokenDeployPayload} payload 
      * @param {module:api/MoleculeApi~postTokenDeployCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TokenCreateResponse}
+     * data is of type: {@link module:model/AsyncOperationResponse}
      */
     this.postTokenDeploy = function(payload, callback) {
       var postBody = payload;
@@ -1044,7 +1137,7 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = TokenCreateResponse;
+      var returnType = AsyncOperationResponse;
 
       return this.apiClient.callApi(
         '/molecule/v1/token/deploy', 'POST',
@@ -1054,55 +1147,10 @@
     }
 
     /**
-     * Callback function to receive the result of the postTokenPurchase operation.
-     * @callback module:api/MoleculeApi~postTokenPurchaseCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Participate in a token&#39;s crowdsale and purchase tokens.
-     * @param {module:model/TokenPurchasePayload} payload 
-     * @param {module:api/MoleculeApi~postTokenPurchaseCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.postTokenPurchase = function(payload, callback) {
-      var postBody = payload;
-
-      // verify the required parameter 'payload' is set
-      if (payload === undefined || payload === null) {
-        throw new Error("Missing the required parameter 'payload' when calling postTokenPurchase");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/molecule/v1/token/purchase', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the postTokenTransfer operation.
      * @callback module:api/MoleculeApi~postTokenTransferCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/AsyncOperationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1110,6 +1158,7 @@
      * Transfer tokens between wallets
      * @param {module:model/TokenTransferPayload} payload 
      * @param {module:api/MoleculeApi~postTokenTransferCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AsyncOperationResponse}
      */
     this.postTokenTransfer = function(payload, callback) {
       var postBody = payload;
@@ -1134,7 +1183,7 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = AsyncOperationResponse;
 
       return this.apiClient.callApi(
         '/molecule/v1/token_transfer', 'POST',
@@ -1147,7 +1196,7 @@
      * Callback function to receive the result of the postTokenWhitelist operation.
      * @callback module:api/MoleculeApi~postTokenWhitelistCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/AsyncOperationResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1155,6 +1204,7 @@
      * Add an investor to a token&#39;s whitelist
      * @param {module:model/TokenWhitelistPayload} payload 
      * @param {module:api/MoleculeApi~postTokenWhitelistCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AsyncOperationResponse}
      */
     this.postTokenWhitelist = function(payload, callback) {
       var postBody = payload;
@@ -1179,7 +1229,7 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = AsyncOperationResponse;
 
       return this.apiClient.callApi(
         '/molecule/v1/token/whitelist', 'POST',

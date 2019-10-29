@@ -148,6 +148,27 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_post_crowdsale_deploy(self):
+        """Test case for post_crowdsale_deploy
+
+        Deploy a token's crowdsale contract.  # noqa: E501
+        """
+        pass
+
+    def test_post_crowdsale_fund(self):
+        """Test case for post_crowdsale_fund
+
+        Transfer tokens to a token's crowdsale address.  # noqa: E501
+        """
+        pass
+
+    def test_post_crowdsale_purchase(self):
+        """Test case for post_crowdsale_purchase
+
+        Purchase tokens from a crowdsale contract  # noqa: E501
+        """
+        pass
+
     def test_post_currency_transfer(self):
         """Test case for post_currency_transfer
 
@@ -162,24 +183,10 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
-    def test_post_token_crowdsale(self):
-        """Test case for post_token_crowdsale
-
-        Transfer tokens to a token's crowdsale address.  # noqa: E501
-        """
-        pass
-
     def test_post_token_deploy(self):
         """Test case for post_token_deploy
 
-        Deploy a secuirty token contract and its crowdsale contract to blockchain.  # noqa: E501
-        """
-        pass
-
-    def test_post_token_purchase(self):
-        """Test case for post_token_purchase
-
-        Participate in a token's crowdsale and purchase tokens.  # noqa: E501
+        Deploy a security token contract to blockchain.  # noqa: E501
         """
         pass
 

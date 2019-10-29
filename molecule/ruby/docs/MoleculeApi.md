@@ -21,11 +21,12 @@ Method | HTTP request | Description
 [**get_wallet_key**](MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**get_wallet_keys**](MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**get_wallets**](MoleculeApi.md#get_wallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**post_crowdsale_deploy**](MoleculeApi.md#post_crowdsale_deploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
+[**post_crowdsale_fund**](MoleculeApi.md#post_crowdsale_fund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
+[**post_crowdsale_purchase**](MoleculeApi.md#post_crowdsale_purchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
 [**post_currency_transfer**](MoleculeApi.md#post_currency_transfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 [**post_token**](MoleculeApi.md#post_token) | **POST** /molecule/v1/token | Create a token under your firm.
-[**post_token_crowdsale**](MoleculeApi.md#post_token_crowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
-[**post_token_deploy**](MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
-[**post_token_purchase**](MoleculeApi.md#post_token_purchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+[**post_token_deploy**](MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
 [**post_token_transfer**](MoleculeApi.md#post_token_transfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**post_token_whitelist**](MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**post_wallet**](MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
@@ -1076,8 +1077,182 @@ Name | Type | Description  | Notes
 
 
 
+# **post_crowdsale_deploy**
+> AsyncOperationResponse post_crowdsale_deploy(payload)
+
+Deploy a token's crowdsale contract.
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+payload = MoleculeApi::CrowdsaleDeployPayload.new # CrowdsaleDeployPayload | 
+
+
+begin
+  #Deploy a token's crowdsale contract.
+  result = api_instance.post_crowdsale_deploy(payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->post_crowdsale_deploy: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleDeployPayload**](CrowdsaleDeployPayload.md)|  | 
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **post_crowdsale_fund**
+> AsyncOperationResponse post_crowdsale_fund(payload)
+
+Transfer tokens to a token's crowdsale address.
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+payload = MoleculeApi::CrowdsaleFundPayload.new # CrowdsaleFundPayload | 
+
+
+begin
+  #Transfer tokens to a token's crowdsale address.
+  result = api_instance.post_crowdsale_fund(payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->post_crowdsale_fund: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleFundPayload**](CrowdsaleFundPayload.md)|  | 
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **post_crowdsale_purchase**
+> AsyncOperationResponse post_crowdsale_purchase(payload)
+
+Purchase tokens from a crowdsale contract
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+payload = MoleculeApi::CrowdsalePurchasePayload.new # CrowdsalePurchasePayload | 
+
+
+begin
+  #Purchase tokens from a crowdsale contract
+  result = api_instance.post_crowdsale_purchase(payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->post_crowdsale_purchase: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsalePurchasePayload**](CrowdsalePurchasePayload.md)|  | 
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **post_currency_transfer**
-> post_currency_transfer(payload)
+> AsyncOperationResponse post_currency_transfer(payload)
 
 Transfer currency between wallets
 
@@ -1106,7 +1281,8 @@ payload = MoleculeApi::CurrencyTransferPayload.new # CurrencyTransferPayload |
 
 begin
   #Transfer currency between wallets
-  api_instance.post_currency_transfer(payload)
+  result = api_instance.post_currency_transfer(payload)
+  p result
 rescue MoleculeApi::ApiError => e
   puts "Exception when calling MoleculeApi->post_currency_transfer: #{e}"
 end
@@ -1120,7 +1296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1191,68 +1367,10 @@ Name | Type | Description  | Notes
 
 
 
-# **post_token_crowdsale**
-> TokenCreateResponse post_token_crowdsale(payload)
-
-Transfer tokens to a token's crowdsale address.
-
-### Example
-```ruby
-# load the gem
-require 'molecule_api'
-
-# Configuration
-MoleculeApi.configure do |config|
-  # Set the environment (optional, defaults to sandbox)
-  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-  config.set_environment("sandbox")
-
-  # Configure OAuth2 access token for authorization: oauth
-  # Method 1: Fetch and set access token with client_id and client_secret
-  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
-  # Method 2: Set access token using an existing token
-  config.access_token = 'MYACCESSTOKEN'
-end
-
-api_instance = MoleculeApi::MoleculeApi.new
-
-payload = MoleculeApi::TokenCrowdsalePayload.new # TokenCrowdsalePayload | 
-
-
-begin
-  #Transfer tokens to a token's crowdsale address.
-  result = api_instance.post_token_crowdsale(payload)
-  p result
-rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->post_token_crowdsale: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenCrowdsalePayload**](TokenCrowdsalePayload.md)|  | 
-
-### Return type
-
-[**TokenCreateResponse**](TokenCreateResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **post_token_deploy**
-> TokenCreateResponse post_token_deploy(payload)
+> AsyncOperationResponse post_token_deploy(payload)
 
-Deploy a secuirty token contract and its crowdsale contract to blockchain.
+Deploy a security token contract to blockchain.
 
 ### Example
 ```ruby
@@ -1278,7 +1396,7 @@ payload = MoleculeApi::TokenDeployPayload.new # TokenDeployPayload |
 
 
 begin
-  #Deploy a secuirty token contract and its crowdsale contract to blockchain.
+  #Deploy a security token contract to blockchain.
   result = api_instance.post_token_deploy(payload)
   p result
 rescue MoleculeApi::ApiError => e
@@ -1294,64 +1412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenCreateResponse**](TokenCreateResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **post_token_purchase**
-> post_token_purchase(payload)
-
-Participate in a token's crowdsale and purchase tokens.
-
-### Example
-```ruby
-# load the gem
-require 'molecule_api'
-
-# Configuration
-MoleculeApi.configure do |config|
-  # Set the environment (optional, defaults to sandbox)
-  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-  config.set_environment("sandbox")
-
-  # Configure OAuth2 access token for authorization: oauth
-  # Method 1: Fetch and set access token with client_id and client_secret
-  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
-  # Method 2: Set access token using an existing token
-  config.access_token = 'MYACCESSTOKEN'
-end
-
-api_instance = MoleculeApi::MoleculeApi.new
-
-payload = MoleculeApi::TokenPurchasePayload.new # TokenPurchasePayload | 
-
-
-begin
-  #Participate in a token's crowdsale and purchase tokens.
-  api_instance.post_token_purchase(payload)
-rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->post_token_purchase: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  | 
-
-### Return type
-
-nil (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1365,7 +1426,7 @@ nil (empty response body)
 
 
 # **post_token_transfer**
-> post_token_transfer(payload)
+> AsyncOperationResponse post_token_transfer(payload)
 
 Transfer tokens between wallets
 
@@ -1394,7 +1455,8 @@ payload = MoleculeApi::TokenTransferPayload.new # TokenTransferPayload |
 
 begin
   #Transfer tokens between wallets
-  api_instance.post_token_transfer(payload)
+  result = api_instance.post_token_transfer(payload)
+  p result
 rescue MoleculeApi::ApiError => e
   puts "Exception when calling MoleculeApi->post_token_transfer: #{e}"
 end
@@ -1408,7 +1470,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1422,7 +1484,7 @@ nil (empty response body)
 
 
 # **post_token_whitelist**
-> post_token_whitelist(payload)
+> AsyncOperationResponse post_token_whitelist(payload)
 
 Add an investor to a token's whitelist
 
@@ -1451,7 +1513,8 @@ payload = MoleculeApi::TokenWhitelistPayload.new # TokenWhitelistPayload |
 
 begin
   #Add an investor to a token's whitelist
-  api_instance.post_token_whitelist(payload)
+  result = api_instance.post_token_whitelist(payload)
+  p result
 rescue MoleculeApi::ApiError => e
   puts "Exception when calling MoleculeApi->post_token_whitelist: #{e}"
 end
@@ -1465,7 +1528,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-nil (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 

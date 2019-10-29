@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new molecule_api.TokenPurchasePayload();
+    instance = new molecule_api.CrowdsaleDeployPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,16 @@
       object[property] = value;
   }
 
-  describe('TokenPurchasePayload', function() {
-    it('should create an instance of TokenPurchasePayload', function() {
-      // uncomment below and update the code to test TokenPurchasePayload
-      //var instance = new molecule_api.TokenPurchasePayload();
-      //expect(instance).to.be.a(molecule_api.TokenPurchasePayload);
+  describe('CrowdsaleDeployPayload', function() {
+    it('should create an instance of CrowdsaleDeployPayload', function() {
+      // uncomment below and update the code to test CrowdsaleDeployPayload
+      //var instance = new molecule_api.CrowdsaleDeployPayload();
+      //expect(instance).to.be.a(molecule_api.CrowdsaleDeployPayload);
     });
 
     it('should have the property tokenId (base name: "token_id")', function() {
       // uncomment below and update the code to test the property tokenId
-      //var instance = new molecule_api.TokenPurchasePayload();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property walletId (base name: "wallet_id")', function() {
-      // uncomment below and update the code to test the property walletId
-      //var instance = new molecule_api.TokenPurchasePayload();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property amount (base name: "amount")', function() {
-      // uncomment below and update the code to test the property amount
-      //var instance = new molecule_api.TokenPurchasePayload();
+      //var instance = new molecule_api.CrowdsaleDeployPayload();
       //expect(instance).to.be();
     });
 

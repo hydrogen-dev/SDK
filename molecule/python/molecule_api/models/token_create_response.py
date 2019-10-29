@@ -42,6 +42,7 @@ class TokenCreateResponse(object):
         'owner_wallet_id': 'str',
         'total_supply': 'float',
         'circulating_supply': 'float',
+        'whitelist_address': 'str',
         'conract_address': 'str',
         'crowdsale_address': 'str',
         'restrictions': 'TokenRestrictionsPayload',
@@ -59,6 +60,7 @@ class TokenCreateResponse(object):
         'owner_wallet_id': 'owner_wallet_id',
         'total_supply': 'total_supply',
         'circulating_supply': 'circulating_supply',
+        'whitelist_address': 'whitelist_address',
         'conract_address': 'conract_address',
         'crowdsale_address': 'crowdsale_address',
         'restrictions': 'restrictions',
@@ -69,7 +71,7 @@ class TokenCreateResponse(object):
         'create_date': 'create_date'
     }
 
-    def __init__(self, symbol=None, name=None, nucleus_model_id=None, owner_wallet_id=None, total_supply=None, circulating_supply=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
+    def __init__(self, symbol=None, name=None, nucleus_model_id=None, owner_wallet_id=None, total_supply=None, circulating_supply=None, whitelist_address=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None, id=None, create_date=None):  # noqa: E501
         """TokenCreateResponse - a model defined in Swagger"""  # noqa: E501
 
         self._symbol = None
@@ -78,6 +80,7 @@ class TokenCreateResponse(object):
         self._owner_wallet_id = None
         self._total_supply = None
         self._circulating_supply = None
+        self._whitelist_address = None
         self._conract_address = None
         self._crowdsale_address = None
         self._restrictions = None
@@ -95,6 +98,8 @@ class TokenCreateResponse(object):
         self.total_supply = total_supply
         if circulating_supply is not None:
             self.circulating_supply = circulating_supply
+        if whitelist_address is not None:
+            self.whitelist_address = whitelist_address
         if conract_address is not None:
             self.conract_address = conract_address
         if crowdsale_address is not None:
@@ -259,6 +264,29 @@ class TokenCreateResponse(object):
         """
 
         self._circulating_supply = circulating_supply
+
+    @property
+    def whitelist_address(self):
+        """Gets the whitelist_address of this TokenCreateResponse.  # noqa: E501
+
+        The whitelist address of the security token on the Ethereum blockchain  # noqa: E501
+
+        :return: The whitelist_address of this TokenCreateResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._whitelist_address
+
+    @whitelist_address.setter
+    def whitelist_address(self, whitelist_address):
+        """Sets the whitelist_address of this TokenCreateResponse.
+
+        The whitelist address of the security token on the Ethereum blockchain  # noqa: E501
+
+        :param whitelist_address: The whitelist_address of this TokenCreateResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._whitelist_address = whitelist_address
 
     @property
     def conract_address(self):

@@ -221,6 +221,36 @@
         done();
       });
     });
+    describe('postCrowdsaleDeploy', function() {
+      it('should call postCrowdsaleDeploy successfully', function(done) {
+        //uncomment below and update the code to test postCrowdsaleDeploy
+        //instance.postCrowdsaleDeploy(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCrowdsaleFund', function() {
+      it('should call postCrowdsaleFund successfully', function(done) {
+        //uncomment below and update the code to test postCrowdsaleFund
+        //instance.postCrowdsaleFund(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCrowdsalePurchase', function() {
+      it('should call postCrowdsalePurchase successfully', function(done) {
+        //uncomment below and update the code to test postCrowdsalePurchase
+        //instance.postCrowdsalePurchase(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postCurrencyTransfer', function() {
       it('should call postCurrencyTransfer successfully', function(done) {
         //uncomment below and update the code to test postCurrencyTransfer
@@ -241,30 +271,10 @@
         done();
       });
     });
-    describe('postTokenCrowdsale', function() {
-      it('should call postTokenCrowdsale successfully', function(done) {
-        //uncomment below and update the code to test postTokenCrowdsale
-        //instance.postTokenCrowdsale(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('postTokenDeploy', function() {
       it('should call postTokenDeploy successfully', function(done) {
         //uncomment below and update the code to test postTokenDeploy
         //instance.postTokenDeploy(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('postTokenPurchase', function() {
-      it('should call postTokenPurchase successfully', function(done) {
-        //uncomment below and update the code to test postTokenPurchase
-        //instance.postTokenPurchase(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

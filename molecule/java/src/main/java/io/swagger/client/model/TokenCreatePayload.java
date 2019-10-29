@@ -31,7 +31,7 @@ import java.util.UUID;
 /**
  * TokenCreatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-23T14:48:32.517-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:55:11.320-04:00")
 public class TokenCreatePayload {
   @SerializedName("symbol")
   private String symbol = null;
@@ -50,6 +50,9 @@ public class TokenCreatePayload {
 
   @SerializedName("circulating_supply")
   private BigDecimal circulatingSupply = null;
+
+  @SerializedName("whitelist_address")
+  private String whitelistAddress = null;
 
   @SerializedName("conract_address")
   private String conractAddress = null;
@@ -177,6 +180,24 @@ public class TokenCreatePayload {
     this.circulatingSupply = circulatingSupply;
   }
 
+  public TokenCreatePayload whitelistAddress(String whitelistAddress) {
+    this.whitelistAddress = whitelistAddress;
+    return this;
+  }
+
+   /**
+   * The whitelist address of the security token on the Ethereum blockchain
+   * @return whitelistAddress
+  **/
+  @ApiModelProperty(value = "The whitelist address of the security token on the Ethereum blockchain")
+  public String getWhitelistAddress() {
+    return whitelistAddress;
+  }
+
+  public void setWhitelistAddress(String whitelistAddress) {
+    this.whitelistAddress = whitelistAddress;
+  }
+
   public TokenCreatePayload conractAddress(String conractAddress) {
     this.conractAddress = conractAddress;
     return this;
@@ -301,6 +322,7 @@ public class TokenCreatePayload {
         Objects.equals(this.ownerWalletId, tokenCreatePayload.ownerWalletId) &&
         Objects.equals(this.totalSupply, tokenCreatePayload.totalSupply) &&
         Objects.equals(this.circulatingSupply, tokenCreatePayload.circulatingSupply) &&
+        Objects.equals(this.whitelistAddress, tokenCreatePayload.whitelistAddress) &&
         Objects.equals(this.conractAddress, tokenCreatePayload.conractAddress) &&
         Objects.equals(this.crowdsaleAddress, tokenCreatePayload.crowdsaleAddress) &&
         Objects.equals(this.restrictions, tokenCreatePayload.restrictions) &&
@@ -311,7 +333,7 @@ public class TokenCreatePayload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbol, name, nucleusModelId, ownerWalletId, totalSupply, circulatingSupply, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId);
+    return Objects.hash(symbol, name, nucleusModelId, ownerWalletId, totalSupply, circulatingSupply, whitelistAddress, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId);
   }
 
 
@@ -326,6 +348,7 @@ public class TokenCreatePayload {
     sb.append("    ownerWalletId: ").append(toIndentedString(ownerWalletId)).append("\n");
     sb.append("    totalSupply: ").append(toIndentedString(totalSupply)).append("\n");
     sb.append("    circulatingSupply: ").append(toIndentedString(circulatingSupply)).append("\n");
+    sb.append("    whitelistAddress: ").append(toIndentedString(whitelistAddress)).append("\n");
     sb.append("    conractAddress: ").append(toIndentedString(conractAddress)).append("\n");
     sb.append("    crowdsaleAddress: ").append(toIndentedString(crowdsaleAddress)).append("\n");
     sb.append("    restrictions: ").append(toIndentedString(restrictions)).append("\n");

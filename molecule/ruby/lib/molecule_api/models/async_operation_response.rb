@@ -13,31 +13,21 @@ Swagger Codegen version: 2.4.8-SNAPSHOT
 require 'date'
 
 module MoleculeApi
-  class TokenPurchasePayload
-    # The uuid of the specified token.
-    attr_accessor :token_id
-
-    # The uuid of wallet to be whitelisted.
-    attr_accessor :wallet_id
-
-    # Amount of tokens to be purchased.
-    attr_accessor :amount
+  class AsyncOperationResponse
+    # Status of the asynchronous API call
+    attr_accessor :status
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'token_id' => :'token_id',
-        :'wallet_id' => :'wallet_id',
-        :'amount' => :'amount'
+        :'status' => :'status'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'token_id' => :'String',
-        :'wallet_id' => :'String',
-        :'amount' => :'Float'
+        :'status' => :'String'
       }
     end
 
@@ -49,16 +39,8 @@ module MoleculeApi
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'token_id')
-        self.token_id = attributes[:'token_id']
-      end
-
-      if attributes.has_key?(:'wallet_id')
-        self.wallet_id = attributes[:'wallet_id']
-      end
-
-      if attributes.has_key?(:'amount')
-        self.amount = attributes[:'amount']
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
     end
 
@@ -66,27 +48,12 @@ module MoleculeApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @token_id.nil?
-        invalid_properties.push('invalid value for "token_id", token_id cannot be nil.')
-      end
-
-      if @wallet_id.nil?
-        invalid_properties.push('invalid value for "wallet_id", wallet_id cannot be nil.')
-      end
-
-      if @amount.nil?
-        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @token_id.nil?
-      return false if @wallet_id.nil?
-      return false if @amount.nil?
       true
     end
 
@@ -95,9 +62,7 @@ module MoleculeApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          token_id == o.token_id &&
-          wallet_id == o.wallet_id &&
-          amount == o.amount
+          status == o.status
     end
 
     # @see the `==` method
@@ -109,7 +74,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [token_id, wallet_id, amount].hash
+      [status].hash
     end
 
     # Builds the object from hash

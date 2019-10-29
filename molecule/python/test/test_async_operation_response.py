@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import molecule_api
-from molecule_api.models.token_crowdsale_payload import TokenCrowdsalePayload  # noqa: E501
+from molecule_api.models.async_operation_response import AsyncOperationResponse  # noqa: E501
 from molecule_api.rest import ApiException
 
 
-class TestTokenCrowdsalePayload(unittest.TestCase):
-    """TokenCrowdsalePayload unit test stubs"""
+class TestAsyncOperationResponse(unittest.TestCase):
+    """AsyncOperationResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestTokenCrowdsalePayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTokenCrowdsalePayload(self):
-        """Test TokenCrowdsalePayload"""
+    def testAsyncOperationResponse(self):
+        """Test AsyncOperationResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = molecule_api.models.token_crowdsale_payload.TokenCrowdsalePayload()  # noqa: E501
+        # model = molecule_api.models.async_operation_response.AsyncOperationResponse()  # noqa: E501
         pass
 
 

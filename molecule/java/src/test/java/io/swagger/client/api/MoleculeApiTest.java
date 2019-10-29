@@ -14,6 +14,10 @@
 package io.swagger.client.api;
 
 import molecule_api.ApiException;
+import io.swagger.client.model.AsyncOperationResponse;
+import io.swagger.client.model.CrowdsaleDeployPayload;
+import io.swagger.client.model.CrowdsaleFundPayload;
+import io.swagger.client.model.CrowdsalePurchasePayload;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
 import io.swagger.client.model.CurrencyTransferGetResponse;
@@ -23,10 +27,8 @@ import io.swagger.client.model.TokenBalanceGetResponse;
 import io.swagger.client.model.TokenBalanceSpecificResponse;
 import io.swagger.client.model.TokenCreatePayload;
 import io.swagger.client.model.TokenCreateResponse;
-import io.swagger.client.model.TokenCrowdsalePayload;
 import io.swagger.client.model.TokenDeployPayload;
 import io.swagger.client.model.TokenGetResponse;
-import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
@@ -360,6 +362,54 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Deploy a token&#39;s crowdsale contract.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCrowdsaleDeployTest() throws ApiException {
+        CrowdsaleDeployPayload payload = null;
+        AsyncOperationResponse response = api.postCrowdsaleDeploy(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCrowdsaleFundTest() throws ApiException {
+        CrowdsaleFundPayload payload = null;
+        AsyncOperationResponse response = api.postCrowdsaleFund(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Purchase tokens from a crowdsale contract
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCrowdsalePurchaseTest() throws ApiException {
+        CrowdsalePurchasePayload payload = null;
+        AsyncOperationResponse response = api.postCrowdsalePurchase(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Transfer currency between wallets
      *
      * 
@@ -370,7 +420,7 @@ public class MoleculeApiTest {
     @Test
     public void postCurrencyTransferTest() throws ApiException {
         CurrencyTransferPayload payload = null;
-        api.postCurrencyTransfer(payload);
+        AsyncOperationResponse response = api.postCurrencyTransfer(payload);
 
         // TODO: test validations
     }
@@ -392,23 +442,7 @@ public class MoleculeApiTest {
     }
     
     /**
-     * Transfer tokens to a token&#39;s crowdsale address.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void postTokenCrowdsaleTest() throws ApiException {
-        TokenCrowdsalePayload payload = null;
-        TokenCreateResponse response = api.postTokenCrowdsale(payload);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain.
+     * Deploy a security token contract to blockchain.
      *
      * 
      *
@@ -418,23 +452,7 @@ public class MoleculeApiTest {
     @Test
     public void postTokenDeployTest() throws ApiException {
         TokenDeployPayload payload = null;
-        TokenCreateResponse response = api.postTokenDeploy(payload);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Participate in a token&#39;s crowdsale and purchase tokens.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void postTokenPurchaseTest() throws ApiException {
-        TokenPurchasePayload payload = null;
-        api.postTokenPurchase(payload);
+        AsyncOperationResponse response = api.postTokenDeploy(payload);
 
         // TODO: test validations
     }
@@ -450,7 +468,7 @@ public class MoleculeApiTest {
     @Test
     public void postTokenTransferTest() throws ApiException {
         TokenTransferPayload payload = null;
-        api.postTokenTransfer(payload);
+        AsyncOperationResponse response = api.postTokenTransfer(payload);
 
         // TODO: test validations
     }
@@ -466,7 +484,7 @@ public class MoleculeApiTest {
     @Test
     public void postTokenWhitelistTest() throws ApiException {
         TokenWhitelistPayload payload = null;
-        api.postTokenWhitelist(payload);
+        AsyncOperationResponse response = api.postTokenWhitelist(payload);
 
         // TODO: test validations
     }

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **owner_wallet_id** | **str** | The wallet id of the token owner. This wallet has the privileges to do on-chain modifications | 
 **total_supply** | **float** | The total supply of the security token | 
 **circulating_supply** | **float** | The amount of tokens in circulation. Defaults to 0 | [optional] 
+**whitelist_address** | **str** | The whitelist address of the security token on the Ethereum blockchain | [optional] 
 **conract_address** | **str** | The contract address of the security token on the Ethereum blockchain | [optional] 
 **crowdsale_address** | **str** | The crowdsale address of the security token on the Ethereum blockchain | [optional] 
 **restrictions** | [**TokenRestrictionsPayload**](TokenRestrictionsPayload.md) |  | [optional] 

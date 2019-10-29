@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * TokenBalanceGetResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-23T14:48:32.517-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:55:11.320-04:00")
 public class TokenBalanceGetResponse {
   @SerializedName("last")
   private Boolean last = null;

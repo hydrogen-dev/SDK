@@ -21,11 +21,12 @@ Method | HTTP request | Description
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**getWallets**](MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**postCrowdsaleDeploy**](MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
+[**postCrowdsaleFund**](MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
+[**postCrowdsalePurchase**](MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
 [**postCurrencyTransfer**](MoleculeApi.md#postCurrencyTransfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 [**postToken**](MoleculeApi.md#postToken) | **POST** /molecule/v1/token | Create a token under your firm.
-[**postTokenCrowdsale**](MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
-[**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
-[**postTokenPurchase**](MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+[**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
 [**postTokenTransfer**](MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**postTokenWhitelist**](MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
@@ -1026,9 +1027,174 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postCrowdsaleDeploy"></a>
+# **postCrowdsaleDeploy**
+> AsyncOperationResponse postCrowdsaleDeploy(payload)
+
+Deploy a token&#39;s crowdsale contract.
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CrowdsaleDeployPayload(); // CrowdsaleDeployPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCrowdsaleDeploy(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleDeployPayload**](CrowdsaleDeployPayload.md)|  | 
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCrowdsaleFund"></a>
+# **postCrowdsaleFund**
+> AsyncOperationResponse postCrowdsaleFund(payload)
+
+Transfer tokens to a token&#39;s crowdsale address.
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CrowdsaleFundPayload(); // CrowdsaleFundPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCrowdsaleFund(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleFundPayload**](CrowdsaleFundPayload.md)|  | 
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCrowdsalePurchase"></a>
+# **postCrowdsalePurchase**
+> AsyncOperationResponse postCrowdsalePurchase(payload)
+
+Purchase tokens from a crowdsale contract
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CrowdsalePurchasePayload(); // CrowdsalePurchasePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCrowdsalePurchase(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsalePurchasePayload**](CrowdsalePurchasePayload.md)|  | 
+
+### Return type
+
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postCurrencyTransfer"></a>
 # **postCurrencyTransfer**
-> postCurrencyTransfer(payload)
+> AsyncOperationResponse postCurrencyTransfer(payload)
 
 Transfer currency between wallets
 
@@ -1056,7 +1222,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.postCurrencyTransfer(payload, callback);
@@ -1070,7 +1236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1136,66 +1302,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postTokenCrowdsale"></a>
-# **postTokenCrowdsale**
-> TokenCreateResponse postTokenCrowdsale(payload)
-
-Transfer tokens to a token&#39;s crowdsale address.
-
-### Example
-```javascript
-var molecule_api = require('hydrogen-molecule-api');
-var defaultClient = molecule_api.ApiClient.instance;
-
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
-
-
-// Configure OAuth2 access token for authorization: oauth
-// Ensure the token is from the same environment as the defaultClient.basePath above
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = "YOUR ACCESS TOKEN";
-
-var apiInstance = new molecule_api.MoleculeApi();
-
-var payload = new molecule_api.TokenCrowdsalePayload(); // TokenCrowdsalePayload | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.postTokenCrowdsale(payload, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenCrowdsalePayload**](TokenCrowdsalePayload.md)|  | 
-
-### Return type
-
-[**TokenCreateResponse**](TokenCreateResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="postTokenDeploy"></a>
 # **postTokenDeploy**
-> TokenCreateResponse postTokenDeploy(payload)
+> AsyncOperationResponse postTokenDeploy(payload)
 
-Deploy a secuirty token contract and its crowdsale contract to blockchain.
+Deploy a security token contract to blockchain.
 
 ### Example
 ```javascript
@@ -1235,62 +1346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenCreateResponse**](TokenCreateResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="postTokenPurchase"></a>
-# **postTokenPurchase**
-> postTokenPurchase(payload)
-
-Participate in a token&#39;s crowdsale and purchase tokens.
-
-### Example
-```javascript
-var molecule_api = require('hydrogen-molecule-api');
-var defaultClient = molecule_api.ApiClient.instance;
-
-// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
-
-
-// Configure OAuth2 access token for authorization: oauth
-// Ensure the token is from the same environment as the defaultClient.basePath above
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = "YOUR ACCESS TOKEN";
-
-var apiInstance = new molecule_api.MoleculeApi();
-
-var payload = new molecule_api.TokenPurchasePayload(); // TokenPurchasePayload | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.postTokenPurchase(payload, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  | 
-
-### Return type
-
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1303,7 +1359,7 @@ null (empty response body)
 
 <a name="postTokenTransfer"></a>
 # **postTokenTransfer**
-> postTokenTransfer(payload)
+> AsyncOperationResponse postTokenTransfer(payload)
 
 Transfer tokens between wallets
 
@@ -1331,7 +1387,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.postTokenTransfer(payload, callback);
@@ -1345,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 
@@ -1358,7 +1414,7 @@ null (empty response body)
 
 <a name="postTokenWhitelist"></a>
 # **postTokenWhitelist**
-> postTokenWhitelist(payload)
+> AsyncOperationResponse postTokenWhitelist(payload)
 
 Add an investor to a token&#39;s whitelist
 
@@ -1386,7 +1442,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.postTokenWhitelist(payload, callback);
@@ -1400,7 +1456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**AsyncOperationResponse**](AsyncOperationResponse.md)
 
 ### Authorization
 

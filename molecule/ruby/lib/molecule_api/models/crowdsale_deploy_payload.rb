@@ -13,26 +13,21 @@ Swagger Codegen version: 2.4.8-SNAPSHOT
 require 'date'
 
 module MoleculeApi
-  class TokenCrowdsalePayload
-    # The uuid of the token being deployed.
+  class CrowdsaleDeployPayload
+    # The uuid of the token being crowdsaled.
     attr_accessor :token_id
-
-    # Amount of token supply to be transferred to the crowdsale contract.
-    attr_accessor :supply
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'token_id' => :'token_id',
-        :'supply' => :'supply'
+        :'token_id' => :'token_id'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'token_id' => :'String',
-        :'supply' => :'Float'
+        :'token_id' => :'String'
       }
     end
 
@@ -47,10 +42,6 @@ module MoleculeApi
       if attributes.has_key?(:'token_id')
         self.token_id = attributes[:'token_id']
       end
-
-      if attributes.has_key?(:'supply')
-        self.supply = attributes[:'supply']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -61,10 +52,6 @@ module MoleculeApi
         invalid_properties.push('invalid value for "token_id", token_id cannot be nil.')
       end
 
-      if @supply.nil?
-        invalid_properties.push('invalid value for "supply", supply cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -72,7 +59,6 @@ module MoleculeApi
     # @return true if the model is valid
     def valid?
       return false if @token_id.nil?
-      return false if @supply.nil?
       true
     end
 
@@ -81,8 +67,7 @@ module MoleculeApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          token_id == o.token_id &&
-          supply == o.supply
+          token_id == o.token_id
     end
 
     # @see the `==` method
@@ -94,7 +79,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [token_id, supply].hash
+      [token_id].hash
     end
 
     # Builds the object from hash

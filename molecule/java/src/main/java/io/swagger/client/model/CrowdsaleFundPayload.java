@@ -27,29 +27,26 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
- * TokenPurchasePayload
+ * CrowdsaleFundPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-23T14:48:32.517-04:00")
-public class TokenPurchasePayload {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:55:11.320-04:00")
+public class CrowdsaleFundPayload {
   @SerializedName("token_id")
   private UUID tokenId = null;
 
-  @SerializedName("wallet_id")
-  private UUID walletId = null;
+  @SerializedName("supply")
+  private BigDecimal supply = null;
 
-  @SerializedName("amount")
-  private BigDecimal amount = null;
-
-  public TokenPurchasePayload tokenId(UUID tokenId) {
+  public CrowdsaleFundPayload tokenId(UUID tokenId) {
     this.tokenId = tokenId;
     return this;
   }
 
    /**
-   * The uuid of the specified token.
+   * The uuid of the token being deployed.
    * @return tokenId
   **/
-  @ApiModelProperty(required = true, value = "The uuid of the specified token.")
+  @ApiModelProperty(required = true, value = "The uuid of the token being deployed.")
   public UUID getTokenId() {
     return tokenId;
   }
@@ -58,40 +55,22 @@ public class TokenPurchasePayload {
     this.tokenId = tokenId;
   }
 
-  public TokenPurchasePayload walletId(UUID walletId) {
-    this.walletId = walletId;
+  public CrowdsaleFundPayload supply(BigDecimal supply) {
+    this.supply = supply;
     return this;
   }
 
    /**
-   * The uuid of wallet to be whitelisted.
-   * @return walletId
+   * Amount of token supply to be transferred to the crowdsale contract.
+   * @return supply
   **/
-  @ApiModelProperty(required = true, value = "The uuid of wallet to be whitelisted.")
-  public UUID getWalletId() {
-    return walletId;
+  @ApiModelProperty(required = true, value = "Amount of token supply to be transferred to the crowdsale contract.")
+  public BigDecimal getSupply() {
+    return supply;
   }
 
-  public void setWalletId(UUID walletId) {
-    this.walletId = walletId;
-  }
-
-  public TokenPurchasePayload amount(BigDecimal amount) {
-    this.amount = amount;
-    return this;
-  }
-
-   /**
-   * Amount of tokens to be purchased.
-   * @return amount
-  **/
-  @ApiModelProperty(required = true, value = "Amount of tokens to be purchased.")
-  public BigDecimal getAmount() {
-    return amount;
-  }
-
-  public void setAmount(BigDecimal amount) {
-    this.amount = amount;
+  public void setSupply(BigDecimal supply) {
+    this.supply = supply;
   }
 
 
@@ -103,26 +82,24 @@ public class TokenPurchasePayload {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TokenPurchasePayload tokenPurchasePayload = (TokenPurchasePayload) o;
-    return Objects.equals(this.tokenId, tokenPurchasePayload.tokenId) &&
-        Objects.equals(this.walletId, tokenPurchasePayload.walletId) &&
-        Objects.equals(this.amount, tokenPurchasePayload.amount);
+    CrowdsaleFundPayload crowdsaleFundPayload = (CrowdsaleFundPayload) o;
+    return Objects.equals(this.tokenId, crowdsaleFundPayload.tokenId) &&
+        Objects.equals(this.supply, crowdsaleFundPayload.supply);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tokenId, walletId, amount);
+    return Objects.hash(tokenId, supply);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TokenPurchasePayload {\n");
+    sb.append("class CrowdsaleFundPayload {\n");
     
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
-    sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    supply: ").append(toIndentedString(supply)).append("\n");
     sb.append("}");
     return sb.toString();
   }

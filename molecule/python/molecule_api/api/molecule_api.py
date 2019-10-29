@@ -1778,6 +1778,297 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_crowdsale_deploy(self, payload, **kwargs):  # noqa: E501
+        """Deploy a token's crowdsale contract.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_deploy(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleDeployPayload payload: (required)
+        :return: AsyncOperationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_crowdsale_deploy_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_crowdsale_deploy_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_crowdsale_deploy_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Deploy a token's crowdsale contract.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_deploy_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleDeployPayload payload: (required)
+        :return: AsyncOperationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_crowdsale_deploy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_crowdsale_deploy`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/crowdsale/deploy', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AsyncOperationResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_crowdsale_fund(self, payload, **kwargs):  # noqa: E501
+        """Transfer tokens to a token's crowdsale address.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_fund(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleFundPayload payload: (required)
+        :return: AsyncOperationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_crowdsale_fund_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_crowdsale_fund_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_crowdsale_fund_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Transfer tokens to a token's crowdsale address.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_fund_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleFundPayload payload: (required)
+        :return: AsyncOperationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_crowdsale_fund" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_crowdsale_fund`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/crowdsale/fund', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AsyncOperationResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_crowdsale_purchase(self, payload, **kwargs):  # noqa: E501
+        """Purchase tokens from a crowdsale contract  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_purchase(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsalePurchasePayload payload: (required)
+        :return: AsyncOperationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_crowdsale_purchase_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_crowdsale_purchase_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_crowdsale_purchase_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Purchase tokens from a crowdsale contract  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_purchase_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsalePurchasePayload payload: (required)
+        :return: AsyncOperationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_crowdsale_purchase" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_crowdsale_purchase`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/crowdsale/purchase', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AsyncOperationResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def post_currency_transfer(self, payload, **kwargs):  # noqa: E501
         """Transfer currency between wallets  # noqa: E501
 
@@ -1788,7 +2079,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CurrencyTransferPayload payload: (required)
-        :return: None
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1809,7 +2100,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CurrencyTransferPayload payload: (required)
-        :return: None
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1867,7 +2158,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='AsyncOperationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1972,105 +2263,8 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_token_crowdsale(self, payload, **kwargs):  # noqa: E501
-        """Transfer tokens to a token's crowdsale address.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_crowdsale(payload, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param TokenCrowdsalePayload payload: (required)
-        :return: TokenCreateResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.post_token_crowdsale_with_http_info(payload, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_token_crowdsale_with_http_info(payload, **kwargs)  # noqa: E501
-            return data
-
-    def post_token_crowdsale_with_http_info(self, payload, **kwargs):  # noqa: E501
-        """Transfer tokens to a token's crowdsale address.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_crowdsale_with_http_info(payload, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param TokenCrowdsalePayload payload: (required)
-        :return: TokenCreateResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['payload']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_token_crowdsale" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'payload' is set
-        if ('payload' not in params or
-                params['payload'] is None):
-            raise ValueError("Missing the required parameter `payload` when calling `post_token_crowdsale`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'payload' in params:
-            body_params = params['payload']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/molecule/v1/token/crowdsale', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='TokenCreateResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def post_token_deploy(self, payload, **kwargs):  # noqa: E501
-        """Deploy a secuirty token contract and its crowdsale contract to blockchain.  # noqa: E501
+        """Deploy a security token contract to blockchain.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2079,7 +2273,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenDeployPayload payload: (required)
-        :return: TokenCreateResponse
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2091,7 +2285,7 @@ class MoleculeApi(object):
             return data
 
     def post_token_deploy_with_http_info(self, payload, **kwargs):  # noqa: E501
-        """Deploy a secuirty token contract and its crowdsale contract to blockchain.  # noqa: E501
+        """Deploy a security token contract to blockchain.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2100,7 +2294,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenDeployPayload payload: (required)
-        :return: TokenCreateResponse
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2158,104 +2352,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TokenCreateResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def post_token_purchase(self, payload, **kwargs):  # noqa: E501
-        """Participate in a token's crowdsale and purchase tokens.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_purchase(payload, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param TokenPurchasePayload payload: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.post_token_purchase_with_http_info(payload, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_token_purchase_with_http_info(payload, **kwargs)  # noqa: E501
-            return data
-
-    def post_token_purchase_with_http_info(self, payload, **kwargs):  # noqa: E501
-        """Participate in a token's crowdsale and purchase tokens.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_purchase_with_http_info(payload, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param TokenPurchasePayload payload: (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['payload']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_token_purchase" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'payload' is set
-        if ('payload' not in params or
-                params['payload'] is None):
-            raise ValueError("Missing the required parameter `payload` when calling `post_token_purchase`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'payload' in params:
-            body_params = params['payload']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/molecule/v1/token/purchase', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='AsyncOperationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2273,7 +2370,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenTransferPayload payload: (required)
-        :return: None
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2294,7 +2391,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenTransferPayload payload: (required)
-        :return: None
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2352,7 +2449,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='AsyncOperationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2370,7 +2467,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenWhitelistPayload payload: (required)
-        :return: None
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2391,7 +2488,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenWhitelistPayload payload: (required)
-        :return: None
+        :return: AsyncOperationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2449,7 +2546,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='AsyncOperationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

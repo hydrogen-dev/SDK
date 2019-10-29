@@ -1,5 +1,5 @@
 
-# TokenCrowdsalePayload
+# CrowdsaleFundPayload
 
 ## Properties
 Name | Type | Description | Notes

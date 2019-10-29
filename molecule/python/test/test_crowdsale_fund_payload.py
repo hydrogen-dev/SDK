@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import molecule_api
-from molecule_api.models.token_purchase_payload import TokenPurchasePayload  # noqa: E501
+from molecule_api.models.crowdsale_fund_payload import CrowdsaleFundPayload  # noqa: E501
 from molecule_api.rest import ApiException
 
 
-class TestTokenPurchasePayload(unittest.TestCase):
-    """TokenPurchasePayload unit test stubs"""
+class TestCrowdsaleFundPayload(unittest.TestCase):
+    """CrowdsaleFundPayload unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestTokenPurchasePayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTokenPurchasePayload(self):
-        """Test TokenPurchasePayload"""
+    def testCrowdsaleFundPayload(self):
+        """Test CrowdsaleFundPayload"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = molecule_api.models.token_purchase_payload.TokenPurchasePayload()  # noqa: E501
+        # model = molecule_api.models.crowdsale_fund_payload.CrowdsaleFundPayload()  # noqa: E501
         pass
 
 

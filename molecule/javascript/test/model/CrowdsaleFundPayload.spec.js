@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new molecule_api.TokenCrowdsalePayload();
+    instance = new molecule_api.CrowdsaleFundPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,22 +50,22 @@
       object[property] = value;
   }
 
-  describe('TokenCrowdsalePayload', function() {
-    it('should create an instance of TokenCrowdsalePayload', function() {
-      // uncomment below and update the code to test TokenCrowdsalePayload
-      //var instance = new molecule_api.TokenCrowdsalePayload();
-      //expect(instance).to.be.a(molecule_api.TokenCrowdsalePayload);
+  describe('CrowdsaleFundPayload', function() {
+    it('should create an instance of CrowdsaleFundPayload', function() {
+      // uncomment below and update the code to test CrowdsaleFundPayload
+      //var instance = new molecule_api.CrowdsaleFundPayload();
+      //expect(instance).to.be.a(molecule_api.CrowdsaleFundPayload);
     });
 
     it('should have the property tokenId (base name: "token_id")', function() {
       // uncomment below and update the code to test the property tokenId
-      //var instance = new molecule_api.TokenCrowdsalePayload();
+      //var instance = new molecule_api.CrowdsaleFundPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property supply (base name: "supply")', function() {
       // uncomment below and update the code to test the property supply
-      //var instance = new molecule_api.TokenCrowdsalePayload();
+      //var instance = new molecule_api.CrowdsaleFundPayload();
       //expect(instance).to.be();
     });
 

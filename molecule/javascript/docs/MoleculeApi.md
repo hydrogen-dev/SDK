@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**getTokenTransfer**](MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 [**getTokenTransfers**](MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
+[**getTxStatus**](MoleculeApi.md#getTxStatus) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
+[**getTxStatuses**](MoleculeApi.md#getTxStatuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -173,7 +175,8 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 };
 
 var callback = function(error, data, response) {
@@ -194,6 +197,7 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -290,7 +294,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -462,7 +466,8 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 };
 
 var callback = function(error, data, response) {
@@ -483,6 +488,7 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -524,7 +530,8 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 };
 
 var callback = function(error, data, response) {
@@ -545,6 +552,7 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -696,7 +704,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -758,7 +766,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -783,6 +791,125 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenGetResponse**](TokenGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTxStatus"></a>
+# **getTxStatus**
+> TxStatusSpecificResponse getTxStatus(txStatusId)
+
+Retrieve status information for a specific transaction
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var txStatusId = "txStatusId_example"; // String | UUID of a transaction status
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTxStatus(txStatusId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **txStatusId** | [**String**](.md)| UUID of a transaction status | 
+
+### Return type
+
+[**TxStatusSpecificResponse**](TxStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTxStatuses"></a>
+# **getTxStatuses**
+> TxStatusGetResponse getTxStatuses(opts)
+
+Get status information for all transactions
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTxStatuses(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**TxStatusGetResponse**](TxStatusGetResponse.md)
 
 ### Authorization
 
@@ -930,7 +1057,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -992,7 +1119,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {

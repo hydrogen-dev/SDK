@@ -36,7 +36,6 @@ securityDefinitions:
 # ********** Paths: describe endpoints and associated methods, parameters, payloads, and responses **********
 paths:
   /molecule/v1/wallet:
-  # GET & POST for all Wallet resources
     get:
       operationId: getWallets
       summary: Get information for all wallets defined for your firm
@@ -105,7 +104,6 @@ paths:
         503:
           $ref: '#/responses/503'
   /molecule/v1/wallet/{wallet_id}/:
-  # GET, PUT, and DELETE for a specific Wallet resource
     get:
       operationId: getWallet
       summary: Retrieve a wallet
@@ -340,6 +338,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
 
   /molecule/v1/currency_balance/{currency_balance_id}:
     get:
@@ -407,6 +406,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
 
   /molecule/v1/token_balance/{token_balance_id}:
     get:
@@ -815,6 +815,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
 
   /molecule/v1/token_supply/{token_supply_id}:
     get:
@@ -1050,6 +1051,74 @@ paths:
     parameters:
       - $ref: '#/parameters/path_currency_transfer_uuid'
 
+  /molecule/v1/tx_status:
+    get:
+      operationId: getTxStatuses
+      summary: Get status information for all transactions
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/tx_status_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
+
+  /molecule/v1/tx_status/{tx_status_id}:
+    get:
+      operationId: getTxStatus
+      summary: Retrieve status information for a specific transaction
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/tx_status_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_tx_status_uuid'
+
 # ********** Parameters: describe variables that may appear in the request URL **********
 parameters:
 
@@ -1086,6 +1155,12 @@ parameters:
     default: false
 
   # Filter query params
+  query_filter:
+    in: query
+    name: filter
+    description: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    required: false
+    type: string
 
   # Resource path params
   path_wallet_uuid:
@@ -1144,6 +1219,13 @@ parameters:
     format: uuid
     required: true
     description: UUID of a currency transfer
+  path_tx_status_uuid:
+    in: path
+    name: tx_status_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a transaction status
 
 # ********** Responses: describe possible response codes **********
 responses:
@@ -1529,7 +1611,47 @@ definitions:
         status:
           type: string
           description: Status of the asynchronous API call
-
+  tx_status_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/tx_status_specific_response'
+      - $ref: '#/definitions/pagination'
+  tx_status_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the transaction status
+          wallet_id:
+            type: string
+            format: uuid
+            description: ID of the wallet sent out the transaction
+          hash:
+            type: string
+            description: The unique hash of the transaction
+          status:
+            type: string
+            description: Status of the transaction. Could be pending, processed, or failed
+          emits_event:
+            type: boolean
+            description: Shows if the transaction will emit an event or not
+          event_handled:
+            type: boolean
+            description: Shows if the event of the transaction has been handled or not
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the currency transfer record was created
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the currency transfer record was updated
   # Request payloads
   wallet_create_client:
     type: object

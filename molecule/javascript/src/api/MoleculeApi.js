@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AsyncOperationResponse', 'model/CrowdsaleDeployPayload', 'model/CrowdsaleFundPayload', 'model/CrowdsalePurchasePayload', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/CurrencyTransferGetResponse', 'model/CurrencyTransferPayload', 'model/CurrencyTransferSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenTransferGetResponse', 'model/TokenTransferPayload', 'model/TokenTransferSpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse', 'model/WalletUpdatePayload'], factory);
+    define(['ApiClient', 'model/AsyncOperationResponse', 'model/CrowdsaleDeployPayload', 'model/CrowdsaleFundPayload', 'model/CrowdsalePurchasePayload', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/CurrencyTransferGetResponse', 'model/CurrencyTransferPayload', 'model/CurrencyTransferSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenTransferGetResponse', 'model/TokenTransferPayload', 'model/TokenTransferSpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/TxStatusGetResponse', 'model/TxStatusSpecificResponse', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse', 'model/WalletUpdatePayload'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AsyncOperationResponse'), require('../model/CrowdsaleDeployPayload'), require('../model/CrowdsaleFundPayload'), require('../model/CrowdsalePurchasePayload'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/CurrencyTransferGetResponse'), require('../model/CurrencyTransferPayload'), require('../model/CurrencyTransferSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenTransferGetResponse'), require('../model/TokenTransferPayload'), require('../model/TokenTransferSpecificResponse'), require('../model/TokenUpdatePayload'), require('../model/TokenWhitelistPayload'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'), require('../model/WalletUpdatePayload'));
+    module.exports = factory(require('../ApiClient'), require('../model/AsyncOperationResponse'), require('../model/CrowdsaleDeployPayload'), require('../model/CrowdsaleFundPayload'), require('../model/CrowdsalePurchasePayload'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/CurrencyTransferGetResponse'), require('../model/CurrencyTransferPayload'), require('../model/CurrencyTransferSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenTransferGetResponse'), require('../model/TokenTransferPayload'), require('../model/TokenTransferSpecificResponse'), require('../model/TokenUpdatePayload'), require('../model/TokenWhitelistPayload'), require('../model/TxStatusGetResponse'), require('../model/TxStatusSpecificResponse'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'), require('../model/WalletUpdatePayload'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.AsyncOperationResponse, root.molecule_api.CrowdsaleDeployPayload, root.molecule_api.CrowdsaleFundPayload, root.molecule_api.CrowdsalePurchasePayload, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.CurrencyTransferGetResponse, root.molecule_api.CurrencyTransferPayload, root.molecule_api.CurrencyTransferSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenTransferGetResponse, root.molecule_api.TokenTransferPayload, root.molecule_api.TokenTransferSpecificResponse, root.molecule_api.TokenUpdatePayload, root.molecule_api.TokenWhitelistPayload, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse, root.molecule_api.WalletUpdatePayload);
+    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.AsyncOperationResponse, root.molecule_api.CrowdsaleDeployPayload, root.molecule_api.CrowdsaleFundPayload, root.molecule_api.CrowdsalePurchasePayload, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.CurrencyTransferGetResponse, root.molecule_api.CurrencyTransferPayload, root.molecule_api.CurrencyTransferSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenTransferGetResponse, root.molecule_api.TokenTransferPayload, root.molecule_api.TokenTransferSpecificResponse, root.molecule_api.TokenUpdatePayload, root.molecule_api.TokenWhitelistPayload, root.molecule_api.TxStatusGetResponse, root.molecule_api.TxStatusSpecificResponse, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse, root.molecule_api.WalletUpdatePayload);
   }
-}(this, function(ApiClient, AsyncOperationResponse, CrowdsaleDeployPayload, CrowdsaleFundPayload, CrowdsalePurchasePayload, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, CurrencyTransferGetResponse, CurrencyTransferPayload, CurrencyTransferSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenDeployPayload, TokenGetResponse, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenTransferGetResponse, TokenTransferPayload, TokenTransferSpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse, WalletUpdatePayload) {
+}(this, function(ApiClient, AsyncOperationResponse, CrowdsaleDeployPayload, CrowdsaleFundPayload, CrowdsalePurchasePayload, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, CurrencyTransferGetResponse, CurrencyTransferPayload, CurrencyTransferSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenDeployPayload, TokenGetResponse, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenTransferGetResponse, TokenTransferPayload, TokenTransferSpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, TxStatusGetResponse, TxStatusSpecificResponse, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse, WalletUpdatePayload) {
   'use strict';
 
   /**
@@ -156,6 +156,7 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
      * @param {module:api/MoleculeApi~getCurrencyBalancesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CurrencyBalanceGetResponse}
      */
@@ -171,6 +172,7 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
+        'filter': opts['filter'],
       };
       var collectionQueryParams = {
       };
@@ -397,6 +399,7 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
      * @param {module:api/MoleculeApi~getTokenBalancesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TokenBalanceGetResponse}
      */
@@ -412,6 +415,7 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
+        'filter': opts['filter'],
       };
       var collectionQueryParams = {
       };
@@ -447,6 +451,7 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
      * @param {module:api/MoleculeApi~getTokenSuppliesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TokenSupplyGetResponse}
      */
@@ -462,6 +467,7 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
+        'filter': opts['filter'],
       };
       var collectionQueryParams = {
       };
@@ -671,6 +677,105 @@
 
       return this.apiClient.callApi(
         '/molecule/v1/token', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getTxStatus operation.
+     * @callback module:api/MoleculeApi~getTxStatusCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TxStatusSpecificResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve status information for a specific transaction
+     * @param {String} txStatusId UUID of a transaction status
+     * @param {module:api/MoleculeApi~getTxStatusCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TxStatusSpecificResponse}
+     */
+    this.getTxStatus = function(txStatusId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'txStatusId' is set
+      if (txStatusId === undefined || txStatusId === null) {
+        throw new Error("Missing the required parameter 'txStatusId' when calling getTxStatus");
+      }
+
+
+      var pathParams = {
+        'tx_status_id': txStatusId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TxStatusSpecificResponse;
+
+      return this.apiClient.callApi(
+        '/molecule/v1/tx_status/{tx_status_id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getTxStatuses operation.
+     * @callback module:api/MoleculeApi~getTxStatusesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TxStatusGetResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get status information for all transactions
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+     * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+     * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
+     * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {module:api/MoleculeApi~getTxStatusesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TxStatusGetResponse}
+     */
+    this.getTxStatuses = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'page': opts['page'],
+        'size': opts['size'],
+        'order_by': opts['orderBy'],
+        'ascending': opts['ascending'],
+        'filter': opts['filter'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TxStatusGetResponse;
+
+      return this.apiClient.callApi(
+        '/molecule/v1/tx_status', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

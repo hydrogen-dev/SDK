@@ -157,6 +157,8 @@ Class | Method | HTTP request | Description
 *molecule_api.MoleculeApi* | [**getTokenTransfer**](docs/MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 *molecule_api.MoleculeApi* | [**getTokenTransfers**](docs/MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 *molecule_api.MoleculeApi* | [**getTokens**](docs/MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
+*molecule_api.MoleculeApi* | [**getTxStatus**](docs/MoleculeApi.md#getTxStatus) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
+*molecule_api.MoleculeApi* | [**getTxStatuses**](docs/MoleculeApi.md#getTxStatuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
 *molecule_api.MoleculeApi* | [**getWallet**](docs/MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 *molecule_api.MoleculeApi* | [**getWalletKey**](docs/MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *molecule_api.MoleculeApi* | [**getWalletKeys**](docs/MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -199,6 +201,7 @@ Class | Method | HTTP request | Description
  - [molecule_api.TokenTransferSpecificResponse](docs/TokenTransferSpecificResponse.md)
  - [molecule_api.TokenUpdatePayload](docs/TokenUpdatePayload.md)
  - [molecule_api.TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
+ - [molecule_api.TxStatusSpecificResponse](docs/TxStatusSpecificResponse.md)
  - [molecule_api.WalletCreateClient](docs/WalletCreateClient.md)
  - [molecule_api.WalletCreatePayload](docs/WalletCreatePayload.md)
  - [molecule_api.WalletCreateWhitelist](docs/WalletCreateWhitelist.md)
@@ -213,6 +216,7 @@ Class | Method | HTTP request | Description
  - [molecule_api.TokenGetResponse](docs/TokenGetResponse.md)
  - [molecule_api.TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
  - [molecule_api.TokenTransferGetResponse](docs/TokenTransferGetResponse.md)
+ - [molecule_api.TxStatusGetResponse](docs/TxStatusGetResponse.md)
  - [molecule_api.WalletCreateResponse](docs/WalletCreateResponse.md)
  - [molecule_api.WalletGetResponse](docs/WalletGetResponse.md)
  - [molecule_api.WalletKeyGetResponse](docs/WalletKeyGetResponse.md)

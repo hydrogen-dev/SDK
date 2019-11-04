@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * WalletKeyCreatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:55:11.320-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
 public class WalletKeyCreatePayload {
   @SerializedName("wallet_id")
   private UUID walletId = null;

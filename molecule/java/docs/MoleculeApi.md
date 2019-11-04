@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**getTokenTransfer**](MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 [**getTokenTransfers**](MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
+[**getTxStatus**](MoleculeApi.md#getTxStatus) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
+[**getTxStatuses**](MoleculeApi.md#getTxStatuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -157,7 +159,7 @@ Name | Type | Description  | Notes
 
 <a name="getCurrencyBalances"></a>
 # **getCurrencyBalances**
-> CurrencyBalanceGetResponse getCurrencyBalances(page, size, orderBy, ascending)
+> CurrencyBalanceGetResponse getCurrencyBalances(page, size, orderBy, ascending, filter)
 
 Get information for all currency balances recorded in your application.
 
@@ -190,8 +192,9 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 try {
-    CurrencyBalanceGetResponse result = apiInstance.getCurrencyBalances(page, size, orderBy, ascending);
+    CurrencyBalanceGetResponse result = apiInstance.getCurrencyBalances(page, size, orderBy, ascending, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getCurrencyBalances");
@@ -207,6 +210,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
 
 ### Return type
 
@@ -469,7 +473,7 @@ Name | Type | Description  | Notes
 
 <a name="getTokenBalances"></a>
 # **getTokenBalances**
-> TokenBalanceGetResponse getTokenBalances(page, size, orderBy, ascending)
+> TokenBalanceGetResponse getTokenBalances(page, size, orderBy, ascending, filter)
 
 Get information for all token balances defined for your application.
 
@@ -502,8 +506,9 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 try {
-    TokenBalanceGetResponse result = apiInstance.getTokenBalances(page, size, orderBy, ascending);
+    TokenBalanceGetResponse result = apiInstance.getTokenBalances(page, size, orderBy, ascending, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTokenBalances");
@@ -519,6 +524,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
 
 ### Return type
 
@@ -535,7 +541,7 @@ Name | Type | Description  | Notes
 
 <a name="getTokenSupplies"></a>
 # **getTokenSupplies**
-> TokenSupplyGetResponse getTokenSupplies(page, size, orderBy, ascending)
+> TokenSupplyGetResponse getTokenSupplies(page, size, orderBy, ascending, filter)
 
 Get information for all token supplies defined for your application.
 
@@ -568,8 +574,9 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 try {
-    TokenSupplyGetResponse result = apiInstance.getTokenSupplies(page, size, orderBy, ascending);
+    TokenSupplyGetResponse result = apiInstance.getTokenSupplies(page, size, orderBy, ascending, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTokenSupplies");
@@ -585,6 +592,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
 
 ### Return type
 
@@ -841,6 +849,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenGetResponse**](TokenGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTxStatus"></a>
+# **getTxStatus**
+> TxStatusSpecificResponse getTxStatus(txStatusId)
+
+Retrieve status information for a specific transaction
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+UUID txStatusId = new UUID(); // UUID | UUID of a transaction status
+try {
+    TxStatusSpecificResponse result = apiInstance.getTxStatus(txStatusId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getTxStatus");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **txStatusId** | [**UUID**](.md)| UUID of a transaction status |
+
+### Return type
+
+[**TxStatusSpecificResponse**](TxStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTxStatuses"></a>
+# **getTxStatuses**
+> TxStatusGetResponse getTxStatuses(page, size, orderBy, ascending, filter)
+
+Get status information for all transactions
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+try {
+    TxStatusGetResponse result = apiInstance.getTxStatuses(page, size, orderBy, ascending, filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getTxStatuses");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+
+### Return type
+
+[**TxStatusGetResponse**](TxStatusGetResponse.md)
 
 ### Authorization
 

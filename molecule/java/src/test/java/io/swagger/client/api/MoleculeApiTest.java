@@ -37,6 +37,8 @@ import io.swagger.client.model.TokenTransferPayload;
 import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
+import io.swagger.client.model.TxStatusGetResponse;
+import io.swagger.client.model.TxStatusSpecificResponse;
 import java.util.UUID;
 import io.swagger.client.model.WalletCreatePayload;
 import io.swagger.client.model.WalletCreateResponse;
@@ -111,7 +113,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        CurrencyBalanceGetResponse response = api.getCurrencyBalances(page, size, orderBy, ascending);
+        String filter = null;
+        CurrencyBalanceGetResponse response = api.getCurrencyBalances(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -197,7 +200,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        TokenBalanceGetResponse response = api.getTokenBalances(page, size, orderBy, ascending);
+        String filter = null;
+        TokenBalanceGetResponse response = api.getTokenBalances(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -216,7 +220,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        TokenSupplyGetResponse response = api.getTokenSupplies(page, size, orderBy, ascending);
+        String filter = null;
+        TokenSupplyGetResponse response = api.getTokenSupplies(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -287,6 +292,42 @@ public class MoleculeApiTest {
         String orderBy = null;
         Boolean ascending = null;
         TokenGetResponse response = api.getTokens(page, size, orderBy, ascending);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve status information for a specific transaction
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTxStatusTest() throws ApiException {
+        UUID txStatusId = null;
+        TxStatusSpecificResponse response = api.getTxStatus(txStatusId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get status information for all transactions
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTxStatusesTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        String filter = null;
+        TxStatusGetResponse response = api.getTxStatuses(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }

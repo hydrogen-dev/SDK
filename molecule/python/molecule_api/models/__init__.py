@@ -36,6 +36,7 @@ from molecule_api.models.token_transfer_payload import TokenTransferPayload
 from molecule_api.models.token_transfer_specific_response import TokenTransferSpecificResponse
 from molecule_api.models.token_update_payload import TokenUpdatePayload
 from molecule_api.models.token_whitelist_payload import TokenWhitelistPayload
+from molecule_api.models.tx_status_specific_response import TxStatusSpecificResponse
 from molecule_api.models.wallet_create_client import WalletCreateClient
 from molecule_api.models.wallet_create_payload import WalletCreatePayload
 from molecule_api.models.wallet_create_whitelist import WalletCreateWhitelist
@@ -50,6 +51,7 @@ from molecule_api.models.token_create_response import TokenCreateResponse
 from molecule_api.models.token_get_response import TokenGetResponse
 from molecule_api.models.token_supply_get_response import TokenSupplyGetResponse
 from molecule_api.models.token_transfer_get_response import TokenTransferGetResponse
+from molecule_api.models.tx_status_get_response import TxStatusGetResponse
 from molecule_api.models.wallet_create_response import WalletCreateResponse
 from molecule_api.models.wallet_get_response import WalletGetResponse
 from molecule_api.models.wallet_key_get_response import WalletKeyGetResponse

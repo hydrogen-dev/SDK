@@ -2,7 +2,7 @@
 
 Hydrogen Molecule API
 - API version: 1.0.0
-  - Build date: 2019-10-29T11:55:11.320-04:00
+  - Build date: 2019-11-04T15:24:43.843-05:00
 
 The Hydrogen Molecule API
 
@@ -136,6 +136,8 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**getTokenTransfer**](docs/MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 *MoleculeApi* | [**getTokenTransfers**](docs/MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 *MoleculeApi* | [**getTokens**](docs/MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
+*MoleculeApi* | [**getTxStatus**](docs/MoleculeApi.md#getTxStatus) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
+*MoleculeApi* | [**getTxStatuses**](docs/MoleculeApi.md#getTxStatuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
 *MoleculeApi* | [**getWallet**](docs/MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 *MoleculeApi* | [**getWalletKey**](docs/MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *MoleculeApi* | [**getWalletKeys**](docs/MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -177,6 +179,7 @@ Class | Method | HTTP request | Description
  - [TokenTransferSpecificResponse](docs/TokenTransferSpecificResponse.md)
  - [TokenUpdatePayload](docs/TokenUpdatePayload.md)
  - [TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
+ - [TxStatusSpecificResponse](docs/TxStatusSpecificResponse.md)
  - [WalletCreateClient](docs/WalletCreateClient.md)
  - [WalletCreatePayload](docs/WalletCreatePayload.md)
  - [WalletCreateWhitelist](docs/WalletCreateWhitelist.md)
@@ -191,6 +194,7 @@ Class | Method | HTTP request | Description
  - [TokenGetResponse](docs/TokenGetResponse.md)
  - [TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
  - [TokenTransferGetResponse](docs/TokenTransferGetResponse.md)
+ - [TxStatusGetResponse](docs/TxStatusGetResponse.md)
  - [WalletCreateResponse](docs/WalletCreateResponse.md)
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)

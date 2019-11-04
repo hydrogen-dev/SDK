@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * CrowdsaleDeployPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:55:11.320-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
 public class CrowdsaleDeployPayload {
   @SerializedName("token_id")
   private UUID tokenId = null;

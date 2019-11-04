@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**get_token_transfer**](MoleculeApi.md#get_token_transfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 [**get_token_transfers**](MoleculeApi.md#get_token_transfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**get_tokens**](MoleculeApi.md#get_tokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
+[**get_tx_status**](MoleculeApi.md#get_tx_status) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
+[**get_tx_statuses**](MoleculeApi.md#get_tx_statuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
 [**get_wallet**](MoleculeApi.md#get_wallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**get_wallet_key**](MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**get_wallet_keys**](MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -156,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_currency_balances**
-> CurrencyBalanceGetResponse get_currency_balances(page=page, size=size, order_by=order_by, ascending=ascending)
+> CurrencyBalanceGetResponse get_currency_balances(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all currency balances recorded in your application.
 
@@ -188,10 +190,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all currency balances recorded in your application.
-    api_response = api_instance.get_currency_balances(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_currency_balances(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_currency_balances: %s\n" % e)
@@ -205,6 +208,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -468,7 +472,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_token_balances**
-> TokenBalanceGetResponse get_token_balances(page=page, size=size, order_by=order_by, ascending=ascending)
+> TokenBalanceGetResponse get_token_balances(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all token balances defined for your application.
 
@@ -500,10 +504,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all token balances defined for your application.
-    api_response = api_instance.get_token_balances(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_token_balances(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_token_balances: %s\n" % e)
@@ -517,6 +522,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -534,7 +540,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_token_supplies**
-> TokenSupplyGetResponse get_token_supplies(page=page, size=size, order_by=order_by, ascending=ascending)
+> TokenSupplyGetResponse get_token_supplies(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all token supplies defined for your application.
 
@@ -566,10 +572,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all token supplies defined for your application.
-    api_response = api_instance.get_token_supplies(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_token_supplies(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_token_supplies: %s\n" % e)
@@ -583,6 +590,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -839,6 +847,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TokenGetResponse**](TokenGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_tx_status**
+> TxStatusSpecificResponse get_tx_status(tx_status_id)
+
+Retrieve status information for a specific transaction
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+tx_status_id = 'tx_status_id_example' # str | UUID of a transaction status
+
+try:
+    # Retrieve status information for a specific transaction
+    api_response = api_instance.get_tx_status(tx_status_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_tx_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tx_status_id** | [**str**](.md)| UUID of a transaction status | 
+
+### Return type
+
+[**TxStatusSpecificResponse**](TxStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_tx_statuses**
+> TxStatusGetResponse get_tx_statuses(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
+
+Get status information for all transactions
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+page = 0 # int | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional) (default to 0)
+size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
+order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
+ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+
+try:
+    # Get status information for all transactions
+    api_response = api_instance.get_tx_statuses(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_tx_statuses: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**TxStatusGetResponse**](TxStatusGetResponse.md)
 
 ### Authorization
 

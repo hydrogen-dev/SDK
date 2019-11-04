@@ -181,6 +181,26 @@
         done();
       });
     });
+    describe('getTxStatus', function() {
+      it('should call getTxStatus successfully', function(done) {
+        //uncomment below and update the code to test getTxStatus
+        //instance.getTxStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTxStatuses', function() {
+      it('should call getTxStatuses successfully', function(done) {
+        //uncomment below and update the code to test getTxStatuses
+        //instance.getTxStatuses(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getWallet', function() {
       it('should call getWallet successfully', function(done) {
         //uncomment below and update the code to test getWallet

@@ -181,20 +181,20 @@
         done();
       });
     });
-    describe('getTxStatus', function() {
-      it('should call getTxStatus successfully', function(done) {
-        //uncomment below and update the code to test getTxStatus
-        //instance.getTxStatus(function(error) {
+    describe('getTransactionStatus', function() {
+      it('should call getTransactionStatus successfully', function(done) {
+        //uncomment below and update the code to test getTransactionStatus
+        //instance.getTransactionStatus(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getTxStatuses', function() {
-      it('should call getTxStatuses successfully', function(done) {
-        //uncomment below and update the code to test getTxStatuses
-        //instance.getTxStatuses(function(error) {
+    describe('getTransactionStatuses', function() {
+      it('should call getTransactionStatuses successfully', function(done) {
+        //uncomment below and update the code to test getTransactionStatuses
+        //instance.getTransactionStatuses(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -120,15 +120,15 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
-    def test_get_tx_status(self):
-        """Test case for get_tx_status
+    def test_get_transaction_status(self):
+        """Test case for get_transaction_status
 
         Retrieve status information for a specific transaction  # noqa: E501
         """
         pass
 
-    def test_get_tx_statuses(self):
-        """Test case for get_tx_statuses
+    def test_get_transaction_statuses(self):
+        """Test case for get_transaction_statuses
 
         Get status information for all transactions  # noqa: E501
         """

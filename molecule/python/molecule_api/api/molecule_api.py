@@ -1378,43 +1378,43 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tx_status(self, tx_status_id, **kwargs):  # noqa: E501
+    def get_transaction_status(self, transaction_status_id, **kwargs):  # noqa: E501
         """Retrieve status information for a specific transaction  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tx_status(tx_status_id, async_req=True)
+        >>> thread = api.get_transaction_status(transaction_status_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str tx_status_id: UUID of a transaction status (required)
-        :return: TxStatusSpecificResponse
+        :param str transaction_status_id: UUID of a transaction status (required)
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_tx_status_with_http_info(tx_status_id, **kwargs)  # noqa: E501
+            return self.get_transaction_status_with_http_info(transaction_status_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_tx_status_with_http_info(tx_status_id, **kwargs)  # noqa: E501
+            (data) = self.get_transaction_status_with_http_info(transaction_status_id, **kwargs)  # noqa: E501
             return data
 
-    def get_tx_status_with_http_info(self, tx_status_id, **kwargs):  # noqa: E501
+    def get_transaction_status_with_http_info(self, transaction_status_id, **kwargs):  # noqa: E501
         """Retrieve status information for a specific transaction  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tx_status_with_http_info(tx_status_id, async_req=True)
+        >>> thread = api.get_transaction_status_with_http_info(transaction_status_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str tx_status_id: UUID of a transaction status (required)
-        :return: TxStatusSpecificResponse
+        :param str transaction_status_id: UUID of a transaction status (required)
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['tx_status_id']  # noqa: E501
+        all_params = ['transaction_status_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1425,20 +1425,20 @@ class MoleculeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_tx_status" % key
+                    " to method get_transaction_status" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'tx_status_id' is set
-        if ('tx_status_id' not in params or
-                params['tx_status_id'] is None):
-            raise ValueError("Missing the required parameter `tx_status_id` when calling `get_tx_status`")  # noqa: E501
+        # verify the required parameter 'transaction_status_id' is set
+        if ('transaction_status_id' not in params or
+                params['transaction_status_id'] is None):
+            raise ValueError("Missing the required parameter `transaction_status_id` when calling `get_transaction_status`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'tx_status_id' in params:
-            path_params['tx_status_id'] = params['tx_status_id']  # noqa: E501
+        if 'transaction_status_id' in params:
+            path_params['transaction_status_id'] = params['transaction_status_id']  # noqa: E501
 
         query_params = []
 
@@ -1460,14 +1460,14 @@ class MoleculeApi(object):
         auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/molecule/v1/tx_status/{tx_status_id}', 'GET',
+            '/molecule/v1/transaction_status/{transaction_status_id}', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TxStatusSpecificResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1475,12 +1475,12 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tx_statuses(self, **kwargs):  # noqa: E501
+    def get_transaction_statuses(self, **kwargs):  # noqa: E501
         """Get status information for all transactions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tx_statuses(async_req=True)
+        >>> thread = api.get_transaction_statuses(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1489,23 +1489,23 @@ class MoleculeApi(object):
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
         :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
-        :return: TxStatusGetResponse
+        :return: TransactionStatusGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_tx_statuses_with_http_info(**kwargs)  # noqa: E501
+            return self.get_transaction_statuses_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_tx_statuses_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_transaction_statuses_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_tx_statuses_with_http_info(self, **kwargs):  # noqa: E501
+    def get_transaction_statuses_with_http_info(self, **kwargs):  # noqa: E501
         """Get status information for all transactions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tx_statuses_with_http_info(async_req=True)
+        >>> thread = api.get_transaction_statuses_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1514,7 +1514,7 @@ class MoleculeApi(object):
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
         :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
-        :return: TxStatusGetResponse
+        :return: TransactionStatusGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1530,15 +1530,15 @@ class MoleculeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_tx_statuses" % key
+                    " to method get_transaction_statuses" % key
                 )
             params[key] = val
         del params['kwargs']
 
         if 'page' in params and params['page'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_tx_statuses`, must be a value greater than or equal to `0`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_transaction_statuses`, must be a value greater than or equal to `0`")  # noqa: E501
         if 'size' in params and params['size'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `size` when calling `get_tx_statuses`, must be a value greater than or equal to `0`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_transaction_statuses`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1573,14 +1573,14 @@ class MoleculeApi(object):
         auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/molecule/v1/tx_status', 'GET',
+            '/molecule/v1/transaction_status', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TxStatusGetResponse',  # noqa: E501
+            response_type='TransactionStatusGetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

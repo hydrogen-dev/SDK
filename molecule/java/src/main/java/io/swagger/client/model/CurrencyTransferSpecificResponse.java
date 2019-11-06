@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CurrencyTransferSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-06T09:56:24.055-05:00")
 public class CurrencyTransferSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -46,8 +46,8 @@ public class CurrencyTransferSpecificResponse {
   @SerializedName("amount")
   private BigDecimal amount = null;
 
-  @SerializedName("tx_hash")
-  private String txHash = null;
+  @SerializedName("transaction_hash")
+  private String transactionHash = null;
 
   @SerializedName("create_date")
   private String createDate = null;
@@ -145,22 +145,22 @@ public class CurrencyTransferSpecificResponse {
     this.amount = amount;
   }
 
-  public CurrencyTransferSpecificResponse txHash(String txHash) {
-    this.txHash = txHash;
+  public CurrencyTransferSpecificResponse transactionHash(String transactionHash) {
+    this.transactionHash = transactionHash;
     return this;
   }
 
    /**
    * Hash of the transfer transaction
-   * @return txHash
+   * @return transactionHash
   **/
   @ApiModelProperty(value = "Hash of the transfer transaction")
-  public String getTxHash() {
-    return txHash;
+  public String getTransactionHash() {
+    return transactionHash;
   }
 
-  public void setTxHash(String txHash) {
-    this.txHash = txHash;
+  public void setTransactionHash(String transactionHash) {
+    this.transactionHash = transactionHash;
   }
 
   public CurrencyTransferSpecificResponse createDate(String createDate) {
@@ -214,14 +214,14 @@ public class CurrencyTransferSpecificResponse {
         Objects.equals(this.receiverWalletId, currencyTransferSpecificResponse.receiverWalletId) &&
         Objects.equals(this.currencySymbol, currencyTransferSpecificResponse.currencySymbol) &&
         Objects.equals(this.amount, currencyTransferSpecificResponse.amount) &&
-        Objects.equals(this.txHash, currencyTransferSpecificResponse.txHash) &&
+        Objects.equals(this.transactionHash, currencyTransferSpecificResponse.transactionHash) &&
         Objects.equals(this.createDate, currencyTransferSpecificResponse.createDate) &&
         Objects.equals(this.updateDate, currencyTransferSpecificResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, senderWalletId, receiverWalletId, currencySymbol, amount, txHash, createDate, updateDate);
+    return Objects.hash(id, senderWalletId, receiverWalletId, currencySymbol, amount, transactionHash, createDate, updateDate);
   }
 
 
@@ -235,7 +235,7 @@ public class CurrencyTransferSpecificResponse {
     sb.append("    receiverWalletId: ").append(toIndentedString(receiverWalletId)).append("\n");
     sb.append("    currencySymbol: ").append(toIndentedString(currencySymbol)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    txHash: ").append(toIndentedString(txHash)).append("\n");
+    sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

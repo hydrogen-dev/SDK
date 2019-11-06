@@ -26,10 +26,10 @@ import java.io.IOException;
 import java.util.UUID;
 
 /**
- * TxStatusSpecificResponse
+ * TransactionStatusSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
-public class TxStatusSpecificResponse {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-06T09:56:24.055-05:00")
+public class TransactionStatusSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
 
@@ -42,19 +42,13 @@ public class TxStatusSpecificResponse {
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("emits_event")
-  private Boolean emitsEvent = null;
-
-  @SerializedName("event_handled")
-  private Boolean eventHandled = null;
-
   @SerializedName("create_date")
   private String createDate = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
 
-  public TxStatusSpecificResponse id(UUID id) {
+  public TransactionStatusSpecificResponse id(UUID id) {
     this.id = id;
     return this;
   }
@@ -72,7 +66,7 @@ public class TxStatusSpecificResponse {
     this.id = id;
   }
 
-  public TxStatusSpecificResponse walletId(UUID walletId) {
+  public TransactionStatusSpecificResponse walletId(UUID walletId) {
     this.walletId = walletId;
     return this;
   }
@@ -90,7 +84,7 @@ public class TxStatusSpecificResponse {
     this.walletId = walletId;
   }
 
-  public TxStatusSpecificResponse hash(String hash) {
+  public TransactionStatusSpecificResponse hash(String hash) {
     this.hash = hash;
     return this;
   }
@@ -108,7 +102,7 @@ public class TxStatusSpecificResponse {
     this.hash = hash;
   }
 
-  public TxStatusSpecificResponse status(String status) {
+  public TransactionStatusSpecificResponse status(String status) {
     this.status = status;
     return this;
   }
@@ -126,43 +120,7 @@ public class TxStatusSpecificResponse {
     this.status = status;
   }
 
-  public TxStatusSpecificResponse emitsEvent(Boolean emitsEvent) {
-    this.emitsEvent = emitsEvent;
-    return this;
-  }
-
-   /**
-   * Shows if the transaction will emit an event or not
-   * @return emitsEvent
-  **/
-  @ApiModelProperty(value = "Shows if the transaction will emit an event or not")
-  public Boolean isEmitsEvent() {
-    return emitsEvent;
-  }
-
-  public void setEmitsEvent(Boolean emitsEvent) {
-    this.emitsEvent = emitsEvent;
-  }
-
-  public TxStatusSpecificResponse eventHandled(Boolean eventHandled) {
-    this.eventHandled = eventHandled;
-    return this;
-  }
-
-   /**
-   * Shows if the event of the transaction has been handled or not
-   * @return eventHandled
-  **/
-  @ApiModelProperty(value = "Shows if the event of the transaction has been handled or not")
-  public Boolean isEventHandled() {
-    return eventHandled;
-  }
-
-  public void setEventHandled(Boolean eventHandled) {
-    this.eventHandled = eventHandled;
-  }
-
-  public TxStatusSpecificResponse createDate(String createDate) {
+  public TransactionStatusSpecificResponse createDate(String createDate) {
     this.createDate = createDate;
     return this;
   }
@@ -180,7 +138,7 @@ public class TxStatusSpecificResponse {
     this.createDate = createDate;
   }
 
-  public TxStatusSpecificResponse updateDate(String updateDate) {
+  public TransactionStatusSpecificResponse updateDate(String updateDate) {
     this.updateDate = updateDate;
     return this;
   }
@@ -207,34 +165,30 @@ public class TxStatusSpecificResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TxStatusSpecificResponse txStatusSpecificResponse = (TxStatusSpecificResponse) o;
-    return Objects.equals(this.id, txStatusSpecificResponse.id) &&
-        Objects.equals(this.walletId, txStatusSpecificResponse.walletId) &&
-        Objects.equals(this.hash, txStatusSpecificResponse.hash) &&
-        Objects.equals(this.status, txStatusSpecificResponse.status) &&
-        Objects.equals(this.emitsEvent, txStatusSpecificResponse.emitsEvent) &&
-        Objects.equals(this.eventHandled, txStatusSpecificResponse.eventHandled) &&
-        Objects.equals(this.createDate, txStatusSpecificResponse.createDate) &&
-        Objects.equals(this.updateDate, txStatusSpecificResponse.updateDate);
+    TransactionStatusSpecificResponse transactionStatusSpecificResponse = (TransactionStatusSpecificResponse) o;
+    return Objects.equals(this.id, transactionStatusSpecificResponse.id) &&
+        Objects.equals(this.walletId, transactionStatusSpecificResponse.walletId) &&
+        Objects.equals(this.hash, transactionStatusSpecificResponse.hash) &&
+        Objects.equals(this.status, transactionStatusSpecificResponse.status) &&
+        Objects.equals(this.createDate, transactionStatusSpecificResponse.createDate) &&
+        Objects.equals(this.updateDate, transactionStatusSpecificResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, walletId, hash, status, emitsEvent, eventHandled, createDate, updateDate);
+    return Objects.hash(id, walletId, hash, status, createDate, updateDate);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TxStatusSpecificResponse {\n");
+    sb.append("class TransactionStatusSpecificResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
     sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    emitsEvent: ").append(toIndentedString(emitsEvent)).append("\n");
-    sb.append("    eventHandled: ").append(toIndentedString(eventHandled)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

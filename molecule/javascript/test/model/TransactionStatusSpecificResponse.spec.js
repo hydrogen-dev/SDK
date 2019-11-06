@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new molecule_api.TxStatusSpecificResponse();
+    instance = new molecule_api.TransactionStatusSpecificResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,58 +50,46 @@
       object[property] = value;
   }
 
-  describe('TxStatusSpecificResponse', function() {
-    it('should create an instance of TxStatusSpecificResponse', function() {
-      // uncomment below and update the code to test TxStatusSpecificResponse
-      //var instance = new molecule_api.TxStatusSpecificResponse();
-      //expect(instance).to.be.a(molecule_api.TxStatusSpecificResponse);
+  describe('TransactionStatusSpecificResponse', function() {
+    it('should create an instance of TransactionStatusSpecificResponse', function() {
+      // uncomment below and update the code to test TransactionStatusSpecificResponse
+      //var instance = new molecule_api.TransactionStatusSpecificResponse();
+      //expect(instance).to.be.a(molecule_api.TransactionStatusSpecificResponse);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new molecule_api.TxStatusSpecificResponse();
+      //var instance = new molecule_api.TransactionStatusSpecificResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property walletId (base name: "wallet_id")', function() {
       // uncomment below and update the code to test the property walletId
-      //var instance = new molecule_api.TxStatusSpecificResponse();
+      //var instance = new molecule_api.TransactionStatusSpecificResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property hash (base name: "hash")', function() {
       // uncomment below and update the code to test the property hash
-      //var instance = new molecule_api.TxStatusSpecificResponse();
+      //var instance = new molecule_api.TransactionStatusSpecificResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instance = new molecule_api.TxStatusSpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property emitsEvent (base name: "emits_event")', function() {
-      // uncomment below and update the code to test the property emitsEvent
-      //var instance = new molecule_api.TxStatusSpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eventHandled (base name: "event_handled")', function() {
-      // uncomment below and update the code to test the property eventHandled
-      //var instance = new molecule_api.TxStatusSpecificResponse();
+      //var instance = new molecule_api.TransactionStatusSpecificResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instance = new molecule_api.TxStatusSpecificResponse();
+      //var instance = new molecule_api.TransactionStatusSpecificResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instance = new molecule_api.TxStatusSpecificResponse();
+      //var instance = new molecule_api.TransactionStatusSpecificResponse();
       //expect(instance).to.be();
     });
 

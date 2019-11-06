@@ -26,7 +26,7 @@
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.TxStatusSpecificResponse = factory(root.molecule_api.ApiClient);
+    root.molecule_api.TransactionStatusSpecificResponse = factory(root.molecule_api.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,14 +35,14 @@
 
 
   /**
-   * The TxStatusSpecificResponse model module.
-   * @module model/TxStatusSpecificResponse
+   * The TransactionStatusSpecificResponse model module.
+   * @module model/TransactionStatusSpecificResponse
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>TxStatusSpecificResponse</code>.
-   * @alias module:model/TxStatusSpecificResponse
+   * Constructs a new <code>TransactionStatusSpecificResponse</code>.
+   * @alias module:model/TransactionStatusSpecificResponse
    * @class
    */
   var exports = function() {
@@ -54,16 +54,14 @@
 
 
 
-
-
   };
 
   /**
-   * Constructs a <code>TxStatusSpecificResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TransactionStatusSpecificResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TxStatusSpecificResponse} obj Optional instance to populate.
-   * @return {module:model/TxStatusSpecificResponse} The populated <code>TxStatusSpecificResponse</code> instance.
+   * @param {module:model/TransactionStatusSpecificResponse} obj Optional instance to populate.
+   * @return {module:model/TransactionStatusSpecificResponse} The populated <code>TransactionStatusSpecificResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -80,12 +78,6 @@
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('emits_event')) {
-        obj['emits_event'] = ApiClient.convertToType(data['emits_event'], 'Boolean');
-      }
-      if (data.hasOwnProperty('event_handled')) {
-        obj['event_handled'] = ApiClient.convertToType(data['event_handled'], 'Boolean');
       }
       if (data.hasOwnProperty('create_date')) {
         obj['create_date'] = ApiClient.convertToType(data['create_date'], 'String');
@@ -117,16 +109,6 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
-  /**
-   * Shows if the transaction will emit an event or not
-   * @member {Boolean} emits_event
-   */
-  exports.prototype['emits_event'] = undefined;
-  /**
-   * Shows if the event of the transaction has been handled or not
-   * @member {Boolean} event_handled
-   */
-  exports.prototype['event_handled'] = undefined;
   /**
    * Datetime the currency transfer record was created
    * @member {String} create_date

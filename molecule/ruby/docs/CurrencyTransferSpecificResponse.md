@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **receiver_wallet_id** | **String** | ID of the receiver wallet | [optional] 
 **currency_symbol** | **String** | Symbol of the currency being transferred | [optional] 
 **amount** | **Float** | Amount of currencies being transferred | [optional] 
-**tx_hash** | **String** | Hash of the transfer transaction | [optional] 
+**transaction_hash** | **String** | Hash of the transfer transaction | [optional] 
 **create_date** | **String** | Datetime the currency transfer record was created | [optional] 
 **update_date** | **String** | Datetime the currency transfer record was updated | [optional] 
 

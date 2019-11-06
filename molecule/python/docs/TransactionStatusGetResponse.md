@@ -1,4 +1,4 @@
-# TxStatusGetResponse
+# TransactionStatusGetResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **number_of_elements** | **int** | Number of elements per page | [optional] 
 **size** | **int** | The number or records to be included per page. The default is 25. There is no max value. | [optional] 
 **number** | **int** | Number of the first result shown | [optional] 
-**content** | [**list[TxStatusSpecificResponse]**](TxStatusSpecificResponse.md) |  | [optional] 
+**content** | [**list[TransactionStatusSpecificResponse]**](TransactionStatusSpecificResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

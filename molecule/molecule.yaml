@@ -1051,9 +1051,9 @@ paths:
     parameters:
       - $ref: '#/parameters/path_currency_transfer_uuid'
 
-  /molecule/v1/tx_status:
+  /molecule/v1/transaction_status:
     get:
-      operationId: getTxStatuses
+      operationId: getTransactionStatuses
       summary: Get status information for all transactions
       security:
         - oauth: [molecule]
@@ -1065,7 +1065,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/tx_status_get_response'
+            $ref: '#/definitions/transaction_status_get_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -1087,9 +1087,9 @@ paths:
         - $ref: '#/parameters/query_pagination_ascending'
         - $ref: '#/parameters/query_filter'
 
-  /molecule/v1/tx_status/{tx_status_id}:
+  /molecule/v1/transaction_status/{transaction_status_id}:
     get:
-      operationId: getTxStatus
+      operationId: getTransactionStatus
       summary: Retrieve status information for a specific transaction
       security:
         - oauth: [molecule]
@@ -1101,7 +1101,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/tx_status_specific_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -1117,7 +1117,7 @@ paths:
         503:
           $ref: '#/responses/503'
     parameters:
-      - $ref: '#/parameters/path_tx_status_uuid'
+      - $ref: '#/parameters/path_transaction_status_uuid'
 
 # ********** Parameters: describe variables that may appear in the request URL **********
 parameters:
@@ -1219,9 +1219,9 @@ parameters:
     format: uuid
     required: true
     description: UUID of a currency transfer
-  path_tx_status_uuid:
+  path_transaction_status_uuid:
     in: path
-    name: tx_status_id
+    name: transaction_status_id
     type: string
     format: uuid
     required: true
@@ -1552,7 +1552,7 @@ definitions:
           amount:
             type: number
             description: Amount of tokens being transferred
-          tx_hash:
+          transaction_hash:
             type: string
             description: Hash of the transfer transaction
           create_date:
@@ -1594,7 +1594,7 @@ definitions:
           amount:
             type: number
             description: Amount of currencies being transferred
-          tx_hash:
+          transaction_hash:
             type: string
             description: Hash of the transfer transaction
           create_date:
@@ -1611,16 +1611,16 @@ definitions:
         status:
           type: string
           description: Status of the asynchronous API call
-  tx_status_get_response:
+  transaction_status_get_response:
     allOf:
       - type: object
       - properties:
           content:
             type: array
             items:
-              $ref: '#/definitions/tx_status_specific_response'
+              $ref: '#/definitions/transaction_status_specific_response'
       - $ref: '#/definitions/pagination'
-  tx_status_specific_response:
+  transaction_status_specific_response:
     allOf:
       - type: object
       - properties:
@@ -1638,12 +1638,6 @@ definitions:
           status:
             type: string
             description: Status of the transaction. Could be pending, processed, or failed
-          emits_event:
-            type: boolean
-            description: Shows if the transaction will emit an event or not
-          event_handled:
-            type: boolean
-            description: Shows if the event of the transaction has been handled or not
           create_date:
             type: string
             format: datetime

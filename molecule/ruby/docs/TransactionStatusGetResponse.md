@@ -1,4 +1,4 @@
-# MoleculeApi::TxStatusGetResponse
+# MoleculeApi::TransactionStatusGetResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **number_of_elements** | **Integer** | Number of elements per page | [optional] 
 **size** | **Integer** | The number or records to be included per page. The default is 25. There is no max value. | [optional] 
 **number** | **Integer** | Number of the first result shown | [optional] 
-**content** | [**Array&lt;TxStatusSpecificResponse&gt;**](TxStatusSpecificResponse.md) |  | [optional] 
+**content** | [**Array&lt;TransactionStatusSpecificResponse&gt;**](TransactionStatusSpecificResponse.md) |  | [optional] 
 
 

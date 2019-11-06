@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import molecule_api
-from molecule_api.models.tx_status_get_response import TxStatusGetResponse  # noqa: E501
+from molecule_api.models.transaction_status_get_response import TransactionStatusGetResponse  # noqa: E501
 from molecule_api.rest import ApiException
 
 
-class TestTxStatusGetResponse(unittest.TestCase):
-    """TxStatusGetResponse unit test stubs"""
+class TestTransactionStatusGetResponse(unittest.TestCase):
+    """TransactionStatusGetResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestTxStatusGetResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTxStatusGetResponse(self):
-        """Test TxStatusGetResponse"""
+    def testTransactionStatusGetResponse(self):
+        """Test TransactionStatusGetResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = molecule_api.models.tx_status_get_response.TxStatusGetResponse()  # noqa: E501
+        # model = molecule_api.models.transaction_status_get_response.TransactionStatusGetResponse()  # noqa: E501
         pass
 
 

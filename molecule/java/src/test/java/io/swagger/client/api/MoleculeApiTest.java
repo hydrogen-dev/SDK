@@ -37,8 +37,8 @@ import io.swagger.client.model.TokenTransferPayload;
 import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
-import io.swagger.client.model.TxStatusGetResponse;
-import io.swagger.client.model.TxStatusSpecificResponse;
+import io.swagger.client.model.TransactionStatusGetResponse;
+import io.swagger.client.model.TransactionStatusSpecificResponse;
 import java.util.UUID;
 import io.swagger.client.model.WalletCreatePayload;
 import io.swagger.client.model.WalletCreateResponse;
@@ -305,9 +305,9 @@ public class MoleculeApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getTxStatusTest() throws ApiException {
-        UUID txStatusId = null;
-        TxStatusSpecificResponse response = api.getTxStatus(txStatusId);
+    public void getTransactionStatusTest() throws ApiException {
+        UUID transactionStatusId = null;
+        TransactionStatusSpecificResponse response = api.getTransactionStatus(transactionStatusId);
 
         // TODO: test validations
     }
@@ -321,13 +321,13 @@ public class MoleculeApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getTxStatusesTest() throws ApiException {
+    public void getTransactionStatusesTest() throws ApiException {
         Integer page = null;
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
         String filter = null;
-        TxStatusGetResponse response = api.getTxStatuses(page, size, orderBy, ascending, filter);
+        TransactionStatusGetResponse response = api.getTransactionStatuses(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }

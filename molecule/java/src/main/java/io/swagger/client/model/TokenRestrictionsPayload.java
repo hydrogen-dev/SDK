@@ -29,7 +29,7 @@ import java.math.BigDecimal;
  * The array of token restrictions applied on this token.
  */
 @ApiModel(description = "The array of token restrictions applied on this token.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-06T09:56:24.055-05:00")
 public class TokenRestrictionsPayload {
   @SerializedName("min_age")
   private BigDecimal minAge = null;

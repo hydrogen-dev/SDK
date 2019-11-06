@@ -17,32 +17,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Pagination', 'model/PaginationSort', 'model/TxStatusSpecificResponse'], factory);
+    define(['ApiClient', 'model/Pagination', 'model/PaginationSort', 'model/TransactionStatusSpecificResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Pagination'), require('./PaginationSort'), require('./TxStatusSpecificResponse'));
+    module.exports = factory(require('../ApiClient'), require('./Pagination'), require('./PaginationSort'), require('./TransactionStatusSpecificResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.TxStatusGetResponse = factory(root.molecule_api.ApiClient, root.molecule_api.Pagination, root.molecule_api.PaginationSort, root.molecule_api.TxStatusSpecificResponse);
+    root.molecule_api.TransactionStatusGetResponse = factory(root.molecule_api.ApiClient, root.molecule_api.Pagination, root.molecule_api.PaginationSort, root.molecule_api.TransactionStatusSpecificResponse);
   }
-}(this, function(ApiClient, Pagination, PaginationSort, TxStatusSpecificResponse) {
+}(this, function(ApiClient, Pagination, PaginationSort, TransactionStatusSpecificResponse) {
   'use strict';
 
 
 
 
   /**
-   * The TxStatusGetResponse model module.
-   * @module model/TxStatusGetResponse
+   * The TransactionStatusGetResponse model module.
+   * @module model/TransactionStatusGetResponse
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>TxStatusGetResponse</code>.
-   * @alias module:model/TxStatusGetResponse
+   * Constructs a new <code>TransactionStatusGetResponse</code>.
+   * @alias module:model/TransactionStatusGetResponse
    * @class
    * @implements module:model/Pagination
    */
@@ -54,11 +54,11 @@
   };
 
   /**
-   * Constructs a <code>TxStatusGetResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TransactionStatusGetResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/TxStatusGetResponse} obj Optional instance to populate.
-   * @return {module:model/TxStatusGetResponse} The populated <code>TxStatusGetResponse</code> instance.
+   * @param {module:model/TransactionStatusGetResponse} obj Optional instance to populate.
+   * @return {module:model/TransactionStatusGetResponse} The populated <code>TransactionStatusGetResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -66,14 +66,14 @@
 
       Pagination.constructFromObject(data, obj);
       if (data.hasOwnProperty('content')) {
-        obj['content'] = ApiClient.convertToType(data['content'], [TxStatusSpecificResponse]);
+        obj['content'] = ApiClient.convertToType(data['content'], [TransactionStatusSpecificResponse]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/TxStatusSpecificResponse>} content
+   * @member {Array.<module:model/TransactionStatusSpecificResponse>} content
    */
   exports.prototype['content'] = undefined;
 

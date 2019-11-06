@@ -17,8 +17,8 @@ Method | HTTP request | Description
 [**get_token_transfer**](MoleculeApi.md#get_token_transfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 [**get_token_transfers**](MoleculeApi.md#get_token_transfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**get_tokens**](MoleculeApi.md#get_tokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
-[**get_tx_status**](MoleculeApi.md#get_tx_status) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
-[**get_tx_statuses**](MoleculeApi.md#get_tx_statuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
+[**get_transaction_status**](MoleculeApi.md#get_transaction_status) | **GET** /molecule/v1/transaction_status/{transaction_status_id} | Retrieve status information for a specific transaction
+[**get_transaction_statuses**](MoleculeApi.md#get_transaction_statuses) | **GET** /molecule/v1/transaction_status | Get status information for all transactions
 [**get_wallet**](MoleculeApi.md#get_wallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**get_wallet_key**](MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**get_wallet_keys**](MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -839,8 +839,8 @@ Name | Type | Description  | Notes
 
 
 
-# **get_tx_status**
-> TxStatusSpecificResponse get_tx_status(tx_status_id)
+# **get_transaction_status**
+> TransactionStatusSpecificResponse get_transaction_status(transaction_status_id)
 
 Retrieve status information for a specific transaction
 
@@ -864,15 +864,15 @@ end
 
 api_instance = MoleculeApi::MoleculeApi.new
 
-tx_status_id = 'tx_status_id_example' # String | UUID of a transaction status
+transaction_status_id = 'transaction_status_id_example' # String | UUID of a transaction status
 
 
 begin
   #Retrieve status information for a specific transaction
-  result = api_instance.get_tx_status(tx_status_id)
+  result = api_instance.get_transaction_status(transaction_status_id)
   p result
 rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->get_tx_status: #{e}"
+  puts "Exception when calling MoleculeApi->get_transaction_status: #{e}"
 end
 ```
 
@@ -880,11 +880,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tx_status_id** | [**String**](.md)| UUID of a transaction status | 
+ **transaction_status_id** | [**String**](.md)| UUID of a transaction status | 
 
 ### Return type
 
-[**TxStatusSpecificResponse**](TxStatusSpecificResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -897,8 +897,8 @@ Name | Type | Description  | Notes
 
 
 
-# **get_tx_statuses**
-> TxStatusGetResponse get_tx_statuses(opts)
+# **get_transaction_statuses**
+> TransactionStatusGetResponse get_transaction_statuses(opts)
 
 Get status information for all transactions
 
@@ -932,10 +932,10 @@ opts = {
 
 begin
   #Get status information for all transactions
-  result = api_instance.get_tx_statuses(opts)
+  result = api_instance.get_transaction_statuses(opts)
   p result
 rescue MoleculeApi::ApiError => e
-  puts "Exception when calling MoleculeApi->get_tx_statuses: #{e}"
+  puts "Exception when calling MoleculeApi->get_transaction_statuses: #{e}"
 end
 ```
 
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TxStatusGetResponse**](TxStatusGetResponse.md)
+[**TransactionStatusGetResponse**](TransactionStatusGetResponse.md)
 
 ### Authorization
 

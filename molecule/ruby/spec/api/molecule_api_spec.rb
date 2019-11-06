@@ -196,18 +196,18 @@ describe 'MoleculeApi' do
     end
   end
 
-  # unit tests for get_tx_status
+  # unit tests for get_transaction_status
   # Retrieve status information for a specific transaction
-  # @param tx_status_id UUID of a transaction status
+  # @param transaction_status_id UUID of a transaction status
   # @param [Hash] opts the optional parameters
-  # @return [TxStatusSpecificResponse]
-  describe 'get_tx_status test' do
+  # @return [TransactionStatusSpecificResponse]
+  describe 'get_transaction_status test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  # unit tests for get_tx_statuses
+  # unit tests for get_transaction_statuses
   # Get status information for all transactions
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
@@ -215,8 +215,8 @@ describe 'MoleculeApi' do
   # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
   # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   # @option opts [String] :filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
-  # @return [TxStatusGetResponse]
-  describe 'get_tx_statuses test' do
+  # @return [TransactionStatusGetResponse]
+  describe 'get_transaction_statuses test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

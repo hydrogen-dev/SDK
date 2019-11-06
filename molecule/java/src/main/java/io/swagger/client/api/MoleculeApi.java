@@ -50,8 +50,8 @@ import io.swagger.client.model.TokenTransferPayload;
 import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
-import io.swagger.client.model.TxStatusGetResponse;
-import io.swagger.client.model.TxStatusSpecificResponse;
+import io.swagger.client.model.TransactionStatusGetResponse;
+import io.swagger.client.model.TransactionStatusSpecificResponse;
 import java.util.UUID;
 import io.swagger.client.model.WalletCreatePayload;
 import io.swagger.client.model.WalletCreateResponse;
@@ -1891,8 +1891,8 @@ public class MoleculeApi {
         return call;
     }
     /**
-     * Build call for getTxStatus
-     * @param txStatusId UUID of a transaction status (required)
+     * Build call for getTransactionStatus
+     * @param transactionStatusId UUID of a transaction status (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1900,12 +1900,12 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
      */
-    public com.squareup.okhttp.Call getTxStatusCall(UUID txStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusCall(UUID transactionStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/molecule/v1/tx_status/{tx_status_id}"
-            .replaceAll("\\{" + "tx_status_id" + "\\}", apiClient.escapeString(txStatusId.toString()));
+        String localVarPath = "/molecule/v1/transaction_status/{transaction_status_id}"
+            .replaceAll("\\{" + "transaction_status_id" + "\\}", apiClient.escapeString(transactionStatusId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1943,15 +1943,15 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTxStatusValidateBeforeCall(UUID txStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTransactionStatusValidateBeforeCall(UUID transactionStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'txStatusId' is set
-        if (txStatusId == null) {
-            throw new ApiException("Missing the required parameter 'txStatusId' when calling getTxStatus(Async)");
+        // verify the required parameter 'transactionStatusId' is set
+        if (transactionStatusId == null) {
+            throw new ApiException("Missing the required parameter 'transactionStatusId' when calling getTransactionStatus(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = getTxStatusCall(txStatusId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionStatusCall(transactionStatusId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1959,43 +1959,43 @@ public class MoleculeApi {
     /**
      * Retrieve status information for a specific transaction
      * 
-     * @param txStatusId UUID of a transaction status (required)
-     * @return TxStatusSpecificResponse
+     * @param transactionStatusId UUID of a transaction status (required)
+     * @return TransactionStatusSpecificResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
      */
-    public TxStatusSpecificResponse getTxStatus(UUID txStatusId) throws ApiException {
-        ApiResponse<TxStatusSpecificResponse> resp = getTxStatusWithHttpInfo(txStatusId);
+    public TransactionStatusSpecificResponse getTransactionStatus(UUID transactionStatusId) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = getTransactionStatusWithHttpInfo(transactionStatusId);
         return resp.getData();
     }
 
     /**
      * Retrieve status information for a specific transaction
      * 
-     * @param txStatusId UUID of a transaction status (required)
-     * @return ApiResponse&lt;TxStatusSpecificResponse&gt;
+     * @param transactionStatusId UUID of a transaction status (required)
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
      */
-    public ApiResponse<TxStatusSpecificResponse> getTxStatusWithHttpInfo(UUID txStatusId) throws ApiException {
-        com.squareup.okhttp.Call call = getTxStatusValidateBeforeCall(txStatusId, null, null);
-        Type localVarReturnType = new TypeToken<TxStatusSpecificResponse>(){}.getType();
+    public ApiResponse<TransactionStatusSpecificResponse> getTransactionStatusWithHttpInfo(UUID transactionStatusId) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionStatusValidateBeforeCall(transactionStatusId, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Retrieve status information for a specific transaction (asynchronously)
      * 
-     * @param txStatusId UUID of a transaction status (required)
+     * @param transactionStatusId UUID of a transaction status (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
      */
-    public com.squareup.okhttp.Call getTxStatusAsync(UUID txStatusId, final ApiCallback<TxStatusSpecificResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusAsync(UUID transactionStatusId, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2016,13 +2016,13 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTxStatusValidateBeforeCall(txStatusId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TxStatusSpecificResponse>(){}.getType();
+        com.squareup.okhttp.Call call = getTransactionStatusValidateBeforeCall(transactionStatusId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for getTxStatuses
+     * Build call for getTransactionStatuses
      * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
@@ -2035,11 +2035,11 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public com.squareup.okhttp.Call getTxStatusesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/molecule/v1/tx_status";
+        String localVarPath = "/molecule/v1/transaction_status";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -2087,10 +2087,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTxStatusesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTransactionStatusesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTxStatusesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionStatusesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2103,13 +2103,13 @@ public class MoleculeApi {
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
      * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
-     * @return TxStatusGetResponse
+     * @return TransactionStatusGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public TxStatusGetResponse getTxStatuses(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<TxStatusGetResponse> resp = getTxStatusesWithHttpInfo(page, size, orderBy, ascending, filter);
+    public TransactionStatusGetResponse getTransactionStatuses(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
+        ApiResponse<TransactionStatusGetResponse> resp = getTransactionStatusesWithHttpInfo(page, size, orderBy, ascending, filter);
         return resp.getData();
     }
 
@@ -2121,14 +2121,14 @@ public class MoleculeApi {
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
      * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
-     * @return ApiResponse&lt;TxStatusGetResponse&gt;
+     * @return ApiResponse&lt;TransactionStatusGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public ApiResponse<TxStatusGetResponse> getTxStatusesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getTxStatusesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
-        Type localVarReturnType = new TypeToken<TxStatusGetResponse>(){}.getType();
+    public ApiResponse<TransactionStatusGetResponse> getTransactionStatusesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2146,7 +2146,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public com.squareup.okhttp.Call getTxStatusesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<TxStatusGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<TransactionStatusGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2167,8 +2167,8 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTxStatusesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TxStatusGetResponse>(){}.getType();
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

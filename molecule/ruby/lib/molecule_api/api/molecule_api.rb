@@ -788,28 +788,28 @@ module MoleculeApi
       return data, status_code, headers
     end
     # Retrieve status information for a specific transaction
-    # @param tx_status_id UUID of a transaction status
+    # @param transaction_status_id UUID of a transaction status
     # @param [Hash] opts the optional parameters
-    # @return [TxStatusSpecificResponse]
-    def get_tx_status(tx_status_id, opts = {})
-      data, _status_code, _headers = get_tx_status_with_http_info(tx_status_id, opts)
+    # @return [TransactionStatusSpecificResponse]
+    def get_transaction_status(transaction_status_id, opts = {})
+      data, _status_code, _headers = get_transaction_status_with_http_info(transaction_status_id, opts)
       data
     end
 
     # Retrieve status information for a specific transaction
-    # @param tx_status_id UUID of a transaction status
+    # @param transaction_status_id UUID of a transaction status
     # @param [Hash] opts the optional parameters
-    # @return [Array<(TxStatusSpecificResponse, Fixnum, Hash)>] TxStatusSpecificResponse data, response status code and response headers
-    def get_tx_status_with_http_info(tx_status_id, opts = {})
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def get_transaction_status_with_http_info(transaction_status_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_tx_status ...'
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_transaction_status ...'
       end
-      # verify the required parameter 'tx_status_id' is set
-      if @api_client.config.client_side_validation && tx_status_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tx_status_id' when calling MoleculeApi.get_tx_status"
+      # verify the required parameter 'transaction_status_id' is set
+      if @api_client.config.client_side_validation && transaction_status_id.nil?
+        fail ArgumentError, "Missing the required parameter 'transaction_status_id' when calling MoleculeApi.get_transaction_status"
       end
       # resource path
-      local_var_path = '/molecule/v1/tx_status/{tx_status_id}'.sub('{' + 'tx_status_id' + '}', tx_status_id.to_s)
+      local_var_path = '/molecule/v1/transaction_status/{transaction_status_id}'.sub('{' + 'transaction_status_id' + '}', transaction_status_id.to_s)
 
       # query parameters
       query_params = {}
@@ -833,9 +833,9 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'TxStatusSpecificResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#get_tx_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MoleculeApi#get_transaction_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -846,9 +846,9 @@ module MoleculeApi
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
     # @option opts [String] :filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
-    # @return [TxStatusGetResponse]
-    def get_tx_statuses(opts = {})
-      data, _status_code, _headers = get_tx_statuses_with_http_info(opts)
+    # @return [TransactionStatusGetResponse]
+    def get_transaction_statuses(opts = {})
+      data, _status_code, _headers = get_transaction_statuses_with_http_info(opts)
       data
     end
 
@@ -859,21 +859,21 @@ module MoleculeApi
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
     # @option opts [String] :filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
-    # @return [Array<(TxStatusGetResponse, Fixnum, Hash)>] TxStatusGetResponse data, response status code and response headers
-    def get_tx_statuses_with_http_info(opts = {})
+    # @return [Array<(TransactionStatusGetResponse, Fixnum, Hash)>] TransactionStatusGetResponse data, response status code and response headers
+    def get_transaction_statuses_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_tx_statuses ...'
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_transaction_statuses ...'
       end
       if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
-        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_tx_statuses, must be greater than or equal to 0.'
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_transaction_statuses, must be greater than or equal to 0.'
       end
 
       if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
-        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_tx_statuses, must be greater than or equal to 0.'
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_transaction_statuses, must be greater than or equal to 0.'
       end
 
       # resource path
-      local_var_path = '/molecule/v1/tx_status'
+      local_var_path = '/molecule/v1/transaction_status'
 
       # query parameters
       query_params = {}
@@ -902,9 +902,9 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'TxStatusGetResponse')
+        :return_type => 'TransactionStatusGetResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#get_tx_statuses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MoleculeApi#get_transaction_statuses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

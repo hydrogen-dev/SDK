@@ -84,8 +84,8 @@
       if (data.hasOwnProperty('amount')) {
         obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
       }
-      if (data.hasOwnProperty('tx_hash')) {
-        obj['tx_hash'] = ApiClient.convertToType(data['tx_hash'], 'String');
+      if (data.hasOwnProperty('transaction_hash')) {
+        obj['transaction_hash'] = ApiClient.convertToType(data['transaction_hash'], 'String');
       }
       if (data.hasOwnProperty('create_date')) {
         obj['create_date'] = ApiClient.convertToType(data['create_date'], 'String');
@@ -124,9 +124,9 @@
   exports.prototype['amount'] = undefined;
   /**
    * Hash of the transfer transaction
-   * @member {String} tx_hash
+   * @member {String} transaction_hash
    */
-  exports.prototype['tx_hash'] = undefined;
+  exports.prototype['transaction_hash'] = undefined;
   /**
    * Datetime the token transfer record was created
    * @member {String} create_date

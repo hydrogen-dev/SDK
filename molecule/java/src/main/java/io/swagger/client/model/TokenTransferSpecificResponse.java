@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * TokenTransferSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-06T09:56:24.055-05:00")
 public class TokenTransferSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -46,8 +46,8 @@ public class TokenTransferSpecificResponse {
   @SerializedName("amount")
   private BigDecimal amount = null;
 
-  @SerializedName("tx_hash")
-  private String txHash = null;
+  @SerializedName("transaction_hash")
+  private String transactionHash = null;
 
   @SerializedName("create_date")
   private String createDate = null;
@@ -145,22 +145,22 @@ public class TokenTransferSpecificResponse {
     this.amount = amount;
   }
 
-  public TokenTransferSpecificResponse txHash(String txHash) {
-    this.txHash = txHash;
+  public TokenTransferSpecificResponse transactionHash(String transactionHash) {
+    this.transactionHash = transactionHash;
     return this;
   }
 
    /**
    * Hash of the transfer transaction
-   * @return txHash
+   * @return transactionHash
   **/
   @ApiModelProperty(value = "Hash of the transfer transaction")
-  public String getTxHash() {
-    return txHash;
+  public String getTransactionHash() {
+    return transactionHash;
   }
 
-  public void setTxHash(String txHash) {
-    this.txHash = txHash;
+  public void setTransactionHash(String transactionHash) {
+    this.transactionHash = transactionHash;
   }
 
   public TokenTransferSpecificResponse createDate(String createDate) {
@@ -214,14 +214,14 @@ public class TokenTransferSpecificResponse {
         Objects.equals(this.receiverWalletId, tokenTransferSpecificResponse.receiverWalletId) &&
         Objects.equals(this.tokenId, tokenTransferSpecificResponse.tokenId) &&
         Objects.equals(this.amount, tokenTransferSpecificResponse.amount) &&
-        Objects.equals(this.txHash, tokenTransferSpecificResponse.txHash) &&
+        Objects.equals(this.transactionHash, tokenTransferSpecificResponse.transactionHash) &&
         Objects.equals(this.createDate, tokenTransferSpecificResponse.createDate) &&
         Objects.equals(this.updateDate, tokenTransferSpecificResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, senderWalletId, receiverWalletId, tokenId, amount, txHash, createDate, updateDate);
+    return Objects.hash(id, senderWalletId, receiverWalletId, tokenId, amount, transactionHash, createDate, updateDate);
   }
 
 
@@ -235,7 +235,7 @@ public class TokenTransferSpecificResponse {
     sb.append("    receiverWalletId: ").append(toIndentedString(receiverWalletId)).append("\n");
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    txHash: ").append(toIndentedString(txHash)).append("\n");
+    sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

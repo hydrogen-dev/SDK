@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.8-SNAPSHOT
 require 'date'
 
 module MoleculeApi
-  class TxStatusGetResponse
+  class TransactionStatusGetResponse
     # If true, the last record in the result set is shown
     attr_accessor :last
 
@@ -66,7 +66,7 @@ module MoleculeApi
         :'number_of_elements' => :'Integer',
         :'size' => :'Integer',
         :'number' => :'Integer',
-        :'content' => :'Array<TxStatusSpecificResponse>'
+        :'content' => :'Array<TransactionStatusSpecificResponse>'
       }
     end
 

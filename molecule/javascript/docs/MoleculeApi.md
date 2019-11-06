@@ -17,8 +17,8 @@ Method | HTTP request | Description
 [**getTokenTransfer**](MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 [**getTokenTransfers**](MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
-[**getTxStatus**](MoleculeApi.md#getTxStatus) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
-[**getTxStatuses**](MoleculeApi.md#getTxStatuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
+[**getTransactionStatus**](MoleculeApi.md#getTransactionStatus) | **GET** /molecule/v1/transaction_status/{transaction_status_id} | Retrieve status information for a specific transaction
+[**getTransactionStatuses**](MoleculeApi.md#getTransactionStatuses) | **GET** /molecule/v1/transaction_status | Get status information for all transactions
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -801,9 +801,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getTxStatus"></a>
-# **getTxStatus**
-> TxStatusSpecificResponse getTxStatus(txStatusId)
+<a name="getTransactionStatus"></a>
+# **getTransactionStatus**
+> TransactionStatusSpecificResponse getTransactionStatus(transactionStatusId)
 
 Retrieve status information for a specific transaction
 
@@ -824,7 +824,7 @@ oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
-var txStatusId = "txStatusId_example"; // String | UUID of a transaction status
+var transactionStatusId = "transactionStatusId_example"; // String | UUID of a transaction status
 
 
 var callback = function(error, data, response) {
@@ -834,18 +834,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTxStatus(txStatusId, callback);
+apiInstance.getTransactionStatus(transactionStatusId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **txStatusId** | [**String**](.md)| UUID of a transaction status | 
+ **transactionStatusId** | [**String**](.md)| UUID of a transaction status | 
 
 ### Return type
 
-[**TxStatusSpecificResponse**](TxStatusSpecificResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -856,9 +856,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getTxStatuses"></a>
-# **getTxStatuses**
-> TxStatusGetResponse getTxStatuses(opts)
+<a name="getTransactionStatuses"></a>
+# **getTransactionStatuses**
+> TransactionStatusGetResponse getTransactionStatuses(opts)
 
 Get status information for all transactions
 
@@ -894,7 +894,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTxStatuses(opts, callback);
+apiInstance.getTransactionStatuses(opts, callback);
 ```
 
 ### Parameters
@@ -909,7 +909,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TxStatusGetResponse**](TxStatusGetResponse.md)
+[**TransactionStatusGetResponse**](TransactionStatusGetResponse.md)
 
 ### Authorization
 

@@ -24,16 +24,16 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Pagination;
 import io.swagger.client.model.PaginationSort;
-import io.swagger.client.model.TxStatusSpecificResponse;
+import io.swagger.client.model.TransactionStatusSpecificResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TxStatusGetResponse
+ * TransactionStatusGetResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
-public class TxStatusGetResponse {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-06T09:56:24.055-05:00")
+public class TransactionStatusGetResponse {
   @SerializedName("last")
   private Boolean last = null;
 
@@ -59,9 +59,9 @@ public class TxStatusGetResponse {
   private Integer number = null;
 
   @SerializedName("content")
-  private List<TxStatusSpecificResponse> content = null;
+  private List<TransactionStatusSpecificResponse> content = null;
 
-  public TxStatusGetResponse last(Boolean last) {
+  public TransactionStatusGetResponse last(Boolean last) {
     this.last = last;
     return this;
   }
@@ -79,7 +79,7 @@ public class TxStatusGetResponse {
     this.last = last;
   }
 
-  public TxStatusGetResponse totalPages(Integer totalPages) {
+  public TransactionStatusGetResponse totalPages(Integer totalPages) {
     this.totalPages = totalPages;
     return this;
   }
@@ -97,7 +97,7 @@ public class TxStatusGetResponse {
     this.totalPages = totalPages;
   }
 
-  public TxStatusGetResponse totalElements(Integer totalElements) {
+  public TransactionStatusGetResponse totalElements(Integer totalElements) {
     this.totalElements = totalElements;
     return this;
   }
@@ -115,12 +115,12 @@ public class TxStatusGetResponse {
     this.totalElements = totalElements;
   }
 
-  public TxStatusGetResponse sort(List<PaginationSort> sort) {
+  public TransactionStatusGetResponse sort(List<PaginationSort> sort) {
     this.sort = sort;
     return this;
   }
 
-  public TxStatusGetResponse addSortItem(PaginationSort sortItem) {
+  public TransactionStatusGetResponse addSortItem(PaginationSort sortItem) {
     if (this.sort == null) {
       this.sort = new ArrayList<PaginationSort>();
     }
@@ -141,7 +141,7 @@ public class TxStatusGetResponse {
     this.sort = sort;
   }
 
-  public TxStatusGetResponse first(Boolean first) {
+  public TransactionStatusGetResponse first(Boolean first) {
     this.first = first;
     return this;
   }
@@ -159,7 +159,7 @@ public class TxStatusGetResponse {
     this.first = first;
   }
 
-  public TxStatusGetResponse numberOfElements(Integer numberOfElements) {
+  public TransactionStatusGetResponse numberOfElements(Integer numberOfElements) {
     this.numberOfElements = numberOfElements;
     return this;
   }
@@ -177,7 +177,7 @@ public class TxStatusGetResponse {
     this.numberOfElements = numberOfElements;
   }
 
-  public TxStatusGetResponse size(Integer size) {
+  public TransactionStatusGetResponse size(Integer size) {
     this.size = size;
     return this;
   }
@@ -195,7 +195,7 @@ public class TxStatusGetResponse {
     this.size = size;
   }
 
-  public TxStatusGetResponse number(Integer number) {
+  public TransactionStatusGetResponse number(Integer number) {
     this.number = number;
     return this;
   }
@@ -213,14 +213,14 @@ public class TxStatusGetResponse {
     this.number = number;
   }
 
-  public TxStatusGetResponse content(List<TxStatusSpecificResponse> content) {
+  public TransactionStatusGetResponse content(List<TransactionStatusSpecificResponse> content) {
     this.content = content;
     return this;
   }
 
-  public TxStatusGetResponse addContentItem(TxStatusSpecificResponse contentItem) {
+  public TransactionStatusGetResponse addContentItem(TransactionStatusSpecificResponse contentItem) {
     if (this.content == null) {
-      this.content = new ArrayList<TxStatusSpecificResponse>();
+      this.content = new ArrayList<TransactionStatusSpecificResponse>();
     }
     this.content.add(contentItem);
     return this;
@@ -231,11 +231,11 @@ public class TxStatusGetResponse {
    * @return content
   **/
   @ApiModelProperty(value = "")
-  public List<TxStatusSpecificResponse> getContent() {
+  public List<TransactionStatusSpecificResponse> getContent() {
     return content;
   }
 
-  public void setContent(List<TxStatusSpecificResponse> content) {
+  public void setContent(List<TransactionStatusSpecificResponse> content) {
     this.content = content;
   }
 
@@ -248,16 +248,16 @@ public class TxStatusGetResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TxStatusGetResponse txStatusGetResponse = (TxStatusGetResponse) o;
-    return Objects.equals(this.last, txStatusGetResponse.last) &&
-        Objects.equals(this.totalPages, txStatusGetResponse.totalPages) &&
-        Objects.equals(this.totalElements, txStatusGetResponse.totalElements) &&
-        Objects.equals(this.sort, txStatusGetResponse.sort) &&
-        Objects.equals(this.first, txStatusGetResponse.first) &&
-        Objects.equals(this.numberOfElements, txStatusGetResponse.numberOfElements) &&
-        Objects.equals(this.size, txStatusGetResponse.size) &&
-        Objects.equals(this.number, txStatusGetResponse.number) &&
-        Objects.equals(this.content, txStatusGetResponse.content);
+    TransactionStatusGetResponse transactionStatusGetResponse = (TransactionStatusGetResponse) o;
+    return Objects.equals(this.last, transactionStatusGetResponse.last) &&
+        Objects.equals(this.totalPages, transactionStatusGetResponse.totalPages) &&
+        Objects.equals(this.totalElements, transactionStatusGetResponse.totalElements) &&
+        Objects.equals(this.sort, transactionStatusGetResponse.sort) &&
+        Objects.equals(this.first, transactionStatusGetResponse.first) &&
+        Objects.equals(this.numberOfElements, transactionStatusGetResponse.numberOfElements) &&
+        Objects.equals(this.size, transactionStatusGetResponse.size) &&
+        Objects.equals(this.number, transactionStatusGetResponse.number) &&
+        Objects.equals(this.content, transactionStatusGetResponse.content);
   }
 
   @Override
@@ -269,7 +269,7 @@ public class TxStatusGetResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TxStatusGetResponse {\n");
+    sb.append("class TransactionStatusGetResponse {\n");
     
     sb.append("    last: ").append(toIndentedString(last)).append("\n");
     sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");

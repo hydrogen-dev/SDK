@@ -17,8 +17,8 @@ Method | HTTP request | Description
 [**getTokenTransfer**](MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 [**getTokenTransfers**](MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
-[**getTxStatus**](MoleculeApi.md#getTxStatus) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
-[**getTxStatuses**](MoleculeApi.md#getTxStatuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
+[**getTransactionStatus**](MoleculeApi.md#getTransactionStatus) | **GET** /molecule/v1/transaction_status/{transaction_status_id} | Retrieve status information for a specific transaction
+[**getTransactionStatuses**](MoleculeApi.md#getTransactionStatuses) | **GET** /molecule/v1/transaction_status | Get status information for all transactions
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -859,9 +859,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getTxStatus"></a>
-# **getTxStatus**
-> TxStatusSpecificResponse getTxStatus(txStatusId)
+<a name="getTransactionStatus"></a>
+# **getTransactionStatus**
+> TransactionStatusSpecificResponse getTransactionStatus(transactionStatusId)
 
 Retrieve status information for a specific transaction
 
@@ -890,12 +890,12 @@ oauth.setAccessToken(token);
 oauth.setAccessToken("MYACCESSTOKEN");
 
 MoleculeApi apiInstance = new MoleculeApi();
-UUID txStatusId = new UUID(); // UUID | UUID of a transaction status
+UUID transactionStatusId = new UUID(); // UUID | UUID of a transaction status
 try {
-    TxStatusSpecificResponse result = apiInstance.getTxStatus(txStatusId);
+    TransactionStatusSpecificResponse result = apiInstance.getTransactionStatus(transactionStatusId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#getTxStatus");
+    System.err.println("Exception when calling MoleculeApi#getTransactionStatus");
     e.printStackTrace();
 }
 ```
@@ -904,11 +904,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **txStatusId** | [**UUID**](.md)| UUID of a transaction status |
+ **transactionStatusId** | [**UUID**](.md)| UUID of a transaction status |
 
 ### Return type
 
-[**TxStatusSpecificResponse**](TxStatusSpecificResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -919,9 +919,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getTxStatuses"></a>
-# **getTxStatuses**
-> TxStatusGetResponse getTxStatuses(page, size, orderBy, ascending, filter)
+<a name="getTransactionStatuses"></a>
+# **getTransactionStatuses**
+> TransactionStatusGetResponse getTransactionStatuses(page, size, orderBy, ascending, filter)
 
 Get status information for all transactions
 
@@ -956,10 +956,10 @@ String orderBy = "update_date"; // String | The field in the response body to or
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 try {
-    TxStatusGetResponse result = apiInstance.getTxStatuses(page, size, orderBy, ascending, filter);
+    TransactionStatusGetResponse result = apiInstance.getTransactionStatuses(page, size, orderBy, ascending, filter);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MoleculeApi#getTxStatuses");
+    System.err.println("Exception when calling MoleculeApi#getTransactionStatuses");
     e.printStackTrace();
 }
 ```
@@ -976,7 +976,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TxStatusGetResponse**](TxStatusGetResponse.md)
+[**TransactionStatusGetResponse**](TransactionStatusGetResponse.md)
 
 ### Authorization
 

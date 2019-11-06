@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new molecule_api.TxStatusGetResponse();
+    instance = new molecule_api.TransactionStatusGetResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,16 @@
       object[property] = value;
   }
 
-  describe('TxStatusGetResponse', function() {
-    it('should create an instance of TxStatusGetResponse', function() {
-      // uncomment below and update the code to test TxStatusGetResponse
-      //var instance = new molecule_api.TxStatusGetResponse();
-      //expect(instance).to.be.a(molecule_api.TxStatusGetResponse);
+  describe('TransactionStatusGetResponse', function() {
+    it('should create an instance of TransactionStatusGetResponse', function() {
+      // uncomment below and update the code to test TransactionStatusGetResponse
+      //var instance = new molecule_api.TransactionStatusGetResponse();
+      //expect(instance).to.be.a(molecule_api.TransactionStatusGetResponse);
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instance = new molecule_api.TxStatusGetResponse();
+      //var instance = new molecule_api.TransactionStatusGetResponse();
       //expect(instance).to.be();
     });
 

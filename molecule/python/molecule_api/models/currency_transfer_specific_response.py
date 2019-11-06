@@ -36,7 +36,7 @@ class CurrencyTransferSpecificResponse(object):
         'receiver_wallet_id': 'str',
         'currency_symbol': 'str',
         'amount': 'float',
-        'tx_hash': 'str',
+        'transaction_hash': 'str',
         'create_date': 'str',
         'update_date': 'str'
     }
@@ -47,12 +47,12 @@ class CurrencyTransferSpecificResponse(object):
         'receiver_wallet_id': 'receiver_wallet_id',
         'currency_symbol': 'currency_symbol',
         'amount': 'amount',
-        'tx_hash': 'tx_hash',
+        'transaction_hash': 'transaction_hash',
         'create_date': 'create_date',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, sender_wallet_id=None, receiver_wallet_id=None, currency_symbol=None, amount=None, tx_hash=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, sender_wallet_id=None, receiver_wallet_id=None, currency_symbol=None, amount=None, transaction_hash=None, create_date=None, update_date=None):  # noqa: E501
         """CurrencyTransferSpecificResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -60,7 +60,7 @@ class CurrencyTransferSpecificResponse(object):
         self._receiver_wallet_id = None
         self._currency_symbol = None
         self._amount = None
-        self._tx_hash = None
+        self._transaction_hash = None
         self._create_date = None
         self._update_date = None
         self.discriminator = None
@@ -75,8 +75,8 @@ class CurrencyTransferSpecificResponse(object):
             self.currency_symbol = currency_symbol
         if amount is not None:
             self.amount = amount
-        if tx_hash is not None:
-            self.tx_hash = tx_hash
+        if transaction_hash is not None:
+            self.transaction_hash = transaction_hash
         if create_date is not None:
             self.create_date = create_date
         if update_date is not None:
@@ -198,27 +198,27 @@ class CurrencyTransferSpecificResponse(object):
         self._amount = amount
 
     @property
-    def tx_hash(self):
-        """Gets the tx_hash of this CurrencyTransferSpecificResponse.  # noqa: E501
+    def transaction_hash(self):
+        """Gets the transaction_hash of this CurrencyTransferSpecificResponse.  # noqa: E501
 
         Hash of the transfer transaction  # noqa: E501
 
-        :return: The tx_hash of this CurrencyTransferSpecificResponse.  # noqa: E501
+        :return: The transaction_hash of this CurrencyTransferSpecificResponse.  # noqa: E501
         :rtype: str
         """
-        return self._tx_hash
+        return self._transaction_hash
 
-    @tx_hash.setter
-    def tx_hash(self, tx_hash):
-        """Sets the tx_hash of this CurrencyTransferSpecificResponse.
+    @transaction_hash.setter
+    def transaction_hash(self, transaction_hash):
+        """Sets the transaction_hash of this CurrencyTransferSpecificResponse.
 
         Hash of the transfer transaction  # noqa: E501
 
-        :param tx_hash: The tx_hash of this CurrencyTransferSpecificResponse.  # noqa: E501
+        :param transaction_hash: The transaction_hash of this CurrencyTransferSpecificResponse.  # noqa: E501
         :type: str
         """
 
-        self._tx_hash = tx_hash
+        self._transaction_hash = transaction_hash
 
     @property
     def create_date(self):

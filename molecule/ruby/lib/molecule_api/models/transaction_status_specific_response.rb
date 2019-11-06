@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.8-SNAPSHOT
 require 'date'
 
 module MoleculeApi
-  class TxStatusSpecificResponse
+  class TransactionStatusSpecificResponse
     # ID of the transaction status
     attr_accessor :id
 
@@ -25,12 +25,6 @@ module MoleculeApi
 
     # Status of the transaction. Could be pending, processed, or failed
     attr_accessor :status
-
-    # Shows if the transaction will emit an event or not
-    attr_accessor :emits_event
-
-    # Shows if the event of the transaction has been handled or not
-    attr_accessor :event_handled
 
     # Datetime the currency transfer record was created
     attr_accessor :create_date
@@ -45,8 +39,6 @@ module MoleculeApi
         :'wallet_id' => :'wallet_id',
         :'hash' => :'hash',
         :'status' => :'status',
-        :'emits_event' => :'emits_event',
-        :'event_handled' => :'event_handled',
         :'create_date' => :'create_date',
         :'update_date' => :'update_date'
       }
@@ -59,8 +51,6 @@ module MoleculeApi
         :'wallet_id' => :'String',
         :'hash' => :'String',
         :'status' => :'String',
-        :'emits_event' => :'BOOLEAN',
-        :'event_handled' => :'BOOLEAN',
         :'create_date' => :'String',
         :'update_date' => :'String'
       }
@@ -88,14 +78,6 @@ module MoleculeApi
 
       if attributes.has_key?(:'status')
         self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'emits_event')
-        self.emits_event = attributes[:'emits_event']
-      end
-
-      if attributes.has_key?(:'event_handled')
-        self.event_handled = attributes[:'event_handled']
       end
 
       if attributes.has_key?(:'create_date')
@@ -129,8 +111,6 @@ module MoleculeApi
           wallet_id == o.wallet_id &&
           hash == o.hash &&
           status == o.status &&
-          emits_event == o.emits_event &&
-          event_handled == o.event_handled &&
           create_date == o.create_date &&
           update_date == o.update_date
     end
@@ -144,7 +124,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, wallet_id, hash, status, emits_event, event_handled, create_date, update_date].hash
+      [id, wallet_id, hash, status, create_date, update_date].hash
     end
 
     # Builds the object from hash

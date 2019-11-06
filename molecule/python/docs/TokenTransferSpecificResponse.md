@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **receiver_wallet_id** | **str** | ID of the receiver wallet | [optional] 
 **token_id** | **str** | ID of the token being transferred | [optional] 
 **amount** | **float** | Amount of tokens being transferred | [optional] 
-**tx_hash** | **str** | Hash of the transfer transaction | [optional] 
+**transaction_hash** | **str** | Hash of the transfer transaction | [optional] 
 **create_date** | **str** | Datetime the token transfer record was created | [optional] 
 **update_date** | **str** | Datetime the token transfer record was updated | [optional] 
 

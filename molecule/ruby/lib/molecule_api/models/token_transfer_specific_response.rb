@@ -30,7 +30,7 @@ module MoleculeApi
     attr_accessor :amount
 
     # Hash of the transfer transaction
-    attr_accessor :tx_hash
+    attr_accessor :transaction_hash
 
     # Datetime the token transfer record was created
     attr_accessor :create_date
@@ -46,7 +46,7 @@ module MoleculeApi
         :'receiver_wallet_id' => :'receiver_wallet_id',
         :'token_id' => :'token_id',
         :'amount' => :'amount',
-        :'tx_hash' => :'tx_hash',
+        :'transaction_hash' => :'transaction_hash',
         :'create_date' => :'create_date',
         :'update_date' => :'update_date'
       }
@@ -60,7 +60,7 @@ module MoleculeApi
         :'receiver_wallet_id' => :'String',
         :'token_id' => :'String',
         :'amount' => :'Float',
-        :'tx_hash' => :'String',
+        :'transaction_hash' => :'String',
         :'create_date' => :'String',
         :'update_date' => :'String'
       }
@@ -94,8 +94,8 @@ module MoleculeApi
         self.amount = attributes[:'amount']
       end
 
-      if attributes.has_key?(:'tx_hash')
-        self.tx_hash = attributes[:'tx_hash']
+      if attributes.has_key?(:'transaction_hash')
+        self.transaction_hash = attributes[:'transaction_hash']
       end
 
       if attributes.has_key?(:'create_date')
@@ -130,7 +130,7 @@ module MoleculeApi
           receiver_wallet_id == o.receiver_wallet_id &&
           token_id == o.token_id &&
           amount == o.amount &&
-          tx_hash == o.tx_hash &&
+          transaction_hash == o.transaction_hash &&
           create_date == o.create_date &&
           update_date == o.update_date
     end
@@ -144,7 +144,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, sender_wallet_id, receiver_wallet_id, token_id, amount, tx_hash, create_date, update_date].hash
+      [id, sender_wallet_id, receiver_wallet_id, token_id, amount, transaction_hash, create_date, update_date].hash
     end
 
     # Builds the object from hash

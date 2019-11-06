@@ -87,8 +87,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property txHash (base name: "tx_hash")', function() {
-      // uncomment below and update the code to test the property txHash
+    it('should have the property transactionHash (base name: "transaction_hash")', function() {
+      // uncomment below and update the code to test the property transactionHash
       //var instance = new molecule_api.CurrencyTransferSpecificResponse();
       //expect(instance).to.be();
     });

@@ -1,5 +1,5 @@
 
-# TxStatusGetResponse
+# TransactionStatusGetResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **numberOfElements** | **Integer** | Number of elements per page |  [optional]
 **size** | **Integer** | The number or records to be included per page. The default is 25. There is no max value. |  [optional]
 **number** | **Integer** | Number of the first result shown |  [optional]
-**content** | [**List&lt;TxStatusSpecificResponse&gt;**](TxStatusSpecificResponse.md) |  |  [optional]
+**content** | [**List&lt;TransactionStatusSpecificResponse&gt;**](TransactionStatusSpecificResponse.md) |  |  [optional]
 
 
 

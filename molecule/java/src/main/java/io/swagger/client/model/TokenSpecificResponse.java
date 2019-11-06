@@ -32,7 +32,7 @@ import java.util.UUID;
 /**
  * TokenSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-04T15:24:43.843-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-06T09:56:24.055-05:00")
 public class TokenSpecificResponse {
   @SerializedName("id")
   private UUID id = null;

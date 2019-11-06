@@ -107,8 +107,8 @@ Class | Method | HTTP request | Description
 *MoleculeApi::MoleculeApi* | [**get_token_transfer**](docs/MoleculeApi.md#get_token_transfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
 *MoleculeApi::MoleculeApi* | [**get_token_transfers**](docs/MoleculeApi.md#get_token_transfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 *MoleculeApi::MoleculeApi* | [**get_tokens**](docs/MoleculeApi.md#get_tokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
-*MoleculeApi::MoleculeApi* | [**get_tx_status**](docs/MoleculeApi.md#get_tx_status) | **GET** /molecule/v1/tx_status/{tx_status_id} | Retrieve status information for a specific transaction
-*MoleculeApi::MoleculeApi* | [**get_tx_statuses**](docs/MoleculeApi.md#get_tx_statuses) | **GET** /molecule/v1/tx_status | Get status information for all transactions
+*MoleculeApi::MoleculeApi* | [**get_transaction_status**](docs/MoleculeApi.md#get_transaction_status) | **GET** /molecule/v1/transaction_status/{transaction_status_id} | Retrieve status information for a specific transaction
+*MoleculeApi::MoleculeApi* | [**get_transaction_statuses**](docs/MoleculeApi.md#get_transaction_statuses) | **GET** /molecule/v1/transaction_status | Get status information for all transactions
 *MoleculeApi::MoleculeApi* | [**get_wallet**](docs/MoleculeApi.md#get_wallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 *MoleculeApi::MoleculeApi* | [**get_wallet_key**](docs/MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *MoleculeApi::MoleculeApi* | [**get_wallet_keys**](docs/MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
@@ -151,7 +151,7 @@ Class | Method | HTTP request | Description
  - [MoleculeApi::TokenTransferSpecificResponse](docs/TokenTransferSpecificResponse.md)
  - [MoleculeApi::TokenUpdatePayload](docs/TokenUpdatePayload.md)
  - [MoleculeApi::TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
- - [MoleculeApi::TxStatusSpecificResponse](docs/TxStatusSpecificResponse.md)
+ - [MoleculeApi::TransactionStatusSpecificResponse](docs/TransactionStatusSpecificResponse.md)
  - [MoleculeApi::WalletCreateClient](docs/WalletCreateClient.md)
  - [MoleculeApi::WalletCreatePayload](docs/WalletCreatePayload.md)
  - [MoleculeApi::WalletCreateWhitelist](docs/WalletCreateWhitelist.md)
@@ -166,7 +166,7 @@ Class | Method | HTTP request | Description
  - [MoleculeApi::TokenGetResponse](docs/TokenGetResponse.md)
  - [MoleculeApi::TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
  - [MoleculeApi::TokenTransferGetResponse](docs/TokenTransferGetResponse.md)
- - [MoleculeApi::TxStatusGetResponse](docs/TxStatusGetResponse.md)
+ - [MoleculeApi::TransactionStatusGetResponse](docs/TransactionStatusGetResponse.md)
  - [MoleculeApi::WalletCreateResponse](docs/WalletCreateResponse.md)
  - [MoleculeApi::WalletGetResponse](docs/WalletGetResponse.md)
  - [MoleculeApi::WalletKeyGetResponse](docs/WalletKeyGetResponse.md)

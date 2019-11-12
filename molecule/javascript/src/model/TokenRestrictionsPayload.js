@@ -61,6 +61,8 @@
 
 
 
+
+
   };
 
   /**
@@ -109,6 +111,12 @@
       }
       if (data.hasOwnProperty('kyc_required')) {
         obj['kyc_required'] = ApiClient.convertToType(data['kyc_required'], 'Boolean');
+      }
+      if (data.hasOwnProperty('include_country')) {
+        obj['include_country'] = ApiClient.convertToType(data['include_country'], ['String']);
+      }
+      if (data.hasOwnProperty('exclude_country')) {
+        obj['exclude_country'] = ApiClient.convertToType(data['exclude_country'], ['String']);
       }
     }
     return obj;
@@ -174,6 +182,16 @@
    * @member {Boolean} kyc_required
    */
   exports.prototype['kyc_required'] = undefined;
+  /**
+   * Investors residing in these countries will be allowed to invest
+   * @member {Array.<String>} include_country
+   */
+  exports.prototype['include_country'] = undefined;
+  /**
+   * Investors residing outside of these countries will be allowed to invest
+   * @member {Array.<String>} exclude_country
+   */
+  exports.prototype['exclude_country'] = undefined;
 
 
 

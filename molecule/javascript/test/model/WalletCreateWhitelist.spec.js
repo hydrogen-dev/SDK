@@ -69,14 +69,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sellRestriction (base name: "sell_restriction")', function() {
-      // uncomment below and update the code to test the property sellRestriction
+    it('should have the property sellRestrictionDate (base name: "sell_restriction_date")', function() {
+      // uncomment below and update the code to test the property sellRestrictionDate
       //var instance = new molecule_api.WalletCreateWhitelist();
       //expect(instance).to.be();
     });
 
-    it('should have the property buyRestriction (base name: "buy_restriction")', function() {
-      // uncomment below and update the code to test the property buyRestriction
+    it('should have the property buyRestrictionDate (base name: "buy_restriction_date")', function() {
+      // uncomment below and update the code to test the property buyRestrictionDate
       //var instance = new molecule_api.WalletCreateWhitelist();
       //expect(instance).to.be();
     });

@@ -1672,11 +1672,11 @@ definitions:
       role:
         type: string
         description: The role of the wallet over the token
-      sell_restriction:
+      sell_restriction_date:
         type: string
         format: datetime
         description: The date when resale restrictions should be lifted for the wallet
-      buy_restriction:
+      buy_restriction_date:
         type: string
         format: datetime
         description: The date when the buy restrictions should be lifted for the wallet
@@ -1933,6 +1933,16 @@ definitions:
       kyc_required:
         type: boolean
         description: Investors who are verified by a Know-Your-Customer vendor will be allowed to invest
+      include_country:
+        type: array
+        description: Investors residing in these countries will be allowed to invest
+        items:
+          type: string
+      exclude_country:
+        type: array
+        description: Investors residing outside of these countries will be allowed to invest
+        items:
+          type: string
   token_deploy_payload:
     type: object
     required:

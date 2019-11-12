@@ -129,6 +129,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property includeCountry (base name: "include_country")', function() {
+      // uncomment below and update the code to test the property includeCountry
+      //var instance = new molecule_api.TokenRestrictionsPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property excludeCountry (base name: "exclude_country")', function() {
+      // uncomment below and update the code to test the property excludeCountry
+      //var instance = new molecule_api.TokenRestrictionsPayload();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

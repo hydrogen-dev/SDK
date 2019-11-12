@@ -51,6 +51,12 @@ module MoleculeApi
     # Investors who are verified by a Know-Your-Customer vendor will be allowed to invest
     attr_accessor :kyc_required
 
+    # Investors residing in these countries will be allowed to invest
+    attr_accessor :include_country
+
+    # Investors residing outside of these countries will be allowed to invest
+    attr_accessor :exclude_country
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -65,7 +71,9 @@ module MoleculeApi
         :'min_credit_score' => :'min_credit_score',
         :'max_credit_score' => :'max_credit_score',
         :'accreditation_required' => :'accreditation_required',
-        :'kyc_required' => :'kyc_required'
+        :'kyc_required' => :'kyc_required',
+        :'include_country' => :'include_country',
+        :'exclude_country' => :'exclude_country'
       }
     end
 
@@ -83,7 +91,9 @@ module MoleculeApi
         :'min_credit_score' => :'Float',
         :'max_credit_score' => :'Float',
         :'accreditation_required' => :'BOOLEAN',
-        :'kyc_required' => :'BOOLEAN'
+        :'kyc_required' => :'BOOLEAN',
+        :'include_country' => :'Array<String>',
+        :'exclude_country' => :'Array<String>'
       }
     end
 
@@ -142,6 +152,18 @@ module MoleculeApi
       if attributes.has_key?(:'kyc_required')
         self.kyc_required = attributes[:'kyc_required']
       end
+
+      if attributes.has_key?(:'include_country')
+        if (value = attributes[:'include_country']).is_a?(Array)
+          self.include_country = value
+        end
+      end
+
+      if attributes.has_key?(:'exclude_country')
+        if (value = attributes[:'exclude_country']).is_a?(Array)
+          self.exclude_country = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -173,7 +195,9 @@ module MoleculeApi
           min_credit_score == o.min_credit_score &&
           max_credit_score == o.max_credit_score &&
           accreditation_required == o.accreditation_required &&
-          kyc_required == o.kyc_required
+          kyc_required == o.kyc_required &&
+          include_country == o.include_country &&
+          exclude_country == o.exclude_country
     end
 
     # @see the `==` method
@@ -185,7 +209,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [min_age, max_age, min_annual_income, max_annual_income, min_household_income, max_household_income, min_net_worth, max_net_worth, min_credit_score, max_credit_score, accreditation_required, kyc_required].hash
+      [min_age, max_age, min_annual_income, max_annual_income, min_household_income, max_household_income, min_net_worth, max_net_worth, min_credit_score, max_credit_score, accreditation_required, kyc_required, include_country, exclude_country].hash
     end
 
     # Builds the object from hash

@@ -2,7 +2,7 @@
 
 Hydrogen Molecule API
 - API version: 1.0.0
-  - Build date: 2019-11-12T17:16:41.230-05:00
+  - Build date: 2019-11-14T16:49:41.120-05:00
 
 The Hydrogen Molecule API
 
@@ -124,6 +124,7 @@ All URIs are relative to *https://api.hydrogenplatform.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *MoleculeApi* | [**deleteToken**](docs/MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
+*MoleculeApi* | [**deleteWebhook**](docs/MoleculeApi.md#deleteWebhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
 *MoleculeApi* | [**getCurrencyBalance**](docs/MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 *MoleculeApi* | [**getCurrencyBalances**](docs/MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 *MoleculeApi* | [**getCurrencyTransfer**](docs/MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -142,6 +143,8 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**getWalletKey**](docs/MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *MoleculeApi* | [**getWalletKeys**](docs/MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 *MoleculeApi* | [**getWallets**](docs/MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+*MoleculeApi* | [**getWebhook**](docs/MoleculeApi.md#getWebhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
+*MoleculeApi* | [**getWebhooks**](docs/MoleculeApi.md#getWebhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
 *MoleculeApi* | [**postCrowdsaleDeploy**](docs/MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
 *MoleculeApi* | [**postCrowdsaleFund**](docs/MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
 *MoleculeApi* | [**postCrowdsalePurchase**](docs/MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
@@ -153,8 +156,10 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**postWallet**](docs/MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 *MoleculeApi* | [**postWalletKey**](docs/MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 *MoleculeApi* | [**postWalletKeyGenerator**](docs/MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
+*MoleculeApi* | [**postWebhook**](docs/MoleculeApi.md#postWebhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
 *MoleculeApi* | [**updateToken**](docs/MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 *MoleculeApi* | [**updateWallet**](docs/MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+*MoleculeApi* | [**updateWebhook**](docs/MoleculeApi.md#updateWebhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
 ## Documentation for Models
@@ -187,6 +192,8 @@ Class | Method | HTTP request | Description
  - [WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
  - [WalletUpdatePayload](docs/WalletUpdatePayload.md)
+ - [WebhookCreatePayload](docs/WebhookCreatePayload.md)
+ - [WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
  - [CurrencyTransferGetResponse](docs/CurrencyTransferGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
@@ -199,8 +206,11 @@ Class | Method | HTTP request | Description
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
  - [WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
+ - [WebhookCreateResponse](docs/WebhookCreateResponse.md)
+ - [WebhookGetResponse](docs/WebhookGetResponse.md)
  - [TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [WalletSpecificResponse](docs/WalletSpecificResponse.md)
+ - [WebhookSpecificResponse](docs/WebhookSpecificResponse.md)
 
 
 ## Documentation for Authorization

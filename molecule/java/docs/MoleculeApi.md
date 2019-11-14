@@ -5,6 +5,7 @@ All URIs are relative to *https://api.hydrogenplatform.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteToken**](MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
+[**deleteWebhook**](MoleculeApi.md#deleteWebhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
 [**getCurrencyBalance**](MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 [**getCurrencyBalances**](MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 [**getCurrencyTransfer**](MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -23,6 +24,8 @@ Method | HTTP request | Description
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**getWallets**](MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**getWebhook**](MoleculeApi.md#getWebhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
+[**getWebhooks**](MoleculeApi.md#getWebhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
 [**postCrowdsaleDeploy**](MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
 [**postCrowdsaleFund**](MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
 [**postCrowdsalePurchase**](MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
@@ -34,8 +37,10 @@ Method | HTTP request | Description
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**postWalletKey**](MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**postWalletKeyGenerator**](MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
+[**postWebhook**](MoleculeApi.md#postWebhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
 [**updateToken**](MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 [**updateWallet**](MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+[**updateWebhook**](MoleculeApi.md#updateWebhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
 <a name="deleteToken"></a>
@@ -83,6 +88,65 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | [**UUID**](.md)| UUID of a token |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteWebhook"></a>
+# **deleteWebhook**
+> deleteWebhook(webhookId)
+
+Delete a webhook
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+UUID webhookId = new UUID(); // UUID | UUID of a webhook
+try {
+    apiInstance.deleteWebhook(webhookId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#deleteWebhook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**UUID**](.md)| UUID of a webhook |
 
 ### Return type
 
@@ -1239,6 +1303,132 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getWebhook"></a>
+# **getWebhook**
+> WebhookSpecificResponse getWebhook(webhookId)
+
+Retrieve a webhook
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+UUID webhookId = new UUID(); // UUID | UUID of a webhook
+try {
+    WebhookSpecificResponse result = apiInstance.getWebhook(webhookId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getWebhook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**UUID**](.md)| UUID of a webhook |
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getWebhooks"></a>
+# **getWebhooks**
+> WebhookGetResponse getWebhooks(page, size, orderBy, ascending)
+
+Get information for all webhooks defined for your firm
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+try {
+    WebhookGetResponse result = apiInstance.getWebhooks(page, size, orderBy, ascending);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getWebhooks");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+
+### Return type
+
+[**WebhookGetResponse**](WebhookGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postCrowdsaleDeploy"></a>
 # **postCrowdsaleDeploy**
 > AsyncOperationResponse postCrowdsaleDeploy(payload)
@@ -1899,6 +2089,66 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postWebhook"></a>
+# **postWebhook**
+> WebhookCreateResponse postWebhook(payload)
+
+Create a webhook under your firm.
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+WebhookCreatePayload payload = new WebhookCreatePayload(); // WebhookCreatePayload | 
+try {
+    WebhookCreateResponse result = apiInstance.postWebhook(payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#postWebhook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**WebhookCreatePayload**](WebhookCreatePayload.md)|  |
+
+### Return type
+
+[**WebhookCreateResponse**](WebhookCreateResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateToken"></a>
 # **updateToken**
 > TokenSpecificResponse updateToken(tokenId, payload)
@@ -2013,6 +2263,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletSpecificResponse**](WalletSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateWebhook"></a>
+# **updateWebhook**
+> WebhookSpecificResponse updateWebhook(webhookId, payload)
+
+Update a webhook
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+UUID webhookId = new UUID(); // UUID | UUID of a webhook
+WebhookUpdatePayload payload = new WebhookUpdatePayload(); // WebhookUpdatePayload | 
+try {
+    WebhookSpecificResponse result = apiInstance.updateWebhook(webhookId, payload);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#updateWebhook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**UUID**](.md)| UUID of a webhook |
+ **payload** | [**WebhookUpdatePayload**](WebhookUpdatePayload.md)|  |
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
 
 ### Authorization
 

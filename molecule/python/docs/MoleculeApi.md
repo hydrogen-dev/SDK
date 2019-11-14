@@ -5,6 +5,7 @@ All URIs are relative to *https://api.hydrogenplatform.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_token**](MoleculeApi.md#delete_token) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
+[**delete_webhook**](MoleculeApi.md#delete_webhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
 [**get_currency_balance**](MoleculeApi.md#get_currency_balance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 [**get_currency_balances**](MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 [**get_currency_transfer**](MoleculeApi.md#get_currency_transfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -23,6 +24,8 @@ Method | HTTP request | Description
 [**get_wallet_key**](MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**get_wallet_keys**](MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**get_wallets**](MoleculeApi.md#get_wallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**get_webhook**](MoleculeApi.md#get_webhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
+[**get_webhooks**](MoleculeApi.md#get_webhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
 [**post_crowdsale_deploy**](MoleculeApi.md#post_crowdsale_deploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
 [**post_crowdsale_fund**](MoleculeApi.md#post_crowdsale_fund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
 [**post_crowdsale_purchase**](MoleculeApi.md#post_crowdsale_purchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
@@ -34,8 +37,10 @@ Method | HTTP request | Description
 [**post_wallet**](MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**post_wallet_key**](MoleculeApi.md#post_wallet_key) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**post_wallet_key_generator**](MoleculeApi.md#post_wallet_key_generator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
+[**post_webhook**](MoleculeApi.md#post_webhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
 [**update_token**](MoleculeApi.md#update_token) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 [**update_wallet**](MoleculeApi.md#update_wallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+[**update_webhook**](MoleculeApi.md#update_webhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
 # **delete_token**
@@ -81,6 +86,65 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token_id** | [**str**](.md)| UUID of a token | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_webhook**
+> delete_webhook(webhook_id)
+
+Delete a webhook
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+webhook_id = 'webhook_id_example' # str | UUID of a webhook
+
+try:
+    # Delete a webhook
+    api_instance.delete_webhook(webhook_id)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->delete_webhook: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhook_id** | [**str**](.md)| UUID of a webhook | 
 
 ### Return type
 
@@ -1239,6 +1303,132 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_webhook**
+> WebhookSpecificResponse get_webhook(webhook_id)
+
+Retrieve a webhook
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+webhook_id = 'webhook_id_example' # str | UUID of a webhook
+
+try:
+    # Retrieve a webhook
+    api_response = api_instance.get_webhook(webhook_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_webhook: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhook_id** | [**str**](.md)| UUID of a webhook | 
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_webhooks**
+> WebhookGetResponse get_webhooks(page=page, size=size, order_by=order_by, ascending=ascending)
+
+Get information for all webhooks defined for your firm
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+page = 0 # int | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional) (default to 0)
+size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
+order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
+ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+
+try:
+    # Get information for all webhooks defined for your firm
+    api_response = api_instance.get_webhooks(page=page, size=size, order_by=order_by, ascending=ascending)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_webhooks: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+
+### Return type
+
+[**WebhookGetResponse**](WebhookGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_crowdsale_deploy**
 > AsyncOperationResponse post_crowdsale_deploy(payload)
 
@@ -1899,6 +2089,66 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **post_webhook**
+> WebhookCreateResponse post_webhook(payload)
+
+Create a webhook under your firm.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+payload = molecule_api.WebhookCreatePayload() # WebhookCreatePayload | 
+
+try:
+    # Create a webhook under your firm.
+    api_response = api_instance.post_webhook(payload)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->post_webhook: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**WebhookCreatePayload**](WebhookCreatePayload.md)|  | 
+
+### Return type
+
+[**WebhookCreateResponse**](WebhookCreateResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_token**
 > TokenSpecificResponse update_token(token_id, payload)
 
@@ -2011,6 +2261,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletSpecificResponse**](WalletSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_webhook**
+> WebhookSpecificResponse update_webhook(webhook_id, payload)
+
+Update a webhook
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+webhook_id = 'webhook_id_example' # str | UUID of a webhook
+payload = molecule_api.WebhookUpdatePayload() # WebhookUpdatePayload | 
+
+try:
+    # Update a webhook
+    api_response = api_instance.update_webhook(webhook_id, payload)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->update_webhook: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhook_id** | [**str**](.md)| UUID of a webhook | 
+ **payload** | [**WebhookUpdatePayload**](WebhookUpdatePayload.md)|  | 
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
 
 ### Authorization
 

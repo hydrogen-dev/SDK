@@ -1119,6 +1119,168 @@ paths:
     parameters:
       - $ref: '#/parameters/path_transaction_status_uuid'
 
+  /molecule/v1/webhook:
+    get:
+      operationId: getWebhooks
+      summary: Get information for all webhooks defined for your firm
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/webhook_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+    post:
+      operationId: postWebhook
+      summary: Create a webhook under your firm.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/webhook_create_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/webhook_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
+  /molecule/v1/webhook/{webhook_id}/:
+    get:
+      operationId: getWebhook
+      summary: Retrieve a webhook
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/webhook_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateWebhook
+      summary: Update a webhook
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/webhook_update_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/webhook_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    delete:
+      operationId: deleteWebhook
+      summary: Delete a webhook
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook
+      tags:
+        - Molecule
+      responses:
+        204:
+          $ref: '#/responses/204'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_webhook_uuid'
+
+
 # ********** Parameters: describe variables that may appear in the request URL **********
 parameters:
 
@@ -1226,6 +1388,13 @@ parameters:
     format: uuid
     required: true
     description: UUID of a transaction status
+  path_webhook_uuid:
+    in: path
+    name: webhook_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a webhook
 
 # ********** Responses: describe possible response codes **********
 responses:
@@ -1646,6 +1815,38 @@ definitions:
             type: string
             format: datetime
             description: Datetime the currency transfer record was updated
+  webhook_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/webhook_specific_response'
+      - $ref: '#/definitions/pagination'
+  webhook_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the webhook record was updated
+      - $ref: '#/definitions/webhook_create_response'
+  webhook_create_response:
+    allOf:
+      - type: object
+      - properties:
+          id:
+            type: string
+            format: uuid
+            description: ID of the webhook record
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the webhook record was created
+      - $ref: '#/definitions/webhook_create_payload'
+
   # Request payloads
   wallet_create_client:
     type: object
@@ -2051,3 +2252,34 @@ definitions:
       amount:
         type: number
         description: Amount of tokens to be transferred.
+  webhook_create_payload:
+    type: object
+    required:
+      - url
+      - is_active
+    properties:
+      webhook_codes:
+        type: array
+        description: The array of webhook codes for a webhook to notify.
+        items:
+          type: string
+      url:
+        type: string
+        description: The url you want to receive the payloads to.
+      is_active:
+        type: boolean
+        description: Indicates if this webhook is active.
+  webhook_update_payload:
+    type: object
+    properties:
+      webhook_codes:
+        type: array
+        description: The array of webhook codes for a webhook to notify.
+        items:
+          type: string
+      url:
+        type: string
+        description: The url you want to receive the payloads to.
+      is_active:
+        type: boolean
+        description: Indicates if this webhook is active.

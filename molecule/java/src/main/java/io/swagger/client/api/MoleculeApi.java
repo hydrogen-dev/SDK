@@ -63,6 +63,11 @@ import io.swagger.client.model.WalletKeyGetResponse;
 import io.swagger.client.model.WalletKeySpecificResponse;
 import io.swagger.client.model.WalletSpecificResponse;
 import io.swagger.client.model.WalletUpdatePayload;
+import io.swagger.client.model.WebhookCreatePayload;
+import io.swagger.client.model.WebhookCreateResponse;
+import io.swagger.client.model.WebhookGetResponse;
+import io.swagger.client.model.WebhookSpecificResponse;
+import io.swagger.client.model.WebhookUpdatePayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -213,6 +218,133 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = deleteTokenValidateBeforeCall(tokenId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for deleteWebhook
+     * @param webhookId UUID of a webhook (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call deleteWebhookCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook/{webhook_id}/"
+            .replaceAll("\\{" + "webhook_id" + "\\}", apiClient.escapeString(webhookId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteWebhookValidateBeforeCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'webhookId' is set
+        if (webhookId == null) {
+            throw new ApiException("Missing the required parameter 'webhookId' when calling deleteWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = deleteWebhookCall(webhookId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public void deleteWebhook(UUID webhookId) throws ApiException {
+        deleteWebhookWithHttpInfo(webhookId);
+    }
+
+    /**
+     * Delete a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public ApiResponse<Void> deleteWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+        com.squareup.okhttp.Call call = deleteWebhookValidateBeforeCall(webhookId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete a webhook (asynchronously)
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call deleteWebhookAsync(UUID webhookId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteWebhookValidateBeforeCall(webhookId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -2725,6 +2857,282 @@ public class MoleculeApi {
         return call;
     }
     /**
+     * Build call for getWebhook
+     * @param webhookId UUID of a webhook (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhookCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook/{webhook_id}/"
+            .replaceAll("\\{" + "webhook_id" + "\\}", apiClient.escapeString(webhookId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getWebhookValidateBeforeCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'webhookId' is set
+        if (webhookId == null) {
+            throw new ApiException("Missing the required parameter 'webhookId' when calling getWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getWebhookCall(webhookId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @return WebhookSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public WebhookSpecificResponse getWebhook(UUID webhookId) throws ApiException {
+        ApiResponse<WebhookSpecificResponse> resp = getWebhookWithHttpInfo(webhookId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @return ApiResponse&lt;WebhookSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public ApiResponse<WebhookSpecificResponse> getWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+        com.squareup.okhttp.Call call = getWebhookValidateBeforeCall(webhookId, null, null);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a webhook (asynchronously)
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhookAsync(UUID webhookId, final ApiCallback<WebhookSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getWebhookValidateBeforeCall(webhookId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getWebhooks
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhooksCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getWebhooksValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getWebhooksCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all webhooks defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @return WebhookGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public WebhookGetResponse getWebhooks(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
+        ApiResponse<WebhookGetResponse> resp = getWebhooksWithHttpInfo(page, size, orderBy, ascending);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all webhooks defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @return ApiResponse&lt;WebhookGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public ApiResponse<WebhookGetResponse> getWebhooksWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
+        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, null, null);
+        Type localVarReturnType = new TypeToken<WebhookGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all webhooks defined for your firm (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhooksAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<WebhookGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for postCrowdsaleDeploy
      * @param payload  (required)
      * @param progressListener Progress listener
@@ -4155,6 +4563,136 @@ public class MoleculeApi {
         return call;
     }
     /**
+     * Build call for postWebhook
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postWebhookCall(WebhookCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postWebhookValidateBeforeCall(WebhookCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postWebhookCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a webhook under your firm.
+     * 
+     * @param payload  (required)
+     * @return WebhookCreateResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public WebhookCreateResponse postWebhook(WebhookCreatePayload payload) throws ApiException {
+        ApiResponse<WebhookCreateResponse> resp = postWebhookWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Create a webhook under your firm.
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;WebhookCreateResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public ApiResponse<WebhookCreateResponse> postWebhookWithHttpInfo(WebhookCreatePayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postWebhookValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<WebhookCreateResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a webhook under your firm. (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postWebhookAsync(WebhookCreatePayload payload, final ApiCallback<WebhookCreateResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postWebhookValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookCreateResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for updateToken
      * @param tokenId UUID of a token (required)
      * @param payload  (required)
@@ -4431,6 +4969,146 @@ public class MoleculeApi {
 
         com.squareup.okhttp.Call call = updateWalletValidateBeforeCall(walletId, payload, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WalletSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateWebhook
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call updateWebhookCall(UUID webhookId, WebhookUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook/{webhook_id}/"
+            .replaceAll("\\{" + "webhook_id" + "\\}", apiClient.escapeString(webhookId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateWebhookValidateBeforeCall(UUID webhookId, WebhookUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'webhookId' is set
+        if (webhookId == null) {
+            throw new ApiException("Missing the required parameter 'webhookId' when calling updateWebhook(Async)");
+        }
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling updateWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateWebhookCall(webhookId, payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @return WebhookSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public WebhookSpecificResponse updateWebhook(UUID webhookId, WebhookUpdatePayload payload) throws ApiException {
+        ApiResponse<WebhookSpecificResponse> resp = updateWebhookWithHttpInfo(webhookId, payload);
+        return resp.getData();
+    }
+
+    /**
+     * Update a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @return ApiResponse&lt;WebhookSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public ApiResponse<WebhookSpecificResponse> updateWebhookWithHttpInfo(UUID webhookId, WebhookUpdatePayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = updateWebhookValidateBeforeCall(webhookId, payload, null, null);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a webhook (asynchronously)
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call updateWebhookAsync(UUID webhookId, WebhookUpdatePayload payload, final ApiCallback<WebhookSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateWebhookValidateBeforeCall(webhookId, payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -5,6 +5,7 @@ All URIs are relative to *https://api.hydrogenplatform.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteToken**](MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
+[**deleteWebhook**](MoleculeApi.md#deleteWebhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
 [**getCurrencyBalance**](MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 [**getCurrencyBalances**](MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 [**getCurrencyTransfer**](MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -23,6 +24,8 @@ Method | HTTP request | Description
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**getWallets**](MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**getWebhook**](MoleculeApi.md#getWebhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
+[**getWebhooks**](MoleculeApi.md#getWebhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
 [**postCrowdsaleDeploy**](MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
 [**postCrowdsaleFund**](MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
 [**postCrowdsalePurchase**](MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
@@ -34,8 +37,10 @@ Method | HTTP request | Description
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**postWalletKey**](MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**postWalletKeyGenerator**](MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
+[**postWebhook**](MoleculeApi.md#postWebhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
 [**updateToken**](MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 [**updateWallet**](MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+[**updateWebhook**](MoleculeApi.md#updateWebhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
 <a name="deleteToken"></a>
@@ -79,6 +84,61 @@ apiInstance.deleteToken(tokenId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | [**String**](.md)| UUID of a token | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteWebhook"></a>
+# **deleteWebhook**
+> deleteWebhook(webhookId)
+
+Delete a webhook
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var webhookId = "webhookId_example"; // String | UUID of a webhook
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteWebhook(webhookId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**String**](.md)| UUID of a webhook | 
 
 ### Return type
 
@@ -175,7 +235,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 };
 
@@ -294,7 +354,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -466,7 +526,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 };
 
@@ -530,7 +590,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 };
 
@@ -704,7 +764,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -766,7 +826,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -883,7 +943,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   'filter': "filter_example" // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 };
 
@@ -1057,7 +1117,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -1119,7 +1179,7 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 };
 
 var callback = function(error, data, response) {
@@ -1144,6 +1204,123 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletGetResponse**](WalletGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getWebhook"></a>
+# **getWebhook**
+> WebhookSpecificResponse getWebhook(webhookId)
+
+Retrieve a webhook
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var webhookId = "webhookId_example"; // String | UUID of a webhook
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWebhook(webhookId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**String**](.md)| UUID of a webhook | 
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getWebhooks"></a>
+# **getWebhooks**
+> WebhookGetResponse getWebhooks(opts)
+
+Get information for all webhooks defined for your firm
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWebhooks(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+
+### Return type
+
+[**WebhookGetResponse**](WebhookGetResponse.md)
 
 ### Authorization
 
@@ -1759,6 +1936,61 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postWebhook"></a>
+# **postWebhook**
+> WebhookCreateResponse postWebhook(payload)
+
+Create a webhook under your firm.
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.WebhookCreatePayload(); // WebhookCreatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postWebhook(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**WebhookCreatePayload**](WebhookCreatePayload.md)|  | 
+
+### Return type
+
+[**WebhookCreateResponse**](WebhookCreateResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateToken"></a>
 # **updateToken**
 > TokenSpecificResponse updateToken(tokenIdpayload)
@@ -1865,6 +2097,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletSpecificResponse**](WalletSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateWebhook"></a>
+# **updateWebhook**
+> WebhookSpecificResponse updateWebhook(webhookIdpayload)
+
+Update a webhook
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var webhookId = "webhookId_example"; // String | UUID of a webhook
+
+var payload = new molecule_api.WebhookUpdatePayload(); // WebhookUpdatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateWebhook(webhookIdpayload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**String**](.md)| UUID of a webhook | 
+ **payload** | [**WebhookUpdatePayload**](WebhookUpdatePayload.md)|  | 
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
 
 ### Authorization
 

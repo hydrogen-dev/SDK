@@ -50,6 +50,11 @@ import io.swagger.client.model.WalletKeyGetResponse;
 import io.swagger.client.model.WalletKeySpecificResponse;
 import io.swagger.client.model.WalletSpecificResponse;
 import io.swagger.client.model.WalletUpdatePayload;
+import io.swagger.client.model.WebhookCreatePayload;
+import io.swagger.client.model.WebhookCreateResponse;
+import io.swagger.client.model.WebhookGetResponse;
+import io.swagger.client.model.WebhookSpecificResponse;
+import io.swagger.client.model.WebhookUpdatePayload;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -79,6 +84,22 @@ public class MoleculeApiTest {
     public void deleteTokenTest() throws ApiException {
         UUID tokenId = null;
         api.deleteToken(tokenId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete a webhook
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteWebhookTest() throws ApiException {
+        UUID webhookId = null;
+        api.deleteWebhook(webhookId);
 
         // TODO: test validations
     }
@@ -403,6 +424,41 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Retrieve a webhook
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWebhookTest() throws ApiException {
+        UUID webhookId = null;
+        WebhookSpecificResponse response = api.getWebhook(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all webhooks defined for your firm
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWebhooksTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        WebhookGetResponse response = api.getWebhooks(page, size, orderBy, ascending);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Deploy a token&#39;s crowdsale contract.
      *
      * 
@@ -579,6 +635,22 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Create a webhook under your firm.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postWebhookTest() throws ApiException {
+        WebhookCreatePayload payload = null;
+        WebhookCreateResponse response = api.postWebhook(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update a token
      *
      * 
@@ -608,6 +680,23 @@ public class MoleculeApiTest {
         UUID walletId = null;
         WalletUpdatePayload payload = null;
         WalletSpecificResponse response = api.updateWallet(walletId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a webhook
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateWebhookTest() throws ApiException {
+        UUID webhookId = null;
+        WebhookUpdatePayload payload = null;
+        WebhookSpecificResponse response = api.updateWebhook(webhookId, payload);
 
         // TODO: test validations
     }

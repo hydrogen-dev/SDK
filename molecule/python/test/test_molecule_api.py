@@ -36,6 +36,13 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_webhook(self):
+        """Test case for delete_webhook
+
+        Delete a webhook  # noqa: E501
+        """
+        pass
+
     def test_get_currency_balance(self):
         """Test case for get_currency_balance
 
@@ -162,6 +169,20 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_webhook(self):
+        """Test case for get_webhook
+
+        Retrieve a webhook  # noqa: E501
+        """
+        pass
+
+    def test_get_webhooks(self):
+        """Test case for get_webhooks
+
+        Get information for all webhooks defined for your firm  # noqa: E501
+        """
+        pass
+
     def test_post_crowdsale_deploy(self):
         """Test case for post_crowdsale_deploy
 
@@ -239,6 +260,13 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_post_webhook(self):
+        """Test case for post_webhook
+
+        Create a webhook under your firm.  # noqa: E501
+        """
+        pass
+
     def test_update_token(self):
         """Test case for update_token
 
@@ -250,6 +278,13 @@ class TestMoleculeApi(unittest.TestCase):
         """Test case for update_wallet
 
         Update a wallet  # noqa: E501
+        """
+        pass
+
+    def test_update_webhook(self):
+        """Test case for update_webhook
+
+        Update a webhook  # noqa: E501
         """
         pass
 

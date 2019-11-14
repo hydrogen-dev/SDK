@@ -70,6 +70,57 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Delete a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_webhook(webhook_id, opts = {})
+      delete_webhook_with_http_info(webhook_id, opts)
+      nil
+    end
+
+    # Delete a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_webhook_with_http_info(webhook_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.delete_webhook ...'
+      end
+      # verify the required parameter 'webhook_id' is set
+      if @api_client.config.client_side_validation && webhook_id.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_id' when calling MoleculeApi.delete_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook/{webhook_id}/'.sub('{' + 'webhook_id' + '}', webhook_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#delete_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Retrieve a currency balance
     # @param currency_balance_id UUID of a currency balance
     # @param [Hash] opts the optional parameters
@@ -1144,6 +1195,124 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Retrieve a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [WebhookSpecificResponse]
+    def get_webhook(webhook_id, opts = {})
+      data, _status_code, _headers = get_webhook_with_http_info(webhook_id, opts)
+      data
+    end
+
+    # Retrieve a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WebhookSpecificResponse, Fixnum, Hash)>] WebhookSpecificResponse data, response status code and response headers
+    def get_webhook_with_http_info(webhook_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_webhook ...'
+      end
+      # verify the required parameter 'webhook_id' is set
+      if @api_client.config.client_side_validation && webhook_id.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_id' when calling MoleculeApi.get_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook/{webhook_id}/'.sub('{' + 'webhook_id' + '}', webhook_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get information for all webhooks defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @return [WebhookGetResponse]
+    def get_webhooks(opts = {})
+      data, _status_code, _headers = get_webhooks_with_http_info(opts)
+      data
+    end
+
+    # Get information for all webhooks defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @return [Array<(WebhookGetResponse, Fixnum, Hash)>] WebhookGetResponse data, response status code and response headers
+    def get_webhooks_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_webhooks ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_webhooks, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_webhooks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/webhook'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_webhooks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Deploy a token's crowdsale contract.
     # @param payload 
     # @param [Hash] opts the optional parameters
@@ -1716,6 +1885,58 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Create a webhook under your firm.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [WebhookCreateResponse]
+    def post_webhook(payload, opts = {})
+      data, _status_code, _headers = post_webhook_with_http_info(payload, opts)
+      data
+    end
+
+    # Create a webhook under your firm.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WebhookCreateResponse, Fixnum, Hash)>] WebhookCreateResponse data, response status code and response headers
+    def post_webhook_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_webhook ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookCreateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Update a token
     # @param token_id UUID of a token
     # @param payload 
@@ -1829,6 +2050,64 @@ module MoleculeApi
         :return_type => 'WalletSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#update_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Update a webhook
+    # @param webhook_id UUID of a webhook
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [WebhookSpecificResponse]
+    def update_webhook(webhook_id, payload, opts = {})
+      data, _status_code, _headers = update_webhook_with_http_info(webhook_id, payload, opts)
+      data
+    end
+
+    # Update a webhook
+    # @param webhook_id UUID of a webhook
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WebhookSpecificResponse, Fixnum, Hash)>] WebhookSpecificResponse data, response status code and response headers
+    def update_webhook_with_http_info(webhook_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.update_webhook ...'
+      end
+      # verify the required parameter 'webhook_id' is set
+      if @api_client.config.client_side_validation && webhook_id.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_id' when calling MoleculeApi.update_webhook"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.update_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook/{webhook_id}/'.sub('{' + 'webhook_id' + '}', webhook_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#update_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

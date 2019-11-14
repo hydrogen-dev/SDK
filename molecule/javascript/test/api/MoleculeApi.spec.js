@@ -61,6 +61,16 @@
         done();
       });
     });
+    describe('deleteWebhook', function() {
+      it('should call deleteWebhook successfully', function(done) {
+        //uncomment below and update the code to test deleteWebhook
+        //instance.deleteWebhook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCurrencyBalance', function() {
       it('should call getCurrencyBalance successfully', function(done) {
         //uncomment below and update the code to test getCurrencyBalance
@@ -241,6 +251,26 @@
         done();
       });
     });
+    describe('getWebhook', function() {
+      it('should call getWebhook successfully', function(done) {
+        //uncomment below and update the code to test getWebhook
+        //instance.getWebhook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getWebhooks', function() {
+      it('should call getWebhooks successfully', function(done) {
+        //uncomment below and update the code to test getWebhooks
+        //instance.getWebhooks(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postCrowdsaleDeploy', function() {
       it('should call postCrowdsaleDeploy successfully', function(done) {
         //uncomment below and update the code to test postCrowdsaleDeploy
@@ -351,6 +381,16 @@
         done();
       });
     });
+    describe('postWebhook', function() {
+      it('should call postWebhook successfully', function(done) {
+        //uncomment below and update the code to test postWebhook
+        //instance.postWebhook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateToken', function() {
       it('should call updateToken successfully', function(done) {
         //uncomment below and update the code to test updateToken
@@ -365,6 +405,16 @@
       it('should call updateWallet successfully', function(done) {
         //uncomment below and update the code to test updateWallet
         //instance.updateWallet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateWebhook', function() {
+      it('should call updateWebhook successfully', function(done) {
+        //uncomment below and update the code to test updateWebhook
+        //instance.updateWebhook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_currency_transfers**
-> CurrencyTransferGetResponse get_currency_transfers(page=page, size=size, order_by=order_by, ascending=ascending)
+> CurrencyTransferGetResponse get_currency_transfers(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all currency transfers
 
@@ -382,10 +382,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all currency transfers
-    api_response = api_instance.get_currency_transfers(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_currency_transfers(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_currency_transfers: %s\n" % e)
@@ -399,6 +400,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -792,7 +794,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_token_transfers**
-> TokenTransferGetResponse get_token_transfers(page=page, size=size, order_by=order_by, ascending=ascending)
+> TokenTransferGetResponse get_token_transfers(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all token transfers
 
@@ -824,10 +826,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all token transfers
-    api_response = api_instance.get_token_transfers(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_token_transfers(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_token_transfers: %s\n" % e)
@@ -841,6 +844,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 

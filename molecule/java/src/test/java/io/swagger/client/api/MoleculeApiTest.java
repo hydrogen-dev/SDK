@@ -170,7 +170,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        CurrencyTransferGetResponse response = api.getCurrencyTransfers(page, size, orderBy, ascending);
+        String filter = null;
+        CurrencyTransferGetResponse response = api.getCurrencyTransfers(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -293,7 +294,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        TokenTransferGetResponse response = api.getTokenTransfers(page, size, orderBy, ascending);
+        String filter = null;
+        TokenTransferGetResponse response = api.getTokenTransfers(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }

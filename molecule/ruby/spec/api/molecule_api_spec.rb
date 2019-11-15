@@ -98,6 +98,7 @@ describe 'MoleculeApi' do
   # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
   # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
   # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @option opts [String] :filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
   # @return [CurrencyTransferGetResponse]
   describe 'get_currency_transfers test' do
     it 'should work' do
@@ -186,6 +187,7 @@ describe 'MoleculeApi' do
   # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
   # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
   # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @option opts [String] :filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
   # @return [TokenTransferGetResponse]
   describe 'get_token_transfers test' do
     it 'should work' do

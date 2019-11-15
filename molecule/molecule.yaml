@@ -917,6 +917,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
 
   /molecule/v1/token_transfer/{token_transfer_id}:
     get:
@@ -1018,6 +1019,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
 
   /molecule/v1/currency_transfer/{currency_transfer_id}:
     get:

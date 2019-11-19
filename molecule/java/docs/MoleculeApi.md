@@ -1435,7 +1435,7 @@ Name | Type | Description  | Notes
 
 <a name="postCrowdsaleDeploy"></a>
 # **postCrowdsaleDeploy**
-> AsyncOperationResponse postCrowdsaleDeploy(payload)
+> TransactionStatusSpecificResponse postCrowdsaleDeploy(payload)
 
 Deploy a token&#39;s crowdsale contract.
 
@@ -1466,7 +1466,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 CrowdsaleDeployPayload payload = new CrowdsaleDeployPayload(); // CrowdsaleDeployPayload | 
 try {
-    AsyncOperationResponse result = apiInstance.postCrowdsaleDeploy(payload);
+    TransactionStatusSpecificResponse result = apiInstance.postCrowdsaleDeploy(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postCrowdsaleDeploy");
@@ -1482,7 +1482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1495,7 +1495,7 @@ Name | Type | Description  | Notes
 
 <a name="postCrowdsaleFund"></a>
 # **postCrowdsaleFund**
-> AsyncOperationResponse postCrowdsaleFund(payload)
+> TransactionStatusSpecificResponse postCrowdsaleFund(payload)
 
 Transfer tokens to a token&#39;s crowdsale address.
 
@@ -1526,7 +1526,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 CrowdsaleFundPayload payload = new CrowdsaleFundPayload(); // CrowdsaleFundPayload | 
 try {
-    AsyncOperationResponse result = apiInstance.postCrowdsaleFund(payload);
+    TransactionStatusSpecificResponse result = apiInstance.postCrowdsaleFund(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postCrowdsaleFund");
@@ -1542,7 +1542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1555,7 +1555,7 @@ Name | Type | Description  | Notes
 
 <a name="postCrowdsalePurchase"></a>
 # **postCrowdsalePurchase**
-> AsyncOperationResponse postCrowdsalePurchase(payload)
+> TransactionStatusSpecificResponse postCrowdsalePurchase(payload)
 
 Purchase tokens from a crowdsale contract
 
@@ -1586,7 +1586,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 CrowdsalePurchasePayload payload = new CrowdsalePurchasePayload(); // CrowdsalePurchasePayload | 
 try {
-    AsyncOperationResponse result = apiInstance.postCrowdsalePurchase(payload);
+    TransactionStatusSpecificResponse result = apiInstance.postCrowdsalePurchase(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postCrowdsalePurchase");
@@ -1602,7 +1602,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1615,7 +1615,7 @@ Name | Type | Description  | Notes
 
 <a name="postCurrencyTransfer"></a>
 # **postCurrencyTransfer**
-> AsyncOperationResponse postCurrencyTransfer(payload)
+> TransactionStatusSpecificResponse postCurrencyTransfer(payload)
 
 Transfer currency between wallets
 
@@ -1646,7 +1646,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 CurrencyTransferPayload payload = new CurrencyTransferPayload(); // CurrencyTransferPayload | 
 try {
-    AsyncOperationResponse result = apiInstance.postCurrencyTransfer(payload);
+    TransactionStatusSpecificResponse result = apiInstance.postCurrencyTransfer(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postCurrencyTransfer");
@@ -1662,7 +1662,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1735,7 +1735,7 @@ Name | Type | Description  | Notes
 
 <a name="postTokenDeploy"></a>
 # **postTokenDeploy**
-> AsyncOperationResponse postTokenDeploy(payload)
+> TransactionStatusSpecificResponse postTokenDeploy(payload)
 
 Deploy a security token contract to blockchain.
 
@@ -1766,7 +1766,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 TokenDeployPayload payload = new TokenDeployPayload(); // TokenDeployPayload | 
 try {
-    AsyncOperationResponse result = apiInstance.postTokenDeploy(payload);
+    TransactionStatusSpecificResponse result = apiInstance.postTokenDeploy(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postTokenDeploy");
@@ -1782,7 +1782,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1795,7 +1795,7 @@ Name | Type | Description  | Notes
 
 <a name="postTokenTransfer"></a>
 # **postTokenTransfer**
-> AsyncOperationResponse postTokenTransfer(payload)
+> TransactionStatusSpecificResponse postTokenTransfer(payload)
 
 Transfer tokens between wallets
 
@@ -1826,7 +1826,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 TokenTransferPayload payload = new TokenTransferPayload(); // TokenTransferPayload | 
 try {
-    AsyncOperationResponse result = apiInstance.postTokenTransfer(payload);
+    TransactionStatusSpecificResponse result = apiInstance.postTokenTransfer(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postTokenTransfer");
@@ -1842,7 +1842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1855,7 +1855,7 @@ Name | Type | Description  | Notes
 
 <a name="postTokenWhitelist"></a>
 # **postTokenWhitelist**
-> AsyncOperationResponse postTokenWhitelist(payload)
+> TransactionStatusSpecificResponse postTokenWhitelist(payload)
 
 Add an investor to a token&#39;s whitelist
 
@@ -1886,7 +1886,7 @@ oauth.setAccessToken("MYACCESSTOKEN");
 MoleculeApi apiInstance = new MoleculeApi();
 TokenWhitelistPayload payload = new TokenWhitelistPayload(); // TokenWhitelistPayload | 
 try {
-    AsyncOperationResponse result = apiInstance.postTokenWhitelist(payload);
+    TransactionStatusSpecificResponse result = apiInstance.postTokenWhitelist(payload);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#postTokenWhitelist");
@@ -1902,7 +1902,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 

@@ -35,7 +35,7 @@ class WebhookSpecificResponse(object):
     swagger_types = {
         'id': 'str',
         'create_date': 'str',
-        'webhook_codes': 'list[str]',
+        'molecule_service': 'list[str]',
         'url': 'str',
         'is_active': 'bool',
         'update_date': 'str'
@@ -44,18 +44,18 @@ class WebhookSpecificResponse(object):
     attribute_map = {
         'id': 'id',
         'create_date': 'create_date',
-        'webhook_codes': 'webhook_codes',
+        'molecule_service': 'molecule_service',
         'url': 'url',
         'is_active': 'is_active',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, create_date=None, webhook_codes=None, url=None, is_active=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, molecule_service=None, url=None, is_active=None, update_date=None):  # noqa: E501
         """WebhookSpecificResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._create_date = None
-        self._webhook_codes = None
+        self._molecule_service = None
         self._url = None
         self._is_active = None
         self._update_date = None
@@ -65,10 +65,10 @@ class WebhookSpecificResponse(object):
             self.id = id
         if create_date is not None:
             self.create_date = create_date
-        if webhook_codes is not None:
-            self.webhook_codes = webhook_codes
+        self.molecule_service = molecule_service
         self.url = url
-        self.is_active = is_active
+        if is_active is not None:
+            self.is_active = is_active
         if update_date is not None:
             self.update_date = update_date
 
@@ -119,27 +119,29 @@ class WebhookSpecificResponse(object):
         self._create_date = create_date
 
     @property
-    def webhook_codes(self):
-        """Gets the webhook_codes of this WebhookSpecificResponse.  # noqa: E501
+    def molecule_service(self):
+        """Gets the molecule_service of this WebhookSpecificResponse.  # noqa: E501
 
-        The array of webhook codes for a webhook to notify.  # noqa: E501
+        The array of molecule services for a webhook to notify.  # noqa: E501
 
-        :return: The webhook_codes of this WebhookSpecificResponse.  # noqa: E501
+        :return: The molecule_service of this WebhookSpecificResponse.  # noqa: E501
         :rtype: list[str]
         """
-        return self._webhook_codes
+        return self._molecule_service
 
-    @webhook_codes.setter
-    def webhook_codes(self, webhook_codes):
-        """Sets the webhook_codes of this WebhookSpecificResponse.
+    @molecule_service.setter
+    def molecule_service(self, molecule_service):
+        """Sets the molecule_service of this WebhookSpecificResponse.
 
-        The array of webhook codes for a webhook to notify.  # noqa: E501
+        The array of molecule services for a webhook to notify.  # noqa: E501
 
-        :param webhook_codes: The webhook_codes of this WebhookSpecificResponse.  # noqa: E501
+        :param molecule_service: The molecule_service of this WebhookSpecificResponse.  # noqa: E501
         :type: list[str]
         """
+        if molecule_service is None:
+            raise ValueError("Invalid value for `molecule_service`, must not be `None`")  # noqa: E501
 
-        self._webhook_codes = webhook_codes
+        self._molecule_service = molecule_service
 
     @property
     def url(self):
@@ -186,8 +188,6 @@ class WebhookSpecificResponse(object):
         :param is_active: The is_active of this WebhookSpecificResponse.  # noqa: E501
         :type: bool
         """
-        if is_active is None:
-            raise ValueError("Invalid value for `is_active`, must not be `None`")  # noqa: E501
 
         self._is_active = is_active
 

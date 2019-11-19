@@ -31,10 +31,10 @@ import java.util.UUID;
 /**
  * WebhookCreateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-15T14:03:59.903-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T18:21:14.716-05:00")
 public class WebhookCreateResponse {
-  @SerializedName("webhook_codes")
-  private List<String> webhookCodes = null;
+  @SerializedName("molecule_service")
+  private List<String> moleculeService = new ArrayList<String>();
 
   @SerializedName("url")
   private String url = null;
@@ -48,30 +48,27 @@ public class WebhookCreateResponse {
   @SerializedName("create_date")
   private String createDate = null;
 
-  public WebhookCreateResponse webhookCodes(List<String> webhookCodes) {
-    this.webhookCodes = webhookCodes;
+  public WebhookCreateResponse moleculeService(List<String> moleculeService) {
+    this.moleculeService = moleculeService;
     return this;
   }
 
-  public WebhookCreateResponse addWebhookCodesItem(String webhookCodesItem) {
-    if (this.webhookCodes == null) {
-      this.webhookCodes = new ArrayList<String>();
-    }
-    this.webhookCodes.add(webhookCodesItem);
+  public WebhookCreateResponse addMoleculeServiceItem(String moleculeServiceItem) {
+    this.moleculeService.add(moleculeServiceItem);
     return this;
   }
 
    /**
-   * The array of webhook codes for a webhook to notify.
-   * @return webhookCodes
+   * The array of molecule services for a webhook to notify.
+   * @return moleculeService
   **/
-  @ApiModelProperty(value = "The array of webhook codes for a webhook to notify.")
-  public List<String> getWebhookCodes() {
-    return webhookCodes;
+  @ApiModelProperty(required = true, value = "The array of molecule services for a webhook to notify.")
+  public List<String> getMoleculeService() {
+    return moleculeService;
   }
 
-  public void setWebhookCodes(List<String> webhookCodes) {
-    this.webhookCodes = webhookCodes;
+  public void setMoleculeService(List<String> moleculeService) {
+    this.moleculeService = moleculeService;
   }
 
   public WebhookCreateResponse url(String url) {
@@ -101,7 +98,7 @@ public class WebhookCreateResponse {
    * Indicates if this webhook is active.
    * @return isActive
   **/
-  @ApiModelProperty(required = true, value = "Indicates if this webhook is active.")
+  @ApiModelProperty(value = "Indicates if this webhook is active.")
   public Boolean isIsActive() {
     return isActive;
   }
@@ -156,7 +153,7 @@ public class WebhookCreateResponse {
       return false;
     }
     WebhookCreateResponse webhookCreateResponse = (WebhookCreateResponse) o;
-    return Objects.equals(this.webhookCodes, webhookCreateResponse.webhookCodes) &&
+    return Objects.equals(this.moleculeService, webhookCreateResponse.moleculeService) &&
         Objects.equals(this.url, webhookCreateResponse.url) &&
         Objects.equals(this.isActive, webhookCreateResponse.isActive) &&
         Objects.equals(this.id, webhookCreateResponse.id) &&
@@ -165,7 +162,7 @@ public class WebhookCreateResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookCodes, url, isActive, id, createDate);
+    return Objects.hash(moleculeService, url, isActive, id, createDate);
   }
 
 
@@ -174,7 +171,7 @@ public class WebhookCreateResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebhookCreateResponse {\n");
     
-    sb.append("    webhookCodes: ").append(toIndentedString(webhookCodes)).append("\n");
+    sb.append("    moleculeService: ").append(toIndentedString(moleculeService)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

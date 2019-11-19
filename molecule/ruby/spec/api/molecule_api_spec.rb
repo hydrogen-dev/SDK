@@ -314,7 +314,7 @@ describe 'MoleculeApi' do
   # Deploy a token&#39;s crowdsale contract.
   # @param payload 
   # @param [Hash] opts the optional parameters
-  # @return [AsyncOperationResponse]
+  # @return [TransactionStatusSpecificResponse]
   describe 'post_crowdsale_deploy test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -325,7 +325,7 @@ describe 'MoleculeApi' do
   # Transfer tokens to a token&#39;s crowdsale address.
   # @param payload 
   # @param [Hash] opts the optional parameters
-  # @return [AsyncOperationResponse]
+  # @return [TransactionStatusSpecificResponse]
   describe 'post_crowdsale_fund test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -336,7 +336,7 @@ describe 'MoleculeApi' do
   # Purchase tokens from a crowdsale contract
   # @param payload 
   # @param [Hash] opts the optional parameters
-  # @return [AsyncOperationResponse]
+  # @return [TransactionStatusSpecificResponse]
   describe 'post_crowdsale_purchase test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -347,7 +347,7 @@ describe 'MoleculeApi' do
   # Transfer currency between wallets
   # @param payload 
   # @param [Hash] opts the optional parameters
-  # @return [AsyncOperationResponse]
+  # @return [TransactionStatusSpecificResponse]
   describe 'post_currency_transfer test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -369,7 +369,7 @@ describe 'MoleculeApi' do
   # Deploy a security token contract to blockchain.
   # @param payload 
   # @param [Hash] opts the optional parameters
-  # @return [AsyncOperationResponse]
+  # @return [TransactionStatusSpecificResponse]
   describe 'post_token_deploy test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -380,7 +380,7 @@ describe 'MoleculeApi' do
   # Transfer tokens between wallets
   # @param payload 
   # @param [Hash] opts the optional parameters
-  # @return [AsyncOperationResponse]
+  # @return [TransactionStatusSpecificResponse]
   describe 'post_token_transfer test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -391,7 +391,7 @@ describe 'MoleculeApi' do
   # Add an investor to a token&#39;s whitelist
   # @param payload 
   # @param [Hash] opts the optional parameters
-  # @return [AsyncOperationResponse]
+  # @return [TransactionStatusSpecificResponse]
   describe 'post_token_whitelist test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -44,15 +44,15 @@
    * Constructs a new <code>WebhookCreatePayload</code>.
    * @alias module:model/WebhookCreatePayload
    * @class
+   * @param moleculeService {Array.<String>} The array of molecule services for a webhook to notify.
    * @param url {String} The url you want to receive the payloads to.
-   * @param isActive {Boolean} Indicates if this webhook is active.
    */
-  var exports = function(url, isActive) {
+  var exports = function(moleculeService, url) {
     var _this = this;
 
-
+    _this['molecule_service'] = moleculeService;
     _this['url'] = url;
-    _this['is_active'] = isActive;
+
   };
 
   /**
@@ -66,8 +66,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('webhook_codes')) {
-        obj['webhook_codes'] = ApiClient.convertToType(data['webhook_codes'], ['String']);
+      if (data.hasOwnProperty('molecule_service')) {
+        obj['molecule_service'] = ApiClient.convertToType(data['molecule_service'], ['String']);
       }
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -80,10 +80,10 @@
   }
 
   /**
-   * The array of webhook codes for a webhook to notify.
-   * @member {Array.<String>} webhook_codes
+   * The array of molecule services for a webhook to notify.
+   * @member {Array.<String>} molecule_service
    */
-  exports.prototype['webhook_codes'] = undefined;
+  exports.prototype['molecule_service'] = undefined;
   /**
    * The url you want to receive the payloads to.
    * @member {String} url

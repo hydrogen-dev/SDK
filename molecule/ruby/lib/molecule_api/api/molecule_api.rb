@@ -1322,7 +1322,7 @@ module MoleculeApi
     # Deploy a token's crowdsale contract.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [AsyncOperationResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_crowdsale_deploy(payload, opts = {})
       data, _status_code, _headers = post_crowdsale_deploy_with_http_info(payload, opts)
       data
@@ -1331,7 +1331,7 @@ module MoleculeApi
     # Deploy a token&#39;s crowdsale contract.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_crowdsale_deploy_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_deploy ...'
@@ -1365,7 +1365,7 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'AsyncOperationResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_deploy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1374,7 +1374,7 @@ module MoleculeApi
     # Transfer tokens to a token's crowdsale address.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [AsyncOperationResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_crowdsale_fund(payload, opts = {})
       data, _status_code, _headers = post_crowdsale_fund_with_http_info(payload, opts)
       data
@@ -1383,7 +1383,7 @@ module MoleculeApi
     # Transfer tokens to a token&#39;s crowdsale address.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_crowdsale_fund_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_fund ...'
@@ -1417,7 +1417,7 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'AsyncOperationResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_fund\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1426,7 +1426,7 @@ module MoleculeApi
     # Purchase tokens from a crowdsale contract
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [AsyncOperationResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_crowdsale_purchase(payload, opts = {})
       data, _status_code, _headers = post_crowdsale_purchase_with_http_info(payload, opts)
       data
@@ -1435,7 +1435,7 @@ module MoleculeApi
     # Purchase tokens from a crowdsale contract
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_crowdsale_purchase_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_purchase ...'
@@ -1469,7 +1469,7 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'AsyncOperationResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_purchase\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1478,7 +1478,7 @@ module MoleculeApi
     # Transfer currency between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [AsyncOperationResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_currency_transfer(payload, opts = {})
       data, _status_code, _headers = post_currency_transfer_with_http_info(payload, opts)
       data
@@ -1487,7 +1487,7 @@ module MoleculeApi
     # Transfer currency between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_currency_transfer_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_currency_transfer ...'
@@ -1521,7 +1521,7 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'AsyncOperationResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_currency_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1582,7 +1582,7 @@ module MoleculeApi
     # Deploy a security token contract to blockchain.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [AsyncOperationResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_token_deploy(payload, opts = {})
       data, _status_code, _headers = post_token_deploy_with_http_info(payload, opts)
       data
@@ -1591,7 +1591,7 @@ module MoleculeApi
     # Deploy a security token contract to blockchain.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_token_deploy_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_deploy ...'
@@ -1625,7 +1625,7 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'AsyncOperationResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_deploy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1634,7 +1634,7 @@ module MoleculeApi
     # Transfer tokens between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [AsyncOperationResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_token_transfer(payload, opts = {})
       data, _status_code, _headers = post_token_transfer_with_http_info(payload, opts)
       data
@@ -1643,7 +1643,7 @@ module MoleculeApi
     # Transfer tokens between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_token_transfer_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_transfer ...'
@@ -1677,7 +1677,7 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'AsyncOperationResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1686,7 +1686,7 @@ module MoleculeApi
     # Add an investor to a token's whitelist
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [AsyncOperationResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_token_whitelist(payload, opts = {})
       data, _status_code, _headers = post_token_whitelist_with_http_info(payload, opts)
       data
@@ -1695,7 +1695,7 @@ module MoleculeApi
     # Add an investor to a token&#39;s whitelist
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(AsyncOperationResponse, Fixnum, Hash)>] AsyncOperationResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_token_whitelist_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_whitelist ...'
@@ -1729,7 +1729,7 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'AsyncOperationResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_whitelist\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

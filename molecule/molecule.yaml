@@ -621,7 +621,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/async_operation_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -657,7 +657,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/async_operation_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -693,7 +693,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/async_operation_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -729,7 +729,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/async_operation_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -765,7 +765,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/async_operation_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -869,7 +869,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/async_operation_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -971,7 +971,7 @@ paths:
         200:
           description: 'Successful response'
           schema:
-            $ref: '#/definitions/async_operation_response'
+            $ref: '#/definitions/transaction_status_specific_response'
         400:
           $ref: '#/responses/400'
         401:
@@ -1776,12 +1776,6 @@ definitions:
             type: string
             format: datetime
             description: Datetime the currency transfer record was updated
-  async_operation_response:
-      type: object
-      properties:
-        status:
-          type: string
-          description: Status of the asynchronous API call
   transaction_status_get_response:
     allOf:
       - type: object
@@ -2257,12 +2251,12 @@ definitions:
   webhook_create_payload:
     type: object
     required:
+      - molecule_service
       - url
-      - is_active
     properties:
-      webhook_codes:
+      molecule_service:
         type: array
-        description: The array of webhook codes for a webhook to notify.
+        description: The array of molecule services for a webhook to notify.
         items:
           type: string
       url:
@@ -2274,9 +2268,9 @@ definitions:
   webhook_update_payload:
     type: object
     properties:
-      webhook_codes:
+      molecule_service:
         type: array
-        description: The array of webhook codes for a webhook to notify.
+        description: The array of molecule services for a webhook to notify.
         items:
           type: string
       url:

@@ -20,8 +20,8 @@ module MoleculeApi
     # Datetime the webhook record was created
     attr_accessor :create_date
 
-    # The array of webhook codes for a webhook to notify.
-    attr_accessor :webhook_codes
+    # The array of molecule services for a webhook to notify.
+    attr_accessor :molecule_service
 
     # The url you want to receive the payloads to.
     attr_accessor :url
@@ -37,7 +37,7 @@ module MoleculeApi
       {
         :'id' => :'id',
         :'create_date' => :'create_date',
-        :'webhook_codes' => :'webhook_codes',
+        :'molecule_service' => :'molecule_service',
         :'url' => :'url',
         :'is_active' => :'is_active',
         :'update_date' => :'update_date'
@@ -49,7 +49,7 @@ module MoleculeApi
       {
         :'id' => :'String',
         :'create_date' => :'String',
-        :'webhook_codes' => :'Array<String>',
+        :'molecule_service' => :'Array<String>',
         :'url' => :'String',
         :'is_active' => :'BOOLEAN',
         :'update_date' => :'String'
@@ -72,9 +72,9 @@ module MoleculeApi
         self.create_date = attributes[:'create_date']
       end
 
-      if attributes.has_key?(:'webhook_codes')
-        if (value = attributes[:'webhook_codes']).is_a?(Array)
-          self.webhook_codes = value
+      if attributes.has_key?(:'molecule_service')
+        if (value = attributes[:'molecule_service']).is_a?(Array)
+          self.molecule_service = value
         end
       end
 
@@ -95,12 +95,12 @@ module MoleculeApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @url.nil?
-        invalid_properties.push('invalid value for "url", url cannot be nil.')
+      if @molecule_service.nil?
+        invalid_properties.push('invalid value for "molecule_service", molecule_service cannot be nil.')
       end
 
-      if @is_active.nil?
-        invalid_properties.push('invalid value for "is_active", is_active cannot be nil.')
+      if @url.nil?
+        invalid_properties.push('invalid value for "url", url cannot be nil.')
       end
 
       invalid_properties
@@ -109,8 +109,8 @@ module MoleculeApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @molecule_service.nil?
       return false if @url.nil?
-      return false if @is_active.nil?
       true
     end
 
@@ -121,7 +121,7 @@ module MoleculeApi
       self.class == o.class &&
           id == o.id &&
           create_date == o.create_date &&
-          webhook_codes == o.webhook_codes &&
+          molecule_service == o.molecule_service &&
           url == o.url &&
           is_active == o.is_active &&
           update_date == o.update_date
@@ -136,7 +136,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, webhook_codes, url, is_active, update_date].hash
+      [id, create_date, molecule_service, url, is_active, update_date].hash
     end
 
     # Builds the object from hash

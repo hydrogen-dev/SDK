@@ -139,7 +139,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AsyncOperationResponse](docs/AsyncOperationResponse.md)
  - [CrowdsaleDeployPayload](docs/CrowdsaleDeployPayload.md)
  - [CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
  - [CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)

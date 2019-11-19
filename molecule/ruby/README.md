@@ -135,7 +135,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [MoleculeApi::AsyncOperationResponse](docs/AsyncOperationResponse.md)
  - [MoleculeApi::CrowdsaleDeployPayload](docs/CrowdsaleDeployPayload.md)
  - [MoleculeApi::CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
  - [MoleculeApi::CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)

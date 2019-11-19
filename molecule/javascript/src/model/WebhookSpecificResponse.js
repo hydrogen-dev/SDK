@@ -45,13 +45,13 @@
    * @alias module:model/WebhookSpecificResponse
    * @class
    * @implements module:model/WebhookCreateResponse
+   * @param moleculeService {Array.<String>} The array of molecule services for a webhook to notify.
    * @param url {String} The url you want to receive the payloads to.
-   * @param isActive {Boolean} Indicates if this webhook is active.
    */
-  var exports = function(url, isActive) {
+  var exports = function(moleculeService, url) {
     var _this = this;
 
-    WebhookCreateResponse.call(_this, url, isActive);
+    WebhookCreateResponse.call(_this, moleculeService, url);
 
   };
 
@@ -82,10 +82,10 @@
 
   // Implement WebhookCreateResponse interface:
   /**
-   * The array of webhook codes for a webhook to notify.
-   * @member {Array.<String>} webhook_codes
+   * The array of molecule services for a webhook to notify.
+   * @member {Array.<String>} molecule_service
    */
-exports.prototype['webhook_codes'] = undefined;
+exports.prototype['molecule_service'] = undefined;
 
   /**
    * The url you want to receive the payloads to.

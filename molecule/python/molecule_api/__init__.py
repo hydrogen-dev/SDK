@@ -22,7 +22,6 @@ from molecule_api.api.molecule_api import MoleculeApi
 from molecule_api.api_client import ApiClient
 from molecule_api.configuration import Configuration
 # import models into sdk package
-from molecule_api.models.async_operation_response import AsyncOperationResponse
 from molecule_api.models.crowdsale_deploy_payload import CrowdsaleDeployPayload
 from molecule_api.models.crowdsale_fund_payload import CrowdsaleFundPayload
 from molecule_api.models.crowdsale_purchase_payload import CrowdsalePurchasePayload

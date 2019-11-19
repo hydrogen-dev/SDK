@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_crowdsale_deploy**
-> AsyncOperationResponse post_crowdsale_deploy(payload)
+> TransactionStatusSpecificResponse post_crowdsale_deploy(payload)
 
 Deploy a token's crowdsale contract.
 
@@ -1480,7 +1480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1494,7 +1494,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_crowdsale_fund**
-> AsyncOperationResponse post_crowdsale_fund(payload)
+> TransactionStatusSpecificResponse post_crowdsale_fund(payload)
 
 Transfer tokens to a token's crowdsale address.
 
@@ -1540,7 +1540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1554,7 +1554,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_crowdsale_purchase**
-> AsyncOperationResponse post_crowdsale_purchase(payload)
+> TransactionStatusSpecificResponse post_crowdsale_purchase(payload)
 
 Purchase tokens from a crowdsale contract
 
@@ -1600,7 +1600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1614,7 +1614,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_currency_transfer**
-> AsyncOperationResponse post_currency_transfer(payload)
+> TransactionStatusSpecificResponse post_currency_transfer(payload)
 
 Transfer currency between wallets
 
@@ -1660,7 +1660,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1734,7 +1734,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_token_deploy**
-> AsyncOperationResponse post_token_deploy(payload)
+> TransactionStatusSpecificResponse post_token_deploy(payload)
 
 Deploy a security token contract to blockchain.
 
@@ -1780,7 +1780,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1794,7 +1794,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_token_transfer**
-> AsyncOperationResponse post_token_transfer(payload)
+> TransactionStatusSpecificResponse post_token_transfer(payload)
 
 Transfer tokens between wallets
 
@@ -1840,7 +1840,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1854,7 +1854,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_token_whitelist**
-> AsyncOperationResponse post_token_whitelist(payload)
+> TransactionStatusSpecificResponse post_token_whitelist(payload)
 
 Add an investor to a token's whitelist
 
@@ -1900,7 +1900,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 

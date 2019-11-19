@@ -14,8 +14,8 @@ require 'date'
 
 module MoleculeApi
   class WebhookUpdatePayload
-    # The array of webhook codes for a webhook to notify.
-    attr_accessor :webhook_codes
+    # The array of molecule services for a webhook to notify.
+    attr_accessor :molecule_service
 
     # The url you want to receive the payloads to.
     attr_accessor :url
@@ -26,7 +26,7 @@ module MoleculeApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'webhook_codes' => :'webhook_codes',
+        :'molecule_service' => :'molecule_service',
         :'url' => :'url',
         :'is_active' => :'is_active'
       }
@@ -35,7 +35,7 @@ module MoleculeApi
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'webhook_codes' => :'Array<String>',
+        :'molecule_service' => :'Array<String>',
         :'url' => :'String',
         :'is_active' => :'BOOLEAN'
       }
@@ -49,9 +49,9 @@ module MoleculeApi
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'webhook_codes')
-        if (value = attributes[:'webhook_codes']).is_a?(Array)
-          self.webhook_codes = value
+      if attributes.has_key?(:'molecule_service')
+        if (value = attributes[:'molecule_service']).is_a?(Array)
+          self.molecule_service = value
         end
       end
 
@@ -82,7 +82,7 @@ module MoleculeApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          webhook_codes == o.webhook_codes &&
+          molecule_service == o.molecule_service &&
           url == o.url &&
           is_active == o.is_active
     end
@@ -96,7 +96,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [webhook_codes, url, is_active].hash
+      [molecule_service, url, is_active].hash
     end
 
     # Builds the object from hash

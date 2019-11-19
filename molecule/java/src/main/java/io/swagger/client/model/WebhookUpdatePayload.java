@@ -29,10 +29,10 @@ import java.util.List;
 /**
  * WebhookUpdatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-15T14:03:59.903-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T18:21:14.716-05:00")
 public class WebhookUpdatePayload {
-  @SerializedName("webhook_codes")
-  private List<String> webhookCodes = null;
+  @SerializedName("molecule_service")
+  private List<String> moleculeService = null;
 
   @SerializedName("url")
   private String url = null;
@@ -40,30 +40,30 @@ public class WebhookUpdatePayload {
   @SerializedName("is_active")
   private Boolean isActive = null;
 
-  public WebhookUpdatePayload webhookCodes(List<String> webhookCodes) {
-    this.webhookCodes = webhookCodes;
+  public WebhookUpdatePayload moleculeService(List<String> moleculeService) {
+    this.moleculeService = moleculeService;
     return this;
   }
 
-  public WebhookUpdatePayload addWebhookCodesItem(String webhookCodesItem) {
-    if (this.webhookCodes == null) {
-      this.webhookCodes = new ArrayList<String>();
+  public WebhookUpdatePayload addMoleculeServiceItem(String moleculeServiceItem) {
+    if (this.moleculeService == null) {
+      this.moleculeService = new ArrayList<String>();
     }
-    this.webhookCodes.add(webhookCodesItem);
+    this.moleculeService.add(moleculeServiceItem);
     return this;
   }
 
    /**
-   * The array of webhook codes for a webhook to notify.
-   * @return webhookCodes
+   * The array of molecule services for a webhook to notify.
+   * @return moleculeService
   **/
-  @ApiModelProperty(value = "The array of webhook codes for a webhook to notify.")
-  public List<String> getWebhookCodes() {
-    return webhookCodes;
+  @ApiModelProperty(value = "The array of molecule services for a webhook to notify.")
+  public List<String> getMoleculeService() {
+    return moleculeService;
   }
 
-  public void setWebhookCodes(List<String> webhookCodes) {
-    this.webhookCodes = webhookCodes;
+  public void setMoleculeService(List<String> moleculeService) {
+    this.moleculeService = moleculeService;
   }
 
   public WebhookUpdatePayload url(String url) {
@@ -112,14 +112,14 @@ public class WebhookUpdatePayload {
       return false;
     }
     WebhookUpdatePayload webhookUpdatePayload = (WebhookUpdatePayload) o;
-    return Objects.equals(this.webhookCodes, webhookUpdatePayload.webhookCodes) &&
+    return Objects.equals(this.moleculeService, webhookUpdatePayload.moleculeService) &&
         Objects.equals(this.url, webhookUpdatePayload.url) &&
         Objects.equals(this.isActive, webhookUpdatePayload.isActive);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookCodes, url, isActive);
+    return Objects.hash(moleculeService, url, isActive);
   }
 
 
@@ -128,7 +128,7 @@ public class WebhookUpdatePayload {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebhookUpdatePayload {\n");
     
-    sb.append("    webhookCodes: ").append(toIndentedString(webhookCodes)).append("\n");
+    sb.append("    moleculeService: ").append(toIndentedString(moleculeService)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("}");

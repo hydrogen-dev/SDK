@@ -17,7 +17,6 @@ require 'molecule_api/version'
 require 'molecule_api/configuration'
 
 # Models
-require 'molecule_api/models/async_operation_response'
 require 'molecule_api/models/crowdsale_deploy_payload'
 require 'molecule_api/models/crowdsale_fund_payload'
 require 'molecule_api/models/crowdsale_purchase_payload'

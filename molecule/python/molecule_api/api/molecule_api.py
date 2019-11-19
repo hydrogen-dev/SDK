@@ -2321,7 +2321,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CrowdsaleDeployPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2342,7 +2342,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CrowdsaleDeployPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2400,7 +2400,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AsyncOperationResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2418,7 +2418,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CrowdsaleFundPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2439,7 +2439,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CrowdsaleFundPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2497,7 +2497,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AsyncOperationResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2515,7 +2515,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CrowdsalePurchasePayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2536,7 +2536,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CrowdsalePurchasePayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2594,7 +2594,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AsyncOperationResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2612,7 +2612,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CurrencyTransferPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2633,7 +2633,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param CurrencyTransferPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2691,7 +2691,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AsyncOperationResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2806,7 +2806,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenDeployPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2827,7 +2827,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenDeployPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2885,7 +2885,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AsyncOperationResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2903,7 +2903,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenTransferPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2924,7 +2924,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenTransferPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2982,7 +2982,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AsyncOperationResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3000,7 +3000,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenWhitelistPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3021,7 +3021,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenWhitelistPayload payload: (required)
-        :return: AsyncOperationResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3079,7 +3079,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AsyncOperationResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

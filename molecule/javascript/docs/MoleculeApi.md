@@ -1337,7 +1337,7 @@ Name | Type | Description  | Notes
 
 <a name="postCrowdsaleDeploy"></a>
 # **postCrowdsaleDeploy**
-> AsyncOperationResponse postCrowdsaleDeploy(payload)
+> TransactionStatusSpecificResponse postCrowdsaleDeploy(payload)
 
 Deploy a token&#39;s crowdsale contract.
 
@@ -1379,7 +1379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1392,7 +1392,7 @@ Name | Type | Description  | Notes
 
 <a name="postCrowdsaleFund"></a>
 # **postCrowdsaleFund**
-> AsyncOperationResponse postCrowdsaleFund(payload)
+> TransactionStatusSpecificResponse postCrowdsaleFund(payload)
 
 Transfer tokens to a token&#39;s crowdsale address.
 
@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1447,7 +1447,7 @@ Name | Type | Description  | Notes
 
 <a name="postCrowdsalePurchase"></a>
 # **postCrowdsalePurchase**
-> AsyncOperationResponse postCrowdsalePurchase(payload)
+> TransactionStatusSpecificResponse postCrowdsalePurchase(payload)
 
 Purchase tokens from a crowdsale contract
 
@@ -1489,7 +1489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1502,7 +1502,7 @@ Name | Type | Description  | Notes
 
 <a name="postCurrencyTransfer"></a>
 # **postCurrencyTransfer**
-> AsyncOperationResponse postCurrencyTransfer(payload)
+> TransactionStatusSpecificResponse postCurrencyTransfer(payload)
 
 Transfer currency between wallets
 
@@ -1544,7 +1544,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1612,7 +1612,7 @@ Name | Type | Description  | Notes
 
 <a name="postTokenDeploy"></a>
 # **postTokenDeploy**
-> AsyncOperationResponse postTokenDeploy(payload)
+> TransactionStatusSpecificResponse postTokenDeploy(payload)
 
 Deploy a security token contract to blockchain.
 
@@ -1654,7 +1654,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1667,7 +1667,7 @@ Name | Type | Description  | Notes
 
 <a name="postTokenTransfer"></a>
 # **postTokenTransfer**
-> AsyncOperationResponse postTokenTransfer(payload)
+> TransactionStatusSpecificResponse postTokenTransfer(payload)
 
 Transfer tokens between wallets
 
@@ -1709,7 +1709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1722,7 +1722,7 @@ Name | Type | Description  | Notes
 
 <a name="postTokenWhitelist"></a>
 # **postTokenWhitelist**
-> AsyncOperationResponse postTokenWhitelist(payload)
+> TransactionStatusSpecificResponse postTokenWhitelist(payload)
 
 Add an investor to a token&#39;s whitelist
 
@@ -1764,7 +1764,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AsyncOperationResponse**](AsyncOperationResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 

@@ -64,8 +64,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('webhook_codes')) {
-        obj['webhook_codes'] = ApiClient.convertToType(data['webhook_codes'], ['String']);
+      if (data.hasOwnProperty('molecule_service')) {
+        obj['molecule_service'] = ApiClient.convertToType(data['molecule_service'], ['String']);
       }
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -78,10 +78,10 @@
   }
 
   /**
-   * The array of webhook codes for a webhook to notify.
-   * @member {Array.<String>} webhook_codes
+   * The array of molecule services for a webhook to notify.
+   * @member {Array.<String>} molecule_service
    */
-  exports.prototype['webhook_codes'] = undefined;
+  exports.prototype['molecule_service'] = undefined;
   /**
    * The url you want to receive the payloads to.
    * @member {String} url

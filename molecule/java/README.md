@@ -2,7 +2,7 @@
 
 Hydrogen Molecule API
 - API version: 1.0.0
-  - Build date: 2019-11-15T14:03:59.903-05:00
+  - Build date: 2019-11-19T18:21:14.716-05:00
 
 The Hydrogen Molecule API
 
@@ -164,7 +164,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [AsyncOperationResponse](docs/AsyncOperationResponse.md)
  - [CrowdsaleDeployPayload](docs/CrowdsaleDeployPayload.md)
  - [CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
  - [CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)

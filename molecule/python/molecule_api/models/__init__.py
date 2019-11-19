@@ -15,7 +15,6 @@
 from __future__ import absolute_import
 
 # import models into model package
-from molecule_api.models.async_operation_response import AsyncOperationResponse
 from molecule_api.models.crowdsale_deploy_payload import CrowdsaleDeployPayload
 from molecule_api.models.crowdsale_fund_payload import CrowdsaleFundPayload
 from molecule_api.models.crowdsale_purchase_payload import CrowdsalePurchasePayload

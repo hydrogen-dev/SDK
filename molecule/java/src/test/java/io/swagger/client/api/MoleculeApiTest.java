@@ -14,7 +14,6 @@
 package io.swagger.client.api;
 
 import molecule_api.ApiException;
-import io.swagger.client.model.AsyncOperationResponse;
 import io.swagger.client.model.CrowdsaleDeployPayload;
 import io.swagger.client.model.CrowdsaleFundPayload;
 import io.swagger.client.model.CrowdsalePurchasePayload;
@@ -471,7 +470,7 @@ public class MoleculeApiTest {
     @Test
     public void postCrowdsaleDeployTest() throws ApiException {
         CrowdsaleDeployPayload payload = null;
-        AsyncOperationResponse response = api.postCrowdsaleDeploy(payload);
+        TransactionStatusSpecificResponse response = api.postCrowdsaleDeploy(payload);
 
         // TODO: test validations
     }
@@ -487,7 +486,7 @@ public class MoleculeApiTest {
     @Test
     public void postCrowdsaleFundTest() throws ApiException {
         CrowdsaleFundPayload payload = null;
-        AsyncOperationResponse response = api.postCrowdsaleFund(payload);
+        TransactionStatusSpecificResponse response = api.postCrowdsaleFund(payload);
 
         // TODO: test validations
     }
@@ -503,7 +502,7 @@ public class MoleculeApiTest {
     @Test
     public void postCrowdsalePurchaseTest() throws ApiException {
         CrowdsalePurchasePayload payload = null;
-        AsyncOperationResponse response = api.postCrowdsalePurchase(payload);
+        TransactionStatusSpecificResponse response = api.postCrowdsalePurchase(payload);
 
         // TODO: test validations
     }
@@ -519,7 +518,7 @@ public class MoleculeApiTest {
     @Test
     public void postCurrencyTransferTest() throws ApiException {
         CurrencyTransferPayload payload = null;
-        AsyncOperationResponse response = api.postCurrencyTransfer(payload);
+        TransactionStatusSpecificResponse response = api.postCurrencyTransfer(payload);
 
         // TODO: test validations
     }
@@ -551,7 +550,7 @@ public class MoleculeApiTest {
     @Test
     public void postTokenDeployTest() throws ApiException {
         TokenDeployPayload payload = null;
-        AsyncOperationResponse response = api.postTokenDeploy(payload);
+        TransactionStatusSpecificResponse response = api.postTokenDeploy(payload);
 
         // TODO: test validations
     }
@@ -567,7 +566,7 @@ public class MoleculeApiTest {
     @Test
     public void postTokenTransferTest() throws ApiException {
         TokenTransferPayload payload = null;
-        AsyncOperationResponse response = api.postTokenTransfer(payload);
+        TransactionStatusSpecificResponse response = api.postTokenTransfer(payload);
 
         // TODO: test validations
     }
@@ -583,7 +582,7 @@ public class MoleculeApiTest {
     @Test
     public void postTokenWhitelistTest() throws ApiException {
         TokenWhitelistPayload payload = null;
-        AsyncOperationResponse response = api.postTokenWhitelist(payload);
+        TransactionStatusSpecificResponse response = api.postTokenWhitelist(payload);
 
         // TODO: test validations
     }

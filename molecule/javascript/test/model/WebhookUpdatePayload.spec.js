@@ -57,8 +57,8 @@
       //expect(instance).to.be.a(molecule_api.WebhookUpdatePayload);
     });
 
-    it('should have the property webhookCodes (base name: "webhook_codes")', function() {
-      // uncomment below and update the code to test the property webhookCodes
+    it('should have the property moleculeService (base name: "molecule_service")', function() {
+      // uncomment below and update the code to test the property moleculeService
       //var instance = new molecule_api.WebhookUpdatePayload();
       //expect(instance).to.be();
     });

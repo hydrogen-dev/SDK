@@ -43,6 +43,20 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_currencies(self):
+        """Test case for get_currencies
+
+        Get information for all currencies defined for your firm  # noqa: E501
+        """
+        pass
+
+    def test_get_currency(self):
+        """Test case for get_currency
+
+        Retrieve a currency  # noqa: E501
+        """
+        pass
+
     def test_get_currency_balance(self):
         """Test case for get_currency_balance
 

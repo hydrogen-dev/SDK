@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_token**](MoleculeApi.md#delete_token) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 [**delete_webhook**](MoleculeApi.md#delete_webhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+[**get_currencies**](MoleculeApi.md#get_currencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+[**get_currency**](MoleculeApi.md#get_currency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 [**get_currency_balance**](MoleculeApi.md#get_currency_balance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 [**get_currency_balances**](MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 [**get_currency_transfer**](MoleculeApi.md#get_currency_transfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -157,6 +159,131 @@ nil (empty response body)
 
 
 
+# **get_currencies**
+> CurrencyGetResponse get_currencies(opts)
+
+Get information for all currencies defined for your firm
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+opts = { 
+  page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
+  order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  filter: 'filter_example' # String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+}
+
+begin
+  #Get information for all currencies defined for your firm
+  result = api_instance.get_currencies(opts)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->get_currencies: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**CurrencyGetResponse**](CurrencyGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_currency**
+> CurrencySpecificResponse get_currency(currency_id)
+
+Retrieve a currency
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+currency_id = 'currency_id_example' # String | UUID of a currency
+
+
+begin
+  #Retrieve a currency
+  result = api_instance.get_currency(currency_id)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->get_currency: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_id** | [**String**](.md)| UUID of a currency | 
+
+### Return type
+
+[**CurrencySpecificResponse**](CurrencySpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **get_currency_balance**
 > CurrencyBalanceSpecificResponse get_currency_balance(currency_balance_id)
 
@@ -244,7 +371,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   filter: 'filter_example' # String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 }
 
@@ -369,7 +496,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   filter: 'filter_example' # String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 }
 
@@ -552,7 +679,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   filter: 'filter_example' # String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 }
 
@@ -619,7 +746,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   filter: 'filter_example' # String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 }
 
@@ -802,7 +929,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   filter: 'filter_example' # String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 }
 
@@ -869,7 +996,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 }
 
 begin
@@ -992,7 +1119,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   filter: 'filter_example' # String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
 }
 
@@ -1175,7 +1302,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 }
 
 begin
@@ -1240,7 +1367,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 }
 
 begin
@@ -1363,7 +1490,7 @@ opts = {
   page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
-  ascending: false # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 }
 
 begin

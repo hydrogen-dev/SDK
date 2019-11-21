@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteToken**](MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 [**deleteWebhook**](MoleculeApi.md#deleteWebhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+[**getCurrencies**](MoleculeApi.md#getCurrencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+[**getCurrency**](MoleculeApi.md#getCurrency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 [**getCurrencyBalance**](MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 [**getCurrencyBalances**](MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 [**getCurrencyTransfer**](MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -151,6 +153,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrencies"></a>
+# **getCurrencies**
+> CurrencyGetResponse getCurrencies(page, size, orderBy, ascending, filter)
+
+Get information for all currencies defined for your firm
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+Integer page = 0; // Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
+String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
+Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+try {
+    CurrencyGetResponse result = apiInstance.getCurrencies(page, size, orderBy, ascending, filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getCurrencies");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+
+### Return type
+
+[**CurrencyGetResponse**](CurrencyGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrency"></a>
+# **getCurrency**
+> CurrencySpecificResponse getCurrency(currencyId)
+
+Retrieve a currency
+
+### Example
+```java
+// Import classes:
+//import molecule_api.ApiClient;
+//import molecule_api.ApiException;
+//import molecule_api.Configuration;
+//import molecule_api.auth.*;
+//import io.swagger.client.api.MoleculeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Set the environment (optional, defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.setEnvironment("sandbox");
+
+
+// Configure OAuth2 access token for authorization: oauth
+OAuth oauth = (OAuth) defaultClient.getAuthentication("oauth");
+// Method 1: Fetch and set access token with client_id and client_secret
+String token = oauth.fetchAccessToken("MYCLIENTID", "MYCLIENTSECRET");
+oauth.setAccessToken(token);
+// Method 2: Set access token using an existing token
+oauth.setAccessToken("MYACCESSTOKEN");
+
+MoleculeApi apiInstance = new MoleculeApi();
+UUID currencyId = new UUID(); // UUID | UUID of a currency
+try {
+    CurrencySpecificResponse result = apiInstance.getCurrency(currencyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MoleculeApi#getCurrency");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyId** | [**UUID**](.md)| UUID of a currency |
+
+### Return type
+
+[**CurrencySpecificResponse**](CurrencySpecificResponse.md)
 
 ### Authorization
 

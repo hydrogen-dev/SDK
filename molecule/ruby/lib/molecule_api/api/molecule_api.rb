@@ -121,6 +121,127 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Get information for all currencies defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [String] :filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [CurrencyGetResponse]
+    def get_currencies(opts = {})
+      data, _status_code, _headers = get_currencies_with_http_info(opts)
+      data
+    end
+
+    # Get information for all currencies defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [String] :filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    # @return [Array<(CurrencyGetResponse, Fixnum, Hash)>] CurrencyGetResponse data, response status code and response headers
+    def get_currencies_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_currencies ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_currencies, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_currencies, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/currency'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencyGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_currencies\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve a currency
+    # @param currency_id UUID of a currency
+    # @param [Hash] opts the optional parameters
+    # @return [CurrencySpecificResponse]
+    def get_currency(currency_id, opts = {})
+      data, _status_code, _headers = get_currency_with_http_info(currency_id, opts)
+      data
+    end
+
+    # Retrieve a currency
+    # @param currency_id UUID of a currency
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CurrencySpecificResponse, Fixnum, Hash)>] CurrencySpecificResponse data, response status code and response headers
+    def get_currency_with_http_info(currency_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_currency ...'
+      end
+      # verify the required parameter 'currency_id' is set
+      if @api_client.config.client_side_validation && currency_id.nil?
+        fail ArgumentError, "Missing the required parameter 'currency_id' when calling MoleculeApi.get_currency"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/currency/{currency_id}/'.sub('{' + 'currency_id' + '}', currency_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencySpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_currency\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Retrieve a currency balance
     # @param currency_balance_id UUID of a currency balance
     # @param [Hash] opts the optional parameters

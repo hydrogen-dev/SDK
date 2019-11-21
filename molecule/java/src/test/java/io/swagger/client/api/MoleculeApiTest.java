@@ -19,6 +19,8 @@ import io.swagger.client.model.CrowdsaleFundPayload;
 import io.swagger.client.model.CrowdsalePurchasePayload;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
+import io.swagger.client.model.CurrencyGetResponse;
+import io.swagger.client.model.CurrencySpecificResponse;
 import io.swagger.client.model.CurrencyTransferGetResponse;
 import io.swagger.client.model.CurrencyTransferPayload;
 import io.swagger.client.model.CurrencyTransferSpecificResponse;
@@ -99,6 +101,42 @@ public class MoleculeApiTest {
     public void deleteWebhookTest() throws ApiException {
         UUID webhookId = null;
         api.deleteWebhook(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all currencies defined for your firm
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrenciesTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        String filter = null;
+        CurrencyGetResponse response = api.getCurrencies(page, size, orderBy, ascending, filter);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve a currency
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrencyTest() throws ApiException {
+        UUID currencyId = null;
+        CurrencySpecificResponse response = api.getCurrency(currencyId);
 
         // TODO: test validations
     }

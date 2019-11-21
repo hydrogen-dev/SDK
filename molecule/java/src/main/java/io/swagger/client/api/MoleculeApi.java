@@ -32,6 +32,8 @@ import io.swagger.client.model.CrowdsaleFundPayload;
 import io.swagger.client.model.CrowdsalePurchasePayload;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
+import io.swagger.client.model.CurrencyGetResponse;
+import io.swagger.client.model.CurrencySpecificResponse;
 import io.swagger.client.model.CurrencyTransferGetResponse;
 import io.swagger.client.model.CurrencyTransferPayload;
 import io.swagger.client.model.CurrencyTransferSpecificResponse;
@@ -345,6 +347,288 @@ public class MoleculeApi {
 
         com.squareup.okhttp.Call call = deleteWebhookValidateBeforeCall(webhookId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrencies
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrenciesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (filter != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrenciesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getCurrenciesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all currencies defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @return CurrencyGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public CurrencyGetResponse getCurrencies(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
+        ApiResponse<CurrencyGetResponse> resp = getCurrenciesWithHttpInfo(page, size, orderBy, ascending, filter);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all currencies defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @return ApiResponse&lt;CurrencyGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public ApiResponse<CurrencyGetResponse> getCurrenciesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+        Type localVarReturnType = new TypeToken<CurrencyGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all currencies defined for your firm (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrenciesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<CurrencyGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencyGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrency
+     * @param currencyId UUID of a currency (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyCall(UUID currencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency/{currency_id}/"
+            .replaceAll("\\{" + "currency_id" + "\\}", apiClient.escapeString(currencyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrencyValidateBeforeCall(UUID currencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'currencyId' is set
+        if (currencyId == null) {
+            throw new ApiException("Missing the required parameter 'currencyId' when calling getCurrency(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCurrencyCall(currencyId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve a currency
+     * 
+     * @param currencyId UUID of a currency (required)
+     * @return CurrencySpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public CurrencySpecificResponse getCurrency(UUID currencyId) throws ApiException {
+        ApiResponse<CurrencySpecificResponse> resp = getCurrencyWithHttpInfo(currencyId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a currency
+     * 
+     * @param currencyId UUID of a currency (required)
+     * @return ApiResponse&lt;CurrencySpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public ApiResponse<CurrencySpecificResponse> getCurrencyWithHttpInfo(UUID currencyId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyValidateBeforeCall(currencyId, null, null);
+        Type localVarReturnType = new TypeToken<CurrencySpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a currency (asynchronously)
+     * 
+     * @param currencyId UUID of a currency (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyAsync(UUID currencyId, final ApiCallback<CurrencySpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrencyValidateBeforeCall(currencyId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencySpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**

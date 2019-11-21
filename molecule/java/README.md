@@ -2,7 +2,7 @@
 
 Hydrogen Molecule API
 - API version: 1.0.0
-  - Build date: 2019-11-19T18:21:14.716-05:00
+  - Build date: 2019-11-21T12:13:20.984-05:00
 
 The Hydrogen Molecule API
 
@@ -125,6 +125,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *MoleculeApi* | [**deleteToken**](docs/MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 *MoleculeApi* | [**deleteWebhook**](docs/MoleculeApi.md#deleteWebhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+*MoleculeApi* | [**getCurrencies**](docs/MoleculeApi.md#getCurrencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+*MoleculeApi* | [**getCurrency**](docs/MoleculeApi.md#getCurrency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 *MoleculeApi* | [**getCurrencyBalance**](docs/MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 *MoleculeApi* | [**getCurrencyBalances**](docs/MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 *MoleculeApi* | [**getCurrencyTransfer**](docs/MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -168,6 +170,7 @@ Class | Method | HTTP request | Description
  - [CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
  - [CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)
  - [CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
+ - [CurrencySpecificResponse](docs/CurrencySpecificResponse.md)
  - [CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
  - [CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
  - [OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
@@ -194,6 +197,7 @@ Class | Method | HTTP request | Description
  - [WebhookCreatePayload](docs/WebhookCreatePayload.md)
  - [WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
+ - [CurrencyGetResponse](docs/CurrencyGetResponse.md)
  - [CurrencyTransferGetResponse](docs/CurrencyTransferGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)

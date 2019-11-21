@@ -71,6 +71,26 @@
         done();
       });
     });
+    describe('getCurrencies', function() {
+      it('should call getCurrencies successfully', function(done) {
+        //uncomment below and update the code to test getCurrencies
+        //instance.getCurrencies(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCurrency', function() {
+      it('should call getCurrency successfully', function(done) {
+        //uncomment below and update the code to test getCurrency
+        //instance.getCurrency(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCurrencyBalance', function() {
       it('should call getCurrencyBalance successfully', function(done) {
         //uncomment below and update the code to test getCurrencyBalance

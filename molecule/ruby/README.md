@@ -96,6 +96,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *MoleculeApi::MoleculeApi* | [**delete_token**](docs/MoleculeApi.md#delete_token) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 *MoleculeApi::MoleculeApi* | [**delete_webhook**](docs/MoleculeApi.md#delete_webhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+*MoleculeApi::MoleculeApi* | [**get_currencies**](docs/MoleculeApi.md#get_currencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+*MoleculeApi::MoleculeApi* | [**get_currency**](docs/MoleculeApi.md#get_currency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 *MoleculeApi::MoleculeApi* | [**get_currency_balance**](docs/MoleculeApi.md#get_currency_balance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 *MoleculeApi::MoleculeApi* | [**get_currency_balances**](docs/MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 *MoleculeApi::MoleculeApi* | [**get_currency_transfer**](docs/MoleculeApi.md#get_currency_transfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -139,6 +141,7 @@ Class | Method | HTTP request | Description
  - [MoleculeApi::CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
  - [MoleculeApi::CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)
  - [MoleculeApi::CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
+ - [MoleculeApi::CurrencySpecificResponse](docs/CurrencySpecificResponse.md)
  - [MoleculeApi::CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
  - [MoleculeApi::CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
  - [MoleculeApi::OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
@@ -166,6 +169,7 @@ Class | Method | HTTP request | Description
  - [MoleculeApi::WebhookCreatePayload](docs/WebhookCreatePayload.md)
  - [MoleculeApi::WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
  - [MoleculeApi::CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
+ - [MoleculeApi::CurrencyGetResponse](docs/CurrencyGetResponse.md)
  - [MoleculeApi::CurrencyTransferGetResponse](docs/CurrencyTransferGetResponse.md)
  - [MoleculeApi::TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [MoleculeApi::TokenCreateResponse](docs/TokenCreateResponse.md)

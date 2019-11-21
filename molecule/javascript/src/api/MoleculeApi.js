@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CrowdsaleDeployPayload', 'model/CrowdsaleFundPayload', 'model/CrowdsalePurchasePayload', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/CurrencyTransferGetResponse', 'model/CurrencyTransferPayload', 'model/CurrencyTransferSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenTransferGetResponse', 'model/TokenTransferPayload', 'model/TokenTransferSpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/TransactionStatusGetResponse', 'model/TransactionStatusSpecificResponse', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse', 'model/WalletUpdatePayload', 'model/WebhookCreatePayload', 'model/WebhookCreateResponse', 'model/WebhookGetResponse', 'model/WebhookSpecificResponse', 'model/WebhookUpdatePayload'], factory);
+    define(['ApiClient', 'model/CrowdsaleDeployPayload', 'model/CrowdsaleFundPayload', 'model/CrowdsalePurchasePayload', 'model/CurrencyBalanceGetResponse', 'model/CurrencyBalanceSpecificResponse', 'model/CurrencyGetResponse', 'model/CurrencySpecificResponse', 'model/CurrencyTransferGetResponse', 'model/CurrencyTransferPayload', 'model/CurrencyTransferSpecificResponse', 'model/TokenBalanceGetResponse', 'model/TokenBalanceSpecificResponse', 'model/TokenCreatePayload', 'model/TokenCreateResponse', 'model/TokenDeployPayload', 'model/TokenGetResponse', 'model/TokenSpecificResponse', 'model/TokenSupplyGetResponse', 'model/TokenSupplySpecificResponse', 'model/TokenTransferGetResponse', 'model/TokenTransferPayload', 'model/TokenTransferSpecificResponse', 'model/TokenUpdatePayload', 'model/TokenWhitelistPayload', 'model/TransactionStatusGetResponse', 'model/TransactionStatusSpecificResponse', 'model/WalletCreatePayload', 'model/WalletCreateResponse', 'model/WalletGetResponse', 'model/WalletKeyCreatePayload', 'model/WalletKeyCreateResponse', 'model/WalletKeyGeneratorPayload', 'model/WalletKeyGetResponse', 'model/WalletKeySpecificResponse', 'model/WalletSpecificResponse', 'model/WalletUpdatePayload', 'model/WebhookCreatePayload', 'model/WebhookCreateResponse', 'model/WebhookGetResponse', 'model/WebhookSpecificResponse', 'model/WebhookUpdatePayload'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CrowdsaleDeployPayload'), require('../model/CrowdsaleFundPayload'), require('../model/CrowdsalePurchasePayload'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/CurrencyTransferGetResponse'), require('../model/CurrencyTransferPayload'), require('../model/CurrencyTransferSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenTransferGetResponse'), require('../model/TokenTransferPayload'), require('../model/TokenTransferSpecificResponse'), require('../model/TokenUpdatePayload'), require('../model/TokenWhitelistPayload'), require('../model/TransactionStatusGetResponse'), require('../model/TransactionStatusSpecificResponse'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'), require('../model/WalletUpdatePayload'), require('../model/WebhookCreatePayload'), require('../model/WebhookCreateResponse'), require('../model/WebhookGetResponse'), require('../model/WebhookSpecificResponse'), require('../model/WebhookUpdatePayload'));
+    module.exports = factory(require('../ApiClient'), require('../model/CrowdsaleDeployPayload'), require('../model/CrowdsaleFundPayload'), require('../model/CrowdsalePurchasePayload'), require('../model/CurrencyBalanceGetResponse'), require('../model/CurrencyBalanceSpecificResponse'), require('../model/CurrencyGetResponse'), require('../model/CurrencySpecificResponse'), require('../model/CurrencyTransferGetResponse'), require('../model/CurrencyTransferPayload'), require('../model/CurrencyTransferSpecificResponse'), require('../model/TokenBalanceGetResponse'), require('../model/TokenBalanceSpecificResponse'), require('../model/TokenCreatePayload'), require('../model/TokenCreateResponse'), require('../model/TokenDeployPayload'), require('../model/TokenGetResponse'), require('../model/TokenSpecificResponse'), require('../model/TokenSupplyGetResponse'), require('../model/TokenSupplySpecificResponse'), require('../model/TokenTransferGetResponse'), require('../model/TokenTransferPayload'), require('../model/TokenTransferSpecificResponse'), require('../model/TokenUpdatePayload'), require('../model/TokenWhitelistPayload'), require('../model/TransactionStatusGetResponse'), require('../model/TransactionStatusSpecificResponse'), require('../model/WalletCreatePayload'), require('../model/WalletCreateResponse'), require('../model/WalletGetResponse'), require('../model/WalletKeyCreatePayload'), require('../model/WalletKeyCreateResponse'), require('../model/WalletKeyGeneratorPayload'), require('../model/WalletKeyGetResponse'), require('../model/WalletKeySpecificResponse'), require('../model/WalletSpecificResponse'), require('../model/WalletUpdatePayload'), require('../model/WebhookCreatePayload'), require('../model/WebhookCreateResponse'), require('../model/WebhookGetResponse'), require('../model/WebhookSpecificResponse'), require('../model/WebhookUpdatePayload'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.CrowdsaleDeployPayload, root.molecule_api.CrowdsaleFundPayload, root.molecule_api.CrowdsalePurchasePayload, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.CurrencyTransferGetResponse, root.molecule_api.CurrencyTransferPayload, root.molecule_api.CurrencyTransferSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenTransferGetResponse, root.molecule_api.TokenTransferPayload, root.molecule_api.TokenTransferSpecificResponse, root.molecule_api.TokenUpdatePayload, root.molecule_api.TokenWhitelistPayload, root.molecule_api.TransactionStatusGetResponse, root.molecule_api.TransactionStatusSpecificResponse, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse, root.molecule_api.WalletUpdatePayload, root.molecule_api.WebhookCreatePayload, root.molecule_api.WebhookCreateResponse, root.molecule_api.WebhookGetResponse, root.molecule_api.WebhookSpecificResponse, root.molecule_api.WebhookUpdatePayload);
+    root.molecule_api.MoleculeApi = factory(root.molecule_api.ApiClient, root.molecule_api.CrowdsaleDeployPayload, root.molecule_api.CrowdsaleFundPayload, root.molecule_api.CrowdsalePurchasePayload, root.molecule_api.CurrencyBalanceGetResponse, root.molecule_api.CurrencyBalanceSpecificResponse, root.molecule_api.CurrencyGetResponse, root.molecule_api.CurrencySpecificResponse, root.molecule_api.CurrencyTransferGetResponse, root.molecule_api.CurrencyTransferPayload, root.molecule_api.CurrencyTransferSpecificResponse, root.molecule_api.TokenBalanceGetResponse, root.molecule_api.TokenBalanceSpecificResponse, root.molecule_api.TokenCreatePayload, root.molecule_api.TokenCreateResponse, root.molecule_api.TokenDeployPayload, root.molecule_api.TokenGetResponse, root.molecule_api.TokenSpecificResponse, root.molecule_api.TokenSupplyGetResponse, root.molecule_api.TokenSupplySpecificResponse, root.molecule_api.TokenTransferGetResponse, root.molecule_api.TokenTransferPayload, root.molecule_api.TokenTransferSpecificResponse, root.molecule_api.TokenUpdatePayload, root.molecule_api.TokenWhitelistPayload, root.molecule_api.TransactionStatusGetResponse, root.molecule_api.TransactionStatusSpecificResponse, root.molecule_api.WalletCreatePayload, root.molecule_api.WalletCreateResponse, root.molecule_api.WalletGetResponse, root.molecule_api.WalletKeyCreatePayload, root.molecule_api.WalletKeyCreateResponse, root.molecule_api.WalletKeyGeneratorPayload, root.molecule_api.WalletKeyGetResponse, root.molecule_api.WalletKeySpecificResponse, root.molecule_api.WalletSpecificResponse, root.molecule_api.WalletUpdatePayload, root.molecule_api.WebhookCreatePayload, root.molecule_api.WebhookCreateResponse, root.molecule_api.WebhookGetResponse, root.molecule_api.WebhookSpecificResponse, root.molecule_api.WebhookUpdatePayload);
   }
-}(this, function(ApiClient, CrowdsaleDeployPayload, CrowdsaleFundPayload, CrowdsalePurchasePayload, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, CurrencyTransferGetResponse, CurrencyTransferPayload, CurrencyTransferSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenDeployPayload, TokenGetResponse, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenTransferGetResponse, TokenTransferPayload, TokenTransferSpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, TransactionStatusGetResponse, TransactionStatusSpecificResponse, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse, WalletUpdatePayload, WebhookCreatePayload, WebhookCreateResponse, WebhookGetResponse, WebhookSpecificResponse, WebhookUpdatePayload) {
+}(this, function(ApiClient, CrowdsaleDeployPayload, CrowdsaleFundPayload, CrowdsalePurchasePayload, CurrencyBalanceGetResponse, CurrencyBalanceSpecificResponse, CurrencyGetResponse, CurrencySpecificResponse, CurrencyTransferGetResponse, CurrencyTransferPayload, CurrencyTransferSpecificResponse, TokenBalanceGetResponse, TokenBalanceSpecificResponse, TokenCreatePayload, TokenCreateResponse, TokenDeployPayload, TokenGetResponse, TokenSpecificResponse, TokenSupplyGetResponse, TokenSupplySpecificResponse, TokenTransferGetResponse, TokenTransferPayload, TokenTransferSpecificResponse, TokenUpdatePayload, TokenWhitelistPayload, TransactionStatusGetResponse, TransactionStatusSpecificResponse, WalletCreatePayload, WalletCreateResponse, WalletGetResponse, WalletKeyCreatePayload, WalletKeyCreateResponse, WalletKeyGeneratorPayload, WalletKeyGetResponse, WalletKeySpecificResponse, WalletSpecificResponse, WalletUpdatePayload, WebhookCreatePayload, WebhookCreateResponse, WebhookGetResponse, WebhookSpecificResponse, WebhookUpdatePayload) {
   'use strict';
 
   /**
@@ -135,6 +135,105 @@
 
       return this.apiClient.callApi(
         '/molecule/v1/webhook/{webhook_id}/', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getCurrencies operation.
+     * @callback module:api/MoleculeApi~getCurrenciesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CurrencyGetResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get information for all currencies defined for your firm
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+     * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+     * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
+     * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {module:api/MoleculeApi~getCurrenciesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CurrencyGetResponse}
+     */
+    this.getCurrencies = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'page': opts['page'],
+        'size': opts['size'],
+        'order_by': opts['orderBy'],
+        'ascending': opts['ascending'],
+        'filter': opts['filter'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CurrencyGetResponse;
+
+      return this.apiClient.callApi(
+        '/molecule/v1/currency', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getCurrency operation.
+     * @callback module:api/MoleculeApi~getCurrencyCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CurrencySpecificResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve a currency
+     * @param {String} currencyId UUID of a currency
+     * @param {module:api/MoleculeApi~getCurrencyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CurrencySpecificResponse}
+     */
+    this.getCurrency = function(currencyId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'currencyId' is set
+      if (currencyId === undefined || currencyId === null) {
+        throw new Error("Missing the required parameter 'currencyId' when calling getCurrency");
+      }
+
+
+      var pathParams = {
+        'currency_id': currencyId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CurrencySpecificResponse;
+
+      return this.apiClient.callApi(
+        '/molecule/v1/currency/{currency_id}/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

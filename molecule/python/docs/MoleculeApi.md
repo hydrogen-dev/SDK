@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_token**](MoleculeApi.md#delete_token) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 [**delete_webhook**](MoleculeApi.md#delete_webhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+[**get_currencies**](MoleculeApi.md#get_currencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+[**get_currency**](MoleculeApi.md#get_currency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 [**get_currency_balance**](MoleculeApi.md#get_currency_balance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 [**get_currency_balances**](MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 [**get_currency_transfer**](MoleculeApi.md#get_currency_transfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -149,6 +151,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_currencies**
+> CurrencyGetResponse get_currencies(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
+
+Get information for all currencies defined for your firm
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+page = 0 # int | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional) (default to 0)
+size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
+order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
+ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+
+try:
+    # Get information for all currencies defined for your firm
+    api_response = api_instance.get_currencies(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_currencies: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
+
+### Return type
+
+[**CurrencyGetResponse**](CurrencyGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_currency**
+> CurrencySpecificResponse get_currency(currency_id)
+
+Retrieve a currency
+
+### Example
+```python
+from __future__ import print_function
+import time
+import molecule_api
+from molecule_api.rest import ApiException
+from pprint import pprint
+
+# Initialize configuration
+configuration = molecule_api.Configuration()
+
+# Set the environment (optional, defaults to sandbox)
+# This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+configuration.set_environment("sandbox")
+
+
+# Configure OAuth2 access token for authorization: oauth
+# Method 1: Fetch and set access token with client_id and client_secret
+configuration.access_token = configuration.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+# Method 2: Set access token using an existing token
+configuration.access_token = 'MYACCESSTOKEN'
+
+# create an instance of the API class
+api_instance = molecule_api.MoleculeApi(molecule_api.ApiClient(configuration))
+currency_id = 'currency_id_example' # str | UUID of a currency
+
+try:
+    # Retrieve a currency
+    api_response = api_instance.get_currency(currency_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MoleculeApi->get_currency: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_id** | [**str**](.md)| UUID of a currency | 
+
+### Return type
+
+[**CurrencySpecificResponse**](CurrencySpecificResponse.md)
 
 ### Authorization
 

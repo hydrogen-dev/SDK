@@ -1282,6 +1282,73 @@ paths:
     parameters:
       - $ref: '#/parameters/path_webhook_uuid'
 
+  /molecule/v1/currency:
+    get:
+      operationId: getCurrencies
+      summary: Get information for all currencies defined for your firm
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
+
+  /molecule/v1/currency/{currency_id}/:
+    get:
+      operationId: getCurrency
+      summary: Retrieve a currency
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_currency_uuid'
 
 # ********** Parameters: describe variables that may appear in the request URL **********
 parameters:
@@ -1397,6 +1464,13 @@ parameters:
     format: uuid
     required: true
     description: UUID of a webhook
+  path_currency_uuid:
+    in: path
+    name: currency_id
+    type: string
+    format: uuid
+    required: true
+    description: UUID of a currency
 
 # ********** Responses: describe possible response codes **********
 responses:
@@ -1842,6 +1916,45 @@ definitions:
             format: datetime
             description: Datetime the webhook record was created
       - $ref: '#/definitions/webhook_create_payload'
+  currency_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/currency_specific_response'
+      - $ref: '#/definitions/pagination'
+  currency_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          name:
+            type: string
+            description: The name of the currency
+          decimal_points:
+            type: integer
+            description: Decimal points of the currency
+          symbol:
+            type: string
+            description: Symbol of the currency
+          address:
+            type: string
+            description: The blockchain contract address of the currency
+          logo:
+            type: string
+            description: The url for the currency logo
+          network:
+            type: string
+            description: The network the currency is available on. Can be mainnet, ropsten etc.
+          create_date:
+            type: string
+            format: datetime
+            description: Datetime the currency record was created
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the currency record was updated
 
   # Request payloads
   wallet_create_client:

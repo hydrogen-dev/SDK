@@ -100,6 +100,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *MoleculeApi* | [**delete_token**](docs/MoleculeApi.md#delete_token) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
 *MoleculeApi* | [**delete_webhook**](docs/MoleculeApi.md#delete_webhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+*MoleculeApi* | [**get_currencies**](docs/MoleculeApi.md#get_currencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+*MoleculeApi* | [**get_currency**](docs/MoleculeApi.md#get_currency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 *MoleculeApi* | [**get_currency_balance**](docs/MoleculeApi.md#get_currency_balance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
 *MoleculeApi* | [**get_currency_balances**](docs/MoleculeApi.md#get_currency_balances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
 *MoleculeApi* | [**get_currency_transfer**](docs/MoleculeApi.md#get_currency_transfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
@@ -143,6 +145,7 @@ Class | Method | HTTP request | Description
  - [CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
  - [CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)
  - [CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
+ - [CurrencySpecificResponse](docs/CurrencySpecificResponse.md)
  - [CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
  - [CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
  - [OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
@@ -170,6 +173,7 @@ Class | Method | HTTP request | Description
  - [WebhookCreatePayload](docs/WebhookCreatePayload.md)
  - [WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
+ - [CurrencyGetResponse](docs/CurrencyGetResponse.md)
  - [CurrencyTransferGetResponse](docs/CurrencyTransferGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [TokenCreateResponse](docs/TokenCreateResponse.md)

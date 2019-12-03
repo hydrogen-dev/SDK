@@ -69,6 +69,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
     post:
       operationId: postWallet
       summary: Create a wallet under your firm.
@@ -203,6 +204,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
     post:
       operationId: postWalletKey
       summary: Associate an existing key pair with a wallet defined for your firm.
@@ -474,6 +476,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
     post:
       operationId: postToken
       summary: Create a token under your firm.
@@ -1155,6 +1158,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_filter'
     post:
       operationId: postWebhook
       summary: Create a webhook under your firm.

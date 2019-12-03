@@ -1655,9 +1655,9 @@ definitions:
             type: string
             format: uuid
             description: The ID of the associated wallet
-          symbol:
-            type: string
-            description: The symbol of the currency. Currently supports ETH only.
+          currency_id:
+            type: UUID
+            description: The ID of the currency.
           create_date:
             type: string
             format: datetime
@@ -1833,9 +1833,9 @@ definitions:
             type: string
             format: uuid
             description: ID of the receiver wallet
-          currency_symbol:
-            type: string
-            description: Symbol of the currency being transferred
+          currency_id:
+            type: UUID
+            description: ID of the currency being transferred
           amount:
             type: number
             description: Amount of currencies being transferred
@@ -1970,6 +1970,10 @@ definitions:
       client_wallet_association_type:
         type: string
         description: The role of the client as it relates to the wallet defined by your firm. Roles may be joint, owner, trustee, viewer, or admin.
+      is_primary:
+        type: boolean
+        default: true
+        description:  Determines if the wallet is the primary wallet of the client. Defaults to true.
   wallet_create_whitelist:
     type: object
     required:
@@ -2024,6 +2028,7 @@ definitions:
     required:
       - name
       - type
+      - clients
     properties:
       name:
         type: string
@@ -2344,7 +2349,7 @@ definitions:
     required:
       - sender_wallet_id
       - receiver_wallet_id
-      - currency_symbol
+      - currency_id
       - amount
     properties:
       sender_wallet_id:
@@ -2355,12 +2360,13 @@ definitions:
         type: string
         format: uuid
         description: The uuid of the receiver wallet.
-      currency_symbol:
+      currency_id:
         type: string
-        description: The uuid of the token being transferred.
+        format: uuid
+        description: The uuid of the currency being transferred.
       amount:
         type: number
-        description: Amount of tokens to be transferred.
+        description: Amount of currencies to be transferred.
   webhook_create_payload:
     type: object
     required:

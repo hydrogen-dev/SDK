@@ -33,29 +33,29 @@ class CurrencyTransferPayload(object):
     swagger_types = {
         'sender_wallet_id': 'str',
         'receiver_wallet_id': 'str',
-        'currency_symbol': 'str',
+        'currency_id': 'str',
         'amount': 'float'
     }
 
     attribute_map = {
         'sender_wallet_id': 'sender_wallet_id',
         'receiver_wallet_id': 'receiver_wallet_id',
-        'currency_symbol': 'currency_symbol',
+        'currency_id': 'currency_id',
         'amount': 'amount'
     }
 
-    def __init__(self, sender_wallet_id=None, receiver_wallet_id=None, currency_symbol=None, amount=None):  # noqa: E501
+    def __init__(self, sender_wallet_id=None, receiver_wallet_id=None, currency_id=None, amount=None):  # noqa: E501
         """CurrencyTransferPayload - a model defined in Swagger"""  # noqa: E501
 
         self._sender_wallet_id = None
         self._receiver_wallet_id = None
-        self._currency_symbol = None
+        self._currency_id = None
         self._amount = None
         self.discriminator = None
 
         self.sender_wallet_id = sender_wallet_id
         self.receiver_wallet_id = receiver_wallet_id
-        self.currency_symbol = currency_symbol
+        self.currency_id = currency_id
         self.amount = amount
 
     @property
@@ -109,35 +109,35 @@ class CurrencyTransferPayload(object):
         self._receiver_wallet_id = receiver_wallet_id
 
     @property
-    def currency_symbol(self):
-        """Gets the currency_symbol of this CurrencyTransferPayload.  # noqa: E501
+    def currency_id(self):
+        """Gets the currency_id of this CurrencyTransferPayload.  # noqa: E501
 
-        The uuid of the token being transferred.  # noqa: E501
+        The uuid of the currency being transferred.  # noqa: E501
 
-        :return: The currency_symbol of this CurrencyTransferPayload.  # noqa: E501
+        :return: The currency_id of this CurrencyTransferPayload.  # noqa: E501
         :rtype: str
         """
-        return self._currency_symbol
+        return self._currency_id
 
-    @currency_symbol.setter
-    def currency_symbol(self, currency_symbol):
-        """Sets the currency_symbol of this CurrencyTransferPayload.
+    @currency_id.setter
+    def currency_id(self, currency_id):
+        """Sets the currency_id of this CurrencyTransferPayload.
 
-        The uuid of the token being transferred.  # noqa: E501
+        The uuid of the currency being transferred.  # noqa: E501
 
-        :param currency_symbol: The currency_symbol of this CurrencyTransferPayload.  # noqa: E501
+        :param currency_id: The currency_id of this CurrencyTransferPayload.  # noqa: E501
         :type: str
         """
-        if currency_symbol is None:
-            raise ValueError("Invalid value for `currency_symbol`, must not be `None`")  # noqa: E501
+        if currency_id is None:
+            raise ValueError("Invalid value for `currency_id`, must not be `None`")  # noqa: E501
 
-        self._currency_symbol = currency_symbol
+        self._currency_id = currency_id
 
     @property
     def amount(self):
         """Gets the amount of this CurrencyTransferPayload.  # noqa: E501
 
-        Amount of tokens to be transferred.  # noqa: E501
+        Amount of currencies to be transferred.  # noqa: E501
 
         :return: The amount of this CurrencyTransferPayload.  # noqa: E501
         :rtype: float
@@ -148,7 +148,7 @@ class CurrencyTransferPayload(object):
     def amount(self, amount):
         """Sets the amount of this CurrencyTransferPayload.
 
-        Amount of tokens to be transferred.  # noqa: E501
+        Amount of currencies to be transferred.  # noqa: E501
 
         :param amount: The amount of this CurrencyTransferPayload.  # noqa: E501
         :type: float

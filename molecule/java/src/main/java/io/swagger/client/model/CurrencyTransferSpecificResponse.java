@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CurrencyTransferSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-21T12:13:20.984-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-03T17:23:35.601-05:00")
 public class CurrencyTransferSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -40,8 +40,8 @@ public class CurrencyTransferSpecificResponse {
   @SerializedName("receiver_wallet_id")
   private UUID receiverWalletId = null;
 
-  @SerializedName("currency_symbol")
-  private String currencySymbol = null;
+  @SerializedName("currency_id")
+  private UUID currencyId = null;
 
   @SerializedName("amount")
   private BigDecimal amount = null;
@@ -109,22 +109,22 @@ public class CurrencyTransferSpecificResponse {
     this.receiverWalletId = receiverWalletId;
   }
 
-  public CurrencyTransferSpecificResponse currencySymbol(String currencySymbol) {
-    this.currencySymbol = currencySymbol;
+  public CurrencyTransferSpecificResponse currencyId(UUID currencyId) {
+    this.currencyId = currencyId;
     return this;
   }
 
    /**
-   * Symbol of the currency being transferred
-   * @return currencySymbol
+   * ID of the currency being transferred
+   * @return currencyId
   **/
-  @ApiModelProperty(value = "Symbol of the currency being transferred")
-  public String getCurrencySymbol() {
-    return currencySymbol;
+  @ApiModelProperty(value = "ID of the currency being transferred")
+  public UUID getCurrencyId() {
+    return currencyId;
   }
 
-  public void setCurrencySymbol(String currencySymbol) {
-    this.currencySymbol = currencySymbol;
+  public void setCurrencyId(UUID currencyId) {
+    this.currencyId = currencyId;
   }
 
   public CurrencyTransferSpecificResponse amount(BigDecimal amount) {
@@ -212,7 +212,7 @@ public class CurrencyTransferSpecificResponse {
     return Objects.equals(this.id, currencyTransferSpecificResponse.id) &&
         Objects.equals(this.senderWalletId, currencyTransferSpecificResponse.senderWalletId) &&
         Objects.equals(this.receiverWalletId, currencyTransferSpecificResponse.receiverWalletId) &&
-        Objects.equals(this.currencySymbol, currencyTransferSpecificResponse.currencySymbol) &&
+        Objects.equals(this.currencyId, currencyTransferSpecificResponse.currencyId) &&
         Objects.equals(this.amount, currencyTransferSpecificResponse.amount) &&
         Objects.equals(this.transactionHash, currencyTransferSpecificResponse.transactionHash) &&
         Objects.equals(this.createDate, currencyTransferSpecificResponse.createDate) &&
@@ -221,7 +221,7 @@ public class CurrencyTransferSpecificResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, senderWalletId, receiverWalletId, currencySymbol, amount, transactionHash, createDate, updateDate);
+    return Objects.hash(id, senderWalletId, receiverWalletId, currencyId, amount, transactionHash, createDate, updateDate);
   }
 
 
@@ -233,7 +233,7 @@ public class CurrencyTransferSpecificResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    senderWalletId: ").append(toIndentedString(senderWalletId)).append("\n");
     sb.append("    receiverWalletId: ").append(toIndentedString(receiverWalletId)).append("\n");
-    sb.append("    currencySymbol: ").append(toIndentedString(currencySymbol)).append("\n");
+    sb.append("    currencyId: ").append(toIndentedString(currencyId)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");

@@ -44,7 +44,7 @@ describe 'CurrencyTransferPayload' do
     end
   end
 
-  describe 'test attribute "currency_symbol"' do
+  describe 'test attribute "currency_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

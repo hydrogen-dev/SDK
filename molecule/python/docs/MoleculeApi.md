@@ -992,7 +992,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tokens**
-> TokenGetResponse get_tokens(page=page, size=size, order_by=order_by, ascending=ascending)
+> TokenGetResponse get_tokens(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all tokens defined for your firm
 
@@ -1024,10 +1024,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all tokens defined for your firm
-    api_response = api_instance.get_tokens(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_tokens(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_tokens: %s\n" % e)
@@ -1041,6 +1042,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -1306,7 +1308,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_wallet_keys**
-> WalletKeyGetResponse get_wallet_keys(page=page, size=size, order_by=order_by, ascending=ascending)
+> WalletKeyGetResponse get_wallet_keys(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get all wallet keys associated with wallets defined for your firm.
 
@@ -1338,10 +1340,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get all wallet keys associated with wallets defined for your firm.
-    api_response = api_instance.get_wallet_keys(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_wallet_keys(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_wallet_keys: %s\n" % e)
@@ -1355,6 +1358,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -1372,7 +1376,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_wallets**
-> WalletGetResponse get_wallets(page=page, size=size, order_by=order_by, ascending=ascending)
+> WalletGetResponse get_wallets(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all wallets defined for your firm
 
@@ -1404,10 +1408,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all wallets defined for your firm
-    api_response = api_instance.get_wallets(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_wallets(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_wallets: %s\n" % e)
@@ -1421,6 +1426,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 
@@ -1498,7 +1504,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_webhooks**
-> WebhookGetResponse get_webhooks(page=page, size=size, order_by=order_by, ascending=ascending)
+> WebhookGetResponse get_webhooks(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
 
 Get information for all webhooks defined for your firm
 
@@ -1530,10 +1536,11 @@ page = 0 # int | Page number for the page that should be returned as the startin
 size = 25 # int | The number or records to be included per page. The default is 25. There is no max value. (optional) (default to 25)
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
+filter = 'filter_example' # str | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
 
 try:
     # Get information for all webhooks defined for your firm
-    api_response = api_instance.get_webhooks(page=page, size=size, order_by=order_by, ascending=ascending)
+    api_response = api_instance.get_webhooks(page=page, size=size, order_by=order_by, ascending=ascending, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_webhooks: %s\n" % e)
@@ -1547,6 +1554,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **filter** | **str**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional] 
 
 ### Return type
 

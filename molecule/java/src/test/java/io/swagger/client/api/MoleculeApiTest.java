@@ -351,7 +351,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        TokenGetResponse response = api.getTokens(page, size, orderBy, ascending);
+        String filter = null;
+        TokenGetResponse response = api.getTokens(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -438,7 +439,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        WalletKeyGetResponse response = api.getWalletKeys(page, size, orderBy, ascending);
+        String filter = null;
+        WalletKeyGetResponse response = api.getWalletKeys(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -457,7 +459,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        WalletGetResponse response = api.getWallets(page, size, orderBy, ascending);
+        String filter = null;
+        WalletGetResponse response = api.getWallets(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }
@@ -492,7 +495,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        WebhookGetResponse response = api.getWebhooks(page, size, orderBy, ascending);
+        String filter = null;
+        WebhookGetResponse response = api.getWebhooks(page, size, orderBy, ascending, filter);
 
         // TODO: test validations
     }

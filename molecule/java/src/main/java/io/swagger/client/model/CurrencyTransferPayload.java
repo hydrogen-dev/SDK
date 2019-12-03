@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CurrencyTransferPayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-21T12:13:20.984-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-03T17:23:35.601-05:00")
 public class CurrencyTransferPayload {
   @SerializedName("sender_wallet_id")
   private UUID senderWalletId = null;
@@ -37,8 +37,8 @@ public class CurrencyTransferPayload {
   @SerializedName("receiver_wallet_id")
   private UUID receiverWalletId = null;
 
-  @SerializedName("currency_symbol")
-  private String currencySymbol = null;
+  @SerializedName("currency_id")
+  private UUID currencyId = null;
 
   @SerializedName("amount")
   private BigDecimal amount = null;
@@ -79,22 +79,22 @@ public class CurrencyTransferPayload {
     this.receiverWalletId = receiverWalletId;
   }
 
-  public CurrencyTransferPayload currencySymbol(String currencySymbol) {
-    this.currencySymbol = currencySymbol;
+  public CurrencyTransferPayload currencyId(UUID currencyId) {
+    this.currencyId = currencyId;
     return this;
   }
 
    /**
-   * The uuid of the token being transferred.
-   * @return currencySymbol
+   * The uuid of the currency being transferred.
+   * @return currencyId
   **/
-  @ApiModelProperty(required = true, value = "The uuid of the token being transferred.")
-  public String getCurrencySymbol() {
-    return currencySymbol;
+  @ApiModelProperty(required = true, value = "The uuid of the currency being transferred.")
+  public UUID getCurrencyId() {
+    return currencyId;
   }
 
-  public void setCurrencySymbol(String currencySymbol) {
-    this.currencySymbol = currencySymbol;
+  public void setCurrencyId(UUID currencyId) {
+    this.currencyId = currencyId;
   }
 
   public CurrencyTransferPayload amount(BigDecimal amount) {
@@ -103,10 +103,10 @@ public class CurrencyTransferPayload {
   }
 
    /**
-   * Amount of tokens to be transferred.
+   * Amount of currencies to be transferred.
    * @return amount
   **/
-  @ApiModelProperty(required = true, value = "Amount of tokens to be transferred.")
+  @ApiModelProperty(required = true, value = "Amount of currencies to be transferred.")
   public BigDecimal getAmount() {
     return amount;
   }
@@ -127,13 +127,13 @@ public class CurrencyTransferPayload {
     CurrencyTransferPayload currencyTransferPayload = (CurrencyTransferPayload) o;
     return Objects.equals(this.senderWalletId, currencyTransferPayload.senderWalletId) &&
         Objects.equals(this.receiverWalletId, currencyTransferPayload.receiverWalletId) &&
-        Objects.equals(this.currencySymbol, currencyTransferPayload.currencySymbol) &&
+        Objects.equals(this.currencyId, currencyTransferPayload.currencyId) &&
         Objects.equals(this.amount, currencyTransferPayload.amount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(senderWalletId, receiverWalletId, currencySymbol, amount);
+    return Objects.hash(senderWalletId, receiverWalletId, currencyId, amount);
   }
 
 
@@ -144,7 +144,7 @@ public class CurrencyTransferPayload {
     
     sb.append("    senderWalletId: ").append(toIndentedString(senderWalletId)).append("\n");
     sb.append("    receiverWalletId: ").append(toIndentedString(receiverWalletId)).append("\n");
-    sb.append("    currencySymbol: ").append(toIndentedString(currencySymbol)).append("\n");
+    sb.append("    currencyId: ").append(toIndentedString(currencyId)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();

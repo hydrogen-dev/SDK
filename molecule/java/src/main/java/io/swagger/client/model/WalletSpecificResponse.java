@@ -33,7 +33,7 @@ import java.util.UUID;
 /**
  * WalletSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-21T12:13:20.984-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-03T17:23:35.601-05:00")
 public class WalletSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -48,7 +48,7 @@ public class WalletSpecificResponse {
   private String type = null;
 
   @SerializedName("clients")
-  private List<WalletCreateClient> clients = null;
+  private List<WalletCreateClient> clients = new ArrayList<WalletCreateClient>();
 
   @SerializedName("token_whitelists")
   private List<WalletCreateWhitelist> tokenWhitelists = null;
@@ -143,9 +143,6 @@ public class WalletSpecificResponse {
   }
 
   public WalletSpecificResponse addClientsItem(WalletCreateClient clientsItem) {
-    if (this.clients == null) {
-      this.clients = new ArrayList<WalletCreateClient>();
-    }
     this.clients.add(clientsItem);
     return this;
   }
@@ -154,7 +151,7 @@ public class WalletSpecificResponse {
    * List of nucleus clients associated with the wallet and their association type
    * @return clients
   **/
-  @ApiModelProperty(value = "List of nucleus clients associated with the wallet and their association type")
+  @ApiModelProperty(required = true, value = "List of nucleus clients associated with the wallet and their association type")
   public List<WalletCreateClient> getClients() {
     return clients;
   }

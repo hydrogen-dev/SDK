@@ -34,7 +34,7 @@ class CurrencyBalanceSpecificResponse(object):
         'id': 'str',
         'balance': 'float',
         'wallet_id': 'str',
-        'symbol': 'str',
+        'currency_id': 'str',
         'create_date': 'str',
         'update_date': 'str'
     }
@@ -43,18 +43,18 @@ class CurrencyBalanceSpecificResponse(object):
         'id': 'id',
         'balance': 'balance',
         'wallet_id': 'wallet_id',
-        'symbol': 'symbol',
+        'currency_id': 'currency_id',
         'create_date': 'create_date',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, balance=None, wallet_id=None, symbol=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, balance=None, wallet_id=None, currency_id=None, create_date=None, update_date=None):  # noqa: E501
         """CurrencyBalanceSpecificResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._balance = None
         self._wallet_id = None
-        self._symbol = None
+        self._currency_id = None
         self._create_date = None
         self._update_date = None
         self.discriminator = None
@@ -65,8 +65,8 @@ class CurrencyBalanceSpecificResponse(object):
             self.balance = balance
         if wallet_id is not None:
             self.wallet_id = wallet_id
-        if symbol is not None:
-            self.symbol = symbol
+        if currency_id is not None:
+            self.currency_id = currency_id
         if create_date is not None:
             self.create_date = create_date
         if update_date is not None:
@@ -142,27 +142,27 @@ class CurrencyBalanceSpecificResponse(object):
         self._wallet_id = wallet_id
 
     @property
-    def symbol(self):
-        """Gets the symbol of this CurrencyBalanceSpecificResponse.  # noqa: E501
+    def currency_id(self):
+        """Gets the currency_id of this CurrencyBalanceSpecificResponse.  # noqa: E501
 
-        The symbol of the currency. Currently supports ETH only.  # noqa: E501
+        The ID of the currency.  # noqa: E501
 
-        :return: The symbol of this CurrencyBalanceSpecificResponse.  # noqa: E501
+        :return: The currency_id of this CurrencyBalanceSpecificResponse.  # noqa: E501
         :rtype: str
         """
-        return self._symbol
+        return self._currency_id
 
-    @symbol.setter
-    def symbol(self, symbol):
-        """Sets the symbol of this CurrencyBalanceSpecificResponse.
+    @currency_id.setter
+    def currency_id(self, currency_id):
+        """Sets the currency_id of this CurrencyBalanceSpecificResponse.
 
-        The symbol of the currency. Currently supports ETH only.  # noqa: E501
+        The ID of the currency.  # noqa: E501
 
-        :param symbol: The symbol of this CurrencyBalanceSpecificResponse.  # noqa: E501
+        :param currency_id: The currency_id of this CurrencyBalanceSpecificResponse.  # noqa: E501
         :type: str
         """
 
-        self._symbol = symbol
+        self._currency_id = currency_id
 
     @property
     def create_date(self):

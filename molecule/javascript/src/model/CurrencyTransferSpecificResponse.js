@@ -78,8 +78,8 @@
       if (data.hasOwnProperty('receiver_wallet_id')) {
         obj['receiver_wallet_id'] = ApiClient.convertToType(data['receiver_wallet_id'], 'String');
       }
-      if (data.hasOwnProperty('currency_symbol')) {
-        obj['currency_symbol'] = ApiClient.convertToType(data['currency_symbol'], 'String');
+      if (data.hasOwnProperty('currency_id')) {
+        obj['currency_id'] = ApiClient.convertToType(data['currency_id'], 'String');
       }
       if (data.hasOwnProperty('amount')) {
         obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
@@ -113,10 +113,10 @@
    */
   exports.prototype['receiver_wallet_id'] = undefined;
   /**
-   * Symbol of the currency being transferred
-   * @member {String} currency_symbol
+   * ID of the currency being transferred
+   * @member {String} currency_id
    */
-  exports.prototype['currency_symbol'] = undefined;
+  exports.prototype['currency_id'] = undefined;
   /**
    * Amount of currencies being transferred
    * @member {Number} amount

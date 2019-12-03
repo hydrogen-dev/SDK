@@ -69,8 +69,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property currencySymbol (base name: "currency_symbol")', function() {
-      // uncomment below and update the code to test the property currencySymbol
+    it('should have the property currencyId (base name: "currency_id")', function() {
+      // uncomment below and update the code to test the property currencyId
       //var instance = new molecule_api.CurrencyTransferPayload();
       //expect(instance).to.be();
     });

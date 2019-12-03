@@ -20,10 +20,10 @@ module MoleculeApi
     # The uuid of the receiver wallet.
     attr_accessor :receiver_wallet_id
 
-    # The uuid of the token being transferred.
-    attr_accessor :currency_symbol
+    # The uuid of the currency being transferred.
+    attr_accessor :currency_id
 
-    # Amount of tokens to be transferred.
+    # Amount of currencies to be transferred.
     attr_accessor :amount
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -31,7 +31,7 @@ module MoleculeApi
       {
         :'sender_wallet_id' => :'sender_wallet_id',
         :'receiver_wallet_id' => :'receiver_wallet_id',
-        :'currency_symbol' => :'currency_symbol',
+        :'currency_id' => :'currency_id',
         :'amount' => :'amount'
       }
     end
@@ -41,7 +41,7 @@ module MoleculeApi
       {
         :'sender_wallet_id' => :'String',
         :'receiver_wallet_id' => :'String',
-        :'currency_symbol' => :'String',
+        :'currency_id' => :'String',
         :'amount' => :'Float'
       }
     end
@@ -62,8 +62,8 @@ module MoleculeApi
         self.receiver_wallet_id = attributes[:'receiver_wallet_id']
       end
 
-      if attributes.has_key?(:'currency_symbol')
-        self.currency_symbol = attributes[:'currency_symbol']
+      if attributes.has_key?(:'currency_id')
+        self.currency_id = attributes[:'currency_id']
       end
 
       if attributes.has_key?(:'amount')
@@ -83,8 +83,8 @@ module MoleculeApi
         invalid_properties.push('invalid value for "receiver_wallet_id", receiver_wallet_id cannot be nil.')
       end
 
-      if @currency_symbol.nil?
-        invalid_properties.push('invalid value for "currency_symbol", currency_symbol cannot be nil.')
+      if @currency_id.nil?
+        invalid_properties.push('invalid value for "currency_id", currency_id cannot be nil.')
       end
 
       if @amount.nil?
@@ -99,7 +99,7 @@ module MoleculeApi
     def valid?
       return false if @sender_wallet_id.nil?
       return false if @receiver_wallet_id.nil?
-      return false if @currency_symbol.nil?
+      return false if @currency_id.nil?
       return false if @amount.nil?
       true
     end
@@ -111,7 +111,7 @@ module MoleculeApi
       self.class == o.class &&
           sender_wallet_id == o.sender_wallet_id &&
           receiver_wallet_id == o.receiver_wallet_id &&
-          currency_symbol == o.currency_symbol &&
+          currency_id == o.currency_id &&
           amount == o.amount
     end
 
@@ -124,7 +124,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [sender_wallet_id, receiver_wallet_id, currency_symbol, amount].hash
+      [sender_wallet_id, receiver_wallet_id, currency_id, amount].hash
     end
 
     # Builds the object from hash

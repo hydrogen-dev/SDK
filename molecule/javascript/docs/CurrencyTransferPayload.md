@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **senderWalletId** | **String** | The uuid of the sender wallet. | 
 **receiverWalletId** | **String** | The uuid of the receiver wallet. | 
-**currencySymbol** | **String** | The uuid of the token being transferred. | 
-**amount** | **Number** | Amount of tokens to be transferred. | 
+**currencyId** | **String** | The uuid of the currency being transferred. | 
+**amount** | **Number** | Amount of currencies to be transferred. | 
 
 

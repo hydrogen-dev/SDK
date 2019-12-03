@@ -1660,7 +1660,8 @@ definitions:
             format: uuid
             description: The ID of the associated wallet
           currency_id:
-            type: UUID
+            type: string
+            format: uuid
             description: The ID of the currency.
           create_date:
             type: string
@@ -1838,7 +1839,8 @@ definitions:
             format: uuid
             description: ID of the receiver wallet
           currency_id:
-            type: UUID
+            type: string
+            format: uuid
             description: ID of the currency being transferred
           amount:
             type: number

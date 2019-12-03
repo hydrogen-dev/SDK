@@ -46,15 +46,15 @@
    * @class
    * @param senderWalletId {String} The uuid of the sender wallet.
    * @param receiverWalletId {String} The uuid of the receiver wallet.
-   * @param currencySymbol {String} The uuid of the token being transferred.
-   * @param amount {Number} Amount of tokens to be transferred.
+   * @param currencyId {String} The uuid of the currency being transferred.
+   * @param amount {Number} Amount of currencies to be transferred.
    */
-  var exports = function(senderWalletId, receiverWalletId, currencySymbol, amount) {
+  var exports = function(senderWalletId, receiverWalletId, currencyId, amount) {
     var _this = this;
 
     _this['sender_wallet_id'] = senderWalletId;
     _this['receiver_wallet_id'] = receiverWalletId;
-    _this['currency_symbol'] = currencySymbol;
+    _this['currency_id'] = currencyId;
     _this['amount'] = amount;
   };
 
@@ -75,8 +75,8 @@
       if (data.hasOwnProperty('receiver_wallet_id')) {
         obj['receiver_wallet_id'] = ApiClient.convertToType(data['receiver_wallet_id'], 'String');
       }
-      if (data.hasOwnProperty('currency_symbol')) {
-        obj['currency_symbol'] = ApiClient.convertToType(data['currency_symbol'], 'String');
+      if (data.hasOwnProperty('currency_id')) {
+        obj['currency_id'] = ApiClient.convertToType(data['currency_id'], 'String');
       }
       if (data.hasOwnProperty('amount')) {
         obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
@@ -96,12 +96,12 @@
    */
   exports.prototype['receiver_wallet_id'] = undefined;
   /**
-   * The uuid of the token being transferred.
-   * @member {String} currency_symbol
+   * The uuid of the currency being transferred.
+   * @member {String} currency_id
    */
-  exports.prototype['currency_symbol'] = undefined;
+  exports.prototype['currency_id'] = undefined;
   /**
-   * Amount of tokens to be transferred.
+   * Amount of currencies to be transferred.
    * @member {Number} amount
    */
   exports.prototype['amount'] = undefined;

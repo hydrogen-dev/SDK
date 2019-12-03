@@ -34,7 +34,7 @@ class CurrencyTransferSpecificResponse(object):
         'id': 'str',
         'sender_wallet_id': 'str',
         'receiver_wallet_id': 'str',
-        'currency_symbol': 'str',
+        'currency_id': 'str',
         'amount': 'float',
         'transaction_hash': 'str',
         'create_date': 'str',
@@ -45,20 +45,20 @@ class CurrencyTransferSpecificResponse(object):
         'id': 'id',
         'sender_wallet_id': 'sender_wallet_id',
         'receiver_wallet_id': 'receiver_wallet_id',
-        'currency_symbol': 'currency_symbol',
+        'currency_id': 'currency_id',
         'amount': 'amount',
         'transaction_hash': 'transaction_hash',
         'create_date': 'create_date',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, sender_wallet_id=None, receiver_wallet_id=None, currency_symbol=None, amount=None, transaction_hash=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, sender_wallet_id=None, receiver_wallet_id=None, currency_id=None, amount=None, transaction_hash=None, create_date=None, update_date=None):  # noqa: E501
         """CurrencyTransferSpecificResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._sender_wallet_id = None
         self._receiver_wallet_id = None
-        self._currency_symbol = None
+        self._currency_id = None
         self._amount = None
         self._transaction_hash = None
         self._create_date = None
@@ -71,8 +71,8 @@ class CurrencyTransferSpecificResponse(object):
             self.sender_wallet_id = sender_wallet_id
         if receiver_wallet_id is not None:
             self.receiver_wallet_id = receiver_wallet_id
-        if currency_symbol is not None:
-            self.currency_symbol = currency_symbol
+        if currency_id is not None:
+            self.currency_id = currency_id
         if amount is not None:
             self.amount = amount
         if transaction_hash is not None:
@@ -152,27 +152,27 @@ class CurrencyTransferSpecificResponse(object):
         self._receiver_wallet_id = receiver_wallet_id
 
     @property
-    def currency_symbol(self):
-        """Gets the currency_symbol of this CurrencyTransferSpecificResponse.  # noqa: E501
+    def currency_id(self):
+        """Gets the currency_id of this CurrencyTransferSpecificResponse.  # noqa: E501
 
-        Symbol of the currency being transferred  # noqa: E501
+        ID of the currency being transferred  # noqa: E501
 
-        :return: The currency_symbol of this CurrencyTransferSpecificResponse.  # noqa: E501
+        :return: The currency_id of this CurrencyTransferSpecificResponse.  # noqa: E501
         :rtype: str
         """
-        return self._currency_symbol
+        return self._currency_id
 
-    @currency_symbol.setter
-    def currency_symbol(self, currency_symbol):
-        """Sets the currency_symbol of this CurrencyTransferSpecificResponse.
+    @currency_id.setter
+    def currency_id(self, currency_id):
+        """Sets the currency_id of this CurrencyTransferSpecificResponse.
 
-        Symbol of the currency being transferred  # noqa: E501
+        ID of the currency being transferred  # noqa: E501
 
-        :param currency_symbol: The currency_symbol of this CurrencyTransferSpecificResponse.  # noqa: E501
+        :param currency_id: The currency_id of this CurrencyTransferSpecificResponse.  # noqa: E501
         :type: str
         """
 
-        self._currency_symbol = currency_symbol
+        self._currency_id = currency_id
 
     @property
     def amount(self):

@@ -23,8 +23,8 @@ module MoleculeApi
     # The ID of the associated wallet
     attr_accessor :wallet_id
 
-    # The symbol of the currency. Currently supports ETH only.
-    attr_accessor :symbol
+    # The ID of the currency.
+    attr_accessor :currency_id
 
     # Datetime the currency balance record was created
     attr_accessor :create_date
@@ -38,7 +38,7 @@ module MoleculeApi
         :'id' => :'id',
         :'balance' => :'balance',
         :'wallet_id' => :'wallet_id',
-        :'symbol' => :'symbol',
+        :'currency_id' => :'currency_id',
         :'create_date' => :'create_date',
         :'update_date' => :'update_date'
       }
@@ -50,7 +50,7 @@ module MoleculeApi
         :'id' => :'String',
         :'balance' => :'Float',
         :'wallet_id' => :'String',
-        :'symbol' => :'String',
+        :'currency_id' => :'String',
         :'create_date' => :'String',
         :'update_date' => :'String'
       }
@@ -76,8 +76,8 @@ module MoleculeApi
         self.wallet_id = attributes[:'wallet_id']
       end
 
-      if attributes.has_key?(:'symbol')
-        self.symbol = attributes[:'symbol']
+      if attributes.has_key?(:'currency_id')
+        self.currency_id = attributes[:'currency_id']
       end
 
       if attributes.has_key?(:'create_date')
@@ -110,7 +110,7 @@ module MoleculeApi
           id == o.id &&
           balance == o.balance &&
           wallet_id == o.wallet_id &&
-          symbol == o.symbol &&
+          currency_id == o.currency_id &&
           create_date == o.create_date &&
           update_date == o.update_date
     end
@@ -124,7 +124,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, balance, wallet_id, symbol, create_date, update_date].hash
+      [id, balance, wallet_id, currency_id, create_date, update_date].hash
     end
 
     # Builds the object from hash

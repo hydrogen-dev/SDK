@@ -23,8 +23,8 @@ module MoleculeApi
     # ID of the receiver wallet
     attr_accessor :receiver_wallet_id
 
-    # Symbol of the currency being transferred
-    attr_accessor :currency_symbol
+    # ID of the currency being transferred
+    attr_accessor :currency_id
 
     # Amount of currencies being transferred
     attr_accessor :amount
@@ -44,7 +44,7 @@ module MoleculeApi
         :'id' => :'id',
         :'sender_wallet_id' => :'sender_wallet_id',
         :'receiver_wallet_id' => :'receiver_wallet_id',
-        :'currency_symbol' => :'currency_symbol',
+        :'currency_id' => :'currency_id',
         :'amount' => :'amount',
         :'transaction_hash' => :'transaction_hash',
         :'create_date' => :'create_date',
@@ -58,7 +58,7 @@ module MoleculeApi
         :'id' => :'String',
         :'sender_wallet_id' => :'String',
         :'receiver_wallet_id' => :'String',
-        :'currency_symbol' => :'String',
+        :'currency_id' => :'String',
         :'amount' => :'Float',
         :'transaction_hash' => :'String',
         :'create_date' => :'String',
@@ -86,8 +86,8 @@ module MoleculeApi
         self.receiver_wallet_id = attributes[:'receiver_wallet_id']
       end
 
-      if attributes.has_key?(:'currency_symbol')
-        self.currency_symbol = attributes[:'currency_symbol']
+      if attributes.has_key?(:'currency_id')
+        self.currency_id = attributes[:'currency_id']
       end
 
       if attributes.has_key?(:'amount')
@@ -128,7 +128,7 @@ module MoleculeApi
           id == o.id &&
           sender_wallet_id == o.sender_wallet_id &&
           receiver_wallet_id == o.receiver_wallet_id &&
-          currency_symbol == o.currency_symbol &&
+          currency_id == o.currency_id &&
           amount == o.amount &&
           transaction_hash == o.transaction_hash &&
           create_date == o.create_date &&
@@ -144,7 +144,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, sender_wallet_id, receiver_wallet_id, currency_symbol, amount, transaction_hash, create_date, update_date].hash
+      [id, sender_wallet_id, receiver_wallet_id, currency_id, amount, transaction_hash, create_date, update_date].hash
     end
 
     # Builds the object from hash

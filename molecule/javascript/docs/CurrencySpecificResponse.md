@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** | The id of the currency | [optional] 
 **name** | **String** | The name of the currency | [optional] 
 **decimalPoints** | **Number** | Decimal points of the currency | [optional] 
 **symbol** | **String** | Symbol of the currency | [optional] 

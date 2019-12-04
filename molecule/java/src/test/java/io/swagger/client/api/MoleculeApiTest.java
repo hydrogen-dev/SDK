@@ -119,8 +119,9 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        CurrencyGetResponse response = api.getCurrencies(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        String symbol = null;
+        CurrencyGetResponse response = api.getCurrencies(page, size, orderBy, ascending, getLatest, symbol);
 
         // TODO: test validations
     }
@@ -171,8 +172,10 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        CurrencyBalanceGetResponse response = api.getCurrencyBalances(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        String currencyId = null;
+        String walletId = null;
+        CurrencyBalanceGetResponse response = api.getCurrencyBalances(page, size, orderBy, ascending, getLatest, currencyId, walletId);
 
         // TODO: test validations
     }
@@ -207,8 +210,12 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        CurrencyTransferGetResponse response = api.getCurrencyTransfers(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        String currencyId = null;
+        String walletId = null;
+        String senderWalletId = null;
+        String receiverWalletId = null;
+        CurrencyTransferGetResponse response = api.getCurrencyTransfers(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId);
 
         // TODO: test validations
     }
@@ -259,8 +266,10 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        TokenBalanceGetResponse response = api.getTokenBalances(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        String tokenId = null;
+        String walletId = null;
+        TokenBalanceGetResponse response = api.getTokenBalances(page, size, orderBy, ascending, getLatest, tokenId, walletId);
 
         // TODO: test validations
     }
@@ -279,8 +288,9 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        TokenSupplyGetResponse response = api.getTokenSupplies(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        String tokenId = null;
+        TokenSupplyGetResponse response = api.getTokenSupplies(page, size, orderBy, ascending, getLatest, tokenId);
 
         // TODO: test validations
     }
@@ -331,8 +341,12 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        TokenTransferGetResponse response = api.getTokenTransfers(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        String tokenId = null;
+        String walletId = null;
+        String senderWalletId = null;
+        String receiverWalletId = null;
+        TokenTransferGetResponse response = api.getTokenTransfers(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId);
 
         // TODO: test validations
     }
@@ -351,8 +365,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        TokenGetResponse response = api.getTokens(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        TokenGetResponse response = api.getTokens(page, size, orderBy, ascending, getLatest);
 
         // TODO: test validations
     }
@@ -387,8 +401,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        TransactionStatusGetResponse response = api.getTransactionStatuses(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        TransactionStatusGetResponse response = api.getTransactionStatuses(page, size, orderBy, ascending, getLatest);
 
         // TODO: test validations
     }
@@ -439,8 +453,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        WalletKeyGetResponse response = api.getWalletKeys(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        WalletKeyGetResponse response = api.getWalletKeys(page, size, orderBy, ascending, getLatest);
 
         // TODO: test validations
     }
@@ -459,8 +473,10 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        WalletGetResponse response = api.getWallets(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        String nucleusClientId = null;
+        Boolean isPrimary = null;
+        WalletGetResponse response = api.getWallets(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary);
 
         // TODO: test validations
     }
@@ -495,8 +511,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        String filter = null;
-        WebhookGetResponse response = api.getWebhooks(page, size, orderBy, ascending, filter);
+        Boolean getLatest = null;
+        WebhookGetResponse response = api.getWebhooks(page, size, orderBy, ascending, getLatest);
 
         // TODO: test validations
     }

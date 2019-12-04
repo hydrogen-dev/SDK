@@ -69,7 +69,15 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
+        - in: query
+          name: nucleus_client_id
+          required: false
+          type: string
+        - in: query
+          name: is_primary
+          required: false
+          type: boolean
     post:
       operationId: postWallet
       summary: Create a wallet under your firm.
@@ -204,7 +212,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
     post:
       operationId: postWalletKey
       summary: Associate an existing key pair with a wallet defined for your firm.
@@ -340,7 +348,9 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
+        - $ref: '#/parameters/query_currency_id'
+        - $ref: '#/parameters/query_wallet_id'
 
   /molecule/v1/currency_balance/{currency_balance_id}:
     get:
@@ -408,7 +418,9 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
+        - $ref: '#/parameters/query_token_id'
+        - $ref: '#/parameters/query_wallet_id'
 
   /molecule/v1/token_balance/{token_balance_id}:
     get:
@@ -476,7 +488,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
     post:
       operationId: postToken
       summary: Create a token under your firm.
@@ -818,7 +830,8 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
+        - $ref: '#/parameters/query_token_id'
 
   /molecule/v1/token_supply/{token_supply_id}:
     get:
@@ -853,6 +866,44 @@ paths:
       - $ref: '#/parameters/path_token_supply_uuid'
 
   /molecule/v1/token_transfer:
+    get:
+      operationId: getTokenTransfers
+      summary: Get information for all token transfers
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/token_transfer_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_get_latest'
+        - $ref: '#/parameters/query_token_id'
+        - $ref: '#/parameters/query_wallet_id'
+        - $ref: '#/parameters/query_sender_wallet_id'
+        - $ref: '#/parameters/query_receiver_wallet_id'
     post:
       operationId: postTokenTransfer
       summary: Transfer tokens between wallets
@@ -887,40 +938,6 @@ paths:
           $ref: '#/responses/500'
         503:
           $ref: '#/responses/503'
-    get:
-      operationId: getTokenTransfers
-      summary: Get information for all token transfers
-      security:
-        - oauth: [molecule]
-      externalDocs:
-        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts
-      tags:
-        - Molecule
-      responses:
-        200:
-          description: 'Successful response'
-          schema:
-            $ref: '#/definitions/token_transfer_get_response'
-        400:
-          $ref: '#/responses/400'
-        401:
-          $ref: '#/responses/401'
-        403:
-          $ref: '#/responses/403'
-        404:
-          $ref: '#/responses/404'
-        429:
-          $ref: '#/responses/429'
-        500:
-          $ref: '#/responses/500'
-        503:
-          $ref: '#/responses/503'
-      parameters:
-        - $ref: '#/parameters/query_pagination_page'
-        - $ref: '#/parameters/query_pagination_size'
-        - $ref: '#/parameters/query_pagination_orderby'
-        - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
 
   /molecule/v1/token_transfer/{token_transfer_id}:
     get:
@@ -955,6 +972,44 @@ paths:
       - $ref: '#/parameters/path_token_transfer_uuid'
 
   /molecule/v1/currency_transfer:
+    get:
+      operationId: getCurrencyTransfers
+      summary: Get information for all currency transfers
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_transfer_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_get_latest'
+        - $ref: '#/parameters/query_currency_id'
+        - $ref: '#/parameters/query_wallet_id'
+        - $ref: '#/parameters/query_sender_wallet_id'
+        - $ref: '#/parameters/query_receiver_wallet_id'
     post:
       operationId: postCurrencyTransfer
       summary: Transfer currency between wallets
@@ -989,40 +1044,6 @@ paths:
           $ref: '#/responses/500'
         503:
           $ref: '#/responses/503'
-    get:
-      operationId: getCurrencyTransfers
-      summary: Get information for all currency transfers
-      security:
-        - oauth: [molecule]
-      externalDocs:
-        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts
-      tags:
-        - Molecule
-      responses:
-        200:
-          description: 'Successful response'
-          schema:
-            $ref: '#/definitions/currency_transfer_get_response'
-        400:
-          $ref: '#/responses/400'
-        401:
-          $ref: '#/responses/401'
-        403:
-          $ref: '#/responses/403'
-        404:
-          $ref: '#/responses/404'
-        429:
-          $ref: '#/responses/429'
-        500:
-          $ref: '#/responses/500'
-        503:
-          $ref: '#/responses/503'
-      parameters:
-        - $ref: '#/parameters/query_pagination_page'
-        - $ref: '#/parameters/query_pagination_size'
-        - $ref: '#/parameters/query_pagination_orderby'
-        - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
 
   /molecule/v1/currency_transfer/{currency_transfer_id}:
     get:
@@ -1090,7 +1111,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
 
   /molecule/v1/transaction_status/{transaction_status_id}:
     get:
@@ -1158,7 +1179,7 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
     post:
       operationId: postWebhook
       summary: Create a webhook under your firm.
@@ -1320,7 +1341,11 @@ paths:
         - $ref: '#/parameters/query_pagination_size'
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
-        - $ref: '#/parameters/query_filter'
+        - $ref: '#/parameters/query_get_latest'
+        - in: query
+          name: symbol
+          required: false
+          type: string
 
   /molecule/v1/currency/{currency_id}/:
     get:
@@ -1390,10 +1415,40 @@ parameters:
     default: false
 
   # Filter query params
-  query_filter:
+  query_get_latest:
     in: query
-    name: filter
-    description: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+    name: get_latest
+    description: Retrieves the latest entry
+    required: false
+    type: boolean
+  query_token_id:
+    in: query
+    name: token_id
+    description: Filters results by their token ids
+    required: false
+    type: string
+  query_currency_id:
+    in: query
+    name: currency_id
+    description: Filters results by their currency ids
+    required: false
+    type: string
+  query_wallet_id:
+    in: query
+    name: wallet_id
+    description: Filters results by their wallet ids
+    required: false
+    type: string
+  query_sender_wallet_id:
+    in: query
+    name: sender_wallet_id
+    description: Filters results by their sender wallet ids
+    required: false
+    type: string
+  query_receiver_wallet_id:
+    in: query
+    name: receiver_wallet_id
+    description: Filters results by their receiver wallet ids
     required: false
     type: string
 
@@ -1935,6 +1990,10 @@ definitions:
     allOf:
       - type: object
       - properties:
+          id:
+            type: string
+            format: uuid
+            description: The id of the currency
           name:
             type: string
             description: The name of the currency

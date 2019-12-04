@@ -165,7 +165,7 @@ null (empty response body)
 
 <a name="getCurrencies"></a>
 # **getCurrencies**
-> CurrencyGetResponse getCurrencies(page, size, orderBy, ascending, filter)
+> CurrencyGetResponse getCurrencies(page, size, orderBy, ascending, getLatest, symbol)
 
 Get information for all currencies defined for your firm
 
@@ -198,9 +198,10 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String symbol = "symbol_example"; // String | 
 try {
-    CurrencyGetResponse result = apiInstance.getCurrencies(page, size, orderBy, ascending, filter);
+    CurrencyGetResponse result = apiInstance.getCurrencies(page, size, orderBy, ascending, getLatest, symbol);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getCurrencies");
@@ -216,7 +217,8 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **symbol** | **String**|  | [optional]
 
 ### Return type
 
@@ -353,7 +355,7 @@ Name | Type | Description  | Notes
 
 <a name="getCurrencyBalances"></a>
 # **getCurrencyBalances**
-> CurrencyBalanceGetResponse getCurrencyBalances(page, size, orderBy, ascending, filter)
+> CurrencyBalanceGetResponse getCurrencyBalances(page, size, orderBy, ascending, getLatest, currencyId, walletId)
 
 Get information for all currency balances recorded in your application.
 
@@ -386,9 +388,11 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String currencyId = "currencyId_example"; // String | Filters results by their currency ids
+String walletId = "walletId_example"; // String | Filters results by their wallet ids
 try {
-    CurrencyBalanceGetResponse result = apiInstance.getCurrencyBalances(page, size, orderBy, ascending, filter);
+    CurrencyBalanceGetResponse result = apiInstance.getCurrencyBalances(page, size, orderBy, ascending, getLatest, currencyId, walletId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getCurrencyBalances");
@@ -404,7 +408,9 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **currencyId** | **String**| Filters results by their currency ids | [optional]
+ **walletId** | **String**| Filters results by their wallet ids | [optional]
 
 ### Return type
 
@@ -481,7 +487,7 @@ Name | Type | Description  | Notes
 
 <a name="getCurrencyTransfers"></a>
 # **getCurrencyTransfers**
-> CurrencyTransferGetResponse getCurrencyTransfers(page, size, orderBy, ascending, filter)
+> CurrencyTransferGetResponse getCurrencyTransfers(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId)
 
 Get information for all currency transfers
 
@@ -514,9 +520,13 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String currencyId = "currencyId_example"; // String | Filters results by their currency ids
+String walletId = "walletId_example"; // String | Filters results by their wallet ids
+String senderWalletId = "senderWalletId_example"; // String | Filters results by their sender wallet ids
+String receiverWalletId = "receiverWalletId_example"; // String | Filters results by their receiver wallet ids
 try {
-    CurrencyTransferGetResponse result = apiInstance.getCurrencyTransfers(page, size, orderBy, ascending, filter);
+    CurrencyTransferGetResponse result = apiInstance.getCurrencyTransfers(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getCurrencyTransfers");
@@ -532,7 +542,11 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **currencyId** | **String**| Filters results by their currency ids | [optional]
+ **walletId** | **String**| Filters results by their wallet ids | [optional]
+ **senderWalletId** | **String**| Filters results by their sender wallet ids | [optional]
+ **receiverWalletId** | **String**| Filters results by their receiver wallet ids | [optional]
 
 ### Return type
 
@@ -669,7 +683,7 @@ Name | Type | Description  | Notes
 
 <a name="getTokenBalances"></a>
 # **getTokenBalances**
-> TokenBalanceGetResponse getTokenBalances(page, size, orderBy, ascending, filter)
+> TokenBalanceGetResponse getTokenBalances(page, size, orderBy, ascending, getLatest, tokenId, walletId)
 
 Get information for all token balances defined for your application.
 
@@ -702,9 +716,11 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String tokenId = "tokenId_example"; // String | Filters results by their token ids
+String walletId = "walletId_example"; // String | Filters results by their wallet ids
 try {
-    TokenBalanceGetResponse result = apiInstance.getTokenBalances(page, size, orderBy, ascending, filter);
+    TokenBalanceGetResponse result = apiInstance.getTokenBalances(page, size, orderBy, ascending, getLatest, tokenId, walletId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTokenBalances");
@@ -720,7 +736,9 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **tokenId** | **String**| Filters results by their token ids | [optional]
+ **walletId** | **String**| Filters results by their wallet ids | [optional]
 
 ### Return type
 
@@ -737,7 +755,7 @@ Name | Type | Description  | Notes
 
 <a name="getTokenSupplies"></a>
 # **getTokenSupplies**
-> TokenSupplyGetResponse getTokenSupplies(page, size, orderBy, ascending, filter)
+> TokenSupplyGetResponse getTokenSupplies(page, size, orderBy, ascending, getLatest, tokenId)
 
 Get information for all token supplies defined for your application.
 
@@ -770,9 +788,10 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String tokenId = "tokenId_example"; // String | Filters results by their token ids
 try {
-    TokenSupplyGetResponse result = apiInstance.getTokenSupplies(page, size, orderBy, ascending, filter);
+    TokenSupplyGetResponse result = apiInstance.getTokenSupplies(page, size, orderBy, ascending, getLatest, tokenId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTokenSupplies");
@@ -788,7 +807,8 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **tokenId** | **String**| Filters results by their token ids | [optional]
 
 ### Return type
 
@@ -925,7 +945,7 @@ Name | Type | Description  | Notes
 
 <a name="getTokenTransfers"></a>
 # **getTokenTransfers**
-> TokenTransferGetResponse getTokenTransfers(page, size, orderBy, ascending, filter)
+> TokenTransferGetResponse getTokenTransfers(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId)
 
 Get information for all token transfers
 
@@ -958,9 +978,13 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String tokenId = "tokenId_example"; // String | Filters results by their token ids
+String walletId = "walletId_example"; // String | Filters results by their wallet ids
+String senderWalletId = "senderWalletId_example"; // String | Filters results by their sender wallet ids
+String receiverWalletId = "receiverWalletId_example"; // String | Filters results by their receiver wallet ids
 try {
-    TokenTransferGetResponse result = apiInstance.getTokenTransfers(page, size, orderBy, ascending, filter);
+    TokenTransferGetResponse result = apiInstance.getTokenTransfers(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTokenTransfers");
@@ -976,7 +1000,11 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **tokenId** | **String**| Filters results by their token ids | [optional]
+ **walletId** | **String**| Filters results by their wallet ids | [optional]
+ **senderWalletId** | **String**| Filters results by their sender wallet ids | [optional]
+ **receiverWalletId** | **String**| Filters results by their receiver wallet ids | [optional]
 
 ### Return type
 
@@ -993,7 +1021,7 @@ Name | Type | Description  | Notes
 
 <a name="getTokens"></a>
 # **getTokens**
-> TokenGetResponse getTokens(page, size, orderBy, ascending, filter)
+> TokenGetResponse getTokens(page, size, orderBy, ascending, getLatest)
 
 Get information for all tokens defined for your firm
 
@@ -1026,9 +1054,9 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
 try {
-    TokenGetResponse result = apiInstance.getTokens(page, size, orderBy, ascending, filter);
+    TokenGetResponse result = apiInstance.getTokens(page, size, orderBy, ascending, getLatest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTokens");
@@ -1044,7 +1072,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
 
 ### Return type
 
@@ -1121,7 +1149,7 @@ Name | Type | Description  | Notes
 
 <a name="getTransactionStatuses"></a>
 # **getTransactionStatuses**
-> TransactionStatusGetResponse getTransactionStatuses(page, size, orderBy, ascending, filter)
+> TransactionStatusGetResponse getTransactionStatuses(page, size, orderBy, ascending, getLatest)
 
 Get status information for all transactions
 
@@ -1154,9 +1182,9 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
 try {
-    TransactionStatusGetResponse result = apiInstance.getTransactionStatuses(page, size, orderBy, ascending, filter);
+    TransactionStatusGetResponse result = apiInstance.getTransactionStatuses(page, size, orderBy, ascending, getLatest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTransactionStatuses");
@@ -1172,7 +1200,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
 
 ### Return type
 
@@ -1309,7 +1337,7 @@ Name | Type | Description  | Notes
 
 <a name="getWalletKeys"></a>
 # **getWalletKeys**
-> WalletKeyGetResponse getWalletKeys(page, size, orderBy, ascending, filter)
+> WalletKeyGetResponse getWalletKeys(page, size, orderBy, ascending, getLatest)
 
 Get all wallet keys associated with wallets defined for your firm.
 
@@ -1342,9 +1370,9 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
 try {
-    WalletKeyGetResponse result = apiInstance.getWalletKeys(page, size, orderBy, ascending, filter);
+    WalletKeyGetResponse result = apiInstance.getWalletKeys(page, size, orderBy, ascending, getLatest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getWalletKeys");
@@ -1360,7 +1388,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
 
 ### Return type
 
@@ -1377,7 +1405,7 @@ Name | Type | Description  | Notes
 
 <a name="getWallets"></a>
 # **getWallets**
-> WalletGetResponse getWallets(page, size, orderBy, ascending, filter)
+> WalletGetResponse getWallets(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary)
 
 Get information for all wallets defined for your firm
 
@@ -1410,9 +1438,11 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String nucleusClientId = "nucleusClientId_example"; // String | 
+Boolean isPrimary = true; // Boolean | 
 try {
-    WalletGetResponse result = apiInstance.getWallets(page, size, orderBy, ascending, filter);
+    WalletGetResponse result = apiInstance.getWallets(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getWallets");
@@ -1428,7 +1458,9 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **nucleusClientId** | **String**|  | [optional]
+ **isPrimary** | **Boolean**|  | [optional]
 
 ### Return type
 
@@ -1505,7 +1537,7 @@ Name | Type | Description  | Notes
 
 <a name="getWebhooks"></a>
 # **getWebhooks**
-> WebhookGetResponse getWebhooks(page, size, orderBy, ascending, filter)
+> WebhookGetResponse getWebhooks(page, size, orderBy, ascending, getLatest)
 
 Get information for all webhooks defined for your firm
 
@@ -1538,9 +1570,9 @@ Integer page = 0; // Integer | Page number for the page that should be returned 
 Integer size = 25; // Integer | The number or records to be included per page. The default is 25. There is no max value.
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-String filter = "filter_example"; // String | Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+Boolean getLatest = true; // Boolean | Retrieves the latest entry
 try {
-    WebhookGetResponse result = apiInstance.getWebhooks(page, size, orderBy, ascending, filter);
+    WebhookGetResponse result = apiInstance.getWebhooks(page, size, orderBy, ascending, getLatest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getWebhooks");
@@ -1556,7 +1588,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
- **filter** | **String**| Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. | [optional]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
 
 ### Return type
 

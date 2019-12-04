@@ -14,6 +14,9 @@ require 'date'
 
 module MoleculeApi
   class CurrencySpecificResponse
+    # The id of the currency
+    attr_accessor :id
+
     # The name of the currency
     attr_accessor :name
 
@@ -41,6 +44,7 @@ module MoleculeApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
         :'name' => :'name',
         :'decimal_points' => :'decimal_points',
         :'symbol' => :'symbol',
@@ -55,6 +59,7 @@ module MoleculeApi
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'id' => :'String',
         :'name' => :'String',
         :'decimal_points' => :'Integer',
         :'symbol' => :'String',
@@ -73,6 +78,10 @@ module MoleculeApi
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
@@ -125,6 +134,7 @@ module MoleculeApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
           name == o.name &&
           decimal_points == o.decimal_points &&
           symbol == o.symbol &&
@@ -144,7 +154,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, decimal_points, symbol, address, logo, network, create_date, update_date].hash
+      [id, name, decimal_points, symbol, address, logo, network, create_date, update_date].hash
     end
 
     # Builds the object from hash

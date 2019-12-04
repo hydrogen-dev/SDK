@@ -31,6 +31,7 @@ class CurrencySpecificResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'name': 'str',
         'decimal_points': 'int',
         'symbol': 'str',
@@ -42,6 +43,7 @@ class CurrencySpecificResponse(object):
     }
 
     attribute_map = {
+        'id': 'id',
         'name': 'name',
         'decimal_points': 'decimal_points',
         'symbol': 'symbol',
@@ -52,9 +54,10 @@ class CurrencySpecificResponse(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, name=None, decimal_points=None, symbol=None, address=None, logo=None, network=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, name=None, decimal_points=None, symbol=None, address=None, logo=None, network=None, create_date=None, update_date=None):  # noqa: E501
         """CurrencySpecificResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._id = None
         self._name = None
         self._decimal_points = None
         self._symbol = None
@@ -65,6 +68,8 @@ class CurrencySpecificResponse(object):
         self._update_date = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         if name is not None:
             self.name = name
         if decimal_points is not None:
@@ -81,6 +86,29 @@ class CurrencySpecificResponse(object):
             self.create_date = create_date
         if update_date is not None:
             self.update_date = update_date
+
+    @property
+    def id(self):
+        """Gets the id of this CurrencySpecificResponse.  # noqa: E501
+
+        The id of the currency  # noqa: E501
+
+        :return: The id of this CurrencySpecificResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this CurrencySpecificResponse.
+
+        The id of the currency  # noqa: E501
+
+        :param id: The id of this CurrencySpecificResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def name(self):

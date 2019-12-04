@@ -355,7 +355,8 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -363,7 +364,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrenciesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCurrenciesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -379,8 +380,10 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (symbol != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("symbol", symbol));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -415,10 +418,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCurrenciesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCurrenciesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getCurrenciesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrenciesCall(page, size, orderBy, ascending, getLatest, symbol, progressListener, progressRequestListener);
         return call;
 
     }
@@ -430,14 +433,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
      * @return CurrencyGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
      */
-    public CurrencyGetResponse getCurrencies(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<CurrencyGetResponse> resp = getCurrenciesWithHttpInfo(page, size, orderBy, ascending, filter);
+    public CurrencyGetResponse getCurrencies(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol) throws ApiException {
+        ApiResponse<CurrencyGetResponse> resp = getCurrenciesWithHttpInfo(page, size, orderBy, ascending, getLatest, symbol);
         return resp.getData();
     }
 
@@ -448,14 +452,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
      * @return ApiResponse&lt;CurrencyGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
      */
-    public ApiResponse<CurrencyGetResponse> getCurrenciesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<CurrencyGetResponse> getCurrenciesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, getLatest, symbol, null, null);
         Type localVarReturnType = new TypeToken<CurrencyGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -467,14 +472,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrenciesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<CurrencyGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCurrenciesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol, final ApiCallback<CurrencyGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -495,7 +501,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, getLatest, symbol, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CurrencyGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -768,7 +774,9 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -776,7 +784,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrencyBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCurrencyBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -792,8 +800,12 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (currencyId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("currency_id", currencyId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -828,10 +840,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCurrencyBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCurrencyBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getCurrencyBalancesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrencyBalancesCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -843,14 +855,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return CurrencyBalanceGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public CurrencyBalanceGetResponse getCurrencyBalances(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<CurrencyBalanceGetResponse> resp = getCurrencyBalancesWithHttpInfo(page, size, orderBy, ascending, filter);
+    public CurrencyBalanceGetResponse getCurrencyBalances(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId) throws ApiException {
+        ApiResponse<CurrencyBalanceGetResponse> resp = getCurrencyBalancesWithHttpInfo(page, size, orderBy, ascending, getLatest, currencyId, walletId);
         return resp.getData();
     }
 
@@ -861,14 +875,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return ApiResponse&lt;CurrencyBalanceGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public ApiResponse<CurrencyBalanceGetResponse> getCurrencyBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<CurrencyBalanceGetResponse> getCurrencyBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, null, null);
         Type localVarReturnType = new TypeToken<CurrencyBalanceGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -880,14 +896,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrencyBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<CurrencyBalanceGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCurrencyBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, final ApiCallback<CurrencyBalanceGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -908,7 +926,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CurrencyBalanceGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1050,7 +1068,11 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1058,7 +1080,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrencyTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCurrencyTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1074,8 +1096,16 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (currencyId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("currency_id", currencyId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
+        if (senderWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sender_wallet_id", senderWalletId));
+        if (receiverWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("receiver_wallet_id", receiverWalletId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1110,10 +1140,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCurrencyTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCurrencyTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getCurrencyTransfersCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrencyTransfersCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1125,14 +1155,18 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @return CurrencyTransferGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
-    public CurrencyTransferGetResponse getCurrencyTransfers(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<CurrencyTransferGetResponse> resp = getCurrencyTransfersWithHttpInfo(page, size, orderBy, ascending, filter);
+    public CurrencyTransferGetResponse getCurrencyTransfers(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        ApiResponse<CurrencyTransferGetResponse> resp = getCurrencyTransfersWithHttpInfo(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId);
         return resp.getData();
     }
 
@@ -1143,14 +1177,18 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @return ApiResponse&lt;CurrencyTransferGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
-    public ApiResponse<CurrencyTransferGetResponse> getCurrencyTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<CurrencyTransferGetResponse> getCurrencyTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId, null, null);
         Type localVarReturnType = new TypeToken<CurrencyTransferGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1162,14 +1200,18 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrencyTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<CurrencyTransferGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCurrencyTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId, final ApiCallback<CurrencyTransferGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1190,7 +1232,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CurrencyTransferGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1463,7 +1505,9 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1471,7 +1515,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTokenBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1487,8 +1531,12 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (tokenId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("token_id", tokenId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1523,10 +1571,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTokenBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTokenBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTokenBalancesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenBalancesCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1538,14 +1586,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return TokenBalanceGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public TokenBalanceGetResponse getTokenBalances(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<TokenBalanceGetResponse> resp = getTokenBalancesWithHttpInfo(page, size, orderBy, ascending, filter);
+    public TokenBalanceGetResponse getTokenBalances(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId) throws ApiException {
+        ApiResponse<TokenBalanceGetResponse> resp = getTokenBalancesWithHttpInfo(page, size, orderBy, ascending, getLatest, tokenId, walletId);
         return resp.getData();
     }
 
@@ -1556,14 +1606,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return ApiResponse&lt;TokenBalanceGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public ApiResponse<TokenBalanceGetResponse> getTokenBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<TokenBalanceGetResponse> getTokenBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, null, null);
         Type localVarReturnType = new TypeToken<TokenBalanceGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1575,14 +1627,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<TokenBalanceGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTokenBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, final ApiCallback<TokenBalanceGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1603,7 +1657,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TokenBalanceGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1614,7 +1668,8 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1622,7 +1677,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenSuppliesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTokenSuppliesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1638,8 +1693,10 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (tokenId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("token_id", tokenId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1674,10 +1731,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTokenSuppliesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTokenSuppliesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTokenSuppliesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenSuppliesCall(page, size, orderBy, ascending, getLatest, tokenId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1689,14 +1746,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @return TokenSupplyGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public TokenSupplyGetResponse getTokenSupplies(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<TokenSupplyGetResponse> resp = getTokenSuppliesWithHttpInfo(page, size, orderBy, ascending, filter);
+    public TokenSupplyGetResponse getTokenSupplies(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId) throws ApiException {
+        ApiResponse<TokenSupplyGetResponse> resp = getTokenSuppliesWithHttpInfo(page, size, orderBy, ascending, getLatest, tokenId);
         return resp.getData();
     }
 
@@ -1707,14 +1765,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @return ApiResponse&lt;TokenSupplyGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public ApiResponse<TokenSupplyGetResponse> getTokenSuppliesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<TokenSupplyGetResponse> getTokenSuppliesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, null, null);
         Type localVarReturnType = new TypeToken<TokenSupplyGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1726,14 +1785,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenSuppliesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<TokenSupplyGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTokenSuppliesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, final ApiCallback<TokenSupplyGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1754,7 +1814,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TokenSupplyGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2027,7 +2087,11 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2035,7 +2099,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTokenTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2051,8 +2115,16 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (tokenId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("token_id", tokenId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
+        if (senderWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sender_wallet_id", senderWalletId));
+        if (receiverWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("receiver_wallet_id", receiverWalletId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2087,10 +2159,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTokenTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTokenTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTokenTransfersCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenTransfersCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2102,14 +2174,18 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @return TokenTransferGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
-    public TokenTransferGetResponse getTokenTransfers(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<TokenTransferGetResponse> resp = getTokenTransfersWithHttpInfo(page, size, orderBy, ascending, filter);
+    public TokenTransferGetResponse getTokenTransfers(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        ApiResponse<TokenTransferGetResponse> resp = getTokenTransfersWithHttpInfo(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId);
         return resp.getData();
     }
 
@@ -2120,14 +2196,18 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @return ApiResponse&lt;TokenTransferGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
-    public ApiResponse<TokenTransferGetResponse> getTokenTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<TokenTransferGetResponse> getTokenTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId, null, null);
         Type localVarReturnType = new TypeToken<TokenTransferGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2139,14 +2219,18 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<TokenTransferGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTokenTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId, final ApiCallback<TokenTransferGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2167,7 +2251,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TokenTransferGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2178,7 +2262,7 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2186,7 +2270,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokensCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTokensCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2202,8 +2286,8 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2238,10 +2322,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTokensValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTokensValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTokensCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokensCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2253,14 +2337,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return TokenGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
      */
-    public TokenGetResponse getTokens(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<TokenGetResponse> resp = getTokensWithHttpInfo(page, size, orderBy, ascending, filter);
+    public TokenGetResponse getTokens(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        ApiResponse<TokenGetResponse> resp = getTokensWithHttpInfo(page, size, orderBy, ascending, getLatest);
         return resp.getData();
     }
 
@@ -2271,14 +2355,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return ApiResponse&lt;TokenGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
      */
-    public ApiResponse<TokenGetResponse> getTokensWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<TokenGetResponse> getTokensWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
         Type localVarReturnType = new TypeToken<TokenGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2290,14 +2374,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokensAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<TokenGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTokensAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<TokenGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2318,7 +2402,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TokenGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2460,7 +2544,7 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2468,7 +2552,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public com.squareup.okhttp.Call getTransactionStatusesCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2484,8 +2568,8 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2520,10 +2604,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTransactionStatusesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTransactionStatusesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTransactionStatusesCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionStatusesCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2535,14 +2619,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return TransactionStatusGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public TransactionStatusGetResponse getTransactionStatuses(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<TransactionStatusGetResponse> resp = getTransactionStatusesWithHttpInfo(page, size, orderBy, ascending, filter);
+    public TransactionStatusGetResponse getTransactionStatuses(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        ApiResponse<TransactionStatusGetResponse> resp = getTransactionStatusesWithHttpInfo(page, size, orderBy, ascending, getLatest);
         return resp.getData();
     }
 
@@ -2553,14 +2637,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return ApiResponse&lt;TransactionStatusGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public ApiResponse<TransactionStatusGetResponse> getTransactionStatusesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<TransactionStatusGetResponse> getTransactionStatusesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
         Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2572,14 +2656,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public com.squareup.okhttp.Call getTransactionStatusesAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<TransactionStatusGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<TransactionStatusGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2600,7 +2684,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2873,7 +2957,7 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2881,7 +2965,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletKeysCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getWalletKeysCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2897,8 +2981,8 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2933,10 +3017,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getWalletKeysValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getWalletKeysValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getWalletKeysCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletKeysCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2948,14 +3032,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return WalletKeyGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public WalletKeyGetResponse getWalletKeys(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<WalletKeyGetResponse> resp = getWalletKeysWithHttpInfo(page, size, orderBy, ascending, filter);
+    public WalletKeyGetResponse getWalletKeys(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        ApiResponse<WalletKeyGetResponse> resp = getWalletKeysWithHttpInfo(page, size, orderBy, ascending, getLatest);
         return resp.getData();
     }
 
@@ -2966,14 +3050,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return ApiResponse&lt;WalletKeyGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public ApiResponse<WalletKeyGetResponse> getWalletKeysWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<WalletKeyGetResponse> getWalletKeysWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
         Type localVarReturnType = new TypeToken<WalletKeyGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2985,14 +3069,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletKeysAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<WalletKeyGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getWalletKeysAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<WalletKeyGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3013,7 +3097,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WalletKeyGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -3024,7 +3108,9 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -3032,7 +3118,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletsCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getWalletsCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -3048,8 +3134,12 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (nucleusClientId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_client_id", nucleusClientId));
+        if (isPrimary != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("is_primary", isPrimary));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -3084,10 +3174,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getWalletsValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getWalletsValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getWalletsCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletsCall(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3099,14 +3189,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @return WalletGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public WalletGetResponse getWallets(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<WalletGetResponse> resp = getWalletsWithHttpInfo(page, size, orderBy, ascending, filter);
+    public WalletGetResponse getWallets(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary) throws ApiException {
+        ApiResponse<WalletGetResponse> resp = getWalletsWithHttpInfo(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary);
         return resp.getData();
     }
 
@@ -3117,14 +3209,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @return ApiResponse&lt;WalletGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public ApiResponse<WalletGetResponse> getWalletsWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<WalletGetResponse> getWalletsWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary) throws ApiException {
+        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary, null, null);
         Type localVarReturnType = new TypeToken<WalletGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3136,14 +3230,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletsAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<WalletGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getWalletsAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary, final ApiCallback<WalletGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3164,7 +3260,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WalletGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -3306,7 +3402,7 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -3314,7 +3410,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getWebhooksCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getWebhooksCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -3330,8 +3426,8 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -3366,10 +3462,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getWebhooksValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getWebhooksValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getWebhooksCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWebhooksCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3381,14 +3477,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return WebhookGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
      */
-    public WebhookGetResponse getWebhooks(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        ApiResponse<WebhookGetResponse> resp = getWebhooksWithHttpInfo(page, size, orderBy, ascending, filter);
+    public WebhookGetResponse getWebhooks(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        ApiResponse<WebhookGetResponse> resp = getWebhooksWithHttpInfo(page, size, orderBy, ascending, getLatest);
         return resp.getData();
     }
 
@@ -3399,14 +3495,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return ApiResponse&lt;WebhookGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
      */
-    public ApiResponse<WebhookGetResponse> getWebhooksWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, String filter) throws ApiException {
-        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, filter, null, null);
+    public ApiResponse<WebhookGetResponse> getWebhooksWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
         Type localVarReturnType = new TypeToken<WebhookGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3418,14 +3514,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @param filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields. (optional)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getWebhooksAsync(Integer page, Integer size, String orderBy, Boolean ascending, String filter, final ApiCallback<WebhookGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getWebhooksAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<WebhookGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3446,7 +3542,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, filter, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WebhookGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

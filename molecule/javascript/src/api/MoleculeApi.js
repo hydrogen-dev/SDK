@@ -155,7 +155,8 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.symbol 
      * @param {module:api/MoleculeApi~getCurrenciesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CurrencyGetResponse}
      */
@@ -171,7 +172,8 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
+        'symbol': opts['symbol'],
       };
       var collectionQueryParams = {
       };
@@ -301,7 +303,9 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.currencyId Filters results by their currency ids
+     * @param {String} opts.walletId Filters results by their wallet ids
      * @param {module:api/MoleculeApi~getCurrencyBalancesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CurrencyBalanceGetResponse}
      */
@@ -317,7 +321,9 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
+        'currency_id': opts['currencyId'],
+        'wallet_id': opts['walletId'],
       };
       var collectionQueryParams = {
       };
@@ -400,7 +406,11 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.currencyId Filters results by their currency ids
+     * @param {String} opts.walletId Filters results by their wallet ids
+     * @param {String} opts.senderWalletId Filters results by their sender wallet ids
+     * @param {String} opts.receiverWalletId Filters results by their receiver wallet ids
      * @param {module:api/MoleculeApi~getCurrencyTransfersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CurrencyTransferGetResponse}
      */
@@ -416,7 +426,11 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
+        'currency_id': opts['currencyId'],
+        'wallet_id': opts['walletId'],
+        'sender_wallet_id': opts['senderWalletId'],
+        'receiver_wallet_id': opts['receiverWalletId'],
       };
       var collectionQueryParams = {
       };
@@ -546,7 +560,9 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.tokenId Filters results by their token ids
+     * @param {String} opts.walletId Filters results by their wallet ids
      * @param {module:api/MoleculeApi~getTokenBalancesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TokenBalanceGetResponse}
      */
@@ -562,7 +578,9 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
+        'token_id': opts['tokenId'],
+        'wallet_id': opts['walletId'],
       };
       var collectionQueryParams = {
       };
@@ -598,7 +616,8 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.tokenId Filters results by their token ids
      * @param {module:api/MoleculeApi~getTokenSuppliesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TokenSupplyGetResponse}
      */
@@ -614,7 +633,8 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
+        'token_id': opts['tokenId'],
       };
       var collectionQueryParams = {
       };
@@ -744,7 +764,11 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.tokenId Filters results by their token ids
+     * @param {String} opts.walletId Filters results by their wallet ids
+     * @param {String} opts.senderWalletId Filters results by their sender wallet ids
+     * @param {String} opts.receiverWalletId Filters results by their receiver wallet ids
      * @param {module:api/MoleculeApi~getTokenTransfersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TokenTransferGetResponse}
      */
@@ -760,7 +784,11 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
+        'token_id': opts['tokenId'],
+        'wallet_id': opts['walletId'],
+        'sender_wallet_id': opts['senderWalletId'],
+        'receiver_wallet_id': opts['receiverWalletId'],
       };
       var collectionQueryParams = {
       };
@@ -796,7 +824,7 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
      * @param {module:api/MoleculeApi~getTokensCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TokenGetResponse}
      */
@@ -812,7 +840,7 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
       };
       var collectionQueryParams = {
       };
@@ -895,7 +923,7 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
      * @param {module:api/MoleculeApi~getTransactionStatusesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TransactionStatusGetResponse}
      */
@@ -911,7 +939,7 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
       };
       var collectionQueryParams = {
       };
@@ -1041,7 +1069,7 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
      * @param {module:api/MoleculeApi~getWalletKeysCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WalletKeyGetResponse}
      */
@@ -1057,7 +1085,7 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
       };
       var collectionQueryParams = {
       };
@@ -1093,7 +1121,9 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.nucleusClientId 
+     * @param {Boolean} opts.isPrimary 
      * @param {module:api/MoleculeApi~getWalletsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WalletGetResponse}
      */
@@ -1109,7 +1139,9 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
+        'nucleus_client_id': opts['nucleusClientId'],
+        'is_primary': opts['isPrimary'],
       };
       var collectionQueryParams = {
       };
@@ -1192,7 +1224,7 @@
      * @param {Number} opts.size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
-     * @param {String} opts.filter Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+     * @param {Boolean} opts.getLatest Retrieves the latest entry
      * @param {module:api/MoleculeApi~getWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookGetResponse}
      */
@@ -1208,7 +1240,7 @@
         'size': opts['size'],
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
-        'filter': opts['filter'],
+        'get_latest': opts['getLatest'],
       };
       var collectionQueryParams = {
       };

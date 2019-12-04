@@ -56,6 +56,7 @@
 
 
 
+
   };
 
   /**
@@ -69,6 +70,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -97,6 +101,11 @@
     return obj;
   }
 
+  /**
+   * The id of the currency
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
   /**
    * The name of the currency
    * @member {String} name

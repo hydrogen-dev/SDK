@@ -240,7 +240,8 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str symbol:
         :return: CurrencyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -265,13 +266,14 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str symbol:
         :return: CurrencyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'symbol']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -304,8 +306,10 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'symbol' in params:
+            query_params.append(('symbol', params['symbol']))  # noqa: E501
 
         header_params = {}
 
@@ -547,7 +551,9 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: CurrencyBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -572,13 +578,15 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: CurrencyBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'currency_id', 'wallet_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -611,8 +619,12 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'currency_id' in params:
+            query_params.append(('currency_id', params['currency_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
 
         header_params = {}
 
@@ -757,7 +769,11 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
         :return: CurrencyTransferGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -782,13 +798,17 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
         :return: CurrencyTransferGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'currency_id', 'wallet_id', 'sender_wallet_id', 'receiver_wallet_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -821,8 +841,16 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'currency_id' in params:
+            query_params.append(('currency_id', params['currency_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
+        if 'sender_wallet_id' in params:
+            query_params.append(('sender_wallet_id', params['sender_wallet_id']))  # noqa: E501
+        if 'receiver_wallet_id' in params:
+            query_params.append(('receiver_wallet_id', params['receiver_wallet_id']))  # noqa: E501
 
         header_params = {}
 
@@ -1064,7 +1092,9 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: TokenBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1089,13 +1119,15 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: TokenBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'token_id', 'wallet_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1128,8 +1160,12 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'token_id' in params:
+            query_params.append(('token_id', params['token_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
 
         header_params = {}
 
@@ -1177,7 +1213,8 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
         :return: TokenSupplyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1202,13 +1239,14 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
         :return: TokenSupplyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'token_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1241,8 +1279,10 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'token_id' in params:
+            query_params.append(('token_id', params['token_id']))  # noqa: E501
 
         header_params = {}
 
@@ -1484,7 +1524,11 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
         :return: TokenTransferGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1509,13 +1553,17 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
         :return: TokenTransferGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'token_id', 'wallet_id', 'sender_wallet_id', 'receiver_wallet_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1548,8 +1596,16 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'token_id' in params:
+            query_params.append(('token_id', params['token_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
+        if 'sender_wallet_id' in params:
+            query_params.append(('sender_wallet_id', params['sender_wallet_id']))  # noqa: E501
+        if 'receiver_wallet_id' in params:
+            query_params.append(('receiver_wallet_id', params['receiver_wallet_id']))  # noqa: E501
 
         header_params = {}
 
@@ -1597,7 +1653,7 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: TokenGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1622,13 +1678,13 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: TokenGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1661,8 +1717,8 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
 
         header_params = {}
 
@@ -1807,7 +1863,7 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: TransactionStatusGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1832,13 +1888,13 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: TransactionStatusGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1871,8 +1927,8 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
 
         header_params = {}
 
@@ -2114,7 +2170,7 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: WalletKeyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2139,13 +2195,13 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: WalletKeyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2178,8 +2234,8 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
 
         header_params = {}
 
@@ -2227,7 +2283,9 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str nucleus_client_id:
+        :param bool is_primary:
         :return: WalletGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2252,13 +2310,15 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
+        :param str nucleus_client_id:
+        :param bool is_primary:
         :return: WalletGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'nucleus_client_id', 'is_primary']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2291,8 +2351,12 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'nucleus_client_id' in params:
+            query_params.append(('nucleus_client_id', params['nucleus_client_id']))  # noqa: E501
+        if 'is_primary' in params:
+            query_params.append(('is_primary', params['is_primary']))  # noqa: E501
 
         header_params = {}
 
@@ -2437,7 +2501,7 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: WebhookGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2462,13 +2526,13 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-        :param str filter: Certain fields within an object using the GET method can be filtered except for fields stored under metadata. Filtering is especially useful for calls that return many different fields.
+        :param bool get_latest: Retrieves the latest entry
         :return: WebhookGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'filter']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2501,8 +2565,8 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
 
         header_params = {}
 

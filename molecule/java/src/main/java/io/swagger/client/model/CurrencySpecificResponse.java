@@ -23,12 +23,16 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.UUID;
 
 /**
  * CurrencySpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-03T17:23:35.601-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T11:23:05.622-05:00")
 public class CurrencySpecificResponse {
+  @SerializedName("id")
+  private UUID id = null;
+
   @SerializedName("name")
   private String name = null;
 
@@ -52,6 +56,24 @@ public class CurrencySpecificResponse {
 
   @SerializedName("update_date")
   private String updateDate = null;
+
+  public CurrencySpecificResponse id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * The id of the currency
+   * @return id
+  **/
+  @ApiModelProperty(value = "The id of the currency")
+  public UUID getId() {
+    return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
+  }
 
   public CurrencySpecificResponse name(String name) {
     this.name = name;
@@ -207,7 +229,8 @@ public class CurrencySpecificResponse {
       return false;
     }
     CurrencySpecificResponse currencySpecificResponse = (CurrencySpecificResponse) o;
-    return Objects.equals(this.name, currencySpecificResponse.name) &&
+    return Objects.equals(this.id, currencySpecificResponse.id) &&
+        Objects.equals(this.name, currencySpecificResponse.name) &&
         Objects.equals(this.decimalPoints, currencySpecificResponse.decimalPoints) &&
         Objects.equals(this.symbol, currencySpecificResponse.symbol) &&
         Objects.equals(this.address, currencySpecificResponse.address) &&
@@ -219,7 +242,7 @@ public class CurrencySpecificResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, decimalPoints, symbol, address, logo, network, createDate, updateDate);
+    return Objects.hash(id, name, decimalPoints, symbol, address, logo, network, createDate, updateDate);
   }
 
 
@@ -228,6 +251,7 @@ public class CurrencySpecificResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class CurrencySpecificResponse {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    decimalPoints: ").append(toIndentedString(decimalPoints)).append("\n");
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");

@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(molecule_api.CurrencySpecificResponse);
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instance = new molecule_api.CurrencySpecificResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instance = new molecule_api.CurrencySpecificResponse();

@@ -52,6 +52,7 @@
 
     _this['nucleus_client_id'] = nucleusClientId;
     _this['client_wallet_association_type'] = clientWalletAssociationType;
+
   };
 
   /**
@@ -71,6 +72,9 @@
       if (data.hasOwnProperty('client_wallet_association_type')) {
         obj['client_wallet_association_type'] = ApiClient.convertToType(data['client_wallet_association_type'], 'String');
       }
+      if (data.hasOwnProperty('is_primary')) {
+        obj['is_primary'] = ApiClient.convertToType(data['is_primary'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -85,6 +89,12 @@
    * @member {String} client_wallet_association_type
    */
   exports.prototype['client_wallet_association_type'] = undefined;
+  /**
+   * Determines if the wallet is the primary wallet of the client. Defaults to true.
+   * @member {Boolean} is_primary
+   * @default true
+   */
+  exports.prototype['is_primary'] = true;
 
 
 

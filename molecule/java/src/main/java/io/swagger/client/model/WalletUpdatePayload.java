@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * WalletUpdatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:44:13.199-05:00")
 public class WalletUpdatePayload {
   @SerializedName("name")
   private String name = null;

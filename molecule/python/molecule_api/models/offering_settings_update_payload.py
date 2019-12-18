@@ -31,7 +31,7 @@ class OfferingSettingsUpdatePayload(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rate': 'float',
+        'rate': 'int',
         'start_date': 'str',
         'end_date': 'str'
     }
@@ -64,7 +64,7 @@ class OfferingSettingsUpdatePayload(object):
         The exchange rate of the token during the token offering.  # noqa: E501
 
         :return: The rate of this OfferingSettingsUpdatePayload.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._rate
 
@@ -75,7 +75,7 @@ class OfferingSettingsUpdatePayload(object):
         The exchange rate of the token during the token offering.  # noqa: E501
 
         :param rate: The rate of this OfferingSettingsUpdatePayload.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._rate = rate

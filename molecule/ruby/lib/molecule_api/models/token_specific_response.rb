@@ -38,6 +38,9 @@ module MoleculeApi
     # The amount of tokens in circulation. Defaults to 0
     attr_accessor :circulating_supply
 
+    # The whitelist address of the security token on the Ethereum blockchain
+    attr_accessor :whitelist_address
+
     # The contract address of the security token on the Ethereum blockchain
     attr_accessor :conract_address
 
@@ -67,6 +70,7 @@ module MoleculeApi
         :'owner_wallet_id' => :'owner_wallet_id',
         :'total_supply' => :'total_supply',
         :'circulating_supply' => :'circulating_supply',
+        :'whitelist_address' => :'whitelist_address',
         :'conract_address' => :'conract_address',
         :'crowdsale_address' => :'crowdsale_address',
         :'restrictions' => :'restrictions',
@@ -86,8 +90,9 @@ module MoleculeApi
         :'name' => :'String',
         :'nucleus_model_id' => :'String',
         :'owner_wallet_id' => :'String',
-        :'total_supply' => :'Integer',
-        :'circulating_supply' => :'Integer',
+        :'total_supply' => :'Float',
+        :'circulating_supply' => :'Float',
+        :'whitelist_address' => :'String',
         :'conract_address' => :'String',
         :'crowdsale_address' => :'String',
         :'restrictions' => :'TokenRestrictionsPayload',
@@ -136,6 +141,10 @@ module MoleculeApi
 
       if attributes.has_key?(:'circulating_supply')
         self.circulating_supply = attributes[:'circulating_supply']
+      end
+
+      if attributes.has_key?(:'whitelist_address')
+        self.whitelist_address = attributes[:'whitelist_address']
       end
 
       if attributes.has_key?(:'conract_address')
@@ -218,6 +227,7 @@ module MoleculeApi
           owner_wallet_id == o.owner_wallet_id &&
           total_supply == o.total_supply &&
           circulating_supply == o.circulating_supply &&
+          whitelist_address == o.whitelist_address &&
           conract_address == o.conract_address &&
           crowdsale_address == o.crowdsale_address &&
           restrictions == o.restrictions &&
@@ -236,7 +246,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, symbol, name, nucleus_model_id, owner_wallet_id, total_supply, circulating_supply, conract_address, crowdsale_address, restrictions, offering_settings, metadata, secondary_id, update_date].hash
+      [id, create_date, symbol, name, nucleus_model_id, owner_wallet_id, total_supply, circulating_supply, whitelist_address, conract_address, crowdsale_address, restrictions, offering_settings, metadata, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

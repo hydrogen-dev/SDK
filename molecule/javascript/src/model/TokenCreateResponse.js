@@ -130,6 +130,12 @@ exports.prototype['total_supply'] = undefined;
 exports.prototype['circulating_supply'] = undefined;
 
   /**
+   * The whitelist address of the security token on the Ethereum blockchain
+   * @member {String} whitelist_address
+   */
+exports.prototype['whitelist_address'] = undefined;
+
+  /**
    * The contract address of the security token on the Ethereum blockchain
    * @member {String} conract_address
    */

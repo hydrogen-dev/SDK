@@ -28,13 +28,16 @@ import java.util.UUID;
 /**
  * WalletCreateClient
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:44:13.199-05:00")
 public class WalletCreateClient {
   @SerializedName("nucleus_client_id")
   private UUID nucleusClientId = null;
 
   @SerializedName("client_wallet_association_type")
   private String clientWalletAssociationType = null;
+
+  @SerializedName("is_primary")
+  private Boolean isPrimary = true;
 
   public WalletCreateClient nucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
@@ -72,6 +75,24 @@ public class WalletCreateClient {
     this.clientWalletAssociationType = clientWalletAssociationType;
   }
 
+  public WalletCreateClient isPrimary(Boolean isPrimary) {
+    this.isPrimary = isPrimary;
+    return this;
+  }
+
+   /**
+   * Determines if the wallet is the primary wallet of the client. Defaults to true.
+   * @return isPrimary
+  **/
+  @ApiModelProperty(value = "Determines if the wallet is the primary wallet of the client. Defaults to true.")
+  public Boolean isIsPrimary() {
+    return isPrimary;
+  }
+
+  public void setIsPrimary(Boolean isPrimary) {
+    this.isPrimary = isPrimary;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +104,13 @@ public class WalletCreateClient {
     }
     WalletCreateClient walletCreateClient = (WalletCreateClient) o;
     return Objects.equals(this.nucleusClientId, walletCreateClient.nucleusClientId) &&
-        Objects.equals(this.clientWalletAssociationType, walletCreateClient.clientWalletAssociationType);
+        Objects.equals(this.clientWalletAssociationType, walletCreateClient.clientWalletAssociationType) &&
+        Objects.equals(this.isPrimary, walletCreateClient.isPrimary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nucleusClientId, clientWalletAssociationType);
+    return Objects.hash(nucleusClientId, clientWalletAssociationType, isPrimary);
   }
 
 
@@ -99,6 +121,7 @@ public class WalletCreateClient {
     
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
     sb.append("    clientWalletAssociationType: ").append(toIndentedString(clientWalletAssociationType)).append("\n");
+    sb.append("    isPrimary: ").append(toIndentedString(isPrimary)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -32,23 +32,28 @@ class WalletCreateClient(object):
     """
     swagger_types = {
         'nucleus_client_id': 'str',
-        'client_wallet_association_type': 'str'
+        'client_wallet_association_type': 'str',
+        'is_primary': 'bool'
     }
 
     attribute_map = {
         'nucleus_client_id': 'nucleus_client_id',
-        'client_wallet_association_type': 'client_wallet_association_type'
+        'client_wallet_association_type': 'client_wallet_association_type',
+        'is_primary': 'is_primary'
     }
 
-    def __init__(self, nucleus_client_id=None, client_wallet_association_type=None):  # noqa: E501
+    def __init__(self, nucleus_client_id=None, client_wallet_association_type=None, is_primary=True):  # noqa: E501
         """WalletCreateClient - a model defined in Swagger"""  # noqa: E501
 
         self._nucleus_client_id = None
         self._client_wallet_association_type = None
+        self._is_primary = None
         self.discriminator = None
 
         self.nucleus_client_id = nucleus_client_id
         self.client_wallet_association_type = client_wallet_association_type
+        if is_primary is not None:
+            self.is_primary = is_primary
 
     @property
     def nucleus_client_id(self):
@@ -99,6 +104,29 @@ class WalletCreateClient(object):
             raise ValueError("Invalid value for `client_wallet_association_type`, must not be `None`")  # noqa: E501
 
         self._client_wallet_association_type = client_wallet_association_type
+
+    @property
+    def is_primary(self):
+        """Gets the is_primary of this WalletCreateClient.  # noqa: E501
+
+        Determines if the wallet is the primary wallet of the client. Defaults to true.  # noqa: E501
+
+        :return: The is_primary of this WalletCreateClient.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_primary
+
+    @is_primary.setter
+    def is_primary(self, is_primary):
+        """Sets the is_primary of this WalletCreateClient.
+
+        Determines if the wallet is the primary wallet of the client. Defaults to true.  # noqa: E501
+
+        :param is_primary: The is_primary of this WalletCreateClient.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_primary = is_primary
 
     def to_dict(self):
         """Returns the model properties as a dict"""

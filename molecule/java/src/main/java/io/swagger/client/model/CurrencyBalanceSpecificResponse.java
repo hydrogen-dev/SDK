@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * CurrencyBalanceSpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:44:13.199-05:00")
 public class CurrencyBalanceSpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -40,8 +40,8 @@ public class CurrencyBalanceSpecificResponse {
   @SerializedName("wallet_id")
   private UUID walletId = null;
 
-  @SerializedName("ticker")
-  private String ticker = null;
+  @SerializedName("currency_id")
+  private UUID currencyId = null;
 
   @SerializedName("create_date")
   private String createDate = null;
@@ -73,10 +73,10 @@ public class CurrencyBalanceSpecificResponse {
   }
 
    /**
-   * Balance of the wallet
+   * Currency balance of the wallet
    * @return balance
   **/
-  @ApiModelProperty(value = "Balance of the wallet")
+  @ApiModelProperty(value = "Currency balance of the wallet")
   public BigDecimal getBalance() {
     return balance;
   }
@@ -103,22 +103,22 @@ public class CurrencyBalanceSpecificResponse {
     this.walletId = walletId;
   }
 
-  public CurrencyBalanceSpecificResponse ticker(String ticker) {
-    this.ticker = ticker;
+  public CurrencyBalanceSpecificResponse currencyId(UUID currencyId) {
+    this.currencyId = currencyId;
     return this;
   }
 
    /**
-   * The ticker of the currency. Currently supports ETH only.
-   * @return ticker
+   * The ID of the currency.
+   * @return currencyId
   **/
-  @ApiModelProperty(value = "The ticker of the currency. Currently supports ETH only.")
-  public String getTicker() {
-    return ticker;
+  @ApiModelProperty(value = "The ID of the currency.")
+  public UUID getCurrencyId() {
+    return currencyId;
   }
 
-  public void setTicker(String ticker) {
-    this.ticker = ticker;
+  public void setCurrencyId(UUID currencyId) {
+    this.currencyId = currencyId;
   }
 
   public CurrencyBalanceSpecificResponse createDate(String createDate) {
@@ -170,14 +170,14 @@ public class CurrencyBalanceSpecificResponse {
     return Objects.equals(this.id, currencyBalanceSpecificResponse.id) &&
         Objects.equals(this.balance, currencyBalanceSpecificResponse.balance) &&
         Objects.equals(this.walletId, currencyBalanceSpecificResponse.walletId) &&
-        Objects.equals(this.ticker, currencyBalanceSpecificResponse.ticker) &&
+        Objects.equals(this.currencyId, currencyBalanceSpecificResponse.currencyId) &&
         Objects.equals(this.createDate, currencyBalanceSpecificResponse.createDate) &&
         Objects.equals(this.updateDate, currencyBalanceSpecificResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, balance, walletId, ticker, createDate, updateDate);
+    return Objects.hash(id, balance, walletId, currencyId, createDate, updateDate);
   }
 
 
@@ -189,7 +189,7 @@ public class CurrencyBalanceSpecificResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
-    sb.append("    ticker: ").append(toIndentedString(ticker)).append("\n");
+    sb.append("    currencyId: ").append(toIndentedString(currencyId)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

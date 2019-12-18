@@ -15,5 +15,7 @@ Name | Type | Description | Notes
 **maxCreditScore** | **Number** | Investors with a credit score lower than this number will be allowed to invest | [optional] 
 **accreditationRequired** | **Boolean** | Only accredited investors will be allowed to invest | [optional] 
 **kycRequired** | **Boolean** | Investors who are verified by a Know-Your-Customer vendor will be allowed to invest | [optional] 
+**includeCountry** | **[String]** | Investors residing in these countries will be allowed to invest | [optional] 
+**excludeCountry** | **[String]** | Investors residing outside of these countries will be allowed to invest | [optional] 
 
 

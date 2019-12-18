@@ -23,16 +23,15 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * The array of security token offering settings applied on this token
  */
 @ApiModel(description = "The array of security token offering settings applied on this token")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:44:13.199-05:00")
 public class OfferingSettingsCreatePayload {
   @SerializedName("rate")
-  private BigDecimal rate = null;
+  private Integer rate = null;
 
   @SerializedName("start_date")
   private String startDate = null;
@@ -40,7 +39,7 @@ public class OfferingSettingsCreatePayload {
   @SerializedName("end_date")
   private String endDate = null;
 
-  public OfferingSettingsCreatePayload rate(BigDecimal rate) {
+  public OfferingSettingsCreatePayload rate(Integer rate) {
     this.rate = rate;
     return this;
   }
@@ -50,11 +49,11 @@ public class OfferingSettingsCreatePayload {
    * @return rate
   **/
   @ApiModelProperty(required = true, value = "The exchange rate of the token during the token offering.")
-  public BigDecimal getRate() {
+  public Integer getRate() {
     return rate;
   }
 
-  public void setRate(BigDecimal rate) {
+  public void setRate(Integer rate) {
     this.rate = rate;
   }
 

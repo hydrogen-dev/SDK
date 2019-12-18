@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **keyServer** | **String** | Name of the Key Server in use by the client |  [optional]
 **address** | **String** | Public address of the key pair getting stored |  [optional]
 **privateKey** | **String** | Private key of the key pair getting stored |  [optional]
-**metadata** | **Object** | Custom information associated with the account in the format key:value |  [optional]
-**secondaryId** | **String** |  |  [optional]
 **createDate** | **String** | Datetime the wallet key record was created |  [optional]
 
 

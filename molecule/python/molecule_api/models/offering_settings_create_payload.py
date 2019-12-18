@@ -31,7 +31,7 @@ class OfferingSettingsCreatePayload(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rate': 'float',
+        'rate': 'int',
         'start_date': 'str',
         'end_date': 'str'
     }
@@ -63,7 +63,7 @@ class OfferingSettingsCreatePayload(object):
         The exchange rate of the token during the token offering.  # noqa: E501
 
         :return: The rate of this OfferingSettingsCreatePayload.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._rate
 
@@ -74,7 +74,7 @@ class OfferingSettingsCreatePayload(object):
         The exchange rate of the token during the token offering.  # noqa: E501
 
         :param rate: The rate of this OfferingSettingsCreatePayload.  # noqa: E501
-        :type: float
+        :type: int
         """
         if rate is None:
             raise ValueError("Invalid value for `rate`, must not be `None`")  # noqa: E501

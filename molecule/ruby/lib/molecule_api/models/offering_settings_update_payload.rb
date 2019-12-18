@@ -36,7 +36,7 @@ module MoleculeApi
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'rate' => :'Float',
+        :'rate' => :'Integer',
         :'start_date' => :'String',
         :'end_date' => :'String'
       }

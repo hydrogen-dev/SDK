@@ -924,6 +924,9 @@
      * @param {String} opts.orderBy The field in the response body to order the list by. Default is update_date. (default to update_date)
      * @param {Boolean} opts.ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
      * @param {Boolean} opts.getLatest Retrieves the latest entry
+     * @param {String} opts.walletId Filters results by their wallet ids
+     * @param {String} opts.hash 
+     * @param {String} opts.status 
      * @param {module:api/MoleculeApi~getTransactionStatusesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TransactionStatusGetResponse}
      */
@@ -940,6 +943,9 @@
         'order_by': opts['orderBy'],
         'ascending': opts['ascending'],
         'get_latest': opts['getLatest'],
+        'wallet_id': opts['walletId'],
+        'hash': opts['hash'],
+        'status': opts['status'],
       };
       var collectionQueryParams = {
       };

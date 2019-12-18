@@ -1148,7 +1148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transaction_statuses**
-> TransactionStatusGetResponse get_transaction_statuses(page=page, size=size, order_by=order_by, ascending=ascending, get_latest=get_latest)
+> TransactionStatusGetResponse get_transaction_statuses(page=page, size=size, order_by=order_by, ascending=ascending, get_latest=get_latest, wallet_id=wallet_id, hash=hash, status=status)
 
 Get status information for all transactions
 
@@ -1181,10 +1181,13 @@ size = 25 # int | The number or records to be included per page. The default is 
 order_by = 'update_date' # str | The field in the response body to order the list by. Default is update_date. (optional) (default to update_date)
 ascending = false # bool | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional) (default to false)
 get_latest = true # bool | Retrieves the latest entry (optional)
+wallet_id = 'wallet_id_example' # str | Filters results by their wallet ids (optional)
+hash = 'hash_example' # str |  (optional)
+status = 'status_example' # str |  (optional)
 
 try:
     # Get status information for all transactions
-    api_response = api_instance.get_transaction_statuses(page=page, size=size, order_by=order_by, ascending=ascending, get_latest=get_latest)
+    api_response = api_instance.get_transaction_statuses(page=page, size=size, order_by=order_by, ascending=ascending, get_latest=get_latest, wallet_id=wallet_id, hash=hash, status=status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MoleculeApi->get_transaction_statuses: %s\n" % e)
@@ -1199,6 +1202,9 @@ Name | Type | Description  | Notes
  **order_by** | **str**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **bool**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
  **get_latest** | **bool**| Retrieves the latest entry | [optional] 
+ **wallet_id** | **str**| Filters results by their wallet ids | [optional] 
+ **hash** | **str**|  | [optional] 
+ **status** | **str**|  | [optional] 
 
 ### Return type
 

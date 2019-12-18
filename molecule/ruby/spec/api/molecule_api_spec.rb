@@ -269,6 +269,9 @@ describe 'MoleculeApi' do
   # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
   # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+  # @option opts [String] :wallet_id Filters results by their wallet ids
+  # @option opts [String] :hash 
+  # @option opts [String] :status 
   # @return [TransactionStatusGetResponse]
   describe 'get_transaction_statuses test' do
     it 'should work' do

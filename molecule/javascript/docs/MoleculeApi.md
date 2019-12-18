@@ -1100,6 +1100,9 @@ var opts = {
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   'getLatest': true, // Boolean | Retrieves the latest entry
+  'walletId': "walletId_example", // String | Filters results by their wallet ids
+  'hash': "hash_example", // String | 
+  'status': "status_example" // String | 
 };
 
 var callback = function(error, data, response) {
@@ -1121,6 +1124,9 @@ Name | Type | Description  | Notes
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
  **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **walletId** | **String**| Filters results by their wallet ids | [optional] 
+ **hash** | **String**|  | [optional] 
+ **status** | **String**|  | [optional] 
 
 ### Return type
 

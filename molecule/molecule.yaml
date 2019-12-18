@@ -1112,6 +1112,15 @@ paths:
         - $ref: '#/parameters/query_pagination_orderby'
         - $ref: '#/parameters/query_pagination_ascending'
         - $ref: '#/parameters/query_get_latest'
+        - $ref: '#/parameters/query_wallet_id'
+        - in: query
+          name: hash
+          required: false
+          type: string
+        - in: query
+          name: status
+          required: false
+          type: string
 
   /molecule/v1/transaction_status/{transaction_status_id}:
     get:

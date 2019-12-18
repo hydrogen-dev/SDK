@@ -1149,7 +1149,7 @@ Name | Type | Description  | Notes
 
 <a name="getTransactionStatuses"></a>
 # **getTransactionStatuses**
-> TransactionStatusGetResponse getTransactionStatuses(page, size, orderBy, ascending, getLatest)
+> TransactionStatusGetResponse getTransactionStatuses(page, size, orderBy, ascending, getLatest, walletId, hash, status)
 
 Get status information for all transactions
 
@@ -1183,8 +1183,11 @@ Integer size = 25; // Integer | The number or records to be included per page. T
 String orderBy = "update_date"; // String | The field in the response body to order the list by. Default is update_date.
 Boolean ascending = false; // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
 Boolean getLatest = true; // Boolean | Retrieves the latest entry
+String walletId = "walletId_example"; // String | Filters results by their wallet ids
+String hash = "hash_example"; // String | 
+String status = "status_example"; // String | 
 try {
-    TransactionStatusGetResponse result = apiInstance.getTransactionStatuses(page, size, orderBy, ascending, getLatest);
+    TransactionStatusGetResponse result = apiInstance.getTransactionStatuses(page, size, orderBy, ascending, getLatest, walletId, hash, status);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MoleculeApi#getTransactionStatuses");
@@ -1201,6 +1204,9 @@ Name | Type | Description  | Notes
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
  **getLatest** | **Boolean**| Retrieves the latest entry | [optional]
+ **walletId** | **String**| Filters results by their wallet ids | [optional]
+ **hash** | **String**|  | [optional]
+ **status** | **String**|  | [optional]
 
 ### Return type
 

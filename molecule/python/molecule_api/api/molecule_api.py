@@ -1864,6 +1864,9 @@ class MoleculeApi(object):
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
         :param bool get_latest: Retrieves the latest entry
+        :param str wallet_id: Filters results by their wallet ids
+        :param str hash:
+        :param str status:
         :return: TransactionStatusGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1889,12 +1892,15 @@ class MoleculeApi(object):
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
         :param bool get_latest: Retrieves the latest entry
+        :param str wallet_id: Filters results by their wallet ids
+        :param str hash:
+        :param str status:
         :return: TransactionStatusGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'wallet_id', 'hash', 'status']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1929,6 +1935,12 @@ class MoleculeApi(object):
             query_params.append(('ascending', params['ascending']))  # noqa: E501
         if 'get_latest' in params:
             query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
+        if 'hash' in params:
+            query_params.append(('hash', params['hash']))  # noqa: E501
+        if 'status' in params:
+            query_params.append(('status', params['status']))  # noqa: E501
 
         header_params = {}
 

@@ -402,7 +402,10 @@ public class MoleculeApiTest {
         String orderBy = null;
         Boolean ascending = null;
         Boolean getLatest = null;
-        TransactionStatusGetResponse response = api.getTransactionStatuses(page, size, orderBy, ascending, getLatest);
+        String walletId = null;
+        String hash = null;
+        String status = null;
+        TransactionStatusGetResponse response = api.getTransactionStatuses(page, size, orderBy, ascending, getLatest, walletId, hash, status);
 
         // TODO: test validations
     }

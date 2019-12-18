@@ -2545,6 +2545,9 @@ public class MoleculeApi {
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
      * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2552,7 +2555,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public com.squareup.okhttp.Call getTransactionStatusesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2570,6 +2573,12 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
         if (getLatest != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
+        if (hash != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("hash", hash));
+        if (status != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("status", status));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2604,10 +2613,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTransactionStatusesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTransactionStatusesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTransactionStatusesCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionStatusesCall(page, size, orderBy, ascending, getLatest, walletId, hash, status, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2620,13 +2629,16 @@ public class MoleculeApi {
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
      * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
      * @return TransactionStatusGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public TransactionStatusGetResponse getTransactionStatuses(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
-        ApiResponse<TransactionStatusGetResponse> resp = getTransactionStatusesWithHttpInfo(page, size, orderBy, ascending, getLatest);
+    public TransactionStatusGetResponse getTransactionStatuses(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status) throws ApiException {
+        ApiResponse<TransactionStatusGetResponse> resp = getTransactionStatusesWithHttpInfo(page, size, orderBy, ascending, getLatest, walletId, hash, status);
         return resp.getData();
     }
 
@@ -2638,13 +2650,16 @@ public class MoleculeApi {
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
      * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
      * @return ApiResponse&lt;TransactionStatusGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public ApiResponse<TransactionStatusGetResponse> getTransactionStatusesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
+    public ApiResponse<TransactionStatusGetResponse> getTransactionStatusesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, walletId, hash, status, null, null);
         Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2657,13 +2672,16 @@ public class MoleculeApi {
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
      * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
      */
-    public com.squareup.okhttp.Call getTransactionStatusesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<TransactionStatusGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionStatusesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status, final ApiCallback<TransactionStatusGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2684,7 +2702,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, walletId, hash, status, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

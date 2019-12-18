@@ -1069,6 +1069,9 @@ module MoleculeApi
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
     # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :hash 
+    # @option opts [String] :status 
     # @return [TransactionStatusGetResponse]
     def get_transaction_statuses(opts = {})
       data, _status_code, _headers = get_transaction_statuses_with_http_info(opts)
@@ -1082,6 +1085,9 @@ module MoleculeApi
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
     # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :hash 
+    # @option opts [String] :status 
     # @return [Array<(TransactionStatusGetResponse, Fixnum, Hash)>] TransactionStatusGetResponse data, response status code and response headers
     def get_transaction_statuses_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1105,6 +1111,9 @@ module MoleculeApi
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
       query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'wallet_id'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
+      query_params[:'hash'] = opts[:'hash'] if !opts[:'hash'].nil?
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
 
       # header parameters
       header_params = {}

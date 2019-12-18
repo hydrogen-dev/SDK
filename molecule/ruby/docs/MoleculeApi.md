@@ -1151,6 +1151,9 @@ opts = {
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
   get_latest: true, # BOOLEAN | Retrieves the latest entry
+  wallet_id: 'wallet_id_example', # String | Filters results by their wallet ids
+  hash: 'hash_example', # String | 
+  status: 'status_example' # String | 
 }
 
 begin
@@ -1171,6 +1174,9 @@ Name | Type | Description  | Notes
  **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
  **get_latest** | **BOOLEAN**| Retrieves the latest entry | [optional] 
+ **wallet_id** | **String**| Filters results by their wallet ids | [optional] 
+ **hash** | **String**|  | [optional] 
+ **status** | **String**|  | [optional] 
 
 ### Return type
 

@@ -28,7 +28,7 @@ import java.io.IOException;
  * The array of security token offering settings applied on this token
  */
 @ApiModel(description = "The array of security token offering settings applied on this token")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T11:23:05.622-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:21:57.070-05:00")
 public class OfferingSettingsUpdatePayload {
   @SerializedName("rate")
   private Integer rate = null;

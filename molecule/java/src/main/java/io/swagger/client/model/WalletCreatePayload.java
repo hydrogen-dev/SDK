@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * WalletCreatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
 public class WalletCreatePayload {
   @SerializedName("name")
   private String name = null;
@@ -40,7 +40,7 @@ public class WalletCreatePayload {
   private String type = null;
 
   @SerializedName("clients")
-  private List<WalletCreateClient> clients = null;
+  private List<WalletCreateClient> clients = new ArrayList<WalletCreateClient>();
 
   @SerializedName("token_whitelists")
   private List<WalletCreateWhitelist> tokenWhitelists = null;
@@ -96,9 +96,6 @@ public class WalletCreatePayload {
   }
 
   public WalletCreatePayload addClientsItem(WalletCreateClient clientsItem) {
-    if (this.clients == null) {
-      this.clients = new ArrayList<WalletCreateClient>();
-    }
     this.clients.add(clientsItem);
     return this;
   }
@@ -107,7 +104,7 @@ public class WalletCreatePayload {
    * List of nucleus clients associated with the wallet and their association type
    * @return clients
   **/
-  @ApiModelProperty(value = "List of nucleus clients associated with the wallet and their association type")
+  @ApiModelProperty(required = true, value = "List of nucleus clients associated with the wallet and their association type")
   public List<WalletCreateClient> getClients() {
     return clients;
   }

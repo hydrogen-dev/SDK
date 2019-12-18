@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from molecule_api.models.secondary_id import SecondaryId  # noqa: F401,E501
 from molecule_api.models.wallet_key_create_response import WalletKeyCreateResponse  # noqa: F401,E501
 
 
@@ -39,8 +38,6 @@ class WalletKeySpecificResponse(object):
         'key_server': 'str',
         'address': 'str',
         'private_key': 'str',
-        'metadata': 'object',
-        'secondary_id': 'SecondaryId',
         'create_date': 'str',
         'update_date': 'str'
     }
@@ -51,13 +48,11 @@ class WalletKeySpecificResponse(object):
         'key_server': 'key_server',
         'address': 'address',
         'private_key': 'private_key',
-        'metadata': 'metadata',
-        'secondary_id': 'secondary_id',
         'create_date': 'create_date',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, key_id=None, key_server=None, address=None, private_key=None, metadata=None, secondary_id=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, key_id=None, key_server=None, address=None, private_key=None, create_date=None, update_date=None):  # noqa: E501
         """WalletKeySpecificResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -65,8 +60,6 @@ class WalletKeySpecificResponse(object):
         self._key_server = None
         self._address = None
         self._private_key = None
-        self._metadata = None
-        self._secondary_id = None
         self._create_date = None
         self._update_date = None
         self.discriminator = None
@@ -81,10 +74,6 @@ class WalletKeySpecificResponse(object):
             self.address = address
         if private_key is not None:
             self.private_key = private_key
-        if metadata is not None:
-            self.metadata = metadata
-        if secondary_id is not None:
-            self.secondary_id = secondary_id
         if create_date is not None:
             self.create_date = create_date
         if update_date is not None:
@@ -204,50 +193,6 @@ class WalletKeySpecificResponse(object):
         """
 
         self._private_key = private_key
-
-    @property
-    def metadata(self):
-        """Gets the metadata of this WalletKeySpecificResponse.  # noqa: E501
-
-        Custom information associated with the account in the format key:value  # noqa: E501
-
-        :return: The metadata of this WalletKeySpecificResponse.  # noqa: E501
-        :rtype: object
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """Sets the metadata of this WalletKeySpecificResponse.
-
-        Custom information associated with the account in the format key:value  # noqa: E501
-
-        :param metadata: The metadata of this WalletKeySpecificResponse.  # noqa: E501
-        :type: object
-        """
-
-        self._metadata = metadata
-
-    @property
-    def secondary_id(self):
-        """Gets the secondary_id of this WalletKeySpecificResponse.  # noqa: E501
-
-
-        :return: The secondary_id of this WalletKeySpecificResponse.  # noqa: E501
-        :rtype: SecondaryId
-        """
-        return self._secondary_id
-
-    @secondary_id.setter
-    def secondary_id(self, secondary_id):
-        """Sets the secondary_id of this WalletKeySpecificResponse.
-
-
-        :param secondary_id: The secondary_id of this WalletKeySpecificResponse.  # noqa: E501
-        :type: SecondaryId
-        """
-
-        self._secondary_id = secondary_id
 
     @property
     def create_date(self):

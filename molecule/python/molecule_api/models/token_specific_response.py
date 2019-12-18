@@ -42,8 +42,9 @@ class TokenSpecificResponse(object):
         'name': 'str',
         'nucleus_model_id': 'str',
         'owner_wallet_id': 'str',
-        'total_supply': 'int',
-        'circulating_supply': 'int',
+        'total_supply': 'float',
+        'circulating_supply': 'float',
+        'whitelist_address': 'str',
         'conract_address': 'str',
         'crowdsale_address': 'str',
         'restrictions': 'TokenRestrictionsPayload',
@@ -62,6 +63,7 @@ class TokenSpecificResponse(object):
         'owner_wallet_id': 'owner_wallet_id',
         'total_supply': 'total_supply',
         'circulating_supply': 'circulating_supply',
+        'whitelist_address': 'whitelist_address',
         'conract_address': 'conract_address',
         'crowdsale_address': 'crowdsale_address',
         'restrictions': 'restrictions',
@@ -71,7 +73,7 @@ class TokenSpecificResponse(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, create_date=None, symbol=None, name=None, nucleus_model_id=None, owner_wallet_id=None, total_supply=None, circulating_supply=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, symbol=None, name=None, nucleus_model_id=None, owner_wallet_id=None, total_supply=None, circulating_supply=None, whitelist_address=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None, update_date=None):  # noqa: E501
         """TokenSpecificResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -82,6 +84,7 @@ class TokenSpecificResponse(object):
         self._owner_wallet_id = None
         self._total_supply = None
         self._circulating_supply = None
+        self._whitelist_address = None
         self._conract_address = None
         self._crowdsale_address = None
         self._restrictions = None
@@ -102,6 +105,8 @@ class TokenSpecificResponse(object):
         self.total_supply = total_supply
         if circulating_supply is not None:
             self.circulating_supply = circulating_supply
+        if whitelist_address is not None:
+            self.whitelist_address = whitelist_address
         if conract_address is not None:
             self.conract_address = conract_address
         if crowdsale_address is not None:
@@ -270,7 +275,7 @@ class TokenSpecificResponse(object):
         The total supply of the security token  # noqa: E501
 
         :return: The total_supply of this TokenSpecificResponse.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._total_supply
 
@@ -281,7 +286,7 @@ class TokenSpecificResponse(object):
         The total supply of the security token  # noqa: E501
 
         :param total_supply: The total_supply of this TokenSpecificResponse.  # noqa: E501
-        :type: int
+        :type: float
         """
         if total_supply is None:
             raise ValueError("Invalid value for `total_supply`, must not be `None`")  # noqa: E501
@@ -295,7 +300,7 @@ class TokenSpecificResponse(object):
         The amount of tokens in circulation. Defaults to 0  # noqa: E501
 
         :return: The circulating_supply of this TokenSpecificResponse.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._circulating_supply
 
@@ -306,10 +311,33 @@ class TokenSpecificResponse(object):
         The amount of tokens in circulation. Defaults to 0  # noqa: E501
 
         :param circulating_supply: The circulating_supply of this TokenSpecificResponse.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._circulating_supply = circulating_supply
+
+    @property
+    def whitelist_address(self):
+        """Gets the whitelist_address of this TokenSpecificResponse.  # noqa: E501
+
+        The whitelist address of the security token on the Ethereum blockchain  # noqa: E501
+
+        :return: The whitelist_address of this TokenSpecificResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._whitelist_address
+
+    @whitelist_address.setter
+    def whitelist_address(self, whitelist_address):
+        """Sets the whitelist_address of this TokenSpecificResponse.
+
+        The whitelist address of the security token on the Ethereum blockchain  # noqa: E501
+
+        :param whitelist_address: The whitelist_address of this TokenSpecificResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._whitelist_address = whitelist_address
 
     @property
     def conract_address(self):

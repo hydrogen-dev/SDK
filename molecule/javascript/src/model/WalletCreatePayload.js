@@ -46,13 +46,14 @@
    * @class
    * @param name {String} Name of the wallet
    * @param type {String} Type of the wallet. Can be individual, business, trust, or contract
+   * @param clients {Array.<module:model/WalletCreateClient>} List of nucleus clients associated with the wallet and their association type
    */
-  var exports = function(name, type) {
+  var exports = function(name, type, clients) {
     var _this = this;
 
     _this['name'] = name;
     _this['type'] = type;
-
+    _this['clients'] = clients;
 
 
 

@@ -20,11 +20,15 @@ module MoleculeApi
     # The role of the client as it relates to the wallet defined by your firm. Roles may be joint, owner, trustee, viewer, or admin.
     attr_accessor :client_wallet_association_type
 
+    # Determines if the wallet is the primary wallet of the client. Defaults to true.
+    attr_accessor :is_primary
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'nucleus_client_id' => :'nucleus_client_id',
-        :'client_wallet_association_type' => :'client_wallet_association_type'
+        :'client_wallet_association_type' => :'client_wallet_association_type',
+        :'is_primary' => :'is_primary'
       }
     end
 
@@ -32,7 +36,8 @@ module MoleculeApi
     def self.swagger_types
       {
         :'nucleus_client_id' => :'String',
-        :'client_wallet_association_type' => :'String'
+        :'client_wallet_association_type' => :'String',
+        :'is_primary' => :'BOOLEAN'
       }
     end
 
@@ -50,6 +55,12 @@ module MoleculeApi
 
       if attributes.has_key?(:'client_wallet_association_type')
         self.client_wallet_association_type = attributes[:'client_wallet_association_type']
+      end
+
+      if attributes.has_key?(:'is_primary')
+        self.is_primary = attributes[:'is_primary']
+      else
+        self.is_primary = true
       end
     end
 
@@ -82,7 +93,8 @@ module MoleculeApi
       return true if self.equal?(o)
       self.class == o.class &&
           nucleus_client_id == o.nucleus_client_id &&
-          client_wallet_association_type == o.client_wallet_association_type
+          client_wallet_association_type == o.client_wallet_association_type &&
+          is_primary == o.is_primary
     end
 
     # @see the `==` method
@@ -94,7 +106,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [nucleus_client_id, client_wallet_association_type].hash
+      [nucleus_client_id, client_wallet_association_type, is_primary].hash
     end
 
     # Builds the object from hash

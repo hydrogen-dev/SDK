@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * WalletKeySpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
 public class WalletKeySpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -45,12 +45,6 @@ public class WalletKeySpecificResponse {
 
   @SerializedName("private_key")
   private String privateKey = null;
-
-  @SerializedName("metadata")
-  private Object metadata = null;
-
-  @SerializedName("secondary_id")
-  private String secondaryId = null;
 
   @SerializedName("create_date")
   private String createDate = null;
@@ -148,42 +142,6 @@ public class WalletKeySpecificResponse {
     this.privateKey = privateKey;
   }
 
-  public WalletKeySpecificResponse metadata(Object metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-
-   /**
-   * Custom information associated with the account in the format key:value
-   * @return metadata
-  **/
-  @ApiModelProperty(value = "Custom information associated with the account in the format key:value")
-  public Object getMetadata() {
-    return metadata;
-  }
-
-  public void setMetadata(Object metadata) {
-    this.metadata = metadata;
-  }
-
-  public WalletKeySpecificResponse secondaryId(String secondaryId) {
-    this.secondaryId = secondaryId;
-    return this;
-  }
-
-   /**
-   * Get secondaryId
-   * @return secondaryId
-  **/
-  @ApiModelProperty(value = "")
-  public String getSecondaryId() {
-    return secondaryId;
-  }
-
-  public void setSecondaryId(String secondaryId) {
-    this.secondaryId = secondaryId;
-  }
-
   public WalletKeySpecificResponse createDate(String createDate) {
     this.createDate = createDate;
     return this;
@@ -235,15 +193,13 @@ public class WalletKeySpecificResponse {
         Objects.equals(this.keyServer, walletKeySpecificResponse.keyServer) &&
         Objects.equals(this.address, walletKeySpecificResponse.address) &&
         Objects.equals(this.privateKey, walletKeySpecificResponse.privateKey) &&
-        Objects.equals(this.metadata, walletKeySpecificResponse.metadata) &&
-        Objects.equals(this.secondaryId, walletKeySpecificResponse.secondaryId) &&
         Objects.equals(this.createDate, walletKeySpecificResponse.createDate) &&
         Objects.equals(this.updateDate, walletKeySpecificResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, keyId, keyServer, address, privateKey, metadata, secondaryId, createDate, updateDate);
+    return Objects.hash(id, keyId, keyServer, address, privateKey, createDate, updateDate);
   }
 
 
@@ -257,8 +213,6 @@ public class WalletKeySpecificResponse {
     sb.append("    keyServer: ").append(toIndentedString(keyServer)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

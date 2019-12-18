@@ -115,6 +115,10 @@ module MoleculeApi
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
+      if @clients.nil?
+        invalid_properties.push('invalid value for "clients", clients cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -123,6 +127,7 @@ module MoleculeApi
     def valid?
       return false if @name.nil?
       return false if @type.nil?
+      return false if @clients.nil?
       true
     end
 

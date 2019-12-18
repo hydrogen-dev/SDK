@@ -65,6 +65,7 @@
 
 
 
+
   };
 
   /**
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('circulating_supply')) {
         obj['circulating_supply'] = ApiClient.convertToType(data['circulating_supply'], 'Number');
+      }
+      if (data.hasOwnProperty('whitelist_address')) {
+        obj['whitelist_address'] = ApiClient.convertToType(data['whitelist_address'], 'String');
       }
       if (data.hasOwnProperty('conract_address')) {
         obj['conract_address'] = ApiClient.convertToType(data['conract_address'], 'String');
@@ -148,6 +152,11 @@
    * @member {Number} circulating_supply
    */
   exports.prototype['circulating_supply'] = undefined;
+  /**
+   * The whitelist address of the security token on the Ethereum blockchain
+   * @member {String} whitelist_address
+   */
+  exports.prototype['whitelist_address'] = undefined;
   /**
    * The contract address of the security token on the Ethereum blockchain
    * @member {String} conract_address

@@ -82,8 +82,7 @@ class WalletSpecificResponse(object):
             self.create_date = create_date
         self.name = name
         self.type = type
-        if clients is not None:
-            self.clients = clients
+        self.clients = clients
         if token_whitelists is not None:
             self.token_whitelists = token_whitelists
         if is_active is not None:
@@ -211,6 +210,8 @@ class WalletSpecificResponse(object):
         :param clients: The clients of this WalletSpecificResponse.  # noqa: E501
         :type: list[WalletCreateClient]
         """
+        if clients is None:
+            raise ValueError("Invalid value for `clients`, must not be `None`")  # noqa: E501
 
         self._clients = clients
 

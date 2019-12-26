@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **max_credit_score** | **float** | Investors with a credit score lower than this number will be allowed to invest | [optional] 
 **accreditation_required** | **bool** | Only accredited investors will be allowed to invest | [optional] 
 **kyc_required** | **bool** | Investors who are verified by a Know-Your-Customer vendor will be allowed to invest | [optional] 
+**include_country** | **list[str]** | Investors residing in these countries will be allowed to invest | [optional] 
+**exclude_country** | **list[str]** | Investors residing outside of these countries will be allowed to invest | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

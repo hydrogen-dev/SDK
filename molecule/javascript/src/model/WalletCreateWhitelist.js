@@ -72,11 +72,11 @@
       if (data.hasOwnProperty('role')) {
         obj['role'] = ApiClient.convertToType(data['role'], 'String');
       }
-      if (data.hasOwnProperty('sell_restriction')) {
-        obj['sell_restriction'] = ApiClient.convertToType(data['sell_restriction'], 'String');
+      if (data.hasOwnProperty('sell_restriction_date')) {
+        obj['sell_restriction_date'] = ApiClient.convertToType(data['sell_restriction_date'], 'String');
       }
-      if (data.hasOwnProperty('buy_restriction')) {
-        obj['buy_restriction'] = ApiClient.convertToType(data['buy_restriction'], 'String');
+      if (data.hasOwnProperty('buy_restriction_date')) {
+        obj['buy_restriction_date'] = ApiClient.convertToType(data['buy_restriction_date'], 'String');
       }
     }
     return obj;
@@ -94,14 +94,14 @@
   exports.prototype['role'] = undefined;
   /**
    * The date when resale restrictions should be lifted for the wallet
-   * @member {String} sell_restriction
+   * @member {String} sell_restriction_date
    */
-  exports.prototype['sell_restriction'] = undefined;
+  exports.prototype['sell_restriction_date'] = undefined;
   /**
    * The date when the buy restrictions should be lifted for the wallet
-   * @member {String} buy_restriction
+   * @member {String} buy_restriction_date
    */
-  exports.prototype['buy_restriction'] = undefined;
+  exports.prototype['buy_restriction_date'] = undefined;
 
 
 

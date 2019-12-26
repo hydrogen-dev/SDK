@@ -93,6 +93,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property whitelistAddress (base name: "whitelist_address")', function() {
+      // uncomment below and update the code to test the property whitelistAddress
+      //var instance = new molecule_api.TokenCreatePayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property conractAddress (base name: "conract_address")', function() {
       // uncomment below and update the code to test the property conractAddress
       //var instance = new molecule_api.TokenCreatePayload();

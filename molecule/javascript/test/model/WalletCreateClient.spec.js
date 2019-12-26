@@ -69,6 +69,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isPrimary (base name: "is_primary")', function() {
+      // uncomment below and update the code to test the property isPrimary
+      //var instance = new molecule_api.WalletCreateClient();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

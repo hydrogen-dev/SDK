@@ -25,12 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.OfferingSettingsUpdatePayload;
 import io.swagger.client.model.TokenRestrictionsPayload;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
  * TokenUpdatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
 public class TokenUpdatePayload {
   @SerializedName("symbol")
   private String symbol = null;
@@ -45,10 +46,13 @@ public class TokenUpdatePayload {
   private UUID ownerWalletId = null;
 
   @SerializedName("total_supply")
-  private Integer totalSupply = null;
+  private BigDecimal totalSupply = null;
 
   @SerializedName("circulating_supply")
-  private Integer circulatingSupply = null;
+  private BigDecimal circulatingSupply = null;
+
+  @SerializedName("whitelist_address")
+  private String whitelistAddress = null;
 
   @SerializedName("conract_address")
   private String conractAddress = null;
@@ -140,7 +144,7 @@ public class TokenUpdatePayload {
     this.ownerWalletId = ownerWalletId;
   }
 
-  public TokenUpdatePayload totalSupply(Integer totalSupply) {
+  public TokenUpdatePayload totalSupply(BigDecimal totalSupply) {
     this.totalSupply = totalSupply;
     return this;
   }
@@ -150,15 +154,15 @@ public class TokenUpdatePayload {
    * @return totalSupply
   **/
   @ApiModelProperty(value = "The total supply of the security token")
-  public Integer getTotalSupply() {
+  public BigDecimal getTotalSupply() {
     return totalSupply;
   }
 
-  public void setTotalSupply(Integer totalSupply) {
+  public void setTotalSupply(BigDecimal totalSupply) {
     this.totalSupply = totalSupply;
   }
 
-  public TokenUpdatePayload circulatingSupply(Integer circulatingSupply) {
+  public TokenUpdatePayload circulatingSupply(BigDecimal circulatingSupply) {
     this.circulatingSupply = circulatingSupply;
     return this;
   }
@@ -168,12 +172,30 @@ public class TokenUpdatePayload {
    * @return circulatingSupply
   **/
   @ApiModelProperty(value = "The amount of tokens in circulation. Defaults to 0")
-  public Integer getCirculatingSupply() {
+  public BigDecimal getCirculatingSupply() {
     return circulatingSupply;
   }
 
-  public void setCirculatingSupply(Integer circulatingSupply) {
+  public void setCirculatingSupply(BigDecimal circulatingSupply) {
     this.circulatingSupply = circulatingSupply;
+  }
+
+  public TokenUpdatePayload whitelistAddress(String whitelistAddress) {
+    this.whitelistAddress = whitelistAddress;
+    return this;
+  }
+
+   /**
+   * The whitelist address of the security token on the Ethereum blockchain
+   * @return whitelistAddress
+  **/
+  @ApiModelProperty(value = "The whitelist address of the security token on the Ethereum blockchain")
+  public String getWhitelistAddress() {
+    return whitelistAddress;
+  }
+
+  public void setWhitelistAddress(String whitelistAddress) {
+    this.whitelistAddress = whitelistAddress;
   }
 
   public TokenUpdatePayload conractAddress(String conractAddress) {
@@ -300,6 +322,7 @@ public class TokenUpdatePayload {
         Objects.equals(this.ownerWalletId, tokenUpdatePayload.ownerWalletId) &&
         Objects.equals(this.totalSupply, tokenUpdatePayload.totalSupply) &&
         Objects.equals(this.circulatingSupply, tokenUpdatePayload.circulatingSupply) &&
+        Objects.equals(this.whitelistAddress, tokenUpdatePayload.whitelistAddress) &&
         Objects.equals(this.conractAddress, tokenUpdatePayload.conractAddress) &&
         Objects.equals(this.crowdsaleAddress, tokenUpdatePayload.crowdsaleAddress) &&
         Objects.equals(this.restrictions, tokenUpdatePayload.restrictions) &&
@@ -310,7 +333,7 @@ public class TokenUpdatePayload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbol, name, nucleusModelId, ownerWalletId, totalSupply, circulatingSupply, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId);
+    return Objects.hash(symbol, name, nucleusModelId, ownerWalletId, totalSupply, circulatingSupply, whitelistAddress, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId);
   }
 
 
@@ -325,6 +348,7 @@ public class TokenUpdatePayload {
     sb.append("    ownerWalletId: ").append(toIndentedString(ownerWalletId)).append("\n");
     sb.append("    totalSupply: ").append(toIndentedString(totalSupply)).append("\n");
     sb.append("    circulatingSupply: ").append(toIndentedString(circulatingSupply)).append("\n");
+    sb.append("    whitelistAddress: ").append(toIndentedString(whitelistAddress)).append("\n");
     sb.append("    conractAddress: ").append(toIndentedString(conractAddress)).append("\n");
     sb.append("    crowdsaleAddress: ").append(toIndentedString(crowdsaleAddress)).append("\n");
     sb.append("    restrictions: ").append(toIndentedString(restrictions)).append("\n");

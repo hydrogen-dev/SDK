@@ -130,6 +130,317 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_webhook(self, webhook_id, **kwargs):  # noqa: E501
+        """Delete a webhook  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_webhook(webhook_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str webhook_id: UUID of a webhook (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_webhook_with_http_info(self, webhook_id, **kwargs):  # noqa: E501
+        """Delete a webhook  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_webhook_with_http_info(webhook_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str webhook_id: UUID of a webhook (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['webhook_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_webhook" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'webhook_id' is set
+        if ('webhook_id' not in params or
+                params['webhook_id'] is None):
+            raise ValueError("Missing the required parameter `webhook_id` when calling `delete_webhook`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'webhook_id' in params:
+            path_params['webhook_id'] = params['webhook_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/webhook/{webhook_id}/', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_currencies(self, **kwargs):  # noqa: E501
+        """Get information for all currencies defined for your firm  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currencies(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str symbol:
+        :return: CurrencyGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_currencies_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_currencies_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_currencies_with_http_info(self, **kwargs):  # noqa: E501
+        """Get information for all currencies defined for your firm  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currencies_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str symbol:
+        :return: CurrencyGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'symbol']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_currencies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_currencies`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_currencies`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'symbol' in params:
+            query_params.append(('symbol', params['symbol']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CurrencyGetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_currency(self, currency_id, **kwargs):  # noqa: E501
+        """Retrieve a currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currency(currency_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str currency_id: UUID of a currency (required)
+        :return: CurrencySpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_currency_with_http_info(currency_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_currency_with_http_info(currency_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_currency_with_http_info(self, currency_id, **kwargs):  # noqa: E501
+        """Retrieve a currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currency_with_http_info(currency_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str currency_id: UUID of a currency (required)
+        :return: CurrencySpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['currency_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_currency" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'currency_id' is set
+        if ('currency_id' not in params or
+                params['currency_id'] is None):
+            raise ValueError("Missing the required parameter `currency_id` when calling `get_currency`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'currency_id' in params:
+            path_params['currency_id'] = params['currency_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency/{currency_id}/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CurrencySpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_currency_balance(self, currency_balance_id, **kwargs):  # noqa: E501
         """Retrieve a currency balance  # noqa: E501
 
@@ -228,7 +539,7 @@ class MoleculeApi(object):
             collection_formats=collection_formats)
 
     def get_currency_balances(self, **kwargs):  # noqa: E501
-        """Get information for all currency balances defined for your application.  # noqa: E501
+        """Get information for all currency balances recorded in your application.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -240,6 +551,9 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: CurrencyBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -252,7 +566,7 @@ class MoleculeApi(object):
             return data
 
     def get_currency_balances_with_http_info(self, **kwargs):  # noqa: E501
-        """Get information for all currency balances defined for your application.  # noqa: E501
+        """Get information for all currency balances recorded in your application.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -264,12 +578,15 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: CurrencyBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'currency_id', 'wallet_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -302,6 +619,12 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'currency_id' in params:
+            query_params.append(('currency_id', params['currency_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
 
         header_params = {}
 
@@ -329,6 +652,232 @@ class MoleculeApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='CurrencyBalanceGetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_currency_transfer(self, currency_transfer_id, **kwargs):  # noqa: E501
+        """Retrieve a currency transfer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currency_transfer(currency_transfer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str currency_transfer_id: UUID of a currency transfer (required)
+        :return: CurrencyTransferSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_currency_transfer_with_http_info(currency_transfer_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_currency_transfer_with_http_info(currency_transfer_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_currency_transfer_with_http_info(self, currency_transfer_id, **kwargs):  # noqa: E501
+        """Retrieve a currency transfer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currency_transfer_with_http_info(currency_transfer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str currency_transfer_id: UUID of a currency transfer (required)
+        :return: CurrencyTransferSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['currency_transfer_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_currency_transfer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'currency_transfer_id' is set
+        if ('currency_transfer_id' not in params or
+                params['currency_transfer_id'] is None):
+            raise ValueError("Missing the required parameter `currency_transfer_id` when calling `get_currency_transfer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'currency_transfer_id' in params:
+            path_params['currency_transfer_id'] = params['currency_transfer_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency_transfer/{currency_transfer_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CurrencyTransferSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_currency_transfers(self, **kwargs):  # noqa: E501
+        """Get information for all currency transfers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currency_transfers(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
+        :return: CurrencyTransferGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_currency_transfers_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_currency_transfers_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_currency_transfers_with_http_info(self, **kwargs):  # noqa: E501
+        """Get information for all currency transfers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_currency_transfers_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str currency_id: Filters results by their currency ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
+        :return: CurrencyTransferGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'currency_id', 'wallet_id', 'sender_wallet_id', 'receiver_wallet_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_currency_transfers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_currency_transfers`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_currency_transfers`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'currency_id' in params:
+            query_params.append(('currency_id', params['currency_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
+        if 'sender_wallet_id' in params:
+            query_params.append(('sender_wallet_id', params['sender_wallet_id']))  # noqa: E501
+        if 'receiver_wallet_id' in params:
+            query_params.append(('receiver_wallet_id', params['receiver_wallet_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency_transfer', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CurrencyTransferGetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -543,6 +1092,9 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: TokenBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -567,12 +1119,15 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
         :return: TokenBalanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'token_id', 'wallet_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -605,6 +1160,12 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'token_id' in params:
+            query_params.append(('token_id', params['token_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
 
         header_params = {}
 
@@ -652,6 +1213,8 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
         :return: TokenSupplyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -676,12 +1239,14 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
         :return: TokenSupplyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'token_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -714,6 +1279,10 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'token_id' in params:
+            query_params.append(('token_id', params['token_id']))  # noqa: E501
 
         header_params = {}
 
@@ -845,6 +1414,232 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_token_transfer(self, token_transfer_id, **kwargs):  # noqa: E501
+        """Retrieve a token transfer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_token_transfer(token_transfer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str token_transfer_id: UUID of a token transfer (required)
+        :return: TokenTransferSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_token_transfer_with_http_info(token_transfer_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_token_transfer_with_http_info(token_transfer_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_token_transfer_with_http_info(self, token_transfer_id, **kwargs):  # noqa: E501
+        """Retrieve a token transfer  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_token_transfer_with_http_info(token_transfer_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str token_transfer_id: UUID of a token transfer (required)
+        :return: TokenTransferSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['token_transfer_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_token_transfer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'token_transfer_id' is set
+        if ('token_transfer_id' not in params or
+                params['token_transfer_id'] is None):
+            raise ValueError("Missing the required parameter `token_transfer_id` when calling `get_token_transfer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'token_transfer_id' in params:
+            path_params['token_transfer_id'] = params['token_transfer_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/token_transfer/{token_transfer_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TokenTransferSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_token_transfers(self, **kwargs):  # noqa: E501
+        """Get information for all token transfers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_token_transfers(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
+        :return: TokenTransferGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_token_transfers_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_token_transfers_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_token_transfers_with_http_info(self, **kwargs):  # noqa: E501
+        """Get information for all token transfers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_token_transfers_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str token_id: Filters results by their token ids
+        :param str wallet_id: Filters results by their wallet ids
+        :param str sender_wallet_id: Filters results by their sender wallet ids
+        :param str receiver_wallet_id: Filters results by their receiver wallet ids
+        :return: TokenTransferGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'token_id', 'wallet_id', 'sender_wallet_id', 'receiver_wallet_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_token_transfers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_token_transfers`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_token_transfers`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'token_id' in params:
+            query_params.append(('token_id', params['token_id']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
+        if 'sender_wallet_id' in params:
+            query_params.append(('sender_wallet_id', params['sender_wallet_id']))  # noqa: E501
+        if 'receiver_wallet_id' in params:
+            query_params.append(('receiver_wallet_id', params['receiver_wallet_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/token_transfer', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TokenTransferGetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_tokens(self, **kwargs):  # noqa: E501
         """Get information for all tokens defined for your firm  # noqa: E501
 
@@ -858,6 +1653,7 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
         :return: TokenGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -882,12 +1678,13 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
         :return: TokenGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -920,6 +1717,8 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
 
         header_params = {}
 
@@ -947,6 +1746,228 @@ class MoleculeApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='TokenGetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_transaction_status(self, transaction_status_id, **kwargs):  # noqa: E501
+        """Retrieve status information for a specific transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transaction_status(transaction_status_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str transaction_status_id: UUID of a transaction status (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_transaction_status_with_http_info(transaction_status_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_transaction_status_with_http_info(transaction_status_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_transaction_status_with_http_info(self, transaction_status_id, **kwargs):  # noqa: E501
+        """Retrieve status information for a specific transaction  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transaction_status_with_http_info(transaction_status_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str transaction_status_id: UUID of a transaction status (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['transaction_status_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_transaction_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'transaction_status_id' is set
+        if ('transaction_status_id' not in params or
+                params['transaction_status_id'] is None):
+            raise ValueError("Missing the required parameter `transaction_status_id` when calling `get_transaction_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'transaction_status_id' in params:
+            path_params['transaction_status_id'] = params['transaction_status_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/transaction_status/{transaction_status_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_transaction_statuses(self, **kwargs):  # noqa: E501
+        """Get status information for all transactions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transaction_statuses(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str wallet_id: Filters results by their wallet ids
+        :param str hash:
+        :param str status:
+        :return: TransactionStatusGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_transaction_statuses_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_transaction_statuses_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_transaction_statuses_with_http_info(self, **kwargs):  # noqa: E501
+        """Get status information for all transactions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transaction_statuses_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str wallet_id: Filters results by their wallet ids
+        :param str hash:
+        :param str status:
+        :return: TransactionStatusGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'wallet_id', 'hash', 'status']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_transaction_statuses" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_transaction_statuses`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_transaction_statuses`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'wallet_id' in params:
+            query_params.append(('wallet_id', params['wallet_id']))  # noqa: E501
+        if 'hash' in params:
+            query_params.append(('hash', params['hash']))  # noqa: E501
+        if 'status' in params:
+            query_params.append(('status', params['status']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/transaction_status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusGetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1161,6 +2182,7 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
         :return: WalletKeyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1185,12 +2207,13 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
         :return: WalletKeyGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1223,6 +2246,8 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
 
         header_params = {}
 
@@ -1270,6 +2295,9 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str nucleus_client_id:
+        :param bool is_primary:
         :return: WalletGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1294,12 +2322,15 @@ class MoleculeApi(object):
         :param int size: The number or records to be included per page. The default is 25. There is no max value.
         :param str order_by: The field in the response body to order the list by. Default is update_date.
         :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :param str nucleus_client_id:
+        :param bool is_primary:
         :return: WalletGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'order_by', 'ascending']  # noqa: E501
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest', 'nucleus_client_id', 'is_primary']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1332,6 +2363,12 @@ class MoleculeApi(object):
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+        if 'nucleus_client_id' in params:
+            query_params.append(('nucleus_client_id', params['nucleus_client_id']))  # noqa: E501
+        if 'is_primary' in params:
+            query_params.append(('is_primary', params['is_primary']))  # noqa: E501
 
         header_params = {}
 
@@ -1359,6 +2396,604 @@ class MoleculeApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='WalletGetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_webhook(self, webhook_id, **kwargs):  # noqa: E501
+        """Retrieve a webhook  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_webhook(webhook_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str webhook_id: UUID of a webhook (required)
+        :return: WebhookSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_webhook_with_http_info(self, webhook_id, **kwargs):  # noqa: E501
+        """Retrieve a webhook  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_webhook_with_http_info(webhook_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str webhook_id: UUID of a webhook (required)
+        :return: WebhookSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['webhook_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_webhook" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'webhook_id' is set
+        if ('webhook_id' not in params or
+                params['webhook_id'] is None):
+            raise ValueError("Missing the required parameter `webhook_id` when calling `get_webhook`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'webhook_id' in params:
+            path_params['webhook_id'] = params['webhook_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/webhook/{webhook_id}/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='WebhookSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_webhooks(self, **kwargs):  # noqa: E501
+        """Get information for all webhooks defined for your firm  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_webhooks(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :return: WebhookGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_webhooks_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_webhooks_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_webhooks_with_http_info(self, **kwargs):  # noqa: E501
+        """Get information for all webhooks defined for your firm  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_webhooks_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :return: WebhookGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_webhooks" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_webhooks`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_webhooks`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/webhook', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='WebhookGetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_crowdsale_deploy(self, payload, **kwargs):  # noqa: E501
+        """Deploy a token's crowdsale contract.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_deploy(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleDeployPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_crowdsale_deploy_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_crowdsale_deploy_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_crowdsale_deploy_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Deploy a token's crowdsale contract.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_deploy_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleDeployPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_crowdsale_deploy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_crowdsale_deploy`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/crowdsale/deploy', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_crowdsale_fund(self, payload, **kwargs):  # noqa: E501
+        """Transfer tokens to a token's crowdsale address.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_fund(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleFundPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_crowdsale_fund_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_crowdsale_fund_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_crowdsale_fund_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Transfer tokens to a token's crowdsale address.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_fund_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsaleFundPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_crowdsale_fund" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_crowdsale_fund`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/crowdsale/fund', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_crowdsale_purchase(self, payload, **kwargs):  # noqa: E501
+        """Purchase tokens from a crowdsale contract  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_purchase(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsalePurchasePayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_crowdsale_purchase_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_crowdsale_purchase_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_crowdsale_purchase_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Purchase tokens from a crowdsale contract  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_crowdsale_purchase_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CrowdsalePurchasePayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_crowdsale_purchase" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_crowdsale_purchase`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/crowdsale/purchase', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_currency_transfer(self, payload, **kwargs):  # noqa: E501
+        """Transfer currency between wallets  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_currency_transfer(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CurrencyTransferPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_currency_transfer_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_currency_transfer_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_currency_transfer_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Transfer currency between wallets  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_currency_transfer_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CurrencyTransferPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_currency_transfer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_currency_transfer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency_transfer', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1463,105 +3098,8 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_token_crowdsale(self, payload, **kwargs):  # noqa: E501
-        """Transfer tokens to a token's crowdsale address.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_crowdsale(payload, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param TokenCrowdsalePayload payload: (required)
-        :return: TokenCreateResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.post_token_crowdsale_with_http_info(payload, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_token_crowdsale_with_http_info(payload, **kwargs)  # noqa: E501
-            return data
-
-    def post_token_crowdsale_with_http_info(self, payload, **kwargs):  # noqa: E501
-        """Transfer tokens to a token's crowdsale address.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_crowdsale_with_http_info(payload, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param TokenCrowdsalePayload payload: (required)
-        :return: TokenCreateResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['payload']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_token_crowdsale" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'payload' is set
-        if ('payload' not in params or
-                params['payload'] is None):
-            raise ValueError("Missing the required parameter `payload` when calling `post_token_crowdsale`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'payload' in params:
-            body_params = params['payload']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/molecule/v1/token/crowdsale', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='TokenCreateResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def post_token_deploy(self, payload, **kwargs):  # noqa: E501
-        """Deploy a secuirty token contract and its crowdsale contract to blockchain.  # noqa: E501
+        """Deploy a security token contract to blockchain.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1570,7 +3108,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenDeployPayload payload: (required)
-        :return: TokenCreateResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1582,7 +3120,7 @@ class MoleculeApi(object):
             return data
 
     def post_token_deploy_with_http_info(self, payload, **kwargs):  # noqa: E501
-        """Deploy a secuirty token contract and its crowdsale contract to blockchain.  # noqa: E501
+        """Deploy a security token contract to blockchain.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1591,7 +3129,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenDeployPayload payload: (required)
-        :return: TokenCreateResponse
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1649,7 +3187,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TokenCreateResponse',  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1657,38 +3195,38 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_token_purchase(self, payload, **kwargs):  # noqa: E501
-        """Participate in a token's crowdsale and purchase tokens.  # noqa: E501
+    def post_token_transfer(self, payload, **kwargs):  # noqa: E501
+        """Transfer tokens between wallets  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_purchase(payload, async_req=True)
+        >>> thread = api.post_token_transfer(payload, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TokenPurchasePayload payload: (required)
-        :return: None
+        :param TokenTransferPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_token_purchase_with_http_info(payload, **kwargs)  # noqa: E501
+            return self.post_token_transfer_with_http_info(payload, **kwargs)  # noqa: E501
         else:
-            (data) = self.post_token_purchase_with_http_info(payload, **kwargs)  # noqa: E501
+            (data) = self.post_token_transfer_with_http_info(payload, **kwargs)  # noqa: E501
             return data
 
-    def post_token_purchase_with_http_info(self, payload, **kwargs):  # noqa: E501
-        """Participate in a token's crowdsale and purchase tokens.  # noqa: E501
+    def post_token_transfer_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Transfer tokens between wallets  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_token_purchase_with_http_info(payload, async_req=True)
+        >>> thread = api.post_token_transfer_with_http_info(payload, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TokenPurchasePayload payload: (required)
-        :return: None
+        :param TokenTransferPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1704,14 +3242,14 @@ class MoleculeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method post_token_purchase" % key
+                    " to method post_token_transfer" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'payload' is set
         if ('payload' not in params or
                 params['payload'] is None):
-            raise ValueError("Missing the required parameter `payload` when calling `post_token_purchase`")  # noqa: E501
+            raise ValueError("Missing the required parameter `payload` when calling `post_token_transfer`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1739,14 +3277,14 @@ class MoleculeApi(object):
         auth_settings = ['oauth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/molecule/v1/token/purchase', 'POST',
+            '/molecule/v1/token_transfer', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1764,7 +3302,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenWhitelistPayload payload: (required)
-        :return: None
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1785,7 +3323,7 @@ class MoleculeApi(object):
 
         :param async_req bool
         :param TokenWhitelistPayload payload: (required)
-        :return: None
+        :return: TransactionStatusSpecificResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1843,7 +3381,7 @@ class MoleculeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2142,6 +3680,103 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_webhook(self, payload, **kwargs):  # noqa: E501
+        """Create a webhook under your firm.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_webhook(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param WebhookCreatePayload payload: (required)
+        :return: WebhookCreateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_webhook_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_webhook_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_webhook_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Create a webhook under your firm.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_webhook_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param WebhookCreatePayload payload: (required)
+        :return: WebhookCreateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_webhook" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_webhook`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/webhook', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='WebhookCreateResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_token(self, token_id, payload, **kwargs):  # noqa: E501
         """Update a token  # noqa: E501
 
@@ -2345,6 +3980,111 @@ class MoleculeApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='WalletSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_webhook(self, webhook_id, payload, **kwargs):  # noqa: E501
+        """Update a webhook  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_webhook(webhook_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str webhook_id: UUID of a webhook (required)
+        :param WebhookUpdatePayload payload: (required)
+        :return: WebhookSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_webhook_with_http_info(webhook_id, payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_webhook_with_http_info(webhook_id, payload, **kwargs)  # noqa: E501
+            return data
+
+    def update_webhook_with_http_info(self, webhook_id, payload, **kwargs):  # noqa: E501
+        """Update a webhook  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_webhook_with_http_info(webhook_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str webhook_id: UUID of a webhook (required)
+        :param WebhookUpdatePayload payload: (required)
+        :return: WebhookSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['webhook_id', 'payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_webhook" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'webhook_id' is set
+        if ('webhook_id' not in params or
+                params['webhook_id'] is None):
+            raise ValueError("Missing the required parameter `webhook_id` when calling `update_webhook`")  # noqa: E501
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `update_webhook`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'webhook_id' in params:
+            path_params['webhook_id'] = params['webhook_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/webhook/{webhook_id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='WebhookSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

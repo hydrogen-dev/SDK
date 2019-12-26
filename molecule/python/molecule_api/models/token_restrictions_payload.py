@@ -42,7 +42,9 @@ class TokenRestrictionsPayload(object):
         'min_credit_score': 'float',
         'max_credit_score': 'float',
         'accreditation_required': 'bool',
-        'kyc_required': 'bool'
+        'kyc_required': 'bool',
+        'include_country': 'list[str]',
+        'exclude_country': 'list[str]'
     }
 
     attribute_map = {
@@ -57,10 +59,12 @@ class TokenRestrictionsPayload(object):
         'min_credit_score': 'min_credit_score',
         'max_credit_score': 'max_credit_score',
         'accreditation_required': 'accreditation_required',
-        'kyc_required': 'kyc_required'
+        'kyc_required': 'kyc_required',
+        'include_country': 'include_country',
+        'exclude_country': 'exclude_country'
     }
 
-    def __init__(self, min_age=None, max_age=None, min_annual_income=None, max_annual_income=None, min_household_income=None, max_household_income=None, min_net_worth=None, max_net_worth=None, min_credit_score=None, max_credit_score=None, accreditation_required=None, kyc_required=None):  # noqa: E501
+    def __init__(self, min_age=None, max_age=None, min_annual_income=None, max_annual_income=None, min_household_income=None, max_household_income=None, min_net_worth=None, max_net_worth=None, min_credit_score=None, max_credit_score=None, accreditation_required=None, kyc_required=None, include_country=None, exclude_country=None):  # noqa: E501
         """TokenRestrictionsPayload - a model defined in Swagger"""  # noqa: E501
 
         self._min_age = None
@@ -75,6 +79,8 @@ class TokenRestrictionsPayload(object):
         self._max_credit_score = None
         self._accreditation_required = None
         self._kyc_required = None
+        self._include_country = None
+        self._exclude_country = None
         self.discriminator = None
 
         if min_age is not None:
@@ -101,6 +107,10 @@ class TokenRestrictionsPayload(object):
             self.accreditation_required = accreditation_required
         if kyc_required is not None:
             self.kyc_required = kyc_required
+        if include_country is not None:
+            self.include_country = include_country
+        if exclude_country is not None:
+            self.exclude_country = exclude_country
 
     @property
     def min_age(self):
@@ -377,6 +387,52 @@ class TokenRestrictionsPayload(object):
         """
 
         self._kyc_required = kyc_required
+
+    @property
+    def include_country(self):
+        """Gets the include_country of this TokenRestrictionsPayload.  # noqa: E501
+
+        Investors residing in these countries will be allowed to invest  # noqa: E501
+
+        :return: The include_country of this TokenRestrictionsPayload.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._include_country
+
+    @include_country.setter
+    def include_country(self, include_country):
+        """Sets the include_country of this TokenRestrictionsPayload.
+
+        Investors residing in these countries will be allowed to invest  # noqa: E501
+
+        :param include_country: The include_country of this TokenRestrictionsPayload.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._include_country = include_country
+
+    @property
+    def exclude_country(self):
+        """Gets the exclude_country of this TokenRestrictionsPayload.  # noqa: E501
+
+        Investors residing outside of these countries will be allowed to invest  # noqa: E501
+
+        :return: The exclude_country of this TokenRestrictionsPayload.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._exclude_country
+
+    @exclude_country.setter
+    def exclude_country(self, exclude_country):
+        """Sets the exclude_country of this TokenRestrictionsPayload.
+
+        Investors residing outside of these countries will be allowed to invest  # noqa: E501
+
+        :param exclude_country: The exclude_country of this TokenRestrictionsPayload.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._exclude_country = exclude_country
 
     def to_dict(self):
         """Returns the model properties as a dict"""

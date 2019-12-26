@@ -36,6 +36,27 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_webhook(self):
+        """Test case for delete_webhook
+
+        Delete a webhook  # noqa: E501
+        """
+        pass
+
+    def test_get_currencies(self):
+        """Test case for get_currencies
+
+        Get information for all currencies defined for your firm  # noqa: E501
+        """
+        pass
+
+    def test_get_currency(self):
+        """Test case for get_currency
+
+        Retrieve a currency  # noqa: E501
+        """
+        pass
+
     def test_get_currency_balance(self):
         """Test case for get_currency_balance
 
@@ -46,7 +67,21 @@ class TestMoleculeApi(unittest.TestCase):
     def test_get_currency_balances(self):
         """Test case for get_currency_balances
 
-        Get information for all currency balances defined for your application.  # noqa: E501
+        Get information for all currency balances recorded in your application.  # noqa: E501
+        """
+        pass
+
+    def test_get_currency_transfer(self):
+        """Test case for get_currency_transfer
+
+        Retrieve a currency transfer  # noqa: E501
+        """
+        pass
+
+    def test_get_currency_transfers(self):
+        """Test case for get_currency_transfers
+
+        Get information for all currency transfers  # noqa: E501
         """
         pass
 
@@ -85,10 +120,38 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_token_transfer(self):
+        """Test case for get_token_transfer
+
+        Retrieve a token transfer  # noqa: E501
+        """
+        pass
+
+    def test_get_token_transfers(self):
+        """Test case for get_token_transfers
+
+        Get information for all token transfers  # noqa: E501
+        """
+        pass
+
     def test_get_tokens(self):
         """Test case for get_tokens
 
         Get information for all tokens defined for your firm  # noqa: E501
+        """
+        pass
+
+    def test_get_transaction_status(self):
+        """Test case for get_transaction_status
+
+        Retrieve status information for a specific transaction  # noqa: E501
+        """
+        pass
+
+    def test_get_transaction_statuses(self):
+        """Test case for get_transaction_statuses
+
+        Get status information for all transactions  # noqa: E501
         """
         pass
 
@@ -120,6 +183,48 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_webhook(self):
+        """Test case for get_webhook
+
+        Retrieve a webhook  # noqa: E501
+        """
+        pass
+
+    def test_get_webhooks(self):
+        """Test case for get_webhooks
+
+        Get information for all webhooks defined for your firm  # noqa: E501
+        """
+        pass
+
+    def test_post_crowdsale_deploy(self):
+        """Test case for post_crowdsale_deploy
+
+        Deploy a token's crowdsale contract.  # noqa: E501
+        """
+        pass
+
+    def test_post_crowdsale_fund(self):
+        """Test case for post_crowdsale_fund
+
+        Transfer tokens to a token's crowdsale address.  # noqa: E501
+        """
+        pass
+
+    def test_post_crowdsale_purchase(self):
+        """Test case for post_crowdsale_purchase
+
+        Purchase tokens from a crowdsale contract  # noqa: E501
+        """
+        pass
+
+    def test_post_currency_transfer(self):
+        """Test case for post_currency_transfer
+
+        Transfer currency between wallets  # noqa: E501
+        """
+        pass
+
     def test_post_token(self):
         """Test case for post_token
 
@@ -127,24 +232,17 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
-    def test_post_token_crowdsale(self):
-        """Test case for post_token_crowdsale
-
-        Transfer tokens to a token's crowdsale address.  # noqa: E501
-        """
-        pass
-
     def test_post_token_deploy(self):
         """Test case for post_token_deploy
 
-        Deploy a secuirty token contract and its crowdsale contract to blockchain.  # noqa: E501
+        Deploy a security token contract to blockchain.  # noqa: E501
         """
         pass
 
-    def test_post_token_purchase(self):
-        """Test case for post_token_purchase
+    def test_post_token_transfer(self):
+        """Test case for post_token_transfer
 
-        Participate in a token's crowdsale and purchase tokens.  # noqa: E501
+        Transfer tokens between wallets  # noqa: E501
         """
         pass
 
@@ -176,6 +274,13 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_post_webhook(self):
+        """Test case for post_webhook
+
+        Create a webhook under your firm.  # noqa: E501
+        """
+        pass
+
     def test_update_token(self):
         """Test case for update_token
 
@@ -187,6 +292,13 @@ class TestMoleculeApi(unittest.TestCase):
         """Test case for update_wallet
 
         Update a wallet  # noqa: E501
+        """
+        pass
+
+    def test_update_webhook(self):
+        """Test case for update_webhook
+
+        Update a webhook  # noqa: E501
         """
         pass
 

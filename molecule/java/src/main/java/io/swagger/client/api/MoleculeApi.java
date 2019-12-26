@@ -27,21 +27,32 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.swagger.client.model.CrowdsaleDeployPayload;
+import io.swagger.client.model.CrowdsaleFundPayload;
+import io.swagger.client.model.CrowdsalePurchasePayload;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
+import io.swagger.client.model.CurrencyGetResponse;
+import io.swagger.client.model.CurrencySpecificResponse;
+import io.swagger.client.model.CurrencyTransferGetResponse;
+import io.swagger.client.model.CurrencyTransferPayload;
+import io.swagger.client.model.CurrencyTransferSpecificResponse;
 import io.swagger.client.model.TokenBalanceGetResponse;
 import io.swagger.client.model.TokenBalanceSpecificResponse;
 import io.swagger.client.model.TokenCreatePayload;
 import io.swagger.client.model.TokenCreateResponse;
-import io.swagger.client.model.TokenCrowdsalePayload;
 import io.swagger.client.model.TokenDeployPayload;
 import io.swagger.client.model.TokenGetResponse;
-import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
+import io.swagger.client.model.TokenTransferGetResponse;
+import io.swagger.client.model.TokenTransferPayload;
+import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
+import io.swagger.client.model.TransactionStatusGetResponse;
+import io.swagger.client.model.TransactionStatusSpecificResponse;
 import java.util.UUID;
 import io.swagger.client.model.WalletCreatePayload;
 import io.swagger.client.model.WalletCreateResponse;
@@ -53,6 +64,11 @@ import io.swagger.client.model.WalletKeyGetResponse;
 import io.swagger.client.model.WalletKeySpecificResponse;
 import io.swagger.client.model.WalletSpecificResponse;
 import io.swagger.client.model.WalletUpdatePayload;
+import io.swagger.client.model.WebhookCreatePayload;
+import io.swagger.client.model.WebhookCreateResponse;
+import io.swagger.client.model.WebhookGetResponse;
+import io.swagger.client.model.WebhookSpecificResponse;
+import io.swagger.client.model.WebhookUpdatePayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -207,6 +223,421 @@ public class MoleculeApi {
         return call;
     }
     /**
+     * Build call for deleteWebhook
+     * @param webhookId UUID of a webhook (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call deleteWebhookCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook/{webhook_id}/"
+            .replaceAll("\\{" + "webhook_id" + "\\}", apiClient.escapeString(webhookId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteWebhookValidateBeforeCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'webhookId' is set
+        if (webhookId == null) {
+            throw new ApiException("Missing the required parameter 'webhookId' when calling deleteWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = deleteWebhookCall(webhookId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public void deleteWebhook(UUID webhookId) throws ApiException {
+        deleteWebhookWithHttpInfo(webhookId);
+    }
+
+    /**
+     * Delete a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public ApiResponse<Void> deleteWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+        com.squareup.okhttp.Call call = deleteWebhookValidateBeforeCall(webhookId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete a webhook (asynchronously)
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Delete-a-webhook">Delete a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call deleteWebhookAsync(UUID webhookId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteWebhookValidateBeforeCall(webhookId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrencies
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrenciesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (symbol != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("symbol", symbol));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrenciesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getCurrenciesCall(page, size, orderBy, ascending, getLatest, symbol, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all currencies defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
+     * @return CurrencyGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public CurrencyGetResponse getCurrencies(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol) throws ApiException {
+        ApiResponse<CurrencyGetResponse> resp = getCurrenciesWithHttpInfo(page, size, orderBy, ascending, getLatest, symbol);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all currencies defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
+     * @return ApiResponse&lt;CurrencyGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public ApiResponse<CurrencyGetResponse> getCurrenciesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, getLatest, symbol, null, null);
+        Type localVarReturnType = new TypeToken<CurrencyGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all currencies defined for your firm (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param symbol  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currencies">Get information for all currencies defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrenciesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String symbol, final ApiCallback<CurrencyGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrenciesValidateBeforeCall(page, size, orderBy, ascending, getLatest, symbol, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencyGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrency
+     * @param currencyId UUID of a currency (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyCall(UUID currencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency/{currency_id}/"
+            .replaceAll("\\{" + "currency_id" + "\\}", apiClient.escapeString(currencyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrencyValidateBeforeCall(UUID currencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'currencyId' is set
+        if (currencyId == null) {
+            throw new ApiException("Missing the required parameter 'currencyId' when calling getCurrency(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCurrencyCall(currencyId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve a currency
+     * 
+     * @param currencyId UUID of a currency (required)
+     * @return CurrencySpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public CurrencySpecificResponse getCurrency(UUID currencyId) throws ApiException {
+        ApiResponse<CurrencySpecificResponse> resp = getCurrencyWithHttpInfo(currencyId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a currency
+     * 
+     * @param currencyId UUID of a currency (required)
+     * @return ApiResponse&lt;CurrencySpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public ApiResponse<CurrencySpecificResponse> getCurrencyWithHttpInfo(UUID currencyId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyValidateBeforeCall(currencyId, null, null);
+        Type localVarReturnType = new TypeToken<CurrencySpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a currency (asynchronously)
+     * 
+     * @param currencyId UUID of a currency (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency">Retrieve a currency Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyAsync(UUID currencyId, final ApiCallback<CurrencySpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrencyValidateBeforeCall(currencyId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencySpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for getCurrencyBalance
      * @param currencyBalanceId UUID of a currency balance (required)
      * @param progressListener Progress listener
@@ -343,14 +774,17 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrencyBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCurrencyBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -366,6 +800,12 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (currencyId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("currency_id", currencyId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -400,63 +840,72 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCurrencyBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCurrencyBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getCurrencyBalancesCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrencyBalancesCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get information for all currency balances defined for your application.
+     * Get information for all currency balances recorded in your application.
      * 
      * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return CurrencyBalanceGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public CurrencyBalanceGetResponse getCurrencyBalances(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        ApiResponse<CurrencyBalanceGetResponse> resp = getCurrencyBalancesWithHttpInfo(page, size, orderBy, ascending);
+    public CurrencyBalanceGetResponse getCurrencyBalances(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId) throws ApiException {
+        ApiResponse<CurrencyBalanceGetResponse> resp = getCurrencyBalancesWithHttpInfo(page, size, orderBy, ascending, getLatest, currencyId, walletId);
         return resp.getData();
     }
 
     /**
-     * Get information for all currency balances defined for your application.
+     * Get information for all currency balances recorded in your application.
      * 
      * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return ApiResponse&lt;CurrencyBalanceGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public ApiResponse<CurrencyBalanceGetResponse> getCurrencyBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, null, null);
+    public ApiResponse<CurrencyBalanceGetResponse> getCurrencyBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, null, null);
         Type localVarReturnType = new TypeToken<CurrencyBalanceGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get information for all currency balances defined for your application. (asynchronously)
+     * Get information for all currency balances recorded in your application. (asynchronously)
      * 
      * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances defined for your application. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-balances">Get information for all currency balances recorded in your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getCurrencyBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<CurrencyBalanceGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCurrencyBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, final ApiCallback<CurrencyBalanceGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -477,8 +926,314 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCurrencyBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CurrencyBalanceGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrencyTransfer
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransferCall(UUID currencyTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency_transfer/{currency_transfer_id}"
+            .replaceAll("\\{" + "currency_transfer_id" + "\\}", apiClient.escapeString(currencyTransferId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrencyTransferValidateBeforeCall(UUID currencyTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'currencyTransferId' is set
+        if (currencyTransferId == null) {
+            throw new ApiException("Missing the required parameter 'currencyTransferId' when calling getCurrencyTransfer(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCurrencyTransferCall(currencyTransferId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve a currency transfer
+     * 
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @return CurrencyTransferSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
+     */
+    public CurrencyTransferSpecificResponse getCurrencyTransfer(UUID currencyTransferId) throws ApiException {
+        ApiResponse<CurrencyTransferSpecificResponse> resp = getCurrencyTransferWithHttpInfo(currencyTransferId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a currency transfer
+     * 
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @return ApiResponse&lt;CurrencyTransferSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
+     */
+    public ApiResponse<CurrencyTransferSpecificResponse> getCurrencyTransferWithHttpInfo(UUID currencyTransferId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyTransferValidateBeforeCall(currencyTransferId, null, null);
+        Type localVarReturnType = new TypeToken<CurrencyTransferSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a currency transfer (asynchronously)
+     * 
+     * @param currencyTransferId UUID of a currency transfer (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency-transfer-receipt">Retrieve a currency transfer Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransferAsync(UUID currencyTransferId, final ApiCallback<CurrencyTransferSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrencyTransferValidateBeforeCall(currencyTransferId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencyTransferSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCurrencyTransfers
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency_transfer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (currencyId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("currency_id", currencyId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
+        if (senderWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sender_wallet_id", senderWalletId));
+        if (receiverWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("receiver_wallet_id", receiverWalletId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCurrencyTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getCurrencyTransfersCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all currency transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @return CurrencyTransferGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
+     */
+    public CurrencyTransferGetResponse getCurrencyTransfers(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        ApiResponse<CurrencyTransferGetResponse> resp = getCurrencyTransfersWithHttpInfo(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all currency transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @return ApiResponse&lt;CurrencyTransferGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
+     */
+    public ApiResponse<CurrencyTransferGetResponse> getCurrencyTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId, null, null);
+        Type localVarReturnType = new TypeToken<CurrencyTransferGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all currency transfers (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param currencyId Filters results by their currency ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-currency-transfer-receipts">Get information for all currency transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getCurrencyTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String currencyId, String walletId, String senderWalletId, String receiverWalletId, final ApiCallback<CurrencyTransferGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCurrencyTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CurrencyTransferGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -750,6 +1505,9 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -757,7 +1515,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTokenBalancesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -773,6 +1531,12 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (tokenId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("token_id", tokenId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -807,10 +1571,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTokenBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTokenBalancesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTokenBalancesCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenBalancesCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -822,13 +1586,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return TokenBalanceGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public TokenBalanceGetResponse getTokenBalances(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        ApiResponse<TokenBalanceGetResponse> resp = getTokenBalancesWithHttpInfo(page, size, orderBy, ascending);
+    public TokenBalanceGetResponse getTokenBalances(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId) throws ApiException {
+        ApiResponse<TokenBalanceGetResponse> resp = getTokenBalancesWithHttpInfo(page, size, orderBy, ascending, getLatest, tokenId, walletId);
         return resp.getData();
     }
 
@@ -839,13 +1606,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @return ApiResponse&lt;TokenBalanceGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public ApiResponse<TokenBalanceGetResponse> getTokenBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, null, null);
+    public ApiResponse<TokenBalanceGetResponse> getTokenBalancesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, null, null);
         Type localVarReturnType = new TypeToken<TokenBalanceGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -857,13 +1627,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-balances">Get information for all token balances defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<TokenBalanceGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTokenBalancesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, final ApiCallback<TokenBalanceGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -884,7 +1657,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenBalancesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TokenBalanceGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -895,6 +1668,8 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -902,7 +1677,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenSuppliesCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTokenSuppliesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -918,6 +1693,10 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (tokenId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("token_id", tokenId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -952,10 +1731,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTokenSuppliesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTokenSuppliesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTokenSuppliesCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenSuppliesCall(page, size, orderBy, ascending, getLatest, tokenId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -967,13 +1746,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @return TokenSupplyGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public TokenSupplyGetResponse getTokenSupplies(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        ApiResponse<TokenSupplyGetResponse> resp = getTokenSuppliesWithHttpInfo(page, size, orderBy, ascending);
+    public TokenSupplyGetResponse getTokenSupplies(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId) throws ApiException {
+        ApiResponse<TokenSupplyGetResponse> resp = getTokenSuppliesWithHttpInfo(page, size, orderBy, ascending, getLatest, tokenId);
         return resp.getData();
     }
 
@@ -984,13 +1765,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @return ApiResponse&lt;TokenSupplyGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public ApiResponse<TokenSupplyGetResponse> getTokenSuppliesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, null, null);
+    public ApiResponse<TokenSupplyGetResponse> getTokenSuppliesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, null, null);
         Type localVarReturnType = new TypeToken<TokenSupplyGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1002,13 +1785,15 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-supplies">Get information for all token supplies defined for your application. Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokenSuppliesAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<TokenSupplyGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTokenSuppliesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, final ApiCallback<TokenSupplyGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1029,7 +1814,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenSuppliesValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TokenSupplyGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1166,34 +1951,24 @@ public class MoleculeApi {
         return call;
     }
     /**
-     * Build call for getTokens
-     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
-     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
-     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
-     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * Build call for getTokenTransfer
+     * @param tokenTransferId UUID of a token transfer (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokensCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTokenTransferCall(UUID tokenTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/molecule/v1/token";
+        String localVarPath = "/molecule/v1/token_transfer/{token_transfer_id}"
+            .replaceAll("\\{" + "token_transfer_id" + "\\}", apiClient.escapeString(tokenTransferId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (page != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
-        if (size != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
-        if (orderBy != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
-        if (ascending != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1228,63 +2003,59 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTokensValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTokenTransferValidateBeforeCall(UUID tokenTransferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'tokenTransferId' is set
+        if (tokenTransferId == null) {
+            throw new ApiException("Missing the required parameter 'tokenTransferId' when calling getTokenTransfer(Async)");
+        }
         
 
-        com.squareup.okhttp.Call call = getTokensCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenTransferCall(tokenTransferId, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get information for all tokens defined for your firm
+     * Retrieve a token transfer
      * 
-     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
-     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
-     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
-     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @return TokenGetResponse
+     * @param tokenTransferId UUID of a token transfer (required)
+     * @return TokenTransferSpecificResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
-    public TokenGetResponse getTokens(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        ApiResponse<TokenGetResponse> resp = getTokensWithHttpInfo(page, size, orderBy, ascending);
+    public TokenTransferSpecificResponse getTokenTransfer(UUID tokenTransferId) throws ApiException {
+        ApiResponse<TokenTransferSpecificResponse> resp = getTokenTransferWithHttpInfo(tokenTransferId);
         return resp.getData();
     }
 
     /**
-     * Get information for all tokens defined for your firm
+     * Retrieve a token transfer
      * 
-     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
-     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
-     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
-     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
-     * @return ApiResponse&lt;TokenGetResponse&gt;
+     * @param tokenTransferId UUID of a token transfer (required)
+     * @return ApiResponse&lt;TokenTransferSpecificResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
-    public ApiResponse<TokenGetResponse> getTokensWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, null, null);
-        Type localVarReturnType = new TypeToken<TokenGetResponse>(){}.getType();
+    public ApiResponse<TokenTransferSpecificResponse> getTokenTransferWithHttpInfo(UUID tokenTransferId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenTransferValidateBeforeCall(tokenTransferId, null, null);
+        Type localVarReturnType = new TypeToken<TokenTransferSpecificResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get information for all tokens defined for your firm (asynchronously)
+     * Retrieve a token transfer (asynchronously)
      * 
-     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
-     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
-     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
-     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param tokenTransferId UUID of a token transfer (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-token-transfer-receipt">Retrieve a token transfer Documentation</a>
      */
-    public com.squareup.okhttp.Call getTokensAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<TokenGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTokenTransferAsync(UUID tokenTransferId, final ApiCallback<TokenTransferSpecificResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1305,8 +2076,634 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTokenTransferValidateBeforeCall(tokenTransferId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TokenTransferSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getTokenTransfers
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokenTransfersCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/token_transfer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (tokenId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("token_id", tokenId));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
+        if (senderWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sender_wallet_id", senderWalletId));
+        if (receiverWalletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("receiver_wallet_id", receiverWalletId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getTokenTransfersValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getTokenTransfersCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all token transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @return TokenTransferGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
+     */
+    public TokenTransferGetResponse getTokenTransfers(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        ApiResponse<TokenTransferGetResponse> resp = getTokenTransfersWithHttpInfo(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all token transfers
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @return ApiResponse&lt;TokenTransferGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
+     */
+    public ApiResponse<TokenTransferGetResponse> getTokenTransfersWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId) throws ApiException {
+        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId, null, null);
+        Type localVarReturnType = new TypeToken<TokenTransferGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all token transfers (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param tokenId Filters results by their token ids (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param senderWalletId Filters results by their sender wallet ids (optional)
+     * @param receiverWalletId Filters results by their receiver wallet ids (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-token-transfer-receipts">Get information for all token transfers Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokenTransfersAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String tokenId, String walletId, String senderWalletId, String receiverWalletId, final ApiCallback<TokenTransferGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getTokenTransfersValidateBeforeCall(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TokenTransferGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getTokens
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokensCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/token";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getTokensValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getTokensCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all tokens defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @return TokenGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     */
+    public TokenGetResponse getTokens(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        ApiResponse<TokenGetResponse> resp = getTokensWithHttpInfo(page, size, orderBy, ascending, getLatest);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all tokens defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @return ApiResponse&lt;TokenGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     */
+    public ApiResponse<TokenGetResponse> getTokensWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
         Type localVarReturnType = new TypeToken<TokenGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all tokens defined for your firm (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-tokens">Get information for all tokens defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTokensAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<TokenGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getTokensValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TokenGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getTransactionStatus
+     * @param transactionStatusId UUID of a transaction status (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTransactionStatusCall(UUID transactionStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/transaction_status/{transaction_status_id}"
+            .replaceAll("\\{" + "transaction_status_id" + "\\}", apiClient.escapeString(transactionStatusId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getTransactionStatusValidateBeforeCall(UUID transactionStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'transactionStatusId' is set
+        if (transactionStatusId == null) {
+            throw new ApiException("Missing the required parameter 'transactionStatusId' when calling getTransactionStatus(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getTransactionStatusCall(transactionStatusId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve status information for a specific transaction
+     * 
+     * @param transactionStatusId UUID of a transaction status (required)
+     * @return TransactionStatusSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
+     */
+    public TransactionStatusSpecificResponse getTransactionStatus(UUID transactionStatusId) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = getTransactionStatusWithHttpInfo(transactionStatusId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve status information for a specific transaction
+     * 
+     * @param transactionStatusId UUID of a transaction status (required)
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
+     */
+    public ApiResponse<TransactionStatusSpecificResponse> getTransactionStatusWithHttpInfo(UUID transactionStatusId) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionStatusValidateBeforeCall(transactionStatusId, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve status information for a specific transaction (asynchronously)
+     * 
+     * @param transactionStatusId UUID of a transaction status (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-transaction-status">Retrieve status information for a specific transaction Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTransactionStatusAsync(UUID transactionStatusId, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getTransactionStatusValidateBeforeCall(transactionStatusId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getTransactionStatuses
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTransactionStatusesCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/transaction_status";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (walletId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet_id", walletId));
+        if (hash != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("hash", hash));
+        if (status != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("status", status));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getTransactionStatusesValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getTransactionStatusesCall(page, size, orderBy, ascending, getLatest, walletId, hash, status, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get status information for all transactions
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
+     * @return TransactionStatusGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
+     */
+    public TransactionStatusGetResponse getTransactionStatuses(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status) throws ApiException {
+        ApiResponse<TransactionStatusGetResponse> resp = getTransactionStatusesWithHttpInfo(page, size, orderBy, ascending, getLatest, walletId, hash, status);
+        return resp.getData();
+    }
+
+    /**
+     * Get status information for all transactions
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
+     * @return ApiResponse&lt;TransactionStatusGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
+     */
+    public ApiResponse<TransactionStatusGetResponse> getTransactionStatusesWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, walletId, hash, status, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get status information for all transactions (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param walletId Filters results by their wallet ids (optional)
+     * @param hash  (optional)
+     * @param status  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-transaction-statuses">Get status information for all transactions Documentation</a>
+     */
+    public com.squareup.okhttp.Call getTransactionStatusesAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String walletId, String hash, String status, final ApiCallback<TransactionStatusGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getTransactionStatusesValidateBeforeCall(page, size, orderBy, ascending, getLatest, walletId, hash, status, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1578,6 +2975,7 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1585,7 +2983,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletKeysCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getWalletKeysCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1601,6 +2999,8 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1635,10 +3035,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getWalletKeysValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getWalletKeysValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getWalletKeysCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletKeysCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1650,13 +3050,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return WalletKeyGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public WalletKeyGetResponse getWalletKeys(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        ApiResponse<WalletKeyGetResponse> resp = getWalletKeysWithHttpInfo(page, size, orderBy, ascending);
+    public WalletKeyGetResponse getWalletKeys(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        ApiResponse<WalletKeyGetResponse> resp = getWalletKeysWithHttpInfo(page, size, orderBy, ascending, getLatest);
         return resp.getData();
     }
 
@@ -1667,13 +3068,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
      * @return ApiResponse&lt;WalletKeyGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public ApiResponse<WalletKeyGetResponse> getWalletKeysWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, null, null);
+    public ApiResponse<WalletKeyGetResponse> getWalletKeysWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
         Type localVarReturnType = new TypeToken<WalletKeyGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1685,13 +3087,14 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-keys">Get all wallet keys associated with wallets defined for your firm. Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletKeysAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<WalletKeyGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getWalletKeysAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<WalletKeyGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1712,7 +3115,7 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletKeysValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WalletKeyGetResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1723,6 +3126,9 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1730,7 +3136,7 @@ public class MoleculeApi {
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletsCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getWalletsCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1746,6 +3152,12 @@ public class MoleculeApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+        if (nucleusClientId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_client_id", nucleusClientId));
+        if (isPrimary != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("is_primary", isPrimary));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1780,10 +3192,10 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getWalletsValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getWalletsValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getWalletsCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletsCall(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1795,13 +3207,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @return WalletGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public WalletGetResponse getWallets(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        ApiResponse<WalletGetResponse> resp = getWalletsWithHttpInfo(page, size, orderBy, ascending);
+    public WalletGetResponse getWallets(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary) throws ApiException {
+        ApiResponse<WalletGetResponse> resp = getWalletsWithHttpInfo(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary);
         return resp.getData();
     }
 
@@ -1812,13 +3227,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @return ApiResponse&lt;WalletGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public ApiResponse<WalletGetResponse> getWalletsWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending) throws ApiException {
-        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, null, null);
+    public ApiResponse<WalletGetResponse> getWalletsWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary) throws ApiException {
+        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary, null, null);
         Type localVarReturnType = new TypeToken<WalletGetResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1830,13 +3248,16 @@ public class MoleculeApi {
      * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
      * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
      * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param nucleusClientId  (optional)
+     * @param isPrimary  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
      * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallets">Get information for all wallets defined for your firm Documentation</a>
      */
-    public com.squareup.okhttp.Call getWalletsAsync(Integer page, Integer size, String orderBy, Boolean ascending, final ApiCallback<WalletGetResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getWalletsAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, String nucleusClientId, Boolean isPrimary, final ApiCallback<WalletGetResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1857,8 +3278,810 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getWalletsValidateBeforeCall(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WalletGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getWebhook
+     * @param webhookId UUID of a webhook (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhookCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook/{webhook_id}/"
+            .replaceAll("\\{" + "webhook_id" + "\\}", apiClient.escapeString(webhookId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getWebhookValidateBeforeCall(UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'webhookId' is set
+        if (webhookId == null) {
+            throw new ApiException("Missing the required parameter 'webhookId' when calling getWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getWebhookCall(webhookId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @return WebhookSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public WebhookSpecificResponse getWebhook(UUID webhookId) throws ApiException {
+        ApiResponse<WebhookSpecificResponse> resp = getWebhookWithHttpInfo(webhookId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @return ApiResponse&lt;WebhookSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public ApiResponse<WebhookSpecificResponse> getWebhookWithHttpInfo(UUID webhookId) throws ApiException {
+        com.squareup.okhttp.Call call = getWebhookValidateBeforeCall(webhookId, null, null);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a webhook (asynchronously)
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-webhook">Retrieve a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhookAsync(UUID webhookId, final ApiCallback<WebhookSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getWebhookValidateBeforeCall(webhookId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getWebhooks
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhooksCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (getLatest != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getWebhooksValidateBeforeCall(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getWebhooksCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get information for all webhooks defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @return WebhookGetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public WebhookGetResponse getWebhooks(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        ApiResponse<WebhookGetResponse> resp = getWebhooksWithHttpInfo(page, size, orderBy, ascending, getLatest);
+        return resp.getData();
+    }
+
+    /**
+     * Get information for all webhooks defined for your firm
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @return ApiResponse&lt;WebhookGetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public ApiResponse<WebhookGetResponse> getWebhooksWithHttpInfo(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest) throws ApiException {
+        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, getLatest, null, null);
+        Type localVarReturnType = new TypeToken<WebhookGetResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get information for all webhooks defined for your firm (asynchronously)
+     * 
+     * @param page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (optional, default to 0)
+     * @param size The number or records to be included per page. The default is 25. There is no max value. (optional, default to 25)
+     * @param orderBy The field in the response body to order the list by. Default is update_date. (optional, default to update_date)
+     * @param ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (optional, default to false)
+     * @param getLatest Retrieves the latest entry (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-webhooks">Get information for all webhooks defined for your firm Documentation</a>
+     */
+    public com.squareup.okhttp.Call getWebhooksAsync(Integer page, Integer size, String orderBy, Boolean ascending, Boolean getLatest, final ApiCallback<WebhookGetResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getWebhooksValidateBeforeCall(page, size, orderBy, ascending, getLatest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postCrowdsaleDeploy
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleDeployCall(CrowdsaleDeployPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/crowdsale/deploy";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCrowdsaleDeployValidateBeforeCall(CrowdsaleDeployPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCrowdsaleDeploy(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCrowdsaleDeployCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Deploy a token&#39;s crowdsale contract.
+     * 
+     * @param payload  (required)
+     * @return TransactionStatusSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public TransactionStatusSpecificResponse postCrowdsaleDeploy(CrowdsaleDeployPayload payload) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = postCrowdsaleDeployWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Deploy a token&#39;s crowdsale contract.
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public ApiResponse<TransactionStatusSpecificResponse> postCrowdsaleDeployWithHttpInfo(CrowdsaleDeployPayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCrowdsaleDeployValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Deploy a token&#39;s crowdsale contract. (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-crowdsale">Deploy a token&#39;s crowdsale contract. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleDeployAsync(CrowdsaleDeployPayload payload, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCrowdsaleDeployValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postCrowdsaleFund
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleFundCall(CrowdsaleFundPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/crowdsale/fund";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCrowdsaleFundValidateBeforeCall(CrowdsaleFundPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCrowdsaleFund(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCrowdsaleFundCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address.
+     * 
+     * @param payload  (required)
+     * @return TransactionStatusSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public TransactionStatusSpecificResponse postCrowdsaleFund(CrowdsaleFundPayload payload) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = postCrowdsaleFundWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address.
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public ApiResponse<TransactionStatusSpecificResponse> postCrowdsaleFundWithHttpInfo(CrowdsaleFundPayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCrowdsaleFundValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address. (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Fund-a-crowdsale">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsaleFundAsync(CrowdsaleFundPayload payload, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCrowdsaleFundValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postCrowdsalePurchase
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsalePurchaseCall(CrowdsalePurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/crowdsale/purchase";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCrowdsalePurchaseValidateBeforeCall(CrowdsalePurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCrowdsalePurchase(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCrowdsalePurchaseCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Purchase tokens from a crowdsale contract
+     * 
+     * @param payload  (required)
+     * @return TransactionStatusSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public TransactionStatusSpecificResponse postCrowdsalePurchase(CrowdsalePurchasePayload payload) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = postCrowdsalePurchaseWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Purchase tokens from a crowdsale contract
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public ApiResponse<TransactionStatusSpecificResponse> postCrowdsalePurchaseWithHttpInfo(CrowdsalePurchasePayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCrowdsalePurchaseValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Purchase tokens from a crowdsale contract (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-from-a-crowdsale">Purchase tokens from a crowdsale contract Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCrowdsalePurchaseAsync(CrowdsalePurchasePayload payload, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCrowdsalePurchaseValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postCurrencyTransfer
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCurrencyTransferCall(CurrencyTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/currency_transfer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postCurrencyTransferValidateBeforeCall(CurrencyTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postCurrencyTransfer(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postCurrencyTransferCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Transfer currency between wallets
+     * 
+     * @param payload  (required)
+     * @return TransactionStatusSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public TransactionStatusSpecificResponse postCurrencyTransfer(CurrencyTransferPayload payload) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = postCurrencyTransferWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Transfer currency between wallets
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public ApiResponse<TransactionStatusSpecificResponse> postCurrencyTransferWithHttpInfo(CurrencyTransferPayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postCurrencyTransferValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Transfer currency between wallets (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-currency">Transfer currency between wallets Documentation</a>
+     */
+    public com.squareup.okhttp.Call postCurrencyTransferAsync(CurrencyTransferPayload payload, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postCurrencyTransferValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1993,136 +4216,6 @@ public class MoleculeApi {
         return call;
     }
     /**
-     * Build call for postTokenCrowdsale
-     * @param payload  (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public com.squareup.okhttp.Call postTokenCrowdsaleCall(TokenCrowdsalePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = payload;
-
-        // create path and map variables
-        String localVarPath = "/molecule/v1/token/crowdsale";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postTokenCrowdsaleValidateBeforeCall(TokenCrowdsalePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'payload' is set
-        if (payload == null) {
-            throw new ApiException("Missing the required parameter 'payload' when calling postTokenCrowdsale(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = postTokenCrowdsaleCall(payload, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Transfer tokens to a token&#39;s crowdsale address.
-     * 
-     * @param payload  (required)
-     * @return TokenCreateResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public TokenCreateResponse postTokenCrowdsale(TokenCrowdsalePayload payload) throws ApiException {
-        ApiResponse<TokenCreateResponse> resp = postTokenCrowdsaleWithHttpInfo(payload);
-        return resp.getData();
-    }
-
-    /**
-     * Transfer tokens to a token&#39;s crowdsale address.
-     * 
-     * @param payload  (required)
-     * @return ApiResponse&lt;TokenCreateResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public ApiResponse<TokenCreateResponse> postTokenCrowdsaleWithHttpInfo(TokenCrowdsalePayload payload) throws ApiException {
-        com.squareup.okhttp.Call call = postTokenCrowdsaleValidateBeforeCall(payload, null, null);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Transfer tokens to a token&#39;s crowdsale address. (asynchronously)
-     * 
-     * @param payload  (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Crowdsale-a-token">Transfer tokens to a token&#39;s crowdsale address. Documentation</a>
-     */
-    public com.squareup.okhttp.Call postTokenCrowdsaleAsync(TokenCrowdsalePayload payload, final ApiCallback<TokenCreateResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = postTokenCrowdsaleValidateBeforeCall(payload, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for postTokenDeploy
      * @param payload  (required)
      * @param progressListener Progress listener
@@ -2130,7 +4223,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
     public com.squareup.okhttp.Call postTokenDeployCall(TokenDeployPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
@@ -2188,45 +4281,45 @@ public class MoleculeApi {
     }
 
     /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain.
+     * Deploy a security token contract to blockchain.
      * 
      * @param payload  (required)
-     * @return TokenCreateResponse
+     * @return TransactionStatusSpecificResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
-    public TokenCreateResponse postTokenDeploy(TokenDeployPayload payload) throws ApiException {
-        ApiResponse<TokenCreateResponse> resp = postTokenDeployWithHttpInfo(payload);
+    public TransactionStatusSpecificResponse postTokenDeploy(TokenDeployPayload payload) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = postTokenDeployWithHttpInfo(payload);
         return resp.getData();
     }
 
     /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain.
+     * Deploy a security token contract to blockchain.
      * 
      * @param payload  (required)
-     * @return ApiResponse&lt;TokenCreateResponse&gt;
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
-    public ApiResponse<TokenCreateResponse> postTokenDeployWithHttpInfo(TokenDeployPayload payload) throws ApiException {
+    public ApiResponse<TransactionStatusSpecificResponse> postTokenDeployWithHttpInfo(TokenDeployPayload payload) throws ApiException {
         com.squareup.okhttp.Call call = postTokenDeployValidateBeforeCall(payload, null, null);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain. (asynchronously)
+     * Deploy a security token contract to blockchain. (asynchronously)
      * 
      * @param payload  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a secuirty token contract and its crowdsale contract to blockchain. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Deploy-a-token">Deploy a security token contract to blockchain. Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenDeployAsync(TokenDeployPayload payload, final ApiCallback<TokenCreateResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call postTokenDeployAsync(TokenDeployPayload payload, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2248,25 +4341,25 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = postTokenDeployValidateBeforeCall(payload, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TokenCreateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for postTokenPurchase
+     * Build call for postTokenTransfer
      * @param payload  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenPurchaseCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postTokenTransferCall(TokenTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
 
         // create path and map variables
-        String localVarPath = "/molecule/v1/token/purchase";
+        String localVarPath = "/molecule/v1/token_transfer";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -2304,56 +4397,59 @@ public class MoleculeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postTokenPurchaseValidateBeforeCall(TokenPurchasePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postTokenTransferValidateBeforeCall(TokenTransferPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'payload' is set
         if (payload == null) {
-            throw new ApiException("Missing the required parameter 'payload' when calling postTokenPurchase(Async)");
+            throw new ApiException("Missing the required parameter 'payload' when calling postTokenTransfer(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = postTokenPurchaseCall(payload, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postTokenTransferCall(payload, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Participate in a token&#39;s crowdsale and purchase tokens.
+     * Transfer tokens between wallets
      * 
      * @param payload  (required)
+     * @return TransactionStatusSpecificResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public void postTokenPurchase(TokenPurchasePayload payload) throws ApiException {
-        postTokenPurchaseWithHttpInfo(payload);
+    public TransactionStatusSpecificResponse postTokenTransfer(TokenTransferPayload payload) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = postTokenTransferWithHttpInfo(payload);
+        return resp.getData();
     }
 
     /**
-     * Participate in a token&#39;s crowdsale and purchase tokens.
+     * Transfer tokens between wallets
      * 
      * @param payload  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public ApiResponse<Void> postTokenPurchaseWithHttpInfo(TokenPurchasePayload payload) throws ApiException {
-        com.squareup.okhttp.Call call = postTokenPurchaseValidateBeforeCall(payload, null, null);
-        return apiClient.execute(call);
+    public ApiResponse<TransactionStatusSpecificResponse> postTokenTransferWithHttpInfo(TokenTransferPayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postTokenTransferValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Participate in a token&#39;s crowdsale and purchase tokens. (asynchronously)
+     * Transfer tokens between wallets (asynchronously)
      * 
      * @param payload  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Purchase-a-token">Participate in a token&#39;s crowdsale and purchase tokens. Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Transfer-a-token">Transfer tokens between wallets Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenPurchaseAsync(TokenPurchasePayload payload, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postTokenTransferAsync(TokenTransferPayload payload, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2374,8 +4470,9 @@ public class MoleculeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = postTokenPurchaseValidateBeforeCall(payload, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        com.squareup.okhttp.Call call = postTokenTransferValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
@@ -2386,7 +4483,7 @@ public class MoleculeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
     public com.squareup.okhttp.Call postTokenWhitelistCall(TokenWhitelistPayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = payload;
@@ -2447,26 +4544,29 @@ public class MoleculeApi {
      * Add an investor to a token&#39;s whitelist
      * 
      * @param payload  (required)
+     * @return TransactionStatusSpecificResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
-    public void postTokenWhitelist(TokenWhitelistPayload payload) throws ApiException {
-        postTokenWhitelistWithHttpInfo(payload);
+    public TransactionStatusSpecificResponse postTokenWhitelist(TokenWhitelistPayload payload) throws ApiException {
+        ApiResponse<TransactionStatusSpecificResponse> resp = postTokenWhitelistWithHttpInfo(payload);
+        return resp.getData();
     }
 
     /**
      * Add an investor to a token&#39;s whitelist
      * 
      * @param payload  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;TransactionStatusSpecificResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
-    public ApiResponse<Void> postTokenWhitelistWithHttpInfo(TokenWhitelistPayload payload) throws ApiException {
+    public ApiResponse<TransactionStatusSpecificResponse> postTokenWhitelistWithHttpInfo(TokenWhitelistPayload payload) throws ApiException {
         com.squareup.okhttp.Call call = postTokenWhitelistValidateBeforeCall(payload, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -2477,9 +4577,9 @@ public class MoleculeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * 
-     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-an-investor">Add an investor to a token&#39;s whitelist Documentation</a>
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Whitelist-a-wallet">Add an investor to a token&#39;s whitelist Documentation</a>
      */
-    public com.squareup.okhttp.Call postTokenWhitelistAsync(TokenWhitelistPayload payload, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postTokenWhitelistAsync(TokenWhitelistPayload payload, final ApiCallback<TransactionStatusSpecificResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2501,7 +4601,8 @@ public class MoleculeApi {
         }
 
         com.squareup.okhttp.Call call = postTokenWhitelistValidateBeforeCall(payload, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<TransactionStatusSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
@@ -2895,6 +4996,136 @@ public class MoleculeApi {
         return call;
     }
     /**
+     * Build call for postWebhook
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postWebhookCall(WebhookCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call postWebhookValidateBeforeCall(WebhookCreatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling postWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = postWebhookCall(payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a webhook under your firm.
+     * 
+     * @param payload  (required)
+     * @return WebhookCreateResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public WebhookCreateResponse postWebhook(WebhookCreatePayload payload) throws ApiException {
+        ApiResponse<WebhookCreateResponse> resp = postWebhookWithHttpInfo(payload);
+        return resp.getData();
+    }
+
+    /**
+     * Create a webhook under your firm.
+     * 
+     * @param payload  (required)
+     * @return ApiResponse&lt;WebhookCreateResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public ApiResponse<WebhookCreateResponse> postWebhookWithHttpInfo(WebhookCreatePayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = postWebhookValidateBeforeCall(payload, null, null);
+        Type localVarReturnType = new TypeToken<WebhookCreateResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a webhook under your firm. (asynchronously)
+     * 
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Create-a-webhook">Create a webhook under your firm. Documentation</a>
+     */
+    public com.squareup.okhttp.Call postWebhookAsync(WebhookCreatePayload payload, final ApiCallback<WebhookCreateResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = postWebhookValidateBeforeCall(payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookCreateResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for updateToken
      * @param tokenId UUID of a token (required)
      * @param payload  (required)
@@ -3171,6 +5402,146 @@ public class MoleculeApi {
 
         com.squareup.okhttp.Call call = updateWalletValidateBeforeCall(walletId, payload, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WalletSpecificResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateWebhook
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call updateWebhookCall(UUID webhookId, WebhookUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payload;
+
+        // create path and map variables
+        String localVarPath = "/molecule/v1/webhook/{webhook_id}/"
+            .replaceAll("\\{" + "webhook_id" + "\\}", apiClient.escapeString(webhookId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateWebhookValidateBeforeCall(UUID webhookId, WebhookUpdatePayload payload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'webhookId' is set
+        if (webhookId == null) {
+            throw new ApiException("Missing the required parameter 'webhookId' when calling updateWebhook(Async)");
+        }
+        
+        // verify the required parameter 'payload' is set
+        if (payload == null) {
+            throw new ApiException("Missing the required parameter 'payload' when calling updateWebhook(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateWebhookCall(webhookId, payload, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @return WebhookSpecificResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public WebhookSpecificResponse updateWebhook(UUID webhookId, WebhookUpdatePayload payload) throws ApiException {
+        ApiResponse<WebhookSpecificResponse> resp = updateWebhookWithHttpInfo(webhookId, payload);
+        return resp.getData();
+    }
+
+    /**
+     * Update a webhook
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @return ApiResponse&lt;WebhookSpecificResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public ApiResponse<WebhookSpecificResponse> updateWebhookWithHttpInfo(UUID webhookId, WebhookUpdatePayload payload) throws ApiException {
+        com.squareup.okhttp.Call call = updateWebhookValidateBeforeCall(webhookId, payload, null, null);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a webhook (asynchronously)
+     * 
+     * @param webhookId UUID of a webhook (required)
+     * @param payload  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * 
+     * @see <a href="https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-webhook">Update a webhook Documentation</a>
+     */
+    public com.squareup.okhttp.Call updateWebhookAsync(UUID webhookId, WebhookUpdatePayload payload, final ApiCallback<WebhookSpecificResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateWebhookValidateBeforeCall(webhookId, payload, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<WebhookSpecificResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

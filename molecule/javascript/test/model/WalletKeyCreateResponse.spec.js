@@ -87,18 +87,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property metadata (base name: "metadata")', function() {
-      // uncomment below and update the code to test the property metadata
-      //var instance = new molecule_api.WalletKeyCreateResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property secondaryId (base name: "secondary_id")', function() {
-      // uncomment below and update the code to test the property secondaryId
-      //var instance = new molecule_api.WalletKeyCreateResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
       //var instance = new molecule_api.WalletKeyCreateResponse();

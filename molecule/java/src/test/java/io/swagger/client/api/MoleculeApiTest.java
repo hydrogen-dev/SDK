@@ -14,21 +14,32 @@
 package io.swagger.client.api;
 
 import molecule_api.ApiException;
+import io.swagger.client.model.CrowdsaleDeployPayload;
+import io.swagger.client.model.CrowdsaleFundPayload;
+import io.swagger.client.model.CrowdsalePurchasePayload;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
+import io.swagger.client.model.CurrencyGetResponse;
+import io.swagger.client.model.CurrencySpecificResponse;
+import io.swagger.client.model.CurrencyTransferGetResponse;
+import io.swagger.client.model.CurrencyTransferPayload;
+import io.swagger.client.model.CurrencyTransferSpecificResponse;
 import io.swagger.client.model.TokenBalanceGetResponse;
 import io.swagger.client.model.TokenBalanceSpecificResponse;
 import io.swagger.client.model.TokenCreatePayload;
 import io.swagger.client.model.TokenCreateResponse;
-import io.swagger.client.model.TokenCrowdsalePayload;
 import io.swagger.client.model.TokenDeployPayload;
 import io.swagger.client.model.TokenGetResponse;
-import io.swagger.client.model.TokenPurchasePayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
+import io.swagger.client.model.TokenTransferGetResponse;
+import io.swagger.client.model.TokenTransferPayload;
+import io.swagger.client.model.TokenTransferSpecificResponse;
 import io.swagger.client.model.TokenUpdatePayload;
 import io.swagger.client.model.TokenWhitelistPayload;
+import io.swagger.client.model.TransactionStatusGetResponse;
+import io.swagger.client.model.TransactionStatusSpecificResponse;
 import java.util.UUID;
 import io.swagger.client.model.WalletCreatePayload;
 import io.swagger.client.model.WalletCreateResponse;
@@ -40,6 +51,11 @@ import io.swagger.client.model.WalletKeyGetResponse;
 import io.swagger.client.model.WalletKeySpecificResponse;
 import io.swagger.client.model.WalletSpecificResponse;
 import io.swagger.client.model.WalletUpdatePayload;
+import io.swagger.client.model.WebhookCreatePayload;
+import io.swagger.client.model.WebhookCreateResponse;
+import io.swagger.client.model.WebhookGetResponse;
+import io.swagger.client.model.WebhookSpecificResponse;
+import io.swagger.client.model.WebhookUpdatePayload;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -74,6 +90,59 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Delete a webhook
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteWebhookTest() throws ApiException {
+        UUID webhookId = null;
+        api.deleteWebhook(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all currencies defined for your firm
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrenciesTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        Boolean getLatest = null;
+        String symbol = null;
+        CurrencyGetResponse response = api.getCurrencies(page, size, orderBy, ascending, getLatest, symbol);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve a currency
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrencyTest() throws ApiException {
+        UUID currencyId = null;
+        CurrencySpecificResponse response = api.getCurrency(currencyId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Retrieve a currency balance
      *
      * 
@@ -90,7 +159,7 @@ public class MoleculeApiTest {
     }
     
     /**
-     * Get information for all currency balances defined for your application.
+     * Get information for all currency balances recorded in your application.
      *
      * 
      *
@@ -103,7 +172,50 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        CurrencyBalanceGetResponse response = api.getCurrencyBalances(page, size, orderBy, ascending);
+        Boolean getLatest = null;
+        String currencyId = null;
+        String walletId = null;
+        CurrencyBalanceGetResponse response = api.getCurrencyBalances(page, size, orderBy, ascending, getLatest, currencyId, walletId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve a currency transfer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrencyTransferTest() throws ApiException {
+        UUID currencyTransferId = null;
+        CurrencyTransferSpecificResponse response = api.getCurrencyTransfer(currencyTransferId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all currency transfers
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCurrencyTransfersTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        Boolean getLatest = null;
+        String currencyId = null;
+        String walletId = null;
+        String senderWalletId = null;
+        String receiverWalletId = null;
+        CurrencyTransferGetResponse response = api.getCurrencyTransfers(page, size, orderBy, ascending, getLatest, currencyId, walletId, senderWalletId, receiverWalletId);
 
         // TODO: test validations
     }
@@ -154,7 +266,10 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        TokenBalanceGetResponse response = api.getTokenBalances(page, size, orderBy, ascending);
+        Boolean getLatest = null;
+        String tokenId = null;
+        String walletId = null;
+        TokenBalanceGetResponse response = api.getTokenBalances(page, size, orderBy, ascending, getLatest, tokenId, walletId);
 
         // TODO: test validations
     }
@@ -173,7 +288,9 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        TokenSupplyGetResponse response = api.getTokenSupplies(page, size, orderBy, ascending);
+        Boolean getLatest = null;
+        String tokenId = null;
+        TokenSupplyGetResponse response = api.getTokenSupplies(page, size, orderBy, ascending, getLatest, tokenId);
 
         // TODO: test validations
     }
@@ -195,6 +312,46 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Retrieve a token transfer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTokenTransferTest() throws ApiException {
+        UUID tokenTransferId = null;
+        TokenTransferSpecificResponse response = api.getTokenTransfer(tokenTransferId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all token transfers
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTokenTransfersTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        Boolean getLatest = null;
+        String tokenId = null;
+        String walletId = null;
+        String senderWalletId = null;
+        String receiverWalletId = null;
+        TokenTransferGetResponse response = api.getTokenTransfers(page, size, orderBy, ascending, getLatest, tokenId, walletId, senderWalletId, receiverWalletId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get information for all tokens defined for your firm
      *
      * 
@@ -208,7 +365,47 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        TokenGetResponse response = api.getTokens(page, size, orderBy, ascending);
+        Boolean getLatest = null;
+        TokenGetResponse response = api.getTokens(page, size, orderBy, ascending, getLatest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve status information for a specific transaction
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTransactionStatusTest() throws ApiException {
+        UUID transactionStatusId = null;
+        TransactionStatusSpecificResponse response = api.getTransactionStatus(transactionStatusId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get status information for all transactions
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTransactionStatusesTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        Boolean getLatest = null;
+        String walletId = null;
+        String hash = null;
+        String status = null;
+        TransactionStatusGetResponse response = api.getTransactionStatuses(page, size, orderBy, ascending, getLatest, walletId, hash, status);
 
         // TODO: test validations
     }
@@ -259,7 +456,8 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        WalletKeyGetResponse response = api.getWalletKeys(page, size, orderBy, ascending);
+        Boolean getLatest = null;
+        WalletKeyGetResponse response = api.getWalletKeys(page, size, orderBy, ascending, getLatest);
 
         // TODO: test validations
     }
@@ -278,7 +476,110 @@ public class MoleculeApiTest {
         Integer size = null;
         String orderBy = null;
         Boolean ascending = null;
-        WalletGetResponse response = api.getWallets(page, size, orderBy, ascending);
+        Boolean getLatest = null;
+        String nucleusClientId = null;
+        Boolean isPrimary = null;
+        WalletGetResponse response = api.getWallets(page, size, orderBy, ascending, getLatest, nucleusClientId, isPrimary);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve a webhook
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWebhookTest() throws ApiException {
+        UUID webhookId = null;
+        WebhookSpecificResponse response = api.getWebhook(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all webhooks defined for your firm
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWebhooksTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        Boolean getLatest = null;
+        WebhookGetResponse response = api.getWebhooks(page, size, orderBy, ascending, getLatest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Deploy a token&#39;s crowdsale contract.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCrowdsaleDeployTest() throws ApiException {
+        CrowdsaleDeployPayload payload = null;
+        TransactionStatusSpecificResponse response = api.postCrowdsaleDeploy(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Transfer tokens to a token&#39;s crowdsale address.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCrowdsaleFundTest() throws ApiException {
+        CrowdsaleFundPayload payload = null;
+        TransactionStatusSpecificResponse response = api.postCrowdsaleFund(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Purchase tokens from a crowdsale contract
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCrowdsalePurchaseTest() throws ApiException {
+        CrowdsalePurchasePayload payload = null;
+        TransactionStatusSpecificResponse response = api.postCrowdsalePurchase(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Transfer currency between wallets
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCurrencyTransferTest() throws ApiException {
+        CurrencyTransferPayload payload = null;
+        TransactionStatusSpecificResponse response = api.postCurrencyTransfer(payload);
 
         // TODO: test validations
     }
@@ -300,23 +601,7 @@ public class MoleculeApiTest {
     }
     
     /**
-     * Transfer tokens to a token&#39;s crowdsale address.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void postTokenCrowdsaleTest() throws ApiException {
-        TokenCrowdsalePayload payload = null;
-        TokenCreateResponse response = api.postTokenCrowdsale(payload);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Deploy a secuirty token contract and its crowdsale contract to blockchain.
+     * Deploy a security token contract to blockchain.
      *
      * 
      *
@@ -326,13 +611,13 @@ public class MoleculeApiTest {
     @Test
     public void postTokenDeployTest() throws ApiException {
         TokenDeployPayload payload = null;
-        TokenCreateResponse response = api.postTokenDeploy(payload);
+        TransactionStatusSpecificResponse response = api.postTokenDeploy(payload);
 
         // TODO: test validations
     }
     
     /**
-     * Participate in a token&#39;s crowdsale and purchase tokens.
+     * Transfer tokens between wallets
      *
      * 
      *
@@ -340,9 +625,9 @@ public class MoleculeApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postTokenPurchaseTest() throws ApiException {
-        TokenPurchasePayload payload = null;
-        api.postTokenPurchase(payload);
+    public void postTokenTransferTest() throws ApiException {
+        TokenTransferPayload payload = null;
+        TransactionStatusSpecificResponse response = api.postTokenTransfer(payload);
 
         // TODO: test validations
     }
@@ -358,7 +643,7 @@ public class MoleculeApiTest {
     @Test
     public void postTokenWhitelistTest() throws ApiException {
         TokenWhitelistPayload payload = null;
-        api.postTokenWhitelist(payload);
+        TransactionStatusSpecificResponse response = api.postTokenWhitelist(payload);
 
         // TODO: test validations
     }
@@ -412,6 +697,22 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Create a webhook under your firm.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postWebhookTest() throws ApiException {
+        WebhookCreatePayload payload = null;
+        WebhookCreateResponse response = api.postWebhook(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update a token
      *
      * 
@@ -441,6 +742,23 @@ public class MoleculeApiTest {
         UUID walletId = null;
         WalletUpdatePayload payload = null;
         WalletSpecificResponse response = api.updateWallet(walletId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a webhook
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateWebhookTest() throws ApiException {
+        UUID webhookId = null;
+        WebhookUpdatePayload payload = null;
+        WebhookSpecificResponse response = api.updateWebhook(webhookId, payload);
 
         // TODO: test validations
     }

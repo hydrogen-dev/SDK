@@ -24,12 +24,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The array of token restrictions applied on this token.
  */
 @ApiModel(description = "The array of token restrictions applied on this token.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
 public class TokenRestrictionsPayload {
   @SerializedName("min_age")
   private BigDecimal minAge = null;
@@ -66,6 +68,12 @@ public class TokenRestrictionsPayload {
 
   @SerializedName("kyc_required")
   private Boolean kycRequired = null;
+
+  @SerializedName("include_country")
+  private List<String> includeCountry = null;
+
+  @SerializedName("exclude_country")
+  private List<String> excludeCountry = null;
 
   public TokenRestrictionsPayload minAge(BigDecimal minAge) {
     this.minAge = minAge;
@@ -283,6 +291,58 @@ public class TokenRestrictionsPayload {
     this.kycRequired = kycRequired;
   }
 
+  public TokenRestrictionsPayload includeCountry(List<String> includeCountry) {
+    this.includeCountry = includeCountry;
+    return this;
+  }
+
+  public TokenRestrictionsPayload addIncludeCountryItem(String includeCountryItem) {
+    if (this.includeCountry == null) {
+      this.includeCountry = new ArrayList<String>();
+    }
+    this.includeCountry.add(includeCountryItem);
+    return this;
+  }
+
+   /**
+   * Investors residing in these countries will be allowed to invest
+   * @return includeCountry
+  **/
+  @ApiModelProperty(value = "Investors residing in these countries will be allowed to invest")
+  public List<String> getIncludeCountry() {
+    return includeCountry;
+  }
+
+  public void setIncludeCountry(List<String> includeCountry) {
+    this.includeCountry = includeCountry;
+  }
+
+  public TokenRestrictionsPayload excludeCountry(List<String> excludeCountry) {
+    this.excludeCountry = excludeCountry;
+    return this;
+  }
+
+  public TokenRestrictionsPayload addExcludeCountryItem(String excludeCountryItem) {
+    if (this.excludeCountry == null) {
+      this.excludeCountry = new ArrayList<String>();
+    }
+    this.excludeCountry.add(excludeCountryItem);
+    return this;
+  }
+
+   /**
+   * Investors residing outside of these countries will be allowed to invest
+   * @return excludeCountry
+  **/
+  @ApiModelProperty(value = "Investors residing outside of these countries will be allowed to invest")
+  public List<String> getExcludeCountry() {
+    return excludeCountry;
+  }
+
+  public void setExcludeCountry(List<String> excludeCountry) {
+    this.excludeCountry = excludeCountry;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -304,12 +364,14 @@ public class TokenRestrictionsPayload {
         Objects.equals(this.minCreditScore, tokenRestrictionsPayload.minCreditScore) &&
         Objects.equals(this.maxCreditScore, tokenRestrictionsPayload.maxCreditScore) &&
         Objects.equals(this.accreditationRequired, tokenRestrictionsPayload.accreditationRequired) &&
-        Objects.equals(this.kycRequired, tokenRestrictionsPayload.kycRequired);
+        Objects.equals(this.kycRequired, tokenRestrictionsPayload.kycRequired) &&
+        Objects.equals(this.includeCountry, tokenRestrictionsPayload.includeCountry) &&
+        Objects.equals(this.excludeCountry, tokenRestrictionsPayload.excludeCountry);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(minAge, maxAge, minAnnualIncome, maxAnnualIncome, minHouseholdIncome, maxHouseholdIncome, minNetWorth, maxNetWorth, minCreditScore, maxCreditScore, accreditationRequired, kycRequired);
+    return Objects.hash(minAge, maxAge, minAnnualIncome, maxAnnualIncome, minHouseholdIncome, maxHouseholdIncome, minNetWorth, maxNetWorth, minCreditScore, maxCreditScore, accreditationRequired, kycRequired, includeCountry, excludeCountry);
   }
 
 
@@ -330,6 +392,8 @@ public class TokenRestrictionsPayload {
     sb.append("    maxCreditScore: ").append(toIndentedString(maxCreditScore)).append("\n");
     sb.append("    accreditationRequired: ").append(toIndentedString(accreditationRequired)).append("\n");
     sb.append("    kycRequired: ").append(toIndentedString(kycRequired)).append("\n");
+    sb.append("    includeCountry: ").append(toIndentedString(includeCountry)).append("\n");
+    sb.append("    excludeCountry: ").append(toIndentedString(excludeCountry)).append("\n");
     sb.append("}");
     return sb.toString();
   }

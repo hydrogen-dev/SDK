@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/SecondaryId', 'model/WalletKeyCreateResponse'], factory);
+    define(['ApiClient', 'model/WalletKeyCreateResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./SecondaryId'), require('./WalletKeyCreateResponse'));
+    module.exports = factory(require('../ApiClient'), require('./WalletKeyCreateResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.WalletKeySpecificResponse = factory(root.molecule_api.ApiClient, root.molecule_api.SecondaryId, root.molecule_api.WalletKeyCreateResponse);
+    root.molecule_api.WalletKeySpecificResponse = factory(root.molecule_api.ApiClient, root.molecule_api.WalletKeyCreateResponse);
   }
-}(this, function(ApiClient, SecondaryId, WalletKeyCreateResponse) {
+}(this, function(ApiClient, WalletKeyCreateResponse) {
   'use strict';
 
 
@@ -108,17 +108,6 @@ exports.prototype['address'] = undefined;
    * @member {String} private_key
    */
 exports.prototype['private_key'] = undefined;
-
-  /**
-   * Custom information associated with the account in the format key:value
-   * @member {Object} metadata
-   */
-exports.prototype['metadata'] = undefined;
-
-  /**
-   * @member {module:model/SecondaryId} secondary_id
-   */
-exports.prototype['secondary_id'] = undefined;
 
   /**
    * Datetime the wallet key record was created

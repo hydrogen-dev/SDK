@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * WalletCreateWhitelist
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-19T14:52:04.375-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
 public class WalletCreateWhitelist {
   @SerializedName("token_id")
   private UUID tokenId = null;
@@ -36,11 +36,11 @@ public class WalletCreateWhitelist {
   @SerializedName("role")
   private String role = null;
 
-  @SerializedName("sell_restriction")
-  private String sellRestriction = null;
+  @SerializedName("sell_restriction_date")
+  private String sellRestrictionDate = null;
 
-  @SerializedName("buy_restriction")
-  private String buyRestriction = null;
+  @SerializedName("buy_restriction_date")
+  private String buyRestrictionDate = null;
 
   public WalletCreateWhitelist tokenId(UUID tokenId) {
     this.tokenId = tokenId;
@@ -78,40 +78,40 @@ public class WalletCreateWhitelist {
     this.role = role;
   }
 
-  public WalletCreateWhitelist sellRestriction(String sellRestriction) {
-    this.sellRestriction = sellRestriction;
+  public WalletCreateWhitelist sellRestrictionDate(String sellRestrictionDate) {
+    this.sellRestrictionDate = sellRestrictionDate;
     return this;
   }
 
    /**
    * The date when resale restrictions should be lifted for the wallet
-   * @return sellRestriction
+   * @return sellRestrictionDate
   **/
   @ApiModelProperty(value = "The date when resale restrictions should be lifted for the wallet")
-  public String getSellRestriction() {
-    return sellRestriction;
+  public String getSellRestrictionDate() {
+    return sellRestrictionDate;
   }
 
-  public void setSellRestriction(String sellRestriction) {
-    this.sellRestriction = sellRestriction;
+  public void setSellRestrictionDate(String sellRestrictionDate) {
+    this.sellRestrictionDate = sellRestrictionDate;
   }
 
-  public WalletCreateWhitelist buyRestriction(String buyRestriction) {
-    this.buyRestriction = buyRestriction;
+  public WalletCreateWhitelist buyRestrictionDate(String buyRestrictionDate) {
+    this.buyRestrictionDate = buyRestrictionDate;
     return this;
   }
 
    /**
    * The date when the buy restrictions should be lifted for the wallet
-   * @return buyRestriction
+   * @return buyRestrictionDate
   **/
   @ApiModelProperty(value = "The date when the buy restrictions should be lifted for the wallet")
-  public String getBuyRestriction() {
-    return buyRestriction;
+  public String getBuyRestrictionDate() {
+    return buyRestrictionDate;
   }
 
-  public void setBuyRestriction(String buyRestriction) {
-    this.buyRestriction = buyRestriction;
+  public void setBuyRestrictionDate(String buyRestrictionDate) {
+    this.buyRestrictionDate = buyRestrictionDate;
   }
 
 
@@ -126,13 +126,13 @@ public class WalletCreateWhitelist {
     WalletCreateWhitelist walletCreateWhitelist = (WalletCreateWhitelist) o;
     return Objects.equals(this.tokenId, walletCreateWhitelist.tokenId) &&
         Objects.equals(this.role, walletCreateWhitelist.role) &&
-        Objects.equals(this.sellRestriction, walletCreateWhitelist.sellRestriction) &&
-        Objects.equals(this.buyRestriction, walletCreateWhitelist.buyRestriction);
+        Objects.equals(this.sellRestrictionDate, walletCreateWhitelist.sellRestrictionDate) &&
+        Objects.equals(this.buyRestrictionDate, walletCreateWhitelist.buyRestrictionDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tokenId, role, sellRestriction, buyRestriction);
+    return Objects.hash(tokenId, role, sellRestrictionDate, buyRestrictionDate);
   }
 
 
@@ -143,8 +143,8 @@ public class WalletCreateWhitelist {
     
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
-    sb.append("    sellRestriction: ").append(toIndentedString(sellRestriction)).append("\n");
-    sb.append("    buyRestriction: ").append(toIndentedString(buyRestriction)).append("\n");
+    sb.append("    sellRestrictionDate: ").append(toIndentedString(sellRestrictionDate)).append("\n");
+    sb.append("    buyRestrictionDate: ").append(toIndentedString(buyRestrictionDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

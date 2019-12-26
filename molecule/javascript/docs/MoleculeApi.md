@@ -5,28 +5,44 @@ All URIs are relative to *https://api.hydrogenplatform.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteToken**](MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
+[**deleteWebhook**](MoleculeApi.md#deleteWebhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+[**getCurrencies**](MoleculeApi.md#getCurrencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+[**getCurrency**](MoleculeApi.md#getCurrency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 [**getCurrencyBalance**](MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
-[**getCurrencyBalances**](MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances defined for your application.
+[**getCurrencyBalances**](MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
+[**getCurrencyTransfer**](MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
+[**getCurrencyTransfers**](MoleculeApi.md#getCurrencyTransfers) | **GET** /molecule/v1/currency_transfer | Get information for all currency transfers
 [**getToken**](MoleculeApi.md#getToken) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 [**getTokenBalance**](MoleculeApi.md#getTokenBalance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 [**getTokenBalances**](MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
 [**getTokenSupplies**](MoleculeApi.md#getTokenSupplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 [**getTokenSupply**](MoleculeApi.md#getTokenSupply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
+[**getTokenTransfer**](MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
+[**getTokenTransfers**](MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 [**getTokens**](MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
+[**getTransactionStatus**](MoleculeApi.md#getTransactionStatus) | **GET** /molecule/v1/transaction_status/{transaction_status_id} | Retrieve status information for a specific transaction
+[**getTransactionStatuses**](MoleculeApi.md#getTransactionStatuses) | **GET** /molecule/v1/transaction_status | Get status information for all transactions
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 [**getWallets**](MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+[**getWebhook**](MoleculeApi.md#getWebhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
+[**getWebhooks**](MoleculeApi.md#getWebhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
+[**postCrowdsaleDeploy**](MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
+[**postCrowdsaleFund**](MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
+[**postCrowdsalePurchase**](MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
+[**postCurrencyTransfer**](MoleculeApi.md#postCurrencyTransfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 [**postToken**](MoleculeApi.md#postToken) | **POST** /molecule/v1/token | Create a token under your firm.
-[**postTokenCrowdsale**](MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
-[**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
-[**postTokenPurchase**](MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+[**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
+[**postTokenTransfer**](MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**postTokenWhitelist**](MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**postWalletKey**](MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**postWalletKeyGenerator**](MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
+[**postWebhook**](MoleculeApi.md#postWebhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
 [**updateToken**](MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 [**updateWallet**](MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+[**updateWebhook**](MoleculeApi.md#updateWebhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
 <a name="deleteToken"></a>
@@ -40,7 +56,7 @@ Delete a token
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -84,6 +100,182 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="deleteWebhook"></a>
+# **deleteWebhook**
+> deleteWebhook(webhookId)
+
+Delete a webhook
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var webhookId = "webhookId_example"; // String | UUID of a webhook
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteWebhook(webhookId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**String**](.md)| UUID of a webhook | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrencies"></a>
+# **getCurrencies**
+> CurrencyGetResponse getCurrencies(opts)
+
+Get information for all currencies defined for your firm
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'symbol': "symbol_example" // String | 
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCurrencies(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **symbol** | **String**|  | [optional] 
+
+### Return type
+
+[**CurrencyGetResponse**](CurrencyGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrency"></a>
+# **getCurrency**
+> CurrencySpecificResponse getCurrency(currencyId)
+
+Retrieve a currency
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var currencyId = "currencyId_example"; // String | UUID of a currency
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCurrency(currencyId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyId** | [**String**](.md)| UUID of a currency | 
+
+### Return type
+
+[**CurrencySpecificResponse**](CurrencySpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getCurrencyBalance"></a>
 # **getCurrencyBalance**
 > CurrencyBalanceSpecificResponse getCurrencyBalance(currencyBalanceId)
@@ -95,7 +287,7 @@ Retrieve a currency balance
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -143,14 +335,14 @@ Name | Type | Description  | Notes
 # **getCurrencyBalances**
 > CurrencyBalanceGetResponse getCurrencyBalances(opts)
 
-Get information for all currency balances defined for your application.
+Get information for all currency balances recorded in your application.
 
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -166,7 +358,10 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'currencyId': "currencyId_example", // String | Filters results by their currency ids
+  'walletId': "walletId_example", // String | Filters results by their wallet ids
 };
 
 var callback = function(error, data, response) {
@@ -187,10 +382,140 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **currencyId** | **String**| Filters results by their currency ids | [optional] 
+ **walletId** | **String**| Filters results by their wallet ids | [optional] 
 
 ### Return type
 
 [**CurrencyBalanceGetResponse**](CurrencyBalanceGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrencyTransfer"></a>
+# **getCurrencyTransfer**
+> CurrencyTransferSpecificResponse getCurrencyTransfer(currencyTransferId)
+
+Retrieve a currency transfer
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var currencyTransferId = "currencyTransferId_example"; // String | UUID of a currency transfer
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCurrencyTransfer(currencyTransferId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyTransferId** | [**String**](.md)| UUID of a currency transfer | 
+
+### Return type
+
+[**CurrencyTransferSpecificResponse**](CurrencyTransferSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getCurrencyTransfers"></a>
+# **getCurrencyTransfers**
+> CurrencyTransferGetResponse getCurrencyTransfers(opts)
+
+Get information for all currency transfers
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'currencyId': "currencyId_example", // String | Filters results by their currency ids
+  'walletId': "walletId_example", // String | Filters results by their wallet ids
+  'senderWalletId': "senderWalletId_example", // String | Filters results by their sender wallet ids
+  'receiverWalletId': "receiverWalletId_example" // String | Filters results by their receiver wallet ids
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCurrencyTransfers(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **currencyId** | **String**| Filters results by their currency ids | [optional] 
+ **walletId** | **String**| Filters results by their wallet ids | [optional] 
+ **senderWalletId** | **String**| Filters results by their sender wallet ids | [optional] 
+ **receiverWalletId** | **String**| Filters results by their receiver wallet ids | [optional] 
+
+### Return type
+
+[**CurrencyTransferGetResponse**](CurrencyTransferGetResponse.md)
 
 ### Authorization
 
@@ -212,7 +537,7 @@ Retrieve a token
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -267,7 +592,7 @@ Retrieve a token balance
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -322,7 +647,7 @@ Get information for all token balances defined for your application.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -338,7 +663,10 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'tokenId': "tokenId_example", // String | Filters results by their token ids
+  'walletId': "walletId_example", // String | Filters results by their wallet ids
 };
 
 var callback = function(error, data, response) {
@@ -359,6 +687,9 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **tokenId** | **String**| Filters results by their token ids | [optional] 
+ **walletId** | **String**| Filters results by their wallet ids | [optional] 
 
 ### Return type
 
@@ -384,7 +715,7 @@ Get information for all token supplies defined for your application.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -400,7 +731,9 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'tokenId': "tokenId_example", // String | Filters results by their token ids
 };
 
 var callback = function(error, data, response) {
@@ -421,6 +754,8 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **tokenId** | **String**| Filters results by their token ids | [optional] 
 
 ### Return type
 
@@ -446,7 +781,7 @@ Retrieve a token supply
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -490,18 +825,73 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getTokens"></a>
-# **getTokens**
-> TokenGetResponse getTokens(opts)
+<a name="getTokenTransfer"></a>
+# **getTokenTransfer**
+> TokenTransferSpecificResponse getTokenTransfer(tokenTransferId)
 
-Get information for all tokens defined for your firm
+Retrieve a token transfer
 
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var tokenTransferId = "tokenTransferId_example"; // String | UUID of a token transfer
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTokenTransfer(tokenTransferId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tokenTransferId** | [**String**](.md)| UUID of a token transfer | 
+
+### Return type
+
+[**TokenTransferSpecificResponse**](TokenTransferSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTokenTransfers"></a>
+# **getTokenTransfers**
+> TokenTransferGetResponse getTokenTransfers(opts)
+
+Get information for all token transfers
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -517,7 +907,80 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'tokenId': "tokenId_example", // String | Filters results by their token ids
+  'walletId': "walletId_example", // String | Filters results by their wallet ids
+  'senderWalletId': "senderWalletId_example", // String | Filters results by their sender wallet ids
+  'receiverWalletId': "receiverWalletId_example" // String | Filters results by their receiver wallet ids
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTokenTransfers(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **tokenId** | **String**| Filters results by their token ids | [optional] 
+ **walletId** | **String**| Filters results by their wallet ids | [optional] 
+ **senderWalletId** | **String**| Filters results by their sender wallet ids | [optional] 
+ **receiverWalletId** | **String**| Filters results by their receiver wallet ids | [optional] 
+
+### Return type
+
+[**TokenTransferGetResponse**](TokenTransferGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTokens"></a>
+# **getTokens**
+> TokenGetResponse getTokens(opts)
+
+Get information for all tokens defined for your firm
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
 };
 
 var callback = function(error, data, response) {
@@ -538,10 +1001,136 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
 
 ### Return type
 
 [**TokenGetResponse**](TokenGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTransactionStatus"></a>
+# **getTransactionStatus**
+> TransactionStatusSpecificResponse getTransactionStatus(transactionStatusId)
+
+Retrieve status information for a specific transaction
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var transactionStatusId = "transactionStatusId_example"; // String | UUID of a transaction status
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTransactionStatus(transactionStatusId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transactionStatusId** | [**String**](.md)| UUID of a transaction status | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTransactionStatuses"></a>
+# **getTransactionStatuses**
+> TransactionStatusGetResponse getTransactionStatuses(opts)
+
+Get status information for all transactions
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'walletId': "walletId_example", // String | Filters results by their wallet ids
+  'hash': "hash_example", // String | 
+  'status': "status_example" // String | 
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTransactionStatuses(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **walletId** | **String**| Filters results by their wallet ids | [optional] 
+ **hash** | **String**|  | [optional] 
+ **status** | **String**|  | [optional] 
+
+### Return type
+
+[**TransactionStatusGetResponse**](TransactionStatusGetResponse.md)
 
 ### Authorization
 
@@ -563,7 +1152,7 @@ Retrieve a wallet
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -618,7 +1207,7 @@ Retrieve a wallet key
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -673,7 +1262,7 @@ Get all wallet keys associated with wallets defined for your firm.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -689,7 +1278,8 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
 };
 
 var callback = function(error, data, response) {
@@ -710,6 +1300,7 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
 
 ### Return type
 
@@ -735,7 +1326,7 @@ Get information for all wallets defined for your firm
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -751,7 +1342,10 @@ var opts = {
   'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
-  'ascending': false // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+  'nucleusClientId': "nucleusClientId_example", // String | 
+  'isPrimary': true // Boolean | 
 };
 
 var callback = function(error, data, response) {
@@ -772,10 +1366,352 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
  **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
  **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+ **nucleusClientId** | **String**|  | [optional] 
+ **isPrimary** | **Boolean**|  | [optional] 
 
 ### Return type
 
 [**WalletGetResponse**](WalletGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getWebhook"></a>
+# **getWebhook**
+> WebhookSpecificResponse getWebhook(webhookId)
+
+Retrieve a webhook
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var webhookId = "webhookId_example"; // String | UUID of a webhook
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWebhook(webhookId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**String**](.md)| UUID of a webhook | 
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getWebhooks"></a>
+# **getWebhooks**
+> WebhookGetResponse getWebhooks(opts)
+
+Get information for all webhooks defined for your firm
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true, // Boolean | Retrieves the latest entry
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWebhooks(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+
+### Return type
+
+[**WebhookGetResponse**](WebhookGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCrowdsaleDeploy"></a>
+# **postCrowdsaleDeploy**
+> TransactionStatusSpecificResponse postCrowdsaleDeploy(payload)
+
+Deploy a token&#39;s crowdsale contract.
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CrowdsaleDeployPayload(); // CrowdsaleDeployPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCrowdsaleDeploy(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleDeployPayload**](CrowdsaleDeployPayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCrowdsaleFund"></a>
+# **postCrowdsaleFund**
+> TransactionStatusSpecificResponse postCrowdsaleFund(payload)
+
+Transfer tokens to a token&#39;s crowdsale address.
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CrowdsaleFundPayload(); // CrowdsaleFundPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCrowdsaleFund(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsaleFundPayload**](CrowdsaleFundPayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCrowdsalePurchase"></a>
+# **postCrowdsalePurchase**
+> TransactionStatusSpecificResponse postCrowdsalePurchase(payload)
+
+Purchase tokens from a crowdsale contract
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CrowdsalePurchasePayload(); // CrowdsalePurchasePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCrowdsalePurchase(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CrowdsalePurchasePayload**](CrowdsalePurchasePayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCurrencyTransfer"></a>
+# **postCurrencyTransfer**
+> TransactionStatusSpecificResponse postCurrencyTransfer(payload)
+
+Transfer currency between wallets
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CurrencyTransferPayload(); // CurrencyTransferPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCurrencyTransfer(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CurrencyTransferPayload**](CurrencyTransferPayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -797,7 +1733,7 @@ Create a token under your firm.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -841,73 +1777,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postTokenCrowdsale"></a>
-# **postTokenCrowdsale**
-> TokenCreateResponse postTokenCrowdsale(payload)
-
-Transfer tokens to a token&#39;s crowdsale address.
-
-### Example
-```javascript
-var molecule_api = require('hydrogen-molecule-api');
-var defaultClient = molecule_api.ApiClient.instance;
-
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
-// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
-defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
-
-
-// Configure OAuth2 access token for authorization: oauth
-// Ensure the token is from the same environment as the defaultClient.basePath above
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = "YOUR ACCESS TOKEN";
-
-var apiInstance = new molecule_api.MoleculeApi();
-
-var payload = new molecule_api.TokenCrowdsalePayload(); // TokenCrowdsalePayload | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.postTokenCrowdsale(payload, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payload** | [**TokenCrowdsalePayload**](TokenCrowdsalePayload.md)|  | 
-
-### Return type
-
-[**TokenCreateResponse**](TokenCreateResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="postTokenDeploy"></a>
 # **postTokenDeploy**
-> TokenCreateResponse postTokenDeploy(payload)
+> TransactionStatusSpecificResponse postTokenDeploy(payload)
 
-Deploy a secuirty token contract and its crowdsale contract to blockchain.
+Deploy a security token contract to blockchain.
 
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -940,7 +1821,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenCreateResponse**](TokenCreateResponse.md)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -951,18 +1832,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postTokenPurchase"></a>
-# **postTokenPurchase**
-> postTokenPurchase(payload)
+<a name="postTokenTransfer"></a>
+# **postTokenTransfer**
+> TransactionStatusSpecificResponse postTokenTransfer(payload)
 
-Participate in a token&#39;s crowdsale and purchase tokens.
+Transfer tokens between wallets
 
 ### Example
 ```javascript
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -974,28 +1855,28 @@ oauth.accessToken = "YOUR ACCESS TOKEN";
 
 var apiInstance = new molecule_api.MoleculeApi();
 
-var payload = new molecule_api.TokenPurchasePayload(); // TokenPurchasePayload | 
+var payload = new molecule_api.TokenTransferPayload(); // TokenTransferPayload | 
 
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postTokenPurchase(payload, callback);
+apiInstance.postTokenTransfer(payload, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**TokenPurchasePayload**](TokenPurchasePayload.md)|  | 
+ **payload** | [**TokenTransferPayload**](TokenTransferPayload.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1008,7 +1889,7 @@ null (empty response body)
 
 <a name="postTokenWhitelist"></a>
 # **postTokenWhitelist**
-> postTokenWhitelist(payload)
+> TransactionStatusSpecificResponse postTokenWhitelist(payload)
 
 Add an investor to a token&#39;s whitelist
 
@@ -1017,7 +1898,7 @@ Add an investor to a token&#39;s whitelist
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -1036,7 +1917,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.postTokenWhitelist(payload, callback);
@@ -1050,7 +1931,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
 
 ### Authorization
 
@@ -1072,7 +1953,7 @@ Create a wallet under your firm.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -1127,7 +2008,7 @@ Associate an existing key pair with a wallet defined for your firm.
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -1182,7 +2063,7 @@ Generate a wallet key using the Key Service and associate with a wallet defined 
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -1226,6 +2107,61 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postWebhook"></a>
+# **postWebhook**
+> WebhookCreateResponse postWebhook(payload)
+
+Create a webhook under your firm.
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.WebhookCreatePayload(); // WebhookCreatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postWebhook(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**WebhookCreatePayload**](WebhookCreatePayload.md)|  | 
+
+### Return type
+
+[**WebhookCreateResponse**](WebhookCreateResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateToken"></a>
 # **updateToken**
 > TokenSpecificResponse updateToken(tokenIdpayload)
@@ -1237,7 +2173,7 @@ Update a token
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -1295,7 +2231,7 @@ Update a wallet
 var molecule_api = require('hydrogen-molecule-api');
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -1332,6 +2268,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletSpecificResponse**](WalletSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateWebhook"></a>
+# **updateWebhook**
+> WebhookSpecificResponse updateWebhook(webhookIdpayload)
+
+Update a webhook
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var webhookId = "webhookId_example"; // String | UUID of a webhook
+
+var payload = new molecule_api.WebhookUpdatePayload(); // WebhookUpdatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateWebhook(webhookIdpayload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | [**String**](.md)| UUID of a webhook | 
+ **payload** | [**WebhookUpdatePayload**](WebhookUpdatePayload.md)|  | 
+
+### Return type
+
+[**WebhookSpecificResponse**](WebhookSpecificResponse.md)
 
 ### Authorization
 

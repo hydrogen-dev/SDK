@@ -70,6 +70,181 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Delete a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_webhook(webhook_id, opts = {})
+      delete_webhook_with_http_info(webhook_id, opts)
+      nil
+    end
+
+    # Delete a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    def delete_webhook_with_http_info(webhook_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.delete_webhook ...'
+      end
+      # verify the required parameter 'webhook_id' is set
+      if @api_client.config.client_side_validation && webhook_id.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_id' when calling MoleculeApi.delete_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook/{webhook_id}/'.sub('{' + 'webhook_id' + '}', webhook_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#delete_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get information for all currencies defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :symbol 
+    # @return [CurrencyGetResponse]
+    def get_currencies(opts = {})
+      data, _status_code, _headers = get_currencies_with_http_info(opts)
+      data
+    end
+
+    # Get information for all currencies defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :symbol 
+    # @return [Array<(CurrencyGetResponse, Fixnum, Hash)>] CurrencyGetResponse data, response status code and response headers
+    def get_currencies_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_currencies ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_currencies, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_currencies, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/currency'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'symbol'] = opts[:'symbol'] if !opts[:'symbol'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencyGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_currencies\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve a currency
+    # @param currency_id UUID of a currency
+    # @param [Hash] opts the optional parameters
+    # @return [CurrencySpecificResponse]
+    def get_currency(currency_id, opts = {})
+      data, _status_code, _headers = get_currency_with_http_info(currency_id, opts)
+      data
+    end
+
+    # Retrieve a currency
+    # @param currency_id UUID of a currency
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CurrencySpecificResponse, Fixnum, Hash)>] CurrencySpecificResponse data, response status code and response headers
+    def get_currency_with_http_info(currency_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_currency ...'
+      end
+      # verify the required parameter 'currency_id' is set
+      if @api_client.config.client_side_validation && currency_id.nil?
+        fail ArgumentError, "Missing the required parameter 'currency_id' when calling MoleculeApi.get_currency"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/currency/{currency_id}/'.sub('{' + 'currency_id' + '}', currency_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencySpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_currency\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Retrieve a currency balance
     # @param currency_balance_id UUID of a currency balance
     # @param [Hash] opts the optional parameters
@@ -122,24 +297,30 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
-    # Get information for all currency balances defined for your application.
+    # Get information for all currency balances recorded in your application.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :currency_id Filters results by their currency ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
     # @return [CurrencyBalanceGetResponse]
     def get_currency_balances(opts = {})
       data, _status_code, _headers = get_currency_balances_with_http_info(opts)
       data
     end
 
-    # Get information for all currency balances defined for your application.
+    # Get information for all currency balances recorded in your application.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :currency_id Filters results by their currency ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
     # @return [Array<(CurrencyBalanceGetResponse, Fixnum, Hash)>] CurrencyBalanceGetResponse data, response status code and response headers
     def get_currency_balances_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -162,6 +343,9 @@ module MoleculeApi
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
+      query_params[:'wallet_id'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
 
       # header parameters
       header_params = {}
@@ -185,6 +369,139 @@ module MoleculeApi
         :return_type => 'CurrencyBalanceGetResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#get_currency_balances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve a currency transfer
+    # @param currency_transfer_id UUID of a currency transfer
+    # @param [Hash] opts the optional parameters
+    # @return [CurrencyTransferSpecificResponse]
+    def get_currency_transfer(currency_transfer_id, opts = {})
+      data, _status_code, _headers = get_currency_transfer_with_http_info(currency_transfer_id, opts)
+      data
+    end
+
+    # Retrieve a currency transfer
+    # @param currency_transfer_id UUID of a currency transfer
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CurrencyTransferSpecificResponse, Fixnum, Hash)>] CurrencyTransferSpecificResponse data, response status code and response headers
+    def get_currency_transfer_with_http_info(currency_transfer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_currency_transfer ...'
+      end
+      # verify the required parameter 'currency_transfer_id' is set
+      if @api_client.config.client_side_validation && currency_transfer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'currency_transfer_id' when calling MoleculeApi.get_currency_transfer"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/currency_transfer/{currency_transfer_id}'.sub('{' + 'currency_transfer_id' + '}', currency_transfer_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencyTransferSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_currency_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get information for all currency transfers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :currency_id Filters results by their currency ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :sender_wallet_id Filters results by their sender wallet ids
+    # @option opts [String] :receiver_wallet_id Filters results by their receiver wallet ids
+    # @return [CurrencyTransferGetResponse]
+    def get_currency_transfers(opts = {})
+      data, _status_code, _headers = get_currency_transfers_with_http_info(opts)
+      data
+    end
+
+    # Get information for all currency transfers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :currency_id Filters results by their currency ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :sender_wallet_id Filters results by their sender wallet ids
+    # @option opts [String] :receiver_wallet_id Filters results by their receiver wallet ids
+    # @return [Array<(CurrencyTransferGetResponse, Fixnum, Hash)>] CurrencyTransferGetResponse data, response status code and response headers
+    def get_currency_transfers_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_currency_transfers ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_currency_transfers, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_currency_transfers, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/currency_transfer'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
+      query_params[:'wallet_id'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
+      query_params[:'sender_wallet_id'] = opts[:'sender_wallet_id'] if !opts[:'sender_wallet_id'].nil?
+      query_params[:'receiver_wallet_id'] = opts[:'receiver_wallet_id'] if !opts[:'receiver_wallet_id'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencyTransferGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_currency_transfers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -298,6 +615,9 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :token_id Filters results by their token ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
     # @return [TokenBalanceGetResponse]
     def get_token_balances(opts = {})
       data, _status_code, _headers = get_token_balances_with_http_info(opts)
@@ -310,6 +630,9 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :token_id Filters results by their token ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
     # @return [Array<(TokenBalanceGetResponse, Fixnum, Hash)>] TokenBalanceGetResponse data, response status code and response headers
     def get_token_balances_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -332,6 +655,9 @@ module MoleculeApi
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'token_id'] = opts[:'token_id'] if !opts[:'token_id'].nil?
+      query_params[:'wallet_id'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
 
       # header parameters
       header_params = {}
@@ -364,6 +690,8 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :token_id Filters results by their token ids
     # @return [TokenSupplyGetResponse]
     def get_token_supplies(opts = {})
       data, _status_code, _headers = get_token_supplies_with_http_info(opts)
@@ -376,6 +704,8 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :token_id Filters results by their token ids
     # @return [Array<(TokenSupplyGetResponse, Fixnum, Hash)>] TokenSupplyGetResponse data, response status code and response headers
     def get_token_supplies_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -398,6 +728,8 @@ module MoleculeApi
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'token_id'] = opts[:'token_id'] if !opts[:'token_id'].nil?
 
       # header parameters
       header_params = {}
@@ -476,12 +808,146 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Retrieve a token transfer
+    # @param token_transfer_id UUID of a token transfer
+    # @param [Hash] opts the optional parameters
+    # @return [TokenTransferSpecificResponse]
+    def get_token_transfer(token_transfer_id, opts = {})
+      data, _status_code, _headers = get_token_transfer_with_http_info(token_transfer_id, opts)
+      data
+    end
+
+    # Retrieve a token transfer
+    # @param token_transfer_id UUID of a token transfer
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TokenTransferSpecificResponse, Fixnum, Hash)>] TokenTransferSpecificResponse data, response status code and response headers
+    def get_token_transfer_with_http_info(token_transfer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_token_transfer ...'
+      end
+      # verify the required parameter 'token_transfer_id' is set
+      if @api_client.config.client_side_validation && token_transfer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'token_transfer_id' when calling MoleculeApi.get_token_transfer"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/token_transfer/{token_transfer_id}'.sub('{' + 'token_transfer_id' + '}', token_transfer_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TokenTransferSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_token_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get information for all token transfers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :token_id Filters results by their token ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :sender_wallet_id Filters results by their sender wallet ids
+    # @option opts [String] :receiver_wallet_id Filters results by their receiver wallet ids
+    # @return [TokenTransferGetResponse]
+    def get_token_transfers(opts = {})
+      data, _status_code, _headers = get_token_transfers_with_http_info(opts)
+      data
+    end
+
+    # Get information for all token transfers
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :token_id Filters results by their token ids
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :sender_wallet_id Filters results by their sender wallet ids
+    # @option opts [String] :receiver_wallet_id Filters results by their receiver wallet ids
+    # @return [Array<(TokenTransferGetResponse, Fixnum, Hash)>] TokenTransferGetResponse data, response status code and response headers
+    def get_token_transfers_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_token_transfers ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_token_transfers, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_token_transfers, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/token_transfer'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'token_id'] = opts[:'token_id'] if !opts[:'token_id'].nil?
+      query_params[:'wallet_id'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
+      query_params[:'sender_wallet_id'] = opts[:'sender_wallet_id'] if !opts[:'sender_wallet_id'].nil?
+      query_params[:'receiver_wallet_id'] = opts[:'receiver_wallet_id'] if !opts[:'receiver_wallet_id'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TokenTransferGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_token_transfers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Get information for all tokens defined for your firm
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
     # @return [TokenGetResponse]
     def get_tokens(opts = {})
       data, _status_code, _headers = get_tokens_with_http_info(opts)
@@ -494,6 +960,7 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
     # @return [Array<(TokenGetResponse, Fixnum, Hash)>] TokenGetResponse data, response status code and response headers
     def get_tokens_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -516,6 +983,7 @@ module MoleculeApi
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
 
       # header parameters
       header_params = {}
@@ -539,6 +1007,136 @@ module MoleculeApi
         :return_type => 'TokenGetResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#get_tokens\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve status information for a specific transaction
+    # @param transaction_status_id UUID of a transaction status
+    # @param [Hash] opts the optional parameters
+    # @return [TransactionStatusSpecificResponse]
+    def get_transaction_status(transaction_status_id, opts = {})
+      data, _status_code, _headers = get_transaction_status_with_http_info(transaction_status_id, opts)
+      data
+    end
+
+    # Retrieve status information for a specific transaction
+    # @param transaction_status_id UUID of a transaction status
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def get_transaction_status_with_http_info(transaction_status_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_transaction_status ...'
+      end
+      # verify the required parameter 'transaction_status_id' is set
+      if @api_client.config.client_side_validation && transaction_status_id.nil?
+        fail ArgumentError, "Missing the required parameter 'transaction_status_id' when calling MoleculeApi.get_transaction_status"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/transaction_status/{transaction_status_id}'.sub('{' + 'transaction_status_id' + '}', transaction_status_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_transaction_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get status information for all transactions
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :hash 
+    # @option opts [String] :status 
+    # @return [TransactionStatusGetResponse]
+    def get_transaction_statuses(opts = {})
+      data, _status_code, _headers = get_transaction_statuses_with_http_info(opts)
+      data
+    end
+
+    # Get status information for all transactions
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :wallet_id Filters results by their wallet ids
+    # @option opts [String] :hash 
+    # @option opts [String] :status 
+    # @return [Array<(TransactionStatusGetResponse, Fixnum, Hash)>] TransactionStatusGetResponse data, response status code and response headers
+    def get_transaction_statuses_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_transaction_statuses ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_transaction_statuses, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_transaction_statuses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/transaction_status'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'wallet_id'] = opts[:'wallet_id'] if !opts[:'wallet_id'].nil?
+      query_params[:'hash'] = opts[:'hash'] if !opts[:'hash'].nil?
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_transaction_statuses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -652,6 +1250,7 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
     # @return [WalletKeyGetResponse]
     def get_wallet_keys(opts = {})
       data, _status_code, _headers = get_wallet_keys_with_http_info(opts)
@@ -664,6 +1263,7 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
     # @return [Array<(WalletKeyGetResponse, Fixnum, Hash)>] WalletKeyGetResponse data, response status code and response headers
     def get_wallet_keys_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -686,6 +1286,7 @@ module MoleculeApi
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
 
       # header parameters
       header_params = {}
@@ -718,6 +1319,9 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :nucleus_client_id 
+    # @option opts [BOOLEAN] :is_primary 
     # @return [WalletGetResponse]
     def get_wallets(opts = {})
       data, _status_code, _headers = get_wallets_with_http_info(opts)
@@ -730,6 +1334,9 @@ module MoleculeApi
     # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
     # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
     # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @option opts [String] :nucleus_client_id 
+    # @option opts [BOOLEAN] :is_primary 
     # @return [Array<(WalletGetResponse, Fixnum, Hash)>] WalletGetResponse data, response status code and response headers
     def get_wallets_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -752,6 +1359,9 @@ module MoleculeApi
       query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+      query_params[:'nucleus_client_id'] = opts[:'nucleus_client_id'] if !opts[:'nucleus_client_id'].nil?
+      query_params[:'is_primary'] = opts[:'is_primary'] if !opts[:'is_primary'].nil?
 
       # header parameters
       header_params = {}
@@ -775,6 +1385,335 @@ module MoleculeApi
         :return_type => 'WalletGetResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#get_wallets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [WebhookSpecificResponse]
+    def get_webhook(webhook_id, opts = {})
+      data, _status_code, _headers = get_webhook_with_http_info(webhook_id, opts)
+      data
+    end
+
+    # Retrieve a webhook
+    # @param webhook_id UUID of a webhook
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WebhookSpecificResponse, Fixnum, Hash)>] WebhookSpecificResponse data, response status code and response headers
+    def get_webhook_with_http_info(webhook_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_webhook ...'
+      end
+      # verify the required parameter 'webhook_id' is set
+      if @api_client.config.client_side_validation && webhook_id.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_id' when calling MoleculeApi.get_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook/{webhook_id}/'.sub('{' + 'webhook_id' + '}', webhook_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get information for all webhooks defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @return [WebhookGetResponse]
+    def get_webhooks(opts = {})
+      data, _status_code, _headers = get_webhooks_with_http_info(opts)
+      data
+    end
+
+    # Get information for all webhooks defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @return [Array<(WebhookGetResponse, Fixnum, Hash)>] WebhookGetResponse data, response status code and response headers
+    def get_webhooks_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_webhooks ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_webhooks, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_webhooks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/webhook'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_webhooks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Deploy a token's crowdsale contract.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [TransactionStatusSpecificResponse]
+    def post_crowdsale_deploy(payload, opts = {})
+      data, _status_code, _headers = post_crowdsale_deploy_with_http_info(payload, opts)
+      data
+    end
+
+    # Deploy a token&#39;s crowdsale contract.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def post_crowdsale_deploy_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_deploy ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_crowdsale_deploy"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/crowdsale/deploy'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_deploy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Transfer tokens to a token's crowdsale address.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [TransactionStatusSpecificResponse]
+    def post_crowdsale_fund(payload, opts = {})
+      data, _status_code, _headers = post_crowdsale_fund_with_http_info(payload, opts)
+      data
+    end
+
+    # Transfer tokens to a token&#39;s crowdsale address.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def post_crowdsale_fund_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_fund ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_crowdsale_fund"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/crowdsale/fund'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_fund\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Purchase tokens from a crowdsale contract
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [TransactionStatusSpecificResponse]
+    def post_crowdsale_purchase(payload, opts = {})
+      data, _status_code, _headers = post_crowdsale_purchase_with_http_info(payload, opts)
+      data
+    end
+
+    # Purchase tokens from a crowdsale contract
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def post_crowdsale_purchase_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_crowdsale_purchase ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_crowdsale_purchase"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/crowdsale/purchase'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_crowdsale_purchase\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Transfer currency between wallets
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [TransactionStatusSpecificResponse]
+    def post_currency_transfer(payload, opts = {})
+      data, _status_code, _headers = post_currency_transfer_with_http_info(payload, opts)
+      data
+    end
+
+    # Transfer currency between wallets
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def post_currency_transfer_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_currency_transfer ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_currency_transfer"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/currency_transfer'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_currency_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -830,71 +1769,19 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
-    # Transfer tokens to a token's crowdsale address.
+    # Deploy a security token contract to blockchain.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [TokenCreateResponse]
-    def post_token_crowdsale(payload, opts = {})
-      data, _status_code, _headers = post_token_crowdsale_with_http_info(payload, opts)
-      data
-    end
-
-    # Transfer tokens to a token&#39;s crowdsale address.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(TokenCreateResponse, Fixnum, Hash)>] TokenCreateResponse data, response status code and response headers
-    def post_token_crowdsale_with_http_info(payload, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_crowdsale ...'
-      end
-      # verify the required parameter 'payload' is set
-      if @api_client.config.client_side_validation && payload.nil?
-        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_crowdsale"
-      end
-      # resource path
-      local_var_path = '/molecule/v1/token/crowdsale'
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(payload)
-      auth_names = ['oauth']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'TokenCreateResponse')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#post_token_crowdsale\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-    # Deploy a secuirty token contract and its crowdsale contract to blockchain.
-    # @param payload 
-    # @param [Hash] opts the optional parameters
-    # @return [TokenCreateResponse]
+    # @return [TransactionStatusSpecificResponse]
     def post_token_deploy(payload, opts = {})
       data, _status_code, _headers = post_token_deploy_with_http_info(payload, opts)
       data
     end
 
-    # Deploy a secuirty token contract and its crowdsale contract to blockchain.
+    # Deploy a security token contract to blockchain.
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(TokenCreateResponse, Fixnum, Hash)>] TokenCreateResponse data, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_token_deploy_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_deploy ...'
@@ -928,35 +1815,35 @@ module MoleculeApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'TokenCreateResponse')
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_deploy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
-    # Participate in a token's crowdsale and purchase tokens.
+    # Transfer tokens between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def post_token_purchase(payload, opts = {})
-      post_token_purchase_with_http_info(payload, opts)
-      nil
+    # @return [TransactionStatusSpecificResponse]
+    def post_token_transfer(payload, opts = {})
+      data, _status_code, _headers = post_token_transfer_with_http_info(payload, opts)
+      data
     end
 
-    # Participate in a token&#39;s crowdsale and purchase tokens.
+    # Transfer tokens between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def post_token_purchase_with_http_info(payload, opts = {})
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def post_token_transfer_with_http_info(payload, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_purchase ...'
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_transfer ...'
       end
       # verify the required parameter 'payload' is set
       if @api_client.config.client_side_validation && payload.nil?
-        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_purchase"
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_transfer"
       end
       # resource path
-      local_var_path = '/molecule/v1/token/purchase'
+      local_var_path = '/molecule/v1/token_transfer'
 
       # query parameters
       query_params = {}
@@ -979,25 +1866,26 @@ module MoleculeApi
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MoleculeApi#post_token_purchase\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MoleculeApi#post_token_transfer\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
     # Add an investor to a token's whitelist
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [TransactionStatusSpecificResponse]
     def post_token_whitelist(payload, opts = {})
-      post_token_whitelist_with_http_info(payload, opts)
-      nil
+      data, _status_code, _headers = post_token_whitelist_with_http_info(payload, opts)
+      data
     end
 
     # Add an investor to a token&#39;s whitelist
     # @param payload 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
     def post_token_whitelist_with_http_info(payload, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_whitelist ...'
@@ -1030,7 +1918,8 @@ module MoleculeApi
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_whitelist\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1192,6 +2081,58 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Create a webhook under your firm.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [WebhookCreateResponse]
+    def post_webhook(payload, opts = {})
+      data, _status_code, _headers = post_webhook_with_http_info(payload, opts)
+      data
+    end
+
+    # Create a webhook under your firm.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WebhookCreateResponse, Fixnum, Hash)>] WebhookCreateResponse data, response status code and response headers
+    def post_webhook_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_webhook ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookCreateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Update a token
     # @param token_id UUID of a token
     # @param payload 
@@ -1305,6 +2246,64 @@ module MoleculeApi
         :return_type => 'WalletSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#update_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Update a webhook
+    # @param webhook_id UUID of a webhook
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [WebhookSpecificResponse]
+    def update_webhook(webhook_id, payload, opts = {})
+      data, _status_code, _headers = update_webhook_with_http_info(webhook_id, payload, opts)
+      data
+    end
+
+    # Update a webhook
+    # @param webhook_id UUID of a webhook
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WebhookSpecificResponse, Fixnum, Hash)>] WebhookSpecificResponse data, response status code and response headers
+    def update_webhook_with_http_info(webhook_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.update_webhook ...'
+      end
+      # verify the required parameter 'webhook_id' is set
+      if @api_client.config.client_side_validation && webhook_id.nil?
+        fail ArgumentError, "Missing the required parameter 'webhook_id' when calling MoleculeApi.update_webhook"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.update_webhook"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/webhook/{webhook_id}/'.sub('{' + 'webhook_id' + '}', webhook_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WebhookSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#update_webhook\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

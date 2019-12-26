@@ -75,8 +75,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property ticker (base name: "ticker")', function() {
-      // uncomment below and update the code to test the property ticker
+    it('should have the property currencyId (base name: "currency_id")', function() {
+      // uncomment below and update the code to test the property currencyId
       //var instance = new molecule_api.CurrencyBalanceSpecificResponse();
       //expect(instance).to.be();
     });

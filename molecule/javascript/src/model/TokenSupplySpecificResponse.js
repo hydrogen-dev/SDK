@@ -101,12 +101,12 @@
    */
   exports.prototype['token_id'] = undefined;
   /**
-   * Datetime the currency balance record was created
+   * Datetime the token supply record was created
    * @member {String} create_date
    */
   exports.prototype['create_date'] = undefined;
   /**
-   * Datetime the currency balance record was updated
+   * Datetime the token supply record was updated
    * @member {String} update_date
    */
   exports.prototype['update_date'] = undefined;

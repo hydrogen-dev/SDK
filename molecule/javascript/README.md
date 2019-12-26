@@ -101,7 +101,7 @@ module: {
 
 ## Getting Started
 
-Full usage documentation is available: [Nucleus](https://www.hydrogenplatform.com/docs/nucleus/v1/) | [Electron](https://www.hydrogenplatform.com/docs/electron/v1/) | [Proton](https://www.hydrogenplatform.com/docs/proton/v1/)
+Full usage documentation is available: [Molecule](https://www.hydrogenplatform.com/docs/molecule/v1/)
 
 Please follow the [installation](#installation) instructions and execute the following JS code:
 
@@ -110,7 +110,7 @@ var molecule_api = require('hydrogen-molecule-api');
 
 var defaultClient = molecule_api.ApiClient.instance;
 
-// (Optional) Set the Molecule environment you wish to use (defaults to sandbox)
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
 // This changes the URL for requests to [environment].hydrogenplatform.com
 defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
 
@@ -138,40 +138,62 @@ api.deleteToken(tokenId, callback);
 
 ## Documentation for API Endpoints
 
-Full usage documentation is available: [Nucleus](https://www.hydrogenplatform.com/docs/nucleus/v1/) | [Electron](https://www.hydrogenplatform.com/docs/electron/v1/) | [Proton](https://www.hydrogenplatform.com/docs/proton/v1/)
+Full usage documentation is available: [Molecule](https://www.hydrogenplatform.com/docs/molecule/v1/)
 
 All URIs are relative to *https://api.hydrogenplatform.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *molecule_api.MoleculeApi* | [**deleteToken**](docs/MoleculeApi.md#deleteToken) | **DELETE** /molecule/v1/token/{token_id}/ | Delete a token
+*molecule_api.MoleculeApi* | [**deleteWebhook**](docs/MoleculeApi.md#deleteWebhook) | **DELETE** /molecule/v1/webhook/{webhook_id}/ | Delete a webhook
+*molecule_api.MoleculeApi* | [**getCurrencies**](docs/MoleculeApi.md#getCurrencies) | **GET** /molecule/v1/currency | Get information for all currencies defined for your firm
+*molecule_api.MoleculeApi* | [**getCurrency**](docs/MoleculeApi.md#getCurrency) | **GET** /molecule/v1/currency/{currency_id}/ | Retrieve a currency
 *molecule_api.MoleculeApi* | [**getCurrencyBalance**](docs/MoleculeApi.md#getCurrencyBalance) | **GET** /molecule/v1/currency_balance/{currency_balance_id} | Retrieve a currency balance
-*molecule_api.MoleculeApi* | [**getCurrencyBalances**](docs/MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances defined for your application.
+*molecule_api.MoleculeApi* | [**getCurrencyBalances**](docs/MoleculeApi.md#getCurrencyBalances) | **GET** /molecule/v1/currency_balance | Get information for all currency balances recorded in your application.
+*molecule_api.MoleculeApi* | [**getCurrencyTransfer**](docs/MoleculeApi.md#getCurrencyTransfer) | **GET** /molecule/v1/currency_transfer/{currency_transfer_id} | Retrieve a currency transfer
+*molecule_api.MoleculeApi* | [**getCurrencyTransfers**](docs/MoleculeApi.md#getCurrencyTransfers) | **GET** /molecule/v1/currency_transfer | Get information for all currency transfers
 *molecule_api.MoleculeApi* | [**getToken**](docs/MoleculeApi.md#getToken) | **GET** /molecule/v1/token/{token_id}/ | Retrieve a token
 *molecule_api.MoleculeApi* | [**getTokenBalance**](docs/MoleculeApi.md#getTokenBalance) | **GET** /molecule/v1/token_balance/{token_balance_id} | Retrieve a token balance
 *molecule_api.MoleculeApi* | [**getTokenBalances**](docs/MoleculeApi.md#getTokenBalances) | **GET** /molecule/v1/token_balance | Get information for all token balances defined for your application.
 *molecule_api.MoleculeApi* | [**getTokenSupplies**](docs/MoleculeApi.md#getTokenSupplies) | **GET** /molecule/v1/token_supply | Get information for all token supplies defined for your application.
 *molecule_api.MoleculeApi* | [**getTokenSupply**](docs/MoleculeApi.md#getTokenSupply) | **GET** /molecule/v1/token_supply/{token_supply_id} | Retrieve a token supply
+*molecule_api.MoleculeApi* | [**getTokenTransfer**](docs/MoleculeApi.md#getTokenTransfer) | **GET** /molecule/v1/token_transfer/{token_transfer_id} | Retrieve a token transfer
+*molecule_api.MoleculeApi* | [**getTokenTransfers**](docs/MoleculeApi.md#getTokenTransfers) | **GET** /molecule/v1/token_transfer | Get information for all token transfers
 *molecule_api.MoleculeApi* | [**getTokens**](docs/MoleculeApi.md#getTokens) | **GET** /molecule/v1/token | Get information for all tokens defined for your firm
+*molecule_api.MoleculeApi* | [**getTransactionStatus**](docs/MoleculeApi.md#getTransactionStatus) | **GET** /molecule/v1/transaction_status/{transaction_status_id} | Retrieve status information for a specific transaction
+*molecule_api.MoleculeApi* | [**getTransactionStatuses**](docs/MoleculeApi.md#getTransactionStatuses) | **GET** /molecule/v1/transaction_status | Get status information for all transactions
 *molecule_api.MoleculeApi* | [**getWallet**](docs/MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 *molecule_api.MoleculeApi* | [**getWalletKey**](docs/MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *molecule_api.MoleculeApi* | [**getWalletKeys**](docs/MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
 *molecule_api.MoleculeApi* | [**getWallets**](docs/MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
+*molecule_api.MoleculeApi* | [**getWebhook**](docs/MoleculeApi.md#getWebhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
+*molecule_api.MoleculeApi* | [**getWebhooks**](docs/MoleculeApi.md#getWebhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
+*molecule_api.MoleculeApi* | [**postCrowdsaleDeploy**](docs/MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
+*molecule_api.MoleculeApi* | [**postCrowdsaleFund**](docs/MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
+*molecule_api.MoleculeApi* | [**postCrowdsalePurchase**](docs/MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
+*molecule_api.MoleculeApi* | [**postCurrencyTransfer**](docs/MoleculeApi.md#postCurrencyTransfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 *molecule_api.MoleculeApi* | [**postToken**](docs/MoleculeApi.md#postToken) | **POST** /molecule/v1/token | Create a token under your firm.
-*molecule_api.MoleculeApi* | [**postTokenCrowdsale**](docs/MoleculeApi.md#postTokenCrowdsale) | **POST** /molecule/v1/token/crowdsale | Transfer tokens to a token&#39;s crowdsale address.
-*molecule_api.MoleculeApi* | [**postTokenDeploy**](docs/MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a secuirty token contract and its crowdsale contract to blockchain.
-*molecule_api.MoleculeApi* | [**postTokenPurchase**](docs/MoleculeApi.md#postTokenPurchase) | **POST** /molecule/v1/token/purchase | Participate in a token&#39;s crowdsale and purchase tokens.
+*molecule_api.MoleculeApi* | [**postTokenDeploy**](docs/MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
+*molecule_api.MoleculeApi* | [**postTokenTransfer**](docs/MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 *molecule_api.MoleculeApi* | [**postTokenWhitelist**](docs/MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 *molecule_api.MoleculeApi* | [**postWallet**](docs/MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 *molecule_api.MoleculeApi* | [**postWalletKey**](docs/MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 *molecule_api.MoleculeApi* | [**postWalletKeyGenerator**](docs/MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
+*molecule_api.MoleculeApi* | [**postWebhook**](docs/MoleculeApi.md#postWebhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
 *molecule_api.MoleculeApi* | [**updateToken**](docs/MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 *molecule_api.MoleculeApi* | [**updateWallet**](docs/MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+*molecule_api.MoleculeApi* | [**updateWebhook**](docs/MoleculeApi.md#updateWebhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
 ## Documentation for Models
 
+ - [molecule_api.CrowdsaleDeployPayload](docs/CrowdsaleDeployPayload.md)
+ - [molecule_api.CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
+ - [molecule_api.CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)
  - [molecule_api.CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
+ - [molecule_api.CurrencySpecificResponse](docs/CurrencySpecificResponse.md)
+ - [molecule_api.CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
+ - [molecule_api.CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
  - [molecule_api.OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
  - [molecule_api.OfferingSettingsUpdatePayload](docs/OfferingSettingsUpdatePayload.md)
  - [molecule_api.Pagination](docs/Pagination.md)
@@ -179,13 +201,14 @@ Class | Method | HTTP request | Description
  - [molecule_api.SecondaryId](docs/SecondaryId.md)
  - [molecule_api.TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
  - [molecule_api.TokenCreatePayload](docs/TokenCreatePayload.md)
- - [molecule_api.TokenCrowdsalePayload](docs/TokenCrowdsalePayload.md)
  - [molecule_api.TokenDeployPayload](docs/TokenDeployPayload.md)
- - [molecule_api.TokenPurchasePayload](docs/TokenPurchasePayload.md)
  - [molecule_api.TokenRestrictionsPayload](docs/TokenRestrictionsPayload.md)
  - [molecule_api.TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
+ - [molecule_api.TokenTransferPayload](docs/TokenTransferPayload.md)
+ - [molecule_api.TokenTransferSpecificResponse](docs/TokenTransferSpecificResponse.md)
  - [molecule_api.TokenUpdatePayload](docs/TokenUpdatePayload.md)
  - [molecule_api.TokenWhitelistPayload](docs/TokenWhitelistPayload.md)
+ - [molecule_api.TransactionStatusSpecificResponse](docs/TransactionStatusSpecificResponse.md)
  - [molecule_api.WalletCreateClient](docs/WalletCreateClient.md)
  - [molecule_api.WalletCreatePayload](docs/WalletCreatePayload.md)
  - [molecule_api.WalletCreateWhitelist](docs/WalletCreateWhitelist.md)
@@ -193,17 +216,26 @@ Class | Method | HTTP request | Description
  - [molecule_api.WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [molecule_api.WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
  - [molecule_api.WalletUpdatePayload](docs/WalletUpdatePayload.md)
+ - [molecule_api.WebhookCreatePayload](docs/WebhookCreatePayload.md)
+ - [molecule_api.WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
  - [molecule_api.CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
+ - [molecule_api.CurrencyGetResponse](docs/CurrencyGetResponse.md)
+ - [molecule_api.CurrencyTransferGetResponse](docs/CurrencyTransferGetResponse.md)
  - [molecule_api.TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
  - [molecule_api.TokenCreateResponse](docs/TokenCreateResponse.md)
  - [molecule_api.TokenGetResponse](docs/TokenGetResponse.md)
  - [molecule_api.TokenSupplyGetResponse](docs/TokenSupplyGetResponse.md)
+ - [molecule_api.TokenTransferGetResponse](docs/TokenTransferGetResponse.md)
+ - [molecule_api.TransactionStatusGetResponse](docs/TransactionStatusGetResponse.md)
  - [molecule_api.WalletCreateResponse](docs/WalletCreateResponse.md)
  - [molecule_api.WalletGetResponse](docs/WalletGetResponse.md)
  - [molecule_api.WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
  - [molecule_api.WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
+ - [molecule_api.WebhookCreateResponse](docs/WebhookCreateResponse.md)
+ - [molecule_api.WebhookGetResponse](docs/WebhookGetResponse.md)
  - [molecule_api.TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [molecule_api.WalletSpecificResponse](docs/WalletSpecificResponse.md)
+ - [molecule_api.WebhookSpecificResponse](docs/WebhookSpecificResponse.md)
 
 
 ## Documentation for Authorization

@@ -1355,6 +1355,40 @@ paths:
           name: symbol
           required: false
           type: string
+    post:
+      operationId: postCurrency
+      summary: Add a currency under your firm.
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Add-a-currency
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/currency_create_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_create_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
 
   /molecule/v1/currency/{currency_id}/:
     get:
@@ -1366,6 +1400,40 @@ paths:
         url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-currency
       tags:
         - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateCurrency
+      summary: Update a currency
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-currency
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/currency_update_payload'
       responses:
         200:
           description: 'Successful response'
@@ -1999,6 +2067,15 @@ definitions:
     allOf:
       - type: object
       - properties:
+          update_date:
+            type: string
+            format: datetime
+            description: Datetime the currency record was updated
+      - $ref: '#/definitions/currency_create_response'
+  currency_create_response:
+    allOf:
+      - type: object
+      - properties:
           id:
             type: string
             format: uuid
@@ -2012,24 +2089,17 @@ definitions:
           symbol:
             type: string
             description: Symbol of the currency
-          address:
-            type: string
-            description: The blockchain contract address of the currency
-          logo:
-            type: string
-            description: The url for the currency logo
           network:
             type: string
             description: The network the currency is available on. Can be mainnet, ropsten etc.
+          is_allowed:
+            type: boolean
+            description: Indicates if this currency is allowed for usage
           create_date:
             type: string
             format: datetime
             description: Datetime the currency record was created
-          update_date:
-            type: string
-            format: datetime
-            description: Datetime the currency record was updated
-
+      - $ref: '#/definitions/currency_create_payload'
   # Request payloads
   wallet_create_client:
     type: object
@@ -2472,3 +2542,23 @@ definitions:
       is_active:
         type: boolean
         description: Indicates if this webhook is active.
+  currency_create_payload:
+    type: object
+    required:
+      - address
+    properties:
+      address:
+        type: string
+        description: The contract address of the currency being added.
+      logo:
+        type: string
+        description: The url for the currency logo.
+  currency_update_payload:
+    type: object
+    properties:
+      logo:
+        type: string
+        description: The url for the currency logo.
+      is_allowed:
+        type: boolean
+        description: Indicates if this currency is allowed for usage

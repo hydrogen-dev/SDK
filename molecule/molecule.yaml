@@ -2243,6 +2243,18 @@ definitions:
       name:
         type: string
         description: Name of the security token.
+      type:
+        type: string
+        description: Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20
+        default: ERC20
+      is_mintable:
+        type: boolean
+        description: Determines if the security token is mintable or not. Defaults to false.
+        default: false
+      is_burnable:
+        type: boolean
+        description: Determines if the security token is burnable or not. Defaults to false.
+        default: false
       nucleus_model_id:
         type: string
         format: uuid

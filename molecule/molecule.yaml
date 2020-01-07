@@ -688,6 +688,78 @@ paths:
         503:
           $ref: '#/responses/503'
 
+  /molecule/v1/token/mint:
+    post:
+      operationId: postTokenMint
+      summary: Mint new tokens
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Mint-a-token
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/token_mint_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/transaction_status_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
+  /molecule/v1/token/burn:
+    post:
+      operationId: postTokenBurn
+      summary: Burn existing tokens
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Burn-a-token
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/token_burn_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/transaction_status_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
   /molecule/v1/crowdsale/deploy:
     post:
       operationId: postCrowdsaleDeploy
@@ -2459,6 +2531,37 @@ definitions:
         type: string
         format: uuid
         description: The uuid of wallet to be whitelisted.
+  token_mint_payload:
+    type: object
+    required:
+      - token_id
+      - receiver_wallet_id
+      - amount
+    properties:
+      token_id:
+        type: string
+        format: uuid
+        description: The uuid of the token being minted.
+      receiver_wallet_id:
+        type: string
+        format: uuid
+        description: The uuid of wallet which will receive the minted tokens.
+      amount:
+        type: number
+        description: Amount of tokens to be minted.
+  token_burn_payload:
+    type: object
+    required:
+      - token_id
+      - amount
+    properties:
+      token_id:
+        type: string
+        format: uuid
+        description: The uuid of the token being burned.
+      amount:
+        type: number
+        description: Amount of tokens to be burned.
   crowdsale_purchase_payload:
     type: object
     required:

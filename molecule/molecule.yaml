@@ -384,6 +384,42 @@ paths:
     parameters:
       - $ref: '#/parameters/path_currency_balance_uuid'
 
+  /molecule/v1/currency_balance/update:
+    post:
+      operationId: postCurrencyBalanceUpdate
+      summary: Update the currency balance of a wallet using the blockchain
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-currency-balance
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#definitions/currency_balance_update_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/currency_balance_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+
   /molecule/v1/token_balance:
     get:
       operationId: getTokenBalances
@@ -2677,3 +2713,16 @@ definitions:
       is_allowed:
         type: boolean
         description: Indicates if this currency is allowed for usage
+  currency_balance_update_payload:
+    type: object
+    required:
+      - wallet_id
+    properties:
+      wallet_id:
+        type: string
+        format: uuid
+        description: The id of the wallet for which the currency balance will be updated
+      currency_id:
+        type: string
+        format: uuid
+        description: The id of the currency to be updated. Defaults to currency_id of ETH

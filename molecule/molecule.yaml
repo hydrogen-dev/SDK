@@ -391,7 +391,7 @@ paths:
       security:
         - oauth: [molecule]
       externalDocs:
-        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-currency-balance
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Currency-balance-update
       tags:
         - Molecule
       parameters:

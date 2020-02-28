@@ -106,6 +106,27 @@ exports.prototype['symbol'] = undefined;
 exports.prototype['name'] = undefined;
 
   /**
+   * Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20
+   * @member {String} type
+   * @default 'ERC20'
+   */
+exports.prototype['type'] = 'ERC20';
+
+  /**
+   * Determines if the security token is mintable or not. Defaults to false.
+   * @member {Boolean} is_mintable
+   * @default false
+   */
+exports.prototype['is_mintable'] = false;
+
+  /**
+   * Determines if the security token is burnable or not. Defaults to false.
+   * @member {Boolean} is_burnable
+   * @default false
+   */
+exports.prototype['is_burnable'] = false;
+
+  /**
    * The id of the associated Nucleus model for this security token
    * @member {String} nucleus_model_id
    */

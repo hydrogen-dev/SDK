@@ -19,17 +19,23 @@ import io.swagger.client.model.CrowdsaleFundPayload;
 import io.swagger.client.model.CrowdsalePurchasePayload;
 import io.swagger.client.model.CurrencyBalanceGetResponse;
 import io.swagger.client.model.CurrencyBalanceSpecificResponse;
+import io.swagger.client.model.CurrencyBalanceUpdatePayload;
+import io.swagger.client.model.CurrencyCreatePayload;
+import io.swagger.client.model.CurrencyCreateResponse;
 import io.swagger.client.model.CurrencyGetResponse;
 import io.swagger.client.model.CurrencySpecificResponse;
 import io.swagger.client.model.CurrencyTransferGetResponse;
 import io.swagger.client.model.CurrencyTransferPayload;
 import io.swagger.client.model.CurrencyTransferSpecificResponse;
+import io.swagger.client.model.CurrencyUpdatePayload;
 import io.swagger.client.model.TokenBalanceGetResponse;
 import io.swagger.client.model.TokenBalanceSpecificResponse;
+import io.swagger.client.model.TokenBurnPayload;
 import io.swagger.client.model.TokenCreatePayload;
 import io.swagger.client.model.TokenCreateResponse;
 import io.swagger.client.model.TokenDeployPayload;
 import io.swagger.client.model.TokenGetResponse;
+import io.swagger.client.model.TokenMintPayload;
 import io.swagger.client.model.TokenSpecificResponse;
 import io.swagger.client.model.TokenSupplyGetResponse;
 import io.swagger.client.model.TokenSupplySpecificResponse;
@@ -49,6 +55,9 @@ import io.swagger.client.model.WalletKeyCreateResponse;
 import io.swagger.client.model.WalletKeyGeneratorPayload;
 import io.swagger.client.model.WalletKeyGetResponse;
 import io.swagger.client.model.WalletKeySpecificResponse;
+import io.swagger.client.model.WalletPermissionGetResponse;
+import io.swagger.client.model.WalletPermissionSpecificResponse;
+import io.swagger.client.model.WalletPermissionUpdatePayload;
 import io.swagger.client.model.WalletSpecificResponse;
 import io.swagger.client.model.WalletUpdatePayload;
 import io.swagger.client.model.WebhookCreatePayload;
@@ -463,6 +472,42 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Retrieve a wallet&#39;s permission
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWalletPermissionTest() throws ApiException {
+        UUID walletId = null;
+        WalletPermissionSpecificResponse response = api.getWalletPermission(walletId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get information for all wallet permisions defined for your firm
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWalletPermissionsTest() throws ApiException {
+        Integer page = null;
+        Integer size = null;
+        String orderBy = null;
+        Boolean ascending = null;
+        Boolean getLatest = null;
+        WalletPermissionGetResponse response = api.getWalletPermissions(page, size, orderBy, ascending, getLatest);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get information for all wallets defined for your firm
      *
      * 
@@ -569,6 +614,38 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Add a currency under your firm.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCurrencyTest() throws ApiException {
+        CurrencyCreatePayload payload = null;
+        CurrencyCreateResponse response = api.postCurrency(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update the currency balance of a wallet using the blockchain
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postCurrencyBalanceUpdateTest() throws ApiException {
+        CurrencyBalanceUpdatePayload payload = null;
+        CurrencyBalanceSpecificResponse response = api.postCurrencyBalanceUpdate(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Transfer currency between wallets
      *
      * 
@@ -601,6 +678,22 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Burn existing tokens
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postTokenBurnTest() throws ApiException {
+        TokenBurnPayload payload = null;
+        TransactionStatusSpecificResponse response = api.postTokenBurn(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Deploy a security token contract to blockchain.
      *
      * 
@@ -612,6 +705,22 @@ public class MoleculeApiTest {
     public void postTokenDeployTest() throws ApiException {
         TokenDeployPayload payload = null;
         TransactionStatusSpecificResponse response = api.postTokenDeploy(payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Mint new tokens
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postTokenMintTest() throws ApiException {
+        TokenMintPayload payload = null;
+        TransactionStatusSpecificResponse response = api.postTokenMint(payload);
 
         // TODO: test validations
     }
@@ -713,6 +822,23 @@ public class MoleculeApiTest {
     }
     
     /**
+     * Update a currency
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateCurrencyTest() throws ApiException {
+        UUID currencyId = null;
+        CurrencyUpdatePayload payload = null;
+        CurrencySpecificResponse response = api.updateCurrency(currencyId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update a token
      *
      * 
@@ -742,6 +868,23 @@ public class MoleculeApiTest {
         UUID walletId = null;
         WalletUpdatePayload payload = null;
         WalletSpecificResponse response = api.updateWallet(walletId, payload);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a wallet&#39;s permission
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateWalletPermissionTest() throws ApiException {
+        UUID walletId = null;
+        WalletPermissionUpdatePayload payload = null;
+        WalletPermissionSpecificResponse response = api.updateWalletPermission(walletId, payload);
 
         // TODO: test validations
     }

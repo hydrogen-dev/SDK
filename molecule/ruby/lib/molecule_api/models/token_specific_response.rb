@@ -26,6 +26,15 @@ module MoleculeApi
     # Name of the security token.
     attr_accessor :name
 
+    # Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20
+    attr_accessor :type
+
+    # Determines if the security token is mintable or not. Defaults to false.
+    attr_accessor :is_mintable
+
+    # Determines if the security token is burnable or not. Defaults to false.
+    attr_accessor :is_burnable
+
     # The id of the associated Nucleus model for this security token
     attr_accessor :nucleus_model_id
 
@@ -66,6 +75,9 @@ module MoleculeApi
         :'create_date' => :'create_date',
         :'symbol' => :'symbol',
         :'name' => :'name',
+        :'type' => :'type',
+        :'is_mintable' => :'is_mintable',
+        :'is_burnable' => :'is_burnable',
         :'nucleus_model_id' => :'nucleus_model_id',
         :'owner_wallet_id' => :'owner_wallet_id',
         :'total_supply' => :'total_supply',
@@ -88,6 +100,9 @@ module MoleculeApi
         :'create_date' => :'String',
         :'symbol' => :'String',
         :'name' => :'String',
+        :'type' => :'String',
+        :'is_mintable' => :'BOOLEAN',
+        :'is_burnable' => :'BOOLEAN',
         :'nucleus_model_id' => :'String',
         :'owner_wallet_id' => :'String',
         :'total_supply' => :'Float',
@@ -125,6 +140,24 @@ module MoleculeApi
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
+      else
+        self.type = 'ERC20'
+      end
+
+      if attributes.has_key?(:'is_mintable')
+        self.is_mintable = attributes[:'is_mintable']
+      else
+        self.is_mintable = false
+      end
+
+      if attributes.has_key?(:'is_burnable')
+        self.is_burnable = attributes[:'is_burnable']
+      else
+        self.is_burnable = false
       end
 
       if attributes.has_key?(:'nucleus_model_id')
@@ -223,6 +256,9 @@ module MoleculeApi
           create_date == o.create_date &&
           symbol == o.symbol &&
           name == o.name &&
+          type == o.type &&
+          is_mintable == o.is_mintable &&
+          is_burnable == o.is_burnable &&
           nucleus_model_id == o.nucleus_model_id &&
           owner_wallet_id == o.owner_wallet_id &&
           total_supply == o.total_supply &&
@@ -246,7 +282,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, create_date, symbol, name, nucleus_model_id, owner_wallet_id, total_supply, circulating_supply, whitelist_address, conract_address, crowdsale_address, restrictions, offering_settings, metadata, secondary_id, update_date].hash
+      [id, create_date, symbol, name, type, is_mintable, is_burnable, nucleus_model_id, owner_wallet_id, total_supply, circulating_supply, whitelist_address, conract_address, crowdsale_address, restrictions, offering_settings, metadata, secondary_id, update_date].hash
     end
 
     # Builds the object from hash

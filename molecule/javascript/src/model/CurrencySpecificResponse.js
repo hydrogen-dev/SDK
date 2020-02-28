@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/CurrencyCreateResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./CurrencyCreateResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.molecule_api) {
       root.molecule_api = {};
     }
-    root.molecule_api.CurrencySpecificResponse = factory(root.molecule_api.ApiClient);
+    root.molecule_api.CurrencySpecificResponse = factory(root.molecule_api.ApiClient, root.molecule_api.CurrencyCreateResponse);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, CurrencyCreateResponse) {
   'use strict';
 
 
@@ -44,18 +44,13 @@
    * Constructs a new <code>CurrencySpecificResponse</code>.
    * @alias module:model/CurrencySpecificResponse
    * @class
+   * @implements module:model/CurrencyCreateResponse
+   * @param address {String} The contract address of the currency being added.
    */
-  var exports = function() {
+  var exports = function(address) {
     var _this = this;
 
-
-
-
-
-
-
-
-
+    CurrencyCreateResponse.call(_this, address);
 
   };
 
@@ -70,30 +65,7 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('decimal_points')) {
-        obj['decimal_points'] = ApiClient.convertToType(data['decimal_points'], 'Number');
-      }
-      if (data.hasOwnProperty('symbol')) {
-        obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
-      }
-      if (data.hasOwnProperty('address')) {
-        obj['address'] = ApiClient.convertToType(data['address'], 'String');
-      }
-      if (data.hasOwnProperty('logo')) {
-        obj['logo'] = ApiClient.convertToType(data['logo'], 'String');
-      }
-      if (data.hasOwnProperty('network')) {
-        obj['network'] = ApiClient.convertToType(data['network'], 'String');
-      }
-      if (data.hasOwnProperty('create_date')) {
-        obj['create_date'] = ApiClient.convertToType(data['create_date'], 'String');
-      }
+      CurrencyCreateResponse.constructFromObject(data, obj);
       if (data.hasOwnProperty('update_date')) {
         obj['update_date'] = ApiClient.convertToType(data['update_date'], 'String');
       }
@@ -102,50 +74,65 @@
   }
 
   /**
-   * The id of the currency
-   * @member {String} id
-   */
-  exports.prototype['id'] = undefined;
-  /**
-   * The name of the currency
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * Decimal points of the currency
-   * @member {Number} decimal_points
-   */
-  exports.prototype['decimal_points'] = undefined;
-  /**
-   * Symbol of the currency
-   * @member {String} symbol
-   */
-  exports.prototype['symbol'] = undefined;
-  /**
-   * The blockchain contract address of the currency
-   * @member {String} address
-   */
-  exports.prototype['address'] = undefined;
-  /**
-   * The url for the currency logo
-   * @member {String} logo
-   */
-  exports.prototype['logo'] = undefined;
-  /**
-   * The network the currency is available on. Can be mainnet, ropsten etc.
-   * @member {String} network
-   */
-  exports.prototype['network'] = undefined;
-  /**
-   * Datetime the currency record was created
-   * @member {String} create_date
-   */
-  exports.prototype['create_date'] = undefined;
-  /**
    * Datetime the currency record was updated
    * @member {String} update_date
    */
   exports.prototype['update_date'] = undefined;
+
+  // Implement CurrencyCreateResponse interface:
+  /**
+   * The contract address of the currency being added.
+   * @member {String} address
+   */
+exports.prototype['address'] = undefined;
+
+  /**
+   * The url for the currency logo.
+   * @member {String} logo
+   */
+exports.prototype['logo'] = undefined;
+
+  /**
+   * The id of the currency
+   * @member {String} id
+   */
+exports.prototype['id'] = undefined;
+
+  /**
+   * The name of the currency
+   * @member {String} name
+   */
+exports.prototype['name'] = undefined;
+
+  /**
+   * Decimal points of the currency
+   * @member {Number} decimal_points
+   */
+exports.prototype['decimal_points'] = undefined;
+
+  /**
+   * Symbol of the currency
+   * @member {String} symbol
+   */
+exports.prototype['symbol'] = undefined;
+
+  /**
+   * The network the currency is available on. Can be mainnet, ropsten etc.
+   * @member {String} network
+   */
+exports.prototype['network'] = undefined;
+
+  /**
+   * Indicates if this currency is allowed for usage
+   * @member {Boolean} is_allowed
+   */
+exports.prototype['is_allowed'] = undefined;
+
+  /**
+   * Datetime the currency record was created
+   * @member {String} create_date
+   */
+exports.prototype['create_date'] = undefined;
 
 
 

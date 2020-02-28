@@ -31,13 +31,22 @@ import java.util.UUID;
 /**
  * TokenCreatePayload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-28T13:58:42.401-05:00")
 public class TokenCreatePayload {
   @SerializedName("symbol")
   private String symbol = null;
 
   @SerializedName("name")
   private String name = null;
+
+  @SerializedName("type")
+  private String type = "ERC20";
+
+  @SerializedName("is_mintable")
+  private Boolean isMintable = false;
+
+  @SerializedName("is_burnable")
+  private Boolean isBurnable = false;
 
   @SerializedName("nucleus_model_id")
   private UUID nucleusModelId = null;
@@ -106,6 +115,60 @@ public class TokenCreatePayload {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public TokenCreatePayload type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20
+   * @return type
+  **/
+  @ApiModelProperty(value = "Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public TokenCreatePayload isMintable(Boolean isMintable) {
+    this.isMintable = isMintable;
+    return this;
+  }
+
+   /**
+   * Determines if the security token is mintable or not. Defaults to false.
+   * @return isMintable
+  **/
+  @ApiModelProperty(value = "Determines if the security token is mintable or not. Defaults to false.")
+  public Boolean isIsMintable() {
+    return isMintable;
+  }
+
+  public void setIsMintable(Boolean isMintable) {
+    this.isMintable = isMintable;
+  }
+
+  public TokenCreatePayload isBurnable(Boolean isBurnable) {
+    this.isBurnable = isBurnable;
+    return this;
+  }
+
+   /**
+   * Determines if the security token is burnable or not. Defaults to false.
+   * @return isBurnable
+  **/
+  @ApiModelProperty(value = "Determines if the security token is burnable or not. Defaults to false.")
+  public Boolean isIsBurnable() {
+    return isBurnable;
+  }
+
+  public void setIsBurnable(Boolean isBurnable) {
+    this.isBurnable = isBurnable;
   }
 
   public TokenCreatePayload nucleusModelId(UUID nucleusModelId) {
@@ -318,6 +381,9 @@ public class TokenCreatePayload {
     TokenCreatePayload tokenCreatePayload = (TokenCreatePayload) o;
     return Objects.equals(this.symbol, tokenCreatePayload.symbol) &&
         Objects.equals(this.name, tokenCreatePayload.name) &&
+        Objects.equals(this.type, tokenCreatePayload.type) &&
+        Objects.equals(this.isMintable, tokenCreatePayload.isMintable) &&
+        Objects.equals(this.isBurnable, tokenCreatePayload.isBurnable) &&
         Objects.equals(this.nucleusModelId, tokenCreatePayload.nucleusModelId) &&
         Objects.equals(this.ownerWalletId, tokenCreatePayload.ownerWalletId) &&
         Objects.equals(this.totalSupply, tokenCreatePayload.totalSupply) &&
@@ -333,7 +399,7 @@ public class TokenCreatePayload {
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbol, name, nucleusModelId, ownerWalletId, totalSupply, circulatingSupply, whitelistAddress, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId);
+    return Objects.hash(symbol, name, type, isMintable, isBurnable, nucleusModelId, ownerWalletId, totalSupply, circulatingSupply, whitelistAddress, conractAddress, crowdsaleAddress, restrictions, offeringSettings, metadata, secondaryId);
   }
 
 
@@ -344,6 +410,9 @@ public class TokenCreatePayload {
     
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    isMintable: ").append(toIndentedString(isMintable)).append("\n");
+    sb.append("    isBurnable: ").append(toIndentedString(isBurnable)).append("\n");
     sb.append("    nucleusModelId: ").append(toIndentedString(nucleusModelId)).append("\n");
     sb.append("    ownerWalletId: ").append(toIndentedString(ownerWalletId)).append("\n");
     sb.append("    totalSupply: ").append(toIndentedString(totalSupply)).append("\n");

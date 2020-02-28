@@ -261,6 +261,26 @@
         done();
       });
     });
+    describe('getWalletPermission', function() {
+      it('should call getWalletPermission successfully', function(done) {
+        //uncomment below and update the code to test getWalletPermission
+        //instance.getWalletPermission(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getWalletPermissions', function() {
+      it('should call getWalletPermissions successfully', function(done) {
+        //uncomment below and update the code to test getWalletPermissions
+        //instance.getWalletPermissions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getWallets', function() {
       it('should call getWallets successfully', function(done) {
         //uncomment below and update the code to test getWallets
@@ -321,6 +341,26 @@
         done();
       });
     });
+    describe('postCurrency', function() {
+      it('should call postCurrency successfully', function(done) {
+        //uncomment below and update the code to test postCurrency
+        //instance.postCurrency(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCurrencyBalanceUpdate', function() {
+      it('should call postCurrencyBalanceUpdate successfully', function(done) {
+        //uncomment below and update the code to test postCurrencyBalanceUpdate
+        //instance.postCurrencyBalanceUpdate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postCurrencyTransfer', function() {
       it('should call postCurrencyTransfer successfully', function(done) {
         //uncomment below and update the code to test postCurrencyTransfer
@@ -341,10 +381,30 @@
         done();
       });
     });
+    describe('postTokenBurn', function() {
+      it('should call postTokenBurn successfully', function(done) {
+        //uncomment below and update the code to test postTokenBurn
+        //instance.postTokenBurn(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postTokenDeploy', function() {
       it('should call postTokenDeploy successfully', function(done) {
         //uncomment below and update the code to test postTokenDeploy
         //instance.postTokenDeploy(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postTokenMint', function() {
+      it('should call postTokenMint successfully', function(done) {
+        //uncomment below and update the code to test postTokenMint
+        //instance.postTokenMint(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -411,6 +471,16 @@
         done();
       });
     });
+    describe('updateCurrency', function() {
+      it('should call updateCurrency successfully', function(done) {
+        //uncomment below and update the code to test updateCurrency
+        //instance.updateCurrency(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateToken', function() {
       it('should call updateToken successfully', function(done) {
         //uncomment below and update the code to test updateToken
@@ -425,6 +495,16 @@
       it('should call updateWallet successfully', function(done) {
         //uncomment below and update the code to test updateWallet
         //instance.updateWallet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateWalletPermission', function() {
+      it('should call updateWalletPermission successfully', function(done) {
+        //uncomment below and update the code to test updateWalletPermission
+        //instance.updateWalletPermission(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -22,13 +22,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.CurrencyCreateResponse;
 import java.io.IOException;
 import java.util.UUID;
 
 /**
  * CurrencySpecificResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-28T13:58:42.401-05:00")
 public class CurrencySpecificResponse {
   @SerializedName("id")
   private UUID id = null;
@@ -42,17 +43,20 @@ public class CurrencySpecificResponse {
   @SerializedName("symbol")
   private String symbol = null;
 
+  @SerializedName("network")
+  private String network = null;
+
+  @SerializedName("is_allowed")
+  private Boolean isAllowed = null;
+
+  @SerializedName("create_date")
+  private String createDate = null;
+
   @SerializedName("address")
   private String address = null;
 
   @SerializedName("logo")
   private String logo = null;
-
-  @SerializedName("network")
-  private String network = null;
-
-  @SerializedName("create_date")
-  private String createDate = null;
 
   @SerializedName("update_date")
   private String updateDate = null;
@@ -129,42 +133,6 @@ public class CurrencySpecificResponse {
     this.symbol = symbol;
   }
 
-  public CurrencySpecificResponse address(String address) {
-    this.address = address;
-    return this;
-  }
-
-   /**
-   * The blockchain contract address of the currency
-   * @return address
-  **/
-  @ApiModelProperty(value = "The blockchain contract address of the currency")
-  public String getAddress() {
-    return address;
-  }
-
-  public void setAddress(String address) {
-    this.address = address;
-  }
-
-  public CurrencySpecificResponse logo(String logo) {
-    this.logo = logo;
-    return this;
-  }
-
-   /**
-   * The url for the currency logo
-   * @return logo
-  **/
-  @ApiModelProperty(value = "The url for the currency logo")
-  public String getLogo() {
-    return logo;
-  }
-
-  public void setLogo(String logo) {
-    this.logo = logo;
-  }
-
   public CurrencySpecificResponse network(String network) {
     this.network = network;
     return this;
@@ -183,6 +151,24 @@ public class CurrencySpecificResponse {
     this.network = network;
   }
 
+  public CurrencySpecificResponse isAllowed(Boolean isAllowed) {
+    this.isAllowed = isAllowed;
+    return this;
+  }
+
+   /**
+   * Indicates if this currency is allowed for usage
+   * @return isAllowed
+  **/
+  @ApiModelProperty(value = "Indicates if this currency is allowed for usage")
+  public Boolean isIsAllowed() {
+    return isAllowed;
+  }
+
+  public void setIsAllowed(Boolean isAllowed) {
+    this.isAllowed = isAllowed;
+  }
+
   public CurrencySpecificResponse createDate(String createDate) {
     this.createDate = createDate;
     return this;
@@ -199,6 +185,42 @@ public class CurrencySpecificResponse {
 
   public void setCreateDate(String createDate) {
     this.createDate = createDate;
+  }
+
+  public CurrencySpecificResponse address(String address) {
+    this.address = address;
+    return this;
+  }
+
+   /**
+   * The contract address of the currency being added.
+   * @return address
+  **/
+  @ApiModelProperty(required = true, value = "The contract address of the currency being added.")
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public CurrencySpecificResponse logo(String logo) {
+    this.logo = logo;
+    return this;
+  }
+
+   /**
+   * The url for the currency logo.
+   * @return logo
+  **/
+  @ApiModelProperty(value = "The url for the currency logo.")
+  public String getLogo() {
+    return logo;
+  }
+
+  public void setLogo(String logo) {
+    this.logo = logo;
   }
 
   public CurrencySpecificResponse updateDate(String updateDate) {
@@ -233,16 +255,17 @@ public class CurrencySpecificResponse {
         Objects.equals(this.name, currencySpecificResponse.name) &&
         Objects.equals(this.decimalPoints, currencySpecificResponse.decimalPoints) &&
         Objects.equals(this.symbol, currencySpecificResponse.symbol) &&
+        Objects.equals(this.network, currencySpecificResponse.network) &&
+        Objects.equals(this.isAllowed, currencySpecificResponse.isAllowed) &&
+        Objects.equals(this.createDate, currencySpecificResponse.createDate) &&
         Objects.equals(this.address, currencySpecificResponse.address) &&
         Objects.equals(this.logo, currencySpecificResponse.logo) &&
-        Objects.equals(this.network, currencySpecificResponse.network) &&
-        Objects.equals(this.createDate, currencySpecificResponse.createDate) &&
         Objects.equals(this.updateDate, currencySpecificResponse.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, decimalPoints, symbol, address, logo, network, createDate, updateDate);
+    return Objects.hash(id, name, decimalPoints, symbol, network, isAllowed, createDate, address, logo, updateDate);
   }
 
 
@@ -255,10 +278,11 @@ public class CurrencySpecificResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    decimalPoints: ").append(toIndentedString(decimalPoints)).append("\n");
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
+    sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    sb.append("    isAllowed: ").append(toIndentedString(isAllowed)).append("\n");
+    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    logo: ").append(toIndentedString(logo)).append("\n");
-    sb.append("    network: ").append(toIndentedString(network)).append("\n");
-    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * WalletCreateWhitelist
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-18T13:48:07.846-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-28T13:58:42.401-05:00")
 public class WalletCreateWhitelist {
   @SerializedName("token_id")
   private UUID tokenId = null;

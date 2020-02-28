@@ -26,17 +26,20 @@ module MoleculeApi
     # Symbol of the currency
     attr_accessor :symbol
 
-    # The blockchain contract address of the currency
-    attr_accessor :address
-
-    # The url for the currency logo
-    attr_accessor :logo
-
     # The network the currency is available on. Can be mainnet, ropsten etc.
     attr_accessor :network
 
+    # Indicates if this currency is allowed for usage
+    attr_accessor :is_allowed
+
     # Datetime the currency record was created
     attr_accessor :create_date
+
+    # The contract address of the currency being added.
+    attr_accessor :address
+
+    # The url for the currency logo.
+    attr_accessor :logo
 
     # Datetime the currency record was updated
     attr_accessor :update_date
@@ -48,10 +51,11 @@ module MoleculeApi
         :'name' => :'name',
         :'decimal_points' => :'decimal_points',
         :'symbol' => :'symbol',
+        :'network' => :'network',
+        :'is_allowed' => :'is_allowed',
+        :'create_date' => :'create_date',
         :'address' => :'address',
         :'logo' => :'logo',
-        :'network' => :'network',
-        :'create_date' => :'create_date',
         :'update_date' => :'update_date'
       }
     end
@@ -63,10 +67,11 @@ module MoleculeApi
         :'name' => :'String',
         :'decimal_points' => :'Integer',
         :'symbol' => :'String',
+        :'network' => :'String',
+        :'is_allowed' => :'BOOLEAN',
+        :'create_date' => :'String',
         :'address' => :'String',
         :'logo' => :'String',
-        :'network' => :'String',
-        :'create_date' => :'String',
         :'update_date' => :'String'
       }
     end
@@ -95,20 +100,24 @@ module MoleculeApi
         self.symbol = attributes[:'symbol']
       end
 
+      if attributes.has_key?(:'network')
+        self.network = attributes[:'network']
+      end
+
+      if attributes.has_key?(:'is_allowed')
+        self.is_allowed = attributes[:'is_allowed']
+      end
+
+      if attributes.has_key?(:'create_date')
+        self.create_date = attributes[:'create_date']
+      end
+
       if attributes.has_key?(:'address')
         self.address = attributes[:'address']
       end
 
       if attributes.has_key?(:'logo')
         self.logo = attributes[:'logo']
-      end
-
-      if attributes.has_key?(:'network')
-        self.network = attributes[:'network']
-      end
-
-      if attributes.has_key?(:'create_date')
-        self.create_date = attributes[:'create_date']
       end
 
       if attributes.has_key?(:'update_date')
@@ -120,12 +129,17 @@ module MoleculeApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @address.nil?
+        invalid_properties.push('invalid value for "address", address cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @address.nil?
       true
     end
 
@@ -138,10 +152,11 @@ module MoleculeApi
           name == o.name &&
           decimal_points == o.decimal_points &&
           symbol == o.symbol &&
+          network == o.network &&
+          is_allowed == o.is_allowed &&
+          create_date == o.create_date &&
           address == o.address &&
           logo == o.logo &&
-          network == o.network &&
-          create_date == o.create_date &&
           update_date == o.update_date
     end
 
@@ -154,7 +169,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, decimal_points, symbol, address, logo, network, create_date, update_date].hash
+      [id, name, decimal_points, symbol, network, is_allowed, create_date, address, logo, update_date].hash
     end
 
     # Builds the object from hash

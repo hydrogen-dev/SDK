@@ -69,6 +69,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instance = new molecule_api.TokenCreatePayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isMintable (base name: "is_mintable")', function() {
+      // uncomment below and update the code to test the property isMintable
+      //var instance = new molecule_api.TokenCreatePayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isBurnable (base name: "is_burnable")', function() {
+      // uncomment below and update the code to test the property isBurnable
+      //var instance = new molecule_api.TokenCreatePayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property nucleusModelId (base name: "nucleus_model_id")', function() {
       // uncomment below and update the code to test the property nucleusModelId
       //var instance = new molecule_api.TokenCreatePayload();

@@ -19,8 +19,8 @@ Python 2.7 and 3.4+
 *Recommended: Use a virtualenv (or conda env) for installation and usage of the package*
 
 ```sh
-virtualenv molecule-api
-source molecule-api/bin/activate
+virtualenv atom-api
+source atom-api/bin/activate
 ```
 
 ### pip install
@@ -119,23 +119,31 @@ Class | Method | HTTP request | Description
 *MoleculeApi* | [**get_wallet**](docs/MoleculeApi.md#get_wallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 *MoleculeApi* | [**get_wallet_key**](docs/MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 *MoleculeApi* | [**get_wallet_keys**](docs/MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
+*MoleculeApi* | [**get_wallet_permission**](docs/MoleculeApi.md#get_wallet_permission) | **GET** /molecule/v1/wallet_permission/{wallet_id}/ | Retrieve a wallet&#39;s permission
+*MoleculeApi* | [**get_wallet_permissions**](docs/MoleculeApi.md#get_wallet_permissions) | **GET** /molecule/v1/wallet_permission | Get information for all wallet permisions defined for your firm
 *MoleculeApi* | [**get_wallets**](docs/MoleculeApi.md#get_wallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
 *MoleculeApi* | [**get_webhook**](docs/MoleculeApi.md#get_webhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
 *MoleculeApi* | [**get_webhooks**](docs/MoleculeApi.md#get_webhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
 *MoleculeApi* | [**post_crowdsale_deploy**](docs/MoleculeApi.md#post_crowdsale_deploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
 *MoleculeApi* | [**post_crowdsale_fund**](docs/MoleculeApi.md#post_crowdsale_fund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
 *MoleculeApi* | [**post_crowdsale_purchase**](docs/MoleculeApi.md#post_crowdsale_purchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
+*MoleculeApi* | [**post_currency**](docs/MoleculeApi.md#post_currency) | **POST** /molecule/v1/currency | Add a currency under your firm.
+*MoleculeApi* | [**post_currency_balance_update**](docs/MoleculeApi.md#post_currency_balance_update) | **POST** /molecule/v1/currency_balance/update | Update the currency balance of a wallet using the blockchain
 *MoleculeApi* | [**post_currency_transfer**](docs/MoleculeApi.md#post_currency_transfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 *MoleculeApi* | [**post_token**](docs/MoleculeApi.md#post_token) | **POST** /molecule/v1/token | Create a token under your firm.
+*MoleculeApi* | [**post_token_burn**](docs/MoleculeApi.md#post_token_burn) | **POST** /molecule/v1/token/burn | Burn existing tokens
 *MoleculeApi* | [**post_token_deploy**](docs/MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
+*MoleculeApi* | [**post_token_mint**](docs/MoleculeApi.md#post_token_mint) | **POST** /molecule/v1/token/mint | Mint new tokens
 *MoleculeApi* | [**post_token_transfer**](docs/MoleculeApi.md#post_token_transfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 *MoleculeApi* | [**post_token_whitelist**](docs/MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 *MoleculeApi* | [**post_wallet**](docs/MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 *MoleculeApi* | [**post_wallet_key**](docs/MoleculeApi.md#post_wallet_key) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 *MoleculeApi* | [**post_wallet_key_generator**](docs/MoleculeApi.md#post_wallet_key_generator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 *MoleculeApi* | [**post_webhook**](docs/MoleculeApi.md#post_webhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
+*MoleculeApi* | [**update_currency**](docs/MoleculeApi.md#update_currency) | **PUT** /molecule/v1/currency/{currency_id}/ | Update a currency
 *MoleculeApi* | [**update_token**](docs/MoleculeApi.md#update_token) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 *MoleculeApi* | [**update_wallet**](docs/MoleculeApi.md#update_wallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+*MoleculeApi* | [**update_wallet_permission**](docs/MoleculeApi.md#update_wallet_permission) | **PUT** /molecule/v1/wallet_permission/{wallet_id}/ | Update a wallet&#39;s permission
 *MoleculeApi* | [**update_webhook**](docs/MoleculeApi.md#update_webhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
@@ -145,17 +153,21 @@ Class | Method | HTTP request | Description
  - [CrowdsaleFundPayload](docs/CrowdsaleFundPayload.md)
  - [CrowdsalePurchasePayload](docs/CrowdsalePurchasePayload.md)
  - [CurrencyBalanceSpecificResponse](docs/CurrencyBalanceSpecificResponse.md)
- - [CurrencySpecificResponse](docs/CurrencySpecificResponse.md)
+ - [CurrencyBalanceUpdatePayload](docs/CurrencyBalanceUpdatePayload.md)
+ - [CurrencyCreatePayload](docs/CurrencyCreatePayload.md)
  - [CurrencyTransferPayload](docs/CurrencyTransferPayload.md)
  - [CurrencyTransferSpecificResponse](docs/CurrencyTransferSpecificResponse.md)
+ - [CurrencyUpdatePayload](docs/CurrencyUpdatePayload.md)
  - [OfferingSettingsCreatePayload](docs/OfferingSettingsCreatePayload.md)
  - [OfferingSettingsUpdatePayload](docs/OfferingSettingsUpdatePayload.md)
  - [Pagination](docs/Pagination.md)
  - [PaginationSort](docs/PaginationSort.md)
  - [SecondaryId](docs/SecondaryId.md)
  - [TokenBalanceSpecificResponse](docs/TokenBalanceSpecificResponse.md)
+ - [TokenBurnPayload](docs/TokenBurnPayload.md)
  - [TokenCreatePayload](docs/TokenCreatePayload.md)
  - [TokenDeployPayload](docs/TokenDeployPayload.md)
+ - [TokenMintPayload](docs/TokenMintPayload.md)
  - [TokenRestrictionsPayload](docs/TokenRestrictionsPayload.md)
  - [TokenSupplySpecificResponse](docs/TokenSupplySpecificResponse.md)
  - [TokenTransferPayload](docs/TokenTransferPayload.md)
@@ -169,10 +181,14 @@ Class | Method | HTTP request | Description
  - [WalletKeyCreatePayload](docs/WalletKeyCreatePayload.md)
  - [WalletKeyCreateResponse](docs/WalletKeyCreateResponse.md)
  - [WalletKeyGeneratorPayload](docs/WalletKeyGeneratorPayload.md)
+ - [WalletPermissionSpecificResponse](docs/WalletPermissionSpecificResponse.md)
+ - [WalletPermissionSpecificResponseClients](docs/WalletPermissionSpecificResponseClients.md)
+ - [WalletPermissionUpdatePayload](docs/WalletPermissionUpdatePayload.md)
  - [WalletUpdatePayload](docs/WalletUpdatePayload.md)
  - [WebhookCreatePayload](docs/WebhookCreatePayload.md)
  - [WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
  - [CurrencyBalanceGetResponse](docs/CurrencyBalanceGetResponse.md)
+ - [CurrencyCreateResponse](docs/CurrencyCreateResponse.md)
  - [CurrencyGetResponse](docs/CurrencyGetResponse.md)
  - [CurrencyTransferGetResponse](docs/CurrencyTransferGetResponse.md)
  - [TokenBalanceGetResponse](docs/TokenBalanceGetResponse.md)
@@ -185,8 +201,10 @@ Class | Method | HTTP request | Description
  - [WalletGetResponse](docs/WalletGetResponse.md)
  - [WalletKeyGetResponse](docs/WalletKeyGetResponse.md)
  - [WalletKeySpecificResponse](docs/WalletKeySpecificResponse.md)
+ - [WalletPermissionGetResponse](docs/WalletPermissionGetResponse.md)
  - [WebhookCreateResponse](docs/WebhookCreateResponse.md)
  - [WebhookGetResponse](docs/WebhookGetResponse.md)
+ - [CurrencySpecificResponse](docs/CurrencySpecificResponse.md)
  - [TokenSpecificResponse](docs/TokenSpecificResponse.md)
  - [WalletSpecificResponse](docs/WalletSpecificResponse.md)
  - [WebhookSpecificResponse](docs/WebhookSpecificResponse.md)

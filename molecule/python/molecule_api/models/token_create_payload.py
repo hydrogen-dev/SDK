@@ -37,6 +37,9 @@ class TokenCreatePayload(object):
     swagger_types = {
         'symbol': 'str',
         'name': 'str',
+        'type': 'str',
+        'is_mintable': 'bool',
+        'is_burnable': 'bool',
         'nucleus_model_id': 'str',
         'owner_wallet_id': 'str',
         'total_supply': 'float',
@@ -53,6 +56,9 @@ class TokenCreatePayload(object):
     attribute_map = {
         'symbol': 'symbol',
         'name': 'name',
+        'type': 'type',
+        'is_mintable': 'is_mintable',
+        'is_burnable': 'is_burnable',
         'nucleus_model_id': 'nucleus_model_id',
         'owner_wallet_id': 'owner_wallet_id',
         'total_supply': 'total_supply',
@@ -66,11 +72,14 @@ class TokenCreatePayload(object):
         'secondary_id': 'secondary_id'
     }
 
-    def __init__(self, symbol=None, name=None, nucleus_model_id=None, owner_wallet_id=None, total_supply=None, circulating_supply=None, whitelist_address=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None):  # noqa: E501
+    def __init__(self, symbol=None, name=None, type='ERC20', is_mintable=False, is_burnable=False, nucleus_model_id=None, owner_wallet_id=None, total_supply=None, circulating_supply=None, whitelist_address=None, conract_address=None, crowdsale_address=None, restrictions=None, offering_settings=None, metadata=None, secondary_id=None):  # noqa: E501
         """TokenCreatePayload - a model defined in Swagger"""  # noqa: E501
 
         self._symbol = None
         self._name = None
+        self._type = None
+        self._is_mintable = None
+        self._is_burnable = None
         self._nucleus_model_id = None
         self._owner_wallet_id = None
         self._total_supply = None
@@ -86,6 +95,12 @@ class TokenCreatePayload(object):
 
         self.symbol = symbol
         self.name = name
+        if type is not None:
+            self.type = type
+        if is_mintable is not None:
+            self.is_mintable = is_mintable
+        if is_burnable is not None:
+            self.is_burnable = is_burnable
         self.nucleus_model_id = nucleus_model_id
         self.owner_wallet_id = owner_wallet_id
         self.total_supply = total_supply
@@ -155,6 +170,75 @@ class TokenCreatePayload(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def type(self):
+        """Gets the type of this TokenCreatePayload.  # noqa: E501
+
+        Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20  # noqa: E501
+
+        :return: The type of this TokenCreatePayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this TokenCreatePayload.
+
+        Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20  # noqa: E501
+
+        :param type: The type of this TokenCreatePayload.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
+
+    @property
+    def is_mintable(self):
+        """Gets the is_mintable of this TokenCreatePayload.  # noqa: E501
+
+        Determines if the security token is mintable or not. Defaults to false.  # noqa: E501
+
+        :return: The is_mintable of this TokenCreatePayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_mintable
+
+    @is_mintable.setter
+    def is_mintable(self, is_mintable):
+        """Sets the is_mintable of this TokenCreatePayload.
+
+        Determines if the security token is mintable or not. Defaults to false.  # noqa: E501
+
+        :param is_mintable: The is_mintable of this TokenCreatePayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_mintable = is_mintable
+
+    @property
+    def is_burnable(self):
+        """Gets the is_burnable of this TokenCreatePayload.  # noqa: E501
+
+        Determines if the security token is burnable or not. Defaults to false.  # noqa: E501
+
+        :return: The is_burnable of this TokenCreatePayload.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_burnable
+
+    @is_burnable.setter
+    def is_burnable(self, is_burnable):
+        """Sets the is_burnable of this TokenCreatePayload.
+
+        Determines if the security token is burnable or not. Defaults to false.  # noqa: E501
+
+        :param is_burnable: The is_burnable of this TokenCreatePayload.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_burnable = is_burnable
 
     @property
     def nucleus_model_id(self):

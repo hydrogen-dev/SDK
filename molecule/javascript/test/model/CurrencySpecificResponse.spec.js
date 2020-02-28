@@ -57,54 +57,6 @@
       //expect(instance).to.be.a(molecule_api.CurrencySpecificResponse);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property decimalPoints (base name: "decimal_points")', function() {
-      // uncomment below and update the code to test the property decimalPoints
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property symbol (base name: "symbol")', function() {
-      // uncomment below and update the code to test the property symbol
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property address (base name: "address")', function() {
-      // uncomment below and update the code to test the property address
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property logo (base name: "logo")', function() {
-      // uncomment below and update the code to test the property logo
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property network (base name: "network")', function() {
-      // uncomment below and update the code to test the property network
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createDate (base name: "create_date")', function() {
-      // uncomment below and update the code to test the property createDate
-      //var instance = new molecule_api.CurrencySpecificResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
       //var instance = new molecule_api.CurrencySpecificResponse();

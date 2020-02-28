@@ -176,6 +176,20 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_wallet_permission(self):
+        """Test case for get_wallet_permission
+
+        Retrieve a wallet's permission  # noqa: E501
+        """
+        pass
+
+    def test_get_wallet_permissions(self):
+        """Test case for get_wallet_permissions
+
+        Get information for all wallet permisions defined for your firm  # noqa: E501
+        """
+        pass
+
     def test_get_wallets(self):
         """Test case for get_wallets
 
@@ -218,6 +232,20 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_post_currency(self):
+        """Test case for post_currency
+
+        Add a currency under your firm.  # noqa: E501
+        """
+        pass
+
+    def test_post_currency_balance_update(self):
+        """Test case for post_currency_balance_update
+
+        Update the currency balance of a wallet using the blockchain  # noqa: E501
+        """
+        pass
+
     def test_post_currency_transfer(self):
         """Test case for post_currency_transfer
 
@@ -232,10 +260,24 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_post_token_burn(self):
+        """Test case for post_token_burn
+
+        Burn existing tokens  # noqa: E501
+        """
+        pass
+
     def test_post_token_deploy(self):
         """Test case for post_token_deploy
 
         Deploy a security token contract to blockchain.  # noqa: E501
+        """
+        pass
+
+    def test_post_token_mint(self):
+        """Test case for post_token_mint
+
+        Mint new tokens  # noqa: E501
         """
         pass
 
@@ -281,6 +323,13 @@ class TestMoleculeApi(unittest.TestCase):
         """
         pass
 
+    def test_update_currency(self):
+        """Test case for update_currency
+
+        Update a currency  # noqa: E501
+        """
+        pass
+
     def test_update_token(self):
         """Test case for update_token
 
@@ -292,6 +341,13 @@ class TestMoleculeApi(unittest.TestCase):
         """Test case for update_wallet
 
         Update a wallet  # noqa: E501
+        """
+        pass
+
+    def test_update_wallet_permission(self):
+        """Test case for update_wallet_permission
+
+        Update a wallet's permission  # noqa: E501
         """
         pass
 

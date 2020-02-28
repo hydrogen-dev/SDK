@@ -1313,6 +1313,127 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Retrieve a wallet's permission
+    # @param wallet_id UUID of a wallet
+    # @param [Hash] opts the optional parameters
+    # @return [WalletPermissionSpecificResponse]
+    def get_wallet_permission(wallet_id, opts = {})
+      data, _status_code, _headers = get_wallet_permission_with_http_info(wallet_id, opts)
+      data
+    end
+
+    # Retrieve a wallet&#39;s permission
+    # @param wallet_id UUID of a wallet
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WalletPermissionSpecificResponse, Fixnum, Hash)>] WalletPermissionSpecificResponse data, response status code and response headers
+    def get_wallet_permission_with_http_info(wallet_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_wallet_permission ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling MoleculeApi.get_wallet_permission"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/wallet_permission/{wallet_id}/'.sub('{' + 'wallet_id' + '}', wallet_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WalletPermissionSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_wallet_permission\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Get information for all wallet permisions defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value. (default to 25)
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date. (default to update_date)
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. (default to false)
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @return [WalletPermissionGetResponse]
+    def get_wallet_permissions(opts = {})
+      data, _status_code, _headers = get_wallet_permissions_with_http_info(opts)
+      data
+    end
+
+    # Get information for all wallet permisions defined for your firm
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+    # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+    # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+    # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+    # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+    # @return [Array<(WalletPermissionGetResponse, Fixnum, Hash)>] WalletPermissionGetResponse data, response status code and response headers
+    def get_wallet_permissions_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.get_wallet_permissions ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'page'].nil? && opts[:'page'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"page"]" when calling MoleculeApi.get_wallet_permissions, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'size'].nil? && opts[:'size'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"size"]" when calling MoleculeApi.get_wallet_permissions, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/molecule/v1/wallet_permission'
+
+      # query parameters
+      query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'get_latest'] = opts[:'get_latest'] if !opts[:'get_latest'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WalletPermissionGetResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#get_wallet_permissions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Get information for all wallets defined for your firm
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 (default to 0)
@@ -1665,6 +1786,110 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Add a currency under your firm.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [CurrencyCreateResponse]
+    def post_currency(payload, opts = {})
+      data, _status_code, _headers = post_currency_with_http_info(payload, opts)
+      data
+    end
+
+    # Add a currency under your firm.
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CurrencyCreateResponse, Fixnum, Hash)>] CurrencyCreateResponse data, response status code and response headers
+    def post_currency_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_currency ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_currency"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/currency'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencyCreateResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_currency\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Update the currency balance of a wallet using the blockchain
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [CurrencyBalanceSpecificResponse]
+    def post_currency_balance_update(payload, opts = {})
+      data, _status_code, _headers = post_currency_balance_update_with_http_info(payload, opts)
+      data
+    end
+
+    # Update the currency balance of a wallet using the blockchain
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CurrencyBalanceSpecificResponse, Fixnum, Hash)>] CurrencyBalanceSpecificResponse data, response status code and response headers
+    def post_currency_balance_update_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_currency_balance_update ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_currency_balance_update"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/currency_balance/update'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencyBalanceSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_currency_balance_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Transfer currency between wallets
     # @param payload 
     # @param [Hash] opts the optional parameters
@@ -1769,6 +1994,58 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Burn existing tokens
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [TransactionStatusSpecificResponse]
+    def post_token_burn(payload, opts = {})
+      data, _status_code, _headers = post_token_burn_with_http_info(payload, opts)
+      data
+    end
+
+    # Burn existing tokens
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def post_token_burn_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_burn ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_burn"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/token/burn'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_token_burn\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Deploy a security token contract to blockchain.
     # @param payload 
     # @param [Hash] opts the optional parameters
@@ -1818,6 +2095,58 @@ module MoleculeApi
         :return_type => 'TransactionStatusSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#post_token_deploy\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Mint new tokens
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [TransactionStatusSpecificResponse]
+    def post_token_mint(payload, opts = {})
+      data, _status_code, _headers = post_token_mint_with_http_info(payload, opts)
+      data
+    end
+
+    # Mint new tokens
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(TransactionStatusSpecificResponse, Fixnum, Hash)>] TransactionStatusSpecificResponse data, response status code and response headers
+    def post_token_mint_with_http_info(payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.post_token_mint ...'
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.post_token_mint"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/token/mint'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TransactionStatusSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#post_token_mint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2133,6 +2462,64 @@ module MoleculeApi
       end
       return data, status_code, headers
     end
+    # Update a currency
+    # @param currency_id UUID of a currency
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [CurrencySpecificResponse]
+    def update_currency(currency_id, payload, opts = {})
+      data, _status_code, _headers = update_currency_with_http_info(currency_id, payload, opts)
+      data
+    end
+
+    # Update a currency
+    # @param currency_id UUID of a currency
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CurrencySpecificResponse, Fixnum, Hash)>] CurrencySpecificResponse data, response status code and response headers
+    def update_currency_with_http_info(currency_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.update_currency ...'
+      end
+      # verify the required parameter 'currency_id' is set
+      if @api_client.config.client_side_validation && currency_id.nil?
+        fail ArgumentError, "Missing the required parameter 'currency_id' when calling MoleculeApi.update_currency"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.update_currency"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/currency/{currency_id}/'.sub('{' + 'currency_id' + '}', currency_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'CurrencySpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#update_currency\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Update a token
     # @param token_id UUID of a token
     # @param payload 
@@ -2246,6 +2633,64 @@ module MoleculeApi
         :return_type => 'WalletSpecificResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: MoleculeApi#update_wallet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Update a wallet's permission
+    # @param wallet_id UUID of a wallet
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [WalletPermissionSpecificResponse]
+    def update_wallet_permission(wallet_id, payload, opts = {})
+      data, _status_code, _headers = update_wallet_permission_with_http_info(wallet_id, payload, opts)
+      data
+    end
+
+    # Update a wallet&#39;s permission
+    # @param wallet_id UUID of a wallet
+    # @param payload 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(WalletPermissionSpecificResponse, Fixnum, Hash)>] WalletPermissionSpecificResponse data, response status code and response headers
+    def update_wallet_permission_with_http_info(wallet_id, payload, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MoleculeApi.update_wallet_permission ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling MoleculeApi.update_wallet_permission"
+      end
+      # verify the required parameter 'payload' is set
+      if @api_client.config.client_side_validation && payload.nil?
+        fail ArgumentError, "Missing the required parameter 'payload' when calling MoleculeApi.update_wallet_permission"
+      end
+      # resource path
+      local_var_path = '/molecule/v1/wallet_permission/{wallet_id}/'.sub('{' + 'wallet_id' + '}', wallet_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(payload)
+      auth_names = ['oauth']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'WalletPermissionSpecificResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MoleculeApi#update_wallet_permission\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

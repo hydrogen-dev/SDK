@@ -2282,6 +2282,216 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_wallet_permission(self, wallet_id, **kwargs):  # noqa: E501
+        """Retrieve a wallet's permission  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_wallet_permission(wallet_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str wallet_id: UUID of a wallet (required)
+        :return: WalletPermissionSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_wallet_permission_with_http_info(wallet_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_wallet_permission_with_http_info(wallet_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_wallet_permission_with_http_info(self, wallet_id, **kwargs):  # noqa: E501
+        """Retrieve a wallet's permission  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_wallet_permission_with_http_info(wallet_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str wallet_id: UUID of a wallet (required)
+        :return: WalletPermissionSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['wallet_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_wallet_permission" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'wallet_id' is set
+        if ('wallet_id' not in params or
+                params['wallet_id'] is None):
+            raise ValueError("Missing the required parameter `wallet_id` when calling `get_wallet_permission`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'wallet_id' in params:
+            path_params['wallet_id'] = params['wallet_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/wallet_permission/{wallet_id}/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='WalletPermissionSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_wallet_permissions(self, **kwargs):  # noqa: E501
+        """Get information for all wallet permisions defined for your firm  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_wallet_permissions(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :return: WalletPermissionGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_wallet_permissions_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_wallet_permissions_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_wallet_permissions_with_http_info(self, **kwargs):  # noqa: E501
+        """Get information for all wallet permisions defined for your firm  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_wallet_permissions_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int page: Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+        :param int size: The number or records to be included per page. The default is 25. There is no max value.
+        :param str order_by: The field in the response body to order the list by. Default is update_date.
+        :param bool ascending: If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+        :param bool get_latest: Retrieves the latest entry
+        :return: WalletPermissionGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'size', 'order_by', 'ascending', 'get_latest']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_wallet_permissions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_wallet_permissions`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'size' in params and params['size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `size` when calling `get_wallet_permissions`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'get_latest' in params:
+            query_params.append(('get_latest', params['get_latest']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/wallet_permission', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='WalletPermissionGetResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_wallets(self, **kwargs):  # noqa: E501
         """Get information for all wallets defined for your firm  # noqa: E501
 
@@ -2904,6 +3114,200 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_currency(self, payload, **kwargs):  # noqa: E501
+        """Add a currency under your firm.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_currency(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CurrencyCreatePayload payload: (required)
+        :return: CurrencyCreateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_currency_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_currency_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_currency_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Add a currency under your firm.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_currency_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CurrencyCreatePayload payload: (required)
+        :return: CurrencyCreateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_currency" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_currency`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CurrencyCreateResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_currency_balance_update(self, payload, **kwargs):  # noqa: E501
+        """Update the currency balance of a wallet using the blockchain  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_currency_balance_update(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CurrencyBalanceUpdatePayload payload: (required)
+        :return: CurrencyBalanceSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_currency_balance_update_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_currency_balance_update_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_currency_balance_update_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Update the currency balance of a wallet using the blockchain  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_currency_balance_update_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CurrencyBalanceUpdatePayload payload: (required)
+        :return: CurrencyBalanceSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_currency_balance_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_currency_balance_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency_balance/update', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CurrencyBalanceSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def post_currency_transfer(self, payload, **kwargs):  # noqa: E501
         """Transfer currency between wallets  # noqa: E501
 
@@ -3098,6 +3502,103 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def post_token_burn(self, payload, **kwargs):  # noqa: E501
+        """Burn existing tokens  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_token_burn(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param TokenBurnPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_token_burn_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_token_burn_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_token_burn_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Burn existing tokens  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_token_burn_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param TokenBurnPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_token_burn" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_token_burn`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/token/burn', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def post_token_deploy(self, payload, **kwargs):  # noqa: E501
         """Deploy a security token contract to blockchain.  # noqa: E501
 
@@ -3181,6 +3682,103 @@ class MoleculeApi(object):
 
         return self.api_client.call_api(
             '/molecule/v1/token/deploy', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionStatusSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def post_token_mint(self, payload, **kwargs):  # noqa: E501
+        """Mint new tokens  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_token_mint(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param TokenMintPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.post_token_mint_with_http_info(payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.post_token_mint_with_http_info(payload, **kwargs)  # noqa: E501
+            return data
+
+    def post_token_mint_with_http_info(self, payload, **kwargs):  # noqa: E501
+        """Mint new tokens  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.post_token_mint_with_http_info(payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param TokenMintPayload payload: (required)
+        :return: TransactionStatusSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_token_mint" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `post_token_mint`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/token/mint', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3777,6 +4375,111 @@ class MoleculeApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def update_currency(self, currency_id, payload, **kwargs):  # noqa: E501
+        """Update a currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_currency(currency_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str currency_id: UUID of a currency (required)
+        :param CurrencyUpdatePayload payload: (required)
+        :return: CurrencySpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_currency_with_http_info(currency_id, payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_currency_with_http_info(currency_id, payload, **kwargs)  # noqa: E501
+            return data
+
+    def update_currency_with_http_info(self, currency_id, payload, **kwargs):  # noqa: E501
+        """Update a currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_currency_with_http_info(currency_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str currency_id: UUID of a currency (required)
+        :param CurrencyUpdatePayload payload: (required)
+        :return: CurrencySpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['currency_id', 'payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_currency" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'currency_id' is set
+        if ('currency_id' not in params or
+                params['currency_id'] is None):
+            raise ValueError("Missing the required parameter `currency_id` when calling `update_currency`")  # noqa: E501
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `update_currency`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'currency_id' in params:
+            path_params['currency_id'] = params['currency_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/currency/{currency_id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CurrencySpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_token(self, token_id, payload, **kwargs):  # noqa: E501
         """Update a token  # noqa: E501
 
@@ -3980,6 +4683,111 @@ class MoleculeApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='WalletSpecificResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_wallet_permission(self, wallet_id, payload, **kwargs):  # noqa: E501
+        """Update a wallet's permission  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_wallet_permission(wallet_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str wallet_id: UUID of a wallet (required)
+        :param WalletPermissionUpdatePayload payload: (required)
+        :return: WalletPermissionSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_wallet_permission_with_http_info(wallet_id, payload, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_wallet_permission_with_http_info(wallet_id, payload, **kwargs)  # noqa: E501
+            return data
+
+    def update_wallet_permission_with_http_info(self, wallet_id, payload, **kwargs):  # noqa: E501
+        """Update a wallet's permission  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_wallet_permission_with_http_info(wallet_id, payload, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str wallet_id: UUID of a wallet (required)
+        :param WalletPermissionUpdatePayload payload: (required)
+        :return: WalletPermissionSpecificResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['wallet_id', 'payload']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_wallet_permission" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'wallet_id' is set
+        if ('wallet_id' not in params or
+                params['wallet_id'] is None):
+            raise ValueError("Missing the required parameter `wallet_id` when calling `update_wallet_permission`")  # noqa: E501
+        # verify the required parameter 'payload' is set
+        if ('payload' not in params or
+                params['payload'] is None):
+            raise ValueError("Missing the required parameter `payload` when calling `update_wallet_permission`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'wallet_id' in params:
+            path_params['wallet_id'] = params['wallet_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'payload' in params:
+            body_params = params['payload']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/molecule/v1/wallet_permission/{wallet_id}/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='WalletPermissionSpecificResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

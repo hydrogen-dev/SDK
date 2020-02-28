@@ -55,6 +55,9 @@
 
     _this['symbol'] = symbol;
     _this['name'] = name;
+
+
+
     _this['nucleus_model_id'] = nucleusModelId;
     _this['owner_wallet_id'] = ownerWalletId;
     _this['total_supply'] = totalSupply;
@@ -84,6 +87,15 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('is_mintable')) {
+        obj['is_mintable'] = ApiClient.convertToType(data['is_mintable'], 'Boolean');
+      }
+      if (data.hasOwnProperty('is_burnable')) {
+        obj['is_burnable'] = ApiClient.convertToType(data['is_burnable'], 'Boolean');
       }
       if (data.hasOwnProperty('nucleus_model_id')) {
         obj['nucleus_model_id'] = ApiClient.convertToType(data['nucleus_model_id'], 'String');
@@ -132,6 +144,24 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * Type of the security token. Can be ERC20 or ERC721. Defaults to ERC20
+   * @member {String} type
+   * @default 'ERC20'
+   */
+  exports.prototype['type'] = 'ERC20';
+  /**
+   * Determines if the security token is mintable or not. Defaults to false.
+   * @member {Boolean} is_mintable
+   * @default false
+   */
+  exports.prototype['is_mintable'] = false;
+  /**
+   * Determines if the security token is burnable or not. Defaults to false.
+   * @member {Boolean} is_burnable
+   * @default false
+   */
+  exports.prototype['is_burnable'] = false;
   /**
    * The id of the associated Nucleus model for this security token
    * @member {String} nucleus_model_id

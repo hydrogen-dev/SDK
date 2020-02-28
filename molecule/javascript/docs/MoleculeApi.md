@@ -25,23 +25,31 @@ Method | HTTP request | Description
 [**getWallet**](MoleculeApi.md#getWallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**getWalletKey**](MoleculeApi.md#getWalletKey) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**getWalletKeys**](MoleculeApi.md#getWalletKeys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
+[**getWalletPermission**](MoleculeApi.md#getWalletPermission) | **GET** /molecule/v1/wallet_permission/{wallet_id}/ | Retrieve a wallet&#39;s permission
+[**getWalletPermissions**](MoleculeApi.md#getWalletPermissions) | **GET** /molecule/v1/wallet_permission | Get information for all wallet permisions defined for your firm
 [**getWallets**](MoleculeApi.md#getWallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
 [**getWebhook**](MoleculeApi.md#getWebhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
 [**getWebhooks**](MoleculeApi.md#getWebhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
 [**postCrowdsaleDeploy**](MoleculeApi.md#postCrowdsaleDeploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
 [**postCrowdsaleFund**](MoleculeApi.md#postCrowdsaleFund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
 [**postCrowdsalePurchase**](MoleculeApi.md#postCrowdsalePurchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
+[**postCurrency**](MoleculeApi.md#postCurrency) | **POST** /molecule/v1/currency | Add a currency under your firm.
+[**postCurrencyBalanceUpdate**](MoleculeApi.md#postCurrencyBalanceUpdate) | **POST** /molecule/v1/currency_balance/update | Update the currency balance of a wallet using the blockchain
 [**postCurrencyTransfer**](MoleculeApi.md#postCurrencyTransfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 [**postToken**](MoleculeApi.md#postToken) | **POST** /molecule/v1/token | Create a token under your firm.
+[**postTokenBurn**](MoleculeApi.md#postTokenBurn) | **POST** /molecule/v1/token/burn | Burn existing tokens
 [**postTokenDeploy**](MoleculeApi.md#postTokenDeploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
+[**postTokenMint**](MoleculeApi.md#postTokenMint) | **POST** /molecule/v1/token/mint | Mint new tokens
 [**postTokenTransfer**](MoleculeApi.md#postTokenTransfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**postTokenWhitelist**](MoleculeApi.md#postTokenWhitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**postWallet**](MoleculeApi.md#postWallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**postWalletKey**](MoleculeApi.md#postWalletKey) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**postWalletKeyGenerator**](MoleculeApi.md#postWalletKeyGenerator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 [**postWebhook**](MoleculeApi.md#postWebhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
+[**updateCurrency**](MoleculeApi.md#updateCurrency) | **PUT** /molecule/v1/currency/{currency_id}/ | Update a currency
 [**updateToken**](MoleculeApi.md#updateToken) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 [**updateWallet**](MoleculeApi.md#updateWallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+[**updateWalletPermission**](MoleculeApi.md#updateWalletPermission) | **PUT** /molecule/v1/wallet_permission/{wallet_id}/ | Update a wallet&#39;s permission
 [**updateWebhook**](MoleculeApi.md#updateWebhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
@@ -183,7 +191,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'symbol': "symbol_example" // String | 
 };
 
@@ -223,7 +231,7 @@ Name | Type | Description  | Notes
 
 <a name="getCurrency"></a>
 # **getCurrency**
-> CurrencySpecificResponse getCurrency(currencyId)
+> CurrencySpecificResponse getCurrency(currencyId, )
 
 Retrieve a currency
 
@@ -254,7 +262,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getCurrency(currencyId, callback);
+apiInstance.getCurrency(currencyId, , callback);
 ```
 
 ### Parameters
@@ -359,7 +367,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'currencyId': "currencyId_example", // String | Filters results by their currency ids
   'walletId': "walletId_example", // String | Filters results by their wallet ids
 };
@@ -482,7 +490,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'currencyId': "currencyId_example", // String | Filters results by their currency ids
   'walletId': "walletId_example", // String | Filters results by their wallet ids
   'senderWalletId': "senderWalletId_example", // String | Filters results by their sender wallet ids
@@ -664,7 +672,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'tokenId': "tokenId_example", // String | Filters results by their token ids
   'walletId': "walletId_example", // String | Filters results by their wallet ids
 };
@@ -732,7 +740,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'tokenId': "tokenId_example", // String | Filters results by their token ids
 };
 
@@ -908,7 +916,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'tokenId': "tokenId_example", // String | Filters results by their token ids
   'walletId': "walletId_example", // String | Filters results by their wallet ids
   'senderWalletId': "senderWalletId_example", // String | Filters results by their sender wallet ids
@@ -980,7 +988,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
 };
 
 var callback = function(error, data, response) {
@@ -1099,7 +1107,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'walletId': "walletId_example", // String | Filters results by their wallet ids
   'hash': "hash_example", // String | 
   'status': "status_example" // String | 
@@ -1279,7 +1287,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
 };
 
 var callback = function(error, data, response) {
@@ -1305,6 +1313,125 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletKeyGetResponse**](WalletKeyGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getWalletPermission"></a>
+# **getWalletPermission**
+> WalletPermissionSpecificResponse getWalletPermission(walletId, )
+
+Retrieve a wallet&#39;s permission
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var walletId = "walletId_example"; // String | UUID of a wallet
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWalletPermission(walletId, , callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **walletId** | [**String**](.md)| UUID of a wallet | 
+
+### Return type
+
+[**WalletPermissionSpecificResponse**](WalletPermissionSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getWalletPermissions"></a>
+# **getWalletPermissions**
+> WalletPermissionGetResponse getWalletPermissions(opts)
+
+Get information for all wallet permisions defined for your firm
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var opts = { 
+  'page': 0, // Number | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
+  'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
+  'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  'getLatest': true // Boolean | Retrieves the latest entry
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWalletPermissions(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Number**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **orderBy** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **Boolean**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **getLatest** | **Boolean**| Retrieves the latest entry | [optional] 
+
+### Return type
+
+[**WalletPermissionGetResponse**](WalletPermissionGetResponse.md)
 
 ### Authorization
 
@@ -1343,7 +1470,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
   'nucleusClientId': "nucleusClientId_example", // String | 
   'isPrimary': true // Boolean | 
 };
@@ -1466,7 +1593,7 @@ var opts = {
   'size': 25, // Number | The number or records to be included per page. The default is 25. There is no max value.
   'orderBy': "update_date", // String | The field in the response body to order the list by. Default is update_date.
   'ascending': false, // Boolean | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  'getLatest': true, // Boolean | Retrieves the latest entry
+  'getLatest': true // Boolean | Retrieves the latest entry
 };
 
 var callback = function(error, data, response) {
@@ -1667,6 +1794,116 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postCurrency"></a>
+# **postCurrency**
+> CurrencyCreateResponse postCurrency(payload)
+
+Add a currency under your firm.
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CurrencyCreatePayload(); // CurrencyCreatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCurrency(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CurrencyCreatePayload**](CurrencyCreatePayload.md)|  | 
+
+### Return type
+
+[**CurrencyCreateResponse**](CurrencyCreateResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postCurrencyBalanceUpdate"></a>
+# **postCurrencyBalanceUpdate**
+> CurrencyBalanceSpecificResponse postCurrencyBalanceUpdate(payload)
+
+Update the currency balance of a wallet using the blockchain
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.CurrencyBalanceUpdatePayload(); // CurrencyBalanceUpdatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postCurrencyBalanceUpdate(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CurrencyBalanceUpdatePayload**](CurrencyBalanceUpdatePayload.md)|  | 
+
+### Return type
+
+[**CurrencyBalanceSpecificResponse**](CurrencyBalanceSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postCurrencyTransfer"></a>
 # **postCurrencyTransfer**
 > TransactionStatusSpecificResponse postCurrencyTransfer(payload)
@@ -1777,6 +2014,61 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postTokenBurn"></a>
+# **postTokenBurn**
+> TransactionStatusSpecificResponse postTokenBurn(payload)
+
+Burn existing tokens
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.TokenBurnPayload(); // TokenBurnPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postTokenBurn(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**TokenBurnPayload**](TokenBurnPayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="postTokenDeploy"></a>
 # **postTokenDeploy**
 > TransactionStatusSpecificResponse postTokenDeploy(payload)
@@ -1818,6 +2110,61 @@ apiInstance.postTokenDeploy(payload, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payload** | [**TokenDeployPayload**](TokenDeployPayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postTokenMint"></a>
+# **postTokenMint**
+> TransactionStatusSpecificResponse postTokenMint(payload)
+
+Mint new tokens
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var payload = new molecule_api.TokenMintPayload(); // TokenMintPayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postTokenMint(payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**TokenMintPayload**](TokenMintPayload.md)|  | 
 
 ### Return type
 
@@ -2162,6 +2509,64 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="updateCurrency"></a>
+# **updateCurrency**
+> CurrencySpecificResponse updateCurrency(currencyId, payload)
+
+Update a currency
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var currencyId = "currencyId_example"; // String | UUID of a currency
+
+var payload = new molecule_api.CurrencyUpdatePayload(); // CurrencyUpdatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateCurrency(currencyId, payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyId** | [**String**](.md)| UUID of a currency | 
+ **payload** | [**CurrencyUpdatePayload**](CurrencyUpdatePayload.md)|  | 
+
+### Return type
+
+[**CurrencySpecificResponse**](CurrencySpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateToken"></a>
 # **updateToken**
 > TokenSpecificResponse updateToken(tokenIdpayload)
@@ -2268,6 +2673,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletSpecificResponse**](WalletSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateWalletPermission"></a>
+# **updateWalletPermission**
+> WalletPermissionSpecificResponse updateWalletPermission(walletId, payload)
+
+Update a wallet&#39;s permission
+
+### Example
+```javascript
+var molecule_api = require('hydrogen-molecule-api');
+var defaultClient = molecule_api.ApiClient.instance;
+
+// (Optional) Set the Atom environment you wish to use (defaults to sandbox)
+// This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+defaultClient.basePath = "https://sandbox.hydrogenplatform.com";
+
+
+// Configure OAuth2 access token for authorization: oauth
+// Ensure the token is from the same environment as the defaultClient.basePath above
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = "YOUR ACCESS TOKEN";
+
+var apiInstance = new molecule_api.MoleculeApi();
+
+var walletId = "walletId_example"; // String | UUID of a wallet
+
+var payload = new molecule_api.WalletPermissionUpdatePayload(); // WalletPermissionUpdatePayload | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateWalletPermission(walletId, payload, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **walletId** | [**String**](.md)| UUID of a wallet | 
+ **payload** | [**WalletPermissionUpdatePayload**](WalletPermissionUpdatePayload.md)|  | 
+
+### Return type
+
+[**WalletPermissionSpecificResponse**](WalletPermissionSpecificResponse.md)
 
 ### Authorization
 

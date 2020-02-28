@@ -316,6 +316,32 @@ describe 'MoleculeApi' do
     end
   end
 
+  # unit tests for get_wallet_permission
+  # Retrieve a wallet&#39;s permission
+  # @param wallet_id UUID of a wallet
+  # @param [Hash] opts the optional parameters
+  # @return [WalletPermissionSpecificResponse]
+  describe 'get_wallet_permission test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_wallet_permissions
+  # Get information for all wallet permisions defined for your firm
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :page Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  # @option opts [Integer] :size The number or records to be included per page. The default is 25. There is no max value.
+  # @option opts [String] :order_by The field in the response body to order the list by. Default is update_date.
+  # @option opts [BOOLEAN] :ascending If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  # @option opts [BOOLEAN] :get_latest Retrieves the latest entry
+  # @return [WalletPermissionGetResponse]
+  describe 'get_wallet_permissions test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_wallets
   # Get information for all wallets defined for your firm
   # @param [Hash] opts the optional parameters
@@ -392,6 +418,28 @@ describe 'MoleculeApi' do
     end
   end
 
+  # unit tests for post_currency
+  # Add a currency under your firm.
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [CurrencyCreateResponse]
+  describe 'post_currency test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_currency_balance_update
+  # Update the currency balance of a wallet using the blockchain
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [CurrencyBalanceSpecificResponse]
+  describe 'post_currency_balance_update test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for post_currency_transfer
   # Transfer currency between wallets
   # @param payload 
@@ -414,12 +462,34 @@ describe 'MoleculeApi' do
     end
   end
 
+  # unit tests for post_token_burn
+  # Burn existing tokens
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [TransactionStatusSpecificResponse]
+  describe 'post_token_burn test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for post_token_deploy
   # Deploy a security token contract to blockchain.
   # @param payload 
   # @param [Hash] opts the optional parameters
   # @return [TransactionStatusSpecificResponse]
   describe 'post_token_deploy test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for post_token_mint
+  # Mint new tokens
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [TransactionStatusSpecificResponse]
+  describe 'post_token_mint test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -491,6 +561,18 @@ describe 'MoleculeApi' do
     end
   end
 
+  # unit tests for update_currency
+  # Update a currency
+  # @param currency_id UUID of a currency
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [CurrencySpecificResponse]
+  describe 'update_currency test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for update_token
   # Update a token
   # @param token_id UUID of a token
@@ -510,6 +592,18 @@ describe 'MoleculeApi' do
   # @param [Hash] opts the optional parameters
   # @return [WalletSpecificResponse]
   describe 'update_wallet test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_wallet_permission
+  # Update a wallet&#39;s permission
+  # @param wallet_id UUID of a wallet
+  # @param payload 
+  # @param [Hash] opts the optional parameters
+  # @return [WalletPermissionSpecificResponse]
+  describe 'update_wallet_permission test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

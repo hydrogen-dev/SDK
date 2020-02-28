@@ -25,23 +25,31 @@ Method | HTTP request | Description
 [**get_wallet**](MoleculeApi.md#get_wallet) | **GET** /molecule/v1/wallet/{wallet_id}/ | Retrieve a wallet
 [**get_wallet_key**](MoleculeApi.md#get_wallet_key) | **GET** /molecule/v1/wallet_key/{wallet_key_id}/ | Retrieve a wallet key
 [**get_wallet_keys**](MoleculeApi.md#get_wallet_keys) | **GET** /molecule/v1/wallet_key | Get all wallet keys associated with wallets defined for your firm.
+[**get_wallet_permission**](MoleculeApi.md#get_wallet_permission) | **GET** /molecule/v1/wallet_permission/{wallet_id}/ | Retrieve a wallet&#39;s permission
+[**get_wallet_permissions**](MoleculeApi.md#get_wallet_permissions) | **GET** /molecule/v1/wallet_permission | Get information for all wallet permisions defined for your firm
 [**get_wallets**](MoleculeApi.md#get_wallets) | **GET** /molecule/v1/wallet | Get information for all wallets defined for your firm
 [**get_webhook**](MoleculeApi.md#get_webhook) | **GET** /molecule/v1/webhook/{webhook_id}/ | Retrieve a webhook
 [**get_webhooks**](MoleculeApi.md#get_webhooks) | **GET** /molecule/v1/webhook | Get information for all webhooks defined for your firm
 [**post_crowdsale_deploy**](MoleculeApi.md#post_crowdsale_deploy) | **POST** /molecule/v1/crowdsale/deploy | Deploy a token&#39;s crowdsale contract.
 [**post_crowdsale_fund**](MoleculeApi.md#post_crowdsale_fund) | **POST** /molecule/v1/crowdsale/fund | Transfer tokens to a token&#39;s crowdsale address.
 [**post_crowdsale_purchase**](MoleculeApi.md#post_crowdsale_purchase) | **POST** /molecule/v1/crowdsale/purchase | Purchase tokens from a crowdsale contract
+[**post_currency**](MoleculeApi.md#post_currency) | **POST** /molecule/v1/currency | Add a currency under your firm.
+[**post_currency_balance_update**](MoleculeApi.md#post_currency_balance_update) | **POST** /molecule/v1/currency_balance/update | Update the currency balance of a wallet using the blockchain
 [**post_currency_transfer**](MoleculeApi.md#post_currency_transfer) | **POST** /molecule/v1/currency_transfer | Transfer currency between wallets
 [**post_token**](MoleculeApi.md#post_token) | **POST** /molecule/v1/token | Create a token under your firm.
+[**post_token_burn**](MoleculeApi.md#post_token_burn) | **POST** /molecule/v1/token/burn | Burn existing tokens
 [**post_token_deploy**](MoleculeApi.md#post_token_deploy) | **POST** /molecule/v1/token/deploy | Deploy a security token contract to blockchain.
+[**post_token_mint**](MoleculeApi.md#post_token_mint) | **POST** /molecule/v1/token/mint | Mint new tokens
 [**post_token_transfer**](MoleculeApi.md#post_token_transfer) | **POST** /molecule/v1/token_transfer | Transfer tokens between wallets
 [**post_token_whitelist**](MoleculeApi.md#post_token_whitelist) | **POST** /molecule/v1/token/whitelist | Add an investor to a token&#39;s whitelist
 [**post_wallet**](MoleculeApi.md#post_wallet) | **POST** /molecule/v1/wallet | Create a wallet under your firm.
 [**post_wallet_key**](MoleculeApi.md#post_wallet_key) | **POST** /molecule/v1/wallet_key | Associate an existing key pair with a wallet defined for your firm.
 [**post_wallet_key_generator**](MoleculeApi.md#post_wallet_key_generator) | **POST** /molecule/v1/wallet_key/generator | Generate a wallet key using the Key Service and associate with a wallet defined for your firm.
 [**post_webhook**](MoleculeApi.md#post_webhook) | **POST** /molecule/v1/webhook | Create a webhook under your firm.
+[**update_currency**](MoleculeApi.md#update_currency) | **PUT** /molecule/v1/currency/{currency_id}/ | Update a currency
 [**update_token**](MoleculeApi.md#update_token) | **PUT** /molecule/v1/token/{token_id}/ | Update a token
 [**update_wallet**](MoleculeApi.md#update_wallet) | **PUT** /molecule/v1/wallet/{wallet_id}/ | Update a wallet
+[**update_wallet_permission**](MoleculeApi.md#update_wallet_permission) | **PUT** /molecule/v1/wallet_permission/{wallet_id}/ | Update a wallet&#39;s permission
 [**update_webhook**](MoleculeApi.md#update_webhook) | **PUT** /molecule/v1/webhook/{webhook_id}/ | Update a webhook
 
 
@@ -189,7 +197,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   symbol: 'symbol_example' # String | 
 }
 
@@ -229,7 +237,7 @@ Name | Type | Description  | Notes
 
 
 # **get_currency**
-> CurrencySpecificResponse get_currency(currency_id)
+> CurrencySpecificResponse get_currency(currency_id, )
 
 Retrieve a currency
 
@@ -258,7 +266,7 @@ currency_id = 'currency_id_example' # String | UUID of a currency
 
 begin
   #Retrieve a currency
-  result = api_instance.get_currency(currency_id)
+  result = api_instance.get_currency(currency_id, )
   p result
 rescue MoleculeApi::ApiError => e
   puts "Exception when calling MoleculeApi->get_currency: #{e}"
@@ -374,7 +382,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   currency_id: 'currency_id_example', # String | Filters results by their currency ids
   wallet_id: 'wallet_id_example', # String | Filters results by their wallet ids
 }
@@ -503,7 +511,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   currency_id: 'currency_id_example', # String | Filters results by their currency ids
   wallet_id: 'wallet_id_example', # String | Filters results by their wallet ids
   sender_wallet_id: 'sender_wallet_id_example', # String | Filters results by their sender wallet ids
@@ -694,7 +702,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   token_id: 'token_id_example', # String | Filters results by their token ids
   wallet_id: 'wallet_id_example', # String | Filters results by their wallet ids
 }
@@ -765,7 +773,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   token_id: 'token_id_example', # String | Filters results by their token ids
 }
 
@@ -950,7 +958,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   token_id: 'token_id_example', # String | Filters results by their token ids
   wallet_id: 'wallet_id_example', # String | Filters results by their wallet ids
   sender_wallet_id: 'sender_wallet_id_example', # String | Filters results by their sender wallet ids
@@ -1025,7 +1033,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
 }
 
 begin
@@ -1150,7 +1158,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   wallet_id: 'wallet_id_example', # String | Filters results by their wallet ids
   hash: 'hash_example', # String | 
   status: 'status_example' # String | 
@@ -1339,7 +1347,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
 }
 
 begin
@@ -1364,6 +1372,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletKeyGetResponse**](WalletKeyGetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_wallet_permission**
+> WalletPermissionSpecificResponse get_wallet_permission(wallet_id, )
+
+Retrieve a wallet's permission
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+wallet_id = 'wallet_id_example' # String | UUID of a wallet
+
+
+begin
+  #Retrieve a wallet's permission
+  result = api_instance.get_wallet_permission(wallet_id, )
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->get_wallet_permission: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wallet_id** | [**String**](.md)| UUID of a wallet | 
+
+### Return type
+
+[**WalletPermissionSpecificResponse**](WalletPermissionSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_wallet_permissions**
+> WalletPermissionGetResponse get_wallet_permissions(opts)
+
+Get information for all wallet permisions defined for your firm
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+opts = { 
+  page: 0, # Integer | Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0
+  size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
+  order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
+  ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
+  get_latest: true # BOOLEAN | Retrieves the latest entry
+}
+
+begin
+  #Get information for all wallet permisions defined for your firm
+  result = api_instance.get_wallet_permissions(opts)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->get_wallet_permissions: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Page number for the page that should be returned as the starting page. For example, if this is specified as 0, then the first page of the results will be the shown, if it is set as 3 then the third page of the results will be shown, and so on. The default is 0 | [optional] [default to 0]
+ **size** | **Integer**| The number or records to be included per page. The default is 25. There is no max value. | [optional] [default to 25]
+ **order_by** | **String**| The field in the response body to order the list by. Default is update_date. | [optional] [default to update_date]
+ **ascending** | **BOOLEAN**| If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending. | [optional] [default to false]
+ **get_latest** | **BOOLEAN**| Retrieves the latest entry | [optional] 
+
+### Return type
+
+[**WalletPermissionGetResponse**](WalletPermissionGetResponse.md)
 
 ### Authorization
 
@@ -1406,7 +1539,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
   nucleus_client_id: 'nucleus_client_id_example', # String | 
   is_primary: true # BOOLEAN | 
 }
@@ -1535,7 +1668,7 @@ opts = {
   size: 25, # Integer | The number or records to be included per page. The default is 25. There is no max value.
   order_by: 'update_date', # String | The field in the response body to order the list by. Default is update_date.
   ascending: false, # BOOLEAN | If true, order the results in ascending order. For an alphabetical result this would be A-Z. If false, order the results in descending order. For an alphabetical result this would be Z-A. Default is false which would order by descending.
-  get_latest: true, # BOOLEAN | Retrieves the latest entry
+  get_latest: true # BOOLEAN | Retrieves the latest entry
 }
 
 begin
@@ -1746,6 +1879,122 @@ Name | Type | Description  | Notes
 
 
 
+# **post_currency**
+> CurrencyCreateResponse post_currency(payload)
+
+Add a currency under your firm.
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+payload = MoleculeApi::CurrencyCreatePayload.new # CurrencyCreatePayload | 
+
+
+begin
+  #Add a currency under your firm.
+  result = api_instance.post_currency(payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->post_currency: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CurrencyCreatePayload**](CurrencyCreatePayload.md)|  | 
+
+### Return type
+
+[**CurrencyCreateResponse**](CurrencyCreateResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **post_currency_balance_update**
+> CurrencyBalanceSpecificResponse post_currency_balance_update(payload)
+
+Update the currency balance of a wallet using the blockchain
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+payload = MoleculeApi::CurrencyBalanceUpdatePayload.new # CurrencyBalanceUpdatePayload | 
+
+
+begin
+  #Update the currency balance of a wallet using the blockchain
+  result = api_instance.post_currency_balance_update(payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->post_currency_balance_update: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**CurrencyBalanceUpdatePayload**](CurrencyBalanceUpdatePayload.md)|  | 
+
+### Return type
+
+[**CurrencyBalanceSpecificResponse**](CurrencyBalanceSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **post_currency_transfer**
 > TransactionStatusSpecificResponse post_currency_transfer(payload)
 
@@ -1862,6 +2111,64 @@ Name | Type | Description  | Notes
 
 
 
+# **post_token_burn**
+> TransactionStatusSpecificResponse post_token_burn(payload)
+
+Burn existing tokens
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+payload = MoleculeApi::TokenBurnPayload.new # TokenBurnPayload | 
+
+
+begin
+  #Burn existing tokens
+  result = api_instance.post_token_burn(payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->post_token_burn: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**TokenBurnPayload**](TokenBurnPayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **post_token_deploy**
 > TransactionStatusSpecificResponse post_token_deploy(payload)
 
@@ -1904,6 +2211,64 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payload** | [**TokenDeployPayload**](TokenDeployPayload.md)|  | 
+
+### Return type
+
+[**TransactionStatusSpecificResponse**](TransactionStatusSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **post_token_mint**
+> TransactionStatusSpecificResponse post_token_mint(payload)
+
+Mint new tokens
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+payload = MoleculeApi::TokenMintPayload.new # TokenMintPayload | 
+
+
+begin
+  #Mint new tokens
+  result = api_instance.post_token_mint(payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->post_token_mint: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**TokenMintPayload**](TokenMintPayload.md)|  | 
 
 ### Return type
 
@@ -2268,6 +2633,67 @@ Name | Type | Description  | Notes
 
 
 
+# **update_currency**
+> CurrencySpecificResponse update_currency(currency_id, payload)
+
+Update a currency
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+currency_id = 'currency_id_example' # String | UUID of a currency
+
+payload = MoleculeApi::CurrencyUpdatePayload.new # CurrencyUpdatePayload | 
+
+
+begin
+  #Update a currency
+  result = api_instance.update_currency(currency_id, payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->update_currency: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_id** | [**String**](.md)| UUID of a currency | 
+ **payload** | [**CurrencyUpdatePayload**](CurrencyUpdatePayload.md)|  | 
+
+### Return type
+
+[**CurrencySpecificResponse**](CurrencySpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **update_token**
 > TokenSpecificResponse update_token(token_idpayload)
 
@@ -2378,6 +2804,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WalletSpecificResponse**](WalletSpecificResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **update_wallet_permission**
+> WalletPermissionSpecificResponse update_wallet_permission(wallet_id, payload)
+
+Update a wallet's permission
+
+### Example
+```ruby
+# load the gem
+require 'molecule_api'
+
+# Configuration
+MoleculeApi.configure do |config|
+  # Set the environment (optional, defaults to sandbox)
+  # This changes the URL for requests (including OAuth) to [environment].hydrogenplatform.com
+  config.set_environment("sandbox")
+
+  # Configure OAuth2 access token for authorization: oauth
+  # Method 1: Fetch and set access token with client_id and client_secret
+  config.access_token = config.get_oauth_token('MYCLIENTID', 'MYCLIENTSECRET')
+  # Method 2: Set access token using an existing token
+  config.access_token = 'MYACCESSTOKEN'
+end
+
+api_instance = MoleculeApi::MoleculeApi.new
+
+wallet_id = 'wallet_id_example' # String | UUID of a wallet
+
+payload = MoleculeApi::WalletPermissionUpdatePayload.new # WalletPermissionUpdatePayload | 
+
+
+begin
+  #Update a wallet's permission
+  result = api_instance.update_wallet_permission(wallet_id, payload)
+  p result
+rescue MoleculeApi::ApiError => e
+  puts "Exception when calling MoleculeApi->update_wallet_permission: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wallet_id** | [**String**](.md)| UUID of a wallet | 
+ **payload** | [**WalletPermissionUpdatePayload**](WalletPermissionUpdatePayload.md)|  | 
+
+### Return type
+
+[**WalletPermissionSpecificResponse**](WalletPermissionSpecificResponse.md)
 
 ### Authorization
 

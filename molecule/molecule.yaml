@@ -1564,6 +1564,108 @@ paths:
     parameters:
       - $ref: '#/parameters/path_currency_uuid'
 
+  /molecule/v1/wallet_permission:
+    get:
+      operationId: getWalletPermissions
+      summary: Get information for all wallet permisions defined for your firm
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#List-all-wallet-permissions
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_permission_get_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+      parameters:
+        - $ref: '#/parameters/query_pagination_page'
+        - $ref: '#/parameters/query_pagination_size'
+        - $ref: '#/parameters/query_pagination_orderby'
+        - $ref: '#/parameters/query_pagination_ascending'
+        - $ref: '#/parameters/query_get_latest'
+
+  /molecule/v1/wallet_permission/{wallet_id}/:
+    get:
+      operationId: getWalletPermission
+      summary: Retrieve a wallet's permission
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Retrieve-a-wallets-permission
+      tags:
+        - Molecule
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_permission_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    put:
+      operationId: updateWalletPermission
+      summary: Update a wallet's permission
+      security:
+        - oauth: [molecule]
+      externalDocs:
+        url: https://www.hydrogenplatform.com/docs/molecule/v1/#Update-a-wallets-permission
+      tags:
+        - Molecule
+      parameters:
+        - name: payload
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/wallet_permission_update_payload'
+      responses:
+        200:
+          description: 'Successful response'
+          schema:
+            $ref: '#/definitions/wallet_permission_specific_response'
+        400:
+          $ref: '#/responses/400'
+        401:
+          $ref: '#/responses/401'
+        403:
+          $ref: '#/responses/403'
+        404:
+          $ref: '#/responses/404'
+        429:
+          $ref: '#/responses/429'
+        500:
+          $ref: '#/responses/500'
+        503:
+          $ref: '#/responses/503'
+    parameters:
+      - $ref: '#/parameters/path_wallet_uuid'
+
 # ********** Parameters: describe variables that may appear in the request URL **********
 parameters:
 
@@ -2208,6 +2310,43 @@ definitions:
             format: datetime
             description: Datetime the currency record was created
       - $ref: '#/definitions/currency_create_payload'
+  wallet_permission_specific_response:
+    allOf:
+      - type: object
+      - properties:
+          wallet_id:
+            type: string
+            format: uuid
+            description: ID of the wallet
+          clients:
+            type: array
+            description: List of nucleus clients associated with the wallet and their permission type
+            items:
+              type: object
+              properties:
+                nucleus_client_id:
+                  type: string
+                  format: uuid
+                  description: The ID of a nucleus client associated with the wallet
+                permission_type:
+                  type: string
+                  description: The type of permission of the client over a wallet
+                client_wallet_association_type:
+                  type: string
+                  description: The role of the client as it relates to the wallet defined by your firm. Roles may be joint, owner, trustee, viewer, or admin.
+                is_primary:
+                  type: boolean
+                  default: true
+                  description:  Determines if the wallet is the primary wallet of the client. Defaults to true.
+  wallet_permission_get_response:
+    allOf:
+      - type: object
+      - properties:
+          content:
+            type: array
+            items:
+              $ref: '#/definitions/wallet_permission_specific_response'
+      - $ref: '#/definitions/pagination'
   # Request payloads
   wallet_create_client:
     type: object
@@ -2726,3 +2865,16 @@ definitions:
         type: string
         format: uuid
         description: The id of the currency to be updated. Defaults to currency_id of ETH
+  wallet_permission_update_payload:
+    type: object
+    required:
+      - nucleus_client_id
+      - permission_type
+    properties:
+      nucleus_client_id:
+        type: string
+        format: uuid
+        description: The id of the client associated with the wallet
+      permission_type:
+        type: string
+        description: The permission of the client over the wallet

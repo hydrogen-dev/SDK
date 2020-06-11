@@ -1,0 +1,21 @@
+{
+  "name": "hydrogen_atom_api",
+  "version": "1.7.0",
+  "description": "The_Hydrogen_Atom_API",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "^7.2.0",
+    "sinon": "1.17.3"
+  }
+}

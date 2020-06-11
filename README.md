@@ -4,15 +4,29 @@ Follow the individual SDK READMEs for information on installation, authorization
 
 ## Atom
 
-Hydrogen Atom client SDKs are offered in:
-* [Java](atom/java)
-* [Javascript/Node](atom/javascript)
-* [Python](atom/python)
-* [Ruby](atom/ruby)
+### Nucleus/Electron
+Hydrogen Nucleus client SDKs are offered in:
+* [Java](atom/nucleus/java)
+* [Javascript/Node](atom/nucleus/javascript)
+* [PHP](atom/nucleus/php)
+* [Python](atom/nucleus/python)
+* [Ruby](atom/nucleus/ruby)
 
-Please see the official Atom API documentation: [Nucleus](https://www.hydrogenplatform.com/docs/nucleus/v1/) | [Proton](https://www.hydrogenplatform.com/docs/proton/v1/) | [Electron](https://www.hydrogenplatform.com/docs/electron/v1/)
+Please see the official [Nucleus API documentation](https://www.hydrogenplatform.com/docs/nucleus/v1/) and [Electron API documentation](https://www.hydrogenplatform.com/docs/electron/v1/)
 
-Atom SDKs are generated from the [Atom Swagger specification](atom/atom.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
+Nucleus SDKs are generated from the [Nucleus Swagger specification](atom/nucleus/nucleus.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
+
+### Proton
+Hydrogen Proton client SDKs are offered in:
+* [Java](atom/proton/java)
+* [Javascript/Node](atom/proton/javascript)
+* [PHP](atom/proton/php)
+* [Python](atom/proton/python)
+* [Ruby](atom/proton/ruby)
+
+Please see the official [Proton API documentation](https://www.hydrogenplatform.com/docs/proton/v1/)
+
+Proton SDKs are generated from the [Proton Swagger specification](atom/proton/proton.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
 
 ## Molecule
 Molecule SDKs are offered in:

@@ -1,0 +1,22 @@
+{
+  "name": "hydrogen_proton_api",
+  "version": "1.7.18",
+  "description": "Financial_engineering_module_of_Hydrogen_Atom",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.7.0",
+    "querystring": "0.2.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "^7.2.0",
+    "sinon": "1.17.3"
+  }
+}

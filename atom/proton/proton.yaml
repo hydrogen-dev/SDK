@@ -1,0 +1,5543 @@
+info:
+  description: Financial engineering module of Hydrogen Atom
+  termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
+  contact:
+    name: Hydrogen Technology Corporation
+    url: 'https://www.hydrogenplatform.com/contact'
+    email: info@hydrogenplatform.com
+  title: Hydrogen Proton API
+  version: 1.7.18
+host: sandbox.hydrogenplatform.com
+basePath: /proton/v1
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    tokenUrl: 'https://sandbox.hydrogenplatform.com/authorization/v1/oauth/token'
+    flow: application
+tags:
+  - name: Annuities
+  - name: Financial Health
+  - name: Financial Planning
+  - name: Goals
+  - name: Life Insurance
+  - name: Personal Financial Management
+  - name: Portfolio Construction
+  - name: Portfolio Management
+  - name: Risk Scoring
+  - name: Simulations
+paths:
+  /variable_annuity:
+    post:
+      summary: Variable Annuity
+      description: Project the behavior of a variable annuity over time
+      tags:
+        - Annuities
+      operationId: variableAnnuity
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: variableAnnuityRequest
+          schema:
+            $ref: '#/definitions/variableAnnuityRequest'
+          description: Request payload for Variable Annuity
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /annuity_calculator/decumulation_horizon:
+    post:
+      summary: Annuity Calculator - Decumulation Horizon
+      description: Calculate the achievable fixed annuity payout period
+      tags:
+        - Annuities
+      operationId: annuityCalculatorDecumulationHorizon
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: annuityCalculatorDecumulationHorizonRequest
+          schema:
+            $ref: '#/definitions/annuityCalculatorDecumulationHorizonRequest'
+          description: Request payload for Annuity Calculator - Decumulation Horizon
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /annuity_calculator/accumulation_horizon:
+    post:
+      summary: Annuity Calculator - Accumulation Horizon
+      description: Calculate the necessary fixed annuity contribution period
+      tags:
+        - Annuities
+      operationId: annuityCalculatorAccumulationHorizon
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: annuityCalculatorAccumulationHorizonRequest
+          schema:
+            $ref: '#/definitions/annuityCalculatorAccumulationHorizonRequest'
+          description: Request payload for Annuity Calculator - Accumulation Horizon
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /annuity_calculator/initial_balance:
+    post:
+      summary: Annuity Calculator - Initial Balance
+      description: Calculate the necessary initial balance for a fixed annuity
+      tags:
+        - Annuities
+      operationId: annuityCalculatorInitialBalance
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: annuityCalculatorInitialBalanceRequest
+          schema:
+            $ref: '#/definitions/annuityCalculatorInitialBalanceRequest'
+          description: Request payload for Annuity Calculator - Initial Balance
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /annuity_calculator/deposit_amount:
+    post:
+      summary: Annuity Calculator - Deposit Amount
+      description: Calculate the necessary periodic deposit amount for a fixed annuity
+      tags:
+        - Annuities
+      operationId: annuityCalculatorDepositAmount
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: annuityCalculatorDepositAmountRequest
+          schema:
+            $ref: '#/definitions/annuityCalculatorDepositAmountRequest'
+          description: Request payload for Annuity Calculator - Deposit Amount
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /annuity_calculator/annuity_amount:
+    post:
+      summary: Annuity Calculator - Annuity Amount
+      description: Calculate the achievable fixed annuity amount
+      tags:
+        - Annuities
+      operationId: annuityCalculatorAnnuityAmount
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: annuityCalculatorAnnuityAmountRequest
+          schema:
+            $ref: '#/definitions/annuityCalculatorAnnuityAmountRequest'
+          description: Request payload for Annuity Calculator - Annuity Amount
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /goal_decumulation/status:
+    post:
+      summary: Goal Decumulation Status
+      description: Track the status of a decumulation goal
+      tags:
+        - Goals
+      operationId: goalDecumulationStatus
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: goalDecumulationStatusRequest
+          schema:
+            $ref: '#/definitions/goalDecumulationStatusRequest'
+          description: Request payload for Goal Decumulation Status
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /goal_decumulation/recommendation:
+    post:
+      summary: Goal Decumulation Recommendation
+      description: Generate recommendations to achieve a decumulation goal
+      tags:
+        - Goals
+      operationId: goalDecumulationRecommendation
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: goalDecumulationRecommendationRequest
+          schema:
+            $ref: '#/definitions/goalDecumulationRecommendationRequest'
+          description: Request payload for Goal Decumulation Recommendation
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /goal_decumulation/allocation:
+    post:
+      summary: Goal Decumulation Allocation
+      description: Allocate based on a decumulation goal
+      tags:
+        - Goals
+      operationId: goalDecumulationAllocation
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: goalDecumulationAllocationRequest
+          schema:
+            $ref: '#/definitions/goalDecumulationAllocationRequest'
+          description: Request payload for Goal Decumulation Allocation
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /goal_accumulation/recommendation:
+    post:
+      summary: Goal Accumulation Recommendation
+      description: Generate recommendations to achieve an accumulation goal
+      tags:
+        - Goals
+      operationId: goalAccumulationRecommendation
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: goalAccumulationRecommendationRequest
+          schema:
+            $ref: '#/definitions/goalAccumulationRecommendationRequest'
+          description: Request payload for Goal Accumulation Recommendation
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /goal_accumulation/allocation:
+    post:
+      summary: Goal Accumulation Allocation
+      description: Allocate based on an accumulation goal
+      tags:
+        - Goals
+      operationId: goalAccumulationAllocation
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: goalAccumulationAllocationRequest
+          schema:
+            $ref: '#/definitions/goalAccumulationAllocationRequest'
+          description: Request payload for Goal Accumulation Allocation
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /goal_accumulation/status:
+    post:
+      summary: Goal Accumulation Status
+      description: Track the status of an accumulation goal
+      tags:
+        - Goals
+      operationId: goalAccumulationStatus
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: goalAccumulationStatusRequest
+          schema:
+            $ref: '#/definitions/goalAccumulationStatusRequest'
+          description: Request payload for Goal Accumulation Status
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /mvo:
+    post:
+      summary: MVO
+      description: Run a mean-variance optimization for a group of potential investments
+      tags:
+        - Portfolio Construction
+      operationId: mvo
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: mvoRequest
+          schema:
+            $ref: '#/definitions/mvoRequest'
+          description: Request payload for MVO
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /rebalancing_signal:
+    post:
+      summary: Rebalancing Signal
+      description: Generate rebalancing signals for a group of investments
+      tags:
+        - Portfolio Management
+      operationId: rebalancingSignal
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: rebalancingSignalRequest
+          schema:
+            $ref: '#/definitions/rebalancingSignalRequest'
+          description: Request payload for Rebalancing Signal
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /risk_score:
+    post:
+      summary: Risk Score
+      description: Calculate a risk score based on questionnaire responses
+      tags:
+        - Risk Scoring
+      operationId: riskScore
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: riskScoreRequest
+          schema:
+            $ref: '#/definitions/riskScoreRequest'
+          description: Request payload for Risk Score
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /dimensional_risk_score:
+    post:
+      summary: Dimensional Risk Score
+      description: Calculate a dimensional risk score based on questionnaire responses
+      tags:
+        - Risk Scoring
+      operationId: dimensionalRiskScore
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: dimensionalRiskScoreRequest
+          schema:
+            $ref: '#/definitions/dimensionalRiskScoreRequest'
+          description: Request payload for Dimensional Risk Score
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /risk_allocation:
+    post:
+      summary: Risk Allocation
+      description: Allocate based on a risk score
+      tags:
+        - Risk Scoring
+      operationId: riskAllocation
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: riskAllocationRequest
+          schema:
+            $ref: '#/definitions/riskAllocationRequest'
+          description: Request payload for Risk Allocation
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /event_study:
+    post:
+      summary: Event Study
+      description: Analyze a group of investments against key historical events
+      tags:
+        - Simulations
+      operationId: eventStudy
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: eventStudyRequest
+          schema:
+            $ref: '#/definitions/eventStudyRequest'
+          description: Request payload for Event Study
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /backtest:
+    post:
+      summary: Backtest
+      description: Run a historical analysis for a group of investments
+      tags:
+        - Simulations
+      operationId: backtest
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: backtestRequest
+          schema:
+            $ref: '#/definitions/backtestRequest'
+          description: Request payload for Backtest
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /monte_carlo:
+    post:
+      summary: Monte Carlo
+      description: Simulate the future growth of a group of investments
+      tags:
+        - Simulations
+      operationId: monteCarlo
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: monteCarloRequest
+          schema:
+            $ref: '#/definitions/monteCarloRequest'
+          description: Request payload for Monte Carlo
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /sensitivity_analysis:
+    post:
+      summary: Sensitivity Analysis
+      description: Analyze a group of investments against an external economic factor
+      tags:
+        - Simulations
+      operationId: sensitivityAnalysis
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: sensitivityAnalysisRequest
+          schema:
+            $ref: '#/definitions/sensitivityAnalysisRequest'
+          description: Request payload for Sensitivity Analysis
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /scenario_analysis:
+    post:
+      summary: Scenario Analysis
+      description: Analyze a group of investments against a series of external economic factors
+      tags:
+        - Simulations
+      operationId: scenarioAnalysis
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: scnearioAnalysisRequest
+          schema:
+            $ref: '#/definitions/scenarioAnalysisRequest'
+          description: Request payload for Scenario Analysis
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /savings_calculator:
+    post:
+      summary: Savings Calculator
+      description: Simulate the future growth of a simple savings account
+      tags:
+        - Simulations
+      operationId: savingsCalculator
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: savingsCalculatorRequest
+          schema:
+            $ref: '#/definitions/savingsCalculatorRequest'
+          description: Request payload for Savings Calculator
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /portfolio_what_if:
+    post:
+      summary: Porfolio What-If
+      description: 'Simulate the impact of adding, removing, reducing, or increasing various positions in a group of investments'
+      tags:
+        - Simulations
+      operationId: portfolioWhatIf
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: portfolioWhatIfRequest
+          schema:
+            $ref: '#/definitions/portfolioWhatIfRequest'
+          description: Request payload for Portfolio What-If
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /life_insurance/needs_calculator:
+    post:
+      summary: Life Insurance Needs Calculator
+      description: Calculate life insurance needs based on existing asset and liability data
+      tags:
+        - Life Insurance
+      operationId: lifeInsuranceNeedsCalculator
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: lifeInsuranceNeedsCalculatorRequest
+          schema:
+            $ref: '#/definitions/lifeInsuranceNeedsCalculatorRequest'
+          description: Request payload for Life Insurance Needs Calculator
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /education_calculator/deposit_amount:
+    post:
+      summary: Education Calculator - Deposit Amount
+      description: Calculate the necessary periodic deposit amount to achieve education costs
+      tags:
+        - Financial Planning
+      operationId: educationCalculatorDepositAmount
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: educationCalculatorDepositAmountRequest
+          schema:
+            $ref: '#/definitions/educationCalculatorDepositAmountRequest'
+          description: Request payload for Education Calculator - Deposit Amount
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /education_calculator/percent_covered:
+    post:
+      summary: Education Calculator - Percent Covered
+      description: Calculate the achievable percentage of education costs that can be covered
+      tags:
+        - Financial Planning
+      operationId: educationCalculatorPercentCovered
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: educationCalculatorPercentCoveredRequest
+          schema:
+            $ref: '#/definitions/educationCalculatorPercentCoveredRequest'
+          description: Request payload for Education Calculator - Percent Covered
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /education_calculator/annual_cost:
+    post:
+      summary: Education Calculator - Annual Cost
+      description: Calculate the achievable education costs
+      tags:
+        - Financial Planning
+      operationId: educationCalculatorAnnualCost
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: educationCalculatorAnnualCostRequest
+          schema:
+            $ref: '#/definitions/educationCalculatorAnnualCostRequest'
+          description: Request payload for Education Calculator - Annual Cost
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /purchase_calculator/horizon:
+    post:
+      summary: Purchase Calculator - Horizon
+      description: Calculate the necessary time horizon to achieve the purchase amount
+      tags:
+        - Financial Planning
+      operationId: purchaseCalculatorHorizon
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: purchaseCalculatorHorizonRequest
+          schema:
+            $ref: '#/definitions/purchaseCalculatorHorizonRequest'
+          description: Request payload for Purchase Calculator - Horizon
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /purchase_calculator/deposit_amount:
+    post:
+      summary: Purchase Calculator - Deposit Amount
+      description: Calculate the necessary periodic deposit amount to achieve the purchase amount
+      tags:
+        - Financial Planning
+      operationId: purchaseCalculatorDepositAmount
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: purchaseCalculatorDepositAmountRequest
+          schema:
+            $ref: '#/definitions/purchaseCalculatorDepositAmountRequest'
+          description: Request payload for Purchase Calculator - Deposit Amount
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /purchase_calculator/amount:
+    post:
+      summary: Purchase Calculator - Amount
+      description: Calculate the achievable purchase amount
+      tags:
+        - Financial Planning
+      operationId: purchaseCalculatorAmount
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: purchaseCalculatorAmountRequest
+          schema:
+            $ref: '#/definitions/purchaseCalculatorAmountRequest'
+          description: Request payload for Purchase Calculator - Amount
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /mortgage_calculator/home_price:
+    post:
+      summary: Mortgage Calculator - Home Price
+      description: Calculate the achievable home price for the mortgage
+      tags:
+        - Financial Planning
+      operationId: mortgageCalculatorHomePrice
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: mortgageCalculatorHomePriceRequest
+          schema:
+            $ref: '#/definitions/mortgageCalculatorHomePriceRequest'
+          description: Request payload for Mortgage Calculator - Home Price
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /mortgage_calculator/down_payment:
+    post:
+      summary: Mortgage Calculator - Down Payment
+      description: Calculate the necessary down payment for the mortgage
+      tags:
+        - Financial Planning
+      operationId: mortgageCalculatorDownPayment
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: mortgageCalculatorDownPaymentRequest
+          schema:
+            $ref: '#/definitions/mortgageCalculatorDownPaymentRequest'
+          description: Request payload for Mortgage Calculator - Down Payment
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /mortgage_calculator/period_payment:
+    post:
+      summary: Mortgage Calculator - Periodic Payment
+      description: Calculate the periodic payment for the mortgage
+      tags:
+        - Financial Planning
+      operationId: mortgageCalculatorPeriodicPayment
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: mortgageCalculatorPeriodicPaymentRequest
+          schema:
+            $ref: '#/definitions/mortgageCalculatorPeriodicPaymentRequest'
+          description: Request payload for Mortgage Calculator - Periodic Payment
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /retirement_calculator/expenses:
+    post:
+      summary: Retirement Calculator - Expenses
+      description: Calculate the achievable retirement expenses
+      tags:
+        - Financial Planning
+      operationId: retirementCalculatorExpenses
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: retirementCalculatorExpensesRequest
+          schema:
+            $ref: '#/definitions/retirementCalculatorExpensesRequest'
+          description: Request payload for Retirement Calculator - Expenses
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /retirement_calculator/deposit_amount:
+    post:
+      summary: Retirement Calculator - Deposit Amount
+      description: Calculate the necessary period deposit amount to achieve the retirement expenses
+      tags:
+        - Financial Planning
+      operationId: retirementCalculatorDepositAmount
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: retirementCalculatorDepositAmountRequest
+          schema:
+            $ref: '#/definitions/retirementCalculatorDepositAmountRequest'
+          description: Request payload for Retirement Calculator - Deposit AMount
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /retirement_calculator/percent_covered:
+    post:
+      summary: Retirement Calculator - Percent Covered
+      description: Calculate the achievable percentage of retirement expenses that can be covered
+      tags:
+        - Financial Planning
+      operationId: retirementCalculatorPercentCovered
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: retirementCalculatorPercentCoveredRequest
+          schema:
+            $ref: '#/definitions/retirementCalculatorPercentCoveredRequest'
+          description: Request payload for Retirement Calculator - Percent Covered
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /diversification_score:
+    post:
+      summary: Diversification Score
+      description: Assess how well a group of investments is diversified
+      tags:
+        - Financial Health
+      operationId: diversificationScore
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: diversificationScoreRequest
+          schema:
+            $ref: '#/definitions/diversificationScoreRequest'
+          description: Request payload for Diversification Score
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /emergency_fund_calculator:
+    post:
+      summary: Emergency Fund Calculator
+      description: Calculate a target emergency fund amount and savings plan
+      tags:
+        - Financial Health
+      operationId: emergencyFundCalculator
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: emergencyFundCalculatorRequest
+          schema:
+            $ref: '#/definitions/emergencyFundCalculatorRequest'
+          description: Request payload for Emergency Fund Calculator
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /portfolio_optimization_score:
+    post:
+      summary: Portfolio Optimization Score
+      description: Analyze a group of investments against the optimized result
+      tags:
+        - Financial Health
+      operationId: portfolioOptimizationScore
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: portfolioOptimizationScoreRequest
+          schema:
+            $ref: '#/definitions/portfolioOptimizationScoreRequest'
+          description: Request payload for Portfolio Optimization Score
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /financial_health_check:
+    post:
+      summary: Financial Health Check
+      description: Calculate a series of financial ratios to assess financial health
+      tags:
+        - Financial Health
+      operationId: financialHealthCheck
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: financialHealthCheckRequest
+          schema:
+            $ref: '#/definitions/financialHealthCheckRequest'
+          description: Request payload for Financial Health Check
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /budget_calculator:
+    post:
+      summary: Budget Calculator
+      description: Analyze spending against a defined budget
+      tags:
+        - Personal Financial Management
+      operationId: budgetCalculator
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: budgetCalculatorRequest
+          schema:
+            $ref: '#/definitions/budgetCalculatorRequest'
+          description: Request payload for Budget Calculator
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /cash_flow_analysis:
+    post:
+      summary: Cash Flow Analysis
+      description: 'Analyze income, expenses, and net income'
+      tags:
+        - Personal Financial Management
+      operationId: cashFlowAnalysis
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: cashFlowAnalysisRequest
+          schema:
+            $ref: '#/definitions/cashFlowAnalysisRequest'
+          description: Request payload for Cash Flow Analysis
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /financial_picture:
+    post:
+      summary: Financial Picture
+      description: 'Assess assets, liabilities, and net worth'
+      tags:
+        - Personal Financial Management
+      operationId: financialPicture
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: financialPictureRequest
+          schema:
+            $ref: '#/definitions/financialPictureRequest'
+          description: Request payload for Financial Picture
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+swagger: '2.0'
+definitions:
+  GuaranteedRateBenefit:
+    type: object
+    properties:
+      min_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      end_period:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 1
+      max_rate:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: -1
+      start_period:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
+  AnnuityDepositSchedule:
+    type: object
+    properties:
+      deposit_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      adjust_deposit_for_inflation:
+        type: boolean
+        default: true
+      deposit_amount:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+  variableAnnuityRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+      guaranteed_rate_benefit:
+        type: array
+        default: []
+        items:
+          default:
+            start_period: 1
+            end_period: null
+            min_rate: 0
+            max_rate: null
+          allOf:
+            - $ref: '#/definitions/GuaranteedRateBenefit'
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      guaranteed_accumulation_benefit:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      start_date:
+        type: string
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      p:
+        type: number
+        default: 50
+        minimum: 0
+        maximum: 100
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/AnnuityDepositSchedule'
+      remove_outliers:
+        type: boolean
+        default: false
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+        maximum: 20
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      annuitization_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 1
+      end_date:
+        type: string
+      use_proxy_data:
+        type: boolean
+        default: false
+      result_type:
+        type: string
+        default: median
+        enum:
+          - mean
+          - median
+          - custom
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+    required:
+      - accumulation_horizon
+      - decumulation_horizon
+  annuityCalculatorDecumulationHorizonRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+        maximum: 20
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 1
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/AnnuityDepositSchedule'
+      portfolio_return:
+        type: number
+        format: float
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - accumulation_horizon
+      - annuity_amount
+      - portfolio_return
+  annuityCalculatorAccumulationHorizonRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+        maximum: 20
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 1
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/AnnuityDepositSchedule'
+      portfolio_return:
+        type: number
+        format: float
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - annuity_amount
+      - decumulation_horizon
+      - portfolio_return
+  annuityCalculatorInitialBalanceRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+        maximum: 20
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 1
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/AnnuityDepositSchedule'
+      portfolio_return:
+        type: number
+        format: float
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - accumulation_horizon
+      - annuity_amount
+      - decumulation_horizon
+      - portfolio_return
+  annuityCalculatorDepositAmountRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+        maximum: 20
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 1
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/AnnuityDepositSchedule'
+      portfolio_return:
+        type: number
+        format: float
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - accumulation_horizon
+      - annuity_amount
+      - decumulation_horizon
+      - portfolio_return
+  annuityCalculatorAnnuityAmountRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      annuity_amount:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+        maximum: 20
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 1
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/AnnuityDepositSchedule'
+      portfolio_return:
+        type: number
+        format: float
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - accumulation_horizon
+      - decumulation_horizon
+      - portfolio_return
+  RecommendationConfig:
+    type: object
+    properties:
+      dep_max:
+        type: number
+        default: null
+        x-nullable: true
+        minimum: 0
+      dep_min:
+        type: number
+        default: 0
+        minimum: 0
+      horizon_max:
+        type: integer
+        format: int32
+        default: 64
+        minimum: 0
+      recommended_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      inv_min:
+        type: number
+        default: 0
+        minimum: 0
+      recommend:
+        type: boolean
+        default: true
+      inv_max:
+        type: number
+        default: null
+        x-nullable: true
+        minimum: 0
+      horizon_min:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 0
+  GoalWithdrawalConfig:
+    type: object
+    properties:
+      with_amount:
+        type: number
+        minimum: 0
+      with_end_reference:
+        type: string
+        default: d_end
+        enum:
+          - a_end
+          - d_end
+      with_start_period:
+        type: integer
+        format: int32
+        default: 0
+      with_start_reference:
+        type: string
+        default: a_end
+        enum:
+          - a_end
+          - d_end
+      with_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      with_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      with_end_period:
+        type: integer
+        format: int32
+        default: 0
+  DecumulationGoalDepositConfig:
+    type: object
+    properties:
+      dep_end_period:
+        type: integer
+        format: int32
+        default: 0
+      dep_start_period:
+        type: integer
+        format: int32
+        default: 0
+      dep_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      dep_amount:
+        type: number
+        default: 0
+        minimum: 0
+      dep_start_reference:
+        type: string
+        default: a_start
+        enum:
+          - a_start
+          - a_end
+          - d_end
+      dep_end_reference:
+        type: string
+        default: a_end
+        enum:
+          - a_start
+          - a_end
+          - d_end
+      dep_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+  goalDecumulationStatusRequest:
+    type: object
+    properties:
+      p_risk:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      compounding_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      recommend_type:
+        type: string
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      horizon_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      recommendation_config:
+        default:
+          recommend: true
+          inv_min: 0
+          inv_max: null
+          dep_min: 0
+          dep_max: null
+          recommended_inflation: 0
+          horizon_min: 1
+          horizon_max: 64
+        allOf:
+          - $ref: '#/definitions/RecommendationConfig'
+      remove_outliers:
+        type: boolean
+        default: true
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      withdrawal_config:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/GoalWithdrawalConfig'
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      curr_inv:
+        type: number
+        minimum: 0
+      d_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      goal_id:
+        type: string
+        format: uuid
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      p_ret:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        items:
+          default:
+            dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+          allOf:
+            - $ref: '#/definitions/DecumulationGoalDepositConfig'
+      client_id:
+        type: string
+        format: uuid
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      a_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+    required:
+      - p_ret
+      - p_risk
+  RecommendationConfig1:
+    type: object
+    properties:
+      dep_max:
+        type: number
+        default: null
+        x-nullable: true
+        minimum: 0
+      dep_min:
+        type: number
+        default: 0
+        minimum: 0
+      horizon_max:
+        type: integer
+        format: int32
+        default: 64
+        minimum: 0
+      recommended_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      inv_min:
+        type: number
+        default: 0
+        minimum: 0
+      inv_max:
+        type: number
+        default: null
+        x-nullable: true
+        minimum: 0
+      horizon_min:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 0
+  goalDecumulationRecommendationRequest:
+    type: object
+    properties:
+      p_risk:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      compounding_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      recommend_type:
+        type: string
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      horizon_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      recommendation_config:
+        default:
+          recommend: true
+          inv_min: 0
+          inv_max: null
+          dep_min: 0
+          dep_max: null
+          recommended_inflation: 0
+          horizon_min: 1
+          horizon_max: 64
+        allOf:
+          - $ref: '#/definitions/RecommendationConfig1'
+      remove_outliers:
+        type: boolean
+        default: true
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      withdrawal_config:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/GoalWithdrawalConfig'
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      curr_inv:
+        type: number
+        minimum: 0
+      d_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      goal_id:
+        type: string
+        format: uuid
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      p_ret:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        items:
+          default:
+            dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+          allOf:
+            - $ref: '#/definitions/DecumulationGoalDepositConfig'
+      client_id:
+        type: string
+        format: uuid
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      a_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+    required:
+      - p_ret
+      - p_risk
+  WConfig:
+    type: object
+    properties:
+      w_min_minor:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 1
+      w_min_major:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 1
+      w_max_major:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 1
+      w_max_minor:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 1
+      cash_amount:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 1
+    required:
+      - cash_amount
+      - w_max_major
+      - w_max_minor
+      - w_min_major
+      - w_min_minor
+  OptConfig:
+    type: object
+    properties:
+      tickers:
+        type: array
+        minimum: 1
+        minItems: 1
+        items:
+          type: string
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      w_asset_config:
+        type: object
+        default: {}
+      w_config:
+        $ref: '#/definitions/WConfig'
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      min_assets:
+        type: integer
+        format: int32
+        minimum: 1
+      sec_types:
+        type: array
+        minItems: 1
+        items:
+          type: string
+          enum:
+            - major
+            - minor
+            - cash
+    required:
+      - min_assets
+      - sec_types
+      - tickers
+      - w_config
+  goalDecumulationAllocationRequest:
+    type: object
+    properties:
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      opt_config:
+        default: null
+        x-nullable: true
+        allOf:
+          - $ref: '#/definitions/OptConfig'
+      compounding_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      recommend_type:
+        type: string
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      horizon_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      recommendation_config:
+        default:
+          recommend: true
+          inv_min: 0
+          inv_max: null
+          dep_min: 0
+          dep_max: null
+          recommended_inflation: 0
+          horizon_min: 1
+          horizon_max: 64
+        allOf:
+          - $ref: '#/definitions/RecommendationConfig'
+      allocations:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      remove_outliers:
+        type: boolean
+        default: true
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      withdrawal_config:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/GoalWithdrawalConfig'
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      curr_inv:
+        type: number
+        minimum: 0
+      d_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      allocation_method:
+        type: string
+        enum:
+          - select
+          - create
+      goal_id:
+        type: string
+        format: uuid
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      risk_score:
+        type: number
+        default: 50
+        minimum: 0
+        maximum: 100
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        items:
+          default:
+            dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+          allOf:
+            - $ref: '#/definitions/DecumulationGoalDepositConfig'
+      use_proxy_data:
+        type: boolean
+        default: false
+      client_id:
+        type: string
+        format: uuid
+      allocation_priority:
+        type: string
+        enum:
+          - goal
+          - risk
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      a_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+    required:
+      - allocation_method
+      - allocation_priority
+  GoalConfig:
+    type: object
+    properties:
+      goal_amount:
+        type: number
+        minimum: 0
+      goal_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+  AccumulationGoalDepositConfig:
+    type: object
+    properties:
+      dep_end_period:
+        type: integer
+        format: int32
+        default: 0
+      dep_start_period:
+        type: integer
+        format: int32
+        default: 0
+      dep_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      dep_amount:
+        type: number
+        default: 0
+        minimum: 0
+      dep_start_reference:
+        type: string
+        default: a_start
+        enum:
+          - a_start
+          - a_end
+      dep_end_reference:
+        type: string
+        default: a_end
+        enum:
+          - a_start
+          - a_end
+      dep_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+  goalAccumulationRecommendationRequest:
+    type: object
+    properties:
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      compounding_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      curr_inv:
+        type: number
+        minimum: 0
+      goal_config:
+        default:
+          goal_inflation: 0
+        allOf:
+          - $ref: '#/definitions/GoalConfig'
+      p_risk:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      horizon_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      recommendation_config:
+        default:
+          recommend: true
+          inv_min: 0
+          inv_max: null
+          dep_min: 0
+          dep_max: null
+          recommended_inflation: 0
+          horizon_min: 1
+          horizon_max: 64
+        allOf:
+          - $ref: '#/definitions/RecommendationConfig1'
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        items:
+          default:
+            dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+          allOf:
+            - $ref: '#/definitions/AccumulationGoalDepositConfig'
+      goal_id:
+        type: string
+        format: uuid
+      horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      client_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      remove_outliers:
+        type: boolean
+        default: true
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
+      recommend_type:
+        type: string
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      p_ret:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - p_ret
+      - p_risk
+  goalAccumulationAllocationRequest:
+    type: object
+    properties:
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      opt_config:
+        default: null
+        x-nullable: true
+        allOf:
+          - $ref: '#/definitions/OptConfig'
+      compounding_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      recommend_type:
+        type: string
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      horizon_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      recommendation_config:
+        default:
+          recommend: true
+          inv_min: 0
+          inv_max: null
+          dep_min: 0
+          dep_max: null
+          recommended_inflation: 0
+          horizon_min: 1
+          horizon_max: 64
+        allOf:
+          - $ref: '#/definitions/RecommendationConfig'
+      allocations:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      remove_outliers:
+        type: boolean
+        default: true
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      curr_inv:
+        type: number
+        minimum: 0
+      goal_config:
+        default:
+          goal_inflation: 0
+        allOf:
+          - $ref: '#/definitions/GoalConfig'
+      allocation_method:
+        type: string
+        enum:
+          - select
+          - create
+      goal_id:
+        type: string
+        format: uuid
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      risk_score:
+        type: number
+        default: 50
+        minimum: 0
+        maximum: 100
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        items:
+          default:
+            dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+          allOf:
+            - $ref: '#/definitions/AccumulationGoalDepositConfig'
+      use_proxy_data:
+        type: boolean
+        default: false
+      client_id:
+        type: string
+        format: uuid
+      allocation_priority:
+        type: string
+        enum:
+          - goal
+          - risk
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+    required:
+      - allocation_method
+      - allocation_priority
+  goalAccumulationStatusRequest:
+    type: object
+    properties:
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      compounding_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      curr_inv:
+        type: number
+        minimum: 0
+      goal_config:
+        default:
+          goal_inflation: 0
+        allOf:
+          - $ref: '#/definitions/GoalConfig'
+      p_risk:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      horizon_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      recommendation_config:
+        default:
+          recommend: true
+          inv_min: 0
+          inv_max: null
+          dep_min: 0
+          dep_max: null
+          recommended_inflation: 0
+          horizon_min: 1
+          horizon_max: 64
+        allOf:
+          - $ref: '#/definitions/RecommendationConfig'
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        items:
+          default:
+            dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+          allOf:
+            - $ref: '#/definitions/AccumulationGoalDepositConfig'
+      goal_id:
+        type: string
+        format: uuid
+      horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      client_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      remove_outliers:
+        type: boolean
+        default: true
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
+      recommend_type:
+        type: string
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      p_ret:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - p_ret
+      - p_risk
+  mvoRequest:
+    type: object
+    properties:
+      tgt_type:
+        type: string
+        default: null
+        enum:
+          - risk
+          - return
+        x-nullable: true
+      tickers:
+        type: array
+        minimum: 1
+        minItems: 1
+        items:
+          type: string
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      w_asset_config:
+        type: object
+        default: {}
+      w_config:
+        $ref: '#/definitions/WConfig'
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      tgt_val:
+        type: number
+        format: float
+        default: 0
+      min_assets:
+        type: integer
+        format: int32
+        minimum: 1
+      sec_types:
+        type: array
+        minItems: 1
+        items:
+          type: string
+          enum:
+            - major
+            - minor
+            - cash
+    required:
+      - min_assets
+      - sec_types
+      - tickers
+      - w_config
+  Settings:
+    type: object
+    properties:
+      rebalance_period:
+        type: integer
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+      period_rebal:
+        type: boolean
+      default_drift_factor:
+        type: number
+        format: float
+        minimum: 0
+      tax_efficiency_id:
+        type: integer
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+      drift_rebal:
+        type: boolean
+      downside:
+        type: boolean
+  rebalancingSignalRequest:
+    type: object
+    properties:
+      update_model:
+        type: boolean
+        default: false
+      end_date:
+        type: string
+        format: date
+      model_id:
+        type: string
+        format: uuid
+      start_date:
+        type: string
+        format: date
+      settings:
+        default: {}
+        allOf:
+          - $ref: '#/definitions/Settings'
+      initial_weights:
+        type: object
+    required:
+      - end_date
+      - start_date
+  riskScoreRequest:
+    type: object
+    properties:
+      questionnaire_id:
+        type: string
+        format: uuid
+      weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+      max_answers:
+        type: array
+        items:
+          type: number
+          minimum: 0
+      client_id:
+        type: string
+        format: uuid
+      post_score:
+        type: boolean
+        default: false
+      answers:
+        type: array
+        items:
+          type: number
+          minimum: 0
+    required:
+      - max_answers
+  dimensionalRiskScoreRequest:
+    type: object
+    properties:
+      questionnaire_id:
+        type: string
+        format: uuid
+      dims:
+        type: array
+        items:
+          type: string
+      dim_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+      answer_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+      max_answers:
+        type: array
+        items:
+          type: number
+          minimum: 0
+      client_id:
+        type: string
+        format: uuid
+      post_score:
+        type: boolean
+        default: false
+      answer_dims:
+        type: array
+        items:
+          type: array
+          items:
+            type: string
+      answers:
+        type: array
+        items:
+          type: number
+          minimum: 0
+    required:
+      - answer_dims
+      - dims
+      - max_answers
+  riskAllocationRequest:
+    type: object
+    properties:
+      risk_score:
+        type: number
+        default: 50
+        minimum: 0
+        maximum: 100
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      opt_config:
+        default: null
+        x-nullable: true
+        allOf:
+          - $ref: '#/definitions/OptConfig'
+      allocations:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      allocation_method:
+        type: string
+        enum:
+          - select
+          - create
+      use_proxy_data:
+        type: boolean
+        default: false
+      client_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+    required:
+      - allocation_method
+  eventStudyRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      events:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          enum:
+            - dot_com_bubble
+            - 2008_financial_crisis
+            - brexit
+            - 2011_black_monday
+            - september_eleventh
+            - 1987_black_monday
+            - 1992_black_wednesday
+            - 1997_asian_financial_crisis
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+  backtestRequest:
+    type: object
+    properties:
+      stats:
+        type: boolean
+        default: true
+      asset_sizes:
+        type: boolean
+        default: true
+      holdings:
+        type: boolean
+        default: true
+      trades:
+        type: boolean
+        default: true
+      end_date:
+        type: string
+        format: date
+      model_id:
+        type: string
+        format: uuid
+      start_date:
+        type: string
+        format: date
+      settings:
+        default: {}
+        allOf:
+          - $ref: '#/definitions/Settings'
+      initial_weights:
+        type: object
+        default: null
+        x-nullable: true
+      asset_size:
+        type: number
+        default: 1000
+        minimum: 0
+    required:
+      - end_date
+      - start_date
+  monteCarloRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      cf:
+        type: array
+        minItems: 1
+        items:
+          type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            type: number
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      init_bal:
+        type: number
+        default: 100
+        minimum: 0
+      frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      min_sample:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: -1
+      p:
+        type: array
+        default:
+          - 50
+        items:
+          type: number
+          minimum: 0
+          maximum: 100
+      remove_outliers:
+        type: boolean
+        default: false
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      max_sample:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: -1
+      ret_mod:
+        type: array
+        default:
+          - 0
+        items:
+          type: number
+          format: float
+          minimum: -1
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      min_bal:
+        type: array
+        default:
+          - 0
+        items:
+          type: number
+      max_bal:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+      mu:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
+      use_proxy_data:
+        type: boolean
+        default: false
+      sigma:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      result_type:
+        type: string
+        default: raw
+        enum:
+          - raw
+          - custom
+          - median
+          - mean
+          - tens
+    required:
+      - cf
+  SensitivityFactor:
+    type: object
+    properties:
+      lag:
+        type: integer
+        format: int32
+        default: 0
+        minimum: 0
+      ticker:
+        type: string
+      change_duration:
+        type: integer
+        format: int32
+        minimum: 1
+      change_amount:
+        type: number
+        format: float
+        minimum: -1
+    required:
+      - change_amount
+      - change_duration
+      - ticker
+  sensitivityAnalysisRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      sensitivity_factor:
+        $ref: '#/definitions/SensitivityFactor'
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      frequency_interval:
+        type: string
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+    required:
+      - frequency_interval
+      - sensitivity_factor
+  scenarioAnalysisRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      scenario:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/SensitivityFactor'
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      frequency_interval:
+        type: string
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+    required:
+      - frequency_interval
+      - scenario
+  SavingsDepositSchedule:
+    type: object
+    properties:
+      deposit_duration:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 1
+      deposit_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      adjust_deposit_for_inflation:
+        type: boolean
+        default: true
+      deposit_amount:
+        type: number
+        default: 0
+        minimum: 0
+  savingsCalculatorRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      return_schedule:
+        type: array
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: -1
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      horizon_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        type: array
+        default:
+          - deposit_amount: 0
+            deposit_frequency_interval: year
+            adjust_deposit_for_inflation: true
+        items:
+          $ref: '#/definitions/SavingsDepositSchedule'
+      initial_balance:
+        type: number
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - horizon
+      - return_schedule
+  portfolioWhatIfRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      current_portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      current_portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      end_date:
+        type: string
+      start_date:
+        type: string
+      altered_portfolio_weights:
+        type: array
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: 0
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      altered_portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+    required:
+      - altered_portfolio_weights
+  EducationConfig:
+    type: object
+    properties:
+      total_annual_cost:
+        type: number
+        minimum: 0
+      end_age:
+        type: integer
+        format: int32
+        minimum: 0
+      start_age:
+        type: integer
+        format: int32
+        minimum: 0
+    required:
+      - end_age
+      - start_age
+      - total_annual_cost
+  ChildrenEducationConfig:
+    type: object
+    properties:
+      current_age:
+        type: integer
+        format: int32
+        minimum: 0
+      education_config:
+        type: array
+        items:
+          $ref: '#/definitions/EducationConfig'
+    required:
+      - current_age
+      - education_config
+  BeneficiaryBequestConfig:
+    type: object
+    properties:
+      bequest_duration:
+        type: integer
+        format: int32
+        default: 10
+        minimum: 1
+      bequest_amount:
+        type: number
+        minimum: 0
+      years_until_bequest:
+        type: integer
+        format: int32
+        default: 0
+        minimum: 0
+    required:
+      - bequest_amount
+  IncomeConfig:
+    type: object
+    properties:
+      annual_net_take_home_pay:
+        type: number
+        minimum: 0
+      income_benefit_duration:
+        type: integer
+        format: int32
+        default: 10
+        minimum: 1
+      percentage_of_income_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+    required:
+      - annual_net_take_home_pay
+  lifeInsuranceNeedsCalculatorRequest:
+    type: object
+    properties:
+      liquid_assets:
+        type: number
+        default: 0
+        minimum: 0
+      end_of_life_expenses:
+        type: number
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      children_education_config:
+        type: array
+        items:
+          $ref: '#/definitions/ChildrenEducationConfig'
+      beneficiary_bequest_config:
+        type: array
+        items:
+          $ref: '#/definitions/BeneficiaryBequestConfig'
+      education_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      other_debt:
+        type: number
+        minimum: 0
+      client_id:
+        type: string
+        format: uuid
+      interest_rate:
+        type: number
+        format: float
+        minimum: -1
+      benefit_amount_rounding:
+        type: integer
+        format: int32
+        default: 0
+        minimum: 0
+        maximum: 12
+      margin_of_error:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      income_config:
+        type: array
+        items:
+          $ref: '#/definitions/IncomeConfig'
+      existing_life_insurance:
+        type: number
+        default: 0
+        minimum: 0
+      mortgage_balance:
+        type: number
+        minimum: 0
+    required:
+      - interest_rate
+  CalculatorDepositSchedule:
+    type: object
+    properties:
+      adjust_deposit_for_inflation:
+        type: boolean
+        default: true
+      deposit_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - month
+          - quarter
+          - week
+          - day
+  educationCalculatorDepositAmountRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      education_inflation_rate:
+        type: number
+        format: float
+        default: 0.05
+        minimum: -1
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule'
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      total_annual_cost:
+        type: number
+        format: float
+        minimum: 0
+      percent_of_costs_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - accumulation_horizon
+      - decumulation_horizon
+      - portfolio_return
+      - total_annual_cost
+  CalculatorDepositSchedule1:
+    type: object
+    properties:
+      deposit_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - month
+          - quarter
+          - week
+          - day
+      adjust_deposit_for_inflation:
+        type: boolean
+        default: true
+      deposit_amount:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+  educationCalculatorPercentCoveredRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      education_inflation_rate:
+        type: number
+        format: float
+        default: 0.05
+        minimum: -1
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule1'
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      total_annual_cost:
+        type: number
+        format: float
+        minimum: 0
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - accumulation_horizon
+      - decumulation_horizon
+      - portfolio_return
+      - total_annual_cost
+  educationCalculatorAnnualCostRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      decumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      education_inflation_rate:
+        type: number
+        format: float
+        default: 0.05
+        minimum: -1
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule1'
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      percent_of_costs_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+    required:
+      - accumulation_horizon
+      - decumulation_horizon
+      - portfolio_return
+  purchaseCalculatorHorizonRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      current_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      investment_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule1'
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      purchase_amount:
+        type: number
+        format: float
+        minimum: 0
+    required:
+      - portfolio_return
+      - purchase_amount
+  purchaseCalculatorDepositAmountRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      purchase_amount:
+        type: number
+        format: float
+        minimum: 0
+      purchase_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      horizon_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      investment_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule'
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      current_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+    required:
+      - portfolio_return
+      - purchase_amount
+      - purchase_horizon
+  purchaseCalculatorAmountRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      purchase_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      horizon_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      investment_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule1'
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      current_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+    required:
+      - portfolio_return
+      - purchase_horizon
+  mortgageCalculatorHomePriceRequest:
+    type: object
+    properties:
+      mortgage_term:
+        type: integer
+        format: int32
+        default: 360
+        minimum: 0
+        maximum: 600
+      interest_rate:
+        type: number
+        format: float
+        default: 0.04
+        minimum: -1
+      down_payment:
+        type: number
+        format: float
+        minimum: 0
+      periodic_payment:
+        type: number
+        format: float
+        minimum: 0
+    required:
+      - down_payment
+      - periodic_payment
+  mortgageCalculatorDownPaymentRequest:
+    type: object
+    properties:
+      mortgage_term:
+        type: integer
+        format: int32
+        default: 360
+        minimum: 0
+        maximum: 600
+      home_price:
+        type: number
+        format: float
+        minimum: 0
+      interest_rate:
+        type: number
+        format: float
+        default: 0.04
+        minimum: -1
+      periodic_payment:
+        type: number
+        format: float
+        minimum: 0
+    required:
+      - home_price
+      - periodic_payment
+  mortgageCalculatorPeriodicPaymentRequest:
+    type: object
+    properties:
+      mortgage_term:
+        type: integer
+        format: int32
+        default: 360
+        minimum: 0
+        maximum: 600
+      home_price:
+        type: number
+        format: float
+        minimum: 0
+      interest_rate:
+        type: number
+        format: float
+        default: 0.04
+        minimum: -1
+      down_payment:
+        type: number
+        format: float
+        minimum: 0
+    required:
+      - down_payment
+      - home_price
+  retirementCalculatorExpensesRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      current_age:
+        type: integer
+        format: int32
+        minimum: 0
+      retirement_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      retirement_income:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      retirement_age:
+        type: integer
+        format: int32
+        default: 65
+        minimum: 0
+      percent_of_expenses_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      retirement_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule1'
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      death_age:
+        type: integer
+        format: int32
+        minimum: 0
+    required:
+      - current_age
+      - death_age
+      - portfolio_return
+  retirementCalculatorDepositAmountRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      current_age:
+        type: integer
+        format: int32
+        minimum: 0
+      retirement_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      retirement_income:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      retirement_age:
+        type: integer
+        format: int32
+        default: 65
+        minimum: 0
+      retirement_expenses:
+        type: number
+        format: float
+        minimum: 0
+      percent_of_expenses_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      retirement_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule'
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      death_age:
+        type: integer
+        format: int32
+        minimum: 0
+    required:
+      - current_age
+      - death_age
+      - portfolio_return
+      - retirement_expenses
+  retirementCalculatorPercentCoveredRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      current_age:
+        type: integer
+        format: int32
+        minimum: 0
+      retirement_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      retirement_income:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      retirement_age:
+        type: integer
+        format: int32
+        default: 65
+        minimum: 0
+      retirement_expenses:
+        type: number
+        format: float
+        minimum: 0
+      retirement_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      deposit_schedule:
+        default:
+          deposit_amount: 0
+          deposit_frequency_interval: year
+          adjust_deposit_for_inflation: true
+        allOf:
+          - $ref: '#/definitions/CalculatorDepositSchedule1'
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
+      death_age:
+        type: integer
+        format: int32
+        minimum: 0
+    required:
+      - current_age
+      - death_age
+      - portfolio_return
+      - retirement_expenses
+  diversificationScoreRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+  emergencyFundCalculatorRequest:
+    type: object
+    properties:
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      telecom_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      emergency_fund_duration:
+        type: integer
+        format: int32
+        minimum: 1
+      housing_cost:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      utility_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      insurance_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      transportation_costs:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      current_emergency_fund_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      other_expenses:
+        type: object
+      savings_horizon:
+        type: array
+        default:
+          - 3
+          - 6
+          - 9
+          - 12
+          - 15
+          - 18
+          - 21
+          - 24
+        items:
+          type: integer
+          format: int32
+          minimum: 0
+      debt_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      food_costs:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+          format: uuid
+      client_id:
+        type: string
+        format: uuid
+      interest_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      lookback_periods:
+        type: integer
+        format: int32
+        default: 3
+        minimum: 1
+      frequency_unit:
+        type: string
+        default: month
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+    required:
+      - emergency_fund_duration
+  WConfig1:
+    type: object
+    properties:
+      w_min_minor:
+        type: number
+        format: float
+        default: 0.05
+        minimum: 0
+        maximum: 1
+      w_min_major:
+        type: number
+        format: float
+        default: 0.05
+        minimum: 0
+        maximum: 1
+      w_max_major:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      w_max_minor:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      cash_amount:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+  OptConfig1:
+    type: object
+    properties:
+      tickers:
+        type: array
+        default: []
+        minimum: 1
+        items:
+          type: string
+      w_asset_config:
+        type: object
+        default: {}
+      w_config:
+        default:
+          w_min_minor: 0.05
+          w_max_minor: 1
+          w_min_major: 0.05
+          w_max_major: 1
+          cash_amount: 0
+        allOf:
+          - $ref: '#/definitions/WConfig1'
+      min_assets:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
+      sec_types:
+        type: array
+        default: []
+        items:
+          type: string
+          enum:
+            - major
+            - minor
+            - cash
+  portfolioOptimizationScoreRequest:
+    type: object
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      tgt_type:
+        type: string
+        default: return
+        enum:
+          - risk
+          - return
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        items:
+          type: string
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      opt_config:
+        default: {}
+        allOf:
+          - $ref: '#/definitions/OptConfig1'
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: 0
+  RatioTargets:
+    type: object
+    properties:
+      liquidity_ratio_liabilities:
+        type: number
+        format: float
+        default: 0.1
+        minimum: 0
+      current_ratio:
+        type: number
+        format: float
+        default: 0.5
+        minimum: 0
+      asset_allocation_ratio:
+        type: number
+        format: float
+        default: 1.5
+        minimum: 0
+      savings_ratio_gross:
+        type: number
+        format: float
+        default: 0.1
+        minimum: 0
+      liquidity_ratio_expenses:
+        type: number
+        format: float
+        default: 2.5
+        minimum: 0
+      savings_ratio_net:
+        type: number
+        format: float
+        default: 0.1
+        minimum: 0
+  financialHealthCheckRequest:
+    type: object
+    properties:
+      liquid_assets:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      net_monthly_income:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      non_liquid_assets:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      ratio_targets:
+        default:
+          liquidity_ratio_expenses: 2.5
+          liquidity_ratio_liabilities: 0.1
+          current_ratio: 0.5
+          savings_ratio_gross: 0.1
+          savings_ratio_net: 0.1
+          asset_allocation_ratio: 1.5
+        allOf:
+          - $ref: '#/definitions/RatioTargets'
+      short_term_liabilities:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      total_liabilities:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      monthly_expenses:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      client_id:
+        type: string
+        format: uuid
+      lookback_periods:
+        type: integer
+        format: int32
+        default: 3
+        minimum: 1
+      gross_annual_income:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+  budgetCalculatorRequest:
+    type: object
+    properties:
+      budget_id:
+        type: string
+        format: uuid
+      relative_lookback:
+        type: boolean
+        default: true
+      as_of_date:
+        type: string
+        format: date
+        default: '2020-06-01'
+      lookback_periods:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
+    required:
+      - budget_id
+  cashFlowAnalysisRequest:
+    type: object
+    properties:
+      show_history:
+        type: boolean
+        default: false
+      benchmark_start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      show_income_details:
+        type: boolean
+        default: false
+      benchmark_end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      client_id:
+        type: string
+        format: uuid
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      show_spending_details:
+        type: boolean
+        default: false
+      currency_code:
+        type: string
+        default: USD
+    required:
+      - client_id
+  financialPictureRequest:
+    type: object
+    properties:
+      show_history:
+        type: boolean
+        default: false
+      show_category_breakdown:
+        type: boolean
+        default: true
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      client_id:
+        type: string
+        format: uuid
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      show_change:
+        type: boolean
+        default: false
+      currency_code:
+        type: string
+        default: USD
+    required:
+      - client_id

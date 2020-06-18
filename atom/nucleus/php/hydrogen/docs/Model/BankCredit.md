@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **amount** | **double** | amount | 
 **category** | **string** | category | [optional] 
 **description** | **string** | description | [optional] 
-**location** | [**\com\hydrogen\Model\Location**](Location.md) |  | [optional] 
+**location** | [**\com\hydrogen\nucleus\Model\Location**](Location.md) |  | [optional] 
 **memo** | **string** | memo | [optional] 
 **merchant** | **string** | merchant | 
 **subcategory** | **string** | subcategory | [optional] 

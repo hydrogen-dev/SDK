@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.BenchmarkComposition();
+    instance = new HydrogenNucleusApi.BenchmarkComposition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('BenchmarkComposition', function() {
     it('should create an instance of BenchmarkComposition', function() {
       // uncomment below and update the code to test BenchmarkComposition
-      //var instane = new HydrogenAtomApi.BenchmarkComposition();
-      //expect(instance).to.be.a(HydrogenAtomApi.BenchmarkComposition);
+      //var instane = new HydrogenNucleusApi.BenchmarkComposition();
+      //expect(instance).to.be.a(HydrogenNucleusApi.BenchmarkComposition);
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.BenchmarkComposition();
+      //var instane = new HydrogenNucleusApi.BenchmarkComposition();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.BenchmarkComposition();
+      //var instane = new HydrogenNucleusApi.BenchmarkComposition();
       //expect(instance).to.be();
     });
 

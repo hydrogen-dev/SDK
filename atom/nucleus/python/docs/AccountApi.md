@@ -1,4 +1,4 @@
-# atom_api.AccountApi
+# nucleus_api.AccountApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -43,15 +43,15 @@ Create an account-allocation mapping for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -63,8 +63,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
-alloc_request = atom_api.AccountAllocationMapping() # AccountAllocationMapping | allocRequest
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+alloc_request = nucleus_api.AccountAllocationMapping() # AccountAllocationMapping | allocRequest
 
 try:
     # Create an account allocation
@@ -106,15 +106,15 @@ Create a new account type for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -126,8 +126,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
-account_type_request = atom_api.AccountType() # AccountType | accountTypeRequest
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+account_type_request = nucleus_api.AccountType() # AccountType | accountTypeRequest
 
 try:
     # Create an account type
@@ -169,15 +169,15 @@ Create an account under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -189,8 +189,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
-client_account_request = atom_api.Account() # Account | clientAccountRequest
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+client_account_request = nucleus_api.Account() # Account | clientAccountRequest
 
 try:
     # Create an account
@@ -232,15 +232,15 @@ Permanently delete an account-allocation mapping for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -252,7 +252,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
 
 try:
@@ -294,15 +294,15 @@ Delete an account permission
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -314,7 +314,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
 
 try:
@@ -357,15 +357,15 @@ Permanently delete a possible account type defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -377,7 +377,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
 account_type_id2 = 'account_type_id_example' # str | account_type_id
 
@@ -421,15 +421,15 @@ Permanently delete an account under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -441,7 +441,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
 
 try:
@@ -483,15 +483,15 @@ Get information for all accounts for all clients defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -503,7 +503,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -554,15 +554,15 @@ Get information for all account-allocation mappings for all accounts defined for
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -574,7 +574,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -625,15 +625,15 @@ Retrieve the information for a specific account-allocation mapping for an accoun
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -645,7 +645,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
 
 try:
@@ -688,15 +688,15 @@ Get a list of asset sizes by date for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -708,7 +708,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | Account Id
 end_date = '2013-10-20' # date | end date (optional)
 exclude_subledger = false # bool | exclude_subledger (optional) (default to false)
@@ -761,15 +761,15 @@ Get information for all account asset sizes
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -781,7 +781,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'date' # str | order_by (optional) (default to date)
@@ -830,15 +830,15 @@ List all Account overview
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -850,7 +850,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
 ascending = false # bool | ascending (optional) (default to false)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -897,15 +897,15 @@ Get an account permission
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -917,7 +917,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
 
 try:
@@ -960,15 +960,15 @@ List all account types defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -980,7 +980,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1031,15 +1031,15 @@ Get an account types defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1051,7 +1051,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
 account_type_id2 = 'account_type_id_example' # str | account_type_id
 
@@ -1096,15 +1096,15 @@ Retrieve the information for a specific account associated with a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1116,7 +1116,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
 
 try:
@@ -1159,15 +1159,15 @@ List all account permission
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1179,7 +1179,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1230,15 +1230,15 @@ Get information for all the securities that are currently being held by an accou
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1250,7 +1250,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
 end_date = 'end_date_example' # str | end date  (optional)
 get_latest = true # bool | true or false (optional)
@@ -1299,15 +1299,15 @@ Get the information for all transactions for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1319,7 +1319,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
 ascending = false # bool | ascending (optional) (default to false)
 end_date = 'null' # datetime | end_date (optional) (default to null)
@@ -1374,15 +1374,15 @@ create an account permission
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1394,8 +1394,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
-acl_client_permission_vo = atom_api.AclClientPermissionVO() # AclClientPermissionVO | aclClientPermissionVO
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+acl_client_permission_vo = nucleus_api.AclClientPermissionVO() # AclClientPermissionVO | aclClientPermissionVO
 
 try:
     # create an account permission
@@ -1437,15 +1437,15 @@ After creating an account, you may create portfolios for the account to track a 
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1457,9 +1457,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
-alloc_request = atom_api.AccountAllocationMapping() # AccountAllocationMapping | allocRequest
+alloc_request = nucleus_api.AccountAllocationMapping() # AccountAllocationMapping | allocRequest
 
 try:
     # Subscribe an account
@@ -1502,15 +1502,15 @@ Update the information for an account-allocation mapping.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1522,9 +1522,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
-account_allocation_mapping = atom_api.AccountAllocationMapping() # AccountAllocationMapping | account_allocation_mapping (optional)
+account_allocation_mapping = nucleus_api.AccountAllocationMapping() # AccountAllocationMapping | account_allocation_mapping (optional)
 
 try:
     # Update an account allocation
@@ -1567,15 +1567,15 @@ Update the information for a possible account type defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1587,8 +1587,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
-account_type = atom_api.AccountType() # AccountType | account_type
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+account_type = nucleus_api.AccountType() # AccountType | account_type
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
 
 try:
@@ -1632,15 +1632,15 @@ Update the information for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1652,8 +1652,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
-account = atom_api.Account() # Account | account
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+account = nucleus_api.Account() # Account | account
 account_id = 'account_id_example' # str | UUID account_id
 
 try:
@@ -1697,15 +1697,15 @@ Update an account permission
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1717,9 +1717,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-acl_client_permission_vo = atom_api.AclClientPermissionVO() # AclClientPermissionVO | aclClientPermissionVO
+acl_client_permission_vo = nucleus_api.AclClientPermissionVO() # AclClientPermissionVO | aclClientPermissionVO
 
 try:
     # Update an account permission

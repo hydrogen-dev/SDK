@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Allocation'), require('../model/AllocationAggregatedVO'), require('../model/AllocationComposition'), require('../model/DateDoubleVO'), require('../model/ModelHoldingAgg'), require('../model/PageAllocation'), require('../model/PageAllocationComposition'), require('../model/PageModelTransaction'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AllocationApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Allocation, root.HydrogenAtomApi.AllocationAggregatedVO, root.HydrogenAtomApi.AllocationComposition, root.HydrogenAtomApi.DateDoubleVO, root.HydrogenAtomApi.ModelHoldingAgg, root.HydrogenAtomApi.PageAllocation, root.HydrogenAtomApi.PageAllocationComposition, root.HydrogenAtomApi.PageModelTransaction);
+    root.HydrogenNucleusApi.AllocationApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Allocation, root.HydrogenNucleusApi.AllocationAggregatedVO, root.HydrogenNucleusApi.AllocationComposition, root.HydrogenNucleusApi.DateDoubleVO, root.HydrogenNucleusApi.ModelHoldingAgg, root.HydrogenNucleusApi.PageAllocation, root.HydrogenNucleusApi.PageAllocationComposition, root.HydrogenNucleusApi.PageModelTransaction);
   }
 }(this, function(ApiClient, Allocation, AllocationAggregatedVO, AllocationComposition, DateDoubleVO, ModelHoldingAgg, PageAllocation, PageAllocationComposition, PageModelTransaction) {
   'use strict';

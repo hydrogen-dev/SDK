@@ -14,10 +14,10 @@ Name | Type | Description | Notes
 **client_id** | **string** |  | [optional] 
 **mortgage_balance** | **float** |  | [optional] 
 **benefit_amount_rounding** | **int** |  | [optional] [default to 0]
-**income_config** | [**\com\hydrogen\Model\IncomeConfig[]**](IncomeConfig.md) |  | [optional] 
-**beneficiary_bequest_config** | [**\com\hydrogen\Model\BeneficiaryBequestConfig[]**](BeneficiaryBequestConfig.md) |  | [optional] 
+**income_config** | [**\com\hydrogen\proton\Model\IncomeConfig[]**](IncomeConfig.md) |  | [optional] 
+**beneficiary_bequest_config** | [**\com\hydrogen\proton\Model\BeneficiaryBequestConfig[]**](BeneficiaryBequestConfig.md) |  | [optional] 
 **general_inflation_rate** | **float** |  | [optional] [default to 0.0]
-**children_education_config** | [**\com\hydrogen\Model\ChildrenEducationConfig[]**](ChildrenEducationConfig.md) |  | [optional] 
+**children_education_config** | [**\com\hydrogen\proton\Model\ChildrenEducationConfig[]**](ChildrenEducationConfig.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

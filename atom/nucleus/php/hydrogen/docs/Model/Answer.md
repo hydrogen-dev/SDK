@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **label** | **string** | label | [optional] 
 **metadata** | **map[string,string]** | metadata | [optional] 
 **order_index** | **string** | orderIndex | [optional] 
-**question** | [**\com\hydrogen\Model\Question**](Question.md) |  | [optional] 
+**question** | [**\com\hydrogen\nucleus\Model\Question**](Question.md) |  | [optional] 
 **question_id** | **string** | questionId | [optional] 
 **tooltip** | **string** |  | [optional] 
 **value** | **string** | value | 

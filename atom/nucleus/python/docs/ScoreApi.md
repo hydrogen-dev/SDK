@@ -1,4 +1,4 @@
-# atom_api.ScoreApi
+# nucleus_api.ScoreApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -22,15 +22,15 @@ Create a score for a client, account, goal, portfolio, allocation, model, benchm
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -42,8 +42,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ScoreApi(atom_api.ApiClient(configuration))
-score = atom_api.Score() # Score | score
+api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
+score = nucleus_api.Score() # Score | score
 
 try:
     # Create a score
@@ -85,15 +85,15 @@ Retrieve the information for a specific score associated with a client, account,
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -105,7 +105,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ScoreApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score_id = 'score_id_example' # str | UUID score_id
 
 try:
@@ -148,15 +148,15 @@ Permanently delete a score
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -168,7 +168,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ScoreApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score_id = 'score_id_example' # str | UUID score_id
 
 try:
@@ -210,15 +210,15 @@ Get information for all scores stored for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -230,7 +230,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ScoreApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -281,15 +281,15 @@ Update the information for a score.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -301,8 +301,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ScoreApi(atom_api.ApiClient(configuration))
-score = atom_api.Score() # Score | score
+api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
+score = nucleus_api.Score() # Score | score
 score_id = 'score_id_example' # str | UUID score_id
 
 try:

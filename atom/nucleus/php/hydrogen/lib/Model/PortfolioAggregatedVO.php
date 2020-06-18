@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * PortfolioAggregatedVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,15 +57,15 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'asset_classes' => '\com\hydrogen\Model\SecurityDetailVO[]',
-        'categories' => '\com\hydrogen\Model\SecurityDetailVO[]',
+        'asset_classes' => '\com\hydrogen\nucleus\Model\SecurityDetailVO[]',
+        'categories' => '\com\hydrogen\nucleus\Model\SecurityDetailVO[]',
         'create_date' => '\DateTime',
         'description' => 'string',
-        'industries' => '\com\hydrogen\Model\SecurityDetailVO[]',
+        'industries' => '\com\hydrogen\nucleus\Model\SecurityDetailVO[]',
         'name' => 'string',
         'portfolio_id' => 'string',
-        'sectors' => '\com\hydrogen\Model\SecurityDetailVO[]',
-        'security_classes' => '\com\hydrogen\Model\SecurityDetailVO[]',
+        'sectors' => '\com\hydrogen\nucleus\Model\SecurityDetailVO[]',
+        'security_classes' => '\com\hydrogen\nucleus\Model\SecurityDetailVO[]',
         'update_date' => '\DateTime',
         'weight' => 'double'
     ];
@@ -267,7 +267,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Gets asset_classes
      *
-     * @return \com\hydrogen\Model\SecurityDetailVO[]
+     * @return \com\hydrogen\nucleus\Model\SecurityDetailVO[]
      */
     public function getAssetClasses()
     {
@@ -277,7 +277,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Sets asset_classes
      *
-     * @param \com\hydrogen\Model\SecurityDetailVO[] $asset_classes asset_classes
+     * @param \com\hydrogen\nucleus\Model\SecurityDetailVO[] $asset_classes asset_classes
      *
      * @return $this
      */
@@ -291,7 +291,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Gets categories
      *
-     * @return \com\hydrogen\Model\SecurityDetailVO[]
+     * @return \com\hydrogen\nucleus\Model\SecurityDetailVO[]
      */
     public function getCategories()
     {
@@ -301,7 +301,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Sets categories
      *
-     * @param \com\hydrogen\Model\SecurityDetailVO[] $categories categories
+     * @param \com\hydrogen\nucleus\Model\SecurityDetailVO[] $categories categories
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Gets industries
      *
-     * @return \com\hydrogen\Model\SecurityDetailVO[]
+     * @return \com\hydrogen\nucleus\Model\SecurityDetailVO[]
      */
     public function getIndustries()
     {
@@ -373,7 +373,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Sets industries
      *
-     * @param \com\hydrogen\Model\SecurityDetailVO[] $industries industries
+     * @param \com\hydrogen\nucleus\Model\SecurityDetailVO[] $industries industries
      *
      * @return $this
      */
@@ -435,7 +435,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Gets sectors
      *
-     * @return \com\hydrogen\Model\SecurityDetailVO[]
+     * @return \com\hydrogen\nucleus\Model\SecurityDetailVO[]
      */
     public function getSectors()
     {
@@ -445,7 +445,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Sets sectors
      *
-     * @param \com\hydrogen\Model\SecurityDetailVO[] $sectors sectors
+     * @param \com\hydrogen\nucleus\Model\SecurityDetailVO[] $sectors sectors
      *
      * @return $this
      */
@@ -459,7 +459,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Gets security_classes
      *
-     * @return \com\hydrogen\Model\SecurityDetailVO[]
+     * @return \com\hydrogen\nucleus\Model\SecurityDetailVO[]
      */
     public function getSecurityClasses()
     {
@@ -469,7 +469,7 @@ class PortfolioAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Sets security_classes
      *
-     * @param \com\hydrogen\Model\SecurityDetailVO[] $security_classes security_classes
+     * @param \com\hydrogen\nucleus\Model\SecurityDetailVO[] $security_classes security_classes
      *
      * @return $this
      */

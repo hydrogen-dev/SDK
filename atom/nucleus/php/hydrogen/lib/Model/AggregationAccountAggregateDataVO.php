@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AggregationAccountAggregateDataVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,11 +57,11 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'aggregation_account_balances' => '\com\hydrogen\Model\AggregationAccountBalanceAggregateDataVO',
-        'aggregation_account_details' => '\com\hydrogen\Model\AggregationAccountDetailsAggregateDataVO',
-        'aggregation_account_holdings' => '\com\hydrogen\Model\AggregationAccountHoldingAggregateDataVO[]',
+        'aggregation_account_balances' => '\com\hydrogen\nucleus\Model\AggregationAccountBalanceAggregateDataVO',
+        'aggregation_account_details' => '\com\hydrogen\nucleus\Model\AggregationAccountDetailsAggregateDataVO',
+        'aggregation_account_holdings' => '\com\hydrogen\nucleus\Model\AggregationAccountHoldingAggregateDataVO[]',
         'aggregation_account_id' => 'string',
-        'aggregation_account_transactions' => '\com\hydrogen\Model\AggregationAccountTransactionAggregateDataVO[]'
+        'aggregation_account_transactions' => '\com\hydrogen\nucleus\Model\AggregationAccountTransactionAggregateDataVO[]'
     ];
 
     /**
@@ -231,7 +231,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Gets aggregation_account_balances
      *
-     * @return \com\hydrogen\Model\AggregationAccountBalanceAggregateDataVO
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountBalanceAggregateDataVO
      */
     public function getAggregationAccountBalances()
     {
@@ -241,7 +241,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Sets aggregation_account_balances
      *
-     * @param \com\hydrogen\Model\AggregationAccountBalanceAggregateDataVO $aggregation_account_balances aggregation_account_balances
+     * @param \com\hydrogen\nucleus\Model\AggregationAccountBalanceAggregateDataVO $aggregation_account_balances aggregation_account_balances
      *
      * @return $this
      */
@@ -255,7 +255,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Gets aggregation_account_details
      *
-     * @return \com\hydrogen\Model\AggregationAccountDetailsAggregateDataVO
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountDetailsAggregateDataVO
      */
     public function getAggregationAccountDetails()
     {
@@ -265,7 +265,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Sets aggregation_account_details
      *
-     * @param \com\hydrogen\Model\AggregationAccountDetailsAggregateDataVO $aggregation_account_details aggregation_account_details
+     * @param \com\hydrogen\nucleus\Model\AggregationAccountDetailsAggregateDataVO $aggregation_account_details aggregation_account_details
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Gets aggregation_account_holdings
      *
-     * @return \com\hydrogen\Model\AggregationAccountHoldingAggregateDataVO[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountHoldingAggregateDataVO[]
      */
     public function getAggregationAccountHoldings()
     {
@@ -289,7 +289,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Sets aggregation_account_holdings
      *
-     * @param \com\hydrogen\Model\AggregationAccountHoldingAggregateDataVO[] $aggregation_account_holdings aggregation_account_holdings
+     * @param \com\hydrogen\nucleus\Model\AggregationAccountHoldingAggregateDataVO[] $aggregation_account_holdings aggregation_account_holdings
      *
      * @return $this
      */
@@ -327,7 +327,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Gets aggregation_account_transactions
      *
-     * @return \com\hydrogen\Model\AggregationAccountTransactionAggregateDataVO[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountTransactionAggregateDataVO[]
      */
     public function getAggregationAccountTransactions()
     {
@@ -337,7 +337,7 @@ class AggregationAccountAggregateDataVO implements ModelInterface, ArrayAccess
     /**
      * Sets aggregation_account_transactions
      *
-     * @param \com\hydrogen\Model\AggregationAccountTransactionAggregateDataVO[] $aggregation_account_transactions aggregation_account_transactions
+     * @param \com\hydrogen\nucleus\Model\AggregationAccountTransactionAggregateDataVO[] $aggregation_account_transactions aggregation_account_transactions
      *
      * @return $this
      */

@@ -1,4 +1,4 @@
-# com\hydrogen\DocumentApi
+# com\hydrogen\nucleus\DocumentApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createDocumentUsingPost**
-> \com\hydrogen\Model\Document createDocumentUsingPost($document_request)
+> \com\hydrogen\nucleus\Model\Document createDocumentUsingPost($document_request)
 
 Create a Document
 
@@ -21,29 +21,29 @@ Create a new Document for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DocumentApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DocumentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$document_request = new \com\hydrogen\Model\Document(); // \com\hydrogen\Model\Document | documentRequest
+$document_request = new \com\hydrogen\nucleus\Model\Document(); // \com\hydrogen\nucleus\Model\Document | documentRequest
 
 try {
     $result = $apiInstance->createDocumentUsingPost($document_request);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_request** | [**\com\hydrogen\Model\Document**](../Model/Document.md)| documentRequest |
+ **document_request** | [**\com\hydrogen\nucleus\Model\Document**](../Model/Document.md)| documentRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Document**](../Model/Document.md)
+[**\com\hydrogen\nucleus\Model\Document**](../Model/Document.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently delete a tenant document by Id
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DocumentApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DocumentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -139,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDocumentAllUsingGet**
-> \com\hydrogen\Model\PageDocument_ getDocumentAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageDocument_ getDocumentAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Documents
 
@@ -148,23 +148,23 @@ Get the information for all Documents
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DocumentApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DocumentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageDocument_**](../Model/PageDocument_.md)
+[**\com\hydrogen\nucleus\Model\PageDocument_**](../Model/PageDocument_.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDocumentUsingGet**
-> \com\hydrogen\Model\Document getDocumentUsingGet($document_id)
+> \com\hydrogen\nucleus\Model\Document getDocumentUsingGet($document_id)
 
 Retrieve a Tenant Document by Document Id
 
@@ -220,23 +220,23 @@ Retrieve the information for a Tenant Document by Document Id
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DocumentApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DocumentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Document**](../Model/Document.md)
+[**\com\hydrogen\nucleus\Model\Document**](../Model/Document.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDocumentUsingPut**
-> \com\hydrogen\Model\Document updateDocumentUsingPut($document, $document_id)
+> \com\hydrogen\nucleus\Model\Document updateDocumentUsingPut($document, $document_id)
 
 Update a Tenant Document
 
@@ -284,29 +284,29 @@ Updated the information for a Tenant Documents
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DocumentApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DocumentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$document = new \com\hydrogen\Model\Document(); // \com\hydrogen\Model\Document | document
+$document = new \com\hydrogen\nucleus\Model\Document(); // \com\hydrogen\nucleus\Model\Document | document
 $document_id = "document_id_example"; // string | UUID document_id
 
 try {
@@ -322,12 +322,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document** | [**\com\hydrogen\Model\Document**](../Model/Document.md)| document |
+ **document** | [**\com\hydrogen\nucleus\Model\Document**](../Model/Document.md)| document |
  **document_id** | [**string**](../Model/.md)| UUID document_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Document**](../Model/Document.md)
+[**\com\hydrogen\nucleus\Model\Document**](../Model/Document.md)
 
 ### Authorization
 

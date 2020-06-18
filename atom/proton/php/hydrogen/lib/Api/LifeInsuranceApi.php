@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\proton\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\proton\ApiException;
+use com\hydrogen\proton\Configuration;
+use com\hydrogen\proton\HeaderSelector;
+use com\hydrogen\proton\ObjectSerializer;
 
 /**
  * LifeInsuranceApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class LifeInsuranceApi
      *
      * Life Insurance Needs Calculator
      *
-     * @param  \com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
+     * @param  \com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -109,9 +109,9 @@ class LifeInsuranceApi
      *
      * Life Insurance Needs Calculator
      *
-     * @param  \com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
+     * @param  \com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -184,7 +184,7 @@ class LifeInsuranceApi
      *
      * Life Insurance Needs Calculator
      *
-     * @param  \com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
+     * @param  \com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,7 +204,7 @@ class LifeInsuranceApi
      *
      * Life Insurance Needs Calculator
      *
-     * @param  \com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
+     * @param  \com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -254,7 +254,7 @@ class LifeInsuranceApi
     /**
      * Create request for operation 'lifeInsuranceNeedsCalculator'
      *
-     * @param  \com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
+     * @param  \com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest $life_insurance_needs_calculator_request Request payload for Life Insurance Needs Calculator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

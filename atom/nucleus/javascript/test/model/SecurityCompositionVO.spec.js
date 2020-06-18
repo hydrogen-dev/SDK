@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.SecurityCompositionVO();
+    instance = new HydrogenNucleusApi.SecurityCompositionVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,91 +53,91 @@
   describe('SecurityCompositionVO', function() {
     it('should create an instance of SecurityCompositionVO', function() {
       // uncomment below and update the code to test SecurityCompositionVO
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.SecurityCompositionVO);
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.SecurityCompositionVO);
     });
 
     it('should have the property endDate (base name: "end_date")', function() {
       // uncomment below and update the code to test the property endDate
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityAssetClass (base name: "security_asset_class")', function() {
       // uncomment below and update the code to test the property securityAssetClass
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityCountries (base name: "security_countries")', function() {
       // uncomment below and update the code to test the property securityCountries
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityCreateDate (base name: "security_create_date")', function() {
       // uncomment below and update the code to test the property securityCreateDate
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityIndustry (base name: "security_industry")', function() {
       // uncomment below and update the code to test the property securityIndustry
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityName (base name: "security_name")', function() {
       // uncomment below and update the code to test the property securityName
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securitySecondaryId (base name: "security_secondary_id")', function() {
       // uncomment below and update the code to test the property securitySecondaryId
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securitySector (base name: "security_sector")', function() {
       // uncomment below and update the code to test the property securitySector
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securitySecurityClass (base name: "security_security_class")', function() {
       // uncomment below and update the code to test the property securitySecurityClass
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityTicker (base name: "security_ticker")', function() {
       // uncomment below and update the code to test the property securityTicker
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityUpdateDate (base name: "security_update_date")', function() {
       // uncomment below and update the code to test the property securityUpdateDate
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityWeight (base name: "security_weight")', function() {
       // uncomment below and update the code to test the property securityWeight
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property startDate (base name: "start_date")', function() {
       // uncomment below and update the code to test the property startDate
-      //var instane = new HydrogenAtomApi.SecurityCompositionVO();
+      //var instane = new HydrogenNucleusApi.SecurityCompositionVO();
       //expect(instance).to.be();
     });
 

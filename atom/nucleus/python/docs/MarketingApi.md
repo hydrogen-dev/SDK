@@ -1,4 +1,4 @@
-# atom_api.MarketingApi
+# nucleus_api.MarketingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -37,15 +37,15 @@ Create a new  campaign data record for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -57,8 +57,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
-campaign_data_request = atom_api.CampaignData() # CampaignData | campaignDataRequest
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
+campaign_data_request = nucleus_api.CampaignData() # CampaignData | campaignDataRequest
 
 try:
     # Create a campaign data record
@@ -100,15 +100,15 @@ Create a new campaign plan for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -120,8 +120,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
-campaign_plan_request = atom_api.CampaignPlan() # CampaignPlan | campaignPlanRequest
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
+campaign_plan_request = nucleus_api.CampaignPlan() # CampaignPlan | campaignPlanRequest
 
 try:
     # Create a campaign plan
@@ -163,15 +163,15 @@ Create a new campaign for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -183,8 +183,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
-campaign_request = atom_api.Campaign() # Campaign | campaignRequest
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
+campaign_request = nucleus_api.Campaign() # Campaign | campaignRequest
 
 try:
     # Create a campaign
@@ -226,15 +226,15 @@ We are adding a campaign association to a clientId or ip.  We create this associ
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -246,8 +246,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
-campaign_mapping_request = atom_api.ClientCampaignMapping() # ClientCampaignMapping | campaignMappingRequest
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
+campaign_mapping_request = nucleus_api.ClientCampaignMapping() # ClientCampaignMapping | campaignMappingRequest
 
 try:
     # Mark a client signing up through a campaign
@@ -289,15 +289,15 @@ Permanently delete a campaign data record
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -309,7 +309,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 campaign_data_id = 'campaign_data_id_example' # str | UUID campaign_data_id
 
 try:
@@ -351,15 +351,15 @@ Permanently delete a campaign plan
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -371,7 +371,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 campaign_plan_id = 'campaign_plan_id_example' # str | UUID campaign_plan_id
 
 try:
@@ -413,15 +413,15 @@ Permanently delete a campaign
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -433,7 +433,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 campaign_id = 'campaign_id_example' # str | Campaign Id
 
 try:
@@ -475,15 +475,15 @@ Permanently delete a clients/ips pair under a campaign
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -495,7 +495,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 client_campaign_id = 'client_campaign_id_example' # str | UUID client_campaign_id
 
 try:
@@ -537,15 +537,15 @@ Get details for all campaigns defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -557,7 +557,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -608,15 +608,15 @@ Get details for all campaign data defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -628,7 +628,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -679,15 +679,15 @@ Retrieve the information for a campaign data record
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -699,7 +699,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 campaign_data_id = 'campaign_data_id_example' # str | UUID campaign_data_id
 
 try:
@@ -742,15 +742,15 @@ Get details for all campaign plans defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -762,7 +762,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -813,15 +813,15 @@ Retrieve the information for a campaign plan
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -833,7 +833,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 campaign_plan_id = 'campaign_plan_id_example' # str | UUID campaign_plan_id
 
 try:
@@ -876,15 +876,15 @@ Retrieve the information for a campaign.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -896,7 +896,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 campaign_id = 'campaign_id_example' # str | Campaign Id
 
 try:
@@ -939,15 +939,15 @@ Get details for all clients/ips under a campaign
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -959,7 +959,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1010,15 +1010,15 @@ Retrieve the information for a clients/ips pair under a campaign
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1030,7 +1030,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 client_campaign_id = 'client_campaign_id_example' # str | UUID client_campaign_id
 
 try:
@@ -1073,15 +1073,15 @@ Updated the information for a campaign data record
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1093,8 +1093,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
-campaign_data = atom_api.CampaignPlan() # CampaignPlan | campaign_data
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
+campaign_data = nucleus_api.CampaignPlan() # CampaignPlan | campaign_data
 campaign_data_id = 'campaign_data_id_example' # str | UUID campaign_data_id
 
 try:
@@ -1138,15 +1138,15 @@ Updated the information for a campaign plan
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1158,8 +1158,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
-campaign_plan = atom_api.CampaignPlan() # CampaignPlan | campaign_plan
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
+campaign_plan = nucleus_api.CampaignPlan() # CampaignPlan | campaign_plan
 campaign_plan_id = 'campaign_plan_id_example' # str | UUID campaign_plan_id
 
 try:
@@ -1203,15 +1203,15 @@ Updated the information for a campaign
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1223,8 +1223,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
-campaign = atom_api.Campaign() # Campaign | campaign
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
+campaign = nucleus_api.Campaign() # Campaign | campaign
 campaign_id = 'campaign_id_example' # str | UUID campaign_id
 
 try:
@@ -1268,15 +1268,15 @@ Updated the information for clients/ips pair under a campaign
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1288,9 +1288,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.MarketingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.MarketingApi(nucleus_api.ApiClient(configuration))
 client_campaign_id = 'client_campaign_id_example' # str | UUID client_campaign_id
-json_node = atom_api.JsonNode() # JsonNode | jsonNode
+json_node = nucleus_api.JsonNode() # JsonNode | jsonNode
 
 try:
     # Update a clients/ips pair under a campaign

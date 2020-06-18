@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.portfolio_asset_size import PortfolioAssetSize  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.portfolio_asset_size import PortfolioAssetSize  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestPortfolioAssetSize(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPortfolioAssetSize(unittest.TestCase):
     def testPortfolioAssetSize(self):
         """Test PortfolioAssetSize"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.portfolio_asset_size.PortfolioAssetSize()  # noqa: E501
+        # model = nucleus_api.models.portfolio_asset_size.PortfolioAssetSize()  # noqa: E501
         pass
 
 

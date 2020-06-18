@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.SecuritiesCountry();
+    instance = new HydrogenNucleusApi.SecuritiesCountry();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('SecuritiesCountry', function() {
     it('should create an instance of SecuritiesCountry', function() {
       // uncomment below and update the code to test SecuritiesCountry
-      //var instane = new HydrogenAtomApi.SecuritiesCountry();
-      //expect(instance).to.be.a(HydrogenAtomApi.SecuritiesCountry);
+      //var instane = new HydrogenNucleusApi.SecuritiesCountry();
+      //expect(instance).to.be.a(HydrogenNucleusApi.SecuritiesCountry);
     });
 
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
-      //var instane = new HydrogenAtomApi.SecuritiesCountry();
+      //var instane = new HydrogenNucleusApi.SecuritiesCountry();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.SecuritiesCountry();
+      //var instane = new HydrogenNucleusApi.SecuritiesCountry();
       //expect(instance).to.be();
     });
 

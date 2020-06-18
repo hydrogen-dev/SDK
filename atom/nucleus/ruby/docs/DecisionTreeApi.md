@@ -1,4 +1,4 @@
-# AtomApi::DecisionTreeApi
+# NucleusApi::DecisionTreeApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -32,9 +32,9 @@ Decision tree result.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -43,16 +43,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
-decision_tree_co = AtomApi::DecisionTreeCO.new # DecisionTreeCO | decisionTreeCO
+decision_tree_co = NucleusApi::DecisionTreeCO.new # DecisionTreeCO | decisionTreeCO
 
 
 begin
   #Decision tree result
   result = api_instance.create_decision_tree_result_using_post(decision_tree_co)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->create_decision_tree_result_using_post: #{e}"
 end
 ```
@@ -88,9 +88,9 @@ Create a new decision tree for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -99,16 +99,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
-decision_tree = AtomApi::DecisionTree.new # DecisionTree | decisionTree
+decision_tree = NucleusApi::DecisionTree.new # DecisionTree | decisionTree
 
 
 begin
   #Create a decision tree
   result = api_instance.create_decision_tree_using_post(decision_tree)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->create_decision_tree_using_post: #{e}"
 end
 ```
@@ -144,9 +144,9 @@ Create a new node relationship for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -155,16 +155,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
-node = AtomApi::NodeRelationship.new # NodeRelationship | node
+node = NucleusApi::NodeRelationship.new # NodeRelationship | node
 
 
 begin
   #Create a node relationship
   result = api_instance.create_node_relationship_using_post(node)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->create_node_relationship_using_post: #{e}"
 end
 ```
@@ -200,9 +200,9 @@ Create a new node for your firm that can be used in a decision tree and mapped t
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -211,16 +211,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
-node = AtomApi::Node.new # Node | node
+node = NucleusApi::Node.new # Node | node
 
 
 begin
   #Create a node
   result = api_instance.create_node_using_post(node)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->create_node_using_post: #{e}"
 end
 ```
@@ -256,9 +256,9 @@ Permanently delete a decision tree.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -267,7 +267,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 decision_tree_id = 'decision_tree_id_example' # String | UUID decision_tree_id
 
@@ -275,7 +275,7 @@ decision_tree_id = 'decision_tree_id_example' # String | UUID decision_tree_id
 begin
   #Delete a decision tree
   api_instance.delete_decision_tree_using_delete(decision_tree_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->delete_decision_tree_using_delete: #{e}"
 end
 ```
@@ -311,9 +311,9 @@ Permanently delete a node relationship.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -322,7 +322,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 node_relationship_id = 'node_relationship_id_example' # String | UUID node_relationship_id
 
@@ -331,7 +331,7 @@ begin
   #Delete a node relationship
   result = api_instance.delete_node_relationship_using_delete(node_relationship_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->delete_node_relationship_using_delete: #{e}"
 end
 ```
@@ -367,9 +367,9 @@ Permanently delete a node.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -378,7 +378,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 node_id = 'node_id_example' # String | UUID node_id
 
@@ -387,7 +387,7 @@ begin
   #Delete a node
   result = api_instance.delete_node_using_delete(node_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->delete_node_using_delete: #{e}"
 end
 ```
@@ -423,9 +423,9 @@ Get the information for all decision trees defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -434,7 +434,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -448,7 +448,7 @@ begin
   #List all decision tree
   result = api_instance.get_decision_tree_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->get_decision_tree_all_using_get: #{e}"
 end
 ```
@@ -488,9 +488,9 @@ Retrieve the information for a decision tree.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -499,7 +499,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 decision_tree_id = 'decision_tree_id_example' # String | UUID decision_tree_id
 
@@ -508,7 +508,7 @@ begin
   #Retrieve a decision tree
   result = api_instance.get_decision_tree_using_get(decision_tree_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->get_decision_tree_using_get: #{e}"
 end
 ```
@@ -544,9 +544,9 @@ List all nodes that are defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -555,7 +555,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -569,7 +569,7 @@ begin
   #List all nodes
   result = api_instance.get_node_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->get_node_all_using_get: #{e}"
 end
 ```
@@ -609,9 +609,9 @@ Get the information for all the node relationships defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -620,7 +620,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -634,7 +634,7 @@ begin
   #List all node relationships
   result = api_instance.get_node_relationship_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->get_node_relationship_all_using_get: #{e}"
 end
 ```
@@ -674,9 +674,9 @@ Retrieve the information for a node relationship.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -685,7 +685,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 node_relationship_id = 'node_relationship_id_example' # String | UUID node_relationship_id
 
@@ -694,7 +694,7 @@ begin
   #Retrieve a node relationship
   result = api_instance.get_node_relationship_using_get(node_relationship_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->get_node_relationship_using_get: #{e}"
 end
 ```
@@ -730,9 +730,9 @@ Retrieve the information for a node.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -741,7 +741,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
 node_id = 'node_id_example' # String | UUID node_id
 
@@ -750,7 +750,7 @@ begin
   #Retrieve a node
   result = api_instance.get_node_using_get(node_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->get_node_using_get: #{e}"
 end
 ```
@@ -786,9 +786,9 @@ Updated the information for a decision tree.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -797,9 +797,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
-decision_tree = AtomApi::DecisionTree.new # DecisionTree | decision_tree
+decision_tree = NucleusApi::DecisionTree.new # DecisionTree | decision_tree
 
 decision_tree_id = 'decision_tree_id_example' # String | UUID decision_tree_id
 
@@ -808,7 +808,7 @@ begin
   #Update a decision tree
   result = api_instance.update_decision_tree_using_put(decision_tree, decision_tree_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->update_decision_tree_using_put: #{e}"
 end
 ```
@@ -845,9 +845,9 @@ Update the information for a node relationship.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -856,9 +856,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
-json_node = AtomApi::JsonNode.new # JsonNode | jsonNode
+json_node = NucleusApi::JsonNode.new # JsonNode | jsonNode
 
 node_relationship_id = 'node_relationship_id_example' # String | UUID node_relationship_id
 
@@ -867,7 +867,7 @@ begin
   #Update a node relationship
   result = api_instance.update_node_relationship_using_put(json_node, node_relationship_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->update_node_relationship_using_put: #{e}"
 end
 ```
@@ -904,9 +904,9 @@ Updated the information for a node.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -915,9 +915,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DecisionTreeApi.new
+api_instance = NucleusApi::DecisionTreeApi.new
 
-json_node = AtomApi::JsonNode.new # JsonNode | jsonNode
+json_node = NucleusApi::JsonNode.new # JsonNode | jsonNode
 
 node_id = 'node_id_example' # String | UUID node_id
 
@@ -926,7 +926,7 @@ begin
   #Update a node
   result = api_instance.update_node_using_put(json_node, node_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DecisionTreeApi->update_node_using_put: #{e}"
 end
 ```

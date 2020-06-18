@@ -1,4 +1,4 @@
-# AtomApi::AccountApi
+# NucleusApi::AccountApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -42,9 +42,9 @@ Create an account-allocation mapping for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -53,16 +53,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
-alloc_request = AtomApi::AccountAllocationMapping.new # AccountAllocationMapping | allocRequest
+alloc_request = NucleusApi::AccountAllocationMapping.new # AccountAllocationMapping | allocRequest
 
 
 begin
   #Create an account allocation
   result = api_instance.create_account_allocation_mapping_using_post(alloc_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->create_account_allocation_mapping_using_post: #{e}"
 end
 ```
@@ -98,9 +98,9 @@ Create a new account type for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -109,16 +109,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
-account_type_request = AtomApi::AccountType.new # AccountType | accountTypeRequest
+account_type_request = NucleusApi::AccountType.new # AccountType | accountTypeRequest
 
 
 begin
   #Create an account type
   result = api_instance.create_account_type_using_post(account_type_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->create_account_type_using_post: #{e}"
 end
 ```
@@ -154,9 +154,9 @@ Create an account under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -165,16 +165,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
-client_account_request = AtomApi::Account.new # Account | clientAccountRequest
+client_account_request = NucleusApi::Account.new # Account | clientAccountRequest
 
 
 begin
   #Create an account
   result = api_instance.create_account_using_post(client_account_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->create_account_using_post: #{e}"
 end
 ```
@@ -210,9 +210,9 @@ Permanently delete an account-allocation mapping for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -221,7 +221,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_allocation_id = 'account_allocation_id_example' # String | UUID account_allocation_id
 
@@ -229,7 +229,7 @@ account_allocation_id = 'account_allocation_id_example' # String | UUID account_
 begin
   #Delete an account allocation
   api_instance.delete_account_allocation_mapping_using_delete(account_allocation_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->delete_account_allocation_mapping_using_delete: #{e}"
 end
 ```
@@ -265,9 +265,9 @@ Delete an account permission
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -276,7 +276,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | account_id
 
@@ -285,7 +285,7 @@ begin
   #Delete an account permission
   result = api_instance.delete_account_permission_using_delete(account_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->delete_account_permission_using_delete: #{e}"
 end
 ```
@@ -321,9 +321,9 @@ Permanently delete a possible account type defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -332,7 +332,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_type_id = 'account_type_id_example' # String | UUID account_type_id
 
@@ -342,7 +342,7 @@ account_type_id2 = 'account_type_id_example' # String | account_type_id
 begin
   #Delete an account type
   api_instance.delete_account_type_using_delete(account_type_id, account_type_id2)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->delete_account_type_using_delete: #{e}"
 end
 ```
@@ -379,9 +379,9 @@ Permanently delete an account under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -390,7 +390,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | UUID account_id
 
@@ -398,7 +398,7 @@ account_id = 'account_id_example' # String | UUID account_id
 begin
   #Delete an account
   api_instance.delete_account_using_delete(account_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->delete_account_using_delete: #{e}"
 end
 ```
@@ -434,9 +434,9 @@ Get information for all accounts for all clients defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -445,7 +445,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -459,7 +459,7 @@ begin
   #List all accounts
   result = api_instance.get_account_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_all_using_get: #{e}"
 end
 ```
@@ -499,9 +499,9 @@ Get information for all account-allocation mappings for all accounts defined for
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -510,7 +510,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -524,7 +524,7 @@ begin
   #List all account allocations
   result = api_instance.get_account_allocation_mapping_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_allocation_mapping_all_using_get: #{e}"
 end
 ```
@@ -564,9 +564,9 @@ Retrieve the information for a specific account-allocation mapping for an accoun
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -575,7 +575,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_allocation_id = 'account_allocation_id_example' # String | UUID account_allocation_id
 
@@ -584,7 +584,7 @@ begin
   #Retrieve an account allocation
   result = api_instance.get_account_allocation_mapping_using_get(account_allocation_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_allocation_mapping_using_get: #{e}"
 end
 ```
@@ -620,9 +620,9 @@ Get a list of asset sizes by date for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -631,7 +631,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | Account Id
 
@@ -647,7 +647,7 @@ begin
   #List all account asset sizes
   result = api_instance.get_account_asset_size_agg_all_using_get(account_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_asset_size_agg_all_using_get: #{e}"
 end
 ```
@@ -688,9 +688,9 @@ Get information for all account asset sizes
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -699,7 +699,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -713,7 +713,7 @@ begin
   #List all account asset sizes
   result = api_instance.get_account_asset_size_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_asset_size_all_using_get: #{e}"
 end
 ```
@@ -751,9 +751,9 @@ List all Account overview
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -762,7 +762,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | UUID account_id
 
@@ -775,7 +775,7 @@ begin
   #List all Account overview
   result = api_instance.get_account_overview_using_get(account_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_overview_using_get: #{e}"
 end
 ```
@@ -813,9 +813,9 @@ Get an account permission
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -824,7 +824,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | account_id
 
@@ -833,7 +833,7 @@ begin
   #Get an account permission
   result = api_instance.get_account_permission_using_get(account_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_permission_using_get: #{e}"
 end
 ```
@@ -869,9 +869,9 @@ List all account types defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -880,7 +880,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -894,7 +894,7 @@ begin
   #List all account types
   result = api_instance.get_account_type_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_type_all_using_get: #{e}"
 end
 ```
@@ -934,9 +934,9 @@ Get an account types defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -945,7 +945,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_type_id = 'account_type_id_example' # String | UUID account_type_id
 
@@ -956,7 +956,7 @@ begin
   #Get an Account Type
   result = api_instance.get_account_type_using_get(account_type_id, account_type_id2)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_type_using_get: #{e}"
 end
 ```
@@ -993,9 +993,9 @@ Retrieve the information for a specific account associated with a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1004,7 +1004,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | UUID account_id
 
@@ -1013,7 +1013,7 @@ begin
   #Retrieve an account
   result = api_instance.get_account_using_get(account_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_account_using_get: #{e}"
 end
 ```
@@ -1049,9 +1049,9 @@ List all account permission
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1060,7 +1060,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1074,7 +1074,7 @@ begin
   #List all account permission
   result = api_instance.get_all_account_permission_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_all_account_permission_using_get: #{e}"
 end
 ```
@@ -1114,9 +1114,9 @@ Get information for all the securities that are currently being held by an accou
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1125,7 +1125,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | UUID account_id
 
@@ -1139,7 +1139,7 @@ begin
   #List all account holdings
   result = api_instance.get_portfolio_holding_agg_all_using_get(account_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_portfolio_holding_agg_all_using_get: #{e}"
 end
 ```
@@ -1178,9 +1178,9 @@ Get the information for all transactions for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1189,7 +1189,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | UUID account_id
 
@@ -1206,7 +1206,7 @@ begin
   #List all account transactions
   result = api_instance.get_portfolio_transaction_agg_all_using_get(account_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->get_portfolio_transaction_agg_all_using_get: #{e}"
 end
 ```
@@ -1248,9 +1248,9 @@ create an account permission
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1259,16 +1259,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
-acl_client_permission_vo = AtomApi::AclClientPermissionVO.new # AclClientPermissionVO | aclClientPermissionVO
+acl_client_permission_vo = NucleusApi::AclClientPermissionVO.new # AclClientPermissionVO | aclClientPermissionVO
 
 
 begin
   #create an account permission
   result = api_instance.insert_account_and_related_permission_using_post(acl_client_permission_vo)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->insert_account_and_related_permission_using_post: #{e}"
 end
 ```
@@ -1304,9 +1304,9 @@ After creating an account, you may create portfolios for the account to track a 
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1315,18 +1315,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | UUID account_id
 
-alloc_request = AtomApi::AccountAllocationMapping.new # AccountAllocationMapping | allocRequest
+alloc_request = NucleusApi::AccountAllocationMapping.new # AccountAllocationMapping | allocRequest
 
 
 begin
   #Subscribe an account
   result = api_instance.subscribe_account_using_post(account_id, alloc_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->subscribe_account_using_post: #{e}"
 end
 ```
@@ -1363,9 +1363,9 @@ Update the information for an account-allocation mapping.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1374,19 +1374,19 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_allocation_id = 'account_allocation_id_example' # String | UUID account_allocation_id
 
 opts = { 
-  account_allocation_mapping: AtomApi::AccountAllocationMapping.new # AccountAllocationMapping | account_allocation_mapping
+  account_allocation_mapping: NucleusApi::AccountAllocationMapping.new # AccountAllocationMapping | account_allocation_mapping
 }
 
 begin
   #Update an account allocation
   result = api_instance.update_account_allocation_mapping_using_put(account_allocation_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->update_account_allocation_mapping_using_put: #{e}"
 end
 ```
@@ -1423,9 +1423,9 @@ Update the information for a possible account type defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1434,9 +1434,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
-account_type = AtomApi::AccountType.new # AccountType | account_type
+account_type = NucleusApi::AccountType.new # AccountType | account_type
 
 account_type_id = 'account_type_id_example' # String | UUID account_type_id
 
@@ -1445,7 +1445,7 @@ begin
   #Update an account type
   result = api_instance.update_account_type_using_put(account_type, account_type_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->update_account_type_using_put: #{e}"
 end
 ```
@@ -1482,9 +1482,9 @@ Update the information for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1493,9 +1493,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
-account = AtomApi::Account.new # Account | account
+account = NucleusApi::Account.new # Account | account
 
 account_id = 'account_id_example' # String | UUID account_id
 
@@ -1504,7 +1504,7 @@ begin
   #Update an account
   result = api_instance.update_account_using_put(account, account_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->update_account_using_put: #{e}"
 end
 ```
@@ -1541,9 +1541,9 @@ Update an account permission
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1552,18 +1552,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-acl_client_permission_vo = AtomApi::AclClientPermissionVO.new # AclClientPermissionVO | aclClientPermissionVO
+acl_client_permission_vo = NucleusApi::AclClientPermissionVO.new # AclClientPermissionVO | aclClientPermissionVO
 
 
 begin
   #Update an account permission
   result = api_instance.update_client_account_permission_using_put(account_id, acl_client_permission_vo)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->update_client_account_permission_using_put: #{e}"
 end
 ```

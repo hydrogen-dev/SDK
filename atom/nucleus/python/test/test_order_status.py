@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.order_status import OrderStatus  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.order_status import OrderStatus  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestOrderStatus(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestOrderStatus(unittest.TestCase):
     def testOrderStatus(self):
         """Test OrderStatus"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.order_status.OrderStatus()  # noqa: E501
+        # model = nucleus_api.models.order_status.OrderStatus()  # noqa: E501
         pass
 
 

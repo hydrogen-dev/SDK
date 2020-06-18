@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.aggregation_account_aggregate_data_vo import AggregationAccountAggregateDataVO  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.aggregation_account_aggregate_data_vo import AggregationAccountAggregateDataVO  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestAggregationAccountAggregateDataVO(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAggregationAccountAggregateDataVO(unittest.TestCase):
     def testAggregationAccountAggregateDataVO(self):
         """Test AggregationAccountAggregateDataVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.aggregation_account_aggregate_data_vo.AggregationAccountAggregateDataVO()  # noqa: E501
+        # model = nucleus_api.models.aggregation_account_aggregate_data_vo.AggregationAccountAggregateDataVO()  # noqa: E501
         pass
 
 

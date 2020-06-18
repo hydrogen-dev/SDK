@@ -1,4 +1,4 @@
-# AtomApi::VAccountAssetSize
+# NucleusApi::VAccountAssetSize
 
 ## Properties
 Name | Type | Description | Notes

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen;
+namespace com\hydrogen\nucleus;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -393,7 +393,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (com\hydrogen) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (com\hydrogen\nucleus) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 1.7.0' . PHP_EOL;

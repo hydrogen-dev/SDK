@@ -1,4 +1,4 @@
-# HydrogenAtomApi.DecisionTreeCO
+# HydrogenNucleusApi.DecisionTreeCO
 
 ## Properties
 Name | Type | Description | Notes

@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./OverflowBankLinkMap'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.OverflowSettings = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.OverflowBankLinkMap);
+    root.HydrogenNucleusApi.OverflowSettings = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.OverflowBankLinkMap);
   }
 }(this, function(ApiClient, OverflowBankLinkMap) {
   'use strict';

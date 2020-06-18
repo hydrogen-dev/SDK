@@ -1,4 +1,4 @@
-# com\hydrogen\PerformanceApi
+# com\hydrogen\nucleus\PerformanceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -24,23 +24,23 @@ Get information on the performance of an account using IRR (Internal Rate of Ret
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -134,23 +134,23 @@ Get information on the performance of an allocation using TWR (Time Weighted Ret
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -246,23 +246,23 @@ Get information on the performance of a benchmark using TWR (Time Weighted Retur
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -356,23 +356,23 @@ Get information on the performance of a client using IRR (Internal Rate of Retur
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -466,23 +466,23 @@ Get information on the performance of a goal using IRR (Internal Rate of Return)
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -580,23 +580,23 @@ Get information on the performance of a model using TWR (Time Weighted Return). 
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -690,23 +690,23 @@ Get information on the performance of a portfolio using IRR (Internal Rate of Re
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -806,23 +806,23 @@ Get performance statistics for a security using TWR (Time Weighted Return). You 
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PerformanceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PerformanceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

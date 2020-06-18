@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageNotification
+# HydrogenNucleusApi.PageNotification
 
 ## Properties
 Name | Type | Description | Notes

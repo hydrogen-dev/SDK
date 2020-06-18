@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ModelApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class ModelApi
      *
      * Create a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelAssetSize
+     * @return \com\hydrogen\nucleus\Model\ModelAssetSize
      */
     public function createModelAssetSizeUsingPost($req)
     {
@@ -109,15 +109,15 @@ class ModelApi
      *
      * Create a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelAssetSize, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelAssetSize, HTTP status code, HTTP response headers (array of strings)
      */
     public function createModelAssetSizeUsingPostWithHttpInfo($req)
     {
-        $returnType = '\com\hydrogen\Model\ModelAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelAssetSize';
         $request = $this->createModelAssetSizeUsingPostRequest($req);
 
         try {
@@ -169,7 +169,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelAssetSize',
+                        '\com\hydrogen\nucleus\Model\ModelAssetSize',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class ModelApi
      *
      * Create a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class ModelApi
      *
      * Create a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createModelAssetSizeUsingPostAsyncWithHttpInfo($req)
     {
-        $returnType = '\com\hydrogen\Model\ModelAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelAssetSize';
         $request = $this->createModelAssetSizeUsingPostRequest($req);
 
         return $this->client
@@ -254,7 +254,7 @@ class ModelApi
     /**
      * Create request for operation 'createModelAssetSizeUsingPost'
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,12 +360,12 @@ class ModelApi
      *
      * Change a model composition
      *
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $change_request changeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $change_request changeRequest (required)
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelTransaction[]
+     * @return \com\hydrogen\nucleus\Model\ModelTransaction[]
      */
     public function createModelChangeUsingPost($change_request, $model_id)
     {
@@ -378,16 +378,16 @@ class ModelApi
      *
      * Change a model composition
      *
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $change_request changeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $change_request changeRequest (required)
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelTransaction[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelTransaction[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createModelChangeUsingPostWithHttpInfo($change_request, $model_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction[]';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction[]';
         $request = $this->createModelChangeUsingPostRequest($change_request, $model_id);
 
         try {
@@ -439,7 +439,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelTransaction[]',
+                        '\com\hydrogen\nucleus\Model\ModelTransaction[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -454,7 +454,7 @@ class ModelApi
      *
      * Change a model composition
      *
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $change_request changeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $change_request changeRequest (required)
      * @param  string $model_id UUID model_id (required)
      *
      * @throws \InvalidArgumentException
@@ -475,7 +475,7 @@ class ModelApi
      *
      * Change a model composition
      *
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $change_request changeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $change_request changeRequest (required)
      * @param  string $model_id UUID model_id (required)
      *
      * @throws \InvalidArgumentException
@@ -483,7 +483,7 @@ class ModelApi
      */
     public function createModelChangeUsingPostAsyncWithHttpInfo($change_request, $model_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction[]';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction[]';
         $request = $this->createModelChangeUsingPostRequest($change_request, $model_id);
 
         return $this->client
@@ -526,7 +526,7 @@ class ModelApi
     /**
      * Create request for operation 'createModelChangeUsingPost'
      *
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $change_request changeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $change_request changeRequest (required)
      * @param  string $model_id UUID model_id (required)
      *
      * @throws \InvalidArgumentException
@@ -647,9 +647,9 @@ class ModelApi
      *
      * Create a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment_request modelCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment_request modelCommentRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -664,9 +664,9 @@ class ModelApi
      *
      * Create a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment_request modelCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment_request modelCommentRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -739,7 +739,7 @@ class ModelApi
      *
      * Create a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment_request modelCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment_request modelCommentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -759,7 +759,7 @@ class ModelApi
      *
      * Create a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment_request modelCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment_request modelCommentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -809,7 +809,7 @@ class ModelApi
     /**
      * Create request for operation 'createModelCommentUsingPost'
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment_request modelCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment_request modelCommentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -915,11 +915,11 @@ class ModelApi
      *
      * Create a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelHolding
+     * @return \com\hydrogen\nucleus\Model\ModelHolding
      */
     public function createModelHoldingUsingPost($model_holding_request)
     {
@@ -932,15 +932,15 @@ class ModelApi
      *
      * Create a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function createModelHoldingUsingPostWithHttpInfo($model_holding_request)
     {
-        $returnType = '\com\hydrogen\Model\ModelHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHolding';
         $request = $this->createModelHoldingUsingPostRequest($model_holding_request);
 
         try {
@@ -992,7 +992,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelHolding',
+                        '\com\hydrogen\nucleus\Model\ModelHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1007,7 +1007,7 @@ class ModelApi
      *
      * Create a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1027,14 +1027,14 @@ class ModelApi
      *
      * Create a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createModelHoldingUsingPostAsyncWithHttpInfo($model_holding_request)
     {
-        $returnType = '\com\hydrogen\Model\ModelHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHolding';
         $request = $this->createModelHoldingUsingPostRequest($model_holding_request);
 
         return $this->client
@@ -1077,7 +1077,7 @@ class ModelApi
     /**
      * Create request for operation 'createModelHoldingUsingPost'
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding_request modelHoldingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1183,11 +1183,11 @@ class ModelApi
      *
      * Create a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelTransaction
+     * @return \com\hydrogen\nucleus\Model\ModelTransaction
      */
     public function createModelTransactionUsingPost($model_transaction_request)
     {
@@ -1200,15 +1200,15 @@ class ModelApi
      *
      * Create a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function createModelTransactionUsingPostWithHttpInfo($model_transaction_request)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction';
         $request = $this->createModelTransactionUsingPostRequest($model_transaction_request);
 
         try {
@@ -1260,7 +1260,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelTransaction',
+                        '\com\hydrogen\nucleus\Model\ModelTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1275,7 +1275,7 @@ class ModelApi
      *
      * Create a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1295,14 +1295,14 @@ class ModelApi
      *
      * Create a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createModelTransactionUsingPostAsyncWithHttpInfo($model_transaction_request)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction';
         $request = $this->createModelTransactionUsingPostRequest($model_transaction_request);
 
         return $this->client
@@ -1345,7 +1345,7 @@ class ModelApi
     /**
      * Create request for operation 'createModelTransactionUsingPost'
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction_request modelTransactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1451,11 +1451,11 @@ class ModelApi
      *
      * Create a model
      *
-     * @param  \com\hydrogen\Model\Model $model_info_request modelInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model_info_request modelInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Model
+     * @return \com\hydrogen\nucleus\Model\Model
      */
     public function createModelUsingPost($model_info_request)
     {
@@ -1468,15 +1468,15 @@ class ModelApi
      *
      * Create a model
      *
-     * @param  \com\hydrogen\Model\Model $model_info_request modelInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model_info_request modelInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Model, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Model, HTTP status code, HTTP response headers (array of strings)
      */
     public function createModelUsingPostWithHttpInfo($model_info_request)
     {
-        $returnType = '\com\hydrogen\Model\Model';
+        $returnType = '\com\hydrogen\nucleus\Model\Model';
         $request = $this->createModelUsingPostRequest($model_info_request);
 
         try {
@@ -1528,7 +1528,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Model',
+                        '\com\hydrogen\nucleus\Model\Model',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1543,7 +1543,7 @@ class ModelApi
      *
      * Create a model
      *
-     * @param  \com\hydrogen\Model\Model $model_info_request modelInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model_info_request modelInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1563,14 +1563,14 @@ class ModelApi
      *
      * Create a model
      *
-     * @param  \com\hydrogen\Model\Model $model_info_request modelInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model_info_request modelInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createModelUsingPostAsyncWithHttpInfo($model_info_request)
     {
-        $returnType = '\com\hydrogen\Model\Model';
+        $returnType = '\com\hydrogen\nucleus\Model\Model';
         $request = $this->createModelUsingPostRequest($model_info_request);
 
         return $this->client
@@ -1613,7 +1613,7 @@ class ModelApi
     /**
      * Create request for operation 'createModelUsingPost'
      *
-     * @param  \com\hydrogen\Model\Model $model_info_request modelInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model_info_request modelInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1721,7 +1721,7 @@ class ModelApi
      *
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1737,7 +1737,7 @@ class ModelApi
      *
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1957,7 +1957,7 @@ class ModelApi
      *
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1973,7 +1973,7 @@ class ModelApi
      *
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2193,7 +2193,7 @@ class ModelApi
      *
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2209,7 +2209,7 @@ class ModelApi
      *
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2429,7 +2429,7 @@ class ModelApi
      *
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2445,7 +2445,7 @@ class ModelApi
      *
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2665,7 +2665,7 @@ class ModelApi
      *
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2681,7 +2681,7 @@ class ModelApi
      *
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2905,9 +2905,9 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageModel_
+     * @return \com\hydrogen\nucleus\Model\PageModel_
      */
     public function getModelAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2926,13 +2926,13 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageModel_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageModel_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModel_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModel_';
         $request = $this->getModelAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2984,7 +2984,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageModel_',
+                        '\com\hydrogen\nucleus\Model\PageModel_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3034,7 +3034,7 @@ class ModelApi
      */
     public function getModelAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModel_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModel_';
         $request = $this->getModelAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3204,9 +3204,9 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageModelAssetSize_
+     * @return \com\hydrogen\nucleus\Model\PageModelAssetSize_
      */
     public function getModelAssetSizeAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3225,13 +3225,13 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageModelAssetSize_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageModelAssetSize_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelAssetSizeAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelAssetSize_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelAssetSize_';
         $request = $this->getModelAssetSizeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3283,7 +3283,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageModelAssetSize_',
+                        '\com\hydrogen\nucleus\Model\PageModelAssetSize_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3333,7 +3333,7 @@ class ModelApi
      */
     public function getModelAssetSizeAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelAssetSize_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelAssetSize_';
         $request = $this->getModelAssetSizeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3499,9 +3499,9 @@ class ModelApi
      *
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelAssetSize
+     * @return \com\hydrogen\nucleus\Model\ModelAssetSize
      */
     public function getModelAssetSizeUsingGet($model_asset_size_id)
     {
@@ -3516,13 +3516,13 @@ class ModelApi
      *
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelAssetSize, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelAssetSize, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelAssetSizeUsingGetWithHttpInfo($model_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelAssetSize';
         $request = $this->getModelAssetSizeUsingGetRequest($model_asset_size_id);
 
         try {
@@ -3574,7 +3574,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelAssetSize',
+                        '\com\hydrogen\nucleus\Model\ModelAssetSize',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3616,7 +3616,7 @@ class ModelApi
      */
     public function getModelAssetSizeUsingGetAsyncWithHttpInfo($model_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelAssetSize';
         $request = $this->getModelAssetSizeUsingGetRequest($model_asset_size_id);
 
         return $this->client
@@ -3776,9 +3776,9 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageModelComment_
+     * @return \com\hydrogen\nucleus\Model\PageModelComment_
      */
     public function getModelCommentAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3797,13 +3797,13 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageModelComment_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageModelComment_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelCommentAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelComment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelComment_';
         $request = $this->getModelCommentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3855,7 +3855,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageModelComment_',
+                        '\com\hydrogen\nucleus\Model\PageModelComment_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3905,7 +3905,7 @@ class ModelApi
      */
     public function getModelCommentAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelComment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelComment_';
         $request = $this->getModelCommentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4071,9 +4071,9 @@ class ModelApi
      *
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelComment
+     * @return \com\hydrogen\nucleus\Model\ModelComment
      */
     public function getModelCommentUsingGet($model_comment_id)
     {
@@ -4088,13 +4088,13 @@ class ModelApi
      *
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelComment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelComment, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelCommentUsingGetWithHttpInfo($model_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelComment';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelComment';
         $request = $this->getModelCommentUsingGetRequest($model_comment_id);
 
         try {
@@ -4146,7 +4146,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelComment',
+                        '\com\hydrogen\nucleus\Model\ModelComment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4188,7 +4188,7 @@ class ModelApi
      */
     public function getModelCommentUsingGetAsyncWithHttpInfo($model_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelComment';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelComment';
         $request = $this->getModelCommentUsingGetRequest($model_comment_id);
 
         return $this->client
@@ -4348,9 +4348,9 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageModelHolding_
+     * @return \com\hydrogen\nucleus\Model\PageModelHolding_
      */
     public function getModelHoldingAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4369,13 +4369,13 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageModelHolding_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageModelHolding_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelHoldingAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelHolding_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelHolding_';
         $request = $this->getModelHoldingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4427,7 +4427,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageModelHolding_',
+                        '\com\hydrogen\nucleus\Model\PageModelHolding_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4477,7 +4477,7 @@ class ModelApi
      */
     public function getModelHoldingAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelHolding_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelHolding_';
         $request = $this->getModelHoldingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4643,9 +4643,9 @@ class ModelApi
      *
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelHolding
+     * @return \com\hydrogen\nucleus\Model\ModelHolding
      */
     public function getModelHoldingUsingGet($model_holding_id)
     {
@@ -4660,13 +4660,13 @@ class ModelApi
      *
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelHoldingUsingGetWithHttpInfo($model_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHolding';
         $request = $this->getModelHoldingUsingGetRequest($model_holding_id);
 
         try {
@@ -4718,7 +4718,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelHolding',
+                        '\com\hydrogen\nucleus\Model\ModelHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4760,7 +4760,7 @@ class ModelApi
      */
     public function getModelHoldingUsingGetAsyncWithHttpInfo($model_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHolding';
         $request = $this->getModelHoldingUsingGetRequest($model_holding_id);
 
         return $this->client
@@ -4920,9 +4920,9 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageModelTransaction_
+     * @return \com\hydrogen\nucleus\Model\PageModelTransaction_
      */
     public function getModelTransactionAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4941,13 +4941,13 @@ class ModelApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageModelTransaction_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageModelTransaction_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelTransactionAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelTransaction_';
         $request = $this->getModelTransactionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4999,7 +4999,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageModelTransaction_',
+                        '\com\hydrogen\nucleus\Model\PageModelTransaction_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5049,7 +5049,7 @@ class ModelApi
      */
     public function getModelTransactionAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageModelTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelTransaction_';
         $request = $this->getModelTransactionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5215,9 +5215,9 @@ class ModelApi
      *
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelTransaction
+     * @return \com\hydrogen\nucleus\Model\ModelTransaction
      */
     public function getModelTransactionUsingGet($model_transaction_id)
     {
@@ -5232,13 +5232,13 @@ class ModelApi
      *
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelTransactionUsingGetWithHttpInfo($model_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction';
         $request = $this->getModelTransactionUsingGetRequest($model_transaction_id);
 
         try {
@@ -5290,7 +5290,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelTransaction',
+                        '\com\hydrogen\nucleus\Model\ModelTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5332,7 +5332,7 @@ class ModelApi
      */
     public function getModelTransactionUsingGetAsyncWithHttpInfo($model_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction';
         $request = $this->getModelTransactionUsingGetRequest($model_transaction_id);
 
         return $this->client
@@ -5488,9 +5488,9 @@ class ModelApi
      *
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Model
+     * @return \com\hydrogen\nucleus\Model\Model
      */
     public function getModelUsingGet($model_id)
     {
@@ -5505,13 +5505,13 @@ class ModelApi
      *
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Model, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Model, HTTP status code, HTTP response headers (array of strings)
      */
     public function getModelUsingGetWithHttpInfo($model_id)
     {
-        $returnType = '\com\hydrogen\Model\Model';
+        $returnType = '\com\hydrogen\nucleus\Model\Model';
         $request = $this->getModelUsingGetRequest($model_id);
 
         try {
@@ -5563,7 +5563,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Model',
+                        '\com\hydrogen\nucleus\Model\Model',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5605,7 +5605,7 @@ class ModelApi
      */
     public function getModelUsingGetAsyncWithHttpInfo($model_id)
     {
-        $returnType = '\com\hydrogen\Model\Model';
+        $returnType = '\com\hydrogen\nucleus\Model\Model';
         $request = $this->getModelUsingGetRequest($model_id);
 
         return $this->client
@@ -5759,12 +5759,12 @@ class ModelApi
      *
      * Update a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $model_asset_size model_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $model_asset_size model_asset_size (required)
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelAssetSize
+     * @return \com\hydrogen\nucleus\Model\ModelAssetSize
      */
     public function updateModelAssetSizeUsingPut($model_asset_size, $model_asset_size_id)
     {
@@ -5777,16 +5777,16 @@ class ModelApi
      *
      * Update a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $model_asset_size model_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $model_asset_size model_asset_size (required)
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelAssetSize, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelAssetSize, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateModelAssetSizeUsingPutWithHttpInfo($model_asset_size, $model_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelAssetSize';
         $request = $this->updateModelAssetSizeUsingPutRequest($model_asset_size, $model_asset_size_id);
 
         try {
@@ -5838,7 +5838,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelAssetSize',
+                        '\com\hydrogen\nucleus\Model\ModelAssetSize',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5853,7 +5853,7 @@ class ModelApi
      *
      * Update a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $model_asset_size model_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $model_asset_size model_asset_size (required)
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5874,7 +5874,7 @@ class ModelApi
      *
      * Update a model asset size
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $model_asset_size model_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $model_asset_size model_asset_size (required)
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5882,7 +5882,7 @@ class ModelApi
      */
     public function updateModelAssetSizeUsingPutAsyncWithHttpInfo($model_asset_size, $model_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelAssetSize';
         $request = $this->updateModelAssetSizeUsingPutRequest($model_asset_size, $model_asset_size_id);
 
         return $this->client
@@ -5925,7 +5925,7 @@ class ModelApi
     /**
      * Create request for operation 'updateModelAssetSizeUsingPut'
      *
-     * @param  \com\hydrogen\Model\ModelAssetSize $model_asset_size model_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelAssetSize $model_asset_size model_asset_size (required)
      * @param  string $model_asset_size_id UUID model_asset_size_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6046,12 +6046,12 @@ class ModelApi
      *
      * Update a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment model_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment model_comment (required)
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelComment
+     * @return \com\hydrogen\nucleus\Model\ModelComment
      */
     public function updateModelCommentUsingPut($model_comment, $model_comment_id)
     {
@@ -6064,16 +6064,16 @@ class ModelApi
      *
      * Update a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment model_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment model_comment (required)
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelComment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelComment, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateModelCommentUsingPutWithHttpInfo($model_comment, $model_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelComment';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelComment';
         $request = $this->updateModelCommentUsingPutRequest($model_comment, $model_comment_id);
 
         try {
@@ -6125,7 +6125,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelComment',
+                        '\com\hydrogen\nucleus\Model\ModelComment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6140,7 +6140,7 @@ class ModelApi
      *
      * Update a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment model_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment model_comment (required)
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6161,7 +6161,7 @@ class ModelApi
      *
      * Update a model commentary
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment model_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment model_comment (required)
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6169,7 +6169,7 @@ class ModelApi
      */
     public function updateModelCommentUsingPutAsyncWithHttpInfo($model_comment, $model_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelComment';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelComment';
         $request = $this->updateModelCommentUsingPutRequest($model_comment, $model_comment_id);
 
         return $this->client
@@ -6212,7 +6212,7 @@ class ModelApi
     /**
      * Create request for operation 'updateModelCommentUsingPut'
      *
-     * @param  \com\hydrogen\Model\ModelComment $model_comment model_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelComment $model_comment model_comment (required)
      * @param  string $model_comment_id UUID model_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6333,12 +6333,12 @@ class ModelApi
      *
      * Update a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding model_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding model_holding (required)
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelHolding
+     * @return \com\hydrogen\nucleus\Model\ModelHolding
      */
     public function updateModelHoldingUsingPut($model_holding, $model_holding_id)
     {
@@ -6351,16 +6351,16 @@ class ModelApi
      *
      * Update a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding model_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding model_holding (required)
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateModelHoldingUsingPutWithHttpInfo($model_holding, $model_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHolding';
         $request = $this->updateModelHoldingUsingPutRequest($model_holding, $model_holding_id);
 
         try {
@@ -6412,7 +6412,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelHolding',
+                        '\com\hydrogen\nucleus\Model\ModelHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6427,7 +6427,7 @@ class ModelApi
      *
      * Update a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding model_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding model_holding (required)
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6448,7 +6448,7 @@ class ModelApi
      *
      * Update a model holding
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding model_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding model_holding (required)
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6456,7 +6456,7 @@ class ModelApi
      */
     public function updateModelHoldingUsingPutAsyncWithHttpInfo($model_holding, $model_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHolding';
         $request = $this->updateModelHoldingUsingPutRequest($model_holding, $model_holding_id);
 
         return $this->client
@@ -6499,7 +6499,7 @@ class ModelApi
     /**
      * Create request for operation 'updateModelHoldingUsingPut'
      *
-     * @param  \com\hydrogen\Model\ModelHolding $model_holding model_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelHolding $model_holding model_holding (required)
      * @param  string $model_holding_id UUID model_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6620,12 +6620,12 @@ class ModelApi
      *
      * Update a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction model_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction model_transaction (required)
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelTransaction
+     * @return \com\hydrogen\nucleus\Model\ModelTransaction
      */
     public function updateModelTransactionUsingPut($model_transaction, $model_transaction_id)
     {
@@ -6638,16 +6638,16 @@ class ModelApi
      *
      * Update a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction model_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction model_transaction (required)
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateModelTransactionUsingPutWithHttpInfo($model_transaction, $model_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction';
         $request = $this->updateModelTransactionUsingPutRequest($model_transaction, $model_transaction_id);
 
         try {
@@ -6699,7 +6699,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelTransaction',
+                        '\com\hydrogen\nucleus\Model\ModelTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6714,7 +6714,7 @@ class ModelApi
      *
      * Update a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction model_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction model_transaction (required)
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6735,7 +6735,7 @@ class ModelApi
      *
      * Update a model transaction
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction model_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction model_transaction (required)
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6743,7 +6743,7 @@ class ModelApi
      */
     public function updateModelTransactionUsingPutAsyncWithHttpInfo($model_transaction, $model_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\ModelTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelTransaction';
         $request = $this->updateModelTransactionUsingPutRequest($model_transaction, $model_transaction_id);
 
         return $this->client
@@ -6786,7 +6786,7 @@ class ModelApi
     /**
      * Create request for operation 'updateModelTransactionUsingPut'
      *
-     * @param  \com\hydrogen\Model\ModelTransaction $model_transaction model_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\ModelTransaction $model_transaction model_transaction (required)
      * @param  string $model_transaction_id UUID model_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6907,12 +6907,12 @@ class ModelApi
      *
      * Update a model
      *
-     * @param  \com\hydrogen\Model\Model $model model (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model model (required)
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Model
+     * @return \com\hydrogen\nucleus\Model\Model
      */
     public function updateModelUsingPut($model, $model_id)
     {
@@ -6925,16 +6925,16 @@ class ModelApi
      *
      * Update a model
      *
-     * @param  \com\hydrogen\Model\Model $model model (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model model (required)
      * @param  string $model_id UUID model_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Model, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Model, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateModelUsingPutWithHttpInfo($model, $model_id)
     {
-        $returnType = '\com\hydrogen\Model\Model';
+        $returnType = '\com\hydrogen\nucleus\Model\Model';
         $request = $this->updateModelUsingPutRequest($model, $model_id);
 
         try {
@@ -6986,7 +6986,7 @@ class ModelApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Model',
+                        '\com\hydrogen\nucleus\Model\Model',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7001,7 +7001,7 @@ class ModelApi
      *
      * Update a model
      *
-     * @param  \com\hydrogen\Model\Model $model model (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model model (required)
      * @param  string $model_id UUID model_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7022,7 +7022,7 @@ class ModelApi
      *
      * Update a model
      *
-     * @param  \com\hydrogen\Model\Model $model model (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model model (required)
      * @param  string $model_id UUID model_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7030,7 +7030,7 @@ class ModelApi
      */
     public function updateModelUsingPutAsyncWithHttpInfo($model, $model_id)
     {
-        $returnType = '\com\hydrogen\Model\Model';
+        $returnType = '\com\hydrogen\nucleus\Model\Model';
         $request = $this->updateModelUsingPutRequest($model, $model_id);
 
         return $this->client
@@ -7073,7 +7073,7 @@ class ModelApi
     /**
      * Create request for operation 'updateModelUsingPut'
      *
-     * @param  \com\hydrogen\Model\Model $model model (required)
+     * @param  \com\hydrogen\nucleus\Model\Model $model model (required)
      * @param  string $model_id UUID model_id (required)
      *
      * @throws \InvalidArgumentException

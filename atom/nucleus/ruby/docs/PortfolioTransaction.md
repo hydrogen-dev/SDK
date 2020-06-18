@@ -1,4 +1,4 @@
-# AtomApi::PortfolioTransaction
+# NucleusApi::PortfolioTransaction
 
 ## Properties
 Name | Type | Description | Notes

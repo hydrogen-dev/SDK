@@ -1,4 +1,4 @@
-# HydrogenAtomApi.State
+# HydrogenNucleusApi.State
 
 ## Properties
 Name | Type | Description | Notes

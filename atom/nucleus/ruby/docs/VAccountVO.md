@@ -1,4 +1,4 @@
-# AtomApi::VAccountVO
+# NucleusApi::VAccountVO
 
 ## Properties
 Name | Type | Description | Notes

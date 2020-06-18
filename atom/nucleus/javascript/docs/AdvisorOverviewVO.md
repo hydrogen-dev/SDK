@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AdvisorOverviewVO
+# HydrogenNucleusApi.AdvisorOverviewVO
 
 ## Properties
 Name | Type | Description | Notes

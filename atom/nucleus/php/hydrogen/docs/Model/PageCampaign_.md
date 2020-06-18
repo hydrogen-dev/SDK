@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | [**\com\hydrogen\Model\Campaign[]**](Campaign.md) |  | [optional] 
+**content** | [**\com\hydrogen\nucleus\Model\Campaign[]**](Campaign.md) |  | [optional] 
 **first** | **bool** |  | [optional] 
 **last** | **bool** |  | [optional] 
 **number** | **int** |  | [optional] 
 **number_of_elements** | **int** |  | [optional] 
 **size** | **int** |  | [optional] 
-**sort** | [**\com\hydrogen\Model\Sort[]**](Sort.md) |  | [optional] 
+**sort** | [**\com\hydrogen\nucleus\Model\Sort[]**](Sort.md) |  | [optional] 
 **total_elements** | **int** |  | [optional] 
 **total_pages** | **int** |  | [optional] 
 

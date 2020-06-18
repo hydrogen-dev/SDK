@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,13 +27,13 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen;
+namespace com\hydrogen\nucleus;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

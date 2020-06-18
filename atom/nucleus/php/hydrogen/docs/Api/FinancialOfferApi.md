@@ -1,4 +1,4 @@
-# com\hydrogen\FinancialOfferApi
+# com\hydrogen\nucleus\FinancialOfferApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createFinancialOfferUsingPost**
-> \com\hydrogen\Model\FinancialOffer createFinancialOfferUsingPost($financial_offer)
+> \com\hydrogen\nucleus\Model\FinancialOffer createFinancialOfferUsingPost($financial_offer)
 
 Create a comparison request
 
@@ -21,29 +21,29 @@ Create a new comparison request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialOfferApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$financial_offer = new \com\hydrogen\Model\FinancialOffer(); // \com\hydrogen\Model\FinancialOffer | financialOffer
+$financial_offer = new \com\hydrogen\nucleus\Model\FinancialOffer(); // \com\hydrogen\nucleus\Model\FinancialOffer | financialOffer
 
 try {
     $result = $apiInstance->createFinancialOfferUsingPost($financial_offer);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_offer** | [**\com\hydrogen\Model\FinancialOffer**](../Model/FinancialOffer.md)| financialOffer |
+ **financial_offer** | [**\com\hydrogen\nucleus\Model\FinancialOffer**](../Model/FinancialOffer.md)| financialOffer |
 
 ### Return type
 
-[**\com\hydrogen\Model\FinancialOffer**](../Model/FinancialOffer.md)
+[**\com\hydrogen\nucleus\Model\FinancialOffer**](../Model/FinancialOffer.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently delete a comparison request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialOfferApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -141,7 +141,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFinancialOfferAllUsingGet**
-> \com\hydrogen\Model\PageFinancialOffer_ getFinancialOfferAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageFinancialOffer_ getFinancialOfferAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all comparison requests
 
@@ -150,23 +150,23 @@ Get the information for all comparison requests.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialOfferApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageFinancialOffer_**](../Model/PageFinancialOffer_.md)
+[**\com\hydrogen\nucleus\Model\PageFinancialOffer_**](../Model/PageFinancialOffer_.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFinancialOfferUsingGet**
-> \com\hydrogen\Model\FinancialOffer getFinancialOfferUsingGet($financial_offer, $financial_offer_id)
+> \com\hydrogen\nucleus\Model\FinancialOffer getFinancialOfferUsingGet($financial_offer, $financial_offer_id)
 
 Retrieve a comparison request
 
@@ -222,23 +222,23 @@ Retrieve the information for a comparison request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialOfferApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\FinancialOffer**](../Model/FinancialOffer.md)
+[**\com\hydrogen\nucleus\Model\FinancialOffer**](../Model/FinancialOffer.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateFinancialOfferUsingPut**
-> \com\hydrogen\Model\FinancialOffer updateFinancialOfferUsingPut($financial_offer, $financial_offer_id)
+> \com\hydrogen\nucleus\Model\FinancialOffer updateFinancialOfferUsingPut($financial_offer, $financial_offer_id)
 
 Update a comparison request
 
@@ -288,29 +288,29 @@ Update the information for a comparison request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialOfferApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$financial_offer = new \com\hydrogen\Model\FinancialOffer(); // \com\hydrogen\Model\FinancialOffer | financial_offer
+$financial_offer = new \com\hydrogen\nucleus\Model\FinancialOffer(); // \com\hydrogen\nucleus\Model\FinancialOffer | financial_offer
 $financial_offer_id = "financial_offer_id_example"; // string | UUID financial_offer_id
 
 try {
@@ -326,12 +326,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_offer** | [**\com\hydrogen\Model\FinancialOffer**](../Model/FinancialOffer.md)| financial_offer |
+ **financial_offer** | [**\com\hydrogen\nucleus\Model\FinancialOffer**](../Model/FinancialOffer.md)| financial_offer |
  **financial_offer_id** | [**string**](../Model/.md)| UUID financial_offer_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\FinancialOffer**](../Model/FinancialOffer.md)
+[**\com\hydrogen\nucleus\Model\FinancialOffer**](../Model/FinancialOffer.md)
 
 ### Authorization
 

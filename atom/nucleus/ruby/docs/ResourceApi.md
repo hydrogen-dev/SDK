@@ -1,4 +1,4 @@
-# AtomApi::ResourceApi
+# NucleusApi::ResourceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -20,9 +20,9 @@ Get All Countries.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -31,13 +31,13 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ResourceApi.new
+api_instance = NucleusApi::ResourceApi.new
 
 begin
   #Get All Countries
   result = api_instance.get_all_country_using_get
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ResourceApi->get_all_country_using_get: #{e}"
 end
 ```
@@ -70,9 +70,9 @@ Get All Currencies.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -81,13 +81,13 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ResourceApi.new
+api_instance = NucleusApi::ResourceApi.new
 
 begin
   #Get All Currencies
   result = api_instance.get_all_currency_using_get
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ResourceApi->get_all_currency_using_get: #{e}"
 end
 ```
@@ -120,9 +120,9 @@ Get the information for all possible state resource.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -131,7 +131,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ResourceApi.new
+api_instance = NucleusApi::ResourceApi.new
 
 opts = { 
   country_code: 'US' # String | country_code
@@ -141,7 +141,7 @@ begin
   #List all state resource
   result = api_instance.get_all_states_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ResourceApi->get_all_states_using_get: #{e}"
 end
 ```
@@ -177,9 +177,9 @@ Get the information for all possible statistic resource.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -188,13 +188,13 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ResourceApi.new
+api_instance = NucleusApi::ResourceApi.new
 
 begin
   #List all statistic resource
   result = api_instance.get_all_statistics_using_get
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ResourceApi->get_all_statistics_using_get: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# AtomApi::ApplicationApi
+# NucleusApi::ApplicationApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Create an application
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ApplicationApi.new
+api_instance = NucleusApi::ApplicationApi.new
 
-application = AtomApi::Application.new # Application | application
+application = NucleusApi::Application.new # Application | application
 
 
 begin
   #Create an application
   result = api_instance.create_application_using_post(application)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ApplicationApi->create_application_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently delete an Application.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ApplicationApi.new
+api_instance = NucleusApi::ApplicationApi.new
 
 application_id = 'application_id_example' # String | UUID application_id
 
@@ -96,7 +96,7 @@ application_id = 'application_id_example' # String | UUID application_id
 begin
   #Delete an Application
   api_instance.delete_application_using_delete(application_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ApplicationApi->delete_application_using_delete: #{e}"
 end
 ```
@@ -132,9 +132,9 @@ Get details for all Application.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -143,7 +143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ApplicationApi.new
+api_instance = NucleusApi::ApplicationApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -157,7 +157,7 @@ begin
   #List all Application
   result = api_instance.get_application_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ApplicationApi->get_application_all_using_get: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Retrieve the information for an Application.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ApplicationApi.new
+api_instance = NucleusApi::ApplicationApi.new
 
 application_id = 'application_id_example' # String | UUID application_id
 
@@ -217,7 +217,7 @@ begin
   #Retrieve an Application
   result = api_instance.get_application_using_get(application_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ApplicationApi->get_application_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Update the information for an Application
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ApplicationApi.new
+api_instance = NucleusApi::ApplicationApi.new
 
-application = AtomApi::Application.new # Application | application
+application = NucleusApi::Application.new # Application | application
 
 application_id = 'application_id_example' # String | UUID application_id
 
@@ -275,7 +275,7 @@ begin
   #Update an Application
   result = api_instance.update_application_using_put(application, application_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ApplicationApi->update_application_using_put: #{e}"
 end
 ```

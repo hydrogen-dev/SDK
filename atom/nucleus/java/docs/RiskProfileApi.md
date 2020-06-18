@@ -21,9 +21,9 @@ Create a new Risk Profile.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -78,9 +78,9 @@ Permanently Delete a Risk Profile.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -134,9 +134,9 @@ Get All Risk Profile.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -199,9 +199,9 @@ Get a Risk Profile.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -256,9 +256,9 @@ Update a Risk Profile.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

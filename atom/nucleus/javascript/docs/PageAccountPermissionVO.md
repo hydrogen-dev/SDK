@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageAccountPermissionVO
+# HydrogenNucleusApi.PageAccountPermissionVO
 
 ## Properties
 Name | Type | Description | Notes

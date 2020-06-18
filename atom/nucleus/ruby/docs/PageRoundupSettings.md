@@ -1,4 +1,4 @@
-# AtomApi::PageRoundupSettings
+# NucleusApi::PageRoundupSettings
 
 ## Properties
 Name | Type | Description | Notes

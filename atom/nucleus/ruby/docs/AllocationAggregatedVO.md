@@ -1,4 +1,4 @@
-# AtomApi::AllocationAggregatedVO
+# NucleusApi::AllocationAggregatedVO
 
 ## Properties
 Name | Type | Description | Notes

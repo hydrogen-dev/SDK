@@ -1,4 +1,4 @@
-# AtomApi::ClientAnalyticsResponse
+# NucleusApi::ClientAnalyticsResponse
 
 ## Properties
 Name | Type | Description | Notes

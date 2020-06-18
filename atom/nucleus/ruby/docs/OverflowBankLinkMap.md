@@ -1,4 +1,4 @@
-# AtomApi::OverflowBankLinkMap
+# NucleusApi::OverflowBankLinkMap
 
 ## Properties
 Name | Type | Description | Notes

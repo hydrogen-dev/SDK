@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AdvisorOverviewVO'), require('../model/AvailableDateDoubleVO'), require('../model/Client'), require('../model/ClientAccountVO'), require('../model/ClientAnalyticsResponse'), require('../model/ClientHydro'), require('../model/ClientStatus'), require('../model/PageClient'), require('../model/PageClientHydro'), require('../model/PageClientStatus'), require('../model/PagePortfolioTransaction'), require('../model/PortfolioHoldingAgg'), require('../model/VClientGoalViewData'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.ClientApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AdvisorOverviewVO, root.HydrogenAtomApi.AvailableDateDoubleVO, root.HydrogenAtomApi.Client, root.HydrogenAtomApi.ClientAccountVO, root.HydrogenAtomApi.ClientAnalyticsResponse, root.HydrogenAtomApi.ClientHydro, root.HydrogenAtomApi.ClientStatus, root.HydrogenAtomApi.PageClient, root.HydrogenAtomApi.PageClientHydro, root.HydrogenAtomApi.PageClientStatus, root.HydrogenAtomApi.PagePortfolioTransaction, root.HydrogenAtomApi.PortfolioHoldingAgg, root.HydrogenAtomApi.VClientGoalViewData);
+    root.HydrogenNucleusApi.ClientApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AdvisorOverviewVO, root.HydrogenNucleusApi.AvailableDateDoubleVO, root.HydrogenNucleusApi.Client, root.HydrogenNucleusApi.ClientAccountVO, root.HydrogenNucleusApi.ClientAnalyticsResponse, root.HydrogenNucleusApi.ClientHydro, root.HydrogenNucleusApi.ClientStatus, root.HydrogenNucleusApi.PageClient, root.HydrogenNucleusApi.PageClientHydro, root.HydrogenNucleusApi.PageClientStatus, root.HydrogenNucleusApi.PagePortfolioTransaction, root.HydrogenNucleusApi.PortfolioHoldingAgg, root.HydrogenNucleusApi.VClientGoalViewData);
   }
 }(this, function(ApiClient, AdvisorOverviewVO, AvailableDateDoubleVO, Client, ClientAccountVO, ClientAnalyticsResponse, ClientHydro, ClientStatus, PageClient, PageClientHydro, PageClientStatus, PagePortfolioTransaction, PortfolioHoldingAgg, VClientGoalViewData) {
   'use strict';

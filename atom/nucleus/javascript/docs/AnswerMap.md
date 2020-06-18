@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AnswerMap
+# HydrogenNucleusApi.AnswerMap
 
 ## Properties
 Name | Type | Description | Notes

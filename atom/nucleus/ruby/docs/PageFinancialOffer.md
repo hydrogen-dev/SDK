@@ -1,4 +1,4 @@
-# AtomApi::PageFinancialOffer
+# NucleusApi::PageFinancialOffer
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::Investment
+# NucleusApi::Investment
 
 ## Properties
 Name | Type | Description | Notes

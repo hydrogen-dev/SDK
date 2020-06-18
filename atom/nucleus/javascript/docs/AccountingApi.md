@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AccountingApi
+# HydrogenNucleusApi.AccountingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,47 +21,16 @@ Store stats pulled from accounting vendors.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AccountingApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.AccountingApi();
-
-var accounting = new HydrogenAtomApi.Accounting(); // Accounting | accounting
+var accounting = new HydrogenNucleusApi.Accounting(); // Accounting | accounting
 
 
 var callback = function(error, data, response) {
@@ -103,45 +72,14 @@ Permanently delete an accounting.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.AccountingApi();
+var apiInstance = new HydrogenNucleusApi.AccountingApi();
 
 var accountingId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID accounting_id
 
@@ -185,45 +123,14 @@ Get information for all accounting for all clients defined for your firm.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.AccountingApi();
+var apiInstance = new HydrogenNucleusApi.AccountingApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -276,45 +183,14 @@ Retrieve the information for a specific accounting associated with a client.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.AccountingApi();
+var apiInstance = new HydrogenNucleusApi.AccountingApi();
 
 var accountingId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID accounting_id
 
@@ -358,47 +234,16 @@ Update the information for an accounting.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AccountingApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.AccountingApi();
-
-var accounting = new HydrogenAtomApi.Accounting(); // Accounting | accounting
+var accounting = new HydrogenNucleusApi.Accounting(); // Accounting | accounting
 
 var accountingId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID accounting_id
 

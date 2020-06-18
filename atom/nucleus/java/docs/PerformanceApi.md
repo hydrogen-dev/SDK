@@ -24,9 +24,9 @@ Get information on the performance of an account using IRR (Internal Rate of Ret
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -127,9 +127,9 @@ Get information on the performance of an allocation using TWR (Time Weighted Ret
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -232,9 +232,9 @@ Get information on the performance of a benchmark using TWR (Time Weighted Retur
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -335,9 +335,9 @@ Get information on the performance of a client using IRR (Internal Rate of Retur
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -438,9 +438,9 @@ Get information on the performance of a goal using IRR (Internal Rate of Return)
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -545,9 +545,9 @@ Get information on the performance of a model using TWR (Time Weighted Return). 
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -648,9 +648,9 @@ Get information on the performance of a portfolio using IRR (Internal Rate of Re
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -757,9 +757,9 @@ Get performance statistics for a security using TWR (Time Weighted Return). You 
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

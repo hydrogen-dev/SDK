@@ -1,4 +1,4 @@
-# HydrogenAtomApi.BankCredit
+# HydrogenNucleusApi.BankCredit
 
 ## Properties
 Name | Type | Description | Notes

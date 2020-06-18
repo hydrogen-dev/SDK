@@ -38,9 +38,9 @@ Create an client-hydro relationship under a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -95,9 +95,9 @@ Create an client status record for an client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -152,9 +152,9 @@ Create a new client, or register a new user, with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -209,9 +209,9 @@ Permanently delete a client-hydro relationship for a Hydro ID and a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -265,9 +265,9 @@ Permanently delete an client status record from an client’s history.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -321,9 +321,9 @@ Permanently delete a client registered with your firm. Turns the client&#39;s is
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -375,9 +375,9 @@ List all client Account overview
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -434,9 +434,9 @@ Advisor overview
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -493,9 +493,9 @@ Get details for all clients registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -558,9 +558,9 @@ Get a list of asset sizes per date for a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -625,9 +625,9 @@ Retrieve client&#39;s goal details
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -684,9 +684,9 @@ Get the information for all the securities that are currently being held by a cl
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -747,9 +747,9 @@ Get information for all client-hydro relationships for all clients defined for y
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -812,9 +812,9 @@ Retrieve the information for a specific client-hydro relationship.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -869,9 +869,9 @@ Get the client status history information for all clients.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -934,9 +934,9 @@ Retrieve the information for a specific client status record for an client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -991,9 +991,9 @@ Get the information for all transactions under a client registered with your fir
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1060,9 +1060,9 @@ Retrieve the information for a client registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1115,9 +1115,9 @@ total clients
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1180,9 +1180,9 @@ Update the information for a client-hydro relationship.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1239,9 +1239,9 @@ Update an client status record for an client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1298,9 +1298,9 @@ Update the information for a client registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

@@ -1,4 +1,4 @@
-# AtomApi::Sale
+# NucleusApi::Sale
 
 ## Properties
 Name | Type | Description | Notes

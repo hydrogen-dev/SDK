@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **portfolio_id** | **string** |  | [optional] 
 **portfolio_weights** | **float[]** |  | [optional] 
 **frequency_interval** | **string** |  | 
-**scenario** | [**\com\hydrogen\Model\SensitivityFactor[]**](SensitivityFactor.md) |  | 
+**scenario** | [**\com\hydrogen\proton\Model\SensitivityFactor[]**](SensitivityFactor.md) |  | 
 **aggregation_account_id** | **string** |  | [optional] 
 **market_data_source** | **string** |  | [optional] [default to 'nucleus']
 

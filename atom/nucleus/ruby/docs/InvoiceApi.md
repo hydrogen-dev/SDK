@@ -1,4 +1,4 @@
-# AtomApi::InvoiceApi
+# NucleusApi::InvoiceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -26,9 +26,9 @@ Create a new invoicePayment, for tracking invoice status.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -37,16 +37,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
-invoice_payment = AtomApi::InvoicePayment.new # InvoicePayment | invoicePayment
+invoice_payment = NucleusApi::InvoicePayment.new # InvoicePayment | invoicePayment
 
 
 begin
   #Create a invoicePayment
   result = api_instance.create_invoice_payment_using_post(invoice_payment)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->create_invoice_payment_using_post: #{e}"
 end
 ```
@@ -82,9 +82,9 @@ Create a new invoice, with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -93,16 +93,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
-invoice = AtomApi::Invoice.new # Invoice | invoice
+invoice = NucleusApi::Invoice.new # Invoice | invoice
 
 
 begin
   #Create a invoice
   result = api_instance.create_invoice_using_post(invoice)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->create_invoice_using_post: #{e}"
 end
 ```
@@ -138,9 +138,9 @@ Delete a invoicePayment.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -149,7 +149,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
 invoice_payment_id = 'invoice_payment_id_example' # String | UUID invoice_payment_id
 
@@ -157,7 +157,7 @@ invoice_payment_id = 'invoice_payment_id_example' # String | UUID invoice_paymen
 begin
   #Delete a invoicePayment
   api_instance.delete_invoice_payment_using_delete(invoice_payment_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->delete_invoice_payment_using_delete: #{e}"
 end
 ```
@@ -193,9 +193,9 @@ Delete a invoice.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -204,7 +204,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
 invoice_id = 'invoice_id_example' # String | UUID invoice_id
 
@@ -212,7 +212,7 @@ invoice_id = 'invoice_id_example' # String | UUID invoice_id
 begin
   #Delete a invoice
   api_instance.delete_invoice_using_delete(invoice_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->delete_invoice_using_delete: #{e}"
 end
 ```
@@ -248,9 +248,9 @@ List all invoice.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -259,7 +259,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -273,7 +273,7 @@ begin
   #List all invoice
   result = api_instance.get_invoice_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->get_invoice_all_using_get: #{e}"
 end
 ```
@@ -313,9 +313,9 @@ List all invoicePayment.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -324,7 +324,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -338,7 +338,7 @@ begin
   #List all invoicePayment
   result = api_instance.get_invoice_payment_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->get_invoice_payment_all_using_get: #{e}"
 end
 ```
@@ -378,9 +378,9 @@ Retrieve a invoicePayment.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -389,7 +389,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
 invoice_payment_id = 'invoice_payment_id_example' # String | UUID invoice_payment_id
 
@@ -398,7 +398,7 @@ begin
   #Retrieve a invoicePayment
   result = api_instance.get_invoice_payment_using_get(invoice_payment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->get_invoice_payment_using_get: #{e}"
 end
 ```
@@ -434,9 +434,9 @@ Retrieve a invoice.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -445,7 +445,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
 invoice_id = 'invoice_id_example' # String | UUID invoice_idd
 
@@ -454,7 +454,7 @@ begin
   #Retrieve a invoice
   result = api_instance.get_invoice_using_get(invoice_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->get_invoice_using_get: #{e}"
 end
 ```
@@ -490,9 +490,9 @@ Update a invoicePayment.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -501,9 +501,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
-invoice_payment = AtomApi::InvoicePayment.new # InvoicePayment | invoice_payment
+invoice_payment = NucleusApi::InvoicePayment.new # InvoicePayment | invoice_payment
 
 invoice_payment_id = 'invoice_payment_id_example' # String | UUID invoice_payment_id
 
@@ -512,7 +512,7 @@ begin
   #Update a invoicePayment
   result = api_instance.update_invoice_payment_using_put(invoice_payment, invoice_payment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->update_invoice_payment_using_put: #{e}"
 end
 ```
@@ -549,9 +549,9 @@ Update a invoice.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -560,9 +560,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InvoiceApi.new
+api_instance = NucleusApi::InvoiceApi.new
 
-invoice = AtomApi::Invoice.new # Invoice | invoice
+invoice = NucleusApi::Invoice.new # Invoice | invoice
 
 invoice_id = 'invoice_id_example' # String | UUID invoice_id
 
@@ -571,7 +571,7 @@ begin
   #Update a invoice
   result = api_instance.update_invoice_using_put(invoice, invoice_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->update_invoice_using_put: #{e}"
 end
 ```

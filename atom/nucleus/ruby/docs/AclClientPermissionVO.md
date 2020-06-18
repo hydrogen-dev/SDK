@@ -1,4 +1,4 @@
-# AtomApi::AclClientPermissionVO
+# NucleusApi::AclClientPermissionVO
 
 ## Properties
 Name | Type | Description | Notes

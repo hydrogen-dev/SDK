@@ -1,4 +1,4 @@
-# AtomApi::DepositVO
+# NucleusApi::DepositVO
 
 ## Properties
 Name | Type | Description | Notes

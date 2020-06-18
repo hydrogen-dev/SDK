@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.FeatureTrack();
+    instance = new HydrogenNucleusApi.FeatureTrack();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,55 +53,55 @@
   describe('FeatureTrack', function() {
     it('should create an instance of FeatureTrack', function() {
       // uncomment below and update the code to test FeatureTrack
-      //var instane = new HydrogenAtomApi.FeatureTrack();
-      //expect(instance).to.be.a(HydrogenAtomApi.FeatureTrack);
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
+      //expect(instance).to.be.a(HydrogenNucleusApi.FeatureTrack);
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property featureId (base name: "feature_id")', function() {
       // uncomment below and update the code to test the property featureId
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property visitTimeStamp (base name: "visit_time_stamp")', function() {
       // uncomment below and update the code to test the property visitTimeStamp
-      //var instane = new HydrogenAtomApi.FeatureTrack();
+      //var instane = new HydrogenNucleusApi.FeatureTrack();
       //expect(instance).to.be();
     });
 

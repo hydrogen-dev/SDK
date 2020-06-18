@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Roundup Class Doc Comment
  *
  * @category Class
  * @description Roundup Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class Roundup implements ModelInterface, ArrayAccess
         'account_id' => 'string',
         'client_id' => 'string',
         'create_date' => '\DateTime',
-        'funding_requests' => '\com\hydrogen\Model\FundingRequestMap[]',
+        'funding_requests' => '\com\hydrogen\nucleus\Model\FundingRequestMap[]',
         'id' => 'string',
         'roundup_setting_id' => 'string',
         'total_roundup_amount' => 'double',
@@ -331,7 +331,7 @@ class Roundup implements ModelInterface, ArrayAccess
     /**
      * Gets funding_requests
      *
-     * @return \com\hydrogen\Model\FundingRequestMap[]
+     * @return \com\hydrogen\nucleus\Model\FundingRequestMap[]
      */
     public function getFundingRequests()
     {
@@ -341,7 +341,7 @@ class Roundup implements ModelInterface, ArrayAccess
     /**
      * Sets funding_requests
      *
-     * @param \com\hydrogen\Model\FundingRequestMap[] $funding_requests funding_requests
+     * @param \com\hydrogen\nucleus\Model\FundingRequestMap[] $funding_requests funding_requests
      *
      * @return $this
      */

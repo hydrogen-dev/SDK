@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AggregationDataForClientParentResponseVO
+# HydrogenNucleusApi.AggregationDataForClientParentResponseVO
 
 ## Properties
 Name | Type | Description | Notes

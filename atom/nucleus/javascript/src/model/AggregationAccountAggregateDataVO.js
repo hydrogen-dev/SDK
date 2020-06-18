@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./AggregationAccountBalanceAggregateDataVO'), require('./AggregationAccountDetailsAggregateDataVO'), require('./AggregationAccountHoldingAggregateDataVO'), require('./AggregationAccountTransactionAggregateDataVO'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AggregationAccountAggregateDataVO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AggregationAccountBalanceAggregateDataVO, root.HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO, root.HydrogenAtomApi.AggregationAccountHoldingAggregateDataVO, root.HydrogenAtomApi.AggregationAccountTransactionAggregateDataVO);
+    root.HydrogenNucleusApi.AggregationAccountAggregateDataVO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AggregationAccountBalanceAggregateDataVO, root.HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO, root.HydrogenNucleusApi.AggregationAccountHoldingAggregateDataVO, root.HydrogenNucleusApi.AggregationAccountTransactionAggregateDataVO);
   }
 }(this, function(ApiClient, AggregationAccountBalanceAggregateDataVO, AggregationAccountDetailsAggregateDataVO, AggregationAccountHoldingAggregateDataVO, AggregationAccountTransactionAggregateDataVO) {
   'use strict';

@@ -1,4 +1,4 @@
-# atom_api.GoalApi
+# nucleus_api.GoalApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -30,15 +30,15 @@ Create a goal track record for a goal under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -50,8 +50,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
-goal_track = atom_api.GoalTrack() # GoalTrack | goalTrack
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
+goal_track = nucleus_api.GoalTrack() # GoalTrack | goalTrack
 
 try:
     # Create a goal track record
@@ -93,15 +93,15 @@ Create a new goal for your firm that clients can customize for themselves.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -113,8 +113,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
-goal_request = atom_api.Goal() # Goal | goalRequest
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
+goal_request = nucleus_api.Goal() # Goal | goalRequest
 
 try:
     # Create a goal
@@ -156,15 +156,15 @@ Permanently delete an goal track record for a goal under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -176,7 +176,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
 goal_track_id2 = 'goal_track_id_example' # str | goal_track_id
 
@@ -220,15 +220,15 @@ Permanently delete a goal for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -240,7 +240,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_id = 'goal_id_example' # str | UUID goal_id
 
 try:
@@ -282,15 +282,15 @@ Get the details for all goals defined by your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -302,7 +302,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -353,15 +353,15 @@ Get a list of asset sizes per date for a goal for a specified client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -373,7 +373,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
 goal_id = 'goal_id_example' # str | UUID goal_id
 end_date = '2013-10-20T19:20:30+01:00' # datetime | end_date (optional)
@@ -428,15 +428,15 @@ Get the information for all the securities that are currently being held in port
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -448,7 +448,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
 goal_id = 'goal_id_example' # str | UUID goal_id
 end_date = '2013-10-20T19:20:30+01:00' # datetime | end_date (optional)
@@ -499,15 +499,15 @@ Get information for all goal track records stored for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -519,7 +519,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 end_date = 'end_date_example' # str | end date  (optional)
 filter = 'filter_example' # str | filter (optional)
@@ -576,15 +576,15 @@ Retrieve the information for a specific goal track record for a goal under a cli
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -596,7 +596,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
 goal_track_id2 = 'goal_track_id_example' # str | goal_track_id
 
@@ -641,15 +641,15 @@ Get the information for all transactions under portfolios associated with a part
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -661,7 +661,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
 goal_id = 'goal_id_example' # str | UUID goal_id
 ascending = false # bool | ascending (optional) (default to false)
@@ -720,15 +720,15 @@ Retrieve the information for a goal defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -740,7 +740,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_id = 'goal_id_example' # str | UUID goal_id
 
 try:
@@ -783,15 +783,15 @@ Update the information for a goal track record.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -803,8 +803,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
-goal_track = atom_api.GoalTrack() # GoalTrack | goal_track
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
+goal_track = nucleus_api.GoalTrack() # GoalTrack | goal_track
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
 
 try:
@@ -848,15 +848,15 @@ Update a goal defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -868,8 +868,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.GoalApi(atom_api.ApiClient(configuration))
-goal = atom_api.Goal() # Goal | goal
+api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
+goal = nucleus_api.Goal() # Goal | goal
 goal_id = 'goal_id_example' # str | UUID goal_id
 
 try:

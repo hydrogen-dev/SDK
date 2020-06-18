@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ModelAssetSize
+# HydrogenNucleusApi.ModelAssetSize
 
 ## Properties
 Name | Type | Description | Notes

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AccountApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class AccountApi
      *
      * Create an account allocation
      *
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountAllocationMapping
+     * @return \com\hydrogen\nucleus\Model\AccountAllocationMapping
      */
     public function createAccountAllocationMappingUsingPost($alloc_request)
     {
@@ -109,15 +109,15 @@ class AccountApi
      *
      * Create an account allocation
      *
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountAllocationMapping, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountAllocationMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountAllocationMappingUsingPostWithHttpInfo($alloc_request)
     {
-        $returnType = '\com\hydrogen\Model\AccountAllocationMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountAllocationMapping';
         $request = $this->createAccountAllocationMappingUsingPostRequest($alloc_request);
 
         try {
@@ -169,7 +169,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountAllocationMapping',
+                        '\com\hydrogen\nucleus\Model\AccountAllocationMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class AccountApi
      *
      * Create an account allocation
      *
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class AccountApi
      *
      * Create an account allocation
      *
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountAllocationMappingUsingPostAsyncWithHttpInfo($alloc_request)
     {
-        $returnType = '\com\hydrogen\Model\AccountAllocationMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountAllocationMapping';
         $request = $this->createAccountAllocationMappingUsingPostRequest($alloc_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class AccountApi
     /**
      * Create request for operation 'createAccountAllocationMappingUsingPost'
      *
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class AccountApi
      *
      * Create an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type_request accountTypeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type_request accountTypeRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountType
+     * @return \com\hydrogen\nucleus\Model\AccountType
      */
     public function createAccountTypeUsingPost($account_type_request)
     {
@@ -377,15 +377,15 @@ class AccountApi
      *
      * Create an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type_request accountTypeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type_request accountTypeRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountType, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountTypeUsingPostWithHttpInfo($account_type_request)
     {
-        $returnType = '\com\hydrogen\Model\AccountType';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountType';
         $request = $this->createAccountTypeUsingPostRequest($account_type_request);
 
         try {
@@ -437,7 +437,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountType',
+                        '\com\hydrogen\nucleus\Model\AccountType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class AccountApi
      *
      * Create an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type_request accountTypeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type_request accountTypeRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class AccountApi
      *
      * Create an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type_request accountTypeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type_request accountTypeRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountTypeUsingPostAsyncWithHttpInfo($account_type_request)
     {
-        $returnType = '\com\hydrogen\Model\AccountType';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountType';
         $request = $this->createAccountTypeUsingPostRequest($account_type_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class AccountApi
     /**
      * Create request for operation 'createAccountTypeUsingPost'
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type_request accountTypeRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type_request accountTypeRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Account
+     * @return \com\hydrogen\nucleus\Model\Account
      */
     public function createAccountUsingPost($client_account_request)
     {
@@ -645,15 +645,15 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountUsingPostWithHttpInfo($client_account_request)
     {
-        $returnType = '\com\hydrogen\Model\Account';
+        $returnType = '\com\hydrogen\nucleus\Model\Account';
         $request = $this->createAccountUsingPostRequest($client_account_request);
 
         try {
@@ -705,7 +705,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Account',
+                        '\com\hydrogen\nucleus\Model\Account',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountUsingPostAsyncWithHttpInfo($client_account_request)
     {
-        $returnType = '\com\hydrogen\Model\Account';
+        $returnType = '\com\hydrogen\nucleus\Model\Account';
         $request = $this->createAccountUsingPostRequest($client_account_request);
 
         return $this->client
@@ -790,7 +790,7 @@ class AccountApi
     /**
      * Create request for operation 'createAccountUsingPost'
      *
-     * @param  \com\hydrogen\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -898,7 +898,7 @@ class AccountApi
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -914,7 +914,7 @@ class AccountApi
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1134,9 +1134,9 @@ class AccountApi
      *
      * @param  string $account_id account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountPermissionVO
+     * @return \com\hydrogen\nucleus\Model\AccountPermissionVO
      */
     public function deleteAccountPermissionUsingDELETE($account_id)
     {
@@ -1151,13 +1151,13 @@ class AccountApi
      *
      * @param  string $account_id account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccountPermissionUsingDELETEWithHttpInfo($account_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->deleteAccountPermissionUsingDELETERequest($account_id);
 
         try {
@@ -1209,7 +1209,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountPermissionVO',
+                        '\com\hydrogen\nucleus\Model\AccountPermissionVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1251,7 +1251,7 @@ class AccountApi
      */
     public function deleteAccountPermissionUsingDELETEAsyncWithHttpInfo($account_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->deleteAccountPermissionUsingDELETERequest($account_id);
 
         return $this->client
@@ -1408,7 +1408,7 @@ class AccountApi
      * @param  string $account_type_id UUID account_type_id (required)
      * @param  string $account_type_id2 account_type_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1425,7 +1425,7 @@ class AccountApi
      * @param  string $account_type_id UUID account_type_id (required)
      * @param  string $account_type_id2 account_type_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1662,7 +1662,7 @@ class AccountApi
      *
      * @param  string $account_id UUID account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1678,7 +1678,7 @@ class AccountApi
      *
      * @param  string $account_id UUID account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1902,9 +1902,9 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAccount_
+     * @return \com\hydrogen\nucleus\Model\PageAccount_
      */
     public function getAccountAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1923,13 +1923,13 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAccount_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAccount_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccount_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccount_';
         $request = $this->getAccountAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1981,7 +1981,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAccount_',
+                        '\com\hydrogen\nucleus\Model\PageAccount_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2031,7 +2031,7 @@ class AccountApi
      */
     public function getAccountAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccount_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccount_';
         $request = $this->getAccountAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2201,9 +2201,9 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAccountAllocationMapping_
+     * @return \com\hydrogen\nucleus\Model\PageAccountAllocationMapping_
      */
     public function getAccountAllocationMappingAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2222,13 +2222,13 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAccountAllocationMapping_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAccountAllocationMapping_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountAllocationMappingAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountAllocationMapping_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountAllocationMapping_';
         $request = $this->getAccountAllocationMappingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2280,7 +2280,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAccountAllocationMapping_',
+                        '\com\hydrogen\nucleus\Model\PageAccountAllocationMapping_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2330,7 +2330,7 @@ class AccountApi
      */
     public function getAccountAllocationMappingAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountAllocationMapping_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountAllocationMapping_';
         $request = $this->getAccountAllocationMappingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2496,9 +2496,9 @@ class AccountApi
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountAllocationMapping
+     * @return \com\hydrogen\nucleus\Model\AccountAllocationMapping
      */
     public function getAccountAllocationMappingUsingGet($account_allocation_id)
     {
@@ -2513,13 +2513,13 @@ class AccountApi
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountAllocationMapping, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountAllocationMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountAllocationMappingUsingGetWithHttpInfo($account_allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountAllocationMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountAllocationMapping';
         $request = $this->getAccountAllocationMappingUsingGetRequest($account_allocation_id);
 
         try {
@@ -2571,7 +2571,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountAllocationMapping',
+                        '\com\hydrogen\nucleus\Model\AccountAllocationMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2613,7 +2613,7 @@ class AccountApi
      */
     public function getAccountAllocationMappingUsingGetAsyncWithHttpInfo($account_allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountAllocationMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountAllocationMapping';
         $request = $this->getAccountAllocationMappingUsingGetRequest($account_allocation_id);
 
         return $this->client
@@ -2774,9 +2774,9 @@ class AccountApi
      * @param  string $sort_type Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () (optional)
      * @param  \DateTime $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AvailableDateDoubleVO[]
+     * @return \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]
      */
     public function getAccountAssetSizeAggAllUsingGet($account_id, $end_date = null, $exclude_subledger = 'false', $get_latest = null, $sort_type = null, $start_date = null)
     {
@@ -2796,13 +2796,13 @@ class AccountApi
      * @param  string $sort_type Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () (optional)
      * @param  \DateTime $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AvailableDateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountAssetSizeAggAllUsingGetWithHttpInfo($account_id, $end_date = null, $exclude_subledger = 'false', $get_latest = null, $sort_type = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\AvailableDateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]';
         $request = $this->getAccountAssetSizeAggAllUsingGetRequest($account_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
 
         try {
@@ -2854,7 +2854,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AvailableDateDoubleVO[]',
+                        '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2906,7 +2906,7 @@ class AccountApi
      */
     public function getAccountAssetSizeAggAllUsingGetAsyncWithHttpInfo($account_id, $end_date = null, $exclude_subledger = 'false', $get_latest = null, $sort_type = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\AvailableDateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]';
         $request = $this->getAccountAssetSizeAggAllUsingGetRequest($account_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
 
         return $this->client
@@ -3091,9 +3091,9 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageVAccountAssetSize_
+     * @return \com\hydrogen\nucleus\Model\PageVAccountAssetSize_
      */
     public function getAccountAssetSizeAllUsingGet($ascending = 'false', $filter = null, $order_by = 'date', $page = '0', $size = '25')
     {
@@ -3112,13 +3112,13 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageVAccountAssetSize_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageVAccountAssetSize_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountAssetSizeAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageVAccountAssetSize_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageVAccountAssetSize_';
         $request = $this->getAccountAssetSizeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3170,7 +3170,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageVAccountAssetSize_',
+                        '\com\hydrogen\nucleus\Model\PageVAccountAssetSize_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3220,7 +3220,7 @@ class AccountApi
      */
     public function getAccountAssetSizeAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageVAccountAssetSize_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageVAccountAssetSize_';
         $request = $this->getAccountAssetSizeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3388,9 +3388,9 @@ class AccountApi
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $order_by order_by (optional, default to update_date)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountOverviewVO
+     * @return \com\hydrogen\nucleus\Model\AccountOverviewVO
      */
     public function getAccountOverviewUsingGet($account_id, $ascending = 'false', $order_by = 'update_date')
     {
@@ -3407,13 +3407,13 @@ class AccountApi
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $order_by order_by (optional, default to update_date)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountOverviewVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountOverviewVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountOverviewUsingGetWithHttpInfo($account_id, $ascending = 'false', $order_by = 'update_date')
     {
-        $returnType = '\com\hydrogen\Model\AccountOverviewVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountOverviewVO';
         $request = $this->getAccountOverviewUsingGetRequest($account_id, $ascending, $order_by);
 
         try {
@@ -3465,7 +3465,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountOverviewVO',
+                        '\com\hydrogen\nucleus\Model\AccountOverviewVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3511,7 +3511,7 @@ class AccountApi
      */
     public function getAccountOverviewUsingGetAsyncWithHttpInfo($account_id, $ascending = 'false', $order_by = 'update_date')
     {
-        $returnType = '\com\hydrogen\Model\AccountOverviewVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountOverviewVO';
         $request = $this->getAccountOverviewUsingGetRequest($account_id, $ascending, $order_by);
 
         return $this->client
@@ -3677,9 +3677,9 @@ class AccountApi
      *
      * @param  string $account_id account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountPermissionVO
+     * @return \com\hydrogen\nucleus\Model\AccountPermissionVO
      */
     public function getAccountPermissionUsingGET($account_id)
     {
@@ -3694,13 +3694,13 @@ class AccountApi
      *
      * @param  string $account_id account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountPermissionUsingGETWithHttpInfo($account_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->getAccountPermissionUsingGETRequest($account_id);
 
         try {
@@ -3752,7 +3752,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountPermissionVO',
+                        '\com\hydrogen\nucleus\Model\AccountPermissionVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3794,7 +3794,7 @@ class AccountApi
      */
     public function getAccountPermissionUsingGETAsyncWithHttpInfo($account_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->getAccountPermissionUsingGETRequest($account_id);
 
         return $this->client
@@ -3954,9 +3954,9 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAccountType_
+     * @return \com\hydrogen\nucleus\Model\PageAccountType_
      */
     public function getAccountTypeAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3975,13 +3975,13 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAccountType_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAccountType_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountTypeAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountType_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountType_';
         $request = $this->getAccountTypeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4033,7 +4033,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAccountType_',
+                        '\com\hydrogen\nucleus\Model\PageAccountType_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4083,7 +4083,7 @@ class AccountApi
      */
     public function getAccountTypeAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountType_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountType_';
         $request = $this->getAccountTypeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4250,9 +4250,9 @@ class AccountApi
      * @param  string $account_type_id UUID account_type_id (required)
      * @param  string $account_type_id2 account_type_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountType
+     * @return \com\hydrogen\nucleus\Model\AccountType
      */
     public function getAccountTypeUsingGet($account_type_id, $account_type_id2)
     {
@@ -4268,13 +4268,13 @@ class AccountApi
      * @param  string $account_type_id UUID account_type_id (required)
      * @param  string $account_type_id2 account_type_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountType, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountTypeUsingGetWithHttpInfo($account_type_id, $account_type_id2)
     {
-        $returnType = '\com\hydrogen\Model\AccountType';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountType';
         $request = $this->getAccountTypeUsingGetRequest($account_type_id, $account_type_id2);
 
         try {
@@ -4326,7 +4326,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountType',
+                        '\com\hydrogen\nucleus\Model\AccountType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4370,7 +4370,7 @@ class AccountApi
      */
     public function getAccountTypeUsingGetAsyncWithHttpInfo($account_type_id, $account_type_id2)
     {
-        $returnType = '\com\hydrogen\Model\AccountType';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountType';
         $request = $this->getAccountTypeUsingGetRequest($account_type_id, $account_type_id2);
 
         return $this->client
@@ -4541,9 +4541,9 @@ class AccountApi
      *
      * @param  string $account_id UUID account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Account
+     * @return \com\hydrogen\nucleus\Model\Account
      */
     public function getAccountUsingGet($account_id)
     {
@@ -4558,13 +4558,13 @@ class AccountApi
      *
      * @param  string $account_id UUID account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountUsingGetWithHttpInfo($account_id)
     {
-        $returnType = '\com\hydrogen\Model\Account';
+        $returnType = '\com\hydrogen\nucleus\Model\Account';
         $request = $this->getAccountUsingGetRequest($account_id);
 
         try {
@@ -4616,7 +4616,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Account',
+                        '\com\hydrogen\nucleus\Model\Account',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4658,7 +4658,7 @@ class AccountApi
      */
     public function getAccountUsingGetAsyncWithHttpInfo($account_id)
     {
-        $returnType = '\com\hydrogen\Model\Account';
+        $returnType = '\com\hydrogen\nucleus\Model\Account';
         $request = $this->getAccountUsingGetRequest($account_id);
 
         return $this->client
@@ -4818,9 +4818,9 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAccountPermissionVO_
+     * @return \com\hydrogen\nucleus\Model\PageAccountPermissionVO_
      */
     public function getAllAccountPermissionUsingGET($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4839,13 +4839,13 @@ class AccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAccountPermissionVO_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAccountPermissionVO_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllAccountPermissionUsingGETWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountPermissionVO_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountPermissionVO_';
         $request = $this->getAllAccountPermissionUsingGETRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4897,7 +4897,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAccountPermissionVO_',
+                        '\com\hydrogen\nucleus\Model\PageAccountPermissionVO_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4947,7 +4947,7 @@ class AccountApi
      */
     public function getAllAccountPermissionUsingGETAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountPermissionVO_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountPermissionVO_';
         $request = $this->getAllAccountPermissionUsingGETRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5116,9 +5116,9 @@ class AccountApi
      * @param  bool $get_latest true or false (optional)
      * @param  string $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioHoldingAgg[]
+     * @return \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]
      */
     public function getPortfolioHoldingAggAllUsingGet($account_id, $end_date = null, $get_latest = null, $start_date = null)
     {
@@ -5136,13 +5136,13 @@ class AccountApi
      * @param  bool $get_latest true or false (optional)
      * @param  string $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioHoldingAggAllUsingGetWithHttpInfo($account_id, $end_date = null, $get_latest = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]';
         $request = $this->getPortfolioHoldingAggAllUsingGetRequest($account_id, $end_date, $get_latest, $start_date);
 
         try {
@@ -5194,7 +5194,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioHoldingAgg[]',
+                        '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5242,7 +5242,7 @@ class AccountApi
      */
     public function getPortfolioHoldingAggAllUsingGetAsyncWithHttpInfo($account_id, $end_date = null, $get_latest = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]';
         $request = $this->getPortfolioHoldingAggAllUsingGetRequest($account_id, $end_date, $get_latest, $start_date);
 
         return $this->client
@@ -5419,9 +5419,9 @@ class AccountApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolioTransaction_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioTransaction_
      */
     public function getPortfolioTransactionAggAllUsingGet($account_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
@@ -5442,13 +5442,13 @@ class AccountApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioTransactionAggAllUsingGetWithHttpInfo($account_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getPortfolioTransactionAggAllUsingGetRequest($account_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
 
         try {
@@ -5500,7 +5500,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolioTransaction_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5554,7 +5554,7 @@ class AccountApi
      */
     public function getPortfolioTransactionAggAllUsingGetAsyncWithHttpInfo($account_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getPortfolioTransactionAggAllUsingGetRequest($account_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
 
         return $this->client
@@ -5738,11 +5738,11 @@ class AccountApi
      *
      * create an account permission
      *
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountPermissionVO
+     * @return \com\hydrogen\nucleus\Model\AccountPermissionVO
      */
     public function insertAccountAndRelatedPermissionUsingPOST($acl_client_permission_vo)
     {
@@ -5755,15 +5755,15 @@ class AccountApi
      *
      * create an account permission
      *
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function insertAccountAndRelatedPermissionUsingPOSTWithHttpInfo($acl_client_permission_vo)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->insertAccountAndRelatedPermissionUsingPOSTRequest($acl_client_permission_vo);
 
         try {
@@ -5815,7 +5815,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountPermissionVO',
+                        '\com\hydrogen\nucleus\Model\AccountPermissionVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5830,7 +5830,7 @@ class AccountApi
      *
      * create an account permission
      *
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5850,14 +5850,14 @@ class AccountApi
      *
      * create an account permission
      *
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function insertAccountAndRelatedPermissionUsingPOSTAsyncWithHttpInfo($acl_client_permission_vo)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->insertAccountAndRelatedPermissionUsingPOSTRequest($acl_client_permission_vo);
 
         return $this->client
@@ -5900,7 +5900,7 @@ class AccountApi
     /**
      * Create request for operation 'insertAccountAndRelatedPermissionUsingPOST'
      *
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6007,11 +6007,11 @@ class AccountApi
      * Subscribe an account
      *
      * @param  string $account_id UUID account_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Portfolio[]
+     * @return \com\hydrogen\nucleus\Model\Portfolio[]
      */
     public function subscribeAccountUsingPost($account_id, $alloc_request)
     {
@@ -6025,15 +6025,15 @@ class AccountApi
      * Subscribe an account
      *
      * @param  string $account_id UUID account_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Portfolio[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Portfolio[], HTTP status code, HTTP response headers (array of strings)
      */
     public function subscribeAccountUsingPostWithHttpInfo($account_id, $alloc_request)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio[]';
         $request = $this->subscribeAccountUsingPostRequest($account_id, $alloc_request);
 
         try {
@@ -6085,7 +6085,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Portfolio[]',
+                        '\com\hydrogen\nucleus\Model\Portfolio[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6101,7 +6101,7 @@ class AccountApi
      * Subscribe an account
      *
      * @param  string $account_id UUID account_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6122,14 +6122,14 @@ class AccountApi
      * Subscribe an account
      *
      * @param  string $account_id UUID account_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function subscribeAccountUsingPostAsyncWithHttpInfo($account_id, $alloc_request)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio[]';
         $request = $this->subscribeAccountUsingPostRequest($account_id, $alloc_request);
 
         return $this->client
@@ -6173,7 +6173,7 @@ class AccountApi
      * Create request for operation 'subscribeAccountUsingPost'
      *
      * @param  string $account_id UUID account_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6294,11 +6294,11 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountAllocationMapping
+     * @return \com\hydrogen\nucleus\Model\AccountAllocationMapping
      */
     public function updateAccountAllocationMappingUsingPut($account_allocation_id, $account_allocation_mapping = null)
     {
@@ -6312,15 +6312,15 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountAllocationMapping, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountAllocationMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountAllocationMappingUsingPutWithHttpInfo($account_allocation_id, $account_allocation_mapping = null)
     {
-        $returnType = '\com\hydrogen\Model\AccountAllocationMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountAllocationMapping';
         $request = $this->updateAccountAllocationMappingUsingPutRequest($account_allocation_id, $account_allocation_mapping);
 
         try {
@@ -6372,7 +6372,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountAllocationMapping',
+                        '\com\hydrogen\nucleus\Model\AccountAllocationMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6388,7 +6388,7 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6409,14 +6409,14 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAccountAllocationMappingUsingPutAsyncWithHttpInfo($account_allocation_id, $account_allocation_mapping = null)
     {
-        $returnType = '\com\hydrogen\Model\AccountAllocationMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountAllocationMapping';
         $request = $this->updateAccountAllocationMappingUsingPutRequest($account_allocation_id, $account_allocation_mapping);
 
         return $this->client
@@ -6460,7 +6460,7 @@ class AccountApi
      * Create request for operation 'updateAccountAllocationMappingUsingPut'
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6574,12 +6574,12 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type account_type (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountType
+     * @return \com\hydrogen\nucleus\Model\AccountType
      */
     public function updateAccountTypeUsingPut($account_type, $account_type_id)
     {
@@ -6592,16 +6592,16 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type account_type (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountType, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountTypeUsingPutWithHttpInfo($account_type, $account_type_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountType';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountType';
         $request = $this->updateAccountTypeUsingPutRequest($account_type, $account_type_id);
 
         try {
@@ -6653,7 +6653,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountType',
+                        '\com\hydrogen\nucleus\Model\AccountType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6668,7 +6668,7 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type account_type (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6689,7 +6689,7 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type account_type (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6697,7 +6697,7 @@ class AccountApi
      */
     public function updateAccountTypeUsingPutAsyncWithHttpInfo($account_type, $account_type_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountType';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountType';
         $request = $this->updateAccountTypeUsingPutRequest($account_type, $account_type_id);
 
         return $this->client
@@ -6740,7 +6740,7 @@ class AccountApi
     /**
      * Create request for operation 'updateAccountTypeUsingPut'
      *
-     * @param  \com\hydrogen\Model\AccountType $account_type account_type (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6861,12 +6861,12 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\Model\Account $account account (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Account
+     * @return \com\hydrogen\nucleus\Model\Account
      */
     public function updateAccountUsingPut($account, $account_id)
     {
@@ -6879,16 +6879,16 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\Model\Account $account account (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountUsingPutWithHttpInfo($account, $account_id)
     {
-        $returnType = '\com\hydrogen\Model\Account';
+        $returnType = '\com\hydrogen\nucleus\Model\Account';
         $request = $this->updateAccountUsingPutRequest($account, $account_id);
 
         try {
@@ -6940,7 +6940,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Account',
+                        '\com\hydrogen\nucleus\Model\Account',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6955,7 +6955,7 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\Model\Account $account account (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6976,7 +6976,7 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\Model\Account $account account (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6984,7 +6984,7 @@ class AccountApi
      */
     public function updateAccountUsingPutAsyncWithHttpInfo($account, $account_id)
     {
-        $returnType = '\com\hydrogen\Model\Account';
+        $returnType = '\com\hydrogen\nucleus\Model\Account';
         $request = $this->updateAccountUsingPutRequest($account, $account_id);
 
         return $this->client
@@ -7027,7 +7027,7 @@ class AccountApi
     /**
      * Create request for operation 'updateAccountUsingPut'
      *
-     * @param  \com\hydrogen\Model\Account $account account (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7149,11 +7149,11 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountPermissionVO
+     * @return \com\hydrogen\nucleus\Model\AccountPermissionVO
      */
     public function updateClientAccountPermissionUsingPUT($account_id, $acl_client_permission_vo)
     {
@@ -7167,15 +7167,15 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountPermissionVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateClientAccountPermissionUsingPUTWithHttpInfo($account_id, $acl_client_permission_vo)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->updateClientAccountPermissionUsingPUTRequest($account_id, $acl_client_permission_vo);
 
         try {
@@ -7227,7 +7227,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountPermissionVO',
+                        '\com\hydrogen\nucleus\Model\AccountPermissionVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7243,7 +7243,7 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7264,14 +7264,14 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateClientAccountPermissionUsingPUTAsyncWithHttpInfo($account_id, $acl_client_permission_vo)
     {
-        $returnType = '\com\hydrogen\Model\AccountPermissionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountPermissionVO';
         $request = $this->updateClientAccountPermissionUsingPUTRequest($account_id, $acl_client_permission_vo);
 
         return $this->client
@@ -7315,7 +7315,7 @@ class AccountApi
      * Create request for operation 'updateClientAccountPermissionUsingPUT'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

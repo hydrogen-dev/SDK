@@ -1,4 +1,4 @@
-# atom_api.DecisionTreeApi
+# nucleus_api.DecisionTreeApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -33,15 +33,15 @@ Decision tree result.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -53,8 +53,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
-decision_tree_co = atom_api.DecisionTreeCO() # DecisionTreeCO | decisionTreeCO
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
+decision_tree_co = nucleus_api.DecisionTreeCO() # DecisionTreeCO | decisionTreeCO
 
 try:
     # Decision tree result
@@ -96,15 +96,15 @@ Create a new decision tree for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -116,8 +116,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
-decision_tree = atom_api.DecisionTree() # DecisionTree | decisionTree
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
+decision_tree = nucleus_api.DecisionTree() # DecisionTree | decisionTree
 
 try:
     # Create a decision tree
@@ -159,15 +159,15 @@ Create a new node relationship for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -179,8 +179,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
-node = atom_api.NodeRelationship() # NodeRelationship | node
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
+node = nucleus_api.NodeRelationship() # NodeRelationship | node
 
 try:
     # Create a node relationship
@@ -222,15 +222,15 @@ Create a new node for your firm that can be used in a decision tree and mapped t
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -242,8 +242,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
-node = atom_api.Node() # Node | node
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
+node = nucleus_api.Node() # Node | node
 
 try:
     # Create a node
@@ -285,15 +285,15 @@ Permanently delete a decision tree.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -305,7 +305,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 decision_tree_id = 'decision_tree_id_example' # str | UUID decision_tree_id
 
 try:
@@ -347,15 +347,15 @@ Permanently delete a node relationship.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -367,7 +367,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_relationship_id = 'node_relationship_id_example' # str | UUID node_relationship_id
 
 try:
@@ -410,15 +410,15 @@ Permanently delete a node.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -430,7 +430,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_id = 'node_id_example' # str | UUID node_id
 
 try:
@@ -473,15 +473,15 @@ Get the information for all decision trees defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -493,7 +493,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -544,15 +544,15 @@ Retrieve the information for a decision tree.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -564,7 +564,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 decision_tree_id = 'decision_tree_id_example' # str | UUID decision_tree_id
 
 try:
@@ -607,15 +607,15 @@ List all nodes that are defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -627,7 +627,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -678,15 +678,15 @@ Get the information for all the node relationships defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -698,7 +698,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -749,15 +749,15 @@ Retrieve the information for a node relationship.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -769,7 +769,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_relationship_id = 'node_relationship_id_example' # str | UUID node_relationship_id
 
 try:
@@ -812,15 +812,15 @@ Retrieve the information for a node.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -832,7 +832,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_id = 'node_id_example' # str | UUID node_id
 
 try:
@@ -875,15 +875,15 @@ Updated the information for a decision tree.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -895,8 +895,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
-decision_tree = atom_api.DecisionTree() # DecisionTree | decision_tree
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
+decision_tree = nucleus_api.DecisionTree() # DecisionTree | decision_tree
 decision_tree_id = 'decision_tree_id_example' # str | UUID decision_tree_id
 
 try:
@@ -940,15 +940,15 @@ Update the information for a node relationship.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -960,8 +960,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
-json_node = atom_api.JsonNode() # JsonNode | jsonNode
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
+json_node = nucleus_api.JsonNode() # JsonNode | jsonNode
 node_relationship_id = 'node_relationship_id_example' # str | UUID node_relationship_id
 
 try:
@@ -1005,15 +1005,15 @@ Updated the information for a node.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1025,8 +1025,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.DecisionTreeApi(atom_api.ApiClient(configuration))
-json_node = atom_api.JsonNode() # JsonNode | jsonNode
+api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
+json_node = nucleus_api.JsonNode() # JsonNode | jsonNode
 node_id = 'node_id_example' # str | UUID node_id
 
 try:

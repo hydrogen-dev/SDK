@@ -1,4 +1,4 @@
-# AtomApi::AuditLogApi
+# NucleusApi::AuditLogApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -19,9 +19,9 @@ Create a new audit log.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -30,16 +30,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AuditLogApi.new
+api_instance = NucleusApi::AuditLogApi.new
 
-audit_log = AtomApi::AuditLog.new # AuditLog | auditLog
+audit_log = NucleusApi::AuditLog.new # AuditLog | auditLog
 
 
 begin
   #Create a audit log
   result = api_instance.create_audit_log_using_post(audit_log)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AuditLogApi->create_audit_log_using_post: #{e}"
 end
 ```
@@ -75,9 +75,9 @@ Get details for all audit log.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -86,7 +86,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AuditLogApi.new
+api_instance = NucleusApi::AuditLogApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -100,7 +100,7 @@ begin
   #List all audit log
   result = api_instance.get_audit_log_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AuditLogApi->get_audit_log_all_using_get: #{e}"
 end
 ```
@@ -140,9 +140,9 @@ Retrieve the information for a audit log.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -151,7 +151,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AuditLogApi.new
+api_instance = NucleusApi::AuditLogApi.new
 
 audit_log_id = 'audit_log_id_example' # String | UUID audit_log_id
 
@@ -160,7 +160,7 @@ begin
   #Retrieve a audit log
   result = api_instance.get_audit_log_using_get(audit_log_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AuditLogApi->get_audit_log_using_get: #{e}"
 end
 ```

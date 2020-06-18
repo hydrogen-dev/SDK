@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.FAQKeyword();
+    instance = new HydrogenNucleusApi.FAQKeyword();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('FAQKeyword', function() {
     it('should create an instance of FAQKeyword', function() {
       // uncomment below and update the code to test FAQKeyword
-      //var instane = new HydrogenAtomApi.FAQKeyword();
-      //expect(instance).to.be.a(HydrogenAtomApi.FAQKeyword);
+      //var instane = new HydrogenNucleusApi.FAQKeyword();
+      //expect(instance).to.be.a(HydrogenNucleusApi.FAQKeyword);
     });
 
     it('should have the property keyword (base name: "keyword")', function() {
       // uncomment below and update the code to test the property keyword
-      //var instane = new HydrogenAtomApi.FAQKeyword();
+      //var instane = new HydrogenNucleusApi.FAQKeyword();
       //expect(instance).to.be();
     });
 
     it('should have the property priority (base name: "priority")', function() {
       // uncomment below and update the code to test the property priority
-      //var instane = new HydrogenAtomApi.FAQKeyword();
+      //var instane = new HydrogenNucleusApi.FAQKeyword();
       //expect(instance).to.be();
     });
 

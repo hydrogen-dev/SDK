@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PermissionVO
+# HydrogenNucleusApi.PermissionVO
 
 ## Properties
 Name | Type | Description | Notes

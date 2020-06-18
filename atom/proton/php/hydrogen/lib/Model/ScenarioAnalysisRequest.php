@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\proton\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\proton\ObjectSerializer;
 
 /**
  * ScenarioAnalysisRequest Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -68,7 +68,7 @@ class ScenarioAnalysisRequest implements ModelInterface, ArrayAccess
         'portfolio_id' => 'string',
         'portfolio_weights' => 'float[]',
         'frequency_interval' => 'string',
-        'scenario' => '\com\hydrogen\Model\SensitivityFactor[]',
+        'scenario' => '\com\hydrogen\proton\Model\SensitivityFactor[]',
         'aggregation_account_id' => 'string',
         'market_data_source' => 'string'
     ];
@@ -632,7 +632,7 @@ class ScenarioAnalysisRequest implements ModelInterface, ArrayAccess
     /**
      * Gets scenario
      *
-     * @return \com\hydrogen\Model\SensitivityFactor[]
+     * @return \com\hydrogen\proton\Model\SensitivityFactor[]
      */
     public function getScenario()
     {
@@ -642,7 +642,7 @@ class ScenarioAnalysisRequest implements ModelInterface, ArrayAccess
     /**
      * Sets scenario
      *
-     * @param \com\hydrogen\Model\SensitivityFactor[] $scenario scenario
+     * @param \com\hydrogen\proton\Model\SensitivityFactor[] $scenario scenario
      *
      * @return $this
      */

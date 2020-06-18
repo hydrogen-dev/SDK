@@ -1,4 +1,4 @@
-# AtomApi::AllocationApi
+# NucleusApi::AllocationApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -30,9 +30,9 @@ Create a new allocation composition record for an allocation.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -41,16 +41,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
-alloc_request = AtomApi::AllocationComposition.new # AllocationComposition | allocRequest
+alloc_request = NucleusApi::AllocationComposition.new # AllocationComposition | allocRequest
 
 
 begin
   #Create an allocation composition
   result = api_instance.create_allocation_composition_using_post(alloc_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->create_allocation_composition_using_post: #{e}"
 end
 ```
@@ -86,9 +86,9 @@ Create a new allocation for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -97,16 +97,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
-allocation_request = AtomApi::Allocation.new # Allocation | allocationRequest
+allocation_request = NucleusApi::Allocation.new # Allocation | allocationRequest
 
 
 begin
   #Create an allocation
   result = api_instance.create_allocation_using_post(allocation_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->create_allocation_using_post: #{e}"
 end
 ```
@@ -142,9 +142,9 @@ Permanently delete an allocation composition record for an allocation.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -153,7 +153,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_composition_id = 'allocation_composition_id_example' # String | UUID allocation_composition_id
 
@@ -161,7 +161,7 @@ allocation_composition_id = 'allocation_composition_id_example' # String | UUID 
 begin
   #Delete an allocation composition
   api_instance.delete_allocation_composition_using_delete(allocation_composition_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->delete_allocation_composition_using_delete: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Permanently delete an allocation defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_id = 'allocation_id_example' # String | UUID allocation_id
 
@@ -216,7 +216,7 @@ allocation_id = 'allocation_id_example' # String | UUID allocation_id
 begin
   #Delete an allocation
   api_instance.delete_allocation_using_delete(allocation_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->delete_allocation_using_delete: #{e}"
 end
 ```
@@ -252,9 +252,9 @@ Get the information for all securities assigned to a specific allocation.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -263,7 +263,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_id = 'allocation_id_example' # String | UUID allocation_id
 
@@ -276,7 +276,7 @@ begin
   #List all allocation holdings
   result = api_instance.get_all_holdings_using_get(allocation_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_all_holdings_using_get: #{e}"
 end
 ```
@@ -314,9 +314,9 @@ Get the information for all transactions made under an allocation to achieve the
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -325,7 +325,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_id = 'allocation_id_example' # String | UUID allocation_id
 
@@ -342,7 +342,7 @@ begin
   #List all allocation transactions
   result = api_instance.get_all_transactions_using_get(allocation_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_all_transactions_using_get: #{e}"
 end
 ```
@@ -382,9 +382,9 @@ List all Allocation aggregated data overview
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -393,7 +393,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_id = 'allocation_id_example' # String | Allocation Id
 
@@ -402,7 +402,7 @@ begin
   #List all Allocation aggregated data overview
   result = api_instance.get_allocation_aggregated_data_using_get(allocation_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_allocation_aggregated_data_using_get: #{e}"
 end
 ```
@@ -438,9 +438,9 @@ Get details for all allocations defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -449,7 +449,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -463,7 +463,7 @@ begin
   #List all allocations
   result = api_instance.get_allocation_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_allocation_all_using_get: #{e}"
 end
 ```
@@ -503,9 +503,9 @@ Get the allocation composition for all allocations.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -514,7 +514,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -528,7 +528,7 @@ begin
   #List all allocations compositions
   result = api_instance.get_allocation_composition_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_allocation_composition_all_using_get: #{e}"
 end
 ```
@@ -568,9 +568,9 @@ Retrieve the information of an allocation composition record for an allocation.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -579,7 +579,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_composition_id = 'allocation_composition_id_example' # String | UUID allocation_composition_id
 
@@ -588,7 +588,7 @@ begin
   #Retrieve an allocation composition
   result = api_instance.get_allocation_composition_using_get(allocation_composition_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_allocation_composition_using_get: #{e}"
 end
 ```
@@ -624,9 +624,9 @@ Retrieve the information for an allocation defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -635,7 +635,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_id = 'allocation_id_example' # String | UUID allocation_id
 
@@ -644,7 +644,7 @@ begin
   #Retrieve an allocation
   result = api_instance.get_allocation_using_get(allocation_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_allocation_using_get: #{e}"
 end
 ```
@@ -680,9 +680,9 @@ Get a list of asset sizes by date for a specific allocation.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -691,7 +691,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
 allocation_id = 'allocation_id_example' # String | UUID allocation_id
 
@@ -707,7 +707,7 @@ begin
   #List all allocation asset sizes
   result = api_instance.get_assetsize_using_get(allocation_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->get_assetsize_using_get: #{e}"
 end
 ```
@@ -748,9 +748,9 @@ Update the information of an allocation composition record for an allocation.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -759,9 +759,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
-allocation_composition = AtomApi::AllocationComposition.new # AllocationComposition | aggregation_composition
+allocation_composition = NucleusApi::AllocationComposition.new # AllocationComposition | aggregation_composition
 
 allocation_composition_id = 'allocation_composition_id_example' # String | UUID allocation_composition_id
 
@@ -770,7 +770,7 @@ begin
   #Update an allocation composition
   result = api_instance.update_allocation_composition_using_put(allocation_composition, allocation_composition_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->update_allocation_composition_using_put: #{e}"
 end
 ```
@@ -807,9 +807,9 @@ Update an allocation defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -818,9 +818,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AllocationApi.new
+api_instance = NucleusApi::AllocationApi.new
 
-allocation = AtomApi::Allocation.new # Allocation | allocation
+allocation = NucleusApi::Allocation.new # Allocation | allocation
 
 allocation_id = 'allocation_id_example' # String | UUID allocation_id
 
@@ -829,7 +829,7 @@ begin
   #Update an allocation
   result = api_instance.update_allocation_using_put(allocation, allocation_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AllocationApi->update_allocation_using_put: #{e}"
 end
 ```

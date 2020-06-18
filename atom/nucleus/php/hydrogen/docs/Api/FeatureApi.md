@@ -1,4 +1,4 @@
-# com\hydrogen\FeatureApi
+# com\hydrogen\nucleus\FeatureApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createFeatureTrackUsingPost**
-> \com\hydrogen\Model\FeatureTrack createFeatureTrackUsingPost($feature_track)
+> \com\hydrogen\nucleus\Model\FeatureTrack createFeatureTrackUsingPost($feature_track)
 
 Create a Feature Track
 
@@ -26,29 +26,29 @@ Create a new feature track.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$feature_track = new \com\hydrogen\Model\FeatureTrack(); // \com\hydrogen\Model\FeatureTrack | featureTrack
+$feature_track = new \com\hydrogen\nucleus\Model\FeatureTrack(); // \com\hydrogen\nucleus\Model\FeatureTrack | featureTrack
 
 try {
     $result = $apiInstance->createFeatureTrackUsingPost($feature_track);
@@ -63,11 +63,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature_track** | [**\com\hydrogen\Model\FeatureTrack**](../Model/FeatureTrack.md)| featureTrack |
+ **feature_track** | [**\com\hydrogen\nucleus\Model\FeatureTrack**](../Model/FeatureTrack.md)| featureTrack |
 
 ### Return type
 
-[**\com\hydrogen\Model\FeatureTrack**](../Model/FeatureTrack.md)
+[**\com\hydrogen\nucleus\Model\FeatureTrack**](../Model/FeatureTrack.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createFeatureUsingPost**
-> \com\hydrogen\Model\Feature createFeatureUsingPost($feature)
+> \com\hydrogen\nucleus\Model\Feature createFeatureUsingPost($feature)
 
 Create a  Feature
 
@@ -90,29 +90,29 @@ Create a new feature.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$feature = new \com\hydrogen\Model\Feature(); // \com\hydrogen\Model\Feature | feature
+$feature = new \com\hydrogen\nucleus\Model\Feature(); // \com\hydrogen\nucleus\Model\Feature | feature
 
 try {
     $result = $apiInstance->createFeatureUsingPost($feature);
@@ -127,11 +127,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature** | [**\com\hydrogen\Model\Feature**](../Model/Feature.md)| feature |
+ **feature** | [**\com\hydrogen\nucleus\Model\Feature**](../Model/Feature.md)| feature |
 
 ### Return type
 
-[**\com\hydrogen\Model\Feature**](../Model/Feature.md)
+[**\com\hydrogen\nucleus\Model\Feature**](../Model/Feature.md)
 
 ### Authorization
 
@@ -154,23 +154,23 @@ Permanently delete a feature track registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -217,23 +217,23 @@ Permanently delete a  feature registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -271,7 +271,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFeatureAllUsingGet**
-> \com\hydrogen\Model\PageFeature_ getFeatureAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageFeature_ getFeatureAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Feature
 
@@ -280,23 +280,23 @@ Get details for all features.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageFeature_**](../Model/PageFeature_.md)
+[**\com\hydrogen\nucleus\Model\PageFeature_**](../Model/PageFeature_.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFeatureTrackAllUsingGet**
-> \com\hydrogen\Model\PageFeatureTrack_ getFeatureTrackAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageFeatureTrack_ getFeatureTrackAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Feature track
 
@@ -352,23 +352,23 @@ Get details for all feature track.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageFeatureTrack_**](../Model/PageFeatureTrack_.md)
+[**\com\hydrogen\nucleus\Model\PageFeatureTrack_**](../Model/PageFeatureTrack_.md)
 
 ### Authorization
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFeatureTrackUsingGet**
-> \com\hydrogen\Model\FeatureTrack getFeatureTrackUsingGet($feature_track_id)
+> \com\hydrogen\nucleus\Model\FeatureTrack getFeatureTrackUsingGet($feature_track_id)
 
 Retrieve a Feature track
 
@@ -424,23 +424,23 @@ Retrieve the information for a Feature track.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\FeatureTrack**](../Model/FeatureTrack.md)
+[**\com\hydrogen\nucleus\Model\FeatureTrack**](../Model/FeatureTrack.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFeatureUsingGet**
-> \com\hydrogen\Model\Feature getFeatureUsingGet($feature_id)
+> \com\hydrogen\nucleus\Model\Feature getFeatureUsingGet($feature_id)
 
 Retrieve a Feature
 
@@ -488,23 +488,23 @@ Retrieve the information for a Feature.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Feature**](../Model/Feature.md)
+[**\com\hydrogen\nucleus\Model\Feature**](../Model/Feature.md)
 
 ### Authorization
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateFeatureTrackUsingPut**
-> \com\hydrogen\Model\FeatureTrack updateFeatureTrackUsingPut($feature_track, $feature_track_id)
+> \com\hydrogen\nucleus\Model\FeatureTrack updateFeatureTrackUsingPut($feature_track, $feature_track_id)
 
 Update a Feature Track
 
@@ -552,29 +552,29 @@ Update the information for a Feature track registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$feature_track = new \com\hydrogen\Model\FeatureTrack(); // \com\hydrogen\Model\FeatureTrack | feature_track
+$feature_track = new \com\hydrogen\nucleus\Model\FeatureTrack(); // \com\hydrogen\nucleus\Model\FeatureTrack | feature_track
 $feature_track_id = "feature_track_id_example"; // string | UUID feature_track_id
 
 try {
@@ -590,12 +590,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature_track** | [**\com\hydrogen\Model\FeatureTrack**](../Model/FeatureTrack.md)| feature_track |
+ **feature_track** | [**\com\hydrogen\nucleus\Model\FeatureTrack**](../Model/FeatureTrack.md)| feature_track |
  **feature_track_id** | [**string**](../Model/.md)| UUID feature_track_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\FeatureTrack**](../Model/FeatureTrack.md)
+[**\com\hydrogen\nucleus\Model\FeatureTrack**](../Model/FeatureTrack.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateFeatureUsingPut**
-> \com\hydrogen\Model\Feature updateFeatureUsingPut($feature, $feature_id)
+> \com\hydrogen\nucleus\Model\Feature updateFeatureUsingPut($feature, $feature_id)
 
 Update a Feature
 
@@ -618,29 +618,29 @@ Update the information for a Feature registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FeatureApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$feature = new \com\hydrogen\Model\Feature(); // \com\hydrogen\Model\Feature | feature
+$feature = new \com\hydrogen\nucleus\Model\Feature(); // \com\hydrogen\nucleus\Model\Feature | feature
 $feature_id = "feature_id_example"; // string | UUID feature_id
 
 try {
@@ -656,12 +656,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature** | [**\com\hydrogen\Model\Feature**](../Model/Feature.md)| feature |
+ **feature** | [**\com\hydrogen\nucleus\Model\Feature**](../Model/Feature.md)| feature |
  **feature_id** | [**string**](../Model/.md)| UUID feature_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Feature**](../Model/Feature.md)
+[**\com\hydrogen\nucleus\Model\Feature**](../Model/Feature.md)
 
 ### Authorization
 

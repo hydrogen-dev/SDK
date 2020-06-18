@@ -1,4 +1,4 @@
-# AtomApi::AllocationComposition
+# NucleusApi::AllocationComposition
 
 ## Properties
 Name | Type | Description | Notes

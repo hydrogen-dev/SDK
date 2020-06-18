@@ -1,4 +1,4 @@
-# AtomApi::ScoreApi
+# NucleusApi::ScoreApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Create a score for a client, account, goal, portfolio, allocation, model, benchm
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ScoreApi.new
+api_instance = NucleusApi::ScoreApi.new
 
-score = AtomApi::Score.new # Score | score
+score = NucleusApi::Score.new # Score | score
 
 
 begin
   #Create a score
   result = api_instance.create_score_using_post(score)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ScoreApi->create_score_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Retrieve the information for a specific score associated with a client, account,
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ScoreApi.new
+api_instance = NucleusApi::ScoreApi.new
 
 score_id = 'score_id_example' # String | UUID score_id
 
@@ -97,7 +97,7 @@ begin
   #Retrieve a score
   result = api_instance.create_score_using_post1(score_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ScoreApi->create_score_using_post1: #{e}"
 end
 ```
@@ -133,9 +133,9 @@ Permanently delete a score
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -144,7 +144,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ScoreApi.new
+api_instance = NucleusApi::ScoreApi.new
 
 score_id = 'score_id_example' # String | UUID score_id
 
@@ -152,7 +152,7 @@ score_id = 'score_id_example' # String | UUID score_id
 begin
   #Delete a score
   api_instance.delete_score_using_delete(score_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ScoreApi->delete_score_using_delete: #{e}"
 end
 ```
@@ -188,9 +188,9 @@ Get information for all scores stored for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -199,7 +199,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ScoreApi.new
+api_instance = NucleusApi::ScoreApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -213,7 +213,7 @@ begin
   #List all scores
   result = api_instance.get_score_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ScoreApi->get_score_all_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Update the information for a score.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ScoreApi.new
+api_instance = NucleusApi::ScoreApi.new
 
-score = AtomApi::Score.new # Score | score
+score = NucleusApi::Score.new # Score | score
 
 score_id = 'score_id_example' # String | UUID score_id
 
@@ -275,7 +275,7 @@ begin
   #Update a score
   result = api_instance.update_score_using_put(score, score_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ScoreApi->update_score_using_put: #{e}"
 end
 ```

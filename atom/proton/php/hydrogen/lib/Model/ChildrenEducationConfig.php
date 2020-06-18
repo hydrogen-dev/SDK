@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\proton\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\proton\ObjectSerializer;
 
 /**
  * ChildrenEducationConfig Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class ChildrenEducationConfig implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'current_age' => 'int',
-        'education_config' => '\com\hydrogen\Model\EducationConfig[]'
+        'education_config' => '\com\hydrogen\proton\Model\EducationConfig[]'
     ];
 
     /**
@@ -252,7 +252,7 @@ class ChildrenEducationConfig implements ModelInterface, ArrayAccess
     /**
      * Gets education_config
      *
-     * @return \com\hydrogen\Model\EducationConfig[]
+     * @return \com\hydrogen\proton\Model\EducationConfig[]
      */
     public function getEducationConfig()
     {
@@ -262,7 +262,7 @@ class ChildrenEducationConfig implements ModelInterface, ArrayAccess
     /**
      * Sets education_config
      *
-     * @param \com\hydrogen\Model\EducationConfig[] $education_config education_config
+     * @param \com\hydrogen\proton\Model\EducationConfig[] $education_config education_config
      *
      * @return $this
      */

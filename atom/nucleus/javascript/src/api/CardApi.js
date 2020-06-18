@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Card'), require('../model/CardProgram'), require('../model/PageCard'), require('../model/PageCardProgram'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.CardApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Card, root.HydrogenAtomApi.CardProgram, root.HydrogenAtomApi.PageCard, root.HydrogenAtomApi.PageCardProgram);
+    root.HydrogenNucleusApi.CardApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Card, root.HydrogenNucleusApi.CardProgram, root.HydrogenNucleusApi.PageCard, root.HydrogenNucleusApi.PageCardProgram);
   }
 }(this, function(ApiClient, Card, CardProgram, PageCard, PageCardProgram) {
   'use strict';

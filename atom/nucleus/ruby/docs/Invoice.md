@@ -1,4 +1,4 @@
-# AtomApi::Invoice
+# NucleusApi::Invoice
 
 ## Properties
 Name | Type | Description | Notes

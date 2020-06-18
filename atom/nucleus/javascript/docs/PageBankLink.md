@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageBankLink
+# HydrogenNucleusApi.PageBankLink
 
 ## Properties
 Name | Type | Description | Notes

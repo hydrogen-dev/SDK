@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Answer'), require('../model/ClientResponse'), require('../model/PageAnswer'), require('../model/PageClientResponse'), require('../model/PageQuestion'), require('../model/PageQuestionnaire'), require('../model/Question'), require('../model/Questionnaire'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.QuestionnaireApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Answer, root.HydrogenAtomApi.ClientResponse, root.HydrogenAtomApi.PageAnswer, root.HydrogenAtomApi.PageClientResponse, root.HydrogenAtomApi.PageQuestion, root.HydrogenAtomApi.PageQuestionnaire, root.HydrogenAtomApi.Question, root.HydrogenAtomApi.Questionnaire);
+    root.HydrogenNucleusApi.QuestionnaireApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Answer, root.HydrogenNucleusApi.ClientResponse, root.HydrogenNucleusApi.PageAnswer, root.HydrogenNucleusApi.PageClientResponse, root.HydrogenNucleusApi.PageQuestion, root.HydrogenNucleusApi.PageQuestionnaire, root.HydrogenNucleusApi.Question, root.HydrogenNucleusApi.Questionnaire);
   }
 }(this, function(ApiClient, Answer, ClientResponse, PageAnswer, PageClientResponse, PageQuestion, PageQuestionnaire, Question, Questionnaire) {
   'use strict';

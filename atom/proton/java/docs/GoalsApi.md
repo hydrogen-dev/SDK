@@ -23,10 +23,10 @@ Allocate based on an accumulation goal
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import GoalsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -83,10 +83,10 @@ Generate recommendations to achieve an accumulation goal
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import GoalsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -143,10 +143,10 @@ Track the status of an accumulation goal
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import GoalsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -203,10 +203,10 @@ Allocate based on a decumulation goal
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import GoalsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -263,10 +263,10 @@ Generate recommendations to achieve a decumulation goal
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import GoalsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -323,10 +323,10 @@ Track the status of a decumulation goal
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import GoalsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

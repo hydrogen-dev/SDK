@@ -1,4 +1,4 @@
-# com\hydrogen\SecuritiesApi
+# com\hydrogen\nucleus\SecuritiesApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **createSecurityExclusionUsingPost**
-> \com\hydrogen\Model\SecurityExclusion createSecurityExclusionUsingPost($security_exclusion_request)
+> \com\hydrogen\nucleus\Model\SecurityExclusion createSecurityExclusionUsingPost($security_exclusion_request)
 
 Create a security exclusion
 
@@ -31,29 +31,29 @@ Create a new security exclusion for a specific account or portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$security_exclusion_request = new \com\hydrogen\Model\SecurityExclusion(); // \com\hydrogen\Model\SecurityExclusion | securityExclusionRequest
+$security_exclusion_request = new \com\hydrogen\nucleus\Model\SecurityExclusion(); // \com\hydrogen\nucleus\Model\SecurityExclusion | securityExclusionRequest
 
 try {
     $result = $apiInstance->createSecurityExclusionUsingPost($security_exclusion_request);
@@ -68,11 +68,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_exclusion_request** | [**\com\hydrogen\Model\SecurityExclusion**](../Model/SecurityExclusion.md)| securityExclusionRequest |
+ **security_exclusion_request** | [**\com\hydrogen\nucleus\Model\SecurityExclusion**](../Model/SecurityExclusion.md)| securityExclusionRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\SecurityExclusion**](../Model/SecurityExclusion.md)
+[**\com\hydrogen\nucleus\Model\SecurityExclusion**](../Model/SecurityExclusion.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSecurityPriceUsingPost**
-> \com\hydrogen\Model\SecurityPrice createSecurityPriceUsingPost($security_price_request)
+> \com\hydrogen\nucleus\Model\SecurityPrice createSecurityPriceUsingPost($security_price_request)
 
 Create a security price
 
@@ -95,29 +95,29 @@ Create a new price for a security defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$security_price_request = new \com\hydrogen\Model\SecurityPrice(); // \com\hydrogen\Model\SecurityPrice | securityPriceRequest
+$security_price_request = new \com\hydrogen\nucleus\Model\SecurityPrice(); // \com\hydrogen\nucleus\Model\SecurityPrice | securityPriceRequest
 
 try {
     $result = $apiInstance->createSecurityPriceUsingPost($security_price_request);
@@ -132,11 +132,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_price_request** | [**\com\hydrogen\Model\SecurityPrice**](../Model/SecurityPrice.md)| securityPriceRequest |
+ **security_price_request** | [**\com\hydrogen\nucleus\Model\SecurityPrice**](../Model/SecurityPrice.md)| securityPriceRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\SecurityPrice**](../Model/SecurityPrice.md)
+[**\com\hydrogen\nucleus\Model\SecurityPrice**](../Model/SecurityPrice.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSecurityUsingPost**
-> \com\hydrogen\Model\Security createSecurityUsingPost($securities_info_request)
+> \com\hydrogen\nucleus\Model\Security createSecurityUsingPost($securities_info_request)
 
 Create a security
 
@@ -159,29 +159,29 @@ Create a new security for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$securities_info_request = new \com\hydrogen\Model\Security(); // \com\hydrogen\Model\Security | securitiesInfoRequest
+$securities_info_request = new \com\hydrogen\nucleus\Model\Security(); // \com\hydrogen\nucleus\Model\Security | securitiesInfoRequest
 
 try {
     $result = $apiInstance->createSecurityUsingPost($securities_info_request);
@@ -196,11 +196,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securities_info_request** | [**\com\hydrogen\Model\Security**](../Model/Security.md)| securitiesInfoRequest |
+ **securities_info_request** | [**\com\hydrogen\nucleus\Model\Security**](../Model/Security.md)| securitiesInfoRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Security**](../Model/Security.md)
+[**\com\hydrogen\nucleus\Model\Security**](../Model/Security.md)
 
 ### Authorization
 
@@ -223,23 +223,23 @@ Permanently delete a security exclusion
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -286,23 +286,23 @@ Permanently delete a security price from a security.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -349,23 +349,23 @@ Permanently delete a security for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -403,7 +403,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSecurityAllUsingGet**
-> \com\hydrogen\Model\PageSecurity_ getSecurityAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageSecurity_ getSecurityAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all securities
 
@@ -412,23 +412,23 @@ Get details for all securities defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageSecurity_**](../Model/PageSecurity_.md)
+[**\com\hydrogen\nucleus\Model\PageSecurity_**](../Model/PageSecurity_.md)
 
 ### Authorization
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSecurityExclusionAllUsingGet**
-> \com\hydrogen\Model\PageSecurityExclusion_ getSecurityExclusionAllUsingGet($security_exclusion_id, $ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageSecurityExclusion_ getSecurityExclusionAllUsingGet($security_exclusion_id, $ascending, $filter, $order_by, $page, $size)
 
 List all security exclusions
 
@@ -484,23 +484,23 @@ Get details for all security exclusions defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageSecurityExclusion_**](../Model/PageSecurityExclusion_.md)
+[**\com\hydrogen\nucleus\Model\PageSecurityExclusion_**](../Model/PageSecurityExclusion_.md)
 
 ### Authorization
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSecurityExclusionUsingGet**
-> \com\hydrogen\Model\SecurityExclusion getSecurityExclusionUsingGet($security_exclusion_id)
+> \com\hydrogen\nucleus\Model\SecurityExclusion getSecurityExclusionUsingGet($security_exclusion_id)
 
 Retrieve a security exclusion
 
@@ -558,23 +558,23 @@ Retrieve the information for a security exclusion.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\SecurityExclusion**](../Model/SecurityExclusion.md)
+[**\com\hydrogen\nucleus\Model\SecurityExclusion**](../Model/SecurityExclusion.md)
 
 ### Authorization
 
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSecurityPriceAllUsingGet**
-> \com\hydrogen\Model\PageSecurityPrice_ getSecurityPriceAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageSecurityPrice_ getSecurityPriceAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all security prices
 
@@ -622,23 +622,23 @@ Get prices for all securities defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageSecurityPrice_**](../Model/PageSecurityPrice_.md)
+[**\com\hydrogen\nucleus\Model\PageSecurityPrice_**](../Model/PageSecurityPrice_.md)
 
 ### Authorization
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSecurityPriceUsingGet**
-> \com\hydrogen\Model\SecurityPrice getSecurityPriceUsingGet($security_price_id)
+> \com\hydrogen\nucleus\Model\SecurityPrice getSecurityPriceUsingGet($security_price_id)
 
 Retrieve a security price
 
@@ -694,23 +694,23 @@ Retrieve the information for a security price for a security.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\SecurityPrice**](../Model/SecurityPrice.md)
+[**\com\hydrogen\nucleus\Model\SecurityPrice**](../Model/SecurityPrice.md)
 
 ### Authorization
 
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSecurityUsingGet**
-> \com\hydrogen\Model\Security getSecurityUsingGet($security_id)
+> \com\hydrogen\nucleus\Model\Security getSecurityUsingGet($security_id)
 
 Retrieve a security
 
@@ -758,23 +758,23 @@ Retrieve the information for a security defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -799,7 +799,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Security**](../Model/Security.md)
+[**\com\hydrogen\nucleus\Model\Security**](../Model/Security.md)
 
 ### Authorization
 
@@ -813,7 +813,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSecurityExclusionUsingPut**
-> \com\hydrogen\Model\SecurityExclusion updateSecurityExclusionUsingPut($security_exclusion, $security_exclusion_id)
+> \com\hydrogen\nucleus\Model\SecurityExclusion updateSecurityExclusionUsingPut($security_exclusion, $security_exclusion_id)
 
 Update a security exclusion
 
@@ -822,29 +822,29 @@ Update the information for a security exclusion.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$security_exclusion = new \com\hydrogen\Model\SecurityExclusion(); // \com\hydrogen\Model\SecurityExclusion | security_exclusion
+$security_exclusion = new \com\hydrogen\nucleus\Model\SecurityExclusion(); // \com\hydrogen\nucleus\Model\SecurityExclusion | security_exclusion
 $security_exclusion_id = "security_exclusion_id_example"; // string | UUID security_exclusion_id
 
 try {
@@ -860,12 +860,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_exclusion** | [**\com\hydrogen\Model\SecurityExclusion**](../Model/SecurityExclusion.md)| security_exclusion |
+ **security_exclusion** | [**\com\hydrogen\nucleus\Model\SecurityExclusion**](../Model/SecurityExclusion.md)| security_exclusion |
  **security_exclusion_id** | [**string**](../Model/.md)| UUID security_exclusion_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\SecurityExclusion**](../Model/SecurityExclusion.md)
+[**\com\hydrogen\nucleus\Model\SecurityExclusion**](../Model/SecurityExclusion.md)
 
 ### Authorization
 
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSecurityPriceUsingPut**
-> \com\hydrogen\Model\SecurityPrice updateSecurityPriceUsingPut($security_price, $security_price_id)
+> \com\hydrogen\nucleus\Model\SecurityPrice updateSecurityPriceUsingPut($security_price, $security_price_id)
 
 Update a security price
 
@@ -888,29 +888,29 @@ Update a security price for a security.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$security_price = new \com\hydrogen\Model\SecurityPrice(); // \com\hydrogen\Model\SecurityPrice | security_price
+$security_price = new \com\hydrogen\nucleus\Model\SecurityPrice(); // \com\hydrogen\nucleus\Model\SecurityPrice | security_price
 $security_price_id = "security_price_id_example"; // string | UUID security_price_id
 
 try {
@@ -926,12 +926,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_price** | [**\com\hydrogen\Model\SecurityPrice**](../Model/SecurityPrice.md)| security_price |
+ **security_price** | [**\com\hydrogen\nucleus\Model\SecurityPrice**](../Model/SecurityPrice.md)| security_price |
  **security_price_id** | [**string**](../Model/.md)| UUID security_price_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\SecurityPrice**](../Model/SecurityPrice.md)
+[**\com\hydrogen\nucleus\Model\SecurityPrice**](../Model/SecurityPrice.md)
 
 ### Authorization
 
@@ -945,7 +945,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSecurityUsingPut**
-> \com\hydrogen\Model\Security updateSecurityUsingPut($security, $security_id)
+> \com\hydrogen\nucleus\Model\Security updateSecurityUsingPut($security, $security_id)
 
 Update a security
 
@@ -954,29 +954,29 @@ Update a security for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SecuritiesApi(
+$apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$security = new \com\hydrogen\Model\Security(); // \com\hydrogen\Model\Security | security
+$security = new \com\hydrogen\nucleus\Model\Security(); // \com\hydrogen\nucleus\Model\Security | security
 $security_id = "security_id_example"; // string | UUID security_id
 
 try {
@@ -992,12 +992,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security** | [**\com\hydrogen\Model\Security**](../Model/Security.md)| security |
+ **security** | [**\com\hydrogen\nucleus\Model\Security**](../Model/Security.md)| security |
  **security_id** | [**string**](../Model/.md)| UUID security_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Security**](../Model/Security.md)
+[**\com\hydrogen\nucleus\Model\Security**](../Model/Security.md)
 
 ### Authorization
 

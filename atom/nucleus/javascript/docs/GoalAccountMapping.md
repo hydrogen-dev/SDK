@@ -1,4 +1,4 @@
-# HydrogenAtomApi.GoalAccountMapping
+# HydrogenNucleusApi.GoalAccountMapping
 
 ## Properties
 Name | Type | Description | Notes

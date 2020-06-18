@@ -1,4 +1,4 @@
-# AtomApi::CustomerAddress
+# NucleusApi::CustomerAddress
 
 ## Properties
 Name | Type | Description | Notes

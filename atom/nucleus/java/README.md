@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>com.hydrogen</groupId>
-  <artifactId>hydrogen-atom-api</artifactId>
+  <artifactId>hydrogen-nucleus-api</artifactId>
   <version>1.7.0</version>
   <scope>compile</scope>
 </dependency>
@@ -60,7 +60,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-atom-api:1.7.0"
+compile "com.hydrogen:hydrogen-nucleus-api:1.7.0"
 ```
 
 ### Others
@@ -73,7 +73,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-atom-api-1.7.0.jar`
+* `target/hydrogen-nucleus-api-1.7.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -82,10 +82,9 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.hydrogen.ApiException;
-import com.hydrogen.AuthApiClient;
-import com.hydrogen.model.AccountAllocationMapping;
-import com.hydrogen.*;
+import ApiException;
+import AuthApiClient;
+import AccountAllocationMapping;
 import AccountApi;
 
 public class AccountApiExample {

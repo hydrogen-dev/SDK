@@ -1,4 +1,4 @@
-# atom_api.InsuranceApi
+# nucleus_api.InsuranceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -32,15 +32,15 @@ Create a new insurance coverage.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -52,8 +52,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
-insurance_coverage = atom_api.InsuranceCoverage() # InsuranceCoverage | insuranceCoverage
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
+insurance_coverage = nucleus_api.InsuranceCoverage() # InsuranceCoverage | insuranceCoverage
 
 try:
     # Create a insurance coverage request
@@ -95,15 +95,15 @@ Create a new insurance discount.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -115,8 +115,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
-insurance_discount = atom_api.InsuranceDiscount() # InsuranceDiscount | insuranceDiscount
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
+insurance_discount = nucleus_api.InsuranceDiscount() # InsuranceDiscount | insuranceDiscount
 
 try:
     # Create a insurance discount request
@@ -158,15 +158,15 @@ Create a new insuranceQuote request.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -178,8 +178,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
-insurance_quote = atom_api.InsuranceQuote() # InsuranceQuote | insuranceQuote
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
+insurance_quote = nucleus_api.InsuranceQuote() # InsuranceQuote | insuranceQuote
 
 try:
     # Create a insuranceQuote request
@@ -221,15 +221,15 @@ Delete an  insurance coverage.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -241,7 +241,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_coverage_id = 'insurance_coverage_id_example' # str | UUID insurance_coverage_id
 
 try:
@@ -283,15 +283,15 @@ Delete an  insurance discount.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -303,7 +303,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_discount_id = 'insurance_discount_id_example' # str | UUID insurance_discount_id
 
 try:
@@ -345,15 +345,15 @@ Permanently delete a insuranceQuote request.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -365,7 +365,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_quote = 'insurance_quote_example' # str | UUID insurance_quote_id
 insurance_quote_id = 'insurance_quote_id_example' # str | insurance_quote_id
 
@@ -409,15 +409,15 @@ Get all new insurance coverage.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -429,7 +429,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -480,15 +480,15 @@ Get a new insurance coverage.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -500,7 +500,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_coverage_id = 'insurance_coverage_id_example' # str | UUID insurance_coverage_id
 
 try:
@@ -543,15 +543,15 @@ Get all new insurance discount.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -563,7 +563,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -614,15 +614,15 @@ Get a new insurance discount.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -634,7 +634,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_discount_id = 'insurance_discount_id_example' # str |  UUID insurance_discount_id
 
 try:
@@ -677,15 +677,15 @@ Get the information for all insuranceQuote requests.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -697,7 +697,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -748,15 +748,15 @@ Retrieve the information for a insuranceQuote request.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -768,7 +768,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_quote = 'insurance_quote_example' # str | UUID insurance_quote_id
 insurance_quote_id = 'insurance_quote_id_example' # str | insurance_quote_id
 
@@ -813,15 +813,15 @@ Update a new insurance coverage.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -833,8 +833,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
-insurance_coverage = atom_api.InsuranceCoverage() # InsuranceCoverage | insurance_coverage
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
+insurance_coverage = nucleus_api.InsuranceCoverage() # InsuranceCoverage | insurance_coverage
 insurance_coverage_id = 'insurance_coverage_id_example' # str | UUID insurance_coverage_id
 
 try:
@@ -878,15 +878,15 @@ Update an new insurance .
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -898,8 +898,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
-insurance_discount = atom_api.InsuranceDiscount() # InsuranceDiscount | insurance_discount
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
+insurance_discount = nucleus_api.InsuranceDiscount() # InsuranceDiscount | insurance_discount
 insurance_discount_id = 'insurance_discount_id_example' # str | UUID insurance_discount_id
 
 try:
@@ -943,15 +943,15 @@ Update the information for a insuranceQuote request.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -963,8 +963,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InsuranceApi(atom_api.ApiClient(configuration))
-insurance_quote = atom_api.InsuranceQuote() # InsuranceQuote | insurance_quote
+api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
+insurance_quote = nucleus_api.InsuranceQuote() # InsuranceQuote | insurance_quote
 insurance_quote_id = 'insurance_quote_id_example' # str | UUID insurance_quote_id
 
 try:

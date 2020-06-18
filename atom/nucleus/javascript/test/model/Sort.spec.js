@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Sort();
+    instance = new HydrogenNucleusApi.Sort();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,43 +53,43 @@
   describe('Sort', function() {
     it('should create an instance of Sort', function() {
       // uncomment below and update the code to test Sort
-      //var instane = new HydrogenAtomApi.Sort();
-      //expect(instance).to.be.a(HydrogenAtomApi.Sort);
+      //var instane = new HydrogenNucleusApi.Sort();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Sort);
     });
 
     it('should have the property ascending (base name: "ascending")', function() {
       // uncomment below and update the code to test the property ascending
-      //var instane = new HydrogenAtomApi.Sort();
+      //var instane = new HydrogenNucleusApi.Sort();
       //expect(instance).to.be();
     });
 
     it('should have the property descending (base name: "descending")', function() {
       // uncomment below and update the code to test the property descending
-      //var instane = new HydrogenAtomApi.Sort();
+      //var instane = new HydrogenNucleusApi.Sort();
       //expect(instance).to.be();
     });
 
     it('should have the property direction (base name: "direction")', function() {
       // uncomment below and update the code to test the property direction
-      //var instane = new HydrogenAtomApi.Sort();
+      //var instane = new HydrogenNucleusApi.Sort();
       //expect(instance).to.be();
     });
 
     it('should have the property ignoreCase (base name: "ignore_case")', function() {
       // uncomment below and update the code to test the property ignoreCase
-      //var instane = new HydrogenAtomApi.Sort();
+      //var instane = new HydrogenNucleusApi.Sort();
       //expect(instance).to.be();
     });
 
     it('should have the property nullHandling (base name: "null_handling")', function() {
       // uncomment below and update the code to test the property nullHandling
-      //var instane = new HydrogenAtomApi.Sort();
+      //var instane = new HydrogenNucleusApi.Sort();
       //expect(instance).to.be();
     });
 
     it('should have the property property (base name: "property")', function() {
       // uncomment below and update the code to test the property property
-      //var instane = new HydrogenAtomApi.Sort();
+      //var instane = new HydrogenNucleusApi.Sort();
       //expect(instance).to.be();
     });
 

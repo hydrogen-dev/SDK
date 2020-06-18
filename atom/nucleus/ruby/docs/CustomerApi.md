@@ -1,4 +1,4 @@
-# AtomApi::CustomerApi
+# NucleusApi::CustomerApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -26,9 +26,9 @@ Create a new customer revenue, with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -37,16 +37,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
-customer_revenue = AtomApi::CustomerRevenue.new # CustomerRevenue | customerRevenue
+customer_revenue = NucleusApi::CustomerRevenue.new # CustomerRevenue | customerRevenue
 
 
 begin
   #Create a customer revenue
   result = api_instance.create_customer_revenue_using_post(customer_revenue)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->create_customer_revenue_using_post: #{e}"
 end
 ```
@@ -82,9 +82,9 @@ Create a new customer, with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -93,16 +93,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
-customer = AtomApi::Customer.new # Customer | customer
+customer = NucleusApi::Customer.new # Customer | customer
 
 
 begin
   #Create a customer
   result = api_instance.create_customer_using_post(customer)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->create_customer_using_post: #{e}"
 end
 ```
@@ -138,9 +138,9 @@ Delete a customer revenue.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -149,7 +149,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
 customer_revenue_id = 'customer_revenue_id_example' # String | UUID customer_revenue_id
 
@@ -157,7 +157,7 @@ customer_revenue_id = 'customer_revenue_id_example' # String | UUID customer_rev
 begin
   #Delete a customer revenue
   api_instance.delete_customer_revenue_using_delete(customer_revenue_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->delete_customer_revenue_using_delete: #{e}"
 end
 ```
@@ -193,9 +193,9 @@ Delete a customer.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -204,7 +204,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
 customer_id = 'customer_id_example' # String | UUID customer_id
 
@@ -212,7 +212,7 @@ customer_id = 'customer_id_example' # String | UUID customer_id
 begin
   #Delete a customer
   api_instance.delete_customer_using_delete(customer_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->delete_customer_using_delete: #{e}"
 end
 ```
@@ -248,9 +248,9 @@ List all customer.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -259,7 +259,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -273,7 +273,7 @@ begin
   #List all customer
   result = api_instance.get_customer_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->get_customer_all_using_get: #{e}"
 end
 ```
@@ -313,9 +313,9 @@ List all customer revenue.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -324,7 +324,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -338,7 +338,7 @@ begin
   #List all customer revenue
   result = api_instance.get_customer_revenue_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->get_customer_revenue_all_using_get: #{e}"
 end
 ```
@@ -378,9 +378,9 @@ Retrieve a customer revenue.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -389,7 +389,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
 customer_revenue_id = 'customer_revenue_id_example' # String | UUID customer_revenue_id
 
@@ -398,7 +398,7 @@ begin
   #Retrieve a customer revenue
   result = api_instance.get_customer_revenue_using_get(customer_revenue_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->get_customer_revenue_using_get: #{e}"
 end
 ```
@@ -434,9 +434,9 @@ Retrieve a customer.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -445,7 +445,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
 customer_id = 'customer_id_example' # String | UUID customer_id
 
@@ -454,7 +454,7 @@ begin
   #Retrieve a customer
   result = api_instance.get_customer_using_get(customer_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->get_customer_using_get: #{e}"
 end
 ```
@@ -490,9 +490,9 @@ Update a customer revenue.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -501,9 +501,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
-customer_revenue = AtomApi::CustomerRevenue.new # CustomerRevenue | customer_revenue
+customer_revenue = NucleusApi::CustomerRevenue.new # CustomerRevenue | customer_revenue
 
 customer_revenue_id = 'customer_revenue_id_example' # String | UUID customer_revenue_id
 
@@ -512,7 +512,7 @@ begin
   #Update a customer revenue
   result = api_instance.update_customer_revenue_using_put(customer_revenue, customer_revenue_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->update_customer_revenue_using_put: #{e}"
 end
 ```
@@ -549,9 +549,9 @@ Update a customer.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -560,9 +560,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CustomerApi.new
+api_instance = NucleusApi::CustomerApi.new
 
-customer = AtomApi::Customer.new # Customer | customer
+customer = NucleusApi::Customer.new # Customer | customer
 
 customer_id = 'customer_id_example' # String | UUID customer_id
 
@@ -571,7 +571,7 @@ begin
   #Update a customer
   result = api_instance.update_customer_using_put(customer, customer_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CustomerApi->update_customer_using_put: #{e}"
 end
 ```

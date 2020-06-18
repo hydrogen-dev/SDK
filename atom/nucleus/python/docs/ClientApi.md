@@ -1,4 +1,4 @@
-# atom_api.ClientApi
+# nucleus_api.ClientApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -39,15 +39,15 @@ Create an client-hydro relationship under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -59,8 +59,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
-client_hydro = atom_api.ClientHydro() # ClientHydro | clientHydro
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
+client_hydro = nucleus_api.ClientHydro() # ClientHydro | clientHydro
 
 try:
     # Create a client-hydro relationship
@@ -102,15 +102,15 @@ Create an client status record for an client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -122,8 +122,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
-client_status_request = atom_api.ClientStatus() # ClientStatus | clientStatusRequest
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
+client_status_request = nucleus_api.ClientStatus() # ClientStatus | clientStatusRequest
 
 try:
     # Create an client status
@@ -165,15 +165,15 @@ Create a new client, or register a new user, with your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -185,8 +185,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
-client_request = atom_api.Client() # Client | clientRequest
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
+client_request = nucleus_api.Client() # Client | clientRequest
 
 try:
     # Create a client
@@ -228,15 +228,15 @@ Permanently delete a client-hydro relationship for a Hydro ID and a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -248,7 +248,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_hydro_id = 'client_hydro_id_example' # str | UUID client_hydro_id
 
 try:
@@ -290,15 +290,15 @@ Permanently delete an client status record from an client’s history.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -310,7 +310,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_status_id = 'client_status_id_example' # str | UUID client_status_id
 
 try:
@@ -352,15 +352,15 @@ Permanently delete a client registered with your firm. Turns the client's is_act
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -372,7 +372,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 
 try:
@@ -412,15 +412,15 @@ List all client Account overview
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -432,7 +432,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 ascending = false # bool | ascending (optional) (default to false)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -477,15 +477,15 @@ Advisor overview
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -497,7 +497,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 show_clients = false # bool | show_clients (optional) (default to false)
 
@@ -542,15 +542,15 @@ Get details for all clients registered with your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -562,7 +562,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -613,15 +613,15 @@ Get a list of asset sizes per date for a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -633,7 +633,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 end_date = 'null' # date | end date (optional) (default to null)
 exclude_subledger = false # bool | exclude_subledger (optional) (default to false)
@@ -686,15 +686,15 @@ Retrieve client's goal details
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -706,7 +706,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 portfolio_goal = false # bool | portfolio_goal (optional) (default to false)
 
@@ -751,15 +751,15 @@ Get the information for all the securities that are currently being held by a cl
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -771,7 +771,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 end_date = 'end_date_example' # str | end date - yyyy-mm-dd (optional)
 get_latest = true # bool | true or false (optional)
@@ -820,15 +820,15 @@ Get information for all client-hydro relationships for all clients defined for y
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -840,7 +840,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -891,15 +891,15 @@ Retrieve the information for a specific client-hydro relationship.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -911,7 +911,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_hydro_id = 'client_hydro_id_example' # str | UUID client_hydro_id
 
 try:
@@ -954,15 +954,15 @@ Get the client status history information for all clients.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -974,7 +974,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1025,15 +1025,15 @@ Retrieve the information for a specific client status record for an client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1045,7 +1045,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_status_id = 'client_status_id_example' # str | UUID client_status_id
 
 try:
@@ -1088,15 +1088,15 @@ Get the information for all transactions under a client registered with your fir
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1108,7 +1108,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 ascending = false # bool | ascending (optional) (default to false)
 end_date = 'null' # datetime | end_date (optional) (default to null)
@@ -1163,15 +1163,15 @@ Retrieve the information for a client registered with your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1183,7 +1183,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 
 try:
@@ -1224,15 +1224,15 @@ total clients
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1244,7 +1244,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 as_of_date = '#{new java.util.Date()}' # datetime | as_of_date (optional) (default to #{new java.util.Date()})
 client_id = 'client_id_example' # str | client_id (optional)
 end_date = '2013-10-20T19:20:30+01:00' # datetime | end_date (optional)
@@ -1295,15 +1295,15 @@ Update the information for a client-hydro relationship.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1315,8 +1315,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
-client_hydro = atom_api.ClientHydro() # ClientHydro | client_hydro
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
+client_hydro = nucleus_api.ClientHydro() # ClientHydro | client_hydro
 client_hydro_id = 'client_hydro_id_example' # str | UUID client_hydro_id
 
 try:
@@ -1360,15 +1360,15 @@ Update an client status record for an client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1380,8 +1380,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
-client_status = atom_api.ClientStatus() # ClientStatus | client_status
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
+client_status = nucleus_api.ClientStatus() # ClientStatus | client_status
 client_status_id = 'client_status_id_example' # str | UUID client_status_id
 
 try:
@@ -1425,15 +1425,15 @@ Update the information for a client registered with your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1445,8 +1445,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ClientApi(atom_api.ApiClient(configuration))
-client = atom_api.Client() # Client | client
+api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
+client = nucleus_api.Client() # Client | client
 client_id = 'client_id_example' # str | UUID client_id
 
 try:

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ModelHolding();
+    instance = new HydrogenNucleusApi.ModelHolding();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,115 +53,115 @@
   describe('ModelHolding', function() {
     it('should create an instance of ModelHolding', function() {
       // uncomment below and update the code to test ModelHolding
-      //var instane = new HydrogenAtomApi.ModelHolding();
-      //expect(instance).to.be.a(HydrogenAtomApi.ModelHolding);
+      //var instane = new HydrogenNucleusApi.ModelHolding();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ModelHolding);
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property currentWeight (base name: "current_weight")', function() {
       // uncomment below and update the code to test the property currentWeight
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property driftFactor (base name: "drift_factor")', function() {
       // uncomment below and update the code to test the property driftFactor
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property isCash (base name: "is_cash")', function() {
       // uncomment below and update the code to test the property isCash
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property isInitialHolding (base name: "is_initial_holding")', function() {
       // uncomment below and update the code to test the property isInitialHolding
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property isSafeSecurity (base name: "is_safe_security")', function() {
       // uncomment below and update the code to test the property isSafeSecurity
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property modelDescription (base name: "model_description")', function() {
       // uncomment below and update the code to test the property modelDescription
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property modelId (base name: "model_id")', function() {
       // uncomment below and update the code to test the property modelId
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property modelName (base name: "model_name")', function() {
       // uncomment below and update the code to test the property modelName
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property modelWeight (base name: "model_weight")', function() {
       // uncomment below and update the code to test the property modelWeight
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property secPrice (base name: "sec_price")', function() {
       // uncomment below and update the code to test the property secPrice
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property strategicWeight (base name: "strategic_weight")', function() {
       // uncomment below and update the code to test the property strategicWeight
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.ModelHolding();
+      //var instane = new HydrogenNucleusApi.ModelHolding();
       //expect(instance).to.be();
     });
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.OrderReconcileRequest();
+    instance = new HydrogenNucleusApi.OrderReconcileRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('OrderReconcileRequest', function() {
     it('should create an instance of OrderReconcileRequest', function() {
       // uncomment below and update the code to test OrderReconcileRequest
-      //var instane = new HydrogenAtomApi.OrderReconcileRequest();
-      //expect(instance).to.be.a(HydrogenAtomApi.OrderReconcileRequest);
+      //var instane = new HydrogenNucleusApi.OrderReconcileRequest();
+      //expect(instance).to.be.a(HydrogenNucleusApi.OrderReconcileRequest);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.OrderReconcileRequest();
+      //var instane = new HydrogenNucleusApi.OrderReconcileRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property nonFractional (base name: "non_fractional")', function() {
       // uncomment below and update the code to test the property nonFractional
-      //var instane = new HydrogenAtomApi.OrderReconcileRequest();
+      //var instane = new HydrogenNucleusApi.OrderReconcileRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property orderTrackIds (base name: "order_track_ids")', function() {
       // uncomment below and update the code to test the property orderTrackIds
-      //var instane = new HydrogenAtomApi.OrderReconcileRequest();
+      //var instane = new HydrogenNucleusApi.OrderReconcileRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.OrderReconcileRequest();
+      //var instane = new HydrogenNucleusApi.OrderReconcileRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property tenantId (base name: "tenant_id")', function() {
       // uncomment below and update the code to test the property tenantId
-      //var instane = new HydrogenAtomApi.OrderReconcileRequest();
+      //var instane = new HydrogenNucleusApi.OrderReconcileRequest();
       //expect(instance).to.be();
     });
 

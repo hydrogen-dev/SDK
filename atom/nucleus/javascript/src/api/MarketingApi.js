@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Campaign'), require('../model/CampaignData'), require('../model/CampaignPlan'), require('../model/ClientCampaignMapping'), require('../model/JsonNode'), require('../model/PageCampaign'), require('../model/PageCampaignData'), require('../model/PageCampaignPlan'), require('../model/PageClientCampaignMapping'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.MarketingApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Campaign, root.HydrogenAtomApi.CampaignData, root.HydrogenAtomApi.CampaignPlan, root.HydrogenAtomApi.ClientCampaignMapping, root.HydrogenAtomApi.JsonNode, root.HydrogenAtomApi.PageCampaign, root.HydrogenAtomApi.PageCampaignData, root.HydrogenAtomApi.PageCampaignPlan, root.HydrogenAtomApi.PageClientCampaignMapping);
+    root.HydrogenNucleusApi.MarketingApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Campaign, root.HydrogenNucleusApi.CampaignData, root.HydrogenNucleusApi.CampaignPlan, root.HydrogenNucleusApi.ClientCampaignMapping, root.HydrogenNucleusApi.JsonNode, root.HydrogenNucleusApi.PageCampaign, root.HydrogenNucleusApi.PageCampaignData, root.HydrogenNucleusApi.PageCampaignPlan, root.HydrogenNucleusApi.PageClientCampaignMapping);
   }
 }(this, function(ApiClient, Campaign, CampaignData, CampaignPlan, ClientCampaignMapping, JsonNode, PageCampaign, PageCampaignData, PageCampaignPlan, PageClientCampaignMapping) {
   'use strict';

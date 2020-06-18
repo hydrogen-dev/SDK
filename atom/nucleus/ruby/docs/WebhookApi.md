@@ -1,4 +1,4 @@
-# AtomApi::WebhookApi
+# NucleusApi::WebhookApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ One active webhook service is allowed at all times.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::WebhookApi.new
+api_instance = NucleusApi::WebhookApi.new
 
-webhook_request = AtomApi::Webhook.new # Webhook | webhookRequest
+webhook_request = NucleusApi::Webhook.new # Webhook | webhookRequest
 
 
 begin
   #Create a webhook
   result = api_instance.create_webhook_using_post(webhook_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling WebhookApi->create_webhook_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently delete a webhook for your firm. The webhook_id must be provided.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::WebhookApi.new
+api_instance = NucleusApi::WebhookApi.new
 
 webhook_id = 'webhook_id_example' # String | UUID webhook_id
 
@@ -96,7 +96,7 @@ webhook_id = 'webhook_id_example' # String | UUID webhook_id
 begin
   #Delete a webhook
   api_instance.delete_webhook_using_delete(webhook_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling WebhookApi->delete_webhook_using_delete: #{e}"
 end
 ```
@@ -132,9 +132,9 @@ Get information for all webhooks defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -143,7 +143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::WebhookApi.new
+api_instance = NucleusApi::WebhookApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -157,7 +157,7 @@ begin
   #List all webhooks
   result = api_instance.get_webhook_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling WebhookApi->get_webhook_all_using_get: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Retrieve the information for a specific webhook. The webhook_id must be provided
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::WebhookApi.new
+api_instance = NucleusApi::WebhookApi.new
 
 webhook_id = 'webhook_id_example' # String | UUID webhook_id
 
@@ -217,7 +217,7 @@ begin
   #Retrieve a webhook
   result = api_instance.get_webhook_using_get(webhook_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling WebhookApi->get_webhook_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Update a webhook for your firm. The webhook_id must be provided
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::WebhookApi.new
+api_instance = NucleusApi::WebhookApi.new
 
-webhook = AtomApi::Webhook.new # Webhook | webhook
+webhook = NucleusApi::Webhook.new # Webhook | webhook
 
 webhook_id = 'webhook_id_example' # String | UUID webhook_id
 
@@ -275,7 +275,7 @@ begin
   #Update a webhook
   result = api_instance.update_webhook_using_put(webhook, webhook_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling WebhookApi->update_webhook_using_put: #{e}"
 end
 ```

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * QuestionnaireApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class QuestionnaireApi
      *
      * Create an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Answer
+     * @return \com\hydrogen\nucleus\Model\Answer
      */
     public function createAnswerUsingPost($answer)
     {
@@ -109,15 +109,15 @@ class QuestionnaireApi
      *
      * Create an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Answer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Answer, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAnswerUsingPostWithHttpInfo($answer)
     {
-        $returnType = '\com\hydrogen\Model\Answer';
+        $returnType = '\com\hydrogen\nucleus\Model\Answer';
         $request = $this->createAnswerUsingPostRequest($answer);
 
         try {
@@ -169,7 +169,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Answer',
+                        '\com\hydrogen\nucleus\Model\Answer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class QuestionnaireApi
      *
      * Create an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class QuestionnaireApi
      *
      * Create an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAnswerUsingPostAsyncWithHttpInfo($answer)
     {
-        $returnType = '\com\hydrogen\Model\Answer';
+        $returnType = '\com\hydrogen\nucleus\Model\Answer';
         $request = $this->createAnswerUsingPostRequest($answer);
 
         return $this->client
@@ -254,7 +254,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'createAnswerUsingPost'
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class QuestionnaireApi
      *
      * Create a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response clientResponse (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response clientResponse (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientResponse
+     * @return \com\hydrogen\nucleus\Model\ClientResponse
      */
     public function createClientResponseUsingPost($client_response)
     {
@@ -377,15 +377,15 @@ class QuestionnaireApi
      *
      * Create a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response clientResponse (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response clientResponse (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createClientResponseUsingPostWithHttpInfo($client_response)
     {
-        $returnType = '\com\hydrogen\Model\ClientResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientResponse';
         $request = $this->createClientResponseUsingPostRequest($client_response);
 
         try {
@@ -437,7 +437,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientResponse',
+                        '\com\hydrogen\nucleus\Model\ClientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class QuestionnaireApi
      *
      * Create a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response clientResponse (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response clientResponse (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class QuestionnaireApi
      *
      * Create a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response clientResponse (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response clientResponse (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createClientResponseUsingPostAsyncWithHttpInfo($client_response)
     {
-        $returnType = '\com\hydrogen\Model\ClientResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientResponse';
         $request = $this->createClientResponseUsingPostRequest($client_response);
 
         return $this->client
@@ -522,7 +522,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'createClientResponseUsingPost'
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response clientResponse (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response clientResponse (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class QuestionnaireApi
      *
      * Create a question
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Question
+     * @return \com\hydrogen\nucleus\Model\Question
      */
     public function createQuestionUsingPost($question)
     {
@@ -645,15 +645,15 @@ class QuestionnaireApi
      *
      * Create a question
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Question, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Question, HTTP status code, HTTP response headers (array of strings)
      */
     public function createQuestionUsingPostWithHttpInfo($question)
     {
-        $returnType = '\com\hydrogen\Model\Question';
+        $returnType = '\com\hydrogen\nucleus\Model\Question';
         $request = $this->createQuestionUsingPostRequest($question);
 
         try {
@@ -705,7 +705,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Question',
+                        '\com\hydrogen\nucleus\Model\Question',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class QuestionnaireApi
      *
      * Create a question
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class QuestionnaireApi
      *
      * Create a question
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createQuestionUsingPostAsyncWithHttpInfo($question)
     {
-        $returnType = '\com\hydrogen\Model\Question';
+        $returnType = '\com\hydrogen\nucleus\Model\Question';
         $request = $this->createQuestionUsingPostRequest($question);
 
         return $this->client
@@ -790,7 +790,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'createQuestionUsingPost'
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,11 +896,11 @@ class QuestionnaireApi
      *
      * Create a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Questionnaire
+     * @return \com\hydrogen\nucleus\Model\Questionnaire
      */
     public function createQuestionnaireUsingPost($questionnaire)
     {
@@ -913,15 +913,15 @@ class QuestionnaireApi
      *
      * Create a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Questionnaire, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Questionnaire, HTTP status code, HTTP response headers (array of strings)
      */
     public function createQuestionnaireUsingPostWithHttpInfo($questionnaire)
     {
-        $returnType = '\com\hydrogen\Model\Questionnaire';
+        $returnType = '\com\hydrogen\nucleus\Model\Questionnaire';
         $request = $this->createQuestionnaireUsingPostRequest($questionnaire);
 
         try {
@@ -973,7 +973,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Questionnaire',
+                        '\com\hydrogen\nucleus\Model\Questionnaire',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class QuestionnaireApi
      *
      * Create a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,14 +1008,14 @@ class QuestionnaireApi
      *
      * Create a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createQuestionnaireUsingPostAsyncWithHttpInfo($questionnaire)
     {
-        $returnType = '\com\hydrogen\Model\Questionnaire';
+        $returnType = '\com\hydrogen\nucleus\Model\Questionnaire';
         $request = $this->createQuestionnaireUsingPostRequest($questionnaire);
 
         return $this->client
@@ -1058,7 +1058,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'createQuestionnaireUsingPost'
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1166,7 +1166,7 @@ class QuestionnaireApi
      *
      * @param  string $answer_id UUID answer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1182,7 +1182,7 @@ class QuestionnaireApi
      *
      * @param  string $answer_id UUID answer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1402,7 +1402,7 @@ class QuestionnaireApi
      *
      * @param  string $client_response_id UUID client_response_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1418,7 +1418,7 @@ class QuestionnaireApi
      *
      * @param  string $client_response_id UUID client_response_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1638,7 +1638,7 @@ class QuestionnaireApi
      *
      * @param  string $question_id UUID question_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1654,7 +1654,7 @@ class QuestionnaireApi
      *
      * @param  string $question_id UUID question_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1874,7 +1874,7 @@ class QuestionnaireApi
      *
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1890,7 +1890,7 @@ class QuestionnaireApi
      *
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2114,9 +2114,9 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAnswer_
+     * @return \com\hydrogen\nucleus\Model\PageAnswer_
      */
     public function getAnswerAllUsingGet($ascending = 'false', $filter = null, $order_by = 'label', $page = '0', $size = '25')
     {
@@ -2135,13 +2135,13 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAnswer_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAnswer_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAnswerAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'label', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAnswer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAnswer_';
         $request = $this->getAnswerAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2193,7 +2193,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAnswer_',
+                        '\com\hydrogen\nucleus\Model\PageAnswer_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2243,7 +2243,7 @@ class QuestionnaireApi
      */
     public function getAnswerAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'label', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAnswer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAnswer_';
         $request = $this->getAnswerAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2409,9 +2409,9 @@ class QuestionnaireApi
      *
      * @param  string $answer_id UUID answer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Answer
+     * @return \com\hydrogen\nucleus\Model\Answer
      */
     public function getAnswerUsingGet($answer_id)
     {
@@ -2426,13 +2426,13 @@ class QuestionnaireApi
      *
      * @param  string $answer_id UUID answer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Answer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Answer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAnswerUsingGetWithHttpInfo($answer_id)
     {
-        $returnType = '\com\hydrogen\Model\Answer';
+        $returnType = '\com\hydrogen\nucleus\Model\Answer';
         $request = $this->getAnswerUsingGetRequest($answer_id);
 
         try {
@@ -2484,7 +2484,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Answer',
+                        '\com\hydrogen\nucleus\Model\Answer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2526,7 +2526,7 @@ class QuestionnaireApi
      */
     public function getAnswerUsingGetAsyncWithHttpInfo($answer_id)
     {
-        $returnType = '\com\hydrogen\Model\Answer';
+        $returnType = '\com\hydrogen\nucleus\Model\Answer';
         $request = $this->getAnswerUsingGetRequest($answer_id);
 
         return $this->client
@@ -2686,9 +2686,9 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageClientResponse_
+     * @return \com\hydrogen\nucleus\Model\PageClientResponse_
      */
     public function getClientResponseAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2707,13 +2707,13 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageClientResponse_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageClientResponse_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientResponseAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientResponse_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientResponse_';
         $request = $this->getClientResponseAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2765,7 +2765,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageClientResponse_',
+                        '\com\hydrogen\nucleus\Model\PageClientResponse_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2815,7 +2815,7 @@ class QuestionnaireApi
      */
     public function getClientResponseAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientResponse_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientResponse_';
         $request = $this->getClientResponseAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2981,9 +2981,9 @@ class QuestionnaireApi
      *
      * @param  string $client_response_id UUID client_response_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientResponse
+     * @return \com\hydrogen\nucleus\Model\ClientResponse
      */
     public function getClientResponseUsingGet($client_response_id)
     {
@@ -2998,13 +2998,13 @@ class QuestionnaireApi
      *
      * @param  string $client_response_id UUID client_response_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientResponseUsingGetWithHttpInfo($client_response_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientResponse';
         $request = $this->getClientResponseUsingGetRequest($client_response_id);
 
         try {
@@ -3056,7 +3056,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientResponse',
+                        '\com\hydrogen\nucleus\Model\ClientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3098,7 +3098,7 @@ class QuestionnaireApi
      */
     public function getClientResponseUsingGetAsyncWithHttpInfo($client_response_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientResponse';
         $request = $this->getClientResponseUsingGetRequest($client_response_id);
 
         return $this->client
@@ -3258,9 +3258,9 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageQuestion_
+     * @return \com\hydrogen\nucleus\Model\PageQuestion_
      */
     public function getQuestionAllUsingGet($ascending = 'false', $filter = null, $order_by = 'order_index', $page = '0', $size = '25')
     {
@@ -3279,13 +3279,13 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageQuestion_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageQuestion_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQuestionAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'order_index', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageQuestion_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageQuestion_';
         $request = $this->getQuestionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3337,7 +3337,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageQuestion_',
+                        '\com\hydrogen\nucleus\Model\PageQuestion_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3387,7 +3387,7 @@ class QuestionnaireApi
      */
     public function getQuestionAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'order_index', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageQuestion_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageQuestion_';
         $request = $this->getQuestionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3553,9 +3553,9 @@ class QuestionnaireApi
      *
      * @param  string $question_id UUID question_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Question
+     * @return \com\hydrogen\nucleus\Model\Question
      */
     public function getQuestionUsingGet($question_id)
     {
@@ -3570,13 +3570,13 @@ class QuestionnaireApi
      *
      * @param  string $question_id UUID question_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Question, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Question, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQuestionUsingGetWithHttpInfo($question_id)
     {
-        $returnType = '\com\hydrogen\Model\Question';
+        $returnType = '\com\hydrogen\nucleus\Model\Question';
         $request = $this->getQuestionUsingGetRequest($question_id);
 
         try {
@@ -3628,7 +3628,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Question',
+                        '\com\hydrogen\nucleus\Model\Question',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3670,7 +3670,7 @@ class QuestionnaireApi
      */
     public function getQuestionUsingGetAsyncWithHttpInfo($question_id)
     {
-        $returnType = '\com\hydrogen\Model\Question';
+        $returnType = '\com\hydrogen\nucleus\Model\Question';
         $request = $this->getQuestionUsingGetRequest($question_id);
 
         return $this->client
@@ -3830,9 +3830,9 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageQuestionnaire_
+     * @return \com\hydrogen\nucleus\Model\PageQuestionnaire_
      */
     public function getQuestionnaireAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3851,13 +3851,13 @@ class QuestionnaireApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageQuestionnaire_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageQuestionnaire_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQuestionnaireAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageQuestionnaire_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageQuestionnaire_';
         $request = $this->getQuestionnaireAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3909,7 +3909,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageQuestionnaire_',
+                        '\com\hydrogen\nucleus\Model\PageQuestionnaire_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3959,7 +3959,7 @@ class QuestionnaireApi
      */
     public function getQuestionnaireAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageQuestionnaire_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageQuestionnaire_';
         $request = $this->getQuestionnaireAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4125,9 +4125,9 @@ class QuestionnaireApi
      *
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Questionnaire
+     * @return \com\hydrogen\nucleus\Model\Questionnaire
      */
     public function getQuestionnaireUsingGet($questionnaire_id)
     {
@@ -4142,13 +4142,13 @@ class QuestionnaireApi
      *
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Questionnaire, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Questionnaire, HTTP status code, HTTP response headers (array of strings)
      */
     public function getQuestionnaireUsingGetWithHttpInfo($questionnaire_id)
     {
-        $returnType = '\com\hydrogen\Model\Questionnaire';
+        $returnType = '\com\hydrogen\nucleus\Model\Questionnaire';
         $request = $this->getQuestionnaireUsingGetRequest($questionnaire_id);
 
         try {
@@ -4200,7 +4200,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Questionnaire',
+                        '\com\hydrogen\nucleus\Model\Questionnaire',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4242,7 +4242,7 @@ class QuestionnaireApi
      */
     public function getQuestionnaireUsingGetAsyncWithHttpInfo($questionnaire_id)
     {
-        $returnType = '\com\hydrogen\Model\Questionnaire';
+        $returnType = '\com\hydrogen\nucleus\Model\Questionnaire';
         $request = $this->getQuestionnaireUsingGetRequest($questionnaire_id);
 
         return $this->client
@@ -4396,12 +4396,12 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Answer
+     * @return \com\hydrogen\nucleus\Model\Answer
      */
     public function updateAnswerUsingPut($answer, $answer_id)
     {
@@ -4414,16 +4414,16 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Answer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Answer, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAnswerUsingPutWithHttpInfo($answer, $answer_id)
     {
-        $returnType = '\com\hydrogen\Model\Answer';
+        $returnType = '\com\hydrogen\nucleus\Model\Answer';
         $request = $this->updateAnswerUsingPutRequest($answer, $answer_id);
 
         try {
@@ -4475,7 +4475,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Answer',
+                        '\com\hydrogen\nucleus\Model\Answer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4490,7 +4490,7 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4511,7 +4511,7 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4519,7 +4519,7 @@ class QuestionnaireApi
      */
     public function updateAnswerUsingPutAsyncWithHttpInfo($answer, $answer_id)
     {
-        $returnType = '\com\hydrogen\Model\Answer';
+        $returnType = '\com\hydrogen\nucleus\Model\Answer';
         $request = $this->updateAnswerUsingPutRequest($answer, $answer_id);
 
         return $this->client
@@ -4562,7 +4562,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'updateAnswerUsingPut'
      *
-     * @param  \com\hydrogen\Model\Answer $answer answer (required)
+     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4683,12 +4683,12 @@ class QuestionnaireApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response client_response (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientResponse
+     * @return \com\hydrogen\nucleus\Model\ClientResponse
      */
     public function updateClientResponseUsingPut($client_response, $client_response_id)
     {
@@ -4701,16 +4701,16 @@ class QuestionnaireApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response client_response (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateClientResponseUsingPutWithHttpInfo($client_response, $client_response_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientResponse';
         $request = $this->updateClientResponseUsingPutRequest($client_response, $client_response_id);
 
         try {
@@ -4762,7 +4762,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientResponse',
+                        '\com\hydrogen\nucleus\Model\ClientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4777,7 +4777,7 @@ class QuestionnaireApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response client_response (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4798,7 +4798,7 @@ class QuestionnaireApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response client_response (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4806,7 +4806,7 @@ class QuestionnaireApi
      */
     public function updateClientResponseUsingPutAsyncWithHttpInfo($client_response, $client_response_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientResponse';
         $request = $this->updateClientResponseUsingPutRequest($client_response, $client_response_id);
 
         return $this->client
@@ -4849,7 +4849,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'updateClientResponseUsingPut'
      *
-     * @param  \com\hydrogen\Model\ClientResponse $client_response client_response (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4970,12 +4970,12 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Question
+     * @return \com\hydrogen\nucleus\Model\Question
      */
     public function updateQuestionUsingPut($question, $question_id)
     {
@@ -4988,16 +4988,16 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Question, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Question, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateQuestionUsingPutWithHttpInfo($question, $question_id)
     {
-        $returnType = '\com\hydrogen\Model\Question';
+        $returnType = '\com\hydrogen\nucleus\Model\Question';
         $request = $this->updateQuestionUsingPutRequest($question, $question_id);
 
         try {
@@ -5049,7 +5049,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Question',
+                        '\com\hydrogen\nucleus\Model\Question',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5064,7 +5064,7 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5085,7 +5085,7 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5093,7 +5093,7 @@ class QuestionnaireApi
      */
     public function updateQuestionUsingPutAsyncWithHttpInfo($question, $question_id)
     {
-        $returnType = '\com\hydrogen\Model\Question';
+        $returnType = '\com\hydrogen\nucleus\Model\Question';
         $request = $this->updateQuestionUsingPutRequest($question, $question_id);
 
         return $this->client
@@ -5136,7 +5136,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'updateQuestionUsingPut'
      *
-     * @param  \com\hydrogen\Model\Question $question question (required)
+     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5257,12 +5257,12 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Questionnaire
+     * @return \com\hydrogen\nucleus\Model\Questionnaire
      */
     public function updateQuestionnaireUsingPut($questionnaire, $questionnaire_id)
     {
@@ -5275,16 +5275,16 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Questionnaire, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Questionnaire, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateQuestionnaireUsingPutWithHttpInfo($questionnaire, $questionnaire_id)
     {
-        $returnType = '\com\hydrogen\Model\Questionnaire';
+        $returnType = '\com\hydrogen\nucleus\Model\Questionnaire';
         $request = $this->updateQuestionnaireUsingPutRequest($questionnaire, $questionnaire_id);
 
         try {
@@ -5336,7 +5336,7 @@ class QuestionnaireApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Questionnaire',
+                        '\com\hydrogen\nucleus\Model\Questionnaire',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5351,7 +5351,7 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5372,7 +5372,7 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5380,7 +5380,7 @@ class QuestionnaireApi
      */
     public function updateQuestionnaireUsingPutAsyncWithHttpInfo($questionnaire, $questionnaire_id)
     {
-        $returnType = '\com\hydrogen\Model\Questionnaire';
+        $returnType = '\com\hydrogen\nucleus\Model\Questionnaire';
         $request = $this->updateQuestionnaireUsingPutRequest($questionnaire, $questionnaire_id);
 
         return $this->client
@@ -5423,7 +5423,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'updateQuestionnaireUsingPut'
      *
-     * @param  \com\hydrogen\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \InvalidArgumentException

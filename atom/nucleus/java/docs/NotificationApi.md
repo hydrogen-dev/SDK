@@ -31,9 +31,9 @@ Create a new Notification Client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -88,9 +88,9 @@ Create a new Notification Setting.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -145,9 +145,9 @@ Create a new Notification.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -202,9 +202,9 @@ Permanently Delete Notification Client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -258,9 +258,9 @@ Permanently Delete Notification Setting.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -314,9 +314,9 @@ Permanently Delete a Notification.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -370,9 +370,9 @@ Get All Notification.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -435,9 +435,9 @@ List all Notification Client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -500,9 +500,9 @@ Retrieve a  Notification Client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -557,9 +557,9 @@ List all Notification Setting.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -622,9 +622,9 @@ Retrieve a  Notification Setting.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -679,9 +679,9 @@ Get a Notification.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -736,9 +736,9 @@ Update a  Notification Client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -795,9 +795,9 @@ Update a  Notification Setting.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -854,9 +854,9 @@ Update a Notification.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

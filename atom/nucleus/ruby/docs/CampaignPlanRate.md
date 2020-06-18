@@ -1,4 +1,4 @@
-# AtomApi::CampaignPlanRate
+# NucleusApi::CampaignPlanRate
 
 ## Properties
 Name | Type | Description | Notes

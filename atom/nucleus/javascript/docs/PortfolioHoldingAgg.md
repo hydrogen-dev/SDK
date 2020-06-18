@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PortfolioHoldingAgg
+# HydrogenNucleusApi.PortfolioHoldingAgg
 
 ## Properties
 Name | Type | Description | Notes

@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Overflow'), require('../model/OverflowSettings'), require('../model/PageOverflow'), require('../model/PageOverflowSettings'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.OverflowApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Overflow, root.HydrogenAtomApi.OverflowSettings, root.HydrogenAtomApi.PageOverflow, root.HydrogenAtomApi.PageOverflowSettings);
+    root.HydrogenNucleusApi.OverflowApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Overflow, root.HydrogenNucleusApi.OverflowSettings, root.HydrogenNucleusApi.PageOverflow, root.HydrogenNucleusApi.PageOverflowSettings);
   }
 }(this, function(ApiClient, Overflow, OverflowSettings, PageOverflow, PageOverflowSettings) {
   'use strict';

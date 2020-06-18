@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Client Class Doc Comment
  *
  * @category Class
  * @description Client Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class Client implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => '\com\hydrogen\Model\ClientAddress[]',
+        'address' => '\com\hydrogen\nucleus\Model\ClientAddress[]',
         'citizenship_status' => 'string',
         'client_type' => 'string',
         'country_of_citizenship' => 'string[]',
@@ -66,7 +66,7 @@ class Client implements ModelInterface, ArrayAccess
         'create_date' => '\DateTime',
         'date_of_birth' => '\DateTime',
         'email' => 'string',
-        'employment' => '\com\hydrogen\Model\Employment',
+        'employment' => '\com\hydrogen\nucleus\Model\Employment',
         'firm_name' => 'string',
         'first_name' => 'string',
         'gender' => 'string',
@@ -394,7 +394,7 @@ class Client implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \com\hydrogen\Model\ClientAddress[]
+     * @return \com\hydrogen\nucleus\Model\ClientAddress[]
      */
     public function getAddress()
     {
@@ -404,7 +404,7 @@ class Client implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \com\hydrogen\Model\ClientAddress[] $address address
+     * @param \com\hydrogen\nucleus\Model\ClientAddress[] $address address
      *
      * @return $this
      */
@@ -586,7 +586,7 @@ class Client implements ModelInterface, ArrayAccess
     /**
      * Gets employment
      *
-     * @return \com\hydrogen\Model\Employment
+     * @return \com\hydrogen\nucleus\Model\Employment
      */
     public function getEmployment()
     {
@@ -596,7 +596,7 @@ class Client implements ModelInterface, ArrayAccess
     /**
      * Sets employment
      *
-     * @param \com\hydrogen\Model\Employment $employment employment
+     * @param \com\hydrogen\nucleus\Model\Employment $employment employment
      *
      * @return $this
      */

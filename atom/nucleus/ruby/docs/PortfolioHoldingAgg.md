@@ -1,4 +1,4 @@
-# AtomApi::PortfolioHoldingAgg
+# NucleusApi::PortfolioHoldingAgg
 
 ## Properties
 Name | Type | Description | Notes

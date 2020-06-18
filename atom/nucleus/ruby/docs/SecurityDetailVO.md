@@ -1,4 +1,4 @@
-# AtomApi::SecurityDetailVO
+# NucleusApi::SecurityDetailVO
 
 ## Properties
 Name | Type | Description | Notes

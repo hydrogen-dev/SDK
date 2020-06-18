@@ -1,4 +1,4 @@
-# AtomApi::PageWebhook
+# NucleusApi::PageWebhook
 
 ## Properties
 Name | Type | Description | Notes

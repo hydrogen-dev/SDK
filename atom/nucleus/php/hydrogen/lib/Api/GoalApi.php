@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * GoalApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class GoalApi
      *
      * Create a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goalTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goalTrack (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\GoalTrack
+     * @return \com\hydrogen\nucleus\Model\GoalTrack
      */
     public function createGoalTrackUsingPost($goal_track)
     {
@@ -109,15 +109,15 @@ class GoalApi
      *
      * Create a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goalTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goalTrack (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\GoalTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\GoalTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function createGoalTrackUsingPostWithHttpInfo($goal_track)
     {
-        $returnType = '\com\hydrogen\Model\GoalTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\GoalTrack';
         $request = $this->createGoalTrackUsingPostRequest($goal_track);
 
         try {
@@ -169,7 +169,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\GoalTrack',
+                        '\com\hydrogen\nucleus\Model\GoalTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class GoalApi
      *
      * Create a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goalTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goalTrack (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class GoalApi
      *
      * Create a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goalTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goalTrack (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createGoalTrackUsingPostAsyncWithHttpInfo($goal_track)
     {
-        $returnType = '\com\hydrogen\Model\GoalTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\GoalTrack';
         $request = $this->createGoalTrackUsingPostRequest($goal_track);
 
         return $this->client
@@ -254,7 +254,7 @@ class GoalApi
     /**
      * Create request for operation 'createGoalTrackUsingPost'
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goalTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goalTrack (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class GoalApi
      *
      * Create a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal_request goalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal_request goalRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Goal
+     * @return \com\hydrogen\nucleus\Model\Goal
      */
     public function createGoalUsingPost($goal_request)
     {
@@ -377,15 +377,15 @@ class GoalApi
      *
      * Create a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal_request goalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal_request goalRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Goal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Goal, HTTP status code, HTTP response headers (array of strings)
      */
     public function createGoalUsingPostWithHttpInfo($goal_request)
     {
-        $returnType = '\com\hydrogen\Model\Goal';
+        $returnType = '\com\hydrogen\nucleus\Model\Goal';
         $request = $this->createGoalUsingPostRequest($goal_request);
 
         try {
@@ -437,7 +437,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Goal',
+                        '\com\hydrogen\nucleus\Model\Goal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class GoalApi
      *
      * Create a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal_request goalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal_request goalRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class GoalApi
      *
      * Create a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal_request goalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal_request goalRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createGoalUsingPostAsyncWithHttpInfo($goal_request)
     {
-        $returnType = '\com\hydrogen\Model\Goal';
+        $returnType = '\com\hydrogen\nucleus\Model\Goal';
         $request = $this->createGoalUsingPostRequest($goal_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class GoalApi
     /**
      * Create request for operation 'createGoalUsingPost'
      *
-     * @param  \com\hydrogen\Model\Goal $goal_request goalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal_request goalRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -631,7 +631,7 @@ class GoalApi
      * @param  string $goal_track_id UUID goal_track_id (required)
      * @param  string $goal_track_id2 goal_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -648,7 +648,7 @@ class GoalApi
      * @param  string $goal_track_id UUID goal_track_id (required)
      * @param  string $goal_track_id2 goal_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -885,7 +885,7 @@ class GoalApi
      *
      * @param  string $goal_id UUID goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -901,7 +901,7 @@ class GoalApi
      *
      * @param  string $goal_id UUID goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1125,9 +1125,9 @@ class GoalApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageGoal_
+     * @return \com\hydrogen\nucleus\Model\PageGoal_
      */
     public function getGoalAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1146,13 +1146,13 @@ class GoalApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageGoal_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageGoal_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGoalAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageGoal_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageGoal_';
         $request = $this->getGoalAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1204,7 +1204,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageGoal_',
+                        '\com\hydrogen\nucleus\Model\PageGoal_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1254,7 +1254,7 @@ class GoalApi
      */
     public function getGoalAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageGoal_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageGoal_';
         $request = $this->getGoalAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1426,9 +1426,9 @@ class GoalApi
      * @param  string $sort_type sort_type (optional)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AvailableDateDoubleVO[]
+     * @return \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]
      */
     public function getGoalAssetSizeAllUsingGet($client_id, $goal_id, $end_date = null, $get_latest = 'false', $portfolio_goal = 'false', $sort_type = null, $start_date = null)
     {
@@ -1449,13 +1449,13 @@ class GoalApi
      * @param  string $sort_type sort_type (optional)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AvailableDateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getGoalAssetSizeAllUsingGetWithHttpInfo($client_id, $goal_id, $end_date = null, $get_latest = 'false', $portfolio_goal = 'false', $sort_type = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\AvailableDateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]';
         $request = $this->getGoalAssetSizeAllUsingGetRequest($client_id, $goal_id, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date);
 
         try {
@@ -1507,7 +1507,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AvailableDateDoubleVO[]',
+                        '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1561,7 +1561,7 @@ class GoalApi
      */
     public function getGoalAssetSizeAllUsingGetAsyncWithHttpInfo($client_id, $goal_id, $end_date = null, $get_latest = 'false', $portfolio_goal = 'false', $sort_type = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\AvailableDateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]';
         $request = $this->getGoalAssetSizeAllUsingGetRequest($client_id, $goal_id, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date);
 
         return $this->client
@@ -1757,9 +1757,9 @@ class GoalApi
      * @param  bool $portfolio_goal portfolio_goal (optional, default to false)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioHoldingAgg[]
+     * @return \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]
      */
     public function getGoalHoldingAllUsingGet($client_id, $goal_id, $end_date = null, $portfolio_goal = 'false', $start_date = null)
     {
@@ -1778,13 +1778,13 @@ class GoalApi
      * @param  bool $portfolio_goal portfolio_goal (optional, default to false)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getGoalHoldingAllUsingGetWithHttpInfo($client_id, $goal_id, $end_date = null, $portfolio_goal = 'false', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]';
         $request = $this->getGoalHoldingAllUsingGetRequest($client_id, $goal_id, $end_date, $portfolio_goal, $start_date);
 
         try {
@@ -1836,7 +1836,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioHoldingAgg[]',
+                        '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1886,7 +1886,7 @@ class GoalApi
      */
     public function getGoalHoldingAllUsingGetAsyncWithHttpInfo($client_id, $goal_id, $end_date = null, $portfolio_goal = 'false', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]';
         $request = $this->getGoalHoldingAllUsingGetRequest($client_id, $goal_id, $end_date, $portfolio_goal, $start_date);
 
         return $this->client
@@ -2075,9 +2075,9 @@ class GoalApi
      * @param  int $size size (optional, default to 25)
      * @param  string $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageGoalTrack_
+     * @return \com\hydrogen\nucleus\Model\PageGoalTrack_
      */
     public function getGoalTrackAllUsingGet($ascending = 'false', $end_date = null, $filter = null, $get_latest = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = null)
     {
@@ -2099,13 +2099,13 @@ class GoalApi
      * @param  int $size size (optional, default to 25)
      * @param  string $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageGoalTrack_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageGoalTrack_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGoalTrackAllUsingGetWithHttpInfo($ascending = 'false', $end_date = null, $filter = null, $get_latest = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PageGoalTrack_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageGoalTrack_';
         $request = $this->getGoalTrackAllUsingGetRequest($ascending, $end_date, $filter, $get_latest, $order_by, $page, $size, $start_date);
 
         try {
@@ -2157,7 +2157,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageGoalTrack_',
+                        '\com\hydrogen\nucleus\Model\PageGoalTrack_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2213,7 +2213,7 @@ class GoalApi
      */
     public function getGoalTrackAllUsingGetAsyncWithHttpInfo($ascending = 'false', $end_date = null, $filter = null, $get_latest = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PageGoalTrack_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageGoalTrack_';
         $request = $this->getGoalTrackAllUsingGetRequest($ascending, $end_date, $filter, $get_latest, $order_by, $page, $size, $start_date);
 
         return $this->client
@@ -2395,9 +2395,9 @@ class GoalApi
      * @param  string $goal_track_id UUID goal_track_id (required)
      * @param  string $goal_track_id2 goal_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\GoalTrack
+     * @return \com\hydrogen\nucleus\Model\GoalTrack
      */
     public function getGoalTrackUsingGet($goal_track_id, $goal_track_id2)
     {
@@ -2413,13 +2413,13 @@ class GoalApi
      * @param  string $goal_track_id UUID goal_track_id (required)
      * @param  string $goal_track_id2 goal_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\GoalTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\GoalTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGoalTrackUsingGetWithHttpInfo($goal_track_id, $goal_track_id2)
     {
-        $returnType = '\com\hydrogen\Model\GoalTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\GoalTrack';
         $request = $this->getGoalTrackUsingGetRequest($goal_track_id, $goal_track_id2);
 
         try {
@@ -2471,7 +2471,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\GoalTrack',
+                        '\com\hydrogen\nucleus\Model\GoalTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2515,7 +2515,7 @@ class GoalApi
      */
     public function getGoalTrackUsingGetAsyncWithHttpInfo($goal_track_id, $goal_track_id2)
     {
-        $returnType = '\com\hydrogen\Model\GoalTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\GoalTrack';
         $request = $this->getGoalTrackUsingGetRequest($goal_track_id, $goal_track_id2);
 
         return $this->client
@@ -2694,9 +2694,9 @@ class GoalApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolioTransaction_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioTransaction_
      */
     public function getGoalTransactionAllUsingGet($client_id, $goal_id, $ascending = 'false', $end_date = null, $order_by = 'update_date', $page = '0', $portfolio_goal = 'false', $size = '25', $start_date = null)
     {
@@ -2719,13 +2719,13 @@ class GoalApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGoalTransactionAllUsingGetWithHttpInfo($client_id, $goal_id, $ascending = 'false', $end_date = null, $order_by = 'update_date', $page = '0', $portfolio_goal = 'false', $size = '25', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getGoalTransactionAllUsingGetRequest($client_id, $goal_id, $ascending, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date);
 
         try {
@@ -2777,7 +2777,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolioTransaction_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2835,7 +2835,7 @@ class GoalApi
      */
     public function getGoalTransactionAllUsingGetAsyncWithHttpInfo($client_id, $goal_id, $ascending = 'false', $end_date = null, $order_by = 'update_date', $page = '0', $portfolio_goal = 'false', $size = '25', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getGoalTransactionAllUsingGetRequest($client_id, $goal_id, $ascending, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date);
 
         return $this->client
@@ -3037,9 +3037,9 @@ class GoalApi
      *
      * @param  string $goal_id UUID goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Goal
+     * @return \com\hydrogen\nucleus\Model\Goal
      */
     public function getGoalUsingGet($goal_id)
     {
@@ -3054,13 +3054,13 @@ class GoalApi
      *
      * @param  string $goal_id UUID goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Goal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Goal, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGoalUsingGetWithHttpInfo($goal_id)
     {
-        $returnType = '\com\hydrogen\Model\Goal';
+        $returnType = '\com\hydrogen\nucleus\Model\Goal';
         $request = $this->getGoalUsingGetRequest($goal_id);
 
         try {
@@ -3112,7 +3112,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Goal',
+                        '\com\hydrogen\nucleus\Model\Goal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3154,7 +3154,7 @@ class GoalApi
      */
     public function getGoalUsingGetAsyncWithHttpInfo($goal_id)
     {
-        $returnType = '\com\hydrogen\Model\Goal';
+        $returnType = '\com\hydrogen\nucleus\Model\Goal';
         $request = $this->getGoalUsingGetRequest($goal_id);
 
         return $this->client
@@ -3308,12 +3308,12 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goal_track (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\GoalTrack
+     * @return \com\hydrogen\nucleus\Model\GoalTrack
      */
     public function updateGoalTrackUsingPut($goal_track, $goal_track_id)
     {
@@ -3326,16 +3326,16 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goal_track (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\GoalTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\GoalTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateGoalTrackUsingPutWithHttpInfo($goal_track, $goal_track_id)
     {
-        $returnType = '\com\hydrogen\Model\GoalTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\GoalTrack';
         $request = $this->updateGoalTrackUsingPutRequest($goal_track, $goal_track_id);
 
         try {
@@ -3387,7 +3387,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\GoalTrack',
+                        '\com\hydrogen\nucleus\Model\GoalTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3402,7 +3402,7 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goal_track (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3423,7 +3423,7 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goal_track (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3431,7 +3431,7 @@ class GoalApi
      */
     public function updateGoalTrackUsingPutAsyncWithHttpInfo($goal_track, $goal_track_id)
     {
-        $returnType = '\com\hydrogen\Model\GoalTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\GoalTrack';
         $request = $this->updateGoalTrackUsingPutRequest($goal_track, $goal_track_id);
 
         return $this->client
@@ -3474,7 +3474,7 @@ class GoalApi
     /**
      * Create request for operation 'updateGoalTrackUsingPut'
      *
-     * @param  \com\hydrogen\Model\GoalTrack $goal_track goal_track (required)
+     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3595,12 +3595,12 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal goal (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Goal
+     * @return \com\hydrogen\nucleus\Model\Goal
      */
     public function updateGoalUsingPut($goal, $goal_id)
     {
@@ -3613,16 +3613,16 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal goal (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Goal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Goal, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateGoalUsingPutWithHttpInfo($goal, $goal_id)
     {
-        $returnType = '\com\hydrogen\Model\Goal';
+        $returnType = '\com\hydrogen\nucleus\Model\Goal';
         $request = $this->updateGoalUsingPutRequest($goal, $goal_id);
 
         try {
@@ -3674,7 +3674,7 @@ class GoalApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Goal',
+                        '\com\hydrogen\nucleus\Model\Goal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3689,7 +3689,7 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal goal (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3710,7 +3710,7 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\Model\Goal $goal goal (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3718,7 +3718,7 @@ class GoalApi
      */
     public function updateGoalUsingPutAsyncWithHttpInfo($goal, $goal_id)
     {
-        $returnType = '\com\hydrogen\Model\Goal';
+        $returnType = '\com\hydrogen\nucleus\Model\Goal';
         $request = $this->updateGoalUsingPutRequest($goal, $goal_id);
 
         return $this->client
@@ -3761,7 +3761,7 @@ class GoalApi
     /**
      * Create request for operation 'updateGoalUsingPut'
      *
-     * @param  \com\hydrogen\Model\Goal $goal goal (required)
+     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \InvalidArgumentException

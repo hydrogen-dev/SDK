@@ -1,4 +1,4 @@
-# HydrogenAtomApi.StatisticResourceVO
+# HydrogenNucleusApi.StatisticResourceVO
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Location
+# HydrogenNucleusApi.Location
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# com\hydrogen\QuestionnaireApi
+# com\hydrogen\nucleus\QuestionnaireApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **createAnswerUsingPost**
-> \com\hydrogen\Model\Answer createAnswerUsingPost($answer)
+> \com\hydrogen\nucleus\Model\Answer createAnswerUsingPost($answer)
 
 Create an answer
 
@@ -36,29 +36,29 @@ Create a new answer for question.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$answer = new \com\hydrogen\Model\Answer(); // \com\hydrogen\Model\Answer | answer
+$answer = new \com\hydrogen\nucleus\Model\Answer(); // \com\hydrogen\nucleus\Model\Answer | answer
 
 try {
     $result = $apiInstance->createAnswerUsingPost($answer);
@@ -73,11 +73,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answer** | [**\com\hydrogen\Model\Answer**](../Model/Answer.md)| answer |
+ **answer** | [**\com\hydrogen\nucleus\Model\Answer**](../Model/Answer.md)| answer |
 
 ### Return type
 
-[**\com\hydrogen\Model\Answer**](../Model/Answer.md)
+[**\com\hydrogen\nucleus\Model\Answer**](../Model/Answer.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createClientResponseUsingPost**
-> \com\hydrogen\Model\ClientResponse createClientResponseUsingPost($client_response)
+> \com\hydrogen\nucleus\Model\ClientResponse createClientResponseUsingPost($client_response)
 
 Create a client response
 
@@ -100,29 +100,29 @@ Create a new client response for a question as part of a questionnaires.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$client_response = new \com\hydrogen\Model\ClientResponse(); // \com\hydrogen\Model\ClientResponse | clientResponse
+$client_response = new \com\hydrogen\nucleus\Model\ClientResponse(); // \com\hydrogen\nucleus\Model\ClientResponse | clientResponse
 
 try {
     $result = $apiInstance->createClientResponseUsingPost($client_response);
@@ -137,11 +137,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_response** | [**\com\hydrogen\Model\ClientResponse**](../Model/ClientResponse.md)| clientResponse |
+ **client_response** | [**\com\hydrogen\nucleus\Model\ClientResponse**](../Model/ClientResponse.md)| clientResponse |
 
 ### Return type
 
-[**\com\hydrogen\Model\ClientResponse**](../Model/ClientResponse.md)
+[**\com\hydrogen\nucleus\Model\ClientResponse**](../Model/ClientResponse.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createQuestionUsingPost**
-> \com\hydrogen\Model\Question createQuestionUsingPost($question)
+> \com\hydrogen\nucleus\Model\Question createQuestionUsingPost($question)
 
 Create a question
 
@@ -164,29 +164,29 @@ Create a new question for questionnaire.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$question = new \com\hydrogen\Model\Question(); // \com\hydrogen\Model\Question | question
+$question = new \com\hydrogen\nucleus\Model\Question(); // \com\hydrogen\nucleus\Model\Question | question
 
 try {
     $result = $apiInstance->createQuestionUsingPost($question);
@@ -201,11 +201,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**\com\hydrogen\Model\Question**](../Model/Question.md)| question |
+ **question** | [**\com\hydrogen\nucleus\Model\Question**](../Model/Question.md)| question |
 
 ### Return type
 
-[**\com\hydrogen\Model\Question**](../Model/Question.md)
+[**\com\hydrogen\nucleus\Model\Question**](../Model/Question.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createQuestionnaireUsingPost**
-> \com\hydrogen\Model\Questionnaire createQuestionnaireUsingPost($questionnaire)
+> \com\hydrogen\nucleus\Model\Questionnaire createQuestionnaireUsingPost($questionnaire)
 
 Create a questionnaire
 
@@ -228,29 +228,29 @@ Create a new questionnaire for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$questionnaire = new \com\hydrogen\Model\Questionnaire(); // \com\hydrogen\Model\Questionnaire | questionnaire
+$questionnaire = new \com\hydrogen\nucleus\Model\Questionnaire(); // \com\hydrogen\nucleus\Model\Questionnaire | questionnaire
 
 try {
     $result = $apiInstance->createQuestionnaireUsingPost($questionnaire);
@@ -265,11 +265,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaire** | [**\com\hydrogen\Model\Questionnaire**](../Model/Questionnaire.md)| questionnaire |
+ **questionnaire** | [**\com\hydrogen\nucleus\Model\Questionnaire**](../Model/Questionnaire.md)| questionnaire |
 
 ### Return type
 
-[**\com\hydrogen\Model\Questionnaire**](../Model/Questionnaire.md)
+[**\com\hydrogen\nucleus\Model\Questionnaire**](../Model/Questionnaire.md)
 
 ### Authorization
 
@@ -292,23 +292,23 @@ Delete an answer for the question
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -355,23 +355,23 @@ Permanently delete a client response for a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -418,23 +418,23 @@ Delete an answer for the question
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -481,23 +481,23 @@ Permanently delete a questionnaire for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -535,7 +535,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAnswerAllUsingGet**
-> \com\hydrogen\Model\PageAnswer_ getAnswerAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAnswer_ getAnswerAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Answers
 
@@ -544,23 +544,23 @@ Get information for all Answers
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAnswer_**](../Model/PageAnswer_.md)
+[**\com\hydrogen\nucleus\Model\PageAnswer_**](../Model/PageAnswer_.md)
 
 ### Authorization
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAnswerUsingGet**
-> \com\hydrogen\Model\Answer getAnswerUsingGet($answer_id)
+> \com\hydrogen\nucleus\Model\Answer getAnswerUsingGet($answer_id)
 
 Retrieve an answer
 
@@ -616,23 +616,23 @@ Retrieve the information for an answer for question
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Answer**](../Model/Answer.md)
+[**\com\hydrogen\nucleus\Model\Answer**](../Model/Answer.md)
 
 ### Authorization
 
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientResponseAllUsingGet**
-> \com\hydrogen\Model\PageClientResponse_ getClientResponseAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageClientResponse_ getClientResponseAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all client responses
 
@@ -680,23 +680,23 @@ Get all the client responses for questions as part of a questionnaire defined by
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -729,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageClientResponse_**](../Model/PageClientResponse_.md)
+[**\com\hydrogen\nucleus\Model\PageClientResponse_**](../Model/PageClientResponse_.md)
 
 ### Authorization
 
@@ -743,7 +743,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientResponseUsingGet**
-> \com\hydrogen\Model\ClientResponse getClientResponseUsingGet($client_response_id)
+> \com\hydrogen\nucleus\Model\ClientResponse getClientResponseUsingGet($client_response_id)
 
 Retrieve a client response
 
@@ -752,23 +752,23 @@ Retrieve the information for a client response for a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -793,7 +793,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\ClientResponse**](../Model/ClientResponse.md)
+[**\com\hydrogen\nucleus\Model\ClientResponse**](../Model/ClientResponse.md)
 
 ### Authorization
 
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getQuestionAllUsingGet**
-> \com\hydrogen\Model\PageQuestion_ getQuestionAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageQuestion_ getQuestionAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Questions
 
@@ -816,23 +816,23 @@ Get information for all Questions
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -865,7 +865,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageQuestion_**](../Model/PageQuestion_.md)
+[**\com\hydrogen\nucleus\Model\PageQuestion_**](../Model/PageQuestion_.md)
 
 ### Authorization
 
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getQuestionUsingGet**
-> \com\hydrogen\Model\Question getQuestionUsingGet($question_id)
+> \com\hydrogen\nucleus\Model\Question getQuestionUsingGet($question_id)
 
 Retrieve a question
 
@@ -888,23 +888,23 @@ Retrieve the information for a question for questionnaire
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -929,7 +929,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Question**](../Model/Question.md)
+[**\com\hydrogen\nucleus\Model\Question**](../Model/Question.md)
 
 ### Authorization
 
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getQuestionnaireAllUsingGet**
-> \com\hydrogen\Model\PageQuestionnaire_ getQuestionnaireAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageQuestionnaire_ getQuestionnaireAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all questionnaires
 
@@ -952,23 +952,23 @@ Get the information for all questionnaires defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1001,7 +1001,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageQuestionnaire_**](../Model/PageQuestionnaire_.md)
+[**\com\hydrogen\nucleus\Model\PageQuestionnaire_**](../Model/PageQuestionnaire_.md)
 
 ### Authorization
 
@@ -1015,7 +1015,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getQuestionnaireUsingGet**
-> \com\hydrogen\Model\Questionnaire getQuestionnaireUsingGet($questionnaire_id)
+> \com\hydrogen\nucleus\Model\Questionnaire getQuestionnaireUsingGet($questionnaire_id)
 
 Retrieve a questionnaire
 
@@ -1024,23 +1024,23 @@ Retrieve the information for a questionnaire for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1065,7 +1065,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Questionnaire**](../Model/Questionnaire.md)
+[**\com\hydrogen\nucleus\Model\Questionnaire**](../Model/Questionnaire.md)
 
 ### Authorization
 
@@ -1079,7 +1079,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAnswerUsingPut**
-> \com\hydrogen\Model\Answer updateAnswerUsingPut($answer, $answer_id)
+> \com\hydrogen\nucleus\Model\Answer updateAnswerUsingPut($answer, $answer_id)
 
 Update an answer
 
@@ -1088,29 +1088,29 @@ Update a answer for question.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$answer = new \com\hydrogen\Model\Answer(); // \com\hydrogen\Model\Answer | answer
+$answer = new \com\hydrogen\nucleus\Model\Answer(); // \com\hydrogen\nucleus\Model\Answer | answer
 $answer_id = "answer_id_example"; // string | UUID answer_id
 
 try {
@@ -1126,12 +1126,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answer** | [**\com\hydrogen\Model\Answer**](../Model/Answer.md)| answer |
+ **answer** | [**\com\hydrogen\nucleus\Model\Answer**](../Model/Answer.md)| answer |
  **answer_id** | [**string**](../Model/.md)| UUID answer_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Answer**](../Model/Answer.md)
+[**\com\hydrogen\nucleus\Model\Answer**](../Model/Answer.md)
 
 ### Authorization
 
@@ -1145,7 +1145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateClientResponseUsingPut**
-> \com\hydrogen\Model\ClientResponse updateClientResponseUsingPut($client_response, $client_response_id)
+> \com\hydrogen\nucleus\Model\ClientResponse updateClientResponseUsingPut($client_response, $client_response_id)
 
 Update a client response
 
@@ -1154,29 +1154,29 @@ Update a client response for a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$client_response = new \com\hydrogen\Model\ClientResponse(); // \com\hydrogen\Model\ClientResponse | client_response
+$client_response = new \com\hydrogen\nucleus\Model\ClientResponse(); // \com\hydrogen\nucleus\Model\ClientResponse | client_response
 $client_response_id = "client_response_id_example"; // string | UUID client_response_id
 
 try {
@@ -1192,12 +1192,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_response** | [**\com\hydrogen\Model\ClientResponse**](../Model/ClientResponse.md)| client_response |
+ **client_response** | [**\com\hydrogen\nucleus\Model\ClientResponse**](../Model/ClientResponse.md)| client_response |
  **client_response_id** | [**string**](../Model/.md)| UUID client_response_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\ClientResponse**](../Model/ClientResponse.md)
+[**\com\hydrogen\nucleus\Model\ClientResponse**](../Model/ClientResponse.md)
 
 ### Authorization
 
@@ -1211,7 +1211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateQuestionUsingPut**
-> \com\hydrogen\Model\Question updateQuestionUsingPut($question, $question_id)
+> \com\hydrogen\nucleus\Model\Question updateQuestionUsingPut($question, $question_id)
 
 Update a question.
 
@@ -1220,29 +1220,29 @@ Update a question for questionnaire.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$question = new \com\hydrogen\Model\Question(); // \com\hydrogen\Model\Question | question
+$question = new \com\hydrogen\nucleus\Model\Question(); // \com\hydrogen\nucleus\Model\Question | question
 $question_id = "question_id_example"; // string | UUID question_id
 
 try {
@@ -1258,12 +1258,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**\com\hydrogen\Model\Question**](../Model/Question.md)| question |
+ **question** | [**\com\hydrogen\nucleus\Model\Question**](../Model/Question.md)| question |
  **question_id** | [**string**](../Model/.md)| UUID question_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Question**](../Model/Question.md)
+[**\com\hydrogen\nucleus\Model\Question**](../Model/Question.md)
 
 ### Authorization
 
@@ -1277,7 +1277,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateQuestionnaireUsingPut**
-> \com\hydrogen\Model\Questionnaire updateQuestionnaireUsingPut($questionnaire, $questionnaire_id)
+> \com\hydrogen\nucleus\Model\Questionnaire updateQuestionnaireUsingPut($questionnaire, $questionnaire_id)
 
 Update a questionnaire
 
@@ -1286,29 +1286,29 @@ Update a questionnaire for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\QuestionnaireApi(
+$apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$questionnaire = new \com\hydrogen\Model\Questionnaire(); // \com\hydrogen\Model\Questionnaire | questionnaire
+$questionnaire = new \com\hydrogen\nucleus\Model\Questionnaire(); // \com\hydrogen\nucleus\Model\Questionnaire | questionnaire
 $questionnaire_id = "questionnaire_id_example"; // string | UUID questionnaire_id
 
 try {
@@ -1324,12 +1324,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaire** | [**\com\hydrogen\Model\Questionnaire**](../Model/Questionnaire.md)| questionnaire |
+ **questionnaire** | [**\com\hydrogen\nucleus\Model\Questionnaire**](../Model/Questionnaire.md)| questionnaire |
  **questionnaire_id** | [**string**](../Model/.md)| UUID questionnaire_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Questionnaire**](../Model/Questionnaire.md)
+[**\com\hydrogen\nucleus\Model\Questionnaire**](../Model/Questionnaire.md)
 
 ### Authorization
 

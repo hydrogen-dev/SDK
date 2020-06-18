@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * CardApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class CardApi
      *
      * Create a cardProgram request
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program_request cardProgramRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program_request cardProgramRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CardProgram
+     * @return \com\hydrogen\nucleus\Model\CardProgram
      */
     public function createCardProgramUsingPost($card_program_request)
     {
@@ -109,15 +109,15 @@ class CardApi
      *
      * Create a cardProgram request
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program_request cardProgramRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program_request cardProgramRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CardProgram, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CardProgram, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCardProgramUsingPostWithHttpInfo($card_program_request)
     {
-        $returnType = '\com\hydrogen\Model\CardProgram';
+        $returnType = '\com\hydrogen\nucleus\Model\CardProgram';
         $request = $this->createCardProgramUsingPostRequest($card_program_request);
 
         try {
@@ -169,7 +169,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CardProgram',
+                        '\com\hydrogen\nucleus\Model\CardProgram',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class CardApi
      *
      * Create a cardProgram request
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program_request cardProgramRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program_request cardProgramRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class CardApi
      *
      * Create a cardProgram request
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program_request cardProgramRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program_request cardProgramRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCardProgramUsingPostAsyncWithHttpInfo($card_program_request)
     {
-        $returnType = '\com\hydrogen\Model\CardProgram';
+        $returnType = '\com\hydrogen\nucleus\Model\CardProgram';
         $request = $this->createCardProgramUsingPostRequest($card_program_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class CardApi
     /**
      * Create request for operation 'createCardProgramUsingPost'
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program_request cardProgramRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program_request cardProgramRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,12 +360,12 @@ class CardApi
      *
      * Create a card request
      *
-     * @param  \com\hydrogen\Model\Card $card_request cardRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card_request cardRequest (required)
      * @param  string $authorization Authorization (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Card
+     * @return \com\hydrogen\nucleus\Model\Card
      */
     public function createCardUsingPost($card_request, $authorization = null)
     {
@@ -378,16 +378,16 @@ class CardApi
      *
      * Create a card request
      *
-     * @param  \com\hydrogen\Model\Card $card_request cardRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card_request cardRequest (required)
      * @param  string $authorization Authorization (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Card, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Card, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCardUsingPostWithHttpInfo($card_request, $authorization = null)
     {
-        $returnType = '\com\hydrogen\Model\Card';
+        $returnType = '\com\hydrogen\nucleus\Model\Card';
         $request = $this->createCardUsingPostRequest($card_request, $authorization);
 
         try {
@@ -439,7 +439,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Card',
+                        '\com\hydrogen\nucleus\Model\Card',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -454,7 +454,7 @@ class CardApi
      *
      * Create a card request
      *
-     * @param  \com\hydrogen\Model\Card $card_request cardRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card_request cardRequest (required)
      * @param  string $authorization Authorization (optional)
      *
      * @throws \InvalidArgumentException
@@ -475,7 +475,7 @@ class CardApi
      *
      * Create a card request
      *
-     * @param  \com\hydrogen\Model\Card $card_request cardRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card_request cardRequest (required)
      * @param  string $authorization Authorization (optional)
      *
      * @throws \InvalidArgumentException
@@ -483,7 +483,7 @@ class CardApi
      */
     public function createCardUsingPostAsyncWithHttpInfo($card_request, $authorization = null)
     {
-        $returnType = '\com\hydrogen\Model\Card';
+        $returnType = '\com\hydrogen\nucleus\Model\Card';
         $request = $this->createCardUsingPostRequest($card_request, $authorization);
 
         return $this->client
@@ -526,7 +526,7 @@ class CardApi
     /**
      * Create request for operation 'createCardUsingPost'
      *
-     * @param  \com\hydrogen\Model\Card $card_request cardRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card_request cardRequest (required)
      * @param  string $authorization Authorization (optional)
      *
      * @throws \InvalidArgumentException
@@ -639,7 +639,7 @@ class CardApi
      *
      * @param  string $card_program_id UUID card_program_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -655,7 +655,7 @@ class CardApi
      *
      * @param  string $card_program_id UUID card_program_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -875,7 +875,7 @@ class CardApi
      *
      * @param  string $card_id UUID card_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -891,7 +891,7 @@ class CardApi
      *
      * @param  string $card_id UUID card_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1115,9 +1115,9 @@ class CardApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageCard_
+     * @return \com\hydrogen\nucleus\Model\PageCard_
      */
     public function getCardAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1136,13 +1136,13 @@ class CardApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageCard_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageCard_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCardAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCard_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCard_';
         $request = $this->getCardAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1194,7 +1194,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageCard_',
+                        '\com\hydrogen\nucleus\Model\PageCard_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1244,7 +1244,7 @@ class CardApi
      */
     public function getCardAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCard_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCard_';
         $request = $this->getCardAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1414,9 +1414,9 @@ class CardApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageCardProgram_
+     * @return \com\hydrogen\nucleus\Model\PageCardProgram_
      */
     public function getCardProgramAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1435,13 +1435,13 @@ class CardApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageCardProgram_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageCardProgram_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCardProgramAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCardProgram_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCardProgram_';
         $request = $this->getCardProgramAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1493,7 +1493,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageCardProgram_',
+                        '\com\hydrogen\nucleus\Model\PageCardProgram_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1543,7 +1543,7 @@ class CardApi
      */
     public function getCardProgramAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCardProgram_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCardProgram_';
         $request = $this->getCardProgramAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1709,9 +1709,9 @@ class CardApi
      *
      * @param  string $card_program_id UUID card_program_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CardProgram
+     * @return \com\hydrogen\nucleus\Model\CardProgram
      */
     public function getCardProgramUsingGet($card_program_id)
     {
@@ -1726,13 +1726,13 @@ class CardApi
      *
      * @param  string $card_program_id UUID card_program_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CardProgram, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CardProgram, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCardProgramUsingGetWithHttpInfo($card_program_id)
     {
-        $returnType = '\com\hydrogen\Model\CardProgram';
+        $returnType = '\com\hydrogen\nucleus\Model\CardProgram';
         $request = $this->getCardProgramUsingGetRequest($card_program_id);
 
         try {
@@ -1784,7 +1784,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CardProgram',
+                        '\com\hydrogen\nucleus\Model\CardProgram',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1826,7 +1826,7 @@ class CardApi
      */
     public function getCardProgramUsingGetAsyncWithHttpInfo($card_program_id)
     {
-        $returnType = '\com\hydrogen\Model\CardProgram';
+        $returnType = '\com\hydrogen\nucleus\Model\CardProgram';
         $request = $this->getCardProgramUsingGetRequest($card_program_id);
 
         return $this->client
@@ -1982,9 +1982,9 @@ class CardApi
      *
      * @param  string $card_id UUID card_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Card
+     * @return \com\hydrogen\nucleus\Model\Card
      */
     public function getCardUsingGet($card_id)
     {
@@ -1999,13 +1999,13 @@ class CardApi
      *
      * @param  string $card_id UUID card_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Card, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Card, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCardUsingGetWithHttpInfo($card_id)
     {
-        $returnType = '\com\hydrogen\Model\Card';
+        $returnType = '\com\hydrogen\nucleus\Model\Card';
         $request = $this->getCardUsingGetRequest($card_id);
 
         try {
@@ -2057,7 +2057,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Card',
+                        '\com\hydrogen\nucleus\Model\Card',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2099,7 +2099,7 @@ class CardApi
      */
     public function getCardUsingGetAsyncWithHttpInfo($card_id)
     {
-        $returnType = '\com\hydrogen\Model\Card';
+        $returnType = '\com\hydrogen\nucleus\Model\Card';
         $request = $this->getCardUsingGetRequest($card_id);
 
         return $this->client
@@ -2253,12 +2253,12 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program card_program (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CardProgram
+     * @return \com\hydrogen\nucleus\Model\CardProgram
      */
     public function updateCardProgramUsingPut($card_program, $card_program_id)
     {
@@ -2271,16 +2271,16 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program card_program (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CardProgram, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CardProgram, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCardProgramUsingPutWithHttpInfo($card_program, $card_program_id)
     {
-        $returnType = '\com\hydrogen\Model\CardProgram';
+        $returnType = '\com\hydrogen\nucleus\Model\CardProgram';
         $request = $this->updateCardProgramUsingPutRequest($card_program, $card_program_id);
 
         try {
@@ -2332,7 +2332,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CardProgram',
+                        '\com\hydrogen\nucleus\Model\CardProgram',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2347,7 +2347,7 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program card_program (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2368,7 +2368,7 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program card_program (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2376,7 +2376,7 @@ class CardApi
      */
     public function updateCardProgramUsingPutAsyncWithHttpInfo($card_program, $card_program_id)
     {
-        $returnType = '\com\hydrogen\Model\CardProgram';
+        $returnType = '\com\hydrogen\nucleus\Model\CardProgram';
         $request = $this->updateCardProgramUsingPutRequest($card_program, $card_program_id);
 
         return $this->client
@@ -2419,7 +2419,7 @@ class CardApi
     /**
      * Create request for operation 'updateCardProgramUsingPut'
      *
-     * @param  \com\hydrogen\Model\CardProgram $card_program card_program (required)
+     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2540,12 +2540,12 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\Model\Card $card card (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Card
+     * @return \com\hydrogen\nucleus\Model\Card
      */
     public function updateCardUsingPut($card, $card_id)
     {
@@ -2558,16 +2558,16 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\Model\Card $card card (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Card, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Card, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCardUsingPutWithHttpInfo($card, $card_id)
     {
-        $returnType = '\com\hydrogen\Model\Card';
+        $returnType = '\com\hydrogen\nucleus\Model\Card';
         $request = $this->updateCardUsingPutRequest($card, $card_id);
 
         try {
@@ -2619,7 +2619,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Card',
+                        '\com\hydrogen\nucleus\Model\Card',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2634,7 +2634,7 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\Model\Card $card card (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2655,7 +2655,7 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\Model\Card $card card (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2663,7 +2663,7 @@ class CardApi
      */
     public function updateCardUsingPutAsyncWithHttpInfo($card, $card_id)
     {
-        $returnType = '\com\hydrogen\Model\Card';
+        $returnType = '\com\hydrogen\nucleus\Model\Card';
         $request = $this->updateCardUsingPutRequest($card, $card_id);
 
         return $this->client
@@ -2706,7 +2706,7 @@ class CardApi
     /**
      * Create request for operation 'updateCardUsingPut'
      *
-     * @param  \com\hydrogen\Model\Card $card card (required)
+     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException

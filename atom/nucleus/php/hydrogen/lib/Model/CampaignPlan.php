@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * CampaignPlan Class Doc Comment
  *
  * @category Class
  * @description CampaignPlan Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -63,7 +63,7 @@ class CampaignPlan implements ModelInterface, ArrayAccess
         'id' => 'string',
         'is_active' => 'bool',
         'metadata' => 'map[string,string]',
-        'plan_rates' => '\com\hydrogen\Model\CampaignPlanRate[]',
+        'plan_rates' => '\com\hydrogen\nucleus\Model\CampaignPlanRate[]',
         'secondary_id' => 'string',
         'update_date' => '\DateTime'
     ];
@@ -373,7 +373,7 @@ class CampaignPlan implements ModelInterface, ArrayAccess
     /**
      * Gets plan_rates
      *
-     * @return \com\hydrogen\Model\CampaignPlanRate[]
+     * @return \com\hydrogen\nucleus\Model\CampaignPlanRate[]
      */
     public function getPlanRates()
     {
@@ -383,7 +383,7 @@ class CampaignPlan implements ModelInterface, ArrayAccess
     /**
      * Sets plan_rates
      *
-     * @param \com\hydrogen\Model\CampaignPlanRate[] $plan_rates planRates
+     * @param \com\hydrogen\nucleus\Model\CampaignPlanRate[] $plan_rates planRates
      *
      * @return $this
      */

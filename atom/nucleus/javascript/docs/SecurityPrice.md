@@ -1,4 +1,4 @@
-# HydrogenAtomApi.SecurityPrice
+# HydrogenNucleusApi.SecurityPrice
 
 ## Properties
 Name | Type | Description | Notes

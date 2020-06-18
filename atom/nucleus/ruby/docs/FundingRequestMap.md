@@ -1,4 +1,4 @@
-# AtomApi::FundingRequestMap
+# NucleusApi::FundingRequestMap
 
 ## Properties
 Name | Type | Description | Notes

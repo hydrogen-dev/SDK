@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageAllocationComposition
+# HydrogenNucleusApi.PageAllocationComposition
 
 ## Properties
 Name | Type | Description | Notes

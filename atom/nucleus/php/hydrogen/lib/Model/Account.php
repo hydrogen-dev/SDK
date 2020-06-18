@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Account Class Doc Comment
  *
  * @category Class
  * @description Account Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,11 +60,11 @@ class Account implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'account_number' => 'string',
         'account_type_id' => 'string',
-        'clients' => '\com\hydrogen\Model\ClientAccountMapping[]',
+        'clients' => '\com\hydrogen\nucleus\Model\ClientAccountMapping[]',
         'create_date' => '\DateTime',
         'currency_code' => 'string',
         'discretionary' => 'bool',
-        'goals' => '\com\hydrogen\Model\GoalAccountMapping[]',
+        'goals' => '\com\hydrogen\nucleus\Model\GoalAccountMapping[]',
         'id' => 'string',
         'is_active' => 'bool',
         'managed' => 'bool',
@@ -340,7 +340,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Gets clients
      *
-     * @return \com\hydrogen\Model\ClientAccountMapping[]
+     * @return \com\hydrogen\nucleus\Model\ClientAccountMapping[]
      */
     public function getClients()
     {
@@ -350,7 +350,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets clients
      *
-     * @param \com\hydrogen\Model\ClientAccountMapping[] $clients clients
+     * @param \com\hydrogen\nucleus\Model\ClientAccountMapping[] $clients clients
      *
      * @return $this
      */
@@ -436,7 +436,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Gets goals
      *
-     * @return \com\hydrogen\Model\GoalAccountMapping[]
+     * @return \com\hydrogen\nucleus\Model\GoalAccountMapping[]
      */
     public function getGoals()
     {
@@ -446,7 +446,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets goals
      *
-     * @param \com\hydrogen\Model\GoalAccountMapping[] $goals goals
+     * @param \com\hydrogen\nucleus\Model\GoalAccountMapping[] $goals goals
      *
      * @return $this
      */

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AccountClientsOverviewVO();
+    instance = new HydrogenNucleusApi.AccountClientsOverviewVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('AccountClientsOverviewVO', function() {
     it('should create an instance of AccountClientsOverviewVO', function() {
       // uncomment below and update the code to test AccountClientsOverviewVO
-      //var instane = new HydrogenAtomApi.AccountClientsOverviewVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AccountClientsOverviewVO);
+      //var instane = new HydrogenNucleusApi.AccountClientsOverviewVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AccountClientsOverviewVO);
     });
 
     it('should have the property clientAccountAssociation (base name: "client_account_association")', function() {
       // uncomment below and update the code to test the property clientAccountAssociation
-      //var instane = new HydrogenAtomApi.AccountClientsOverviewVO();
+      //var instane = new HydrogenNucleusApi.AccountClientsOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientFirstName (base name: "client_first_name")', function() {
       // uncomment below and update the code to test the property clientFirstName
-      //var instane = new HydrogenAtomApi.AccountClientsOverviewVO();
+      //var instane = new HydrogenNucleusApi.AccountClientsOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.AccountClientsOverviewVO();
+      //var instane = new HydrogenNucleusApi.AccountClientsOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientLastName (base name: "client_last_name")', function() {
       // uncomment below and update the code to test the property clientLastName
-      //var instane = new HydrogenAtomApi.AccountClientsOverviewVO();
+      //var instane = new HydrogenNucleusApi.AccountClientsOverviewVO();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.VAccountAssetSize
+# HydrogenNucleusApi.VAccountAssetSize
 
 ## Properties
 Name | Type | Description | Notes

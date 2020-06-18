@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * InsuranceQuote Class Doc Comment
  *
  * @category Class
  * @description Insurance Quote Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,15 +58,15 @@ class InsuranceQuote implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'coverages' => '\com\hydrogen\Model\InsuranceCoverageMap[]',
+        'coverages' => '\com\hydrogen\nucleus\Model\InsuranceCoverageMap[]',
         'create_date' => '\DateTime',
         'currency_code' => 'string',
-        'discounts' => '\com\hydrogen\Model\InsuranceDiscountMap[]',
+        'discounts' => '\com\hydrogen\nucleus\Model\InsuranceDiscountMap[]',
         'end_date' => '\DateTime',
         'id' => 'string',
         'is_active' => 'bool',
         'metadata' => 'map[string,string]',
-        'node_map' => '\com\hydrogen\Model\AllocationNodeMap[]',
+        'node_map' => '\com\hydrogen\nucleus\Model\AllocationNodeMap[]',
         'premium' => 'double',
         'premium_duration' => 'double',
         'premium_frequency' => 'int',
@@ -307,7 +307,7 @@ class InsuranceQuote implements ModelInterface, ArrayAccess
     /**
      * Gets coverages
      *
-     * @return \com\hydrogen\Model\InsuranceCoverageMap[]
+     * @return \com\hydrogen\nucleus\Model\InsuranceCoverageMap[]
      */
     public function getCoverages()
     {
@@ -317,7 +317,7 @@ class InsuranceQuote implements ModelInterface, ArrayAccess
     /**
      * Sets coverages
      *
-     * @param \com\hydrogen\Model\InsuranceCoverageMap[] $coverages coverages
+     * @param \com\hydrogen\nucleus\Model\InsuranceCoverageMap[] $coverages coverages
      *
      * @return $this
      */
@@ -379,7 +379,7 @@ class InsuranceQuote implements ModelInterface, ArrayAccess
     /**
      * Gets discounts
      *
-     * @return \com\hydrogen\Model\InsuranceDiscountMap[]
+     * @return \com\hydrogen\nucleus\Model\InsuranceDiscountMap[]
      */
     public function getDiscounts()
     {
@@ -389,7 +389,7 @@ class InsuranceQuote implements ModelInterface, ArrayAccess
     /**
      * Sets discounts
      *
-     * @param \com\hydrogen\Model\InsuranceDiscountMap[] $discounts discounts
+     * @param \com\hydrogen\nucleus\Model\InsuranceDiscountMap[] $discounts discounts
      *
      * @return $this
      */
@@ -499,7 +499,7 @@ class InsuranceQuote implements ModelInterface, ArrayAccess
     /**
      * Gets node_map
      *
-     * @return \com\hydrogen\Model\AllocationNodeMap[]
+     * @return \com\hydrogen\nucleus\Model\AllocationNodeMap[]
      */
     public function getNodeMap()
     {
@@ -509,7 +509,7 @@ class InsuranceQuote implements ModelInterface, ArrayAccess
     /**
      * Sets node_map
      *
-     * @param \com\hydrogen\Model\AllocationNodeMap[] $node_map node_map
+     * @param \com\hydrogen\nucleus\Model\AllocationNodeMap[] $node_map node_map
      *
      * @return $this
      */

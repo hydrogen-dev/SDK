@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./CampaignPlanRate'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.CampaignPlan = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.CampaignPlanRate);
+    root.HydrogenNucleusApi.CampaignPlan = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.CampaignPlanRate);
   }
 }(this, function(ApiClient, CampaignPlanRate) {
   'use strict';

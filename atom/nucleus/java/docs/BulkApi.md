@@ -20,9 +20,9 @@ Create a new bulk data for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -79,9 +79,9 @@ Delete a bulk data for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -138,9 +138,9 @@ Get the status of bulk transaction.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -195,9 +195,9 @@ Update a bulk data for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

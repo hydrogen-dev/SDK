@@ -1,4 +1,4 @@
-# atom_api.ModelApi
+# nucleus_api.ModelApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -43,15 +43,15 @@ Create a new asset size record for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -63,8 +63,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-req = atom_api.ModelAssetSize() # ModelAssetSize | req
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+req = nucleus_api.ModelAssetSize() # ModelAssetSize | req
 
 try:
     # Create a model asset size
@@ -106,15 +106,15 @@ Model composition changes represent a change in a model’s holdings.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -126,8 +126,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-change_request = atom_api.OrderReconcileRequest() # OrderReconcileRequest | changeRequest
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+change_request = nucleus_api.OrderReconcileRequest() # OrderReconcileRequest | changeRequest
 model_id = 'model_id_example' # str | UUID model_id
 
 try:
@@ -171,15 +171,15 @@ Create a new comment for a model available for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -191,8 +191,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_comment_request = atom_api.ModelComment() # ModelComment | modelCommentRequest
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_comment_request = nucleus_api.ModelComment() # ModelComment | modelCommentRequest
 
 try:
     # Create a model commentary
@@ -234,15 +234,15 @@ Create a new model holding record for a specific model and date.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -254,8 +254,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_holding_request = atom_api.ModelHolding() # ModelHolding | modelHoldingRequest
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_holding_request = nucleus_api.ModelHolding() # ModelHolding | modelHoldingRequest
 
 try:
     # Create a model holding
@@ -297,15 +297,15 @@ Create a new transaction record for a security under a model for a specific date
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -317,8 +317,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_transaction_request = atom_api.ModelTransaction() # ModelTransaction | modelTransactionRequest
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_transaction_request = nucleus_api.ModelTransaction() # ModelTransaction | modelTransactionRequest
 
 try:
     # Create a model transaction
@@ -360,15 +360,15 @@ Create a new model for your firm to which a portfolios can later subscribe.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -380,8 +380,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_info_request = atom_api.Model() # Model | modelInfoRequest
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_info_request = nucleus_api.Model() # Model | modelInfoRequest
 
 try:
     # Create a model
@@ -423,15 +423,15 @@ Permanently delete a model asset size record for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -443,7 +443,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_asset_size_id = 'model_asset_size_id_example' # str | UUID model_asset_size_id
 
 try:
@@ -485,15 +485,15 @@ Permanently delete a model comment for a model
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -505,7 +505,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_comment_id = 'model_comment_id_example' # str | UUID model_comment_id
 
 try:
@@ -547,15 +547,15 @@ Permanently delete a model holding record for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -567,7 +567,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_holding_id = 'model_holding_id_example' # str | UUID model_holding_id
 
 try:
@@ -609,15 +609,15 @@ Permanently delete a model transaction for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -629,7 +629,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_transaction_id = 'model_transaction_id_example' # str | UUID model_transaction_id
 
 try:
@@ -671,15 +671,15 @@ Permanently delete a model for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -691,7 +691,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_id = 'model_id_example' # str | UUID model_id
 
 try:
@@ -733,15 +733,15 @@ Get details for all models defined for your firm to which portfolios can subscri
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -753,7 +753,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -804,15 +804,15 @@ Get a list of asset sizes per date for all models defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -824,7 +824,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -875,15 +875,15 @@ Retrieve the information for a model asset size record for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -895,7 +895,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_asset_size_id = 'model_asset_size_id_example' # str | UUID model_asset_size_id
 
 try:
@@ -938,15 +938,15 @@ List all comments for all models defined by your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -958,7 +958,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1009,15 +1009,15 @@ Retrieve the information for a model comment for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1029,7 +1029,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_comment_id = 'model_comment_id_example' # str | UUID model_comment_id
 
 try:
@@ -1072,15 +1072,15 @@ Get all model holding records for all models defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1092,7 +1092,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1143,15 +1143,15 @@ Retrieve the information for a model holding record for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1163,7 +1163,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_holding_id = 'model_holding_id_example' # str | UUID model_holding_id
 
 try:
@@ -1206,15 +1206,15 @@ Get details for all transaction records for all models defined by your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1226,7 +1226,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1277,15 +1277,15 @@ Retrieve the information for a model transaction for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1297,7 +1297,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_transaction_id = 'model_transaction_id_example' # str | UUID model_transaction_id
 
 try:
@@ -1340,15 +1340,15 @@ Get the information for a model for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1360,7 +1360,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_id = 'model_id_example' # str | UUID model_id
 
 try:
@@ -1403,15 +1403,15 @@ Update a model asset size record for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1423,8 +1423,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_asset_size = atom_api.ModelAssetSize() # ModelAssetSize | model_asset_size
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_asset_size = nucleus_api.ModelAssetSize() # ModelAssetSize | model_asset_size
 model_asset_size_id = 'model_asset_size_id_example' # str | UUID model_asset_size_id
 
 try:
@@ -1468,15 +1468,15 @@ Update a model comment for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1488,8 +1488,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_comment = atom_api.ModelComment() # ModelComment | model_comment
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_comment = nucleus_api.ModelComment() # ModelComment | model_comment
 model_comment_id = 'model_comment_id_example' # str | UUID model_comment_id
 
 try:
@@ -1533,15 +1533,15 @@ Update a model holding record for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1553,8 +1553,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_holding = atom_api.ModelHolding() # ModelHolding | model_holding
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_holding = nucleus_api.ModelHolding() # ModelHolding | model_holding
 model_holding_id = 'model_holding_id_example' # str | UUID model_holding_id
 
 try:
@@ -1598,15 +1598,15 @@ Update a model transaction for a model.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1618,8 +1618,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model_transaction = atom_api.ModelTransaction() # ModelTransaction | model_transaction
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model_transaction = nucleus_api.ModelTransaction() # ModelTransaction | model_transaction
 model_transaction_id = 'model_transaction_id_example' # str | UUID model_transaction_id
 
 try:
@@ -1663,15 +1663,15 @@ Update a model for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1683,8 +1683,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.ModelApi(atom_api.ApiClient(configuration))
-model = atom_api.Model() # Model | model
+api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
+model = nucleus_api.Model() # Model | model
 model_id = 'model_id_example' # str | UUID model_id
 
 try:

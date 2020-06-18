@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **is_read** | **bool** | Is the SupportTicket Comment read | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
 **secondary_id** | **string** |  | [optional] 
-**support_ticket_documents** | [**\com\hydrogen\Model\SupportTicketDocument[]**](SupportTicketDocument.md) |  | [optional] 
+**support_ticket_documents** | [**\com\hydrogen\nucleus\Model\SupportTicketDocument[]**](SupportTicketDocument.md) |  | [optional] 
 **support_ticket_id** | **string** | SupportTicket Id | 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 

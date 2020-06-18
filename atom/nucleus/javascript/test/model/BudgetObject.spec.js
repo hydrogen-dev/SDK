@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.BudgetObject();
+    instance = new HydrogenNucleusApi.BudgetObject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('BudgetObject', function() {
     it('should create an instance of BudgetObject', function() {
       // uncomment below and update the code to test BudgetObject
-      //var instane = new HydrogenAtomApi.BudgetObject();
-      //expect(instance).to.be.a(HydrogenAtomApi.BudgetObject);
+      //var instane = new HydrogenNucleusApi.BudgetObject();
+      //expect(instance).to.be.a(HydrogenNucleusApi.BudgetObject);
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.BudgetObject();
+      //var instane = new HydrogenNucleusApi.BudgetObject();
       //expect(instance).to.be();
     });
 
     it('should have the property subcategory (base name: "subcategory")', function() {
       // uncomment below and update the code to test the property subcategory
-      //var instane = new HydrogenAtomApi.BudgetObject();
+      //var instane = new HydrogenNucleusApi.BudgetObject();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new HydrogenAtomApi.BudgetObject();
+      //var instane = new HydrogenNucleusApi.BudgetObject();
       //expect(instance).to.be();
     });
 

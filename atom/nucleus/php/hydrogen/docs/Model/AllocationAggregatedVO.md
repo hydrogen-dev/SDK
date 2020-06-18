@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocation_category** | **string** |  | [optional] 
-**allocation_compositions** | [**\com\hydrogen\Model\AllocationCompositionAggregatedVO[]**](AllocationCompositionAggregatedVO.md) |  | [optional] 
+**allocation_compositions** | [**\com\hydrogen\nucleus\Model\AllocationCompositionAggregatedVO[]**](AllocationCompositionAggregatedVO.md) |  | [optional] 
 **allocation_description** | **string** |  | [optional] 
 **allocation_id** | **string** |  | [optional] 
 **allocation_name** | **string** |  | [optional] 

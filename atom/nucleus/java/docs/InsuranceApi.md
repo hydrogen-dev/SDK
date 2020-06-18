@@ -31,9 +31,9 @@ Create a new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -88,9 +88,9 @@ Create a new insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -145,9 +145,9 @@ Create a new insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -202,9 +202,9 @@ Delete an  insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -258,9 +258,9 @@ Delete an  insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -314,9 +314,9 @@ Permanently delete a insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -372,9 +372,9 @@ Get all new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -437,9 +437,9 @@ Get a new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -494,9 +494,9 @@ Get all new insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -559,9 +559,9 @@ Get a new insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -616,9 +616,9 @@ Get the information for all insuranceQuote requests.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -681,9 +681,9 @@ Retrieve the information for a insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -740,9 +740,9 @@ Update a new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -799,9 +799,9 @@ Update an new insurance .
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -858,9 +858,9 @@ Update the information for a insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

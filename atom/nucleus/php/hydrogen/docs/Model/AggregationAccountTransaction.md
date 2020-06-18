@@ -4,12 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregation_account_id** | **string** | aggregationAccountId | [optional] 
-**bank_credit** | [**\com\hydrogen\Model\BankCredit**](BankCredit.md) |  | [optional] 
-**cash** | [**\com\hydrogen\Model\Cash**](Cash.md) |  | [optional] 
+**bank_credit** | [**\com\hydrogen\nucleus\Model\BankCredit**](BankCredit.md) |  | [optional] 
+**cash** | [**\com\hydrogen\nucleus\Model\Cash**](Cash.md) |  | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **currency_code** | **string** | currencyCode | 
 **id** | **string** |  | [optional] 
-**investment** | [**\com\hydrogen\Model\Investment**](Investment.md) |  | [optional] 
+**investment** | [**\com\hydrogen\nucleus\Model\Investment**](Investment.md) |  | [optional] 
 **is_excluded_analysis** | **bool** |  | [optional] 
 **is_recurring** | **bool** |  | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Budget Class Doc Comment
  *
  * @category Class
  * @description Budget Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class Budget implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'account_id' => 'string',
-        'aggregation_accounts' => '\com\hydrogen\Model\BudgetAggregationAccount[]',
-        'budget' => '\com\hydrogen\Model\BudgetObject[]',
+        'aggregation_accounts' => '\com\hydrogen\nucleus\Model\BudgetAggregationAccount[]',
+        'budget' => '\com\hydrogen\nucleus\Model\BudgetObject[]',
         'client_id' => 'string',
         'create_date' => '\DateTime',
         'currency_code' => 'string',
@@ -340,7 +340,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Gets aggregation_accounts
      *
-     * @return \com\hydrogen\Model\BudgetAggregationAccount[]
+     * @return \com\hydrogen\nucleus\Model\BudgetAggregationAccount[]
      */
     public function getAggregationAccounts()
     {
@@ -350,7 +350,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Sets aggregation_accounts
      *
-     * @param \com\hydrogen\Model\BudgetAggregationAccount[] $aggregation_accounts aggregation_accounts
+     * @param \com\hydrogen\nucleus\Model\BudgetAggregationAccount[] $aggregation_accounts aggregation_accounts
      *
      * @return $this
      */
@@ -364,7 +364,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Gets budget
      *
-     * @return \com\hydrogen\Model\BudgetObject[]
+     * @return \com\hydrogen\nucleus\Model\BudgetObject[]
      */
     public function getBudget()
     {
@@ -374,7 +374,7 @@ class Budget implements ModelInterface, ArrayAccess
     /**
      * Sets budget
      *
-     * @param \com\hydrogen\Model\BudgetObject[] $budget budget
+     * @param \com\hydrogen\nucleus\Model\BudgetObject[] $budget budget
      *
      * @return $this
      */

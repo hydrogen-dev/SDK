@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AllocationCompositionModelHoldingsVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,8 +60,8 @@ class AllocationCompositionModelHoldingsVO implements ModelInterface, ArrayAcces
         'model_holding_date' => '\DateTime',
         'model_holding_id' => 'string',
         'security_asset_class' => 'string',
-        'security_compositions' => '\com\hydrogen\Model\SecurityCompositionVO[]',
-        'security_countries' => '\com\hydrogen\Model\SecurityCountryVO[]',
+        'security_compositions' => '\com\hydrogen\nucleus\Model\SecurityCompositionVO[]',
+        'security_countries' => '\com\hydrogen\nucleus\Model\SecurityCountryVO[]',
         'security_create_date' => '\DateTime',
         'security_exchange' => 'string',
         'security_id' => 'string',
@@ -363,7 +363,7 @@ class AllocationCompositionModelHoldingsVO implements ModelInterface, ArrayAcces
     /**
      * Gets security_compositions
      *
-     * @return \com\hydrogen\Model\SecurityCompositionVO[]
+     * @return \com\hydrogen\nucleus\Model\SecurityCompositionVO[]
      */
     public function getSecurityCompositions()
     {
@@ -373,7 +373,7 @@ class AllocationCompositionModelHoldingsVO implements ModelInterface, ArrayAcces
     /**
      * Sets security_compositions
      *
-     * @param \com\hydrogen\Model\SecurityCompositionVO[] $security_compositions security_compositions
+     * @param \com\hydrogen\nucleus\Model\SecurityCompositionVO[] $security_compositions security_compositions
      *
      * @return $this
      */
@@ -387,7 +387,7 @@ class AllocationCompositionModelHoldingsVO implements ModelInterface, ArrayAcces
     /**
      * Gets security_countries
      *
-     * @return \com\hydrogen\Model\SecurityCountryVO[]
+     * @return \com\hydrogen\nucleus\Model\SecurityCountryVO[]
      */
     public function getSecurityCountries()
     {
@@ -397,7 +397,7 @@ class AllocationCompositionModelHoldingsVO implements ModelInterface, ArrayAcces
     /**
      * Sets security_countries
      *
-     * @param \com\hydrogen\Model\SecurityCountryVO[] $security_countries security_countries
+     * @param \com\hydrogen\nucleus\Model\SecurityCountryVO[] $security_countries security_countries
      *
      * @return $this
      */

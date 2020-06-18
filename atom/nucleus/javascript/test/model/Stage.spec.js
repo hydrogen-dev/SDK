@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Stage();
+    instance = new HydrogenNucleusApi.Stage();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,79 +53,79 @@
   describe('Stage', function() {
     it('should create an instance of Stage', function() {
       // uncomment below and update the code to test Stage
-      //var instane = new HydrogenAtomApi.Stage();
-      //expect(instance).to.be.a(HydrogenAtomApi.Stage);
+      //var instane = new HydrogenNucleusApi.Stage();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Stage);
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property isAccount (base name: "is_account")', function() {
       // uncomment below and update the code to test the property isAccount
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property isClient (base name: "is_client")', function() {
       // uncomment below and update the code to test the property isClient
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property orderIndex (base name: "order_index")', function() {
       // uncomment below and update the code to test the property orderIndex
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.Stage();
+      //var instane = new HydrogenNucleusApi.Stage();
       //expect(instance).to.be();
     });
 

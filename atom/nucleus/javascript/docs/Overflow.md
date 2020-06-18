@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Overflow
+# HydrogenNucleusApi.Overflow
 
 ## Properties
 Name | Type | Description | Notes

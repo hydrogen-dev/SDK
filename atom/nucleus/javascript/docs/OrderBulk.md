@@ -1,4 +1,4 @@
-# HydrogenAtomApi.OrderBulk
+# HydrogenNucleusApi.OrderBulk
 
 ## Properties
 Name | Type | Description | Notes

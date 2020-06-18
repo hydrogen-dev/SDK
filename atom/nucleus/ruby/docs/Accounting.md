@@ -1,4 +1,4 @@
-# AtomApi::Accounting
+# NucleusApi::Accounting
 
 ## Properties
 Name | Type | Description | Notes

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **string** | accountId | [optional] 
-**address** | [**\com\hydrogen\Model\CardAddress[]**](CardAddress.md) |  | [optional] 
+**address** | [**\com\hydrogen\nucleus\Model\CardAddress[]**](CardAddress.md) |  | [optional] 
 **card_holder_name** | **string** | cardHolderName | 
 **card_image** | **string** | card_image | [optional] 
 **card_issuance** | **string** | cardIssuance | 

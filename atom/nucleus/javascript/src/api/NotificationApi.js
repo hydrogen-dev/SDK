@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Notification'), require('../model/NotificationClient'), require('../model/NotificationSetting'), require('../model/PageNotification'), require('../model/PageNotificationClient'), require('../model/PageNotificationSetting'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.NotificationApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Notification, root.HydrogenAtomApi.NotificationClient, root.HydrogenAtomApi.NotificationSetting, root.HydrogenAtomApi.PageNotification, root.HydrogenAtomApi.PageNotificationClient, root.HydrogenAtomApi.PageNotificationSetting);
+    root.HydrogenNucleusApi.NotificationApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Notification, root.HydrogenNucleusApi.NotificationClient, root.HydrogenNucleusApi.NotificationSetting, root.HydrogenNucleusApi.PageNotification, root.HydrogenNucleusApi.PageNotificationClient, root.HydrogenNucleusApi.PageNotificationSetting);
   }
 }(this, function(ApiClient, Notification, NotificationClient, NotificationSetting, PageNotification, PageNotificationClient, PageNotificationSetting) {
   'use strict';

@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/PageWebhook'), require('../model/Webhook'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.WebhookApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.PageWebhook, root.HydrogenAtomApi.Webhook);
+    root.HydrogenNucleusApi.WebhookApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.PageWebhook, root.HydrogenNucleusApi.Webhook);
   }
 }(this, function(ApiClient, PageWebhook, Webhook) {
   'use strict';

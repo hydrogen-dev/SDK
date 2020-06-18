@@ -1,4 +1,4 @@
-# com\hydrogen\NotificationApi
+# com\hydrogen\nucleus\NotificationApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **createNotificationClientUsingPost**
-> \com\hydrogen\Model\NotificationClient createNotificationClientUsingPost($notification_client)
+> \com\hydrogen\nucleus\Model\NotificationClient createNotificationClientUsingPost($notification_client)
 
 Create a Notification Client
 
@@ -31,29 +31,29 @@ Create a new Notification Client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$notification_client = new \com\hydrogen\Model\NotificationClient(); // \com\hydrogen\Model\NotificationClient | notificationClient
+$notification_client = new \com\hydrogen\nucleus\Model\NotificationClient(); // \com\hydrogen\nucleus\Model\NotificationClient | notificationClient
 
 try {
     $result = $apiInstance->createNotificationClientUsingPost($notification_client);
@@ -68,11 +68,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_client** | [**\com\hydrogen\Model\NotificationClient**](../Model/NotificationClient.md)| notificationClient |
+ **notification_client** | [**\com\hydrogen\nucleus\Model\NotificationClient**](../Model/NotificationClient.md)| notificationClient |
 
 ### Return type
 
-[**\com\hydrogen\Model\NotificationClient**](../Model/NotificationClient.md)
+[**\com\hydrogen\nucleus\Model\NotificationClient**](../Model/NotificationClient.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createNotificationSettingUsingPost**
-> \com\hydrogen\Model\NotificationSetting createNotificationSettingUsingPost($notification_setting)
+> \com\hydrogen\nucleus\Model\NotificationSetting createNotificationSettingUsingPost($notification_setting)
 
 Create a Notification Setting
 
@@ -95,29 +95,29 @@ Create a new Notification Setting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$notification_setting = new \com\hydrogen\Model\NotificationSetting(); // \com\hydrogen\Model\NotificationSetting | notificationSetting
+$notification_setting = new \com\hydrogen\nucleus\Model\NotificationSetting(); // \com\hydrogen\nucleus\Model\NotificationSetting | notificationSetting
 
 try {
     $result = $apiInstance->createNotificationSettingUsingPost($notification_setting);
@@ -132,11 +132,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_setting** | [**\com\hydrogen\Model\NotificationSetting**](../Model/NotificationSetting.md)| notificationSetting |
+ **notification_setting** | [**\com\hydrogen\nucleus\Model\NotificationSetting**](../Model/NotificationSetting.md)| notificationSetting |
 
 ### Return type
 
-[**\com\hydrogen\Model\NotificationSetting**](../Model/NotificationSetting.md)
+[**\com\hydrogen\nucleus\Model\NotificationSetting**](../Model/NotificationSetting.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createNotificationUsingPost**
-> \com\hydrogen\Model\Notification createNotificationUsingPost($notification)
+> \com\hydrogen\nucleus\Model\Notification createNotificationUsingPost($notification)
 
 Create a Notification
 
@@ -159,29 +159,29 @@ Create a new Notification.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$notification = new \com\hydrogen\Model\Notification(); // \com\hydrogen\Model\Notification | notification
+$notification = new \com\hydrogen\nucleus\Model\Notification(); // \com\hydrogen\nucleus\Model\Notification | notification
 
 try {
     $result = $apiInstance->createNotificationUsingPost($notification);
@@ -196,11 +196,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification** | [**\com\hydrogen\Model\Notification**](../Model/Notification.md)| notification |
+ **notification** | [**\com\hydrogen\nucleus\Model\Notification**](../Model/Notification.md)| notification |
 
 ### Return type
 
-[**\com\hydrogen\Model\Notification**](../Model/Notification.md)
+[**\com\hydrogen\nucleus\Model\Notification**](../Model/Notification.md)
 
 ### Authorization
 
@@ -223,23 +223,23 @@ Permanently Delete Notification Client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -286,23 +286,23 @@ Permanently Delete Notification Setting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -349,23 +349,23 @@ Permanently Delete a Notification.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -403,7 +403,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNotificationAllUsingGet**
-> \com\hydrogen\Model\PageNotification_ getNotificationAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageNotification_ getNotificationAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 Get All Notification
 
@@ -412,23 +412,23 @@ Get All Notification.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageNotification_**](../Model/PageNotification_.md)
+[**\com\hydrogen\nucleus\Model\PageNotification_**](../Model/PageNotification_.md)
 
 ### Authorization
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNotificationClientAllUsingGet**
-> \com\hydrogen\Model\PageNotificationClient_ getNotificationClientAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageNotificationClient_ getNotificationClientAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Notification Client
 
@@ -484,23 +484,23 @@ List all Notification Client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageNotificationClient_**](../Model/PageNotificationClient_.md)
+[**\com\hydrogen\nucleus\Model\PageNotificationClient_**](../Model/PageNotificationClient_.md)
 
 ### Authorization
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNotificationClientUsingGet**
-> \com\hydrogen\Model\NotificationClient getNotificationClientUsingGet($notification_client_id)
+> \com\hydrogen\nucleus\Model\NotificationClient getNotificationClientUsingGet($notification_client_id)
 
 Retrieve a Notification Client
 
@@ -556,23 +556,23 @@ Retrieve a  Notification Client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\NotificationClient**](../Model/NotificationClient.md)
+[**\com\hydrogen\nucleus\Model\NotificationClient**](../Model/NotificationClient.md)
 
 ### Authorization
 
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNotificationSettingAllUsingGet**
-> \com\hydrogen\Model\PageNotificationSetting_ getNotificationSettingAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageNotificationSetting_ getNotificationSettingAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Notification Setting
 
@@ -620,23 +620,23 @@ List all Notification Setting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageNotificationSetting_**](../Model/PageNotificationSetting_.md)
+[**\com\hydrogen\nucleus\Model\PageNotificationSetting_**](../Model/PageNotificationSetting_.md)
 
 ### Authorization
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNotificationSettingUsingGet**
-> \com\hydrogen\Model\NotificationSetting getNotificationSettingUsingGet($notification_setting_id)
+> \com\hydrogen\nucleus\Model\NotificationSetting getNotificationSettingUsingGet($notification_setting_id)
 
 Retrieve a Notification Setting
 
@@ -692,23 +692,23 @@ Retrieve a  Notification Setting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\NotificationSetting**](../Model/NotificationSetting.md)
+[**\com\hydrogen\nucleus\Model\NotificationSetting**](../Model/NotificationSetting.md)
 
 ### Authorization
 
@@ -747,7 +747,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNotificationUsingGet**
-> \com\hydrogen\Model\Notification getNotificationUsingGet($notification_id)
+> \com\hydrogen\nucleus\Model\Notification getNotificationUsingGet($notification_id)
 
 Get a Notification
 
@@ -756,23 +756,23 @@ Get a Notification.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -797,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Notification**](../Model/Notification.md)
+[**\com\hydrogen\nucleus\Model\Notification**](../Model/Notification.md)
 
 ### Authorization
 
@@ -811,7 +811,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateNotificationClientUsingPut**
-> \com\hydrogen\Model\NotificationClient updateNotificationClientUsingPut($notification_client, $notification_client_id)
+> \com\hydrogen\nucleus\Model\NotificationClient updateNotificationClientUsingPut($notification_client, $notification_client_id)
 
 Update a Notification Client
 
@@ -820,29 +820,29 @@ Update a  Notification Client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$notification_client = new \com\hydrogen\Model\NotificationClient(); // \com\hydrogen\Model\NotificationClient | notification_client
+$notification_client = new \com\hydrogen\nucleus\Model\NotificationClient(); // \com\hydrogen\nucleus\Model\NotificationClient | notification_client
 $notification_client_id = "notification_client_id_example"; // string | UUID notification_client_id
 
 try {
@@ -858,12 +858,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_client** | [**\com\hydrogen\Model\NotificationClient**](../Model/NotificationClient.md)| notification_client |
+ **notification_client** | [**\com\hydrogen\nucleus\Model\NotificationClient**](../Model/NotificationClient.md)| notification_client |
  **notification_client_id** | [**string**](../Model/.md)| UUID notification_client_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\NotificationClient**](../Model/NotificationClient.md)
+[**\com\hydrogen\nucleus\Model\NotificationClient**](../Model/NotificationClient.md)
 
 ### Authorization
 
@@ -877,7 +877,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateNotificationSettingUsingPut**
-> \com\hydrogen\Model\NotificationSetting updateNotificationSettingUsingPut($notification_setting, $notification_setting_id)
+> \com\hydrogen\nucleus\Model\NotificationSetting updateNotificationSettingUsingPut($notification_setting, $notification_setting_id)
 
 Update a Notification Setting
 
@@ -886,29 +886,29 @@ Update a  Notification Setting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$notification_setting = new \com\hydrogen\Model\NotificationSetting(); // \com\hydrogen\Model\NotificationSetting | notification_setting
+$notification_setting = new \com\hydrogen\nucleus\Model\NotificationSetting(); // \com\hydrogen\nucleus\Model\NotificationSetting | notification_setting
 $notification_setting_id = "notification_setting_id_example"; // string | UUID notification_setting_id
 
 try {
@@ -924,12 +924,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_setting** | [**\com\hydrogen\Model\NotificationSetting**](../Model/NotificationSetting.md)| notification_setting |
+ **notification_setting** | [**\com\hydrogen\nucleus\Model\NotificationSetting**](../Model/NotificationSetting.md)| notification_setting |
  **notification_setting_id** | [**string**](../Model/.md)| UUID notification_setting_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\NotificationSetting**](../Model/NotificationSetting.md)
+[**\com\hydrogen\nucleus\Model\NotificationSetting**](../Model/NotificationSetting.md)
 
 ### Authorization
 
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateNotificationUsingPut**
-> \com\hydrogen\Model\Notification updateNotificationUsingPut($notification, $notification_id)
+> \com\hydrogen\nucleus\Model\Notification updateNotificationUsingPut($notification, $notification_id)
 
 Update a Notification
 
@@ -952,29 +952,29 @@ Update a Notification.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\NotificationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$notification = new \com\hydrogen\Model\Notification(); // \com\hydrogen\Model\Notification | notification
+$notification = new \com\hydrogen\nucleus\Model\Notification(); // \com\hydrogen\nucleus\Model\Notification | notification
 $notification_id = "notification_id_example"; // string | UUID notification_id
 
 try {
@@ -990,12 +990,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification** | [**\com\hydrogen\Model\Notification**](../Model/Notification.md)| notification |
+ **notification** | [**\com\hydrogen\nucleus\Model\Notification**](../Model/Notification.md)| notification |
  **notification_id** | [**string**](../Model/.md)| UUID notification_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Notification**](../Model/Notification.md)
+[**\com\hydrogen\nucleus\Model\Notification**](../Model/Notification.md)
 
 ### Authorization
 

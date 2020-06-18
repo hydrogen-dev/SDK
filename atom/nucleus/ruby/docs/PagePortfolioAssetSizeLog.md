@@ -1,4 +1,4 @@
-# AtomApi::PagePortfolioAssetSizeLog
+# NucleusApi::PagePortfolioAssetSizeLog
 
 ## Properties
 Name | Type | Description | Notes

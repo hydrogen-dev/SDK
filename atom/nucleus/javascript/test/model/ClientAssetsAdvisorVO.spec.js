@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientAssetsAdvisorVO();
+    instance = new HydrogenNucleusApi.ClientAssetsAdvisorVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('ClientAssetsAdvisorVO', function() {
     it('should create an instance of ClientAssetsAdvisorVO', function() {
       // uncomment below and update the code to test ClientAssetsAdvisorVO
-      //var instane = new HydrogenAtomApi.ClientAssetsAdvisorVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientAssetsAdvisorVO);
+      //var instane = new HydrogenNucleusApi.ClientAssetsAdvisorVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientAssetsAdvisorVO);
     });
 
     it('should have the property asOfDate (base name: "as_of_date")', function() {
       // uncomment below and update the code to test the property asOfDate
-      //var instane = new HydrogenAtomApi.ClientAssetsAdvisorVO();
+      //var instane = new HydrogenNucleusApi.ClientAssetsAdvisorVO();
       //expect(instance).to.be();
     });
 
     it('should have the property totalAssets (base name: "total_assets")', function() {
       // uncomment below and update the code to test the property totalAssets
-      //var instane = new HydrogenAtomApi.ClientAssetsAdvisorVO();
+      //var instane = new HydrogenNucleusApi.ClientAssetsAdvisorVO();
       //expect(instance).to.be();
     });
 

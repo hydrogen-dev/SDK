@@ -1,4 +1,4 @@
-# AtomApi::Funding
+# NucleusApi::Funding
 
 ## Properties
 Name | Type | Description | Notes

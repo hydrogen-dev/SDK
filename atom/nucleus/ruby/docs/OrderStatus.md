@@ -1,4 +1,4 @@
-# AtomApi::OrderStatus
+# NucleusApi::OrderStatus
 
 ## Properties
 Name | Type | Description | Notes

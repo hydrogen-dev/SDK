@@ -1,4 +1,4 @@
-# AtomApi::PageCampaign
+# NucleusApi::PageCampaign
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.NotificationClient
+# HydrogenNucleusApi.NotificationClient
 
 ## Properties
 Name | Type | Description | Notes

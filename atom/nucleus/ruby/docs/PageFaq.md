@@ -1,4 +1,4 @@
-# AtomApi::PageFaq
+# NucleusApi::PageFaq
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageAccounting
+# HydrogenNucleusApi.PageAccounting
 
 ## Properties
 Name | Type | Description | Notes

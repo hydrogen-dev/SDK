@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BulkTransaction'), require('../model/BulkTransactionVO'), require('../model/JsonNode'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.BulkApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.BulkTransaction, root.HydrogenAtomApi.BulkTransactionVO, root.HydrogenAtomApi.JsonNode);
+    root.HydrogenNucleusApi.BulkApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.BulkTransaction, root.HydrogenNucleusApi.BulkTransactionVO, root.HydrogenNucleusApi.JsonNode);
   }
 }(this, function(ApiClient, BulkTransaction, BulkTransactionVO, JsonNode) {
   'use strict';

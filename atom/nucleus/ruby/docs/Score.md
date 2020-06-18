@@ -1,4 +1,4 @@
-# AtomApi::Score
+# NucleusApi::Score
 
 ## Properties
 Name | Type | Description | Notes

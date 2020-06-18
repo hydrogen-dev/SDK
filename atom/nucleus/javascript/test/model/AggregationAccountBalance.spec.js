@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AggregationAccountBalance();
+    instance = new HydrogenNucleusApi.AggregationAccountBalance();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,73 +53,73 @@
   describe('AggregationAccountBalance', function() {
     it('should create an instance of AggregationAccountBalance', function() {
       // uncomment below and update the code to test AggregationAccountBalance
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
-      //expect(instance).to.be.a(HydrogenAtomApi.AggregationAccountBalance);
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AggregationAccountBalance);
     });
 
     it('should have the property aggregationAccountId (base name: "aggregation_account_id")', function() {
       // uncomment below and update the code to test the property aggregationAccountId
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property availableBalance (base name: "available_balance")', function() {
       // uncomment below and update the code to test the property availableBalance
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property availableCredit (base name: "available_credit")', function() {
       // uncomment below and update the code to test the property availableCredit
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property balance (base name: "balance")', function() {
       // uncomment below and update the code to test the property balance
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property balanceTimeStamp (base name: "balance_time_stamp")', function() {
       // uncomment below and update the code to test the property balanceTimeStamp
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.AggregationAccountBalance();
+      //var instane = new HydrogenNucleusApi.AggregationAccountBalance();
       //expect(instance).to.be();
     });
 

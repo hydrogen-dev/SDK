@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PortfolioApi
+# HydrogenNucleusApi.PortfolioApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -47,47 +47,16 @@ Create a new asset size record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioAssetSizeLogRequest = new HydrogenAtomApi.PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
+var portfolioAssetSizeLogRequest = new HydrogenNucleusApi.PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
 
 
 var callback = function(error, data, response) {
@@ -129,47 +98,16 @@ Create a new comment for a portfolio defined for your firm.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioComment = new HydrogenAtomApi.PortfolioComment(); // PortfolioComment | portfolioComment
+var portfolioComment = new HydrogenNucleusApi.PortfolioComment(); // PortfolioComment | portfolioComment
 
 
 var callback = function(error, data, response) {
@@ -211,47 +149,16 @@ Create an portfolio goal.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioGoal = new HydrogenAtomApi.PortfolioGoal(); // PortfolioGoal | portfolioGoal
+var portfolioGoal = new HydrogenNucleusApi.PortfolioGoal(); // PortfolioGoal | portfolioGoal
 
 
 var callback = function(error, data, response) {
@@ -293,47 +200,16 @@ Create a new holding record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioHoldinLogRequest = new HydrogenAtomApi.PortfolioHoldingLog(); // PortfolioHoldingLog | portfolioHoldinLogRequest
+var portfolioHoldinLogRequest = new HydrogenNucleusApi.PortfolioHoldingLog(); // PortfolioHoldingLog | portfolioHoldinLogRequest
 
 
 var callback = function(error, data, response) {
@@ -375,47 +251,16 @@ Create a new transaction record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioTransactionRequest = new HydrogenAtomApi.PortfolioTransaction(); // PortfolioTransaction | portfolioTransactionRequest
+var portfolioTransactionRequest = new HydrogenNucleusApi.PortfolioTransaction(); // PortfolioTransaction | portfolioTransactionRequest
 
 
 var callback = function(error, data, response) {
@@ -457,47 +302,16 @@ Create a new portfolio for an account.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioRequest = new HydrogenAtomApi.Portfolio(); // Portfolio | portfolioRequest
+var portfolioRequest = new HydrogenNucleusApi.Portfolio(); // Portfolio | portfolioRequest
 
 
 var callback = function(error, data, response) {
@@ -539,45 +353,14 @@ Permanently delete a portfolio asset size record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioAssetSizeId = "01b252d3-1412-477f-8d29-6e2ff6e54c81"; // String | UUID portfolio_asset_size_id
 
@@ -621,45 +404,14 @@ Permanently delete a portfolio comment for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioCommentId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_comment_id
 
@@ -703,45 +455,14 @@ Permanently delete an portfolio-goal mapping.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioGoalId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_goal_id
 
@@ -785,45 +506,14 @@ Permanently delete a portfolio holding record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioHoldingId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_holding_id
 
@@ -867,45 +557,14 @@ Permanently delete a portfolio transaction record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioTransactionId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_transaction_id
 
@@ -949,45 +608,14 @@ Permanently delete a portfolio for an account.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_id
 
@@ -1031,45 +659,14 @@ Retrieve the information for a securities associated with a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | Portfolio Id
 
@@ -1125,45 +722,14 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -1216,45 +782,14 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -1307,45 +842,14 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioAssetSizeId = "portfolioAssetSizeId_example"; // String | portfolio_asset_size_id
 
@@ -1389,45 +893,14 @@ List all comments for all portfolios defined for your firm.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -1480,45 +953,14 @@ Retrieve the information for a portfolio comment for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioCommentId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_comment_id
 
@@ -1562,45 +1004,14 @@ Get information for all portfolio-goal mappings defined for your firm.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -1653,45 +1064,14 @@ Retrieve the information for a specific portfolio-goal mapping.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioGoalId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_goal_id
 
@@ -1735,45 +1115,14 @@ Get the information for all holding records for all portfolios defined for your 
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -1826,45 +1175,14 @@ Retrieve the information for a portfolio holding record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioHoldingId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_holding_id
 
@@ -1908,45 +1226,14 @@ Get the information for all transaction records for all portfolios defined for y
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -1999,45 +1286,14 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioTransactionId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_transaction_id
 
@@ -2081,45 +1337,14 @@ Retrieve a portfolio for an account.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
-
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_id
 
@@ -2163,47 +1388,16 @@ Update the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioAssetSize = new HydrogenAtomApi.PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolio_asset_size
+var portfolioAssetSize = new HydrogenNucleusApi.PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolio_asset_size
 
 var portfolioAssetSizeId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_asset_size_id
 
@@ -2248,47 +1442,16 @@ Update the information for a portfolio comment for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioComment = new HydrogenAtomApi.PortfolioComment(); // PortfolioComment | portfolio_comment
+var portfolioComment = new HydrogenNucleusApi.PortfolioComment(); // PortfolioComment | portfolio_comment
 
 var portfolioCommentId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_comment_id
 
@@ -2333,47 +1496,16 @@ Update the information for an portfolio-goal mapping.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioGoal = new HydrogenAtomApi.PortfolioGoal(); // PortfolioGoal | portfolio_goal
+var portfolioGoal = new HydrogenNucleusApi.PortfolioGoal(); // PortfolioGoal | portfolio_goal
 
 var portfolioGoalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_goal_id
 
@@ -2418,47 +1550,16 @@ Update the information for a portfolio holding record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioHolding = new HydrogenAtomApi.PortfolioHoldingLog(); // PortfolioHoldingLog | portfolio_holding
+var portfolioHolding = new HydrogenNucleusApi.PortfolioHoldingLog(); // PortfolioHoldingLog | portfolio_holding
 
 var portfolioHoldingId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_holding_id
 
@@ -2503,47 +1604,16 @@ Update the information for a portfolio transaction record for a portfolio.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolioTransaction = new HydrogenAtomApi.PortfolioTransaction(); // PortfolioTransaction | portfolio_transaction
+var portfolioTransaction = new HydrogenNucleusApi.PortfolioTransaction(); // PortfolioTransaction | portfolio_transaction
 
 var portfolioTransactionId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_transaction_id
 
@@ -2588,47 +1658,16 @@ Update a portfolio for an account.
 
 ### Example
 ```javascript
-var HydrogenAtomApi = require('hydrogen_atom_api');
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
-var defaultClient = HydrogenAtomApi.ApiClient.instance;
-
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-
-var apiInstance = new HydrogenAtomApi.PortfolioApi();
-
-var portfolio = new HydrogenAtomApi.Portfolio(); // Portfolio | portfolio
+var portfolio = new HydrogenNucleusApi.Portfolio(); // Portfolio | portfolio
 
 var portfolioId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_id
 

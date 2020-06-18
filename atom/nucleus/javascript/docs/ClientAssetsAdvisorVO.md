@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ClientAssetsAdvisorVO
+# HydrogenNucleusApi.ClientAssetsAdvisorVO
 
 ## Properties
 Name | Type | Description | Notes

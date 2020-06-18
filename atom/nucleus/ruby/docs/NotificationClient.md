@@ -1,4 +1,4 @@
-# AtomApi::NotificationClient
+# NucleusApi::NotificationClient
 
 ## Properties
 Name | Type | Description | Notes

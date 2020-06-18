@@ -1,4 +1,4 @@
-# AtomApi::Node
+# NucleusApi::Node
 
 ## Properties
 Name | Type | Description | Notes

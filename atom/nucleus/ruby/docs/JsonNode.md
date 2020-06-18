@@ -1,4 +1,4 @@
-# AtomApi::JsonNode
+# NucleusApi::JsonNode
 
 ## Properties
 Name | Type | Description | Notes

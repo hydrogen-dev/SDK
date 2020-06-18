@@ -32,9 +32,9 @@ Decision tree result.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -89,9 +89,9 @@ Create a new decision tree for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -146,9 +146,9 @@ Create a new node relationship for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -203,9 +203,9 @@ Create a new node for your firm that can be used in a decision tree and mapped t
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -260,9 +260,9 @@ Permanently delete a decision tree.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -316,9 +316,9 @@ Permanently delete a node relationship.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -373,9 +373,9 @@ Permanently delete a node.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -430,9 +430,9 @@ Get the information for all decision trees defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -495,9 +495,9 @@ Retrieve the information for a decision tree.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -552,9 +552,9 @@ List all nodes that are defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -617,9 +617,9 @@ Get the information for all the node relationships defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -682,9 +682,9 @@ Retrieve the information for a node relationship.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -739,9 +739,9 @@ Retrieve the information for a node.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -796,9 +796,9 @@ Updated the information for a decision tree.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -855,9 +855,9 @@ Update the information for a node relationship.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -914,9 +914,9 @@ Updated the information for a node.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

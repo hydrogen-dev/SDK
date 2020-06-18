@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AdvisorOverviewVO();
+    instance = new HydrogenNucleusApi.AdvisorOverviewVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('AdvisorOverviewVO', function() {
     it('should create an instance of AdvisorOverviewVO', function() {
       // uncomment below and update the code to test AdvisorOverviewVO
-      //var instane = new HydrogenAtomApi.AdvisorOverviewVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AdvisorOverviewVO);
+      //var instane = new HydrogenNucleusApi.AdvisorOverviewVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AdvisorOverviewVO);
     });
 
     it('should have the property accountList (base name: "account_list")', function() {
       // uncomment below and update the code to test the property accountList
-      //var instane = new HydrogenAtomApi.AdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.AdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientList (base name: "client_list")', function() {
       // uncomment below and update the code to test the property clientList
-      //var instane = new HydrogenAtomApi.AdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.AdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property totalAccountsManaged (base name: "total_accounts_managed")', function() {
       // uncomment below and update the code to test the property totalAccountsManaged
-      //var instane = new HydrogenAtomApi.AdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.AdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property totalAssetsManaged (base name: "total_assets_managed")', function() {
       // uncomment below and update the code to test the property totalAssetsManaged
-      //var instane = new HydrogenAtomApi.AdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.AdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property totalClientsManaged (base name: "total_clients_managed")', function() {
       // uncomment below and update the code to test the property totalClientsManaged
-      //var instane = new HydrogenAtomApi.AdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.AdvisorOverviewVO();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# AtomApi::Currency
+# NucleusApi::Currency
 
 ## Properties
 Name | Type | Description | Notes

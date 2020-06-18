@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.DepositVO();
+    instance = new HydrogenNucleusApi.DepositVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('DepositVO', function() {
     it('should create an instance of DepositVO', function() {
       // uncomment below and update the code to test DepositVO
-      //var instane = new HydrogenAtomApi.DepositVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.DepositVO);
+      //var instane = new HydrogenNucleusApi.DepositVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.DepositVO);
     });
 
     it('should have the property depositAmount (base name: "deposit_amount")', function() {
       // uncomment below and update the code to test the property depositAmount
-      //var instane = new HydrogenAtomApi.DepositVO();
+      //var instane = new HydrogenNucleusApi.DepositVO();
       //expect(instance).to.be();
     });
 
     it('should have the property depositDirection (base name: "deposit_direction")', function() {
       // uncomment below and update the code to test the property depositDirection
-      //var instane = new HydrogenAtomApi.DepositVO();
+      //var instane = new HydrogenNucleusApi.DepositVO();
       //expect(instance).to.be();
     });
 
     it('should have the property depositId (base name: "deposit_id")', function() {
       // uncomment below and update the code to test the property depositId
-      //var instane = new HydrogenAtomApi.DepositVO();
+      //var instane = new HydrogenNucleusApi.DepositVO();
       //expect(instance).to.be();
     });
 
     it('should have the property depositReceivedDate (base name: "deposit_received_date")', function() {
       // uncomment below and update the code to test the property depositReceivedDate
-      //var instane = new HydrogenAtomApi.DepositVO();
+      //var instane = new HydrogenNucleusApi.DepositVO();
       //expect(instance).to.be();
     });
 

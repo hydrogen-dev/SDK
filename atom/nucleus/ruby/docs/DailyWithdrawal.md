@@ -1,4 +1,4 @@
-# AtomApi::DailyWithdrawal
+# NucleusApi::DailyWithdrawal
 
 ## Properties
 Name | Type | Description | Notes

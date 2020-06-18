@@ -1,4 +1,4 @@
-# AtomApi::ModelAssetSize
+# NucleusApi::ModelAssetSize
 
 ## Properties
 Name | Type | Description | Notes

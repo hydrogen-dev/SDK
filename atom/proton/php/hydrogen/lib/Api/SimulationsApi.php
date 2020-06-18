@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\proton\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\proton\ApiException;
+use com\hydrogen\proton\Configuration;
+use com\hydrogen\proton\HeaderSelector;
+use com\hydrogen\proton\ObjectSerializer;
 
 /**
  * SimulationsApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class SimulationsApi
      *
      * Backtest
      *
-     * @param  \com\hydrogen\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
+     * @param  \com\hydrogen\proton\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -109,9 +109,9 @@ class SimulationsApi
      *
      * Backtest
      *
-     * @param  \com\hydrogen\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
+     * @param  \com\hydrogen\proton\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -184,7 +184,7 @@ class SimulationsApi
      *
      * Backtest
      *
-     * @param  \com\hydrogen\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
+     * @param  \com\hydrogen\proton\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,7 +204,7 @@ class SimulationsApi
      *
      * Backtest
      *
-     * @param  \com\hydrogen\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
+     * @param  \com\hydrogen\proton\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -254,7 +254,7 @@ class SimulationsApi
     /**
      * Create request for operation 'backtest'
      *
-     * @param  \com\hydrogen\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
+     * @param  \com\hydrogen\proton\Model\BacktestRequest $backtest_request Request payload for Backtest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,9 +360,9 @@ class SimulationsApi
      *
      * Event Study
      *
-     * @param  \com\hydrogen\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
+     * @param  \com\hydrogen\proton\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -377,9 +377,9 @@ class SimulationsApi
      *
      * Event Study
      *
-     * @param  \com\hydrogen\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
+     * @param  \com\hydrogen\proton\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -452,7 +452,7 @@ class SimulationsApi
      *
      * Event Study
      *
-     * @param  \com\hydrogen\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
+     * @param  \com\hydrogen\proton\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,7 +472,7 @@ class SimulationsApi
      *
      * Event Study
      *
-     * @param  \com\hydrogen\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
+     * @param  \com\hydrogen\proton\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -522,7 +522,7 @@ class SimulationsApi
     /**
      * Create request for operation 'eventStudy'
      *
-     * @param  \com\hydrogen\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
+     * @param  \com\hydrogen\proton\Model\EventStudyRequest $event_study_request Request payload for Event Study (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,9 +628,9 @@ class SimulationsApi
      *
      * Monte Carlo
      *
-     * @param  \com\hydrogen\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
+     * @param  \com\hydrogen\proton\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -645,9 +645,9 @@ class SimulationsApi
      *
      * Monte Carlo
      *
-     * @param  \com\hydrogen\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
+     * @param  \com\hydrogen\proton\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -720,7 +720,7 @@ class SimulationsApi
      *
      * Monte Carlo
      *
-     * @param  \com\hydrogen\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
+     * @param  \com\hydrogen\proton\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,7 +740,7 @@ class SimulationsApi
      *
      * Monte Carlo
      *
-     * @param  \com\hydrogen\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
+     * @param  \com\hydrogen\proton\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -790,7 +790,7 @@ class SimulationsApi
     /**
      * Create request for operation 'monteCarlo'
      *
-     * @param  \com\hydrogen\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
+     * @param  \com\hydrogen\proton\Model\MonteCarloRequest $monte_carlo_request Request payload for Monte Carlo (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,9 +896,9 @@ class SimulationsApi
      *
      * Porfolio What-If
      *
-     * @param  \com\hydrogen\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
+     * @param  \com\hydrogen\proton\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -913,9 +913,9 @@ class SimulationsApi
      *
      * Porfolio What-If
      *
-     * @param  \com\hydrogen\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
+     * @param  \com\hydrogen\proton\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -988,7 +988,7 @@ class SimulationsApi
      *
      * Porfolio What-If
      *
-     * @param  \com\hydrogen\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
+     * @param  \com\hydrogen\proton\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,7 +1008,7 @@ class SimulationsApi
      *
      * Porfolio What-If
      *
-     * @param  \com\hydrogen\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
+     * @param  \com\hydrogen\proton\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1058,7 +1058,7 @@ class SimulationsApi
     /**
      * Create request for operation 'portfolioWhatIf'
      *
-     * @param  \com\hydrogen\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
+     * @param  \com\hydrogen\proton\Model\PortfolioWhatIfRequest $portfolio_what_if_request Request payload for Portfolio What-If (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,9 +1164,9 @@ class SimulationsApi
      *
      * Savings Calculator
      *
-     * @param  \com\hydrogen\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
+     * @param  \com\hydrogen\proton\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1181,9 +1181,9 @@ class SimulationsApi
      *
      * Savings Calculator
      *
-     * @param  \com\hydrogen\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
+     * @param  \com\hydrogen\proton\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1256,7 +1256,7 @@ class SimulationsApi
      *
      * Savings Calculator
      *
-     * @param  \com\hydrogen\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
+     * @param  \com\hydrogen\proton\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,7 +1276,7 @@ class SimulationsApi
      *
      * Savings Calculator
      *
-     * @param  \com\hydrogen\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
+     * @param  \com\hydrogen\proton\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1326,7 +1326,7 @@ class SimulationsApi
     /**
      * Create request for operation 'savingsCalculator'
      *
-     * @param  \com\hydrogen\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
+     * @param  \com\hydrogen\proton\Model\SavingsCalculatorRequest $savings_calculator_request Request payload for Savings Calculator (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1432,9 +1432,9 @@ class SimulationsApi
      *
      * Scenario Analysis
      *
-     * @param  \com\hydrogen\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
+     * @param  \com\hydrogen\proton\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1449,9 +1449,9 @@ class SimulationsApi
      *
      * Scenario Analysis
      *
-     * @param  \com\hydrogen\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
+     * @param  \com\hydrogen\proton\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1524,7 +1524,7 @@ class SimulationsApi
      *
      * Scenario Analysis
      *
-     * @param  \com\hydrogen\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
+     * @param  \com\hydrogen\proton\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1544,7 +1544,7 @@ class SimulationsApi
      *
      * Scenario Analysis
      *
-     * @param  \com\hydrogen\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
+     * @param  \com\hydrogen\proton\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1594,7 +1594,7 @@ class SimulationsApi
     /**
      * Create request for operation 'scenarioAnalysis'
      *
-     * @param  \com\hydrogen\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
+     * @param  \com\hydrogen\proton\Model\ScenarioAnalysisRequest $scneario_analysis_request Request payload for Scenario Analysis (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1700,9 +1700,9 @@ class SimulationsApi
      *
      * Sensitivity Analysis
      *
-     * @param  \com\hydrogen\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
+     * @param  \com\hydrogen\proton\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1717,9 +1717,9 @@ class SimulationsApi
      *
      * Sensitivity Analysis
      *
-     * @param  \com\hydrogen\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
+     * @param  \com\hydrogen\proton\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1792,7 +1792,7 @@ class SimulationsApi
      *
      * Sensitivity Analysis
      *
-     * @param  \com\hydrogen\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
+     * @param  \com\hydrogen\proton\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1812,7 +1812,7 @@ class SimulationsApi
      *
      * Sensitivity Analysis
      *
-     * @param  \com\hydrogen\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
+     * @param  \com\hydrogen\proton\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1862,7 +1862,7 @@ class SimulationsApi
     /**
      * Create request for operation 'sensitivityAnalysis'
      *
-     * @param  \com\hydrogen\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
+     * @param  \com\hydrogen\proton\Model\SensitivityAnalysisRequest $sensitivity_analysis_request Request payload for Sensitivity Analysis (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

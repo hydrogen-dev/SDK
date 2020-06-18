@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * BudgetApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class BudgetApi
      *
      * Create a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget_request budgetRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget_request budgetRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Budget
+     * @return \com\hydrogen\nucleus\Model\Budget
      */
     public function createBudgetUsingPost($budget_request)
     {
@@ -109,15 +109,15 @@ class BudgetApi
      *
      * Create a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget_request budgetRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget_request budgetRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Budget, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Budget, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBudgetUsingPostWithHttpInfo($budget_request)
     {
-        $returnType = '\com\hydrogen\Model\Budget';
+        $returnType = '\com\hydrogen\nucleus\Model\Budget';
         $request = $this->createBudgetUsingPostRequest($budget_request);
 
         try {
@@ -169,7 +169,7 @@ class BudgetApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Budget',
+                        '\com\hydrogen\nucleus\Model\Budget',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class BudgetApi
      *
      * Create a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget_request budgetRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget_request budgetRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class BudgetApi
      *
      * Create a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget_request budgetRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget_request budgetRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createBudgetUsingPostAsyncWithHttpInfo($budget_request)
     {
-        $returnType = '\com\hydrogen\Model\Budget';
+        $returnType = '\com\hydrogen\nucleus\Model\Budget';
         $request = $this->createBudgetUsingPostRequest($budget_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class BudgetApi
     /**
      * Create request for operation 'createBudgetUsingPost'
      *
-     * @param  \com\hydrogen\Model\Budget $budget_request budgetRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget_request budgetRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,7 +362,7 @@ class BudgetApi
      *
      * @param  string $budget_id UUID budget_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -378,7 +378,7 @@ class BudgetApi
      *
      * @param  string $budget_id UUID budget_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -602,9 +602,9 @@ class BudgetApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageBudget_
+     * @return \com\hydrogen\nucleus\Model\PageBudget_
      */
     public function getBudgetAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -623,13 +623,13 @@ class BudgetApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageBudget_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageBudget_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBudgetAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageBudget_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageBudget_';
         $request = $this->getBudgetAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -681,7 +681,7 @@ class BudgetApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageBudget_',
+                        '\com\hydrogen\nucleus\Model\PageBudget_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class BudgetApi
      */
     public function getBudgetAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageBudget_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageBudget_';
         $request = $this->getBudgetAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -897,9 +897,9 @@ class BudgetApi
      *
      * @param  string $budget_id UUID budget_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Budget
+     * @return \com\hydrogen\nucleus\Model\Budget
      */
     public function getBudgetUsingGet($budget_id)
     {
@@ -914,13 +914,13 @@ class BudgetApi
      *
      * @param  string $budget_id UUID budget_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Budget, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Budget, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBudgetUsingGetWithHttpInfo($budget_id)
     {
-        $returnType = '\com\hydrogen\Model\Budget';
+        $returnType = '\com\hydrogen\nucleus\Model\Budget';
         $request = $this->getBudgetUsingGetRequest($budget_id);
 
         try {
@@ -972,7 +972,7 @@ class BudgetApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Budget',
+                        '\com\hydrogen\nucleus\Model\Budget',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1014,7 +1014,7 @@ class BudgetApi
      */
     public function getBudgetUsingGetAsyncWithHttpInfo($budget_id)
     {
-        $returnType = '\com\hydrogen\Model\Budget';
+        $returnType = '\com\hydrogen\nucleus\Model\Budget';
         $request = $this->getBudgetUsingGetRequest($budget_id);
 
         return $this->client
@@ -1168,12 +1168,12 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget budget (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Budget
+     * @return \com\hydrogen\nucleus\Model\Budget
      */
     public function updateBudgetUsingPut($budget, $budget_id)
     {
@@ -1186,16 +1186,16 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget budget (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Budget, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Budget, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateBudgetUsingPutWithHttpInfo($budget, $budget_id)
     {
-        $returnType = '\com\hydrogen\Model\Budget';
+        $returnType = '\com\hydrogen\nucleus\Model\Budget';
         $request = $this->updateBudgetUsingPutRequest($budget, $budget_id);
 
         try {
@@ -1247,7 +1247,7 @@ class BudgetApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Budget',
+                        '\com\hydrogen\nucleus\Model\Budget',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget budget (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\Model\Budget $budget budget (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class BudgetApi
      */
     public function updateBudgetUsingPutAsyncWithHttpInfo($budget, $budget_id)
     {
-        $returnType = '\com\hydrogen\Model\Budget';
+        $returnType = '\com\hydrogen\nucleus\Model\Budget';
         $request = $this->updateBudgetUsingPutRequest($budget, $budget_id);
 
         return $this->client
@@ -1334,7 +1334,7 @@ class BudgetApi
     /**
      * Create request for operation 'updateBudgetUsingPut'
      *
-     * @param  \com\hydrogen\Model\Budget $budget budget (required)
+     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \InvalidArgumentException

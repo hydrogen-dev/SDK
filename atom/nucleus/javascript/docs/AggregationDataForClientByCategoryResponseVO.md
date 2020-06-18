@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO
+# HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO
 
 ## Properties
 Name | Type | Description | Notes

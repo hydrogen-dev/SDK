@@ -1,4 +1,4 @@
-# AtomApi::GoalAccountMapping
+# NucleusApi::GoalAccountMapping
 
 ## Properties
 Name | Type | Description | Notes

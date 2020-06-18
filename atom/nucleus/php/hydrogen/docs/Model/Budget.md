@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **string** | accountId | [optional] 
-**aggregation_accounts** | [**\com\hydrogen\Model\BudgetAggregationAccount[]**](BudgetAggregationAccount.md) |  | [optional] 
-**budget** | [**\com\hydrogen\Model\BudgetObject[]**](BudgetObject.md) |  | [optional] 
+**aggregation_accounts** | [**\com\hydrogen\nucleus\Model\BudgetAggregationAccount[]**](BudgetAggregationAccount.md) |  | [optional] 
+**budget** | [**\com\hydrogen\nucleus\Model\BudgetObject[]**](BudgetObject.md) |  | [optional] 
 **client_id** | **string** | clientId | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **currency_code** | **string** | currencyCode | 

@@ -1,4 +1,4 @@
-# AtomApi::NotificationSetting
+# NucleusApi::NotificationSetting
 
 ## Properties
 Name | Type | Description | Notes

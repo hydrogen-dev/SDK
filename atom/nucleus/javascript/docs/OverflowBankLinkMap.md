@@ -1,4 +1,4 @@
-# HydrogenAtomApi.OverflowBankLinkMap
+# HydrogenNucleusApi.OverflowBankLinkMap
 
 ## Properties
 Name | Type | Description | Notes

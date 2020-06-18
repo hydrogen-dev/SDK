@@ -1,4 +1,4 @@
-# AtomApi::Card
+# NucleusApi::Card
 
 ## Properties
 Name | Type | Description | Notes

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Answer Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -63,7 +63,7 @@ class Answer implements ModelInterface, ArrayAccess
         'label' => 'string',
         'metadata' => 'map[string,string]',
         'order_index' => 'string',
-        'question' => '\com\hydrogen\Model\Question',
+        'question' => '\com\hydrogen\nucleus\Model\Question',
         'question_id' => 'string',
         'tooltip' => 'string',
         'value' => 'string',
@@ -414,7 +414,7 @@ class Answer implements ModelInterface, ArrayAccess
     /**
      * Gets question
      *
-     * @return \com\hydrogen\Model\Question
+     * @return \com\hydrogen\nucleus\Model\Question
      */
     public function getQuestion()
     {
@@ -424,7 +424,7 @@ class Answer implements ModelInterface, ArrayAccess
     /**
      * Sets question
      *
-     * @param \com\hydrogen\Model\Question $question question
+     * @param \com\hydrogen\nucleus\Model\Question $question question
      *
      * @return $this
      */

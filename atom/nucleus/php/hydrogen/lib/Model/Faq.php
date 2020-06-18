@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Faq Class Doc Comment
  *
  * @category Class
  * @description Faq Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class Faq implements ModelInterface, ArrayAccess
         'answer' => 'string',
         'category' => 'string',
         'create_date' => '\DateTime',
-        'faq_keywords' => '\com\hydrogen\Model\FAQKeyword[]',
+        'faq_keywords' => '\com\hydrogen\nucleus\Model\FAQKeyword[]',
         'id' => 'string',
         'is_active' => 'bool',
         'is_featured' => 'bool',
@@ -364,7 +364,7 @@ class Faq implements ModelInterface, ArrayAccess
     /**
      * Gets faq_keywords
      *
-     * @return \com\hydrogen\Model\FAQKeyword[]
+     * @return \com\hydrogen\nucleus\Model\FAQKeyword[]
      */
     public function getFaqKeywords()
     {
@@ -374,7 +374,7 @@ class Faq implements ModelInterface, ArrayAccess
     /**
      * Sets faq_keywords
      *
-     * @param \com\hydrogen\Model\FAQKeyword[] $faq_keywords faq_keywords
+     * @param \com\hydrogen\nucleus\Model\FAQKeyword[] $faq_keywords faq_keywords
      *
      * @return $this
      */

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.overflow_bank_link_map import OverflowBankLinkMap  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.overflow_bank_link_map import OverflowBankLinkMap  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestOverflowBankLinkMap(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestOverflowBankLinkMap(unittest.TestCase):
     def testOverflowBankLinkMap(self):
         """Test OverflowBankLinkMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.overflow_bank_link_map.OverflowBankLinkMap()  # noqa: E501
+        # model = nucleus_api.models.overflow_bank_link_map.OverflowBankLinkMap()  # noqa: E501
         pass
 
 

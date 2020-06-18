@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Sale
+# HydrogenNucleusApi.Sale
 
 ## Properties
 Name | Type | Description | Notes

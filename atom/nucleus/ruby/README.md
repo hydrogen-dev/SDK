@@ -1,6 +1,6 @@
-# atom_api
+# nucleus_api
 
-AtomApi - the Ruby gem for the Hydrogen Atom API
+NucleusApi - the Ruby gem for the Hydrogen Atom API
 
 The Hydrogen Atom API
 
@@ -27,27 +27,27 @@ https://api.hydrogenplatform.com/nucleus/v1
 To build the Ruby code into a gem:
 
 ```shell
-gem build atom_api.gemspec
+gem build nucleus_api.gemspec
 ```
 
 Then either install the gem locally:
 
 ```shell
-gem install ./atom_api-1.7.0.gem
+gem install ./nucleus_api-1.7.0.gem
 ```
-(for development, run `gem install --dev ./atom_api-1.7.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./nucleus_api-1.7.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
 Finally add this to the Gemfile:
 
-    gem 'atom_api', '~> 1.7.0'
+    gem 'nucleus_api', '~> 1.7.0'
 
 ### Install from Git
 
 If the Ruby gem is hosted at a git repository: https://github.com/YOUR_GIT_USERNAME/YOUR_GIT_REPO, then add the following in the Gemfile:
 
-    gem 'atom_api', :git => 'https://github.com/YOUR_GIT_USERNAME/YOUR_GIT_REPO.git'
+    gem 'nucleus_api', :git => 'https://github.com/YOUR_GIT_USERNAME/YOUR_GIT_REPO.git'
 
 ### Include the Ruby code directly
 
@@ -62,10 +62,10 @@ ruby -Ilib script.rb
 Please follow the [installation](#installation) procedure and then run the following code:
 ```ruby
 # Load the gem
-require 'atom_api'
+require 'nucleus_api'
 
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -73,16 +73,16 @@ AtomApi.configure do |config|
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
 end
 
-api_instance = AtomApi::AccountApi.new
+api_instance = NucleusApi::AccountApi.new
 
-alloc_request = AtomApi::AccountAllocationMapping.new # AccountAllocationMapping | allocRequest
+alloc_request = NucleusApi::AccountAllocationMapping.new # AccountAllocationMapping | allocRequest
 
 
 begin
   #Create an account allocation
   result = api_instance.create_account_allocation_mapping_using_post(alloc_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->create_account_allocation_mapping_using_post: #{e}"
 end
 
@@ -94,759 +94,759 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AtomApi::AccountApi* | [**create_account_allocation_mapping_using_post**](docs/AccountApi.md#create_account_allocation_mapping_using_post) | **POST** /account_allocation | Create an account allocation
-*AtomApi::AccountApi* | [**create_account_type_using_post**](docs/AccountApi.md#create_account_type_using_post) | **POST** /account_type | Create an account type
-*AtomApi::AccountApi* | [**create_account_using_post**](docs/AccountApi.md#create_account_using_post) | **POST** /account | Create an account
-*AtomApi::AccountApi* | [**delete_account_allocation_mapping_using_delete**](docs/AccountApi.md#delete_account_allocation_mapping_using_delete) | **DELETE** /account_allocation/{account_allocation_id} | Delete an account allocation
-*AtomApi::AccountApi* | [**delete_account_permission_using_delete**](docs/AccountApi.md#delete_account_permission_using_delete) | **DELETE** /account_permission/{account_id} | Delete an account permission
-*AtomApi::AccountApi* | [**delete_account_type_using_delete**](docs/AccountApi.md#delete_account_type_using_delete) | **DELETE** /account_type/{account_type_id} | Delete an account type
-*AtomApi::AccountApi* | [**delete_account_using_delete**](docs/AccountApi.md#delete_account_using_delete) | **DELETE** /account/{account_id} | Delete an account
-*AtomApi::AccountApi* | [**get_account_all_using_get**](docs/AccountApi.md#get_account_all_using_get) | **GET** /account | List all accounts
-*AtomApi::AccountApi* | [**get_account_allocation_mapping_all_using_get**](docs/AccountApi.md#get_account_allocation_mapping_all_using_get) | **GET** /account_allocation | List all account allocations
-*AtomApi::AccountApi* | [**get_account_allocation_mapping_using_get**](docs/AccountApi.md#get_account_allocation_mapping_using_get) | **GET** /account_allocation/{account_allocation_id} | Retrieve an account allocation
-*AtomApi::AccountApi* | [**get_account_asset_size_agg_all_using_get**](docs/AccountApi.md#get_account_asset_size_agg_all_using_get) | **GET** /account/{account_id}/asset_size | List all account asset sizes
-*AtomApi::AccountApi* | [**get_account_asset_size_all_using_get**](docs/AccountApi.md#get_account_asset_size_all_using_get) | **GET** /account_asset_size | List all account asset sizes
-*AtomApi::AccountApi* | [**get_account_overview_using_get**](docs/AccountApi.md#get_account_overview_using_get) | **GET** /account/{account_id}/account_overview | List all Account overview
-*AtomApi::AccountApi* | [**get_account_permission_using_get**](docs/AccountApi.md#get_account_permission_using_get) | **GET** /account_permission/{account_id} | Get an account permission
-*AtomApi::AccountApi* | [**get_account_type_all_using_get**](docs/AccountApi.md#get_account_type_all_using_get) | **GET** /account_type | List all account types
-*AtomApi::AccountApi* | [**get_account_type_using_get**](docs/AccountApi.md#get_account_type_using_get) | **GET** /account_type/{account_type_id} | Get an Account Type
-*AtomApi::AccountApi* | [**get_account_using_get**](docs/AccountApi.md#get_account_using_get) | **GET** /account/{account_id} | Retrieve an account
-*AtomApi::AccountApi* | [**get_all_account_permission_using_get**](docs/AccountApi.md#get_all_account_permission_using_get) | **GET** /account_permission | List all account permission
-*AtomApi::AccountApi* | [**get_portfolio_holding_agg_all_using_get**](docs/AccountApi.md#get_portfolio_holding_agg_all_using_get) | **GET** /account/{account_id}/holding | List all account holdings
-*AtomApi::AccountApi* | [**get_portfolio_transaction_agg_all_using_get**](docs/AccountApi.md#get_portfolio_transaction_agg_all_using_get) | **GET** /account/{account_id}/transaction | List all account transactions
-*AtomApi::AccountApi* | [**insert_account_and_related_permission_using_post**](docs/AccountApi.md#insert_account_and_related_permission_using_post) | **POST** /account_permission | create an account permission
-*AtomApi::AccountApi* | [**subscribe_account_using_post**](docs/AccountApi.md#subscribe_account_using_post) | **POST** /account/{account_id}/subscribe | Subscribe an account
-*AtomApi::AccountApi* | [**update_account_allocation_mapping_using_put**](docs/AccountApi.md#update_account_allocation_mapping_using_put) | **PUT** /account_allocation/{account_allocation_id} | Update an account allocation
-*AtomApi::AccountApi* | [**update_account_type_using_put**](docs/AccountApi.md#update_account_type_using_put) | **PUT** /account_type/{account_type_id} | Update an account type
-*AtomApi::AccountApi* | [**update_account_using_put**](docs/AccountApi.md#update_account_using_put) | **PUT** /account/{account_id} | Update an account
-*AtomApi::AccountApi* | [**update_client_account_permission_using_put**](docs/AccountApi.md#update_client_account_permission_using_put) | **PUT** /account_permission/{account_id} | Update an account permission
-*AtomApi::AccountingApi* | [**create_accounting_using_post**](docs/AccountingApi.md#create_accounting_using_post) | **POST** /accounting | Create an accounting
-*AtomApi::AccountingApi* | [**delete_accounting_using_delete**](docs/AccountingApi.md#delete_accounting_using_delete) | **DELETE** /accounting/{accounting_id} | Delete an accounting
-*AtomApi::AccountingApi* | [**get_accounting_all_using_get**](docs/AccountingApi.md#get_accounting_all_using_get) | **GET** /accounting | List all accounting
-*AtomApi::AccountingApi* | [**get_accounting_using_get**](docs/AccountingApi.md#get_accounting_using_get) | **GET** /accounting/{accounting_id} | Retrieve an accounting
-*AtomApi::AccountingApi* | [**update_accounting_using_put**](docs/AccountingApi.md#update_accounting_using_put) | **PUT** /accounting/{accounting_id} | Update an accounting
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_balance_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_balance_bulk_using_post) | **POST** /bulk_aggregation_account_balance | Create a bulk aggregation account balance
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_balance_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_balance_using_post) | **POST** /aggregation_account_balance | Create an aggregation account balance
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_bulk_using_post) | **POST** /bulk_aggregation_account | Create a bulk aggregation account
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_holding_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_holding_bulk_using_post) | **POST** /bulk_aggregation_account_holding | Create a bulk aggregation account holding
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_holding_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_holding_using_post) | **POST** /aggregation_account_holding | Create an aggregation account holding
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_transaction_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_transaction_bulk_using_post) | **POST** /bulk_aggregation_account_transaction | Create a bulk aggregation account transaction
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_transaction_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_transaction_using_post) | **POST** /aggregation_account_transaction | Create an aggregation account transaction
-*AtomApi::AggregationAccountApi* | [**create_aggregation_account_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_using_post) | **POST** /aggregation_account | Create an aggregation account
-*AtomApi::AggregationAccountApi* | [**delete_aggregation_account_balance_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_balance_using_delete) | **DELETE** /aggregation_account_balance/{aggregation_account_balance_id} | Delete an aggregation account balance
-*AtomApi::AggregationAccountApi* | [**delete_aggregation_account_holding_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_holding_using_delete) | **DELETE** /aggregation_account_holding/{aggregation_account_holding_id} | Delete an aggregation account holding
-*AtomApi::AggregationAccountApi* | [**delete_aggregation_account_transaction_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_transaction_using_delete) | **DELETE** /aggregation_account_transaction/{aggregation_account_transaction_id} | Delete an aggregation account transaction
-*AtomApi::AggregationAccountApi* | [**delete_aggregation_account_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_using_delete) | **DELETE** /aggregation_account/{aggregation_account_id} | Delete an aggregation account
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_aggregate_data_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_aggregate_data_using_get) | **GET** /aggregation_account/{aggregation_account_id}/aggregate_data | Retrieve an aggregation account aggregate data
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_all_using_get) | **GET** /aggregation_account | List all aggregation accounts
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_balance_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_balance_all_using_get) | **GET** /aggregation_account_balance | List all aggregation account balances
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_balance_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_balance_using_get) | **GET** /aggregation_account_balance/{aggregation_account_balance_id} | Retrieve an aggregation account balance
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_holding_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_holding_all_using_get) | **GET** /aggregation_account_holding | List all aggregation account holdings
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_holding_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_holding_using_get) | **GET** /aggregation_account_holding/{aggregation_account_holding_id} | Retrieve an aggregation account holding
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_overview_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_overview_using_get) | **GET** /client/{client_id}/aggregation_account_overview | Retrieve an aggregation account aggregate data
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_transaction_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_transaction_all_using_get) | **GET** /aggregation_account_transaction | List all aggregation account transactions
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_transaction_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_transaction_using_get) | **GET** /aggregation_account_transaction/{aggregation_account_transaction_id} | Retrieve an aggregation account transaction
-*AtomApi::AggregationAccountApi* | [**get_aggregation_account_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_using_get) | **GET** /aggregation_account/{aggregation_account_id} | Retrieve an aggregation account
-*AtomApi::AggregationAccountApi* | [**update_aggregation_account_balance_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_balance_using_put) | **PUT** /aggregation_account_balance/{aggregation_account_balance_id} | Update an aggregation account balance
-*AtomApi::AggregationAccountApi* | [**update_aggregation_account_bulk_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_bulk_using_put) | **PUT** /bulk_aggregation_account | Update a bulk aggregation account
-*AtomApi::AggregationAccountApi* | [**update_aggregation_account_holding_bulk_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_holding_bulk_using_put) | **PUT** /bulk_aggregation_account_holding | Update an bulk aggregation account holding
-*AtomApi::AggregationAccountApi* | [**update_aggregation_account_holding_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_holding_using_put) | **PUT** /aggregation_account_holding/{aggregation_account_holding_id} | Update an aggregation account holding
-*AtomApi::AggregationAccountApi* | [**update_aggregation_account_transaction_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_transaction_using_put) | **PUT** /aggregation_account_transaction/{aggregation_account_transaction_id} | Update an aggregation account transaction
-*AtomApi::AggregationAccountApi* | [**update_aggregation_account_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_using_put) | **PUT** /aggregation_account/{aggregation_account_id} | Update an aggregation account
-*AtomApi::AllocationApi* | [**create_allocation_composition_using_post**](docs/AllocationApi.md#create_allocation_composition_using_post) | **POST** /allocation_composition | Create an allocation composition
-*AtomApi::AllocationApi* | [**create_allocation_using_post**](docs/AllocationApi.md#create_allocation_using_post) | **POST** /allocation | Create an allocation
-*AtomApi::AllocationApi* | [**delete_allocation_composition_using_delete**](docs/AllocationApi.md#delete_allocation_composition_using_delete) | **DELETE** /allocation_composition/{allocation_composition_id} | Delete an allocation composition
-*AtomApi::AllocationApi* | [**delete_allocation_using_delete**](docs/AllocationApi.md#delete_allocation_using_delete) | **DELETE** /allocation/{allocation_id} | Delete an allocation
-*AtomApi::AllocationApi* | [**get_all_holdings_using_get**](docs/AllocationApi.md#get_all_holdings_using_get) | **GET** /allocation/{allocation_id}/holding | List all allocation holdings
-*AtomApi::AllocationApi* | [**get_all_transactions_using_get**](docs/AllocationApi.md#get_all_transactions_using_get) | **GET** /allocation/{allocation_id}/transaction | List all allocation transactions
-*AtomApi::AllocationApi* | [**get_allocation_aggregated_data_using_get**](docs/AllocationApi.md#get_allocation_aggregated_data_using_get) | **GET** /allocation/{allocation_id}/aggregate_data | List all Allocation aggregated data overview
-*AtomApi::AllocationApi* | [**get_allocation_all_using_get**](docs/AllocationApi.md#get_allocation_all_using_get) | **GET** /allocation | List all allocations
-*AtomApi::AllocationApi* | [**get_allocation_composition_all_using_get**](docs/AllocationApi.md#get_allocation_composition_all_using_get) | **GET** /allocation_composition | List all allocations compositions
-*AtomApi::AllocationApi* | [**get_allocation_composition_using_get**](docs/AllocationApi.md#get_allocation_composition_using_get) | **GET** /allocation_composition/{allocation_composition_id} | Retrieve an allocation composition
-*AtomApi::AllocationApi* | [**get_allocation_using_get**](docs/AllocationApi.md#get_allocation_using_get) | **GET** /allocation/{allocation_id} | Retrieve an allocation
-*AtomApi::AllocationApi* | [**get_assetsize_using_get**](docs/AllocationApi.md#get_assetsize_using_get) | **GET** /allocation/{allocation_id}/asset_size | List all allocation asset sizes
-*AtomApi::AllocationApi* | [**update_allocation_composition_using_put**](docs/AllocationApi.md#update_allocation_composition_using_put) | **PUT** /allocation_composition/{allocation_composition_id} | Update an allocation composition
-*AtomApi::AllocationApi* | [**update_allocation_using_put**](docs/AllocationApi.md#update_allocation_using_put) | **PUT** /allocation/{allocation_id} | Update an allocation
-*AtomApi::ApplicationApi* | [**create_application_using_post**](docs/ApplicationApi.md#create_application_using_post) | **POST** /application | Create an application
-*AtomApi::ApplicationApi* | [**delete_application_using_delete**](docs/ApplicationApi.md#delete_application_using_delete) | **DELETE** /application/{application_id} | Delete an Application
-*AtomApi::ApplicationApi* | [**get_application_all_using_get**](docs/ApplicationApi.md#get_application_all_using_get) | **GET** /application | List all Application
-*AtomApi::ApplicationApi* | [**get_application_using_get**](docs/ApplicationApi.md#get_application_using_get) | **GET** /application/{application_id} | Retrieve an Application
-*AtomApi::ApplicationApi* | [**update_application_using_put**](docs/ApplicationApi.md#update_application_using_put) | **PUT** /application/{application_id} | Update an Application
-*AtomApi::AuditLogApi* | [**create_audit_log_using_post**](docs/AuditLogApi.md#create_audit_log_using_post) | **POST** /audit_log | Create a audit log
-*AtomApi::AuditLogApi* | [**get_audit_log_all_using_get**](docs/AuditLogApi.md#get_audit_log_all_using_get) | **GET** /audit_log | List all audit log
-*AtomApi::AuditLogApi* | [**get_audit_log_using_get**](docs/AuditLogApi.md#get_audit_log_using_get) | **GET** /audit_log/{audit_log_id} | Retrieve a audit log
-*AtomApi::BenchmarkApi* | [**create_benchmark_using_post**](docs/BenchmarkApi.md#create_benchmark_using_post) | **POST** /benchmark | Create a benchmark
-*AtomApi::BenchmarkApi* | [**delete_benchmark_using_delete**](docs/BenchmarkApi.md#delete_benchmark_using_delete) | **DELETE** /benchmark/{benchmark_id} | Delete a benchmark
-*AtomApi::BenchmarkApi* | [**get_benchmark_all_using_get**](docs/BenchmarkApi.md#get_benchmark_all_using_get) | **GET** /benchmark | List all benchmarks
-*AtomApi::BenchmarkApi* | [**get_benchmark_asset_size_all_using_get**](docs/BenchmarkApi.md#get_benchmark_asset_size_all_using_get) | **GET** /benchmark/{benchmark_id}/asset_size | List all benchmark asset sizes
-*AtomApi::BenchmarkApi* | [**get_benchmark_using_get**](docs/BenchmarkApi.md#get_benchmark_using_get) | **GET** /benchmark/{benchmark_id} | Retrieve a benchmark
-*AtomApi::BenchmarkApi* | [**update_benchmark_using_put**](docs/BenchmarkApi.md#update_benchmark_using_put) | **PUT** /benchmark/{benchmark_id} | Update a benchmark
-*AtomApi::BudgetApi* | [**create_budget_using_post**](docs/BudgetApi.md#create_budget_using_post) | **POST** /budget | Create a budget request
-*AtomApi::BudgetApi* | [**delete_budget_using_delete**](docs/BudgetApi.md#delete_budget_using_delete) | **DELETE** /budget/{budget_id} | Delete a budget request
-*AtomApi::BudgetApi* | [**get_budget_all_using_get**](docs/BudgetApi.md#get_budget_all_using_get) | **GET** /budget | List all budget requests
-*AtomApi::BudgetApi* | [**get_budget_using_get**](docs/BudgetApi.md#get_budget_using_get) | **GET** /budget/{budget_id} | Retrieve a budget request
-*AtomApi::BudgetApi* | [**update_budget_using_put**](docs/BudgetApi.md#update_budget_using_put) | **PUT** /budget/{budget_id} | Update a budget request
-*AtomApi::BulkApi* | [**create_bulk_using_post**](docs/BulkApi.md#create_bulk_using_post) | **POST** /bulk/{entity_uri} | Create a bulk data
-*AtomApi::BulkApi* | [**delete_bulk_using_delete**](docs/BulkApi.md#delete_bulk_using_delete) | **DELETE** /bulk/{entity_uri} | Delete a bulk data
-*AtomApi::BulkApi* | [**get_bulk_status_using_get**](docs/BulkApi.md#get_bulk_status_using_get) | **GET** /bulk/status/{id} | Status of bulk transaction
-*AtomApi::BulkApi* | [**update_bulk_using_put**](docs/BulkApi.md#update_bulk_using_put) | **PUT** /bulk/{entity_uri} | Update a bulk data
-*AtomApi::CardApi* | [**create_card_program_using_post**](docs/CardApi.md#create_card_program_using_post) | **POST** /card_program | Create a cardProgram request
-*AtomApi::CardApi* | [**create_card_using_post**](docs/CardApi.md#create_card_using_post) | **POST** /card | Create a card request
-*AtomApi::CardApi* | [**delete_card_program_using_delete**](docs/CardApi.md#delete_card_program_using_delete) | **DELETE** /card_program/{card_program_id} | Delete an cardProgram
-*AtomApi::CardApi* | [**delete_card_using_delete**](docs/CardApi.md#delete_card_using_delete) | **DELETE** /card/{card_id} | Delete a card request
-*AtomApi::CardApi* | [**get_card_all_using_get**](docs/CardApi.md#get_card_all_using_get) | **GET** /card | List all card requests
-*AtomApi::CardApi* | [**get_card_program_all_using_get**](docs/CardApi.md#get_card_program_all_using_get) | **GET** /card_program | List all cardProgram
-*AtomApi::CardApi* | [**get_card_program_using_get**](docs/CardApi.md#get_card_program_using_get) | **GET** /card_program/{card_program_id} | Retrieve an cardProgram
-*AtomApi::CardApi* | [**get_card_using_get**](docs/CardApi.md#get_card_using_get) | **GET** /card/{card_id} | Retrieve a card request
-*AtomApi::CardApi* | [**update_card_program_using_put**](docs/CardApi.md#update_card_program_using_put) | **PUT** /card_program/{card_program_id} | Update an cardProgram
-*AtomApi::CardApi* | [**update_card_using_put**](docs/CardApi.md#update_card_using_put) | **PUT** /card/{card_id} | Update a card request
-*AtomApi::ClientApi* | [**create_client_hydro_using_post**](docs/ClientApi.md#create_client_hydro_using_post) | **POST** /client_hydro | Create a client-hydro relationship
-*AtomApi::ClientApi* | [**create_client_status_using_post**](docs/ClientApi.md#create_client_status_using_post) | **POST** /client_status | Create an client status
-*AtomApi::ClientApi* | [**create_client_using_post**](docs/ClientApi.md#create_client_using_post) | **POST** /client | Create a client
-*AtomApi::ClientApi* | [**delete_client_hydro_using_delete**](docs/ClientApi.md#delete_client_hydro_using_delete) | **DELETE** /client_hydro/{client_hydro_id} | Delete a client-hydro relationship
-*AtomApi::ClientApi* | [**delete_client_status_using_delete**](docs/ClientApi.md#delete_client_status_using_delete) | **DELETE** /client_status/{client_status_id} | Delete an client status
-*AtomApi::ClientApi* | [**delete_client_using_delete**](docs/ClientApi.md#delete_client_using_delete) | **DELETE** /client/{client_id} | Delete a client
-*AtomApi::ClientApi* | [**get_client_account_overview_using_get**](docs/ClientApi.md#get_client_account_overview_using_get) | **GET** /client/{client_id}/account_overview | List all client Account overview
-*AtomApi::ClientApi* | [**get_client_advisor_overview_using_get**](docs/ClientApi.md#get_client_advisor_overview_using_get) | **GET** /client/{client_id}/advisor_overview | Advisor overview
-*AtomApi::ClientApi* | [**get_client_all_using_get**](docs/ClientApi.md#get_client_all_using_get) | **GET** /client | List all clients
-*AtomApi::ClientApi* | [**get_client_asset_size_using_get**](docs/ClientApi.md#get_client_asset_size_using_get) | **GET** /client/{client_id}/asset_size | List all client asset sizes
-*AtomApi::ClientApi* | [**get_client_goal_overview_using_get**](docs/ClientApi.md#get_client_goal_overview_using_get) | **GET** /client/{client_id}/goal_overview | Retrieve client's goal details 
-*AtomApi::ClientApi* | [**get_client_holding_using_get**](docs/ClientApi.md#get_client_holding_using_get) | **GET** /client/{client_id}/holding | List all client holdings
-*AtomApi::ClientApi* | [**get_client_hydro_all_using_get**](docs/ClientApi.md#get_client_hydro_all_using_get) | **GET** /client_hydro | List all client-hydro relationship
-*AtomApi::ClientApi* | [**get_client_hydro_using_get**](docs/ClientApi.md#get_client_hydro_using_get) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
-*AtomApi::ClientApi* | [**get_client_status_all_using_get**](docs/ClientApi.md#get_client_status_all_using_get) | **GET** /client_status | List all client statuses
-*AtomApi::ClientApi* | [**get_client_status_using_get**](docs/ClientApi.md#get_client_status_using_get) | **GET** /client_status/{client_status_id} | Retrieve an client status
-*AtomApi::ClientApi* | [**get_client_transaction_using_get**](docs/ClientApi.md#get_client_transaction_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
-*AtomApi::ClientApi* | [**get_client_using_get**](docs/ClientApi.md#get_client_using_get) | **GET** /client/{client_id} | Retrieve a client
-*AtomApi::ClientApi* | [**get_total_clients_using_get**](docs/ClientApi.md#get_total_clients_using_get) | **GET** /client/total_clients | total clients
-*AtomApi::ClientApi* | [**update_client_hydro_using_put**](docs/ClientApi.md#update_client_hydro_using_put) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
-*AtomApi::ClientApi* | [**update_client_status_using_put**](docs/ClientApi.md#update_client_status_using_put) | **PUT** /client_status/{client_status_id} | Update an client status
-*AtomApi::ClientApi* | [**update_client_using_put**](docs/ClientApi.md#update_client_using_put) | **PUT** /client/{client_id} | Update a client
-*AtomApi::CustomerApi* | [**create_customer_revenue_using_post**](docs/CustomerApi.md#create_customer_revenue_using_post) | **POST** /customer_revenue | Create a customer revenue
-*AtomApi::CustomerApi* | [**create_customer_using_post**](docs/CustomerApi.md#create_customer_using_post) | **POST** /customer | Create a customer
-*AtomApi::CustomerApi* | [**delete_customer_revenue_using_delete**](docs/CustomerApi.md#delete_customer_revenue_using_delete) | **DELETE** /customer_revenue/{customer_revenue_id} | Delete a customer revenue
-*AtomApi::CustomerApi* | [**delete_customer_using_delete**](docs/CustomerApi.md#delete_customer_using_delete) | **DELETE** /customer/{customer_id} | Delete a customer
-*AtomApi::CustomerApi* | [**get_customer_all_using_get**](docs/CustomerApi.md#get_customer_all_using_get) | **GET** /customer | List all customer
-*AtomApi::CustomerApi* | [**get_customer_revenue_all_using_get**](docs/CustomerApi.md#get_customer_revenue_all_using_get) | **GET** /customer_revenue | List all customer revenue
-*AtomApi::CustomerApi* | [**get_customer_revenue_using_get**](docs/CustomerApi.md#get_customer_revenue_using_get) | **GET** /customer_revenue/{customer_revenue_id} | Retrieve a customer revenue
-*AtomApi::CustomerApi* | [**get_customer_using_get**](docs/CustomerApi.md#get_customer_using_get) | **GET** /customer/{customer_id} | Retrieve a customer
-*AtomApi::CustomerApi* | [**update_customer_revenue_using_put**](docs/CustomerApi.md#update_customer_revenue_using_put) | **PUT** /customer_revenue/{customer_revenue_id} | Update a customer revenue
-*AtomApi::CustomerApi* | [**update_customer_using_put**](docs/CustomerApi.md#update_customer_using_put) | **PUT** /customer/{customer_id} | Update a customer
-*AtomApi::DecisionTreeApi* | [**create_decision_tree_result_using_post**](docs/DecisionTreeApi.md#create_decision_tree_result_using_post) | **POST** /decision_tree_result | Decision tree result
-*AtomApi::DecisionTreeApi* | [**create_decision_tree_using_post**](docs/DecisionTreeApi.md#create_decision_tree_using_post) | **POST** /decision_tree | Create a decision tree
-*AtomApi::DecisionTreeApi* | [**create_node_relationship_using_post**](docs/DecisionTreeApi.md#create_node_relationship_using_post) | **POST** /node_relationship | Create a node relationship
-*AtomApi::DecisionTreeApi* | [**create_node_using_post**](docs/DecisionTreeApi.md#create_node_using_post) | **POST** /node | Create a node
-*AtomApi::DecisionTreeApi* | [**delete_decision_tree_using_delete**](docs/DecisionTreeApi.md#delete_decision_tree_using_delete) | **DELETE** /decision_tree/{decision_tree_id} | Delete a decision tree
-*AtomApi::DecisionTreeApi* | [**delete_node_relationship_using_delete**](docs/DecisionTreeApi.md#delete_node_relationship_using_delete) | **DELETE** /node_relationship/{node_relationship_id} | Delete a node relationship
-*AtomApi::DecisionTreeApi* | [**delete_node_using_delete**](docs/DecisionTreeApi.md#delete_node_using_delete) | **DELETE** /node/{node_id} | Delete a node
-*AtomApi::DecisionTreeApi* | [**get_decision_tree_all_using_get**](docs/DecisionTreeApi.md#get_decision_tree_all_using_get) | **GET** /decision_tree | List all decision tree
-*AtomApi::DecisionTreeApi* | [**get_decision_tree_using_get**](docs/DecisionTreeApi.md#get_decision_tree_using_get) | **GET** /decision_tree/{decision_tree_id} | Retrieve a decision tree
-*AtomApi::DecisionTreeApi* | [**get_node_all_using_get**](docs/DecisionTreeApi.md#get_node_all_using_get) | **GET** /node | List all nodes
-*AtomApi::DecisionTreeApi* | [**get_node_relationship_all_using_get**](docs/DecisionTreeApi.md#get_node_relationship_all_using_get) | **GET** /node_relationship | List all node relationships
-*AtomApi::DecisionTreeApi* | [**get_node_relationship_using_get**](docs/DecisionTreeApi.md#get_node_relationship_using_get) | **GET** /node_relationship/{node_relationship_id} | Retrieve a node relationship
-*AtomApi::DecisionTreeApi* | [**get_node_using_get**](docs/DecisionTreeApi.md#get_node_using_get) | **GET** /node/{node_id} | Retrieve a node
-*AtomApi::DecisionTreeApi* | [**update_decision_tree_using_put**](docs/DecisionTreeApi.md#update_decision_tree_using_put) | **PUT** /decision_tree/{decision_tree_id} | Update a decision tree
-*AtomApi::DecisionTreeApi* | [**update_node_relationship_using_put**](docs/DecisionTreeApi.md#update_node_relationship_using_put) | **PUT** /node_relationship/{node_relationship_id} | Update a node relationship
-*AtomApi::DecisionTreeApi* | [**update_node_using_put**](docs/DecisionTreeApi.md#update_node_using_put) | **PUT** /node/{node_id} | Update a node
-*AtomApi::DocumentApi* | [**create_document_using_post**](docs/DocumentApi.md#create_document_using_post) | **POST** /document | Create a Document
-*AtomApi::DocumentApi* | [**delete_document_using_delete**](docs/DocumentApi.md#delete_document_using_delete) | **DELETE** /document/{document_id} | Delete a tenant document by Id
-*AtomApi::DocumentApi* | [**get_document_all_using_get**](docs/DocumentApi.md#get_document_all_using_get) | **GET** /document | List all Documents
-*AtomApi::DocumentApi* | [**get_document_using_get**](docs/DocumentApi.md#get_document_using_get) | **GET** /document/{document_id} | Retrieve a Tenant Document by Document Id
-*AtomApi::DocumentApi* | [**update_document_using_put**](docs/DocumentApi.md#update_document_using_put) | **PUT** /document/{document_id} | Update a Tenant Document
-*AtomApi::FAQApi* | [**create_faq_using_post**](docs/FAQApi.md#create_faq_using_post) | **POST** /faq | Create a FAQ
-*AtomApi::FAQApi* | [**delete_faq_using_delete**](docs/FAQApi.md#delete_faq_using_delete) | **DELETE** /faq/{faq_id} | Delete a FAQ
-*AtomApi::FAQApi* | [**get_faq_all_using_get**](docs/FAQApi.md#get_faq_all_using_get) | **GET** /faq | List all FAQ
-*AtomApi::FAQApi* | [**get_faq_using_get**](docs/FAQApi.md#get_faq_using_get) | **GET** /faq/{faq_id} | Retrieve a FAQ
-*AtomApi::FAQApi* | [**update_faq_using_put**](docs/FAQApi.md#update_faq_using_put) | **PUT** /faq/{faq_id} | Update a FAQ
-*AtomApi::FeatureApi* | [**create_feature_track_using_post**](docs/FeatureApi.md#create_feature_track_using_post) | **POST** /feature_track | Create a Feature Track
-*AtomApi::FeatureApi* | [**create_feature_using_post**](docs/FeatureApi.md#create_feature_using_post) | **POST** /feature | Create a  Feature
-*AtomApi::FeatureApi* | [**delete_feature_track_using_delete**](docs/FeatureApi.md#delete_feature_track_using_delete) | **DELETE** /feature_track/{feature_track_id} | Delete a Feature Track
-*AtomApi::FeatureApi* | [**delete_feature_using_delete**](docs/FeatureApi.md#delete_feature_using_delete) | **DELETE** /feature/{feature_id} | Delete a Feature
-*AtomApi::FeatureApi* | [**get_feature_all_using_get**](docs/FeatureApi.md#get_feature_all_using_get) | **GET** /feature | List all Feature
-*AtomApi::FeatureApi* | [**get_feature_track_all_using_get**](docs/FeatureApi.md#get_feature_track_all_using_get) | **GET** /feature_track | List all Feature track
-*AtomApi::FeatureApi* | [**get_feature_track_using_get**](docs/FeatureApi.md#get_feature_track_using_get) | **GET** /feature_track/{feature_track_id} | Retrieve a Feature track
-*AtomApi::FeatureApi* | [**get_feature_using_get**](docs/FeatureApi.md#get_feature_using_get) | **GET** /feature/{feature_id} | Retrieve a Feature
-*AtomApi::FeatureApi* | [**update_feature_track_using_put**](docs/FeatureApi.md#update_feature_track_using_put) | **PUT** /feature_track/{feature_track_id} | Update a Feature Track
-*AtomApi::FeatureApi* | [**update_feature_using_put**](docs/FeatureApi.md#update_feature_using_put) | **PUT** /feature/{feature_id} | Update a Feature
-*AtomApi::FinancialOfferApi* | [**create_financial_offer_using_post**](docs/FinancialOfferApi.md#create_financial_offer_using_post) | **POST** /financial_offer | Create a comparison request
-*AtomApi::FinancialOfferApi* | [**delete_financial_offer_using_delete**](docs/FinancialOfferApi.md#delete_financial_offer_using_delete) | **DELETE** /financial_offer/{financial_offer_id} | Delete a comparison request
-*AtomApi::FinancialOfferApi* | [**get_financial_offer_all_using_get**](docs/FinancialOfferApi.md#get_financial_offer_all_using_get) | **GET** /financial_offer | List all comparison requests
-*AtomApi::FinancialOfferApi* | [**get_financial_offer_using_get**](docs/FinancialOfferApi.md#get_financial_offer_using_get) | **GET** /financial_offer/{financial_offer_id} | Retrieve a comparison request
-*AtomApi::FinancialOfferApi* | [**update_financial_offer_using_put**](docs/FinancialOfferApi.md#update_financial_offer_using_put) | **PUT** /financial_offer/{financial_offer_id} | Update a comparison request
-*AtomApi::FundingApi* | [**create_bank_link_using_post**](docs/FundingApi.md#create_bank_link_using_post) | **POST** /bank_link | Create a bank link
-*AtomApi::FundingApi* | [**create_deposit_using_post**](docs/FundingApi.md#create_deposit_using_post) | **POST** /deposit | Create a deposit request
-*AtomApi::FundingApi* | [**create_funding_using_post**](docs/FundingApi.md#create_funding_using_post) | **POST** /funding | Create a funding request
-*AtomApi::FundingApi* | [**create_transfer_using_post**](docs/FundingApi.md#create_transfer_using_post) | **POST** /transfer | Create a transfer requests
-*AtomApi::FundingApi* | [**create_withdrawal_using_post**](docs/FundingApi.md#create_withdrawal_using_post) | **POST** /withdrawal | Create a withdrawal request
-*AtomApi::FundingApi* | [**delete_bank_link_using_delete**](docs/FundingApi.md#delete_bank_link_using_delete) | **DELETE** /bank_link/{bank_link_id} | Delete a bank link
-*AtomApi::FundingApi* | [**delete_deposit_using_delete**](docs/FundingApi.md#delete_deposit_using_delete) | **DELETE** /deposit/{deposit_id} | Delete a deposit request
-*AtomApi::FundingApi* | [**delete_funding_using_delete**](docs/FundingApi.md#delete_funding_using_delete) | **DELETE** /funding/{funding_id} | Delete a funding request
-*AtomApi::FundingApi* | [**delete_transfer_using_delete**](docs/FundingApi.md#delete_transfer_using_delete) | **DELETE** /transfer/{transfer_id} | Delete a transfer request
-*AtomApi::FundingApi* | [**delete_withdrawal_using_delete**](docs/FundingApi.md#delete_withdrawal_using_delete) | **DELETE** /withdrawal/{withdrawal_id} | Delete a withdrawal request
-*AtomApi::FundingApi* | [**get_bank_link_all_using_get**](docs/FundingApi.md#get_bank_link_all_using_get) | **GET** /bank_link | List all bank links
-*AtomApi::FundingApi* | [**get_bank_link_using_get**](docs/FundingApi.md#get_bank_link_using_get) | **GET** /bank_link/{bank_link_id} | Retrieve a bank link
-*AtomApi::FundingApi* | [**get_deposit_all_using_get**](docs/FundingApi.md#get_deposit_all_using_get) | **GET** /deposit | List all deposit requests
-*AtomApi::FundingApi* | [**get_deposit_using_get**](docs/FundingApi.md#get_deposit_using_get) | **GET** /deposit/{deposit_id} | Retrieve a deposit request
-*AtomApi::FundingApi* | [**get_funding_all_using_get**](docs/FundingApi.md#get_funding_all_using_get) | **GET** /funding | List all funding requests 
-*AtomApi::FundingApi* | [**get_funding_using_get**](docs/FundingApi.md#get_funding_using_get) | **GET** /funding/{funding_id} | Retrieve a funding request
-*AtomApi::FundingApi* | [**get_transfer_all_using_get**](docs/FundingApi.md#get_transfer_all_using_get) | **GET** /transfer | List all transfer requests
-*AtomApi::FundingApi* | [**get_transfer_using_get**](docs/FundingApi.md#get_transfer_using_get) | **GET** /transfer/{transfer_id} | Retrieve a transfer request
-*AtomApi::FundingApi* | [**get_withdrawal_all_using_get**](docs/FundingApi.md#get_withdrawal_all_using_get) | **GET** /withdrawal | List all withdrawal requests
-*AtomApi::FundingApi* | [**get_withdrawal_using_get**](docs/FundingApi.md#get_withdrawal_using_get) | **GET** /withdrawal/{withdrawal_id} | Retrieve a withdrawal request
-*AtomApi::FundingApi* | [**update_bank_link_bulk_using_put**](docs/FundingApi.md#update_bank_link_bulk_using_put) | **PUT** /bulk_bank_link | Update list of bank link
-*AtomApi::FundingApi* | [**update_bank_link_using_put**](docs/FundingApi.md#update_bank_link_using_put) | **PUT** /bank_link/{bank_link_id} | Update a bank link
-*AtomApi::FundingApi* | [**update_deposit_using_put**](docs/FundingApi.md#update_deposit_using_put) | **PUT** /deposit/{deposit_id} | Update a deposit request
-*AtomApi::FundingApi* | [**update_funding_using_put**](docs/FundingApi.md#update_funding_using_put) | **PUT** /funding/{funding_id} | Update a funding request
-*AtomApi::FundingApi* | [**update_transfer_using_put**](docs/FundingApi.md#update_transfer_using_put) | **PUT** /transfer/{transfer_id} | Update a transfer request
-*AtomApi::FundingApi* | [**update_withdrawal_using_put**](docs/FundingApi.md#update_withdrawal_using_put) | **PUT** /withdrawal/{withdrawal_id} | Update a withdrawal request
-*AtomApi::GoalApi* | [**create_goal_track_using_post**](docs/GoalApi.md#create_goal_track_using_post) | **POST** /goal_track | Create a goal track record
-*AtomApi::GoalApi* | [**create_goal_using_post**](docs/GoalApi.md#create_goal_using_post) | **POST** /goal | Create a goal
-*AtomApi::GoalApi* | [**delete_goal_track_using_delete**](docs/GoalApi.md#delete_goal_track_using_delete) | **DELETE** /goal_track/{goal_track_id} | Delete a goal track record
-*AtomApi::GoalApi* | [**delete_goal_using_delete**](docs/GoalApi.md#delete_goal_using_delete) | **DELETE** /goal/{goal_id} | Delete a goal
-*AtomApi::GoalApi* | [**get_goal_all_using_get**](docs/GoalApi.md#get_goal_all_using_get) | **GET** /goal | List all goals
-*AtomApi::GoalApi* | [**get_goal_asset_size_all_using_get**](docs/GoalApi.md#get_goal_asset_size_all_using_get) | **GET** /goal/{goal_id}/asset_size | List goal asset sizes
-*AtomApi::GoalApi* | [**get_goal_holding_all_using_get**](docs/GoalApi.md#get_goal_holding_all_using_get) | **GET** /goal/{goal_id}/holding | List goal holdings
-*AtomApi::GoalApi* | [**get_goal_track_all_using_get**](docs/GoalApi.md#get_goal_track_all_using_get) | **GET** /goal_track | List all goal track records
-*AtomApi::GoalApi* | [**get_goal_track_using_get**](docs/GoalApi.md#get_goal_track_using_get) | **GET** /goal_track/{goal_track_id} | Retrieve a goal track record
-*AtomApi::GoalApi* | [**get_goal_transaction_all_using_get**](docs/GoalApi.md#get_goal_transaction_all_using_get) | **GET** /goal/{goal_id}/transaction | List goal transactions
-*AtomApi::GoalApi* | [**get_goal_using_get**](docs/GoalApi.md#get_goal_using_get) | **GET** /goal/{goal_id} | Retrieve a goal
-*AtomApi::GoalApi* | [**update_goal_track_using_put**](docs/GoalApi.md#update_goal_track_using_put) | **PUT** /goal_track/{goal_track_id} | Update a goal track record
-*AtomApi::GoalApi* | [**update_goal_using_put**](docs/GoalApi.md#update_goal_using_put) | **PUT** /goal/{goal_id} | Update a goal
-*AtomApi::InsuranceApi* | [**create_insurance_coverage_using_post**](docs/InsuranceApi.md#create_insurance_coverage_using_post) | **POST** /insurance_coverage | Create a insurance coverage request
-*AtomApi::InsuranceApi* | [**create_insurance_discount_using_post**](docs/InsuranceApi.md#create_insurance_discount_using_post) | **POST** /insurance_discount | Create a insurance discount request
-*AtomApi::InsuranceApi* | [**create_insurance_quote_using_post**](docs/InsuranceApi.md#create_insurance_quote_using_post) | **POST** /insurance_quote | Create a insuranceQuote request
-*AtomApi::InsuranceApi* | [**delete_insurance_coverage_using_delete**](docs/InsuranceApi.md#delete_insurance_coverage_using_delete) | **DELETE** /insurance_coverage/{insurance_coverage_id} | Delete an insurance coverage request
-*AtomApi::InsuranceApi* | [**delete_insurance_discount_using_delete**](docs/InsuranceApi.md#delete_insurance_discount_using_delete) | **DELETE** /insurance_discount/{insurance_discount_id} | Delete an insurance discount request
-*AtomApi::InsuranceApi* | [**delete_insurance_quote_using_delete**](docs/InsuranceApi.md#delete_insurance_quote_using_delete) | **DELETE** /insurance_quote/{insurance_quote_id} | Delete a insuranceQuote request
-*AtomApi::InsuranceApi* | [**get_insurance_coverage_all_using_get**](docs/InsuranceApi.md#get_insurance_coverage_all_using_get) | **GET** /insurance_coverage | Get all insurance coverage request
-*AtomApi::InsuranceApi* | [**get_insurance_coverage_using_get**](docs/InsuranceApi.md#get_insurance_coverage_using_get) | **GET** /insurance_coverage/{insurance_coverage_id} | Get a insurance coverage request
-*AtomApi::InsuranceApi* | [**get_insurance_discount_all_using_get**](docs/InsuranceApi.md#get_insurance_discount_all_using_get) | **GET** /insurance_discount | Get all insurance discount request
-*AtomApi::InsuranceApi* | [**get_insurance_discount_using_get**](docs/InsuranceApi.md#get_insurance_discount_using_get) | **GET** /insurance_discount/{insurance_discount_id} | Get a insurance discount request
-*AtomApi::InsuranceApi* | [**get_insurance_quote_all_using_get**](docs/InsuranceApi.md#get_insurance_quote_all_using_get) | **GET** /insurance_quote | List all insuranceQuote requests
-*AtomApi::InsuranceApi* | [**get_insurance_quote_using_get**](docs/InsuranceApi.md#get_insurance_quote_using_get) | **GET** /insurance_quote/{insurance_quote_id} | Retrieve a insuranceQuote request
-*AtomApi::InsuranceApi* | [**update_insurance_coverage_using_put**](docs/InsuranceApi.md#update_insurance_coverage_using_put) | **PUT** /insurance_coverage/{insurance_coverage_id} | Update a insurance coverage request
-*AtomApi::InsuranceApi* | [**update_insurance_discount_using_put**](docs/InsuranceApi.md#update_insurance_discount_using_put) | **PUT** /insurance_discount/{insurance_discount_id} | Update an insurance discount 
-*AtomApi::InsuranceApi* | [**update_insurance_quote_using_put**](docs/InsuranceApi.md#update_insurance_quote_using_put) | **PUT** /insurance_quote/{insurance_quote_id} | Update a insuranceQuote request
-*AtomApi::InvoiceApi* | [**create_invoice_payment_using_post**](docs/InvoiceApi.md#create_invoice_payment_using_post) | **POST** /invoice_payment | Create a invoicePayment
-*AtomApi::InvoiceApi* | [**create_invoice_using_post**](docs/InvoiceApi.md#create_invoice_using_post) | **POST** /invoice | Create a invoice
-*AtomApi::InvoiceApi* | [**delete_invoice_payment_using_delete**](docs/InvoiceApi.md#delete_invoice_payment_using_delete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
-*AtomApi::InvoiceApi* | [**delete_invoice_using_delete**](docs/InvoiceApi.md#delete_invoice_using_delete) | **DELETE** /invoice/{invoice_id} | Delete a invoice
-*AtomApi::InvoiceApi* | [**get_invoice_all_using_get**](docs/InvoiceApi.md#get_invoice_all_using_get) | **GET** /invoice | List all invoice
-*AtomApi::InvoiceApi* | [**get_invoice_payment_all_using_get**](docs/InvoiceApi.md#get_invoice_payment_all_using_get) | **GET** /invoice_payment | List all invoicePayment
-*AtomApi::InvoiceApi* | [**get_invoice_payment_using_get**](docs/InvoiceApi.md#get_invoice_payment_using_get) | **GET** /invoice_payment/{invoice_payment_id} | Retrieve a invoicePayment
-*AtomApi::InvoiceApi* | [**get_invoice_using_get**](docs/InvoiceApi.md#get_invoice_using_get) | **GET** /invoice/{invoice_id} | Retrieve a invoice
-*AtomApi::InvoiceApi* | [**update_invoice_payment_using_put**](docs/InvoiceApi.md#update_invoice_payment_using_put) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
-*AtomApi::InvoiceApi* | [**update_invoice_using_put**](docs/InvoiceApi.md#update_invoice_using_put) | **PUT** /invoice/{invoice_id} | Update a invoice
-*AtomApi::MarketingApi* | [**create_campaign_data_using_post**](docs/MarketingApi.md#create_campaign_data_using_post) | **POST** /campaign_data | Create a campaign data record
-*AtomApi::MarketingApi* | [**create_campaign_plan_using_post**](docs/MarketingApi.md#create_campaign_plan_using_post) | **POST** /campaign_plan | Create a campaign plan
-*AtomApi::MarketingApi* | [**create_campaign_using_post**](docs/MarketingApi.md#create_campaign_using_post) | **POST** /campaign | Create a campaign
-*AtomApi::MarketingApi* | [**create_client_campaign_using_post**](docs/MarketingApi.md#create_client_campaign_using_post) | **POST** /client_campaign | Mark a client signing up through a campaign
-*AtomApi::MarketingApi* | [**delete_campaign_data_using_delete**](docs/MarketingApi.md#delete_campaign_data_using_delete) | **DELETE** /campaign_data/{campaign_data_id} | Delete a campaign data record
-*AtomApi::MarketingApi* | [**delete_campaign_plan_using_delete**](docs/MarketingApi.md#delete_campaign_plan_using_delete) | **DELETE** /campaign_plan/{campaign_plan_id} | Delete a campaign plan
-*AtomApi::MarketingApi* | [**delete_campaign_using_delete**](docs/MarketingApi.md#delete_campaign_using_delete) | **DELETE** /campaign/{campaign_id} | Delete a campaign
-*AtomApi::MarketingApi* | [**delete_client_campaign_using_delete**](docs/MarketingApi.md#delete_client_campaign_using_delete) | **DELETE** /client_campaign/{client_campaign_id} | Delete a clients/ips pair under a campaign
-*AtomApi::MarketingApi* | [**get_campaign_all_using_get**](docs/MarketingApi.md#get_campaign_all_using_get) | **GET** /campaign | List all campaigns
-*AtomApi::MarketingApi* | [**get_campaign_data_all_using_get**](docs/MarketingApi.md#get_campaign_data_all_using_get) | **GET** /campaign_data | List all campaign data
-*AtomApi::MarketingApi* | [**get_campaign_data_using_get**](docs/MarketingApi.md#get_campaign_data_using_get) | **GET** /campaign_data/{campaign_data_id} | Retrieve a campaign data record
-*AtomApi::MarketingApi* | [**get_campaign_plan_all_using_get**](docs/MarketingApi.md#get_campaign_plan_all_using_get) | **GET** /campaign_plan | List all campaign plans
-*AtomApi::MarketingApi* | [**get_campaign_plan_using_get**](docs/MarketingApi.md#get_campaign_plan_using_get) | **GET** /campaign_plan/{campaign_plan_id} | Retrieve a campaign plan
-*AtomApi::MarketingApi* | [**get_campaign_using_get**](docs/MarketingApi.md#get_campaign_using_get) | **GET** /campaign/{campaign_id} | Retrieve a campaign
-*AtomApi::MarketingApi* | [**get_client_campaign_all_using_get**](docs/MarketingApi.md#get_client_campaign_all_using_get) | **GET** /client_campaign | List all clients/ips under a campaign
-*AtomApi::MarketingApi* | [**get_client_campaign_using_get**](docs/MarketingApi.md#get_client_campaign_using_get) | **GET** /client_campaign/{client_campaign_id} | Retrieve a clients/ips pair under a campaign
-*AtomApi::MarketingApi* | [**update_campaign_data_using_put**](docs/MarketingApi.md#update_campaign_data_using_put) | **PUT** /campaign_data/{campaign_data_id} | Update a campaign data record
-*AtomApi::MarketingApi* | [**update_campaign_plan_using_put**](docs/MarketingApi.md#update_campaign_plan_using_put) | **PUT** /campaign_plan/{campaign_plan_id} | Update a campaign plan
-*AtomApi::MarketingApi* | [**update_campaign_using_put**](docs/MarketingApi.md#update_campaign_using_put) | **PUT** /campaign/{campaign_id} | Update a campaign
-*AtomApi::MarketingApi* | [**update_client_campaign_using_put**](docs/MarketingApi.md#update_client_campaign_using_put) | **PUT** /client_campaign/{client_campaign_id} | Update a clients/ips pair under a campaign
-*AtomApi::ModelApi* | [**create_model_asset_size_using_post**](docs/ModelApi.md#create_model_asset_size_using_post) | **POST** /model_asset_size | Create a model asset size
-*AtomApi::ModelApi* | [**create_model_change_using_post**](docs/ModelApi.md#create_model_change_using_post) | **POST** /model/{model_id}/model_change | Change a model composition
-*AtomApi::ModelApi* | [**create_model_comment_using_post**](docs/ModelApi.md#create_model_comment_using_post) | **POST** /model_comment | Create a model commentary
-*AtomApi::ModelApi* | [**create_model_holding_using_post**](docs/ModelApi.md#create_model_holding_using_post) | **POST** /model_holding | Create a model holding
-*AtomApi::ModelApi* | [**create_model_transaction_using_post**](docs/ModelApi.md#create_model_transaction_using_post) | **POST** /model_transaction | Create a model transaction
-*AtomApi::ModelApi* | [**create_model_using_post**](docs/ModelApi.md#create_model_using_post) | **POST** /model | Create a model
-*AtomApi::ModelApi* | [**delete_model_asset_size_using_delete**](docs/ModelApi.md#delete_model_asset_size_using_delete) | **DELETE** /model_asset_size/{model_asset_size_id} | Delete a model asset size
-*AtomApi::ModelApi* | [**delete_model_comment_using_delete**](docs/ModelApi.md#delete_model_comment_using_delete) | **DELETE** /model_comment/{model_comment_id} | Delete a model commentary
-*AtomApi::ModelApi* | [**delete_model_holding_using_delete**](docs/ModelApi.md#delete_model_holding_using_delete) | **DELETE** /model_holding/{model_holding_id} | Delete a model holding
-*AtomApi::ModelApi* | [**delete_model_transaction_using_delete**](docs/ModelApi.md#delete_model_transaction_using_delete) | **DELETE** /model_transaction/{model_transaction_id} | Delete a model transaction
-*AtomApi::ModelApi* | [**delete_model_using_delete**](docs/ModelApi.md#delete_model_using_delete) | **DELETE** /model/{model_id} | Delete a model
-*AtomApi::ModelApi* | [**get_model_all_using_get**](docs/ModelApi.md#get_model_all_using_get) | **GET** /model | List all models
-*AtomApi::ModelApi* | [**get_model_asset_size_all_using_get**](docs/ModelApi.md#get_model_asset_size_all_using_get) | **GET** /model_asset_size | List all model asset sizes
-*AtomApi::ModelApi* | [**get_model_asset_size_using_get**](docs/ModelApi.md#get_model_asset_size_using_get) | **GET** /model_asset_size/{model_asset_size_id} | Retrieve a model asset size
-*AtomApi::ModelApi* | [**get_model_comment_all_using_get**](docs/ModelApi.md#get_model_comment_all_using_get) | **GET** /model_comment | List all model commentary
-*AtomApi::ModelApi* | [**get_model_comment_using_get**](docs/ModelApi.md#get_model_comment_using_get) | **GET** /model_comment/{model_comment_id} | Retrieve a model commentary
-*AtomApi::ModelApi* | [**get_model_holding_all_using_get**](docs/ModelApi.md#get_model_holding_all_using_get) | **GET** /model_holding | List all model holdings
-*AtomApi::ModelApi* | [**get_model_holding_using_get**](docs/ModelApi.md#get_model_holding_using_get) | **GET** /model_holding/{model_holding_id} | Retrieve a model holding
-*AtomApi::ModelApi* | [**get_model_transaction_all_using_get**](docs/ModelApi.md#get_model_transaction_all_using_get) | **GET** /model_transaction | List all model transactions
-*AtomApi::ModelApi* | [**get_model_transaction_using_get**](docs/ModelApi.md#get_model_transaction_using_get) | **GET** /model_transaction/{model_transaction_id} | Retrieve a model transaction
-*AtomApi::ModelApi* | [**get_model_using_get**](docs/ModelApi.md#get_model_using_get) | **GET** /model/{model_id} | Retrieve a model
-*AtomApi::ModelApi* | [**update_model_asset_size_using_put**](docs/ModelApi.md#update_model_asset_size_using_put) | **PUT** /model_asset_size/{model_asset_size_id} | Update a model asset size
-*AtomApi::ModelApi* | [**update_model_comment_using_put**](docs/ModelApi.md#update_model_comment_using_put) | **PUT** /model_comment/{model_comment_id} | Update a model commentary
-*AtomApi::ModelApi* | [**update_model_holding_using_put**](docs/ModelApi.md#update_model_holding_using_put) | **PUT** /model_holding/{model_holding_id} | Update a model holding
-*AtomApi::ModelApi* | [**update_model_transaction_using_put**](docs/ModelApi.md#update_model_transaction_using_put) | **PUT** /model_transaction/{model_transaction_id} | Update a model transaction
-*AtomApi::ModelApi* | [**update_model_using_put**](docs/ModelApi.md#update_model_using_put) | **PUT** /model/{model_id} | Update a model
-*AtomApi::NotificationApi* | [**create_notification_client_using_post**](docs/NotificationApi.md#create_notification_client_using_post) | **POST** /notification_client | Create a Notification Client
-*AtomApi::NotificationApi* | [**create_notification_setting_using_post**](docs/NotificationApi.md#create_notification_setting_using_post) | **POST** /notification_setting | Create a Notification Setting
-*AtomApi::NotificationApi* | [**create_notification_using_post**](docs/NotificationApi.md#create_notification_using_post) | **POST** /notification | Create a Notification
-*AtomApi::NotificationApi* | [**delete_notification_client_using_delete**](docs/NotificationApi.md#delete_notification_client_using_delete) | **DELETE** /notification_client/{notification_client_id} | Delete a Notification Client
-*AtomApi::NotificationApi* | [**delete_notification_setting_using_delete**](docs/NotificationApi.md#delete_notification_setting_using_delete) | **DELETE** /notification_setting/{notification_setting_id} | Delete a Notification Setting
-*AtomApi::NotificationApi* | [**delete_notification_using_delete**](docs/NotificationApi.md#delete_notification_using_delete) | **DELETE** /notification/{notification_id} | Delete a Notification
-*AtomApi::NotificationApi* | [**get_notification_all_using_get**](docs/NotificationApi.md#get_notification_all_using_get) | **GET** /notification | Get All Notification
-*AtomApi::NotificationApi* | [**get_notification_client_all_using_get**](docs/NotificationApi.md#get_notification_client_all_using_get) | **GET** /notification_client | List all Notification Client
-*AtomApi::NotificationApi* | [**get_notification_client_using_get**](docs/NotificationApi.md#get_notification_client_using_get) | **GET** /notification_client/{notification_client_id} | Retrieve a Notification Client
-*AtomApi::NotificationApi* | [**get_notification_setting_all_using_get**](docs/NotificationApi.md#get_notification_setting_all_using_get) | **GET** /notification_setting | List all Notification Setting
-*AtomApi::NotificationApi* | [**get_notification_setting_using_get**](docs/NotificationApi.md#get_notification_setting_using_get) | **GET** /notification_setting/{notification_setting_id} | Retrieve a Notification Setting
-*AtomApi::NotificationApi* | [**get_notification_using_get**](docs/NotificationApi.md#get_notification_using_get) | **GET** /notification/{notification_id} | Get a Notification
-*AtomApi::NotificationApi* | [**update_notification_client_using_put**](docs/NotificationApi.md#update_notification_client_using_put) | **PUT** /notification_client/{notification_client_id} | Update a Notification Client
-*AtomApi::NotificationApi* | [**update_notification_setting_using_put**](docs/NotificationApi.md#update_notification_setting_using_put) | **PUT** /notification_setting/{notification_setting_id} | Update a Notification Setting
-*AtomApi::NotificationApi* | [**update_notification_using_put**](docs/NotificationApi.md#update_notification_using_put) | **PUT** /notification/{notification_id} | Update a Notification
-*AtomApi::OrderApi* | [**create_account_order_bulk_using_post**](docs/OrderApi.md#create_account_order_bulk_using_post) | **POST** /account/{account_id}/order_bulk | Bulk orders for an account
-*AtomApi::OrderApi* | [**create_account_order_buy_only_using_post**](docs/OrderApi.md#create_account_order_buy_only_using_post) | **POST** /account/{account_id}/order_buy_only | Create buy-only account rebalance orders
-*AtomApi::OrderApi* | [**create_account_order_rebalance_using_post**](docs/OrderApi.md#create_account_order_rebalance_using_post) | **POST** /account/{account_id}/order_rebalance | Create account rebalance orders
-*AtomApi::OrderApi* | [**create_account_order_reconciliation**](docs/OrderApi.md#create_account_order_reconciliation) | **POST** /account/{account_id}/order_reconciliation | Create account reconciliation order
-*AtomApi::OrderApi* | [**create_account_order_sell_all_using_post**](docs/OrderApi.md#create_account_order_sell_all_using_post) | **POST** /account/{account_id}/order_sell_all | Sell all account order
-*AtomApi::OrderApi* | [**create_account_order_sell_only_using_post**](docs/OrderApi.md#create_account_order_sell_only_using_post) | **POST** /account/{account_id}/order_sell_only | Create sell-only account rebalance orders
-*AtomApi::OrderApi* | [**create_client_order_bulk_using_post**](docs/OrderApi.md#create_client_order_bulk_using_post) | **POST** /client/{client_id}/order_bulk | Bulk orders for a client
-*AtomApi::OrderApi* | [**create_order_bulk_using_post**](docs/OrderApi.md#create_order_bulk_using_post) | **POST** /order_bulk | Bulk orders for your firm
-*AtomApi::OrderApi* | [**create_order_status_using_post**](docs/OrderApi.md#create_order_status_using_post) | **POST** /order_status | Create an order status
-*AtomApi::OrderApi* | [**create_order_track_using_post**](docs/OrderApi.md#create_order_track_using_post) | **POST** /order_track | Create an order tracking record
-*AtomApi::OrderApi* | [**create_portfolio_order_buy_only_using_post**](docs/OrderApi.md#create_portfolio_order_buy_only_using_post) | **POST** /portfolio/{portfolio_id}/order_buy_only | Create buy-only portfolio rebalance orders
-*AtomApi::OrderApi* | [**create_portfolio_order_rebalance_using_post**](docs/OrderApi.md#create_portfolio_order_rebalance_using_post) | **POST** /portfolio/{portfolio_id}/order_rebalance | Create portfolio rebalance orders
-*AtomApi::OrderApi* | [**create_portfolio_order_reconciliation**](docs/OrderApi.md#create_portfolio_order_reconciliation) | **POST** /portfolio/{portfolio_id}/order_reconciliation | Create portfolio reconciliation order
-*AtomApi::OrderApi* | [**create_portfolio_order_sell_all_using_post**](docs/OrderApi.md#create_portfolio_order_sell_all_using_post) | **POST** /portfolio/{portfolio_id}/order_sell_all | Sell all portfolio order
-*AtomApi::OrderApi* | [**create_portfolio_order_sell_only_using_post**](docs/OrderApi.md#create_portfolio_order_sell_only_using_post) | **POST** /portfolio/{portfolio_id}/order_sell_only | Create sell-only portfolio rebalance orders
-*AtomApi::OrderApi* | [**delete_order_status_using_delete**](docs/OrderApi.md#delete_order_status_using_delete) | **DELETE** /order_status/{order_status_id} | Delete an order status
-*AtomApi::OrderApi* | [**delete_order_track_using_delete**](docs/OrderApi.md#delete_order_track_using_delete) | **DELETE** /order_track/{order_track_id} | Delete an order tracking record
-*AtomApi::OrderApi* | [**delete_order_using_delete**](docs/OrderApi.md#delete_order_using_delete) | **DELETE** /order/{order_id} | Delete an order record
-*AtomApi::OrderApi* | [**get_order_all_using_get**](docs/OrderApi.md#get_order_all_using_get) | **POST** /order | Create an order record
-*AtomApi::OrderApi* | [**get_order_all_using_get1**](docs/OrderApi.md#get_order_all_using_get1) | **GET** /order | List all order records
-*AtomApi::OrderApi* | [**get_order_bulk_all_using_get**](docs/OrderApi.md#get_order_bulk_all_using_get) | **GET** /order_bulk | List all bulk orders
-*AtomApi::OrderApi* | [**get_order_status_all_using_get**](docs/OrderApi.md#get_order_status_all_using_get) | **GET** /order_status | List all order statuses
-*AtomApi::OrderApi* | [**get_order_status_using_get**](docs/OrderApi.md#get_order_status_using_get) | **GET** /order_status/{order_status_id} | Retrieve an order status
-*AtomApi::OrderApi* | [**get_order_track_all_using_get**](docs/OrderApi.md#get_order_track_all_using_get) | **GET** /order_track | List all order tracking records
-*AtomApi::OrderApi* | [**get_order_track_using_get**](docs/OrderApi.md#get_order_track_using_get) | **GET** /order_track/{order_track_id} | Retrieve an order tracking record
-*AtomApi::OrderApi* | [**get_order_using_get**](docs/OrderApi.md#get_order_using_get) | **GET** /order/{order_id} | Retrieve an order record
-*AtomApi::OrderApi* | [**update_order_status_using_put**](docs/OrderApi.md#update_order_status_using_put) | **PUT** /order_status/{order_status_id} | Update an order status
-*AtomApi::OrderApi* | [**update_order_track_using_put**](docs/OrderApi.md#update_order_track_using_put) | **PUT** /order_track/{order_track_id} | Update an order tracking record
-*AtomApi::OrderApi* | [**update_order_using_put**](docs/OrderApi.md#update_order_using_put) | **PUT** /order/{order_id} | Update an order record
-*AtomApi::OverflowApi* | [**create_overflow_settings_using_post**](docs/OverflowApi.md#create_overflow_settings_using_post) | **POST** /overflow_setting | Create a Overflow Settings request
-*AtomApi::OverflowApi* | [**create_overflow_using_post**](docs/OverflowApi.md#create_overflow_using_post) | **POST** /overflow | Create a Overflow request
-*AtomApi::OverflowApi* | [**delete_overflow_settings_using_delete**](docs/OverflowApi.md#delete_overflow_settings_using_delete) | **DELETE** /overflow_setting/{overflow_settings_id} | Delete a overflow settings
-*AtomApi::OverflowApi* | [**get_overflow_all_using_get**](docs/OverflowApi.md#get_overflow_all_using_get) | **GET** /overflow | List all overflow objects
-*AtomApi::OverflowApi* | [**get_overflow_settings_all_using_get**](docs/OverflowApi.md#get_overflow_settings_all_using_get) | **GET** /overflow_setting | List all overflow settings
-*AtomApi::OverflowApi* | [**get_overflow_settings_using_get**](docs/OverflowApi.md#get_overflow_settings_using_get) | **GET** /overflow_setting/{overflow_settings_id} | Retrieve a Overflow Setting
-*AtomApi::OverflowApi* | [**get_overflow_using_get**](docs/OverflowApi.md#get_overflow_using_get) | **GET** /overflow/{overflow_id} | Retrieve a Overflow object
-*AtomApi::OverflowApi* | [**update_overflow_settings_using_put**](docs/OverflowApi.md#update_overflow_settings_using_put) | **PUT** /overflow_setting/{overflow_settings_id} | Update a overflow settings
-*AtomApi::PerformanceApi* | [**get_account_performance_using_get**](docs/PerformanceApi.md#get_account_performance_using_get) | **GET** /account/{account_id}/performance | Account Performance
-*AtomApi::PerformanceApi* | [**get_allocation_performance_using_get**](docs/PerformanceApi.md#get_allocation_performance_using_get) | **GET** /allocation/{allocation_id}/performance | Allocation Performance
-*AtomApi::PerformanceApi* | [**get_benchmark_performance_using_get**](docs/PerformanceApi.md#get_benchmark_performance_using_get) | **GET** /benchmark/{benchmark_id}/performance | Benchmark Performance
-*AtomApi::PerformanceApi* | [**get_client_performance_using_get**](docs/PerformanceApi.md#get_client_performance_using_get) | **GET** /client/{client_id}/performance | Client Performance
-*AtomApi::PerformanceApi* | [**get_goal_performance_using_get**](docs/PerformanceApi.md#get_goal_performance_using_get) | **GET** /goal/{goal_id}/performance | Goal Performance
-*AtomApi::PerformanceApi* | [**get_model_performance_using_get**](docs/PerformanceApi.md#get_model_performance_using_get) | **GET** /model/{model_id}/performance | Model Performance
-*AtomApi::PerformanceApi* | [**get_portfolio_performance_using_get**](docs/PerformanceApi.md#get_portfolio_performance_using_get) | **GET** /portfolio/{portfolio_id}/performance | Portfolio Performance
-*AtomApi::PerformanceApi* | [**get_security_performance_using_get**](docs/PerformanceApi.md#get_security_performance_using_get) | **GET** /security/{security_id}/performance | Security Performance
-*AtomApi::PortfolioApi* | [**create_portfolio_asset_size_using_post**](docs/PortfolioApi.md#create_portfolio_asset_size_using_post) | **POST** /portfolio_asset_size | Create a portfolio asset size
-*AtomApi::PortfolioApi* | [**create_portfolio_comment_using_post**](docs/PortfolioApi.md#create_portfolio_comment_using_post) | **POST** /portfolio_comment | Create a portfolio commentary
-*AtomApi::PortfolioApi* | [**create_portfolio_goal_using_post**](docs/PortfolioApi.md#create_portfolio_goal_using_post) | **POST** /portfolio_goal | Create an portfolio goal
-*AtomApi::PortfolioApi* | [**create_portfolio_holding_using_post**](docs/PortfolioApi.md#create_portfolio_holding_using_post) | **POST** /portfolio_holding | Create a portfolio holding
-*AtomApi::PortfolioApi* | [**create_portfolio_transaction_using_post**](docs/PortfolioApi.md#create_portfolio_transaction_using_post) | **POST** /portfolio_transaction | Create a portfolio transaction
-*AtomApi::PortfolioApi* | [**create_portfolio_using_post**](docs/PortfolioApi.md#create_portfolio_using_post) | **POST** /portfolio | Create a portfolio
-*AtomApi::PortfolioApi* | [**delete_portfolio_asset_size_using_delete**](docs/PortfolioApi.md#delete_portfolio_asset_size_using_delete) | **DELETE** /portfolio_asset_size/{portfolio_asset_size_id} | Delete a portfolio asset size
-*AtomApi::PortfolioApi* | [**delete_portfolio_comment_using_delete**](docs/PortfolioApi.md#delete_portfolio_comment_using_delete) | **DELETE** /portfolio_comment/{portfolio_comment_id} | Delete a portfolio commentary
-*AtomApi::PortfolioApi* | [**delete_portfolio_goal_using_delete**](docs/PortfolioApi.md#delete_portfolio_goal_using_delete) | **DELETE** /portfolio_goal/{portfolio_goal_id} | Delete an portfolio goal
-*AtomApi::PortfolioApi* | [**delete_portfolio_holding_using_delete**](docs/PortfolioApi.md#delete_portfolio_holding_using_delete) | **DELETE** /portfolio_holding/{portfolio_holding_id} | Delete a portfolio holding
-*AtomApi::PortfolioApi* | [**delete_portfolio_transaction_using_delete**](docs/PortfolioApi.md#delete_portfolio_transaction_using_delete) | **DELETE** /portfolio_transaction/{portfolio_transaction_id} | Delete a portfolio transaction
-*AtomApi::PortfolioApi* | [**delete_portfolio_using_delete**](docs/PortfolioApi.md#delete_portfolio_using_delete) | **DELETE** /portfolio/{portfolio_id} | Delete a portfolio
-*AtomApi::PortfolioApi* | [**get_portfolio_aggregated_data_using_get**](docs/PortfolioApi.md#get_portfolio_aggregated_data_using_get) | **GET** /portfolio/{portfolio_id}/aggregate_data | Retrieve an portfolio aggregate data
-*AtomApi::PortfolioApi* | [**get_portfolio_all_using_get**](docs/PortfolioApi.md#get_portfolio_all_using_get) | **GET** /portfolio | List all portfolios
-*AtomApi::PortfolioApi* | [**get_portfolio_asset_size_all_using_get**](docs/PortfolioApi.md#get_portfolio_asset_size_all_using_get) | **GET** /portfolio_asset_size | Retrieve a portfolio asset size
-*AtomApi::PortfolioApi* | [**get_portfolio_asset_size_using_get**](docs/PortfolioApi.md#get_portfolio_asset_size_using_get) | **GET** /portfolio_asset_size/{portfolio_asset_size_id} | Retrieve a portfolio asset size
-*AtomApi::PortfolioApi* | [**get_portfolio_comment_all_using_get**](docs/PortfolioApi.md#get_portfolio_comment_all_using_get) | **GET** /portfolio_comment | List all portfolio commentary
-*AtomApi::PortfolioApi* | [**get_portfolio_comment_using_get**](docs/PortfolioApi.md#get_portfolio_comment_using_get) | **GET** /portfolio_comment/{portfolio_comment_id} | Retrieve a portfolio commentary
-*AtomApi::PortfolioApi* | [**get_portfolio_goal_all_using_get**](docs/PortfolioApi.md#get_portfolio_goal_all_using_get) | **GET** /portfolio_goal | List all portfolio goals
-*AtomApi::PortfolioApi* | [**get_portfolio_goal_using_get**](docs/PortfolioApi.md#get_portfolio_goal_using_get) | **GET** /portfolio_goal/{portfolio_goal_id} | Retrieve an portfolio goal
-*AtomApi::PortfolioApi* | [**get_portfolio_holding_all_using_get**](docs/PortfolioApi.md#get_portfolio_holding_all_using_get) | **GET** /portfolio_holding | List all portfolio holdings
-*AtomApi::PortfolioApi* | [**get_portfolio_holding_using_get**](docs/PortfolioApi.md#get_portfolio_holding_using_get) | **GET** /portfolio_holding/{portfolio_holding_id} | Retrieve a portfolio holding
-*AtomApi::PortfolioApi* | [**get_portfolio_transaction_all_using_get**](docs/PortfolioApi.md#get_portfolio_transaction_all_using_get) | **GET** /portfolio_transaction | List all portfolio transactions
-*AtomApi::PortfolioApi* | [**get_portfolio_transaction_using_get**](docs/PortfolioApi.md#get_portfolio_transaction_using_get) | **GET** /portfolio_transaction/{portfolio_transaction_id} | Retrieve a portfolio transaction
-*AtomApi::PortfolioApi* | [**get_portfolio_using_get**](docs/PortfolioApi.md#get_portfolio_using_get) | **GET** /portfolio/{portfolio_id} | Retrieve a portfolio
-*AtomApi::PortfolioApi* | [**update_portfolio_asset_size_using_put**](docs/PortfolioApi.md#update_portfolio_asset_size_using_put) | **PUT** /portfolio_asset_size/{portfolio_asset_size_id} | Update a portfolio asset size
-*AtomApi::PortfolioApi* | [**update_portfolio_comment_using_put**](docs/PortfolioApi.md#update_portfolio_comment_using_put) | **PUT** /portfolio_comment/{portfolio_comment_id} | Update a portfolio comment
-*AtomApi::PortfolioApi* | [**update_portfolio_goal_using_put**](docs/PortfolioApi.md#update_portfolio_goal_using_put) | **PUT** /portfolio_goal/{portfolio_goal_id} | Update an portfolio goal
-*AtomApi::PortfolioApi* | [**update_portfolio_holding_using_put**](docs/PortfolioApi.md#update_portfolio_holding_using_put) | **PUT** /portfolio_holding/{portfolio_holding_id} | Update a portfolio holding
-*AtomApi::PortfolioApi* | [**update_portfolio_transaction_using_put**](docs/PortfolioApi.md#update_portfolio_transaction_using_put) | **PUT** /portfolio_transaction/{portfolio_transaction_id} | Update a portfolio transaction
-*AtomApi::PortfolioApi* | [**update_portfolio_using_put**](docs/PortfolioApi.md#update_portfolio_using_put) | **PUT** /portfolio/{portfolio_id} | Update a portfolio
-*AtomApi::QuestionnaireApi* | [**create_answer_using_post**](docs/QuestionnaireApi.md#create_answer_using_post) | **POST** /answer | Create an answer
-*AtomApi::QuestionnaireApi* | [**create_client_response_using_post**](docs/QuestionnaireApi.md#create_client_response_using_post) | **POST** /client_response | Create a client response
-*AtomApi::QuestionnaireApi* | [**create_question_using_post**](docs/QuestionnaireApi.md#create_question_using_post) | **POST** /question | Create a question
-*AtomApi::QuestionnaireApi* | [**create_questionnaire_using_post**](docs/QuestionnaireApi.md#create_questionnaire_using_post) | **POST** /questionnaire | Create a questionnaire
-*AtomApi::QuestionnaireApi* | [**delete_answer_using_delete**](docs/QuestionnaireApi.md#delete_answer_using_delete) | **DELETE** /answer/{answer_id} | Delete an answer
-*AtomApi::QuestionnaireApi* | [**delete_client_response_using_delete**](docs/QuestionnaireApi.md#delete_client_response_using_delete) | **DELETE** /client_response/{client_response_id} | Delete a client response
-*AtomApi::QuestionnaireApi* | [**delete_question_using_delete**](docs/QuestionnaireApi.md#delete_question_using_delete) | **DELETE** /question/{question_id} | Delete a question
-*AtomApi::QuestionnaireApi* | [**delete_questionnaire_using_delete**](docs/QuestionnaireApi.md#delete_questionnaire_using_delete) | **DELETE** /questionnaire/{questionnaire_id} | Delete a questionnaire
-*AtomApi::QuestionnaireApi* | [**get_answer_all_using_get**](docs/QuestionnaireApi.md#get_answer_all_using_get) | **GET** /answer | List all Answers
-*AtomApi::QuestionnaireApi* | [**get_answer_using_get**](docs/QuestionnaireApi.md#get_answer_using_get) | **GET** /answer/{answer_id} | Retrieve an answer
-*AtomApi::QuestionnaireApi* | [**get_client_response_all_using_get**](docs/QuestionnaireApi.md#get_client_response_all_using_get) | **GET** /client_response | List all client responses
-*AtomApi::QuestionnaireApi* | [**get_client_response_using_get**](docs/QuestionnaireApi.md#get_client_response_using_get) | **GET** /client_response/{client_response_id} | Retrieve a client response
-*AtomApi::QuestionnaireApi* | [**get_question_all_using_get**](docs/QuestionnaireApi.md#get_question_all_using_get) | **GET** /question | List all Questions
-*AtomApi::QuestionnaireApi* | [**get_question_using_get**](docs/QuestionnaireApi.md#get_question_using_get) | **GET** /question/{question_id} | Retrieve a question
-*AtomApi::QuestionnaireApi* | [**get_questionnaire_all_using_get**](docs/QuestionnaireApi.md#get_questionnaire_all_using_get) | **GET** /questionnaire | List all questionnaires
-*AtomApi::QuestionnaireApi* | [**get_questionnaire_using_get**](docs/QuestionnaireApi.md#get_questionnaire_using_get) | **GET** /questionnaire/{questionnaire_id} | Retrieve a questionnaire
-*AtomApi::QuestionnaireApi* | [**update_answer_using_put**](docs/QuestionnaireApi.md#update_answer_using_put) | **PUT** /answer/{answer_id} | Update an answer
-*AtomApi::QuestionnaireApi* | [**update_client_response_using_put**](docs/QuestionnaireApi.md#update_client_response_using_put) | **PUT** /client_response/{client_response_id} | Update a client response
-*AtomApi::QuestionnaireApi* | [**update_question_using_put**](docs/QuestionnaireApi.md#update_question_using_put) | **PUT** /question/{question_id} | Update a question.
-*AtomApi::QuestionnaireApi* | [**update_questionnaire_using_put**](docs/QuestionnaireApi.md#update_questionnaire_using_put) | **PUT** /questionnaire/{questionnaire_id} | Update a questionnaire
-*AtomApi::ResourceApi* | [**get_all_country_using_get**](docs/ResourceApi.md#get_all_country_using_get) | **GET** /resource/country | Get All Countries
-*AtomApi::ResourceApi* | [**get_all_currency_using_get**](docs/ResourceApi.md#get_all_currency_using_get) | **GET** /resource/currency | Get All Currencies
-*AtomApi::ResourceApi* | [**get_all_states_using_get**](docs/ResourceApi.md#get_all_states_using_get) | **GET** /resource/state | List all state resource
-*AtomApi::ResourceApi* | [**get_all_statistics_using_get**](docs/ResourceApi.md#get_all_statistics_using_get) | **GET** /resource/statistic | List all statistic resource
-*AtomApi::RiskProfileApi* | [**create_risk_profile_using_post**](docs/RiskProfileApi.md#create_risk_profile_using_post) | **POST** /risk_profile | Create a Risk Profile
-*AtomApi::RiskProfileApi* | [**delete_risk_profile_using_delete**](docs/RiskProfileApi.md#delete_risk_profile_using_delete) | **DELETE** /risk_profile/{risk_profile_id} | Delete a Risk Profile
-*AtomApi::RiskProfileApi* | [**get_risk_profile_all_using_get**](docs/RiskProfileApi.md#get_risk_profile_all_using_get) | **GET** /risk_profile | Get All Risk Profile
-*AtomApi::RiskProfileApi* | [**get_risk_profile_using_get**](docs/RiskProfileApi.md#get_risk_profile_using_get) | **GET** /risk_profile/{risk_profile_id} | Get a Risk Profile
-*AtomApi::RiskProfileApi* | [**update_risk_profile_using_put**](docs/RiskProfileApi.md#update_risk_profile_using_put) | **PUT** /risk_profile/{risk_profile_id} | Update a Risk Profile
-*AtomApi::RoundupApi* | [**create_roundup_settings_using_post**](docs/RoundupApi.md#create_roundup_settings_using_post) | **POST** /roundup_setting | Create a Roundup Settings
-*AtomApi::RoundupApi* | [**create_roundup_using_post**](docs/RoundupApi.md#create_roundup_using_post) | **POST** /roundup | Create a roundup
-*AtomApi::RoundupApi* | [**delete_roundup_settings_using_delete**](docs/RoundupApi.md#delete_roundup_settings_using_delete) | **DELETE** /roundup_setting/{roundup_setting_id} | Delete a roundup settings
-*AtomApi::RoundupApi* | [**get_roundup_all_using_get**](docs/RoundupApi.md#get_roundup_all_using_get) | **GET** /roundup | List all roundups
-*AtomApi::RoundupApi* | [**get_roundup_settings_all_using_get**](docs/RoundupApi.md#get_roundup_settings_all_using_get) | **GET** /roundup_setting | List all roundup settings
-*AtomApi::RoundupApi* | [**get_roundup_settings_using_get**](docs/RoundupApi.md#get_roundup_settings_using_get) | **GET** /roundup_setting/{roundup_setting_id} | Retrieve a Roundup Setting
-*AtomApi::RoundupApi* | [**get_roundup_using_get**](docs/RoundupApi.md#get_roundup_using_get) | **GET** /roundup/{roundup_id} | Retrieve a Roundup
-*AtomApi::RoundupApi* | [**update_roundup_settings_using_put**](docs/RoundupApi.md#update_roundup_settings_using_put) | **PUT** /roundup_setting/{roundup_setting_id} | Update a roundup settings
-*AtomApi::ScoreApi* | [**create_score_using_post**](docs/ScoreApi.md#create_score_using_post) | **POST** /score | Create a score
-*AtomApi::ScoreApi* | [**create_score_using_post1**](docs/ScoreApi.md#create_score_using_post1) | **GET** /score/{score_id} | Retrieve a score
-*AtomApi::ScoreApi* | [**delete_score_using_delete**](docs/ScoreApi.md#delete_score_using_delete) | **DELETE** /score/{score_id} | Delete a score
-*AtomApi::ScoreApi* | [**get_score_all_using_get**](docs/ScoreApi.md#get_score_all_using_get) | **GET** /score | List all scores
-*AtomApi::ScoreApi* | [**update_score_using_put**](docs/ScoreApi.md#update_score_using_put) | **PUT** /score/{score_id} | Update a score
-*AtomApi::SecuritiesApi* | [**create_security_exclusion_using_post**](docs/SecuritiesApi.md#create_security_exclusion_using_post) | **POST** /security_exclusion | Create a security exclusion
-*AtomApi::SecuritiesApi* | [**create_security_price_using_post**](docs/SecuritiesApi.md#create_security_price_using_post) | **POST** /security_price | Create a security price
-*AtomApi::SecuritiesApi* | [**create_security_using_post**](docs/SecuritiesApi.md#create_security_using_post) | **POST** /security | Create a security
-*AtomApi::SecuritiesApi* | [**delete_security_exclusion_using_delete**](docs/SecuritiesApi.md#delete_security_exclusion_using_delete) | **DELETE** /security_exclusion/{security_exclusion_id} | Delete a security exclusion
-*AtomApi::SecuritiesApi* | [**delete_security_price_using_delete**](docs/SecuritiesApi.md#delete_security_price_using_delete) | **DELETE** /security_price/{security_price_id} | Delete a security price
-*AtomApi::SecuritiesApi* | [**delete_security_using_delete**](docs/SecuritiesApi.md#delete_security_using_delete) | **DELETE** /security/{security_id} | Delete a security
-*AtomApi::SecuritiesApi* | [**get_security_all_using_get**](docs/SecuritiesApi.md#get_security_all_using_get) | **GET** /security | List all securities
-*AtomApi::SecuritiesApi* | [**get_security_exclusion_all_using_get**](docs/SecuritiesApi.md#get_security_exclusion_all_using_get) | **GET** /security_exclusion | List all security exclusions
-*AtomApi::SecuritiesApi* | [**get_security_exclusion_using_get**](docs/SecuritiesApi.md#get_security_exclusion_using_get) | **GET** /security_exclusion/{security_exclusion_id} | Retrieve a security exclusion
-*AtomApi::SecuritiesApi* | [**get_security_price_all_using_get**](docs/SecuritiesApi.md#get_security_price_all_using_get) | **GET** /security_price | List all security prices
-*AtomApi::SecuritiesApi* | [**get_security_price_using_get**](docs/SecuritiesApi.md#get_security_price_using_get) | **GET** /security_price/{security_price_id} | Retrieve a security price
-*AtomApi::SecuritiesApi* | [**get_security_using_get**](docs/SecuritiesApi.md#get_security_using_get) | **GET** /security/{security_id} | Retrieve a security
-*AtomApi::SecuritiesApi* | [**update_security_exclusion_using_put**](docs/SecuritiesApi.md#update_security_exclusion_using_put) | **PUT** /security_exclusion/{security_exclusion_id} | Update a security exclusion
-*AtomApi::SecuritiesApi* | [**update_security_price_using_put**](docs/SecuritiesApi.md#update_security_price_using_put) | **PUT** /security_price/{security_price_id} | Update a security price
-*AtomApi::SecuritiesApi* | [**update_security_using_put**](docs/SecuritiesApi.md#update_security_using_put) | **PUT** /security/{security_id} | Update a security
-*AtomApi::SupportApi* | [**create_chat_using_post**](docs/SupportApi.md#create_chat_using_post) | **POST** /chat | Create a Chat
-*AtomApi::SupportApi* | [**create_consultation_using_post**](docs/SupportApi.md#create_consultation_using_post) | **POST** /consultation | Create a CIO Consultation
-*AtomApi::SupportApi* | [**create_sale_using_post**](docs/SupportApi.md#create_sale_using_post) | **POST** /sales | Create a sales inquiry
-*AtomApi::SupportApi* | [**create_support_ticket_comment_using_post**](docs/SupportApi.md#create_support_ticket_comment_using_post) | **POST** /support_ticket_comment | Create a support ticket comment
-*AtomApi::SupportApi* | [**create_support_ticket_using_post**](docs/SupportApi.md#create_support_ticket_using_post) | **POST** /support_ticket | Create a support ticket
-*AtomApi::SupportApi* | [**delete_chat_using_delete**](docs/SupportApi.md#delete_chat_using_delete) | **DELETE** /chat/{chat_id} | Delete a Chat
-*AtomApi::SupportApi* | [**delete_consultation_using_delete**](docs/SupportApi.md#delete_consultation_using_delete) | **DELETE** /consultation/{consultation_id} | Delete a CIO Consultation
-*AtomApi::SupportApi* | [**delete_sale_using_delete**](docs/SupportApi.md#delete_sale_using_delete) | **DELETE** /sales/{sales_id} | Delete a sales inquiry
-*AtomApi::SupportApi* | [**delete_support_ticket_comment_using_delete**](docs/SupportApi.md#delete_support_ticket_comment_using_delete) | **DELETE** /support_ticket_comment/{support_ticket_comment_id} | Delete a support ticket comment
-*AtomApi::SupportApi* | [**delete_support_ticket_using_delete**](docs/SupportApi.md#delete_support_ticket_using_delete) | **DELETE** /support_ticket/{support_ticket_id} | Delete a support ticket
-*AtomApi::SupportApi* | [**get_chat_all_using_get**](docs/SupportApi.md#get_chat_all_using_get) | **GET** /chat | List all open chats
-*AtomApi::SupportApi* | [**get_chat_using_get**](docs/SupportApi.md#get_chat_using_get) | **GET** /chat/{chat_id} | Retrieve a Chat
-*AtomApi::SupportApi* | [**get_consultation_all_using_get**](docs/SupportApi.md#get_consultation_all_using_get) | **GET** /consultation | List all CIO Consultation
-*AtomApi::SupportApi* | [**get_consultation_using_get**](docs/SupportApi.md#get_consultation_using_get) | **GET** /consultation/{consultation_id} | Retrieve a CIO Consultation
-*AtomApi::SupportApi* | [**get_sale_all_using_get**](docs/SupportApi.md#get_sale_all_using_get) | **GET** /sales | List all sales inquiries
-*AtomApi::SupportApi* | [**get_sale_using_get**](docs/SupportApi.md#get_sale_using_get) | **GET** /sales/{sales_id} | Retrieve a sales record
-*AtomApi::SupportApi* | [**get_support_ticket_all_using_get**](docs/SupportApi.md#get_support_ticket_all_using_get) | **GET** /support_ticket | List all support tickets
-*AtomApi::SupportApi* | [**get_support_ticket_comment_all_using_get**](docs/SupportApi.md#get_support_ticket_comment_all_using_get) | **GET** /support_ticket_comment | List all support ticket comments
-*AtomApi::SupportApi* | [**get_support_ticket_comment_using_get**](docs/SupportApi.md#get_support_ticket_comment_using_get) | **GET** /support_ticket_comment/{support_ticket_comment_id} | Retrieve a support ticket comment
-*AtomApi::SupportApi* | [**get_support_ticket_using_get**](docs/SupportApi.md#get_support_ticket_using_get) | **GET** /support_ticket/{support_ticket_id} | Retrieve a support ticket
-*AtomApi::SupportApi* | [**update_chat_using_put**](docs/SupportApi.md#update_chat_using_put) | **PUT** /chat/{chat_id} | Update a Chat
-*AtomApi::SupportApi* | [**update_consultation_using_put**](docs/SupportApi.md#update_consultation_using_put) | **PUT** /consultation/{consultation_id} | Update a CIO Consultation
-*AtomApi::SupportApi* | [**update_sale_using_put**](docs/SupportApi.md#update_sale_using_put) | **PUT** /sales/{sales_id} | Update a sales inquiry
-*AtomApi::SupportApi* | [**update_support_ticket_comment_using_put**](docs/SupportApi.md#update_support_ticket_comment_using_put) | **PUT** /support_ticket_comment/{support_ticket_comment_id} | Update a support ticket comment
-*AtomApi::SupportApi* | [**update_support_ticket_using_put**](docs/SupportApi.md#update_support_ticket_using_put) | **PUT** /support_ticket/{support_ticket_id} | Update a support ticket
-*AtomApi::UtilsApi* | [**create_account_status_using_post**](docs/UtilsApi.md#create_account_status_using_post) | **POST** /account_status | Create an account status
-*AtomApi::UtilsApi* | [**create_stage_using_post**](docs/UtilsApi.md#create_stage_using_post) | **POST** /stage | Create an account stage
-*AtomApi::UtilsApi* | [**create_transaction_code_using_post**](docs/UtilsApi.md#create_transaction_code_using_post) | **POST** /transaction_code | Create a transaction code
-*AtomApi::UtilsApi* | [**delete_account_status_using_delete**](docs/UtilsApi.md#delete_account_status_using_delete) | **DELETE** /account_status/{account_status_id} | Delete an account status
-*AtomApi::UtilsApi* | [**delete_stage_using_delete**](docs/UtilsApi.md#delete_stage_using_delete) | **DELETE** /stage/{stage_id} | Delete an account stage
-*AtomApi::UtilsApi* | [**delete_transaction_code_using_delete**](docs/UtilsApi.md#delete_transaction_code_using_delete) | **DELETE** /transaction_code/{transaction_code_id} | Delete a transaction code
-*AtomApi::UtilsApi* | [**get_account_status_all_using_get**](docs/UtilsApi.md#get_account_status_all_using_get) | **GET** /account_status | List all account statuses
-*AtomApi::UtilsApi* | [**get_account_status_using_get**](docs/UtilsApi.md#get_account_status_using_get) | **GET** /account_status/{account_status_id} | Retrieve an account status
-*AtomApi::UtilsApi* | [**get_stage_all_using_get**](docs/UtilsApi.md#get_stage_all_using_get) | **GET** /stage | List all account stages
-*AtomApi::UtilsApi* | [**get_stage_using_get**](docs/UtilsApi.md#get_stage_using_get) | **GET** /stage/{stage_id} | Retrieve an account stage
-*AtomApi::UtilsApi* | [**get_transaction_code_all_using_get**](docs/UtilsApi.md#get_transaction_code_all_using_get) | **GET** /transaction_code | List all transaction codes
-*AtomApi::UtilsApi* | [**get_transaction_code_using_get**](docs/UtilsApi.md#get_transaction_code_using_get) | **GET** /transaction_code/{transaction_code_id} | Retrieve a transaction code
-*AtomApi::UtilsApi* | [**update_account_status_using_put**](docs/UtilsApi.md#update_account_status_using_put) | **PUT** /account_status/{account_status_id} | Update an account status
-*AtomApi::UtilsApi* | [**update_stage_using_put**](docs/UtilsApi.md#update_stage_using_put) | **PUT** /stage/{stage_id} | Update an account stage
-*AtomApi::UtilsApi* | [**update_transaction_code_using_put**](docs/UtilsApi.md#update_transaction_code_using_put) | **PUT** /transaction_code/{transaction_code_id} | Update a transaction code
-*AtomApi::WebhookApi* | [**create_webhook_using_post**](docs/WebhookApi.md#create_webhook_using_post) | **POST** /webhook | Create a webhook
-*AtomApi::WebhookApi* | [**delete_webhook_using_delete**](docs/WebhookApi.md#delete_webhook_using_delete) | **DELETE** /webhook/{webhook_id} | Delete a webhook
-*AtomApi::WebhookApi* | [**get_webhook_all_using_get**](docs/WebhookApi.md#get_webhook_all_using_get) | **GET** /webhook | List all webhooks
-*AtomApi::WebhookApi* | [**get_webhook_using_get**](docs/WebhookApi.md#get_webhook_using_get) | **GET** /webhook/{webhook_id} | Retrieve a webhook
-*AtomApi::WebhookApi* | [**update_webhook_using_put**](docs/WebhookApi.md#update_webhook_using_put) | **PUT** /webhook/{webhook_id} | Update a webhook
+*NucleusApi::AccountApi* | [**create_account_allocation_mapping_using_post**](docs/AccountApi.md#create_account_allocation_mapping_using_post) | **POST** /account_allocation | Create an account allocation
+*NucleusApi::AccountApi* | [**create_account_type_using_post**](docs/AccountApi.md#create_account_type_using_post) | **POST** /account_type | Create an account type
+*NucleusApi::AccountApi* | [**create_account_using_post**](docs/AccountApi.md#create_account_using_post) | **POST** /account | Create an account
+*NucleusApi::AccountApi* | [**delete_account_allocation_mapping_using_delete**](docs/AccountApi.md#delete_account_allocation_mapping_using_delete) | **DELETE** /account_allocation/{account_allocation_id} | Delete an account allocation
+*NucleusApi::AccountApi* | [**delete_account_permission_using_delete**](docs/AccountApi.md#delete_account_permission_using_delete) | **DELETE** /account_permission/{account_id} | Delete an account permission
+*NucleusApi::AccountApi* | [**delete_account_type_using_delete**](docs/AccountApi.md#delete_account_type_using_delete) | **DELETE** /account_type/{account_type_id} | Delete an account type
+*NucleusApi::AccountApi* | [**delete_account_using_delete**](docs/AccountApi.md#delete_account_using_delete) | **DELETE** /account/{account_id} | Delete an account
+*NucleusApi::AccountApi* | [**get_account_all_using_get**](docs/AccountApi.md#get_account_all_using_get) | **GET** /account | List all accounts
+*NucleusApi::AccountApi* | [**get_account_allocation_mapping_all_using_get**](docs/AccountApi.md#get_account_allocation_mapping_all_using_get) | **GET** /account_allocation | List all account allocations
+*NucleusApi::AccountApi* | [**get_account_allocation_mapping_using_get**](docs/AccountApi.md#get_account_allocation_mapping_using_get) | **GET** /account_allocation/{account_allocation_id} | Retrieve an account allocation
+*NucleusApi::AccountApi* | [**get_account_asset_size_agg_all_using_get**](docs/AccountApi.md#get_account_asset_size_agg_all_using_get) | **GET** /account/{account_id}/asset_size | List all account asset sizes
+*NucleusApi::AccountApi* | [**get_account_asset_size_all_using_get**](docs/AccountApi.md#get_account_asset_size_all_using_get) | **GET** /account_asset_size | List all account asset sizes
+*NucleusApi::AccountApi* | [**get_account_overview_using_get**](docs/AccountApi.md#get_account_overview_using_get) | **GET** /account/{account_id}/account_overview | List all Account overview
+*NucleusApi::AccountApi* | [**get_account_permission_using_get**](docs/AccountApi.md#get_account_permission_using_get) | **GET** /account_permission/{account_id} | Get an account permission
+*NucleusApi::AccountApi* | [**get_account_type_all_using_get**](docs/AccountApi.md#get_account_type_all_using_get) | **GET** /account_type | List all account types
+*NucleusApi::AccountApi* | [**get_account_type_using_get**](docs/AccountApi.md#get_account_type_using_get) | **GET** /account_type/{account_type_id} | Get an Account Type
+*NucleusApi::AccountApi* | [**get_account_using_get**](docs/AccountApi.md#get_account_using_get) | **GET** /account/{account_id} | Retrieve an account
+*NucleusApi::AccountApi* | [**get_all_account_permission_using_get**](docs/AccountApi.md#get_all_account_permission_using_get) | **GET** /account_permission | List all account permission
+*NucleusApi::AccountApi* | [**get_portfolio_holding_agg_all_using_get**](docs/AccountApi.md#get_portfolio_holding_agg_all_using_get) | **GET** /account/{account_id}/holding | List all account holdings
+*NucleusApi::AccountApi* | [**get_portfolio_transaction_agg_all_using_get**](docs/AccountApi.md#get_portfolio_transaction_agg_all_using_get) | **GET** /account/{account_id}/transaction | List all account transactions
+*NucleusApi::AccountApi* | [**insert_account_and_related_permission_using_post**](docs/AccountApi.md#insert_account_and_related_permission_using_post) | **POST** /account_permission | create an account permission
+*NucleusApi::AccountApi* | [**subscribe_account_using_post**](docs/AccountApi.md#subscribe_account_using_post) | **POST** /account/{account_id}/subscribe | Subscribe an account
+*NucleusApi::AccountApi* | [**update_account_allocation_mapping_using_put**](docs/AccountApi.md#update_account_allocation_mapping_using_put) | **PUT** /account_allocation/{account_allocation_id} | Update an account allocation
+*NucleusApi::AccountApi* | [**update_account_type_using_put**](docs/AccountApi.md#update_account_type_using_put) | **PUT** /account_type/{account_type_id} | Update an account type
+*NucleusApi::AccountApi* | [**update_account_using_put**](docs/AccountApi.md#update_account_using_put) | **PUT** /account/{account_id} | Update an account
+*NucleusApi::AccountApi* | [**update_client_account_permission_using_put**](docs/AccountApi.md#update_client_account_permission_using_put) | **PUT** /account_permission/{account_id} | Update an account permission
+*NucleusApi::AccountingApi* | [**create_accounting_using_post**](docs/AccountingApi.md#create_accounting_using_post) | **POST** /accounting | Create an accounting
+*NucleusApi::AccountingApi* | [**delete_accounting_using_delete**](docs/AccountingApi.md#delete_accounting_using_delete) | **DELETE** /accounting/{accounting_id} | Delete an accounting
+*NucleusApi::AccountingApi* | [**get_accounting_all_using_get**](docs/AccountingApi.md#get_accounting_all_using_get) | **GET** /accounting | List all accounting
+*NucleusApi::AccountingApi* | [**get_accounting_using_get**](docs/AccountingApi.md#get_accounting_using_get) | **GET** /accounting/{accounting_id} | Retrieve an accounting
+*NucleusApi::AccountingApi* | [**update_accounting_using_put**](docs/AccountingApi.md#update_accounting_using_put) | **PUT** /accounting/{accounting_id} | Update an accounting
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_balance_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_balance_bulk_using_post) | **POST** /bulk_aggregation_account_balance | Create a bulk aggregation account balance
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_balance_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_balance_using_post) | **POST** /aggregation_account_balance | Create an aggregation account balance
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_bulk_using_post) | **POST** /bulk_aggregation_account | Create a bulk aggregation account
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_holding_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_holding_bulk_using_post) | **POST** /bulk_aggregation_account_holding | Create a bulk aggregation account holding
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_holding_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_holding_using_post) | **POST** /aggregation_account_holding | Create an aggregation account holding
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_transaction_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_transaction_bulk_using_post) | **POST** /bulk_aggregation_account_transaction | Create a bulk aggregation account transaction
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_transaction_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_transaction_using_post) | **POST** /aggregation_account_transaction | Create an aggregation account transaction
+*NucleusApi::AggregationAccountApi* | [**create_aggregation_account_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_using_post) | **POST** /aggregation_account | Create an aggregation account
+*NucleusApi::AggregationAccountApi* | [**delete_aggregation_account_balance_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_balance_using_delete) | **DELETE** /aggregation_account_balance/{aggregation_account_balance_id} | Delete an aggregation account balance
+*NucleusApi::AggregationAccountApi* | [**delete_aggregation_account_holding_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_holding_using_delete) | **DELETE** /aggregation_account_holding/{aggregation_account_holding_id} | Delete an aggregation account holding
+*NucleusApi::AggregationAccountApi* | [**delete_aggregation_account_transaction_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_transaction_using_delete) | **DELETE** /aggregation_account_transaction/{aggregation_account_transaction_id} | Delete an aggregation account transaction
+*NucleusApi::AggregationAccountApi* | [**delete_aggregation_account_using_delete**](docs/AggregationAccountApi.md#delete_aggregation_account_using_delete) | **DELETE** /aggregation_account/{aggregation_account_id} | Delete an aggregation account
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_aggregate_data_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_aggregate_data_using_get) | **GET** /aggregation_account/{aggregation_account_id}/aggregate_data | Retrieve an aggregation account aggregate data
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_all_using_get) | **GET** /aggregation_account | List all aggregation accounts
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_balance_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_balance_all_using_get) | **GET** /aggregation_account_balance | List all aggregation account balances
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_balance_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_balance_using_get) | **GET** /aggregation_account_balance/{aggregation_account_balance_id} | Retrieve an aggregation account balance
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_holding_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_holding_all_using_get) | **GET** /aggregation_account_holding | List all aggregation account holdings
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_holding_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_holding_using_get) | **GET** /aggregation_account_holding/{aggregation_account_holding_id} | Retrieve an aggregation account holding
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_overview_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_overview_using_get) | **GET** /client/{client_id}/aggregation_account_overview | Retrieve an aggregation account aggregate data
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_transaction_all_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_transaction_all_using_get) | **GET** /aggregation_account_transaction | List all aggregation account transactions
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_transaction_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_transaction_using_get) | **GET** /aggregation_account_transaction/{aggregation_account_transaction_id} | Retrieve an aggregation account transaction
+*NucleusApi::AggregationAccountApi* | [**get_aggregation_account_using_get**](docs/AggregationAccountApi.md#get_aggregation_account_using_get) | **GET** /aggregation_account/{aggregation_account_id} | Retrieve an aggregation account
+*NucleusApi::AggregationAccountApi* | [**update_aggregation_account_balance_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_balance_using_put) | **PUT** /aggregation_account_balance/{aggregation_account_balance_id} | Update an aggregation account balance
+*NucleusApi::AggregationAccountApi* | [**update_aggregation_account_bulk_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_bulk_using_put) | **PUT** /bulk_aggregation_account | Update a bulk aggregation account
+*NucleusApi::AggregationAccountApi* | [**update_aggregation_account_holding_bulk_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_holding_bulk_using_put) | **PUT** /bulk_aggregation_account_holding | Update an bulk aggregation account holding
+*NucleusApi::AggregationAccountApi* | [**update_aggregation_account_holding_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_holding_using_put) | **PUT** /aggregation_account_holding/{aggregation_account_holding_id} | Update an aggregation account holding
+*NucleusApi::AggregationAccountApi* | [**update_aggregation_account_transaction_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_transaction_using_put) | **PUT** /aggregation_account_transaction/{aggregation_account_transaction_id} | Update an aggregation account transaction
+*NucleusApi::AggregationAccountApi* | [**update_aggregation_account_using_put**](docs/AggregationAccountApi.md#update_aggregation_account_using_put) | **PUT** /aggregation_account/{aggregation_account_id} | Update an aggregation account
+*NucleusApi::AllocationApi* | [**create_allocation_composition_using_post**](docs/AllocationApi.md#create_allocation_composition_using_post) | **POST** /allocation_composition | Create an allocation composition
+*NucleusApi::AllocationApi* | [**create_allocation_using_post**](docs/AllocationApi.md#create_allocation_using_post) | **POST** /allocation | Create an allocation
+*NucleusApi::AllocationApi* | [**delete_allocation_composition_using_delete**](docs/AllocationApi.md#delete_allocation_composition_using_delete) | **DELETE** /allocation_composition/{allocation_composition_id} | Delete an allocation composition
+*NucleusApi::AllocationApi* | [**delete_allocation_using_delete**](docs/AllocationApi.md#delete_allocation_using_delete) | **DELETE** /allocation/{allocation_id} | Delete an allocation
+*NucleusApi::AllocationApi* | [**get_all_holdings_using_get**](docs/AllocationApi.md#get_all_holdings_using_get) | **GET** /allocation/{allocation_id}/holding | List all allocation holdings
+*NucleusApi::AllocationApi* | [**get_all_transactions_using_get**](docs/AllocationApi.md#get_all_transactions_using_get) | **GET** /allocation/{allocation_id}/transaction | List all allocation transactions
+*NucleusApi::AllocationApi* | [**get_allocation_aggregated_data_using_get**](docs/AllocationApi.md#get_allocation_aggregated_data_using_get) | **GET** /allocation/{allocation_id}/aggregate_data | List all Allocation aggregated data overview
+*NucleusApi::AllocationApi* | [**get_allocation_all_using_get**](docs/AllocationApi.md#get_allocation_all_using_get) | **GET** /allocation | List all allocations
+*NucleusApi::AllocationApi* | [**get_allocation_composition_all_using_get**](docs/AllocationApi.md#get_allocation_composition_all_using_get) | **GET** /allocation_composition | List all allocations compositions
+*NucleusApi::AllocationApi* | [**get_allocation_composition_using_get**](docs/AllocationApi.md#get_allocation_composition_using_get) | **GET** /allocation_composition/{allocation_composition_id} | Retrieve an allocation composition
+*NucleusApi::AllocationApi* | [**get_allocation_using_get**](docs/AllocationApi.md#get_allocation_using_get) | **GET** /allocation/{allocation_id} | Retrieve an allocation
+*NucleusApi::AllocationApi* | [**get_assetsize_using_get**](docs/AllocationApi.md#get_assetsize_using_get) | **GET** /allocation/{allocation_id}/asset_size | List all allocation asset sizes
+*NucleusApi::AllocationApi* | [**update_allocation_composition_using_put**](docs/AllocationApi.md#update_allocation_composition_using_put) | **PUT** /allocation_composition/{allocation_composition_id} | Update an allocation composition
+*NucleusApi::AllocationApi* | [**update_allocation_using_put**](docs/AllocationApi.md#update_allocation_using_put) | **PUT** /allocation/{allocation_id} | Update an allocation
+*NucleusApi::ApplicationApi* | [**create_application_using_post**](docs/ApplicationApi.md#create_application_using_post) | **POST** /application | Create an application
+*NucleusApi::ApplicationApi* | [**delete_application_using_delete**](docs/ApplicationApi.md#delete_application_using_delete) | **DELETE** /application/{application_id} | Delete an Application
+*NucleusApi::ApplicationApi* | [**get_application_all_using_get**](docs/ApplicationApi.md#get_application_all_using_get) | **GET** /application | List all Application
+*NucleusApi::ApplicationApi* | [**get_application_using_get**](docs/ApplicationApi.md#get_application_using_get) | **GET** /application/{application_id} | Retrieve an Application
+*NucleusApi::ApplicationApi* | [**update_application_using_put**](docs/ApplicationApi.md#update_application_using_put) | **PUT** /application/{application_id} | Update an Application
+*NucleusApi::AuditLogApi* | [**create_audit_log_using_post**](docs/AuditLogApi.md#create_audit_log_using_post) | **POST** /audit_log | Create a audit log
+*NucleusApi::AuditLogApi* | [**get_audit_log_all_using_get**](docs/AuditLogApi.md#get_audit_log_all_using_get) | **GET** /audit_log | List all audit log
+*NucleusApi::AuditLogApi* | [**get_audit_log_using_get**](docs/AuditLogApi.md#get_audit_log_using_get) | **GET** /audit_log/{audit_log_id} | Retrieve a audit log
+*NucleusApi::BenchmarkApi* | [**create_benchmark_using_post**](docs/BenchmarkApi.md#create_benchmark_using_post) | **POST** /benchmark | Create a benchmark
+*NucleusApi::BenchmarkApi* | [**delete_benchmark_using_delete**](docs/BenchmarkApi.md#delete_benchmark_using_delete) | **DELETE** /benchmark/{benchmark_id} | Delete a benchmark
+*NucleusApi::BenchmarkApi* | [**get_benchmark_all_using_get**](docs/BenchmarkApi.md#get_benchmark_all_using_get) | **GET** /benchmark | List all benchmarks
+*NucleusApi::BenchmarkApi* | [**get_benchmark_asset_size_all_using_get**](docs/BenchmarkApi.md#get_benchmark_asset_size_all_using_get) | **GET** /benchmark/{benchmark_id}/asset_size | List all benchmark asset sizes
+*NucleusApi::BenchmarkApi* | [**get_benchmark_using_get**](docs/BenchmarkApi.md#get_benchmark_using_get) | **GET** /benchmark/{benchmark_id} | Retrieve a benchmark
+*NucleusApi::BenchmarkApi* | [**update_benchmark_using_put**](docs/BenchmarkApi.md#update_benchmark_using_put) | **PUT** /benchmark/{benchmark_id} | Update a benchmark
+*NucleusApi::BudgetApi* | [**create_budget_using_post**](docs/BudgetApi.md#create_budget_using_post) | **POST** /budget | Create a budget request
+*NucleusApi::BudgetApi* | [**delete_budget_using_delete**](docs/BudgetApi.md#delete_budget_using_delete) | **DELETE** /budget/{budget_id} | Delete a budget request
+*NucleusApi::BudgetApi* | [**get_budget_all_using_get**](docs/BudgetApi.md#get_budget_all_using_get) | **GET** /budget | List all budget requests
+*NucleusApi::BudgetApi* | [**get_budget_using_get**](docs/BudgetApi.md#get_budget_using_get) | **GET** /budget/{budget_id} | Retrieve a budget request
+*NucleusApi::BudgetApi* | [**update_budget_using_put**](docs/BudgetApi.md#update_budget_using_put) | **PUT** /budget/{budget_id} | Update a budget request
+*NucleusApi::BulkApi* | [**create_bulk_using_post**](docs/BulkApi.md#create_bulk_using_post) | **POST** /bulk/{entity_uri} | Create a bulk data
+*NucleusApi::BulkApi* | [**delete_bulk_using_delete**](docs/BulkApi.md#delete_bulk_using_delete) | **DELETE** /bulk/{entity_uri} | Delete a bulk data
+*NucleusApi::BulkApi* | [**get_bulk_status_using_get**](docs/BulkApi.md#get_bulk_status_using_get) | **GET** /bulk/status/{id} | Status of bulk transaction
+*NucleusApi::BulkApi* | [**update_bulk_using_put**](docs/BulkApi.md#update_bulk_using_put) | **PUT** /bulk/{entity_uri} | Update a bulk data
+*NucleusApi::CardApi* | [**create_card_program_using_post**](docs/CardApi.md#create_card_program_using_post) | **POST** /card_program | Create a cardProgram request
+*NucleusApi::CardApi* | [**create_card_using_post**](docs/CardApi.md#create_card_using_post) | **POST** /card | Create a card request
+*NucleusApi::CardApi* | [**delete_card_program_using_delete**](docs/CardApi.md#delete_card_program_using_delete) | **DELETE** /card_program/{card_program_id} | Delete an cardProgram
+*NucleusApi::CardApi* | [**delete_card_using_delete**](docs/CardApi.md#delete_card_using_delete) | **DELETE** /card/{card_id} | Delete a card request
+*NucleusApi::CardApi* | [**get_card_all_using_get**](docs/CardApi.md#get_card_all_using_get) | **GET** /card | List all card requests
+*NucleusApi::CardApi* | [**get_card_program_all_using_get**](docs/CardApi.md#get_card_program_all_using_get) | **GET** /card_program | List all cardProgram
+*NucleusApi::CardApi* | [**get_card_program_using_get**](docs/CardApi.md#get_card_program_using_get) | **GET** /card_program/{card_program_id} | Retrieve an cardProgram
+*NucleusApi::CardApi* | [**get_card_using_get**](docs/CardApi.md#get_card_using_get) | **GET** /card/{card_id} | Retrieve a card request
+*NucleusApi::CardApi* | [**update_card_program_using_put**](docs/CardApi.md#update_card_program_using_put) | **PUT** /card_program/{card_program_id} | Update an cardProgram
+*NucleusApi::CardApi* | [**update_card_using_put**](docs/CardApi.md#update_card_using_put) | **PUT** /card/{card_id} | Update a card request
+*NucleusApi::ClientApi* | [**create_client_hydro_using_post**](docs/ClientApi.md#create_client_hydro_using_post) | **POST** /client_hydro | Create a client-hydro relationship
+*NucleusApi::ClientApi* | [**create_client_status_using_post**](docs/ClientApi.md#create_client_status_using_post) | **POST** /client_status | Create an client status
+*NucleusApi::ClientApi* | [**create_client_using_post**](docs/ClientApi.md#create_client_using_post) | **POST** /client | Create a client
+*NucleusApi::ClientApi* | [**delete_client_hydro_using_delete**](docs/ClientApi.md#delete_client_hydro_using_delete) | **DELETE** /client_hydro/{client_hydro_id} | Delete a client-hydro relationship
+*NucleusApi::ClientApi* | [**delete_client_status_using_delete**](docs/ClientApi.md#delete_client_status_using_delete) | **DELETE** /client_status/{client_status_id} | Delete an client status
+*NucleusApi::ClientApi* | [**delete_client_using_delete**](docs/ClientApi.md#delete_client_using_delete) | **DELETE** /client/{client_id} | Delete a client
+*NucleusApi::ClientApi* | [**get_client_account_overview_using_get**](docs/ClientApi.md#get_client_account_overview_using_get) | **GET** /client/{client_id}/account_overview | List all client Account overview
+*NucleusApi::ClientApi* | [**get_client_advisor_overview_using_get**](docs/ClientApi.md#get_client_advisor_overview_using_get) | **GET** /client/{client_id}/advisor_overview | Advisor overview
+*NucleusApi::ClientApi* | [**get_client_all_using_get**](docs/ClientApi.md#get_client_all_using_get) | **GET** /client | List all clients
+*NucleusApi::ClientApi* | [**get_client_asset_size_using_get**](docs/ClientApi.md#get_client_asset_size_using_get) | **GET** /client/{client_id}/asset_size | List all client asset sizes
+*NucleusApi::ClientApi* | [**get_client_goal_overview_using_get**](docs/ClientApi.md#get_client_goal_overview_using_get) | **GET** /client/{client_id}/goal_overview | Retrieve client's goal details 
+*NucleusApi::ClientApi* | [**get_client_holding_using_get**](docs/ClientApi.md#get_client_holding_using_get) | **GET** /client/{client_id}/holding | List all client holdings
+*NucleusApi::ClientApi* | [**get_client_hydro_all_using_get**](docs/ClientApi.md#get_client_hydro_all_using_get) | **GET** /client_hydro | List all client-hydro relationship
+*NucleusApi::ClientApi* | [**get_client_hydro_using_get**](docs/ClientApi.md#get_client_hydro_using_get) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
+*NucleusApi::ClientApi* | [**get_client_status_all_using_get**](docs/ClientApi.md#get_client_status_all_using_get) | **GET** /client_status | List all client statuses
+*NucleusApi::ClientApi* | [**get_client_status_using_get**](docs/ClientApi.md#get_client_status_using_get) | **GET** /client_status/{client_status_id} | Retrieve an client status
+*NucleusApi::ClientApi* | [**get_client_transaction_using_get**](docs/ClientApi.md#get_client_transaction_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
+*NucleusApi::ClientApi* | [**get_client_using_get**](docs/ClientApi.md#get_client_using_get) | **GET** /client/{client_id} | Retrieve a client
+*NucleusApi::ClientApi* | [**get_total_clients_using_get**](docs/ClientApi.md#get_total_clients_using_get) | **GET** /client/total_clients | total clients
+*NucleusApi::ClientApi* | [**update_client_hydro_using_put**](docs/ClientApi.md#update_client_hydro_using_put) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
+*NucleusApi::ClientApi* | [**update_client_status_using_put**](docs/ClientApi.md#update_client_status_using_put) | **PUT** /client_status/{client_status_id} | Update an client status
+*NucleusApi::ClientApi* | [**update_client_using_put**](docs/ClientApi.md#update_client_using_put) | **PUT** /client/{client_id} | Update a client
+*NucleusApi::CustomerApi* | [**create_customer_revenue_using_post**](docs/CustomerApi.md#create_customer_revenue_using_post) | **POST** /customer_revenue | Create a customer revenue
+*NucleusApi::CustomerApi* | [**create_customer_using_post**](docs/CustomerApi.md#create_customer_using_post) | **POST** /customer | Create a customer
+*NucleusApi::CustomerApi* | [**delete_customer_revenue_using_delete**](docs/CustomerApi.md#delete_customer_revenue_using_delete) | **DELETE** /customer_revenue/{customer_revenue_id} | Delete a customer revenue
+*NucleusApi::CustomerApi* | [**delete_customer_using_delete**](docs/CustomerApi.md#delete_customer_using_delete) | **DELETE** /customer/{customer_id} | Delete a customer
+*NucleusApi::CustomerApi* | [**get_customer_all_using_get**](docs/CustomerApi.md#get_customer_all_using_get) | **GET** /customer | List all customer
+*NucleusApi::CustomerApi* | [**get_customer_revenue_all_using_get**](docs/CustomerApi.md#get_customer_revenue_all_using_get) | **GET** /customer_revenue | List all customer revenue
+*NucleusApi::CustomerApi* | [**get_customer_revenue_using_get**](docs/CustomerApi.md#get_customer_revenue_using_get) | **GET** /customer_revenue/{customer_revenue_id} | Retrieve a customer revenue
+*NucleusApi::CustomerApi* | [**get_customer_using_get**](docs/CustomerApi.md#get_customer_using_get) | **GET** /customer/{customer_id} | Retrieve a customer
+*NucleusApi::CustomerApi* | [**update_customer_revenue_using_put**](docs/CustomerApi.md#update_customer_revenue_using_put) | **PUT** /customer_revenue/{customer_revenue_id} | Update a customer revenue
+*NucleusApi::CustomerApi* | [**update_customer_using_put**](docs/CustomerApi.md#update_customer_using_put) | **PUT** /customer/{customer_id} | Update a customer
+*NucleusApi::DecisionTreeApi* | [**create_decision_tree_result_using_post**](docs/DecisionTreeApi.md#create_decision_tree_result_using_post) | **POST** /decision_tree_result | Decision tree result
+*NucleusApi::DecisionTreeApi* | [**create_decision_tree_using_post**](docs/DecisionTreeApi.md#create_decision_tree_using_post) | **POST** /decision_tree | Create a decision tree
+*NucleusApi::DecisionTreeApi* | [**create_node_relationship_using_post**](docs/DecisionTreeApi.md#create_node_relationship_using_post) | **POST** /node_relationship | Create a node relationship
+*NucleusApi::DecisionTreeApi* | [**create_node_using_post**](docs/DecisionTreeApi.md#create_node_using_post) | **POST** /node | Create a node
+*NucleusApi::DecisionTreeApi* | [**delete_decision_tree_using_delete**](docs/DecisionTreeApi.md#delete_decision_tree_using_delete) | **DELETE** /decision_tree/{decision_tree_id} | Delete a decision tree
+*NucleusApi::DecisionTreeApi* | [**delete_node_relationship_using_delete**](docs/DecisionTreeApi.md#delete_node_relationship_using_delete) | **DELETE** /node_relationship/{node_relationship_id} | Delete a node relationship
+*NucleusApi::DecisionTreeApi* | [**delete_node_using_delete**](docs/DecisionTreeApi.md#delete_node_using_delete) | **DELETE** /node/{node_id} | Delete a node
+*NucleusApi::DecisionTreeApi* | [**get_decision_tree_all_using_get**](docs/DecisionTreeApi.md#get_decision_tree_all_using_get) | **GET** /decision_tree | List all decision tree
+*NucleusApi::DecisionTreeApi* | [**get_decision_tree_using_get**](docs/DecisionTreeApi.md#get_decision_tree_using_get) | **GET** /decision_tree/{decision_tree_id} | Retrieve a decision tree
+*NucleusApi::DecisionTreeApi* | [**get_node_all_using_get**](docs/DecisionTreeApi.md#get_node_all_using_get) | **GET** /node | List all nodes
+*NucleusApi::DecisionTreeApi* | [**get_node_relationship_all_using_get**](docs/DecisionTreeApi.md#get_node_relationship_all_using_get) | **GET** /node_relationship | List all node relationships
+*NucleusApi::DecisionTreeApi* | [**get_node_relationship_using_get**](docs/DecisionTreeApi.md#get_node_relationship_using_get) | **GET** /node_relationship/{node_relationship_id} | Retrieve a node relationship
+*NucleusApi::DecisionTreeApi* | [**get_node_using_get**](docs/DecisionTreeApi.md#get_node_using_get) | **GET** /node/{node_id} | Retrieve a node
+*NucleusApi::DecisionTreeApi* | [**update_decision_tree_using_put**](docs/DecisionTreeApi.md#update_decision_tree_using_put) | **PUT** /decision_tree/{decision_tree_id} | Update a decision tree
+*NucleusApi::DecisionTreeApi* | [**update_node_relationship_using_put**](docs/DecisionTreeApi.md#update_node_relationship_using_put) | **PUT** /node_relationship/{node_relationship_id} | Update a node relationship
+*NucleusApi::DecisionTreeApi* | [**update_node_using_put**](docs/DecisionTreeApi.md#update_node_using_put) | **PUT** /node/{node_id} | Update a node
+*NucleusApi::DocumentApi* | [**create_document_using_post**](docs/DocumentApi.md#create_document_using_post) | **POST** /document | Create a Document
+*NucleusApi::DocumentApi* | [**delete_document_using_delete**](docs/DocumentApi.md#delete_document_using_delete) | **DELETE** /document/{document_id} | Delete a tenant document by Id
+*NucleusApi::DocumentApi* | [**get_document_all_using_get**](docs/DocumentApi.md#get_document_all_using_get) | **GET** /document | List all Documents
+*NucleusApi::DocumentApi* | [**get_document_using_get**](docs/DocumentApi.md#get_document_using_get) | **GET** /document/{document_id} | Retrieve a Tenant Document by Document Id
+*NucleusApi::DocumentApi* | [**update_document_using_put**](docs/DocumentApi.md#update_document_using_put) | **PUT** /document/{document_id} | Update a Tenant Document
+*NucleusApi::FAQApi* | [**create_faq_using_post**](docs/FAQApi.md#create_faq_using_post) | **POST** /faq | Create a FAQ
+*NucleusApi::FAQApi* | [**delete_faq_using_delete**](docs/FAQApi.md#delete_faq_using_delete) | **DELETE** /faq/{faq_id} | Delete a FAQ
+*NucleusApi::FAQApi* | [**get_faq_all_using_get**](docs/FAQApi.md#get_faq_all_using_get) | **GET** /faq | List all FAQ
+*NucleusApi::FAQApi* | [**get_faq_using_get**](docs/FAQApi.md#get_faq_using_get) | **GET** /faq/{faq_id} | Retrieve a FAQ
+*NucleusApi::FAQApi* | [**update_faq_using_put**](docs/FAQApi.md#update_faq_using_put) | **PUT** /faq/{faq_id} | Update a FAQ
+*NucleusApi::FeatureApi* | [**create_feature_track_using_post**](docs/FeatureApi.md#create_feature_track_using_post) | **POST** /feature_track | Create a Feature Track
+*NucleusApi::FeatureApi* | [**create_feature_using_post**](docs/FeatureApi.md#create_feature_using_post) | **POST** /feature | Create a  Feature
+*NucleusApi::FeatureApi* | [**delete_feature_track_using_delete**](docs/FeatureApi.md#delete_feature_track_using_delete) | **DELETE** /feature_track/{feature_track_id} | Delete a Feature Track
+*NucleusApi::FeatureApi* | [**delete_feature_using_delete**](docs/FeatureApi.md#delete_feature_using_delete) | **DELETE** /feature/{feature_id} | Delete a Feature
+*NucleusApi::FeatureApi* | [**get_feature_all_using_get**](docs/FeatureApi.md#get_feature_all_using_get) | **GET** /feature | List all Feature
+*NucleusApi::FeatureApi* | [**get_feature_track_all_using_get**](docs/FeatureApi.md#get_feature_track_all_using_get) | **GET** /feature_track | List all Feature track
+*NucleusApi::FeatureApi* | [**get_feature_track_using_get**](docs/FeatureApi.md#get_feature_track_using_get) | **GET** /feature_track/{feature_track_id} | Retrieve a Feature track
+*NucleusApi::FeatureApi* | [**get_feature_using_get**](docs/FeatureApi.md#get_feature_using_get) | **GET** /feature/{feature_id} | Retrieve a Feature
+*NucleusApi::FeatureApi* | [**update_feature_track_using_put**](docs/FeatureApi.md#update_feature_track_using_put) | **PUT** /feature_track/{feature_track_id} | Update a Feature Track
+*NucleusApi::FeatureApi* | [**update_feature_using_put**](docs/FeatureApi.md#update_feature_using_put) | **PUT** /feature/{feature_id} | Update a Feature
+*NucleusApi::FinancialOfferApi* | [**create_financial_offer_using_post**](docs/FinancialOfferApi.md#create_financial_offer_using_post) | **POST** /financial_offer | Create a comparison request
+*NucleusApi::FinancialOfferApi* | [**delete_financial_offer_using_delete**](docs/FinancialOfferApi.md#delete_financial_offer_using_delete) | **DELETE** /financial_offer/{financial_offer_id} | Delete a comparison request
+*NucleusApi::FinancialOfferApi* | [**get_financial_offer_all_using_get**](docs/FinancialOfferApi.md#get_financial_offer_all_using_get) | **GET** /financial_offer | List all comparison requests
+*NucleusApi::FinancialOfferApi* | [**get_financial_offer_using_get**](docs/FinancialOfferApi.md#get_financial_offer_using_get) | **GET** /financial_offer/{financial_offer_id} | Retrieve a comparison request
+*NucleusApi::FinancialOfferApi* | [**update_financial_offer_using_put**](docs/FinancialOfferApi.md#update_financial_offer_using_put) | **PUT** /financial_offer/{financial_offer_id} | Update a comparison request
+*NucleusApi::FundingApi* | [**create_bank_link_using_post**](docs/FundingApi.md#create_bank_link_using_post) | **POST** /bank_link | Create a bank link
+*NucleusApi::FundingApi* | [**create_deposit_using_post**](docs/FundingApi.md#create_deposit_using_post) | **POST** /deposit | Create a deposit request
+*NucleusApi::FundingApi* | [**create_funding_using_post**](docs/FundingApi.md#create_funding_using_post) | **POST** /funding | Create a funding request
+*NucleusApi::FundingApi* | [**create_transfer_using_post**](docs/FundingApi.md#create_transfer_using_post) | **POST** /transfer | Create a transfer requests
+*NucleusApi::FundingApi* | [**create_withdrawal_using_post**](docs/FundingApi.md#create_withdrawal_using_post) | **POST** /withdrawal | Create a withdrawal request
+*NucleusApi::FundingApi* | [**delete_bank_link_using_delete**](docs/FundingApi.md#delete_bank_link_using_delete) | **DELETE** /bank_link/{bank_link_id} | Delete a bank link
+*NucleusApi::FundingApi* | [**delete_deposit_using_delete**](docs/FundingApi.md#delete_deposit_using_delete) | **DELETE** /deposit/{deposit_id} | Delete a deposit request
+*NucleusApi::FundingApi* | [**delete_funding_using_delete**](docs/FundingApi.md#delete_funding_using_delete) | **DELETE** /funding/{funding_id} | Delete a funding request
+*NucleusApi::FundingApi* | [**delete_transfer_using_delete**](docs/FundingApi.md#delete_transfer_using_delete) | **DELETE** /transfer/{transfer_id} | Delete a transfer request
+*NucleusApi::FundingApi* | [**delete_withdrawal_using_delete**](docs/FundingApi.md#delete_withdrawal_using_delete) | **DELETE** /withdrawal/{withdrawal_id} | Delete a withdrawal request
+*NucleusApi::FundingApi* | [**get_bank_link_all_using_get**](docs/FundingApi.md#get_bank_link_all_using_get) | **GET** /bank_link | List all bank links
+*NucleusApi::FundingApi* | [**get_bank_link_using_get**](docs/FundingApi.md#get_bank_link_using_get) | **GET** /bank_link/{bank_link_id} | Retrieve a bank link
+*NucleusApi::FundingApi* | [**get_deposit_all_using_get**](docs/FundingApi.md#get_deposit_all_using_get) | **GET** /deposit | List all deposit requests
+*NucleusApi::FundingApi* | [**get_deposit_using_get**](docs/FundingApi.md#get_deposit_using_get) | **GET** /deposit/{deposit_id} | Retrieve a deposit request
+*NucleusApi::FundingApi* | [**get_funding_all_using_get**](docs/FundingApi.md#get_funding_all_using_get) | **GET** /funding | List all funding requests 
+*NucleusApi::FundingApi* | [**get_funding_using_get**](docs/FundingApi.md#get_funding_using_get) | **GET** /funding/{funding_id} | Retrieve a funding request
+*NucleusApi::FundingApi* | [**get_transfer_all_using_get**](docs/FundingApi.md#get_transfer_all_using_get) | **GET** /transfer | List all transfer requests
+*NucleusApi::FundingApi* | [**get_transfer_using_get**](docs/FundingApi.md#get_transfer_using_get) | **GET** /transfer/{transfer_id} | Retrieve a transfer request
+*NucleusApi::FundingApi* | [**get_withdrawal_all_using_get**](docs/FundingApi.md#get_withdrawal_all_using_get) | **GET** /withdrawal | List all withdrawal requests
+*NucleusApi::FundingApi* | [**get_withdrawal_using_get**](docs/FundingApi.md#get_withdrawal_using_get) | **GET** /withdrawal/{withdrawal_id} | Retrieve a withdrawal request
+*NucleusApi::FundingApi* | [**update_bank_link_bulk_using_put**](docs/FundingApi.md#update_bank_link_bulk_using_put) | **PUT** /bulk_bank_link | Update list of bank link
+*NucleusApi::FundingApi* | [**update_bank_link_using_put**](docs/FundingApi.md#update_bank_link_using_put) | **PUT** /bank_link/{bank_link_id} | Update a bank link
+*NucleusApi::FundingApi* | [**update_deposit_using_put**](docs/FundingApi.md#update_deposit_using_put) | **PUT** /deposit/{deposit_id} | Update a deposit request
+*NucleusApi::FundingApi* | [**update_funding_using_put**](docs/FundingApi.md#update_funding_using_put) | **PUT** /funding/{funding_id} | Update a funding request
+*NucleusApi::FundingApi* | [**update_transfer_using_put**](docs/FundingApi.md#update_transfer_using_put) | **PUT** /transfer/{transfer_id} | Update a transfer request
+*NucleusApi::FundingApi* | [**update_withdrawal_using_put**](docs/FundingApi.md#update_withdrawal_using_put) | **PUT** /withdrawal/{withdrawal_id} | Update a withdrawal request
+*NucleusApi::GoalApi* | [**create_goal_track_using_post**](docs/GoalApi.md#create_goal_track_using_post) | **POST** /goal_track | Create a goal track record
+*NucleusApi::GoalApi* | [**create_goal_using_post**](docs/GoalApi.md#create_goal_using_post) | **POST** /goal | Create a goal
+*NucleusApi::GoalApi* | [**delete_goal_track_using_delete**](docs/GoalApi.md#delete_goal_track_using_delete) | **DELETE** /goal_track/{goal_track_id} | Delete a goal track record
+*NucleusApi::GoalApi* | [**delete_goal_using_delete**](docs/GoalApi.md#delete_goal_using_delete) | **DELETE** /goal/{goal_id} | Delete a goal
+*NucleusApi::GoalApi* | [**get_goal_all_using_get**](docs/GoalApi.md#get_goal_all_using_get) | **GET** /goal | List all goals
+*NucleusApi::GoalApi* | [**get_goal_asset_size_all_using_get**](docs/GoalApi.md#get_goal_asset_size_all_using_get) | **GET** /goal/{goal_id}/asset_size | List goal asset sizes
+*NucleusApi::GoalApi* | [**get_goal_holding_all_using_get**](docs/GoalApi.md#get_goal_holding_all_using_get) | **GET** /goal/{goal_id}/holding | List goal holdings
+*NucleusApi::GoalApi* | [**get_goal_track_all_using_get**](docs/GoalApi.md#get_goal_track_all_using_get) | **GET** /goal_track | List all goal track records
+*NucleusApi::GoalApi* | [**get_goal_track_using_get**](docs/GoalApi.md#get_goal_track_using_get) | **GET** /goal_track/{goal_track_id} | Retrieve a goal track record
+*NucleusApi::GoalApi* | [**get_goal_transaction_all_using_get**](docs/GoalApi.md#get_goal_transaction_all_using_get) | **GET** /goal/{goal_id}/transaction | List goal transactions
+*NucleusApi::GoalApi* | [**get_goal_using_get**](docs/GoalApi.md#get_goal_using_get) | **GET** /goal/{goal_id} | Retrieve a goal
+*NucleusApi::GoalApi* | [**update_goal_track_using_put**](docs/GoalApi.md#update_goal_track_using_put) | **PUT** /goal_track/{goal_track_id} | Update a goal track record
+*NucleusApi::GoalApi* | [**update_goal_using_put**](docs/GoalApi.md#update_goal_using_put) | **PUT** /goal/{goal_id} | Update a goal
+*NucleusApi::InsuranceApi* | [**create_insurance_coverage_using_post**](docs/InsuranceApi.md#create_insurance_coverage_using_post) | **POST** /insurance_coverage | Create a insurance coverage request
+*NucleusApi::InsuranceApi* | [**create_insurance_discount_using_post**](docs/InsuranceApi.md#create_insurance_discount_using_post) | **POST** /insurance_discount | Create a insurance discount request
+*NucleusApi::InsuranceApi* | [**create_insurance_quote_using_post**](docs/InsuranceApi.md#create_insurance_quote_using_post) | **POST** /insurance_quote | Create a insuranceQuote request
+*NucleusApi::InsuranceApi* | [**delete_insurance_coverage_using_delete**](docs/InsuranceApi.md#delete_insurance_coverage_using_delete) | **DELETE** /insurance_coverage/{insurance_coverage_id} | Delete an insurance coverage request
+*NucleusApi::InsuranceApi* | [**delete_insurance_discount_using_delete**](docs/InsuranceApi.md#delete_insurance_discount_using_delete) | **DELETE** /insurance_discount/{insurance_discount_id} | Delete an insurance discount request
+*NucleusApi::InsuranceApi* | [**delete_insurance_quote_using_delete**](docs/InsuranceApi.md#delete_insurance_quote_using_delete) | **DELETE** /insurance_quote/{insurance_quote_id} | Delete a insuranceQuote request
+*NucleusApi::InsuranceApi* | [**get_insurance_coverage_all_using_get**](docs/InsuranceApi.md#get_insurance_coverage_all_using_get) | **GET** /insurance_coverage | Get all insurance coverage request
+*NucleusApi::InsuranceApi* | [**get_insurance_coverage_using_get**](docs/InsuranceApi.md#get_insurance_coverage_using_get) | **GET** /insurance_coverage/{insurance_coverage_id} | Get a insurance coverage request
+*NucleusApi::InsuranceApi* | [**get_insurance_discount_all_using_get**](docs/InsuranceApi.md#get_insurance_discount_all_using_get) | **GET** /insurance_discount | Get all insurance discount request
+*NucleusApi::InsuranceApi* | [**get_insurance_discount_using_get**](docs/InsuranceApi.md#get_insurance_discount_using_get) | **GET** /insurance_discount/{insurance_discount_id} | Get a insurance discount request
+*NucleusApi::InsuranceApi* | [**get_insurance_quote_all_using_get**](docs/InsuranceApi.md#get_insurance_quote_all_using_get) | **GET** /insurance_quote | List all insuranceQuote requests
+*NucleusApi::InsuranceApi* | [**get_insurance_quote_using_get**](docs/InsuranceApi.md#get_insurance_quote_using_get) | **GET** /insurance_quote/{insurance_quote_id} | Retrieve a insuranceQuote request
+*NucleusApi::InsuranceApi* | [**update_insurance_coverage_using_put**](docs/InsuranceApi.md#update_insurance_coverage_using_put) | **PUT** /insurance_coverage/{insurance_coverage_id} | Update a insurance coverage request
+*NucleusApi::InsuranceApi* | [**update_insurance_discount_using_put**](docs/InsuranceApi.md#update_insurance_discount_using_put) | **PUT** /insurance_discount/{insurance_discount_id} | Update an insurance discount 
+*NucleusApi::InsuranceApi* | [**update_insurance_quote_using_put**](docs/InsuranceApi.md#update_insurance_quote_using_put) | **PUT** /insurance_quote/{insurance_quote_id} | Update a insuranceQuote request
+*NucleusApi::InvoiceApi* | [**create_invoice_payment_using_post**](docs/InvoiceApi.md#create_invoice_payment_using_post) | **POST** /invoice_payment | Create a invoicePayment
+*NucleusApi::InvoiceApi* | [**create_invoice_using_post**](docs/InvoiceApi.md#create_invoice_using_post) | **POST** /invoice | Create a invoice
+*NucleusApi::InvoiceApi* | [**delete_invoice_payment_using_delete**](docs/InvoiceApi.md#delete_invoice_payment_using_delete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
+*NucleusApi::InvoiceApi* | [**delete_invoice_using_delete**](docs/InvoiceApi.md#delete_invoice_using_delete) | **DELETE** /invoice/{invoice_id} | Delete a invoice
+*NucleusApi::InvoiceApi* | [**get_invoice_all_using_get**](docs/InvoiceApi.md#get_invoice_all_using_get) | **GET** /invoice | List all invoice
+*NucleusApi::InvoiceApi* | [**get_invoice_payment_all_using_get**](docs/InvoiceApi.md#get_invoice_payment_all_using_get) | **GET** /invoice_payment | List all invoicePayment
+*NucleusApi::InvoiceApi* | [**get_invoice_payment_using_get**](docs/InvoiceApi.md#get_invoice_payment_using_get) | **GET** /invoice_payment/{invoice_payment_id} | Retrieve a invoicePayment
+*NucleusApi::InvoiceApi* | [**get_invoice_using_get**](docs/InvoiceApi.md#get_invoice_using_get) | **GET** /invoice/{invoice_id} | Retrieve a invoice
+*NucleusApi::InvoiceApi* | [**update_invoice_payment_using_put**](docs/InvoiceApi.md#update_invoice_payment_using_put) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
+*NucleusApi::InvoiceApi* | [**update_invoice_using_put**](docs/InvoiceApi.md#update_invoice_using_put) | **PUT** /invoice/{invoice_id} | Update a invoice
+*NucleusApi::MarketingApi* | [**create_campaign_data_using_post**](docs/MarketingApi.md#create_campaign_data_using_post) | **POST** /campaign_data | Create a campaign data record
+*NucleusApi::MarketingApi* | [**create_campaign_plan_using_post**](docs/MarketingApi.md#create_campaign_plan_using_post) | **POST** /campaign_plan | Create a campaign plan
+*NucleusApi::MarketingApi* | [**create_campaign_using_post**](docs/MarketingApi.md#create_campaign_using_post) | **POST** /campaign | Create a campaign
+*NucleusApi::MarketingApi* | [**create_client_campaign_using_post**](docs/MarketingApi.md#create_client_campaign_using_post) | **POST** /client_campaign | Mark a client signing up through a campaign
+*NucleusApi::MarketingApi* | [**delete_campaign_data_using_delete**](docs/MarketingApi.md#delete_campaign_data_using_delete) | **DELETE** /campaign_data/{campaign_data_id} | Delete a campaign data record
+*NucleusApi::MarketingApi* | [**delete_campaign_plan_using_delete**](docs/MarketingApi.md#delete_campaign_plan_using_delete) | **DELETE** /campaign_plan/{campaign_plan_id} | Delete a campaign plan
+*NucleusApi::MarketingApi* | [**delete_campaign_using_delete**](docs/MarketingApi.md#delete_campaign_using_delete) | **DELETE** /campaign/{campaign_id} | Delete a campaign
+*NucleusApi::MarketingApi* | [**delete_client_campaign_using_delete**](docs/MarketingApi.md#delete_client_campaign_using_delete) | **DELETE** /client_campaign/{client_campaign_id} | Delete a clients/ips pair under a campaign
+*NucleusApi::MarketingApi* | [**get_campaign_all_using_get**](docs/MarketingApi.md#get_campaign_all_using_get) | **GET** /campaign | List all campaigns
+*NucleusApi::MarketingApi* | [**get_campaign_data_all_using_get**](docs/MarketingApi.md#get_campaign_data_all_using_get) | **GET** /campaign_data | List all campaign data
+*NucleusApi::MarketingApi* | [**get_campaign_data_using_get**](docs/MarketingApi.md#get_campaign_data_using_get) | **GET** /campaign_data/{campaign_data_id} | Retrieve a campaign data record
+*NucleusApi::MarketingApi* | [**get_campaign_plan_all_using_get**](docs/MarketingApi.md#get_campaign_plan_all_using_get) | **GET** /campaign_plan | List all campaign plans
+*NucleusApi::MarketingApi* | [**get_campaign_plan_using_get**](docs/MarketingApi.md#get_campaign_plan_using_get) | **GET** /campaign_plan/{campaign_plan_id} | Retrieve a campaign plan
+*NucleusApi::MarketingApi* | [**get_campaign_using_get**](docs/MarketingApi.md#get_campaign_using_get) | **GET** /campaign/{campaign_id} | Retrieve a campaign
+*NucleusApi::MarketingApi* | [**get_client_campaign_all_using_get**](docs/MarketingApi.md#get_client_campaign_all_using_get) | **GET** /client_campaign | List all clients/ips under a campaign
+*NucleusApi::MarketingApi* | [**get_client_campaign_using_get**](docs/MarketingApi.md#get_client_campaign_using_get) | **GET** /client_campaign/{client_campaign_id} | Retrieve a clients/ips pair under a campaign
+*NucleusApi::MarketingApi* | [**update_campaign_data_using_put**](docs/MarketingApi.md#update_campaign_data_using_put) | **PUT** /campaign_data/{campaign_data_id} | Update a campaign data record
+*NucleusApi::MarketingApi* | [**update_campaign_plan_using_put**](docs/MarketingApi.md#update_campaign_plan_using_put) | **PUT** /campaign_plan/{campaign_plan_id} | Update a campaign plan
+*NucleusApi::MarketingApi* | [**update_campaign_using_put**](docs/MarketingApi.md#update_campaign_using_put) | **PUT** /campaign/{campaign_id} | Update a campaign
+*NucleusApi::MarketingApi* | [**update_client_campaign_using_put**](docs/MarketingApi.md#update_client_campaign_using_put) | **PUT** /client_campaign/{client_campaign_id} | Update a clients/ips pair under a campaign
+*NucleusApi::ModelApi* | [**create_model_asset_size_using_post**](docs/ModelApi.md#create_model_asset_size_using_post) | **POST** /model_asset_size | Create a model asset size
+*NucleusApi::ModelApi* | [**create_model_change_using_post**](docs/ModelApi.md#create_model_change_using_post) | **POST** /model/{model_id}/model_change | Change a model composition
+*NucleusApi::ModelApi* | [**create_model_comment_using_post**](docs/ModelApi.md#create_model_comment_using_post) | **POST** /model_comment | Create a model commentary
+*NucleusApi::ModelApi* | [**create_model_holding_using_post**](docs/ModelApi.md#create_model_holding_using_post) | **POST** /model_holding | Create a model holding
+*NucleusApi::ModelApi* | [**create_model_transaction_using_post**](docs/ModelApi.md#create_model_transaction_using_post) | **POST** /model_transaction | Create a model transaction
+*NucleusApi::ModelApi* | [**create_model_using_post**](docs/ModelApi.md#create_model_using_post) | **POST** /model | Create a model
+*NucleusApi::ModelApi* | [**delete_model_asset_size_using_delete**](docs/ModelApi.md#delete_model_asset_size_using_delete) | **DELETE** /model_asset_size/{model_asset_size_id} | Delete a model asset size
+*NucleusApi::ModelApi* | [**delete_model_comment_using_delete**](docs/ModelApi.md#delete_model_comment_using_delete) | **DELETE** /model_comment/{model_comment_id} | Delete a model commentary
+*NucleusApi::ModelApi* | [**delete_model_holding_using_delete**](docs/ModelApi.md#delete_model_holding_using_delete) | **DELETE** /model_holding/{model_holding_id} | Delete a model holding
+*NucleusApi::ModelApi* | [**delete_model_transaction_using_delete**](docs/ModelApi.md#delete_model_transaction_using_delete) | **DELETE** /model_transaction/{model_transaction_id} | Delete a model transaction
+*NucleusApi::ModelApi* | [**delete_model_using_delete**](docs/ModelApi.md#delete_model_using_delete) | **DELETE** /model/{model_id} | Delete a model
+*NucleusApi::ModelApi* | [**get_model_all_using_get**](docs/ModelApi.md#get_model_all_using_get) | **GET** /model | List all models
+*NucleusApi::ModelApi* | [**get_model_asset_size_all_using_get**](docs/ModelApi.md#get_model_asset_size_all_using_get) | **GET** /model_asset_size | List all model asset sizes
+*NucleusApi::ModelApi* | [**get_model_asset_size_using_get**](docs/ModelApi.md#get_model_asset_size_using_get) | **GET** /model_asset_size/{model_asset_size_id} | Retrieve a model asset size
+*NucleusApi::ModelApi* | [**get_model_comment_all_using_get**](docs/ModelApi.md#get_model_comment_all_using_get) | **GET** /model_comment | List all model commentary
+*NucleusApi::ModelApi* | [**get_model_comment_using_get**](docs/ModelApi.md#get_model_comment_using_get) | **GET** /model_comment/{model_comment_id} | Retrieve a model commentary
+*NucleusApi::ModelApi* | [**get_model_holding_all_using_get**](docs/ModelApi.md#get_model_holding_all_using_get) | **GET** /model_holding | List all model holdings
+*NucleusApi::ModelApi* | [**get_model_holding_using_get**](docs/ModelApi.md#get_model_holding_using_get) | **GET** /model_holding/{model_holding_id} | Retrieve a model holding
+*NucleusApi::ModelApi* | [**get_model_transaction_all_using_get**](docs/ModelApi.md#get_model_transaction_all_using_get) | **GET** /model_transaction | List all model transactions
+*NucleusApi::ModelApi* | [**get_model_transaction_using_get**](docs/ModelApi.md#get_model_transaction_using_get) | **GET** /model_transaction/{model_transaction_id} | Retrieve a model transaction
+*NucleusApi::ModelApi* | [**get_model_using_get**](docs/ModelApi.md#get_model_using_get) | **GET** /model/{model_id} | Retrieve a model
+*NucleusApi::ModelApi* | [**update_model_asset_size_using_put**](docs/ModelApi.md#update_model_asset_size_using_put) | **PUT** /model_asset_size/{model_asset_size_id} | Update a model asset size
+*NucleusApi::ModelApi* | [**update_model_comment_using_put**](docs/ModelApi.md#update_model_comment_using_put) | **PUT** /model_comment/{model_comment_id} | Update a model commentary
+*NucleusApi::ModelApi* | [**update_model_holding_using_put**](docs/ModelApi.md#update_model_holding_using_put) | **PUT** /model_holding/{model_holding_id} | Update a model holding
+*NucleusApi::ModelApi* | [**update_model_transaction_using_put**](docs/ModelApi.md#update_model_transaction_using_put) | **PUT** /model_transaction/{model_transaction_id} | Update a model transaction
+*NucleusApi::ModelApi* | [**update_model_using_put**](docs/ModelApi.md#update_model_using_put) | **PUT** /model/{model_id} | Update a model
+*NucleusApi::NotificationApi* | [**create_notification_client_using_post**](docs/NotificationApi.md#create_notification_client_using_post) | **POST** /notification_client | Create a Notification Client
+*NucleusApi::NotificationApi* | [**create_notification_setting_using_post**](docs/NotificationApi.md#create_notification_setting_using_post) | **POST** /notification_setting | Create a Notification Setting
+*NucleusApi::NotificationApi* | [**create_notification_using_post**](docs/NotificationApi.md#create_notification_using_post) | **POST** /notification | Create a Notification
+*NucleusApi::NotificationApi* | [**delete_notification_client_using_delete**](docs/NotificationApi.md#delete_notification_client_using_delete) | **DELETE** /notification_client/{notification_client_id} | Delete a Notification Client
+*NucleusApi::NotificationApi* | [**delete_notification_setting_using_delete**](docs/NotificationApi.md#delete_notification_setting_using_delete) | **DELETE** /notification_setting/{notification_setting_id} | Delete a Notification Setting
+*NucleusApi::NotificationApi* | [**delete_notification_using_delete**](docs/NotificationApi.md#delete_notification_using_delete) | **DELETE** /notification/{notification_id} | Delete a Notification
+*NucleusApi::NotificationApi* | [**get_notification_all_using_get**](docs/NotificationApi.md#get_notification_all_using_get) | **GET** /notification | Get All Notification
+*NucleusApi::NotificationApi* | [**get_notification_client_all_using_get**](docs/NotificationApi.md#get_notification_client_all_using_get) | **GET** /notification_client | List all Notification Client
+*NucleusApi::NotificationApi* | [**get_notification_client_using_get**](docs/NotificationApi.md#get_notification_client_using_get) | **GET** /notification_client/{notification_client_id} | Retrieve a Notification Client
+*NucleusApi::NotificationApi* | [**get_notification_setting_all_using_get**](docs/NotificationApi.md#get_notification_setting_all_using_get) | **GET** /notification_setting | List all Notification Setting
+*NucleusApi::NotificationApi* | [**get_notification_setting_using_get**](docs/NotificationApi.md#get_notification_setting_using_get) | **GET** /notification_setting/{notification_setting_id} | Retrieve a Notification Setting
+*NucleusApi::NotificationApi* | [**get_notification_using_get**](docs/NotificationApi.md#get_notification_using_get) | **GET** /notification/{notification_id} | Get a Notification
+*NucleusApi::NotificationApi* | [**update_notification_client_using_put**](docs/NotificationApi.md#update_notification_client_using_put) | **PUT** /notification_client/{notification_client_id} | Update a Notification Client
+*NucleusApi::NotificationApi* | [**update_notification_setting_using_put**](docs/NotificationApi.md#update_notification_setting_using_put) | **PUT** /notification_setting/{notification_setting_id} | Update a Notification Setting
+*NucleusApi::NotificationApi* | [**update_notification_using_put**](docs/NotificationApi.md#update_notification_using_put) | **PUT** /notification/{notification_id} | Update a Notification
+*NucleusApi::OrderApi* | [**create_account_order_bulk_using_post**](docs/OrderApi.md#create_account_order_bulk_using_post) | **POST** /account/{account_id}/order_bulk | Bulk orders for an account
+*NucleusApi::OrderApi* | [**create_account_order_buy_only_using_post**](docs/OrderApi.md#create_account_order_buy_only_using_post) | **POST** /account/{account_id}/order_buy_only | Create buy-only account rebalance orders
+*NucleusApi::OrderApi* | [**create_account_order_rebalance_using_post**](docs/OrderApi.md#create_account_order_rebalance_using_post) | **POST** /account/{account_id}/order_rebalance | Create account rebalance orders
+*NucleusApi::OrderApi* | [**create_account_order_reconciliation**](docs/OrderApi.md#create_account_order_reconciliation) | **POST** /account/{account_id}/order_reconciliation | Create account reconciliation order
+*NucleusApi::OrderApi* | [**create_account_order_sell_all_using_post**](docs/OrderApi.md#create_account_order_sell_all_using_post) | **POST** /account/{account_id}/order_sell_all | Sell all account order
+*NucleusApi::OrderApi* | [**create_account_order_sell_only_using_post**](docs/OrderApi.md#create_account_order_sell_only_using_post) | **POST** /account/{account_id}/order_sell_only | Create sell-only account rebalance orders
+*NucleusApi::OrderApi* | [**create_client_order_bulk_using_post**](docs/OrderApi.md#create_client_order_bulk_using_post) | **POST** /client/{client_id}/order_bulk | Bulk orders for a client
+*NucleusApi::OrderApi* | [**create_order_bulk_using_post**](docs/OrderApi.md#create_order_bulk_using_post) | **POST** /order_bulk | Bulk orders for your firm
+*NucleusApi::OrderApi* | [**create_order_status_using_post**](docs/OrderApi.md#create_order_status_using_post) | **POST** /order_status | Create an order status
+*NucleusApi::OrderApi* | [**create_order_track_using_post**](docs/OrderApi.md#create_order_track_using_post) | **POST** /order_track | Create an order tracking record
+*NucleusApi::OrderApi* | [**create_portfolio_order_buy_only_using_post**](docs/OrderApi.md#create_portfolio_order_buy_only_using_post) | **POST** /portfolio/{portfolio_id}/order_buy_only | Create buy-only portfolio rebalance orders
+*NucleusApi::OrderApi* | [**create_portfolio_order_rebalance_using_post**](docs/OrderApi.md#create_portfolio_order_rebalance_using_post) | **POST** /portfolio/{portfolio_id}/order_rebalance | Create portfolio rebalance orders
+*NucleusApi::OrderApi* | [**create_portfolio_order_reconciliation**](docs/OrderApi.md#create_portfolio_order_reconciliation) | **POST** /portfolio/{portfolio_id}/order_reconciliation | Create portfolio reconciliation order
+*NucleusApi::OrderApi* | [**create_portfolio_order_sell_all_using_post**](docs/OrderApi.md#create_portfolio_order_sell_all_using_post) | **POST** /portfolio/{portfolio_id}/order_sell_all | Sell all portfolio order
+*NucleusApi::OrderApi* | [**create_portfolio_order_sell_only_using_post**](docs/OrderApi.md#create_portfolio_order_sell_only_using_post) | **POST** /portfolio/{portfolio_id}/order_sell_only | Create sell-only portfolio rebalance orders
+*NucleusApi::OrderApi* | [**delete_order_status_using_delete**](docs/OrderApi.md#delete_order_status_using_delete) | **DELETE** /order_status/{order_status_id} | Delete an order status
+*NucleusApi::OrderApi* | [**delete_order_track_using_delete**](docs/OrderApi.md#delete_order_track_using_delete) | **DELETE** /order_track/{order_track_id} | Delete an order tracking record
+*NucleusApi::OrderApi* | [**delete_order_using_delete**](docs/OrderApi.md#delete_order_using_delete) | **DELETE** /order/{order_id} | Delete an order record
+*NucleusApi::OrderApi* | [**get_order_all_using_get**](docs/OrderApi.md#get_order_all_using_get) | **POST** /order | Create an order record
+*NucleusApi::OrderApi* | [**get_order_all_using_get1**](docs/OrderApi.md#get_order_all_using_get1) | **GET** /order | List all order records
+*NucleusApi::OrderApi* | [**get_order_bulk_all_using_get**](docs/OrderApi.md#get_order_bulk_all_using_get) | **GET** /order_bulk | List all bulk orders
+*NucleusApi::OrderApi* | [**get_order_status_all_using_get**](docs/OrderApi.md#get_order_status_all_using_get) | **GET** /order_status | List all order statuses
+*NucleusApi::OrderApi* | [**get_order_status_using_get**](docs/OrderApi.md#get_order_status_using_get) | **GET** /order_status/{order_status_id} | Retrieve an order status
+*NucleusApi::OrderApi* | [**get_order_track_all_using_get**](docs/OrderApi.md#get_order_track_all_using_get) | **GET** /order_track | List all order tracking records
+*NucleusApi::OrderApi* | [**get_order_track_using_get**](docs/OrderApi.md#get_order_track_using_get) | **GET** /order_track/{order_track_id} | Retrieve an order tracking record
+*NucleusApi::OrderApi* | [**get_order_using_get**](docs/OrderApi.md#get_order_using_get) | **GET** /order/{order_id} | Retrieve an order record
+*NucleusApi::OrderApi* | [**update_order_status_using_put**](docs/OrderApi.md#update_order_status_using_put) | **PUT** /order_status/{order_status_id} | Update an order status
+*NucleusApi::OrderApi* | [**update_order_track_using_put**](docs/OrderApi.md#update_order_track_using_put) | **PUT** /order_track/{order_track_id} | Update an order tracking record
+*NucleusApi::OrderApi* | [**update_order_using_put**](docs/OrderApi.md#update_order_using_put) | **PUT** /order/{order_id} | Update an order record
+*NucleusApi::OverflowApi* | [**create_overflow_settings_using_post**](docs/OverflowApi.md#create_overflow_settings_using_post) | **POST** /overflow_setting | Create a Overflow Settings request
+*NucleusApi::OverflowApi* | [**create_overflow_using_post**](docs/OverflowApi.md#create_overflow_using_post) | **POST** /overflow | Create a Overflow request
+*NucleusApi::OverflowApi* | [**delete_overflow_settings_using_delete**](docs/OverflowApi.md#delete_overflow_settings_using_delete) | **DELETE** /overflow_setting/{overflow_settings_id} | Delete a overflow settings
+*NucleusApi::OverflowApi* | [**get_overflow_all_using_get**](docs/OverflowApi.md#get_overflow_all_using_get) | **GET** /overflow | List all overflow objects
+*NucleusApi::OverflowApi* | [**get_overflow_settings_all_using_get**](docs/OverflowApi.md#get_overflow_settings_all_using_get) | **GET** /overflow_setting | List all overflow settings
+*NucleusApi::OverflowApi* | [**get_overflow_settings_using_get**](docs/OverflowApi.md#get_overflow_settings_using_get) | **GET** /overflow_setting/{overflow_settings_id} | Retrieve a Overflow Setting
+*NucleusApi::OverflowApi* | [**get_overflow_using_get**](docs/OverflowApi.md#get_overflow_using_get) | **GET** /overflow/{overflow_id} | Retrieve a Overflow object
+*NucleusApi::OverflowApi* | [**update_overflow_settings_using_put**](docs/OverflowApi.md#update_overflow_settings_using_put) | **PUT** /overflow_setting/{overflow_settings_id} | Update a overflow settings
+*NucleusApi::PerformanceApi* | [**get_account_performance_using_get**](docs/PerformanceApi.md#get_account_performance_using_get) | **GET** /account/{account_id}/performance | Account Performance
+*NucleusApi::PerformanceApi* | [**get_allocation_performance_using_get**](docs/PerformanceApi.md#get_allocation_performance_using_get) | **GET** /allocation/{allocation_id}/performance | Allocation Performance
+*NucleusApi::PerformanceApi* | [**get_benchmark_performance_using_get**](docs/PerformanceApi.md#get_benchmark_performance_using_get) | **GET** /benchmark/{benchmark_id}/performance | Benchmark Performance
+*NucleusApi::PerformanceApi* | [**get_client_performance_using_get**](docs/PerformanceApi.md#get_client_performance_using_get) | **GET** /client/{client_id}/performance | Client Performance
+*NucleusApi::PerformanceApi* | [**get_goal_performance_using_get**](docs/PerformanceApi.md#get_goal_performance_using_get) | **GET** /goal/{goal_id}/performance | Goal Performance
+*NucleusApi::PerformanceApi* | [**get_model_performance_using_get**](docs/PerformanceApi.md#get_model_performance_using_get) | **GET** /model/{model_id}/performance | Model Performance
+*NucleusApi::PerformanceApi* | [**get_portfolio_performance_using_get**](docs/PerformanceApi.md#get_portfolio_performance_using_get) | **GET** /portfolio/{portfolio_id}/performance | Portfolio Performance
+*NucleusApi::PerformanceApi* | [**get_security_performance_using_get**](docs/PerformanceApi.md#get_security_performance_using_get) | **GET** /security/{security_id}/performance | Security Performance
+*NucleusApi::PortfolioApi* | [**create_portfolio_asset_size_using_post**](docs/PortfolioApi.md#create_portfolio_asset_size_using_post) | **POST** /portfolio_asset_size | Create a portfolio asset size
+*NucleusApi::PortfolioApi* | [**create_portfolio_comment_using_post**](docs/PortfolioApi.md#create_portfolio_comment_using_post) | **POST** /portfolio_comment | Create a portfolio commentary
+*NucleusApi::PortfolioApi* | [**create_portfolio_goal_using_post**](docs/PortfolioApi.md#create_portfolio_goal_using_post) | **POST** /portfolio_goal | Create an portfolio goal
+*NucleusApi::PortfolioApi* | [**create_portfolio_holding_using_post**](docs/PortfolioApi.md#create_portfolio_holding_using_post) | **POST** /portfolio_holding | Create a portfolio holding
+*NucleusApi::PortfolioApi* | [**create_portfolio_transaction_using_post**](docs/PortfolioApi.md#create_portfolio_transaction_using_post) | **POST** /portfolio_transaction | Create a portfolio transaction
+*NucleusApi::PortfolioApi* | [**create_portfolio_using_post**](docs/PortfolioApi.md#create_portfolio_using_post) | **POST** /portfolio | Create a portfolio
+*NucleusApi::PortfolioApi* | [**delete_portfolio_asset_size_using_delete**](docs/PortfolioApi.md#delete_portfolio_asset_size_using_delete) | **DELETE** /portfolio_asset_size/{portfolio_asset_size_id} | Delete a portfolio asset size
+*NucleusApi::PortfolioApi* | [**delete_portfolio_comment_using_delete**](docs/PortfolioApi.md#delete_portfolio_comment_using_delete) | **DELETE** /portfolio_comment/{portfolio_comment_id} | Delete a portfolio commentary
+*NucleusApi::PortfolioApi* | [**delete_portfolio_goal_using_delete**](docs/PortfolioApi.md#delete_portfolio_goal_using_delete) | **DELETE** /portfolio_goal/{portfolio_goal_id} | Delete an portfolio goal
+*NucleusApi::PortfolioApi* | [**delete_portfolio_holding_using_delete**](docs/PortfolioApi.md#delete_portfolio_holding_using_delete) | **DELETE** /portfolio_holding/{portfolio_holding_id} | Delete a portfolio holding
+*NucleusApi::PortfolioApi* | [**delete_portfolio_transaction_using_delete**](docs/PortfolioApi.md#delete_portfolio_transaction_using_delete) | **DELETE** /portfolio_transaction/{portfolio_transaction_id} | Delete a portfolio transaction
+*NucleusApi::PortfolioApi* | [**delete_portfolio_using_delete**](docs/PortfolioApi.md#delete_portfolio_using_delete) | **DELETE** /portfolio/{portfolio_id} | Delete a portfolio
+*NucleusApi::PortfolioApi* | [**get_portfolio_aggregated_data_using_get**](docs/PortfolioApi.md#get_portfolio_aggregated_data_using_get) | **GET** /portfolio/{portfolio_id}/aggregate_data | Retrieve an portfolio aggregate data
+*NucleusApi::PortfolioApi* | [**get_portfolio_all_using_get**](docs/PortfolioApi.md#get_portfolio_all_using_get) | **GET** /portfolio | List all portfolios
+*NucleusApi::PortfolioApi* | [**get_portfolio_asset_size_all_using_get**](docs/PortfolioApi.md#get_portfolio_asset_size_all_using_get) | **GET** /portfolio_asset_size | Retrieve a portfolio asset size
+*NucleusApi::PortfolioApi* | [**get_portfolio_asset_size_using_get**](docs/PortfolioApi.md#get_portfolio_asset_size_using_get) | **GET** /portfolio_asset_size/{portfolio_asset_size_id} | Retrieve a portfolio asset size
+*NucleusApi::PortfolioApi* | [**get_portfolio_comment_all_using_get**](docs/PortfolioApi.md#get_portfolio_comment_all_using_get) | **GET** /portfolio_comment | List all portfolio commentary
+*NucleusApi::PortfolioApi* | [**get_portfolio_comment_using_get**](docs/PortfolioApi.md#get_portfolio_comment_using_get) | **GET** /portfolio_comment/{portfolio_comment_id} | Retrieve a portfolio commentary
+*NucleusApi::PortfolioApi* | [**get_portfolio_goal_all_using_get**](docs/PortfolioApi.md#get_portfolio_goal_all_using_get) | **GET** /portfolio_goal | List all portfolio goals
+*NucleusApi::PortfolioApi* | [**get_portfolio_goal_using_get**](docs/PortfolioApi.md#get_portfolio_goal_using_get) | **GET** /portfolio_goal/{portfolio_goal_id} | Retrieve an portfolio goal
+*NucleusApi::PortfolioApi* | [**get_portfolio_holding_all_using_get**](docs/PortfolioApi.md#get_portfolio_holding_all_using_get) | **GET** /portfolio_holding | List all portfolio holdings
+*NucleusApi::PortfolioApi* | [**get_portfolio_holding_using_get**](docs/PortfolioApi.md#get_portfolio_holding_using_get) | **GET** /portfolio_holding/{portfolio_holding_id} | Retrieve a portfolio holding
+*NucleusApi::PortfolioApi* | [**get_portfolio_transaction_all_using_get**](docs/PortfolioApi.md#get_portfolio_transaction_all_using_get) | **GET** /portfolio_transaction | List all portfolio transactions
+*NucleusApi::PortfolioApi* | [**get_portfolio_transaction_using_get**](docs/PortfolioApi.md#get_portfolio_transaction_using_get) | **GET** /portfolio_transaction/{portfolio_transaction_id} | Retrieve a portfolio transaction
+*NucleusApi::PortfolioApi* | [**get_portfolio_using_get**](docs/PortfolioApi.md#get_portfolio_using_get) | **GET** /portfolio/{portfolio_id} | Retrieve a portfolio
+*NucleusApi::PortfolioApi* | [**update_portfolio_asset_size_using_put**](docs/PortfolioApi.md#update_portfolio_asset_size_using_put) | **PUT** /portfolio_asset_size/{portfolio_asset_size_id} | Update a portfolio asset size
+*NucleusApi::PortfolioApi* | [**update_portfolio_comment_using_put**](docs/PortfolioApi.md#update_portfolio_comment_using_put) | **PUT** /portfolio_comment/{portfolio_comment_id} | Update a portfolio comment
+*NucleusApi::PortfolioApi* | [**update_portfolio_goal_using_put**](docs/PortfolioApi.md#update_portfolio_goal_using_put) | **PUT** /portfolio_goal/{portfolio_goal_id} | Update an portfolio goal
+*NucleusApi::PortfolioApi* | [**update_portfolio_holding_using_put**](docs/PortfolioApi.md#update_portfolio_holding_using_put) | **PUT** /portfolio_holding/{portfolio_holding_id} | Update a portfolio holding
+*NucleusApi::PortfolioApi* | [**update_portfolio_transaction_using_put**](docs/PortfolioApi.md#update_portfolio_transaction_using_put) | **PUT** /portfolio_transaction/{portfolio_transaction_id} | Update a portfolio transaction
+*NucleusApi::PortfolioApi* | [**update_portfolio_using_put**](docs/PortfolioApi.md#update_portfolio_using_put) | **PUT** /portfolio/{portfolio_id} | Update a portfolio
+*NucleusApi::QuestionnaireApi* | [**create_answer_using_post**](docs/QuestionnaireApi.md#create_answer_using_post) | **POST** /answer | Create an answer
+*NucleusApi::QuestionnaireApi* | [**create_client_response_using_post**](docs/QuestionnaireApi.md#create_client_response_using_post) | **POST** /client_response | Create a client response
+*NucleusApi::QuestionnaireApi* | [**create_question_using_post**](docs/QuestionnaireApi.md#create_question_using_post) | **POST** /question | Create a question
+*NucleusApi::QuestionnaireApi* | [**create_questionnaire_using_post**](docs/QuestionnaireApi.md#create_questionnaire_using_post) | **POST** /questionnaire | Create a questionnaire
+*NucleusApi::QuestionnaireApi* | [**delete_answer_using_delete**](docs/QuestionnaireApi.md#delete_answer_using_delete) | **DELETE** /answer/{answer_id} | Delete an answer
+*NucleusApi::QuestionnaireApi* | [**delete_client_response_using_delete**](docs/QuestionnaireApi.md#delete_client_response_using_delete) | **DELETE** /client_response/{client_response_id} | Delete a client response
+*NucleusApi::QuestionnaireApi* | [**delete_question_using_delete**](docs/QuestionnaireApi.md#delete_question_using_delete) | **DELETE** /question/{question_id} | Delete a question
+*NucleusApi::QuestionnaireApi* | [**delete_questionnaire_using_delete**](docs/QuestionnaireApi.md#delete_questionnaire_using_delete) | **DELETE** /questionnaire/{questionnaire_id} | Delete a questionnaire
+*NucleusApi::QuestionnaireApi* | [**get_answer_all_using_get**](docs/QuestionnaireApi.md#get_answer_all_using_get) | **GET** /answer | List all Answers
+*NucleusApi::QuestionnaireApi* | [**get_answer_using_get**](docs/QuestionnaireApi.md#get_answer_using_get) | **GET** /answer/{answer_id} | Retrieve an answer
+*NucleusApi::QuestionnaireApi* | [**get_client_response_all_using_get**](docs/QuestionnaireApi.md#get_client_response_all_using_get) | **GET** /client_response | List all client responses
+*NucleusApi::QuestionnaireApi* | [**get_client_response_using_get**](docs/QuestionnaireApi.md#get_client_response_using_get) | **GET** /client_response/{client_response_id} | Retrieve a client response
+*NucleusApi::QuestionnaireApi* | [**get_question_all_using_get**](docs/QuestionnaireApi.md#get_question_all_using_get) | **GET** /question | List all Questions
+*NucleusApi::QuestionnaireApi* | [**get_question_using_get**](docs/QuestionnaireApi.md#get_question_using_get) | **GET** /question/{question_id} | Retrieve a question
+*NucleusApi::QuestionnaireApi* | [**get_questionnaire_all_using_get**](docs/QuestionnaireApi.md#get_questionnaire_all_using_get) | **GET** /questionnaire | List all questionnaires
+*NucleusApi::QuestionnaireApi* | [**get_questionnaire_using_get**](docs/QuestionnaireApi.md#get_questionnaire_using_get) | **GET** /questionnaire/{questionnaire_id} | Retrieve a questionnaire
+*NucleusApi::QuestionnaireApi* | [**update_answer_using_put**](docs/QuestionnaireApi.md#update_answer_using_put) | **PUT** /answer/{answer_id} | Update an answer
+*NucleusApi::QuestionnaireApi* | [**update_client_response_using_put**](docs/QuestionnaireApi.md#update_client_response_using_put) | **PUT** /client_response/{client_response_id} | Update a client response
+*NucleusApi::QuestionnaireApi* | [**update_question_using_put**](docs/QuestionnaireApi.md#update_question_using_put) | **PUT** /question/{question_id} | Update a question.
+*NucleusApi::QuestionnaireApi* | [**update_questionnaire_using_put**](docs/QuestionnaireApi.md#update_questionnaire_using_put) | **PUT** /questionnaire/{questionnaire_id} | Update a questionnaire
+*NucleusApi::ResourceApi* | [**get_all_country_using_get**](docs/ResourceApi.md#get_all_country_using_get) | **GET** /resource/country | Get All Countries
+*NucleusApi::ResourceApi* | [**get_all_currency_using_get**](docs/ResourceApi.md#get_all_currency_using_get) | **GET** /resource/currency | Get All Currencies
+*NucleusApi::ResourceApi* | [**get_all_states_using_get**](docs/ResourceApi.md#get_all_states_using_get) | **GET** /resource/state | List all state resource
+*NucleusApi::ResourceApi* | [**get_all_statistics_using_get**](docs/ResourceApi.md#get_all_statistics_using_get) | **GET** /resource/statistic | List all statistic resource
+*NucleusApi::RiskProfileApi* | [**create_risk_profile_using_post**](docs/RiskProfileApi.md#create_risk_profile_using_post) | **POST** /risk_profile | Create a Risk Profile
+*NucleusApi::RiskProfileApi* | [**delete_risk_profile_using_delete**](docs/RiskProfileApi.md#delete_risk_profile_using_delete) | **DELETE** /risk_profile/{risk_profile_id} | Delete a Risk Profile
+*NucleusApi::RiskProfileApi* | [**get_risk_profile_all_using_get**](docs/RiskProfileApi.md#get_risk_profile_all_using_get) | **GET** /risk_profile | Get All Risk Profile
+*NucleusApi::RiskProfileApi* | [**get_risk_profile_using_get**](docs/RiskProfileApi.md#get_risk_profile_using_get) | **GET** /risk_profile/{risk_profile_id} | Get a Risk Profile
+*NucleusApi::RiskProfileApi* | [**update_risk_profile_using_put**](docs/RiskProfileApi.md#update_risk_profile_using_put) | **PUT** /risk_profile/{risk_profile_id} | Update a Risk Profile
+*NucleusApi::RoundupApi* | [**create_roundup_settings_using_post**](docs/RoundupApi.md#create_roundup_settings_using_post) | **POST** /roundup_setting | Create a Roundup Settings
+*NucleusApi::RoundupApi* | [**create_roundup_using_post**](docs/RoundupApi.md#create_roundup_using_post) | **POST** /roundup | Create a roundup
+*NucleusApi::RoundupApi* | [**delete_roundup_settings_using_delete**](docs/RoundupApi.md#delete_roundup_settings_using_delete) | **DELETE** /roundup_setting/{roundup_setting_id} | Delete a roundup settings
+*NucleusApi::RoundupApi* | [**get_roundup_all_using_get**](docs/RoundupApi.md#get_roundup_all_using_get) | **GET** /roundup | List all roundups
+*NucleusApi::RoundupApi* | [**get_roundup_settings_all_using_get**](docs/RoundupApi.md#get_roundup_settings_all_using_get) | **GET** /roundup_setting | List all roundup settings
+*NucleusApi::RoundupApi* | [**get_roundup_settings_using_get**](docs/RoundupApi.md#get_roundup_settings_using_get) | **GET** /roundup_setting/{roundup_setting_id} | Retrieve a Roundup Setting
+*NucleusApi::RoundupApi* | [**get_roundup_using_get**](docs/RoundupApi.md#get_roundup_using_get) | **GET** /roundup/{roundup_id} | Retrieve a Roundup
+*NucleusApi::RoundupApi* | [**update_roundup_settings_using_put**](docs/RoundupApi.md#update_roundup_settings_using_put) | **PUT** /roundup_setting/{roundup_setting_id} | Update a roundup settings
+*NucleusApi::ScoreApi* | [**create_score_using_post**](docs/ScoreApi.md#create_score_using_post) | **POST** /score | Create a score
+*NucleusApi::ScoreApi* | [**create_score_using_post1**](docs/ScoreApi.md#create_score_using_post1) | **GET** /score/{score_id} | Retrieve a score
+*NucleusApi::ScoreApi* | [**delete_score_using_delete**](docs/ScoreApi.md#delete_score_using_delete) | **DELETE** /score/{score_id} | Delete a score
+*NucleusApi::ScoreApi* | [**get_score_all_using_get**](docs/ScoreApi.md#get_score_all_using_get) | **GET** /score | List all scores
+*NucleusApi::ScoreApi* | [**update_score_using_put**](docs/ScoreApi.md#update_score_using_put) | **PUT** /score/{score_id} | Update a score
+*NucleusApi::SecuritiesApi* | [**create_security_exclusion_using_post**](docs/SecuritiesApi.md#create_security_exclusion_using_post) | **POST** /security_exclusion | Create a security exclusion
+*NucleusApi::SecuritiesApi* | [**create_security_price_using_post**](docs/SecuritiesApi.md#create_security_price_using_post) | **POST** /security_price | Create a security price
+*NucleusApi::SecuritiesApi* | [**create_security_using_post**](docs/SecuritiesApi.md#create_security_using_post) | **POST** /security | Create a security
+*NucleusApi::SecuritiesApi* | [**delete_security_exclusion_using_delete**](docs/SecuritiesApi.md#delete_security_exclusion_using_delete) | **DELETE** /security_exclusion/{security_exclusion_id} | Delete a security exclusion
+*NucleusApi::SecuritiesApi* | [**delete_security_price_using_delete**](docs/SecuritiesApi.md#delete_security_price_using_delete) | **DELETE** /security_price/{security_price_id} | Delete a security price
+*NucleusApi::SecuritiesApi* | [**delete_security_using_delete**](docs/SecuritiesApi.md#delete_security_using_delete) | **DELETE** /security/{security_id} | Delete a security
+*NucleusApi::SecuritiesApi* | [**get_security_all_using_get**](docs/SecuritiesApi.md#get_security_all_using_get) | **GET** /security | List all securities
+*NucleusApi::SecuritiesApi* | [**get_security_exclusion_all_using_get**](docs/SecuritiesApi.md#get_security_exclusion_all_using_get) | **GET** /security_exclusion | List all security exclusions
+*NucleusApi::SecuritiesApi* | [**get_security_exclusion_using_get**](docs/SecuritiesApi.md#get_security_exclusion_using_get) | **GET** /security_exclusion/{security_exclusion_id} | Retrieve a security exclusion
+*NucleusApi::SecuritiesApi* | [**get_security_price_all_using_get**](docs/SecuritiesApi.md#get_security_price_all_using_get) | **GET** /security_price | List all security prices
+*NucleusApi::SecuritiesApi* | [**get_security_price_using_get**](docs/SecuritiesApi.md#get_security_price_using_get) | **GET** /security_price/{security_price_id} | Retrieve a security price
+*NucleusApi::SecuritiesApi* | [**get_security_using_get**](docs/SecuritiesApi.md#get_security_using_get) | **GET** /security/{security_id} | Retrieve a security
+*NucleusApi::SecuritiesApi* | [**update_security_exclusion_using_put**](docs/SecuritiesApi.md#update_security_exclusion_using_put) | **PUT** /security_exclusion/{security_exclusion_id} | Update a security exclusion
+*NucleusApi::SecuritiesApi* | [**update_security_price_using_put**](docs/SecuritiesApi.md#update_security_price_using_put) | **PUT** /security_price/{security_price_id} | Update a security price
+*NucleusApi::SecuritiesApi* | [**update_security_using_put**](docs/SecuritiesApi.md#update_security_using_put) | **PUT** /security/{security_id} | Update a security
+*NucleusApi::SupportApi* | [**create_chat_using_post**](docs/SupportApi.md#create_chat_using_post) | **POST** /chat | Create a Chat
+*NucleusApi::SupportApi* | [**create_consultation_using_post**](docs/SupportApi.md#create_consultation_using_post) | **POST** /consultation | Create a CIO Consultation
+*NucleusApi::SupportApi* | [**create_sale_using_post**](docs/SupportApi.md#create_sale_using_post) | **POST** /sales | Create a sales inquiry
+*NucleusApi::SupportApi* | [**create_support_ticket_comment_using_post**](docs/SupportApi.md#create_support_ticket_comment_using_post) | **POST** /support_ticket_comment | Create a support ticket comment
+*NucleusApi::SupportApi* | [**create_support_ticket_using_post**](docs/SupportApi.md#create_support_ticket_using_post) | **POST** /support_ticket | Create a support ticket
+*NucleusApi::SupportApi* | [**delete_chat_using_delete**](docs/SupportApi.md#delete_chat_using_delete) | **DELETE** /chat/{chat_id} | Delete a Chat
+*NucleusApi::SupportApi* | [**delete_consultation_using_delete**](docs/SupportApi.md#delete_consultation_using_delete) | **DELETE** /consultation/{consultation_id} | Delete a CIO Consultation
+*NucleusApi::SupportApi* | [**delete_sale_using_delete**](docs/SupportApi.md#delete_sale_using_delete) | **DELETE** /sales/{sales_id} | Delete a sales inquiry
+*NucleusApi::SupportApi* | [**delete_support_ticket_comment_using_delete**](docs/SupportApi.md#delete_support_ticket_comment_using_delete) | **DELETE** /support_ticket_comment/{support_ticket_comment_id} | Delete a support ticket comment
+*NucleusApi::SupportApi* | [**delete_support_ticket_using_delete**](docs/SupportApi.md#delete_support_ticket_using_delete) | **DELETE** /support_ticket/{support_ticket_id} | Delete a support ticket
+*NucleusApi::SupportApi* | [**get_chat_all_using_get**](docs/SupportApi.md#get_chat_all_using_get) | **GET** /chat | List all open chats
+*NucleusApi::SupportApi* | [**get_chat_using_get**](docs/SupportApi.md#get_chat_using_get) | **GET** /chat/{chat_id} | Retrieve a Chat
+*NucleusApi::SupportApi* | [**get_consultation_all_using_get**](docs/SupportApi.md#get_consultation_all_using_get) | **GET** /consultation | List all CIO Consultation
+*NucleusApi::SupportApi* | [**get_consultation_using_get**](docs/SupportApi.md#get_consultation_using_get) | **GET** /consultation/{consultation_id} | Retrieve a CIO Consultation
+*NucleusApi::SupportApi* | [**get_sale_all_using_get**](docs/SupportApi.md#get_sale_all_using_get) | **GET** /sales | List all sales inquiries
+*NucleusApi::SupportApi* | [**get_sale_using_get**](docs/SupportApi.md#get_sale_using_get) | **GET** /sales/{sales_id} | Retrieve a sales record
+*NucleusApi::SupportApi* | [**get_support_ticket_all_using_get**](docs/SupportApi.md#get_support_ticket_all_using_get) | **GET** /support_ticket | List all support tickets
+*NucleusApi::SupportApi* | [**get_support_ticket_comment_all_using_get**](docs/SupportApi.md#get_support_ticket_comment_all_using_get) | **GET** /support_ticket_comment | List all support ticket comments
+*NucleusApi::SupportApi* | [**get_support_ticket_comment_using_get**](docs/SupportApi.md#get_support_ticket_comment_using_get) | **GET** /support_ticket_comment/{support_ticket_comment_id} | Retrieve a support ticket comment
+*NucleusApi::SupportApi* | [**get_support_ticket_using_get**](docs/SupportApi.md#get_support_ticket_using_get) | **GET** /support_ticket/{support_ticket_id} | Retrieve a support ticket
+*NucleusApi::SupportApi* | [**update_chat_using_put**](docs/SupportApi.md#update_chat_using_put) | **PUT** /chat/{chat_id} | Update a Chat
+*NucleusApi::SupportApi* | [**update_consultation_using_put**](docs/SupportApi.md#update_consultation_using_put) | **PUT** /consultation/{consultation_id} | Update a CIO Consultation
+*NucleusApi::SupportApi* | [**update_sale_using_put**](docs/SupportApi.md#update_sale_using_put) | **PUT** /sales/{sales_id} | Update a sales inquiry
+*NucleusApi::SupportApi* | [**update_support_ticket_comment_using_put**](docs/SupportApi.md#update_support_ticket_comment_using_put) | **PUT** /support_ticket_comment/{support_ticket_comment_id} | Update a support ticket comment
+*NucleusApi::SupportApi* | [**update_support_ticket_using_put**](docs/SupportApi.md#update_support_ticket_using_put) | **PUT** /support_ticket/{support_ticket_id} | Update a support ticket
+*NucleusApi::UtilsApi* | [**create_account_status_using_post**](docs/UtilsApi.md#create_account_status_using_post) | **POST** /account_status | Create an account status
+*NucleusApi::UtilsApi* | [**create_stage_using_post**](docs/UtilsApi.md#create_stage_using_post) | **POST** /stage | Create an account stage
+*NucleusApi::UtilsApi* | [**create_transaction_code_using_post**](docs/UtilsApi.md#create_transaction_code_using_post) | **POST** /transaction_code | Create a transaction code
+*NucleusApi::UtilsApi* | [**delete_account_status_using_delete**](docs/UtilsApi.md#delete_account_status_using_delete) | **DELETE** /account_status/{account_status_id} | Delete an account status
+*NucleusApi::UtilsApi* | [**delete_stage_using_delete**](docs/UtilsApi.md#delete_stage_using_delete) | **DELETE** /stage/{stage_id} | Delete an account stage
+*NucleusApi::UtilsApi* | [**delete_transaction_code_using_delete**](docs/UtilsApi.md#delete_transaction_code_using_delete) | **DELETE** /transaction_code/{transaction_code_id} | Delete a transaction code
+*NucleusApi::UtilsApi* | [**get_account_status_all_using_get**](docs/UtilsApi.md#get_account_status_all_using_get) | **GET** /account_status | List all account statuses
+*NucleusApi::UtilsApi* | [**get_account_status_using_get**](docs/UtilsApi.md#get_account_status_using_get) | **GET** /account_status/{account_status_id} | Retrieve an account status
+*NucleusApi::UtilsApi* | [**get_stage_all_using_get**](docs/UtilsApi.md#get_stage_all_using_get) | **GET** /stage | List all account stages
+*NucleusApi::UtilsApi* | [**get_stage_using_get**](docs/UtilsApi.md#get_stage_using_get) | **GET** /stage/{stage_id} | Retrieve an account stage
+*NucleusApi::UtilsApi* | [**get_transaction_code_all_using_get**](docs/UtilsApi.md#get_transaction_code_all_using_get) | **GET** /transaction_code | List all transaction codes
+*NucleusApi::UtilsApi* | [**get_transaction_code_using_get**](docs/UtilsApi.md#get_transaction_code_using_get) | **GET** /transaction_code/{transaction_code_id} | Retrieve a transaction code
+*NucleusApi::UtilsApi* | [**update_account_status_using_put**](docs/UtilsApi.md#update_account_status_using_put) | **PUT** /account_status/{account_status_id} | Update an account status
+*NucleusApi::UtilsApi* | [**update_stage_using_put**](docs/UtilsApi.md#update_stage_using_put) | **PUT** /stage/{stage_id} | Update an account stage
+*NucleusApi::UtilsApi* | [**update_transaction_code_using_put**](docs/UtilsApi.md#update_transaction_code_using_put) | **PUT** /transaction_code/{transaction_code_id} | Update a transaction code
+*NucleusApi::WebhookApi* | [**create_webhook_using_post**](docs/WebhookApi.md#create_webhook_using_post) | **POST** /webhook | Create a webhook
+*NucleusApi::WebhookApi* | [**delete_webhook_using_delete**](docs/WebhookApi.md#delete_webhook_using_delete) | **DELETE** /webhook/{webhook_id} | Delete a webhook
+*NucleusApi::WebhookApi* | [**get_webhook_all_using_get**](docs/WebhookApi.md#get_webhook_all_using_get) | **GET** /webhook | List all webhooks
+*NucleusApi::WebhookApi* | [**get_webhook_using_get**](docs/WebhookApi.md#get_webhook_using_get) | **GET** /webhook/{webhook_id} | Retrieve a webhook
+*NucleusApi::WebhookApi* | [**update_webhook_using_put**](docs/WebhookApi.md#update_webhook_using_put) | **PUT** /webhook/{webhook_id} | Update a webhook
 
 
 ## Documentation for Models
 
- - [AtomApi::Account](docs/Account.md)
- - [AtomApi::AccountAdvisorVO](docs/AccountAdvisorVO.md)
- - [AtomApi::AccountAllocationMapping](docs/AccountAllocationMapping.md)
- - [AtomApi::AccountClientsOverviewVO](docs/AccountClientsOverviewVO.md)
- - [AtomApi::AccountHoldingVO](docs/AccountHoldingVO.md)
- - [AtomApi::AccountMap](docs/AccountMap.md)
- - [AtomApi::AccountOverviewVO](docs/AccountOverviewVO.md)
- - [AtomApi::AccountPermissionVO](docs/AccountPermissionVO.md)
- - [AtomApi::AccountPortfolioRebalanceRequest](docs/AccountPortfolioRebalanceRequest.md)
- - [AtomApi::AccountStatus](docs/AccountStatus.md)
- - [AtomApi::AccountType](docs/AccountType.md)
- - [AtomApi::AccountVO](docs/AccountVO.md)
- - [AtomApi::Accounting](docs/Accounting.md)
- - [AtomApi::AclClientPermissionVO](docs/AclClientPermissionVO.md)
- - [AtomApi::AdvisorOverviewVO](docs/AdvisorOverviewVO.md)
- - [AtomApi::AggregateDataByCategoryForClientFromDbVO](docs/AggregateDataByCategoryForClientFromDbVO.md)
- - [AtomApi::AggregationAccount](docs/AggregationAccount.md)
- - [AtomApi::AggregationAccountAggregateDataVO](docs/AggregationAccountAggregateDataVO.md)
- - [AtomApi::AggregationAccountBalance](docs/AggregationAccountBalance.md)
- - [AtomApi::AggregationAccountBalanceAggregateDataVO](docs/AggregationAccountBalanceAggregateDataVO.md)
- - [AtomApi::AggregationAccountDetailsAggregateDataVO](docs/AggregationAccountDetailsAggregateDataVO.md)
- - [AtomApi::AggregationAccountHolding](docs/AggregationAccountHolding.md)
- - [AtomApi::AggregationAccountHoldingAggregateDataVO](docs/AggregationAccountHoldingAggregateDataVO.md)
- - [AtomApi::AggregationAccountTransaction](docs/AggregationAccountTransaction.md)
- - [AtomApi::AggregationAccountTransactionAggregateDataVO](docs/AggregationAccountTransactionAggregateDataVO.md)
- - [AtomApi::AggregationAccountsMap](docs/AggregationAccountsMap.md)
- - [AtomApi::AggregationDataForClientByCategoryResponseVO](docs/AggregationDataForClientByCategoryResponseVO.md)
- - [AtomApi::AggregationDataForClientParentResponseVO](docs/AggregationDataForClientParentResponseVO.md)
- - [AtomApi::Allocation](docs/Allocation.md)
- - [AtomApi::AllocationAggregatedVO](docs/AllocationAggregatedVO.md)
- - [AtomApi::AllocationComposition](docs/AllocationComposition.md)
- - [AtomApi::AllocationCompositionAggregatedVO](docs/AllocationCompositionAggregatedVO.md)
- - [AtomApi::AllocationCompositionModelHoldingsVO](docs/AllocationCompositionModelHoldingsVO.md)
- - [AtomApi::AllocationNodeMap](docs/AllocationNodeMap.md)
- - [AtomApi::AllocationVO](docs/AllocationVO.md)
- - [AtomApi::Answer](docs/Answer.md)
- - [AtomApi::AnswerMap](docs/AnswerMap.md)
- - [AtomApi::Application](docs/Application.md)
- - [AtomApi::AuditLog](docs/AuditLog.md)
- - [AtomApi::AvailableDateDoubleVO](docs/AvailableDateDoubleVO.md)
- - [AtomApi::BankCredit](docs/BankCredit.md)
- - [AtomApi::BankLink](docs/BankLink.md)
- - [AtomApi::BankLinkMap](docs/BankLinkMap.md)
- - [AtomApi::Benchmark](docs/Benchmark.md)
- - [AtomApi::BenchmarkComposition](docs/BenchmarkComposition.md)
- - [AtomApi::Budget](docs/Budget.md)
- - [AtomApi::BudgetAggregationAccount](docs/BudgetAggregationAccount.md)
- - [AtomApi::BudgetObject](docs/BudgetObject.md)
- - [AtomApi::BulkTransaction](docs/BulkTransaction.md)
- - [AtomApi::BulkTransactionVO](docs/BulkTransactionVO.md)
- - [AtomApi::Campaign](docs/Campaign.md)
- - [AtomApi::CampaignData](docs/CampaignData.md)
- - [AtomApi::CampaignPlan](docs/CampaignPlan.md)
- - [AtomApi::CampaignPlanRate](docs/CampaignPlanRate.md)
- - [AtomApi::Card](docs/Card.md)
- - [AtomApi::CardAddress](docs/CardAddress.md)
- - [AtomApi::CardProgram](docs/CardProgram.md)
- - [AtomApi::Cash](docs/Cash.md)
- - [AtomApi::CategoriesMap](docs/CategoriesMap.md)
- - [AtomApi::ChatInfo](docs/ChatInfo.md)
- - [AtomApi::Client](docs/Client.md)
- - [AtomApi::ClientAccountAdvisorVO](docs/ClientAccountAdvisorVO.md)
- - [AtomApi::ClientAccountMapping](docs/ClientAccountMapping.md)
- - [AtomApi::ClientAccountVO](docs/ClientAccountVO.md)
- - [AtomApi::ClientAddress](docs/ClientAddress.md)
- - [AtomApi::ClientAdvisorOverviewVO](docs/ClientAdvisorOverviewVO.md)
- - [AtomApi::ClientAnalyticsHistory](docs/ClientAnalyticsHistory.md)
- - [AtomApi::ClientAnalyticsResponse](docs/ClientAnalyticsResponse.md)
- - [AtomApi::ClientAnalyticsTenants](docs/ClientAnalyticsTenants.md)
- - [AtomApi::ClientAssetsAdvisorVO](docs/ClientAssetsAdvisorVO.md)
- - [AtomApi::ClientCampaignMapping](docs/ClientCampaignMapping.md)
- - [AtomApi::ClientHydro](docs/ClientHydro.md)
- - [AtomApi::ClientResponse](docs/ClientResponse.md)
- - [AtomApi::ClientStatus](docs/ClientStatus.md)
- - [AtomApi::ClientViewGoalData](docs/ClientViewGoalData.md)
- - [AtomApi::Consultation](docs/Consultation.md)
- - [AtomApi::Country](docs/Country.md)
- - [AtomApi::Currency](docs/Currency.md)
- - [AtomApi::Customer](docs/Customer.md)
- - [AtomApi::CustomerAddress](docs/CustomerAddress.md)
- - [AtomApi::CustomerRevenue](docs/CustomerRevenue.md)
- - [AtomApi::DailyDeposit](docs/DailyDeposit.md)
- - [AtomApi::DailyWithdrawal](docs/DailyWithdrawal.md)
- - [AtomApi::DateDoubleVO](docs/DateDoubleVO.md)
- - [AtomApi::DecisionTree](docs/DecisionTree.md)
- - [AtomApi::DecisionTreeCO](docs/DecisionTreeCO.md)
- - [AtomApi::DecisionTreeResultVO](docs/DecisionTreeResultVO.md)
- - [AtomApi::DepositAccountVO](docs/DepositAccountVO.md)
- - [AtomApi::DepositVO](docs/DepositVO.md)
- - [AtomApi::Document](docs/Document.md)
- - [AtomApi::Employment](docs/Employment.md)
- - [AtomApi::ExternalAccountTransfer](docs/ExternalAccountTransfer.md)
- - [AtomApi::FAQKeyword](docs/FAQKeyword.md)
- - [AtomApi::Faq](docs/Faq.md)
- - [AtomApi::Feature](docs/Feature.md)
- - [AtomApi::FeatureTrack](docs/FeatureTrack.md)
- - [AtomApi::FinancialOffer](docs/FinancialOffer.md)
- - [AtomApi::Funding](docs/Funding.md)
- - [AtomApi::FundingRequestMap](docs/FundingRequestMap.md)
- - [AtomApi::Goal](docs/Goal.md)
- - [AtomApi::GoalAccountMapping](docs/GoalAccountMapping.md)
- - [AtomApi::GoalTrack](docs/GoalTrack.md)
- - [AtomApi::GoalTrackAccounts](docs/GoalTrackAccounts.md)
- - [AtomApi::InsuranceCoverage](docs/InsuranceCoverage.md)
- - [AtomApi::InsuranceCoverageMap](docs/InsuranceCoverageMap.md)
- - [AtomApi::InsuranceDiscount](docs/InsuranceDiscount.md)
- - [AtomApi::InsuranceDiscountMap](docs/InsuranceDiscountMap.md)
- - [AtomApi::InsuranceQuote](docs/InsuranceQuote.md)
- - [AtomApi::Investment](docs/Investment.md)
- - [AtomApi::Invoice](docs/Invoice.md)
- - [AtomApi::InvoicePayment](docs/InvoicePayment.md)
- - [AtomApi::JsonNode](docs/JsonNode.md)
- - [AtomApi::Location](docs/Location.md)
- - [AtomApi::MerchantsMap](docs/MerchantsMap.md)
- - [AtomApi::Model](docs/Model.md)
- - [AtomApi::ModelAssetSize](docs/ModelAssetSize.md)
- - [AtomApi::ModelComment](docs/ModelComment.md)
- - [AtomApi::ModelHolding](docs/ModelHolding.md)
- - [AtomApi::ModelHoldingAgg](docs/ModelHoldingAgg.md)
- - [AtomApi::ModelHoldingVO](docs/ModelHoldingVO.md)
- - [AtomApi::ModelTransaction](docs/ModelTransaction.md)
- - [AtomApi::Node](docs/Node.md)
- - [AtomApi::NodeRelationship](docs/NodeRelationship.md)
- - [AtomApi::Notification](docs/Notification.md)
- - [AtomApi::NotificationClient](docs/NotificationClient.md)
- - [AtomApi::NotificationSetting](docs/NotificationSetting.md)
- - [AtomApi::Order](docs/Order.md)
- - [AtomApi::OrderBulk](docs/OrderBulk.md)
- - [AtomApi::OrderReconcileRequest](docs/OrderReconcileRequest.md)
- - [AtomApi::OrderReconcileReturnObject](docs/OrderReconcileReturnObject.md)
- - [AtomApi::OrderStatus](docs/OrderStatus.md)
- - [AtomApi::OrderTrack](docs/OrderTrack.md)
- - [AtomApi::OrderVoClone](docs/OrderVoClone.md)
- - [AtomApi::Overflow](docs/Overflow.md)
- - [AtomApi::OverflowBankLinkMap](docs/OverflowBankLinkMap.md)
- - [AtomApi::OverflowSettings](docs/OverflowSettings.md)
- - [AtomApi::PageAccount](docs/PageAccount.md)
- - [AtomApi::PageAccountAllocationMapping](docs/PageAccountAllocationMapping.md)
- - [AtomApi::PageAccountPermissionVO](docs/PageAccountPermissionVO.md)
- - [AtomApi::PageAccountStatus](docs/PageAccountStatus.md)
- - [AtomApi::PageAccountType](docs/PageAccountType.md)
- - [AtomApi::PageAccounting](docs/PageAccounting.md)
- - [AtomApi::PageAggregationAccount](docs/PageAggregationAccount.md)
- - [AtomApi::PageAggregationAccountBalance](docs/PageAggregationAccountBalance.md)
- - [AtomApi::PageAggregationAccountHolding](docs/PageAggregationAccountHolding.md)
- - [AtomApi::PageAggregationAccountTransaction](docs/PageAggregationAccountTransaction.md)
- - [AtomApi::PageAllocation](docs/PageAllocation.md)
- - [AtomApi::PageAllocationComposition](docs/PageAllocationComposition.md)
- - [AtomApi::PageAnswer](docs/PageAnswer.md)
- - [AtomApi::PageApplication](docs/PageApplication.md)
- - [AtomApi::PageAuditLog](docs/PageAuditLog.md)
- - [AtomApi::PageBankLink](docs/PageBankLink.md)
- - [AtomApi::PageBenchmark](docs/PageBenchmark.md)
- - [AtomApi::PageBudget](docs/PageBudget.md)
- - [AtomApi::PageCampaign](docs/PageCampaign.md)
- - [AtomApi::PageCampaignData](docs/PageCampaignData.md)
- - [AtomApi::PageCampaignPlan](docs/PageCampaignPlan.md)
- - [AtomApi::PageCard](docs/PageCard.md)
- - [AtomApi::PageCardProgram](docs/PageCardProgram.md)
- - [AtomApi::PageChatInfo](docs/PageChatInfo.md)
- - [AtomApi::PageClient](docs/PageClient.md)
- - [AtomApi::PageClientCampaignMapping](docs/PageClientCampaignMapping.md)
- - [AtomApi::PageClientHydro](docs/PageClientHydro.md)
- - [AtomApi::PageClientResponse](docs/PageClientResponse.md)
- - [AtomApi::PageClientStatus](docs/PageClientStatus.md)
- - [AtomApi::PageConsultation](docs/PageConsultation.md)
- - [AtomApi::PageCustomer](docs/PageCustomer.md)
- - [AtomApi::PageCustomerRevenue](docs/PageCustomerRevenue.md)
- - [AtomApi::PageDailyDeposit](docs/PageDailyDeposit.md)
- - [AtomApi::PageDailyWithdrawal](docs/PageDailyWithdrawal.md)
- - [AtomApi::PageDecisionTree](docs/PageDecisionTree.md)
- - [AtomApi::PageDocument](docs/PageDocument.md)
- - [AtomApi::PageExternalAccountTransfer](docs/PageExternalAccountTransfer.md)
- - [AtomApi::PageFaq](docs/PageFaq.md)
- - [AtomApi::PageFeature](docs/PageFeature.md)
- - [AtomApi::PageFeatureTrack](docs/PageFeatureTrack.md)
- - [AtomApi::PageFinancialOffer](docs/PageFinancialOffer.md)
- - [AtomApi::PageFunding](docs/PageFunding.md)
- - [AtomApi::PageGoal](docs/PageGoal.md)
- - [AtomApi::PageGoalTrack](docs/PageGoalTrack.md)
- - [AtomApi::PageInsuranceCoverage](docs/PageInsuranceCoverage.md)
- - [AtomApi::PageInsuranceDiscount](docs/PageInsuranceDiscount.md)
- - [AtomApi::PageInsuranceQuote](docs/PageInsuranceQuote.md)
- - [AtomApi::PageInvoice](docs/PageInvoice.md)
- - [AtomApi::PageInvoicePayment](docs/PageInvoicePayment.md)
- - [AtomApi::PageModel](docs/PageModel.md)
- - [AtomApi::PageModelAssetSize](docs/PageModelAssetSize.md)
- - [AtomApi::PageModelComment](docs/PageModelComment.md)
- - [AtomApi::PageModelHolding](docs/PageModelHolding.md)
- - [AtomApi::PageModelTransaction](docs/PageModelTransaction.md)
- - [AtomApi::PageNode](docs/PageNode.md)
- - [AtomApi::PageNodeRelationship](docs/PageNodeRelationship.md)
- - [AtomApi::PageNotification](docs/PageNotification.md)
- - [AtomApi::PageNotificationClient](docs/PageNotificationClient.md)
- - [AtomApi::PageNotificationSetting](docs/PageNotificationSetting.md)
- - [AtomApi::PageOrder](docs/PageOrder.md)
- - [AtomApi::PageOrderBulk](docs/PageOrderBulk.md)
- - [AtomApi::PageOrderStatus](docs/PageOrderStatus.md)
- - [AtomApi::PageOrderTrack](docs/PageOrderTrack.md)
- - [AtomApi::PageOverflow](docs/PageOverflow.md)
- - [AtomApi::PageOverflowSettings](docs/PageOverflowSettings.md)
- - [AtomApi::PagePortfolio](docs/PagePortfolio.md)
- - [AtomApi::PagePortfolioAssetSizeLog](docs/PagePortfolioAssetSizeLog.md)
- - [AtomApi::PagePortfolioComment](docs/PagePortfolioComment.md)
- - [AtomApi::PagePortfolioGoal](docs/PagePortfolioGoal.md)
- - [AtomApi::PagePortfolioHoldingLog](docs/PagePortfolioHoldingLog.md)
- - [AtomApi::PagePortfolioTransaction](docs/PagePortfolioTransaction.md)
- - [AtomApi::PageQuestion](docs/PageQuestion.md)
- - [AtomApi::PageQuestionnaire](docs/PageQuestionnaire.md)
- - [AtomApi::PageRiskProfile](docs/PageRiskProfile.md)
- - [AtomApi::PageRoundup](docs/PageRoundup.md)
- - [AtomApi::PageRoundupSettings](docs/PageRoundupSettings.md)
- - [AtomApi::PageSale](docs/PageSale.md)
- - [AtomApi::PageScore](docs/PageScore.md)
- - [AtomApi::PageSecurity](docs/PageSecurity.md)
- - [AtomApi::PageSecurityExclusion](docs/PageSecurityExclusion.md)
- - [AtomApi::PageSecurityPrice](docs/PageSecurityPrice.md)
- - [AtomApi::PageStage](docs/PageStage.md)
- - [AtomApi::PageSupportTicket](docs/PageSupportTicket.md)
- - [AtomApi::PageSupportTicketComment](docs/PageSupportTicketComment.md)
- - [AtomApi::PageTransactionCode](docs/PageTransactionCode.md)
- - [AtomApi::PageVAccountAssetSize](docs/PageVAccountAssetSize.md)
- - [AtomApi::PageWebhook](docs/PageWebhook.md)
- - [AtomApi::PermissionVO](docs/PermissionVO.md)
- - [AtomApi::Portfolio](docs/Portfolio.md)
- - [AtomApi::PortfolioAggregatedVO](docs/PortfolioAggregatedVO.md)
- - [AtomApi::PortfolioAssetSize](docs/PortfolioAssetSize.md)
- - [AtomApi::PortfolioAssetSizeLog](docs/PortfolioAssetSizeLog.md)
- - [AtomApi::PortfolioComment](docs/PortfolioComment.md)
- - [AtomApi::PortfolioGoal](docs/PortfolioGoal.md)
- - [AtomApi::PortfolioGoalMap](docs/PortfolioGoalMap.md)
- - [AtomApi::PortfolioHolding](docs/PortfolioHolding.md)
- - [AtomApi::PortfolioHoldingAgg](docs/PortfolioHoldingAgg.md)
- - [AtomApi::PortfolioHoldingLog](docs/PortfolioHoldingLog.md)
- - [AtomApi::PortfolioTransaction](docs/PortfolioTransaction.md)
- - [AtomApi::Question](docs/Question.md)
- - [AtomApi::Questionnaire](docs/Questionnaire.md)
- - [AtomApi::RiskProfile](docs/RiskProfile.md)
- - [AtomApi::Roundup](docs/Roundup.md)
- - [AtomApi::RoundupCO](docs/RoundupCO.md)
- - [AtomApi::RoundupSettings](docs/RoundupSettings.md)
- - [AtomApi::Sale](docs/Sale.md)
- - [AtomApi::Score](docs/Score.md)
- - [AtomApi::SecuritiesComposition](docs/SecuritiesComposition.md)
- - [AtomApi::SecuritiesCountry](docs/SecuritiesCountry.md)
- - [AtomApi::Security](docs/Security.md)
- - [AtomApi::SecurityCompositionVO](docs/SecurityCompositionVO.md)
- - [AtomApi::SecurityCountryVO](docs/SecurityCountryVO.md)
- - [AtomApi::SecurityDetailVO](docs/SecurityDetailVO.md)
- - [AtomApi::SecurityExclusion](docs/SecurityExclusion.md)
- - [AtomApi::SecurityPrice](docs/SecurityPrice.md)
- - [AtomApi::Sort](docs/Sort.md)
- - [AtomApi::Stage](docs/Stage.md)
- - [AtomApi::State](docs/State.md)
- - [AtomApi::StatisticResourceVO](docs/StatisticResourceVO.md)
- - [AtomApi::SupportTicket](docs/SupportTicket.md)
- - [AtomApi::SupportTicketComment](docs/SupportTicketComment.md)
- - [AtomApi::SupportTicketDocument](docs/SupportTicketDocument.md)
- - [AtomApi::TokenDateRequest](docs/TokenDateRequest.md)
- - [AtomApi::TransactionCode](docs/TransactionCode.md)
- - [AtomApi::VAccountAssetSize](docs/VAccountAssetSize.md)
- - [AtomApi::VAccountVO](docs/VAccountVO.md)
- - [AtomApi::VClientGoalViewData](docs/VClientGoalViewData.md)
- - [AtomApi::VPortfolioVO](docs/VPortfolioVO.md)
- - [AtomApi::Webhook](docs/Webhook.md)
- - [AtomApi::WithdrawalAccountVO](docs/WithdrawalAccountVO.md)
- - [AtomApi::WithdrawalVO](docs/WithdrawalVO.md)
+ - [NucleusApi::Account](docs/Account.md)
+ - [NucleusApi::AccountAdvisorVO](docs/AccountAdvisorVO.md)
+ - [NucleusApi::AccountAllocationMapping](docs/AccountAllocationMapping.md)
+ - [NucleusApi::AccountClientsOverviewVO](docs/AccountClientsOverviewVO.md)
+ - [NucleusApi::AccountHoldingVO](docs/AccountHoldingVO.md)
+ - [NucleusApi::AccountMap](docs/AccountMap.md)
+ - [NucleusApi::AccountOverviewVO](docs/AccountOverviewVO.md)
+ - [NucleusApi::AccountPermissionVO](docs/AccountPermissionVO.md)
+ - [NucleusApi::AccountPortfolioRebalanceRequest](docs/AccountPortfolioRebalanceRequest.md)
+ - [NucleusApi::AccountStatus](docs/AccountStatus.md)
+ - [NucleusApi::AccountType](docs/AccountType.md)
+ - [NucleusApi::AccountVO](docs/AccountVO.md)
+ - [NucleusApi::Accounting](docs/Accounting.md)
+ - [NucleusApi::AclClientPermissionVO](docs/AclClientPermissionVO.md)
+ - [NucleusApi::AdvisorOverviewVO](docs/AdvisorOverviewVO.md)
+ - [NucleusApi::AggregateDataByCategoryForClientFromDbVO](docs/AggregateDataByCategoryForClientFromDbVO.md)
+ - [NucleusApi::AggregationAccount](docs/AggregationAccount.md)
+ - [NucleusApi::AggregationAccountAggregateDataVO](docs/AggregationAccountAggregateDataVO.md)
+ - [NucleusApi::AggregationAccountBalance](docs/AggregationAccountBalance.md)
+ - [NucleusApi::AggregationAccountBalanceAggregateDataVO](docs/AggregationAccountBalanceAggregateDataVO.md)
+ - [NucleusApi::AggregationAccountDetailsAggregateDataVO](docs/AggregationAccountDetailsAggregateDataVO.md)
+ - [NucleusApi::AggregationAccountHolding](docs/AggregationAccountHolding.md)
+ - [NucleusApi::AggregationAccountHoldingAggregateDataVO](docs/AggregationAccountHoldingAggregateDataVO.md)
+ - [NucleusApi::AggregationAccountTransaction](docs/AggregationAccountTransaction.md)
+ - [NucleusApi::AggregationAccountTransactionAggregateDataVO](docs/AggregationAccountTransactionAggregateDataVO.md)
+ - [NucleusApi::AggregationAccountsMap](docs/AggregationAccountsMap.md)
+ - [NucleusApi::AggregationDataForClientByCategoryResponseVO](docs/AggregationDataForClientByCategoryResponseVO.md)
+ - [NucleusApi::AggregationDataForClientParentResponseVO](docs/AggregationDataForClientParentResponseVO.md)
+ - [NucleusApi::Allocation](docs/Allocation.md)
+ - [NucleusApi::AllocationAggregatedVO](docs/AllocationAggregatedVO.md)
+ - [NucleusApi::AllocationComposition](docs/AllocationComposition.md)
+ - [NucleusApi::AllocationCompositionAggregatedVO](docs/AllocationCompositionAggregatedVO.md)
+ - [NucleusApi::AllocationCompositionModelHoldingsVO](docs/AllocationCompositionModelHoldingsVO.md)
+ - [NucleusApi::AllocationNodeMap](docs/AllocationNodeMap.md)
+ - [NucleusApi::AllocationVO](docs/AllocationVO.md)
+ - [NucleusApi::Answer](docs/Answer.md)
+ - [NucleusApi::AnswerMap](docs/AnswerMap.md)
+ - [NucleusApi::Application](docs/Application.md)
+ - [NucleusApi::AuditLog](docs/AuditLog.md)
+ - [NucleusApi::AvailableDateDoubleVO](docs/AvailableDateDoubleVO.md)
+ - [NucleusApi::BankCredit](docs/BankCredit.md)
+ - [NucleusApi::BankLink](docs/BankLink.md)
+ - [NucleusApi::BankLinkMap](docs/BankLinkMap.md)
+ - [NucleusApi::Benchmark](docs/Benchmark.md)
+ - [NucleusApi::BenchmarkComposition](docs/BenchmarkComposition.md)
+ - [NucleusApi::Budget](docs/Budget.md)
+ - [NucleusApi::BudgetAggregationAccount](docs/BudgetAggregationAccount.md)
+ - [NucleusApi::BudgetObject](docs/BudgetObject.md)
+ - [NucleusApi::BulkTransaction](docs/BulkTransaction.md)
+ - [NucleusApi::BulkTransactionVO](docs/BulkTransactionVO.md)
+ - [NucleusApi::Campaign](docs/Campaign.md)
+ - [NucleusApi::CampaignData](docs/CampaignData.md)
+ - [NucleusApi::CampaignPlan](docs/CampaignPlan.md)
+ - [NucleusApi::CampaignPlanRate](docs/CampaignPlanRate.md)
+ - [NucleusApi::Card](docs/Card.md)
+ - [NucleusApi::CardAddress](docs/CardAddress.md)
+ - [NucleusApi::CardProgram](docs/CardProgram.md)
+ - [NucleusApi::Cash](docs/Cash.md)
+ - [NucleusApi::CategoriesMap](docs/CategoriesMap.md)
+ - [NucleusApi::ChatInfo](docs/ChatInfo.md)
+ - [NucleusApi::Client](docs/Client.md)
+ - [NucleusApi::ClientAccountAdvisorVO](docs/ClientAccountAdvisorVO.md)
+ - [NucleusApi::ClientAccountMapping](docs/ClientAccountMapping.md)
+ - [NucleusApi::ClientAccountVO](docs/ClientAccountVO.md)
+ - [NucleusApi::ClientAddress](docs/ClientAddress.md)
+ - [NucleusApi::ClientAdvisorOverviewVO](docs/ClientAdvisorOverviewVO.md)
+ - [NucleusApi::ClientAnalyticsHistory](docs/ClientAnalyticsHistory.md)
+ - [NucleusApi::ClientAnalyticsResponse](docs/ClientAnalyticsResponse.md)
+ - [NucleusApi::ClientAnalyticsTenants](docs/ClientAnalyticsTenants.md)
+ - [NucleusApi::ClientAssetsAdvisorVO](docs/ClientAssetsAdvisorVO.md)
+ - [NucleusApi::ClientCampaignMapping](docs/ClientCampaignMapping.md)
+ - [NucleusApi::ClientHydro](docs/ClientHydro.md)
+ - [NucleusApi::ClientResponse](docs/ClientResponse.md)
+ - [NucleusApi::ClientStatus](docs/ClientStatus.md)
+ - [NucleusApi::ClientViewGoalData](docs/ClientViewGoalData.md)
+ - [NucleusApi::Consultation](docs/Consultation.md)
+ - [NucleusApi::Country](docs/Country.md)
+ - [NucleusApi::Currency](docs/Currency.md)
+ - [NucleusApi::Customer](docs/Customer.md)
+ - [NucleusApi::CustomerAddress](docs/CustomerAddress.md)
+ - [NucleusApi::CustomerRevenue](docs/CustomerRevenue.md)
+ - [NucleusApi::DailyDeposit](docs/DailyDeposit.md)
+ - [NucleusApi::DailyWithdrawal](docs/DailyWithdrawal.md)
+ - [NucleusApi::DateDoubleVO](docs/DateDoubleVO.md)
+ - [NucleusApi::DecisionTree](docs/DecisionTree.md)
+ - [NucleusApi::DecisionTreeCO](docs/DecisionTreeCO.md)
+ - [NucleusApi::DecisionTreeResultVO](docs/DecisionTreeResultVO.md)
+ - [NucleusApi::DepositAccountVO](docs/DepositAccountVO.md)
+ - [NucleusApi::DepositVO](docs/DepositVO.md)
+ - [NucleusApi::Document](docs/Document.md)
+ - [NucleusApi::Employment](docs/Employment.md)
+ - [NucleusApi::ExternalAccountTransfer](docs/ExternalAccountTransfer.md)
+ - [NucleusApi::FAQKeyword](docs/FAQKeyword.md)
+ - [NucleusApi::Faq](docs/Faq.md)
+ - [NucleusApi::Feature](docs/Feature.md)
+ - [NucleusApi::FeatureTrack](docs/FeatureTrack.md)
+ - [NucleusApi::FinancialOffer](docs/FinancialOffer.md)
+ - [NucleusApi::Funding](docs/Funding.md)
+ - [NucleusApi::FundingRequestMap](docs/FundingRequestMap.md)
+ - [NucleusApi::Goal](docs/Goal.md)
+ - [NucleusApi::GoalAccountMapping](docs/GoalAccountMapping.md)
+ - [NucleusApi::GoalTrack](docs/GoalTrack.md)
+ - [NucleusApi::GoalTrackAccounts](docs/GoalTrackAccounts.md)
+ - [NucleusApi::InsuranceCoverage](docs/InsuranceCoverage.md)
+ - [NucleusApi::InsuranceCoverageMap](docs/InsuranceCoverageMap.md)
+ - [NucleusApi::InsuranceDiscount](docs/InsuranceDiscount.md)
+ - [NucleusApi::InsuranceDiscountMap](docs/InsuranceDiscountMap.md)
+ - [NucleusApi::InsuranceQuote](docs/InsuranceQuote.md)
+ - [NucleusApi::Investment](docs/Investment.md)
+ - [NucleusApi::Invoice](docs/Invoice.md)
+ - [NucleusApi::InvoicePayment](docs/InvoicePayment.md)
+ - [NucleusApi::JsonNode](docs/JsonNode.md)
+ - [NucleusApi::Location](docs/Location.md)
+ - [NucleusApi::MerchantsMap](docs/MerchantsMap.md)
+ - [NucleusApi::Model](docs/Model.md)
+ - [NucleusApi::ModelAssetSize](docs/ModelAssetSize.md)
+ - [NucleusApi::ModelComment](docs/ModelComment.md)
+ - [NucleusApi::ModelHolding](docs/ModelHolding.md)
+ - [NucleusApi::ModelHoldingAgg](docs/ModelHoldingAgg.md)
+ - [NucleusApi::ModelHoldingVO](docs/ModelHoldingVO.md)
+ - [NucleusApi::ModelTransaction](docs/ModelTransaction.md)
+ - [NucleusApi::Node](docs/Node.md)
+ - [NucleusApi::NodeRelationship](docs/NodeRelationship.md)
+ - [NucleusApi::Notification](docs/Notification.md)
+ - [NucleusApi::NotificationClient](docs/NotificationClient.md)
+ - [NucleusApi::NotificationSetting](docs/NotificationSetting.md)
+ - [NucleusApi::Order](docs/Order.md)
+ - [NucleusApi::OrderBulk](docs/OrderBulk.md)
+ - [NucleusApi::OrderReconcileRequest](docs/OrderReconcileRequest.md)
+ - [NucleusApi::OrderReconcileReturnObject](docs/OrderReconcileReturnObject.md)
+ - [NucleusApi::OrderStatus](docs/OrderStatus.md)
+ - [NucleusApi::OrderTrack](docs/OrderTrack.md)
+ - [NucleusApi::OrderVoClone](docs/OrderVoClone.md)
+ - [NucleusApi::Overflow](docs/Overflow.md)
+ - [NucleusApi::OverflowBankLinkMap](docs/OverflowBankLinkMap.md)
+ - [NucleusApi::OverflowSettings](docs/OverflowSettings.md)
+ - [NucleusApi::PageAccount](docs/PageAccount.md)
+ - [NucleusApi::PageAccountAllocationMapping](docs/PageAccountAllocationMapping.md)
+ - [NucleusApi::PageAccountPermissionVO](docs/PageAccountPermissionVO.md)
+ - [NucleusApi::PageAccountStatus](docs/PageAccountStatus.md)
+ - [NucleusApi::PageAccountType](docs/PageAccountType.md)
+ - [NucleusApi::PageAccounting](docs/PageAccounting.md)
+ - [NucleusApi::PageAggregationAccount](docs/PageAggregationAccount.md)
+ - [NucleusApi::PageAggregationAccountBalance](docs/PageAggregationAccountBalance.md)
+ - [NucleusApi::PageAggregationAccountHolding](docs/PageAggregationAccountHolding.md)
+ - [NucleusApi::PageAggregationAccountTransaction](docs/PageAggregationAccountTransaction.md)
+ - [NucleusApi::PageAllocation](docs/PageAllocation.md)
+ - [NucleusApi::PageAllocationComposition](docs/PageAllocationComposition.md)
+ - [NucleusApi::PageAnswer](docs/PageAnswer.md)
+ - [NucleusApi::PageApplication](docs/PageApplication.md)
+ - [NucleusApi::PageAuditLog](docs/PageAuditLog.md)
+ - [NucleusApi::PageBankLink](docs/PageBankLink.md)
+ - [NucleusApi::PageBenchmark](docs/PageBenchmark.md)
+ - [NucleusApi::PageBudget](docs/PageBudget.md)
+ - [NucleusApi::PageCampaign](docs/PageCampaign.md)
+ - [NucleusApi::PageCampaignData](docs/PageCampaignData.md)
+ - [NucleusApi::PageCampaignPlan](docs/PageCampaignPlan.md)
+ - [NucleusApi::PageCard](docs/PageCard.md)
+ - [NucleusApi::PageCardProgram](docs/PageCardProgram.md)
+ - [NucleusApi::PageChatInfo](docs/PageChatInfo.md)
+ - [NucleusApi::PageClient](docs/PageClient.md)
+ - [NucleusApi::PageClientCampaignMapping](docs/PageClientCampaignMapping.md)
+ - [NucleusApi::PageClientHydro](docs/PageClientHydro.md)
+ - [NucleusApi::PageClientResponse](docs/PageClientResponse.md)
+ - [NucleusApi::PageClientStatus](docs/PageClientStatus.md)
+ - [NucleusApi::PageConsultation](docs/PageConsultation.md)
+ - [NucleusApi::PageCustomer](docs/PageCustomer.md)
+ - [NucleusApi::PageCustomerRevenue](docs/PageCustomerRevenue.md)
+ - [NucleusApi::PageDailyDeposit](docs/PageDailyDeposit.md)
+ - [NucleusApi::PageDailyWithdrawal](docs/PageDailyWithdrawal.md)
+ - [NucleusApi::PageDecisionTree](docs/PageDecisionTree.md)
+ - [NucleusApi::PageDocument](docs/PageDocument.md)
+ - [NucleusApi::PageExternalAccountTransfer](docs/PageExternalAccountTransfer.md)
+ - [NucleusApi::PageFaq](docs/PageFaq.md)
+ - [NucleusApi::PageFeature](docs/PageFeature.md)
+ - [NucleusApi::PageFeatureTrack](docs/PageFeatureTrack.md)
+ - [NucleusApi::PageFinancialOffer](docs/PageFinancialOffer.md)
+ - [NucleusApi::PageFunding](docs/PageFunding.md)
+ - [NucleusApi::PageGoal](docs/PageGoal.md)
+ - [NucleusApi::PageGoalTrack](docs/PageGoalTrack.md)
+ - [NucleusApi::PageInsuranceCoverage](docs/PageInsuranceCoverage.md)
+ - [NucleusApi::PageInsuranceDiscount](docs/PageInsuranceDiscount.md)
+ - [NucleusApi::PageInsuranceQuote](docs/PageInsuranceQuote.md)
+ - [NucleusApi::PageInvoice](docs/PageInvoice.md)
+ - [NucleusApi::PageInvoicePayment](docs/PageInvoicePayment.md)
+ - [NucleusApi::PageModel](docs/PageModel.md)
+ - [NucleusApi::PageModelAssetSize](docs/PageModelAssetSize.md)
+ - [NucleusApi::PageModelComment](docs/PageModelComment.md)
+ - [NucleusApi::PageModelHolding](docs/PageModelHolding.md)
+ - [NucleusApi::PageModelTransaction](docs/PageModelTransaction.md)
+ - [NucleusApi::PageNode](docs/PageNode.md)
+ - [NucleusApi::PageNodeRelationship](docs/PageNodeRelationship.md)
+ - [NucleusApi::PageNotification](docs/PageNotification.md)
+ - [NucleusApi::PageNotificationClient](docs/PageNotificationClient.md)
+ - [NucleusApi::PageNotificationSetting](docs/PageNotificationSetting.md)
+ - [NucleusApi::PageOrder](docs/PageOrder.md)
+ - [NucleusApi::PageOrderBulk](docs/PageOrderBulk.md)
+ - [NucleusApi::PageOrderStatus](docs/PageOrderStatus.md)
+ - [NucleusApi::PageOrderTrack](docs/PageOrderTrack.md)
+ - [NucleusApi::PageOverflow](docs/PageOverflow.md)
+ - [NucleusApi::PageOverflowSettings](docs/PageOverflowSettings.md)
+ - [NucleusApi::PagePortfolio](docs/PagePortfolio.md)
+ - [NucleusApi::PagePortfolioAssetSizeLog](docs/PagePortfolioAssetSizeLog.md)
+ - [NucleusApi::PagePortfolioComment](docs/PagePortfolioComment.md)
+ - [NucleusApi::PagePortfolioGoal](docs/PagePortfolioGoal.md)
+ - [NucleusApi::PagePortfolioHoldingLog](docs/PagePortfolioHoldingLog.md)
+ - [NucleusApi::PagePortfolioTransaction](docs/PagePortfolioTransaction.md)
+ - [NucleusApi::PageQuestion](docs/PageQuestion.md)
+ - [NucleusApi::PageQuestionnaire](docs/PageQuestionnaire.md)
+ - [NucleusApi::PageRiskProfile](docs/PageRiskProfile.md)
+ - [NucleusApi::PageRoundup](docs/PageRoundup.md)
+ - [NucleusApi::PageRoundupSettings](docs/PageRoundupSettings.md)
+ - [NucleusApi::PageSale](docs/PageSale.md)
+ - [NucleusApi::PageScore](docs/PageScore.md)
+ - [NucleusApi::PageSecurity](docs/PageSecurity.md)
+ - [NucleusApi::PageSecurityExclusion](docs/PageSecurityExclusion.md)
+ - [NucleusApi::PageSecurityPrice](docs/PageSecurityPrice.md)
+ - [NucleusApi::PageStage](docs/PageStage.md)
+ - [NucleusApi::PageSupportTicket](docs/PageSupportTicket.md)
+ - [NucleusApi::PageSupportTicketComment](docs/PageSupportTicketComment.md)
+ - [NucleusApi::PageTransactionCode](docs/PageTransactionCode.md)
+ - [NucleusApi::PageVAccountAssetSize](docs/PageVAccountAssetSize.md)
+ - [NucleusApi::PageWebhook](docs/PageWebhook.md)
+ - [NucleusApi::PermissionVO](docs/PermissionVO.md)
+ - [NucleusApi::Portfolio](docs/Portfolio.md)
+ - [NucleusApi::PortfolioAggregatedVO](docs/PortfolioAggregatedVO.md)
+ - [NucleusApi::PortfolioAssetSize](docs/PortfolioAssetSize.md)
+ - [NucleusApi::PortfolioAssetSizeLog](docs/PortfolioAssetSizeLog.md)
+ - [NucleusApi::PortfolioComment](docs/PortfolioComment.md)
+ - [NucleusApi::PortfolioGoal](docs/PortfolioGoal.md)
+ - [NucleusApi::PortfolioGoalMap](docs/PortfolioGoalMap.md)
+ - [NucleusApi::PortfolioHolding](docs/PortfolioHolding.md)
+ - [NucleusApi::PortfolioHoldingAgg](docs/PortfolioHoldingAgg.md)
+ - [NucleusApi::PortfolioHoldingLog](docs/PortfolioHoldingLog.md)
+ - [NucleusApi::PortfolioTransaction](docs/PortfolioTransaction.md)
+ - [NucleusApi::Question](docs/Question.md)
+ - [NucleusApi::Questionnaire](docs/Questionnaire.md)
+ - [NucleusApi::RiskProfile](docs/RiskProfile.md)
+ - [NucleusApi::Roundup](docs/Roundup.md)
+ - [NucleusApi::RoundupCO](docs/RoundupCO.md)
+ - [NucleusApi::RoundupSettings](docs/RoundupSettings.md)
+ - [NucleusApi::Sale](docs/Sale.md)
+ - [NucleusApi::Score](docs/Score.md)
+ - [NucleusApi::SecuritiesComposition](docs/SecuritiesComposition.md)
+ - [NucleusApi::SecuritiesCountry](docs/SecuritiesCountry.md)
+ - [NucleusApi::Security](docs/Security.md)
+ - [NucleusApi::SecurityCompositionVO](docs/SecurityCompositionVO.md)
+ - [NucleusApi::SecurityCountryVO](docs/SecurityCountryVO.md)
+ - [NucleusApi::SecurityDetailVO](docs/SecurityDetailVO.md)
+ - [NucleusApi::SecurityExclusion](docs/SecurityExclusion.md)
+ - [NucleusApi::SecurityPrice](docs/SecurityPrice.md)
+ - [NucleusApi::Sort](docs/Sort.md)
+ - [NucleusApi::Stage](docs/Stage.md)
+ - [NucleusApi::State](docs/State.md)
+ - [NucleusApi::StatisticResourceVO](docs/StatisticResourceVO.md)
+ - [NucleusApi::SupportTicket](docs/SupportTicket.md)
+ - [NucleusApi::SupportTicketComment](docs/SupportTicketComment.md)
+ - [NucleusApi::SupportTicketDocument](docs/SupportTicketDocument.md)
+ - [NucleusApi::TokenDateRequest](docs/TokenDateRequest.md)
+ - [NucleusApi::TransactionCode](docs/TransactionCode.md)
+ - [NucleusApi::VAccountAssetSize](docs/VAccountAssetSize.md)
+ - [NucleusApi::VAccountVO](docs/VAccountVO.md)
+ - [NucleusApi::VClientGoalViewData](docs/VClientGoalViewData.md)
+ - [NucleusApi::VPortfolioVO](docs/VPortfolioVO.md)
+ - [NucleusApi::Webhook](docs/Webhook.md)
+ - [NucleusApi::WithdrawalAccountVO](docs/WithdrawalAccountVO.md)
+ - [NucleusApi::WithdrawalVO](docs/WithdrawalVO.md)
 
 
 ## Documentation for Authorization

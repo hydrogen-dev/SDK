@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.advisor_overview_vo import AdvisorOverviewVO  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.advisor_overview_vo import AdvisorOverviewVO  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestAdvisorOverviewVO(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAdvisorOverviewVO(unittest.TestCase):
     def testAdvisorOverviewVO(self):
         """Test AdvisorOverviewVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.advisor_overview_vo.AdvisorOverviewVO()  # noqa: E501
+        # model = nucleus_api.models.advisor_overview_vo.AdvisorOverviewVO()  # noqa: E501
         pass
 
 

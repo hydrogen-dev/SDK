@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/PageRoundup'), require('../model/PageRoundupSettings'), require('../model/Roundup'), require('../model/RoundupCO'), require('../model/RoundupSettings'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.RoundupApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.PageRoundup, root.HydrogenAtomApi.PageRoundupSettings, root.HydrogenAtomApi.Roundup, root.HydrogenAtomApi.RoundupCO, root.HydrogenAtomApi.RoundupSettings);
+    root.HydrogenNucleusApi.RoundupApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.PageRoundup, root.HydrogenNucleusApi.PageRoundupSettings, root.HydrogenNucleusApi.Roundup, root.HydrogenNucleusApi.RoundupCO, root.HydrogenNucleusApi.RoundupSettings);
   }
 }(this, function(ApiClient, PageRoundup, PageRoundupSettings, Roundup, RoundupCO, RoundupSettings) {
   'use strict';

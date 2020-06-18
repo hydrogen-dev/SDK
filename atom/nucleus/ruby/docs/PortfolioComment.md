@@ -1,4 +1,4 @@
-# AtomApi::PortfolioComment
+# NucleusApi::PortfolioComment
 
 ## Properties
 Name | Type | Description | Notes

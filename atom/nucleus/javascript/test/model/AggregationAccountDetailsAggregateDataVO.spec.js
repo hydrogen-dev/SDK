@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+    instance = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,91 +53,91 @@
   describe('AggregationAccountDetailsAggregateDataVO', function() {
     it('should create an instance of AggregationAccountDetailsAggregateDataVO', function() {
       // uncomment below and update the code to test AggregationAccountDetailsAggregateDataVO
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO);
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO);
     });
 
     it('should have the property accountHolder (base name: "account_holder")', function() {
       // uncomment below and update the code to test the property accountHolder
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountName (base name: "account_name")', function() {
       // uncomment below and update the code to test the property accountName
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountNumber (base name: "account_number")', function() {
       // uncomment below and update the code to test the property accountNumber
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property asset (base name: "asset")', function() {
       // uncomment below and update the code to test the property asset
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property financialOfferId (base name: "financial_offer_id")', function() {
       // uncomment below and update the code to test the property financialOfferId
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property institutionName (base name: "institution_name")', function() {
       // uncomment below and update the code to test the property institutionName
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property mask (base name: "mask")', function() {
       // uncomment below and update the code to test the property mask
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property subcategory (base name: "subcategory")', function() {
       // uncomment below and update the code to test the property subcategory
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.AggregationAccountDetailsAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountDetailsAggregateDataVO();
       //expect(instance).to.be();
     });
 

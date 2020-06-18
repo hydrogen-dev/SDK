@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Funding();
+    instance = new HydrogenNucleusApi.Funding();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,151 +53,151 @@
   describe('Funding', function() {
     it('should create an instance of Funding', function() {
       // uncomment below and update the code to test Funding
-      //var instane = new HydrogenAtomApi.Funding();
-      //expect(instance).to.be.a(HydrogenAtomApi.Funding);
+      //var instane = new HydrogenNucleusApi.Funding();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Funding);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property bankLinkId (base name: "bank_link_id")', function() {
       // uncomment below and update the code to test the property bankLinkId
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property cardId (base name: "card_id")', function() {
       // uncomment below and update the code to test the property cardId
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property endDate (base name: "end_date")', function() {
       // uncomment below and update the code to test the property endDate
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property frequency (base name: "frequency")', function() {
       // uncomment below and update the code to test the property frequency
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property frequencyUnit (base name: "frequency_unit")', function() {
       // uncomment below and update the code to test the property frequencyUnit
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property fundingStatus (base name: "funding_status")', function() {
       // uncomment below and update the code to test the property fundingStatus
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property fundingType (base name: "funding_type")', function() {
       // uncomment below and update the code to test the property fundingType
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property isDeposit (base name: "is_deposit")', function() {
       // uncomment below and update the code to test the property isDeposit
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property lastRequestDate (base name: "last_request_date")', function() {
       // uncomment below and update the code to test the property lastRequestDate
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property nextRequestDate (base name: "next_request_date")', function() {
       // uncomment below and update the code to test the property nextRequestDate
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property startDate (base name: "start_date")', function() {
       // uncomment below and update the code to test the property startDate
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property supportTicketId (base name: "support_ticket_id")', function() {
       // uncomment below and update the code to test the property supportTicketId
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property transferId (base name: "transfer_id")', function() {
       // uncomment below and update the code to test the property transferId
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.Funding();
+      //var instane = new HydrogenNucleusApi.Funding();
       //expect(instance).to.be();
     });
 

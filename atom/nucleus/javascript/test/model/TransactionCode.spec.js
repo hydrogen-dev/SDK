@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.TransactionCode();
+    instance = new HydrogenNucleusApi.TransactionCode();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,73 +53,73 @@
   describe('TransactionCode', function() {
     it('should create an instance of TransactionCode', function() {
       // uncomment below and update the code to test TransactionCode
-      //var instane = new HydrogenAtomApi.TransactionCode();
-      //expect(instance).to.be.a(HydrogenAtomApi.TransactionCode);
+      //var instane = new HydrogenNucleusApi.TransactionCode();
+      //expect(instance).to.be.a(HydrogenNucleusApi.TransactionCode);
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property isBuy (base name: "is_buy")', function() {
       // uncomment below and update the code to test the property isBuy
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property subcategory (base name: "subcategory")', function() {
       // uncomment below and update the code to test the property subcategory
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionCode (base name: "transaction_code")', function() {
       // uncomment below and update the code to test the property transactionCode
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionCodeDescription (base name: "transaction_code_description")', function() {
       // uncomment below and update the code to test the property transactionCodeDescription
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionType (base name: "transaction_type")', function() {
       // uncomment below and update the code to test the property transactionType
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.TransactionCode();
+      //var instane = new HydrogenNucleusApi.TransactionCode();
       //expect(instance).to.be();
     });
 

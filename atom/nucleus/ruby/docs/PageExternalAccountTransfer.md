@@ -1,4 +1,4 @@
-# AtomApi::PageExternalAccountTransfer
+# NucleusApi::PageExternalAccountTransfer
 
 ## Properties
 Name | Type | Description | Notes

@@ -18,10 +18,10 @@ Generate rebalancing signals for a group of investments
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import PortfolioManagementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./Sort'), require('./VAccountAssetSize'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.PageVAccountAssetSize = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Sort, root.HydrogenAtomApi.VAccountAssetSize);
+    root.HydrogenNucleusApi.PageVAccountAssetSize = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Sort, root.HydrogenNucleusApi.VAccountAssetSize);
   }
 }(this, function(ApiClient, Sort, VAccountAssetSize) {
   'use strict';

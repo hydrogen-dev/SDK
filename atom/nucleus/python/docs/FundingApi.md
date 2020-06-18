@@ -1,4 +1,4 @@
-# atom_api.FundingApi
+# nucleus_api.FundingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -43,15 +43,15 @@ Create a new bank link for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -63,8 +63,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-bank_link_info_request = atom_api.BankLink() # BankLink | bankLinkInfoRequest
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+bank_link_info_request = nucleus_api.BankLink() # BankLink | bankLinkInfoRequest
 
 try:
     # Create a bank link
@@ -106,15 +106,15 @@ Create a new deposit request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -126,8 +126,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-daily_deposit_request = atom_api.DailyDeposit() # DailyDeposit | dailyDepositRequest
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+daily_deposit_request = nucleus_api.DailyDeposit() # DailyDeposit | dailyDepositRequest
 
 try:
     # Create a deposit request
@@ -169,15 +169,15 @@ Create a new funding request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -189,8 +189,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-funding_request = atom_api.Funding() # Funding | fundingRequest
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+funding_request = nucleus_api.Funding() # Funding | fundingRequest
 
 try:
     # Create a funding request
@@ -232,15 +232,15 @@ Create a new external account transfer for a client account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -252,8 +252,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-external_account_transfer_request = atom_api.ExternalAccountTransfer() # ExternalAccountTransfer | externalAccountTransferRequest
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+external_account_transfer_request = nucleus_api.ExternalAccountTransfer() # ExternalAccountTransfer | externalAccountTransferRequest
 
 try:
     # Create a transfer requests
@@ -295,15 +295,15 @@ Create a new withdrawal request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -315,8 +315,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-daily_withdrawal_request = atom_api.DailyWithdrawal() # DailyWithdrawal | dailyWithdrawalRequest
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+daily_withdrawal_request = nucleus_api.DailyWithdrawal() # DailyWithdrawal | dailyWithdrawalRequest
 
 try:
     # Create a withdrawal request
@@ -358,15 +358,15 @@ Permanently delete a bank link defined for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -378,7 +378,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
 
 try:
@@ -420,15 +420,15 @@ Permanently delete a deposit request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -440,7 +440,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
 
 try:
@@ -482,15 +482,15 @@ Permanently delete a funding request defined for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -502,7 +502,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_id = 'funding_id_example' # str | UUID funding_id
 
 try:
@@ -544,15 +544,15 @@ Permanently delete a external account transfer from a client account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -564,7 +564,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 transfer = 'transfer_example' # str | UUID external_account_transfer_id
 transfer_id = 'transfer_id_example' # str | transfer_id
 
@@ -608,15 +608,15 @@ Permanently delete a withdrawal request from an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -628,7 +628,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
 
 try:
@@ -670,15 +670,15 @@ Get all bank links defined for all clients defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -690,7 +690,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -741,15 +741,15 @@ Retrieve the information for a bank link for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -761,7 +761,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
 
 try:
@@ -804,15 +804,15 @@ Get the information for all deposit requests for all clients.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -824,7 +824,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -875,15 +875,15 @@ Retrieve the information for a deposit request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -895,7 +895,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
 
 try:
@@ -938,15 +938,15 @@ Get the information for all funding requests defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -958,7 +958,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1009,15 +1009,15 @@ Retrieve the information for a funding request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1029,7 +1029,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_id = 'funding_id_example' # str | UUID funding_id
 
 try:
@@ -1072,15 +1072,15 @@ Get the information for all external account transfers defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1092,7 +1092,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1143,15 +1143,15 @@ Retrieve the information for a external account transfer for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1163,7 +1163,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 external_account_transfer_id = 'external_account_transfer_id_example' # str | UUID external_account_transfer_id
 transfer_id = 'transfer_id_example' # str | transfer_id
 
@@ -1208,15 +1208,15 @@ Get the information for all withdrawal requests for all clients.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1228,7 +1228,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1279,15 +1279,15 @@ Retrieve the information for a withdrawal request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1299,7 +1299,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
 
 try:
@@ -1342,15 +1342,15 @@ Update bank link list for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1362,8 +1362,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-bank_link_list = [atom_api.BankLink()] # list[BankLink] | bankLinkList
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+bank_link_list = [nucleus_api.BankLink()] # list[BankLink] | bankLinkList
 
 try:
     # Update list of bank link
@@ -1405,15 +1405,15 @@ Update the information for a bank link for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1425,8 +1425,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-bank_link = atom_api.BankLink() # BankLink | bank_link
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+bank_link = nucleus_api.BankLink() # BankLink | bank_link
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
 
 try:
@@ -1470,15 +1470,15 @@ Update the information for a deposit request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1490,8 +1490,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-deposit = atom_api.DailyDeposit() # DailyDeposit | deposit
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+deposit = nucleus_api.DailyDeposit() # DailyDeposit | deposit
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
 
 try:
@@ -1535,15 +1535,15 @@ Update the information for a funding request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1555,8 +1555,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-funding = atom_api.Funding() # Funding | funding
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+funding = nucleus_api.Funding() # Funding | funding
 funding_id = 'funding_id_example' # str | UUID funding_id
 
 try:
@@ -1600,15 +1600,15 @@ Update the information for a external account transfer for a client account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1620,8 +1620,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-transfer = atom_api.ExternalAccountTransfer() # ExternalAccountTransfer | transfer
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+transfer = nucleus_api.ExternalAccountTransfer() # ExternalAccountTransfer | transfer
 transfer_id = 'transfer_id_example' # str | UUID external_account_transfer_id
 
 try:
@@ -1665,15 +1665,15 @@ Update the information for a withdrawal request for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1685,8 +1685,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.FundingApi(atom_api.ApiClient(configuration))
-withdrawal = atom_api.DailyWithdrawal() # DailyWithdrawal | withdrawal
+api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
+withdrawal = nucleus_api.DailyWithdrawal() # DailyWithdrawal | withdrawal
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
 
 try:

@@ -1,4 +1,4 @@
-# AtomApi::AggregationAccountHolding
+# NucleusApi::AggregationAccountHolding
 
 ## Properties
 Name | Type | Description | Notes

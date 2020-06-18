@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PortfolioGoalMap();
+    instance = new HydrogenNucleusApi.PortfolioGoalMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('PortfolioGoalMap', function() {
     it('should create an instance of PortfolioGoalMap', function() {
       // uncomment below and update the code to test PortfolioGoalMap
-      //var instane = new HydrogenAtomApi.PortfolioGoalMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.PortfolioGoalMap);
+      //var instane = new HydrogenNucleusApi.PortfolioGoalMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PortfolioGoalMap);
     });
 
     it('should have the property goalId (base name: "goal_id")', function() {
       // uncomment below and update the code to test the property goalId
-      //var instane = new HydrogenAtomApi.PortfolioGoalMap();
+      //var instane = new HydrogenNucleusApi.PortfolioGoalMap();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.PortfolioGoalMap();
+      //var instane = new HydrogenNucleusApi.PortfolioGoalMap();
       //expect(instance).to.be();
     });
 

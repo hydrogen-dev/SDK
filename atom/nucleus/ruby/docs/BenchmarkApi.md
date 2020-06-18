@@ -1,4 +1,4 @@
-# AtomApi::BenchmarkApi
+# NucleusApi::BenchmarkApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -22,9 +22,9 @@ Create a new benchmark for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -33,16 +33,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BenchmarkApi.new
+api_instance = NucleusApi::BenchmarkApi.new
 
-benchmark = AtomApi::Benchmark.new # Benchmark | benchmark
+benchmark = NucleusApi::Benchmark.new # Benchmark | benchmark
 
 
 begin
   #Create a benchmark
   result = api_instance.create_benchmark_using_post(benchmark)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BenchmarkApi->create_benchmark_using_post: #{e}"
 end
 ```
@@ -78,9 +78,9 @@ Permanently delete a benchmark.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -89,7 +89,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BenchmarkApi.new
+api_instance = NucleusApi::BenchmarkApi.new
 
 benchmark_id = 'benchmark_id_example' # String | UUID benchmark_id
 
@@ -97,7 +97,7 @@ benchmark_id = 'benchmark_id_example' # String | UUID benchmark_id
 begin
   #Delete a benchmark
   api_instance.delete_benchmark_using_delete(benchmark_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BenchmarkApi->delete_benchmark_using_delete: #{e}"
 end
 ```
@@ -133,9 +133,9 @@ Get details for all benchmarks defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -144,7 +144,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BenchmarkApi.new
+api_instance = NucleusApi::BenchmarkApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -158,7 +158,7 @@ begin
   #List all benchmarks
   result = api_instance.get_benchmark_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BenchmarkApi->get_benchmark_all_using_get: #{e}"
 end
 ```
@@ -198,9 +198,9 @@ Get a list of asset sizes by date for a benchmark.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -209,7 +209,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BenchmarkApi.new
+api_instance = NucleusApi::BenchmarkApi.new
 
 benchmark_id = 'benchmark_id_example' # String | benchmark_id
 
@@ -223,7 +223,7 @@ begin
   #List all benchmark asset sizes
   result = api_instance.get_benchmark_asset_size_all_using_get(benchmark_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BenchmarkApi->get_benchmark_asset_size_all_using_get: #{e}"
 end
 ```
@@ -262,9 +262,9 @@ Retrieve the information for a benchmark.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -273,7 +273,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BenchmarkApi.new
+api_instance = NucleusApi::BenchmarkApi.new
 
 benchmark_id = 'benchmark_id_example' # String | UUID benchmark_id
 
@@ -282,7 +282,7 @@ begin
   #Retrieve a benchmark
   result = api_instance.get_benchmark_using_get(benchmark_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BenchmarkApi->get_benchmark_using_get: #{e}"
 end
 ```
@@ -318,9 +318,9 @@ Updated the information for a benchmark.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -329,9 +329,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BenchmarkApi.new
+api_instance = NucleusApi::BenchmarkApi.new
 
-benchmark = AtomApi::Benchmark.new # Benchmark | benchmark
+benchmark = NucleusApi::Benchmark.new # Benchmark | benchmark
 
 benchmark_id = 'benchmark_id_example' # String | UUID benchmark_id
 
@@ -340,7 +340,7 @@ begin
   #Update a benchmark
   result = api_instance.update_benchmark_using_put(benchmark, benchmark_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BenchmarkApi->update_benchmark_using_put: #{e}"
 end
 ```

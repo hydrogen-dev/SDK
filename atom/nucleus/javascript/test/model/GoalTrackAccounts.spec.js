@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.GoalTrackAccounts();
+    instance = new HydrogenNucleusApi.GoalTrackAccounts();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,13 +53,13 @@
   describe('GoalTrackAccounts', function() {
     it('should create an instance of GoalTrackAccounts', function() {
       // uncomment below and update the code to test GoalTrackAccounts
-      //var instane = new HydrogenAtomApi.GoalTrackAccounts();
-      //expect(instance).to.be.a(HydrogenAtomApi.GoalTrackAccounts);
+      //var instane = new HydrogenNucleusApi.GoalTrackAccounts();
+      //expect(instance).to.be.a(HydrogenNucleusApi.GoalTrackAccounts);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.GoalTrackAccounts();
+      //var instane = new HydrogenNucleusApi.GoalTrackAccounts();
       //expect(instance).to.be();
     });
 

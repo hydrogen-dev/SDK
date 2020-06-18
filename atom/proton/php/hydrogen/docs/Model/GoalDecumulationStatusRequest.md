@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **recommendation_config** | **object** |  | [optional] 
 **thresh** | **float** |  | [optional] 
 **a_horizon** | **int** |  | [optional] 
-**withdrawal_config** | [**\com\hydrogen\Model\GoalWithdrawalConfig[]**](GoalWithdrawalConfig.md) |  | [optional] 
+**withdrawal_config** | [**\com\hydrogen\proton\Model\GoalWithdrawalConfig[]**](GoalWithdrawalConfig.md) |  | [optional] 
 **curr_inv** | **float** |  | [optional] 
 **p_ret** | **float[]** |  | 
 **p_risk** | **float[]** |  | 

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Model
+# HydrogenNucleusApi.Model
 
 ## Properties
 Name | Type | Description | Notes

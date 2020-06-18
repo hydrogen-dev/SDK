@@ -1,4 +1,4 @@
-# AtomApi::PageAccounting
+# NucleusApi::PageAccounting
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::QuestionnaireApi
+# NucleusApi::QuestionnaireApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -36,9 +36,9 @@ Create a new answer for question.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -47,16 +47,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-answer = AtomApi::Answer.new # Answer | answer
+answer = NucleusApi::Answer.new # Answer | answer
 
 
 begin
   #Create an answer
   result = api_instance.create_answer_using_post(answer)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->create_answer_using_post: #{e}"
 end
 ```
@@ -92,9 +92,9 @@ Create a new client response for a question as part of a questionnaires.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -103,16 +103,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-client_response = AtomApi::ClientResponse.new # ClientResponse | clientResponse
+client_response = NucleusApi::ClientResponse.new # ClientResponse | clientResponse
 
 
 begin
   #Create a client response
   result = api_instance.create_client_response_using_post(client_response)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->create_client_response_using_post: #{e}"
 end
 ```
@@ -148,9 +148,9 @@ Create a new question for questionnaire.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -159,16 +159,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-question = AtomApi::Question.new # Question | question
+question = NucleusApi::Question.new # Question | question
 
 
 begin
   #Create a question
   result = api_instance.create_question_using_post(question)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->create_question_using_post: #{e}"
 end
 ```
@@ -204,9 +204,9 @@ Create a new questionnaire for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -215,16 +215,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-questionnaire = AtomApi::Questionnaire.new # Questionnaire | questionnaire
+questionnaire = NucleusApi::Questionnaire.new # Questionnaire | questionnaire
 
 
 begin
   #Create a questionnaire
   result = api_instance.create_questionnaire_using_post(questionnaire)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->create_questionnaire_using_post: #{e}"
 end
 ```
@@ -260,9 +260,9 @@ Delete an answer for the question
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -271,7 +271,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 answer_id = 'answer_id_example' # String | UUID answer_id
 
@@ -279,7 +279,7 @@ answer_id = 'answer_id_example' # String | UUID answer_id
 begin
   #Delete an answer
   api_instance.delete_answer_using_delete(answer_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->delete_answer_using_delete: #{e}"
 end
 ```
@@ -315,9 +315,9 @@ Permanently delete a client response for a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -326,7 +326,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 client_response_id = 'client_response_id_example' # String | UUID client_response_id
 
@@ -334,7 +334,7 @@ client_response_id = 'client_response_id_example' # String | UUID client_respons
 begin
   #Delete a client response
   api_instance.delete_client_response_using_delete(client_response_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->delete_client_response_using_delete: #{e}"
 end
 ```
@@ -370,9 +370,9 @@ Delete an answer for the question
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -381,7 +381,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 question_id = 'question_id_example' # String | UUID question_id
 
@@ -389,7 +389,7 @@ question_id = 'question_id_example' # String | UUID question_id
 begin
   #Delete a question
   api_instance.delete_question_using_delete(question_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->delete_question_using_delete: #{e}"
 end
 ```
@@ -425,9 +425,9 @@ Permanently delete a questionnaire for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -436,7 +436,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 questionnaire_id = 'questionnaire_id_example' # String | UUID questionnaire_id
 
@@ -444,7 +444,7 @@ questionnaire_id = 'questionnaire_id_example' # String | UUID questionnaire_id
 begin
   #Delete a questionnaire
   api_instance.delete_questionnaire_using_delete(questionnaire_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->delete_questionnaire_using_delete: #{e}"
 end
 ```
@@ -480,9 +480,9 @@ Get information for all Answers
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -491,7 +491,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -505,7 +505,7 @@ begin
   #List all Answers
   result = api_instance.get_answer_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_answer_all_using_get: #{e}"
 end
 ```
@@ -545,9 +545,9 @@ Retrieve the information for an answer for question
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -556,7 +556,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 answer_id = 'answer_id_example' # String | UUID answer_id
 
@@ -565,7 +565,7 @@ begin
   #Retrieve an answer
   result = api_instance.get_answer_using_get(answer_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_answer_using_get: #{e}"
 end
 ```
@@ -601,9 +601,9 @@ Get all the client responses for questions as part of a questionnaire defined by
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -612,7 +612,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -626,7 +626,7 @@ begin
   #List all client responses
   result = api_instance.get_client_response_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_client_response_all_using_get: #{e}"
 end
 ```
@@ -666,9 +666,9 @@ Retrieve the information for a client response for a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -677,7 +677,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 client_response_id = 'client_response_id_example' # String | UUID client_response_id
 
@@ -686,7 +686,7 @@ begin
   #Retrieve a client response
   result = api_instance.get_client_response_using_get(client_response_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_client_response_using_get: #{e}"
 end
 ```
@@ -722,9 +722,9 @@ Get information for all Questions
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -733,7 +733,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -747,7 +747,7 @@ begin
   #List all Questions
   result = api_instance.get_question_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_question_all_using_get: #{e}"
 end
 ```
@@ -787,9 +787,9 @@ Retrieve the information for a question for questionnaire
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -798,7 +798,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 question_id = 'question_id_example' # String | UUID question_id
 
@@ -807,7 +807,7 @@ begin
   #Retrieve a question
   result = api_instance.get_question_using_get(question_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_question_using_get: #{e}"
 end
 ```
@@ -843,9 +843,9 @@ Get the information for all questionnaires defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -854,7 +854,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -868,7 +868,7 @@ begin
   #List all questionnaires
   result = api_instance.get_questionnaire_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_questionnaire_all_using_get: #{e}"
 end
 ```
@@ -908,9 +908,9 @@ Retrieve the information for a questionnaire for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -919,7 +919,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
 questionnaire_id = 'questionnaire_id_example' # String | UUID questionnaire_id
 
@@ -928,7 +928,7 @@ begin
   #Retrieve a questionnaire
   result = api_instance.get_questionnaire_using_get(questionnaire_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->get_questionnaire_using_get: #{e}"
 end
 ```
@@ -964,9 +964,9 @@ Update a answer for question.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -975,9 +975,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-answer = AtomApi::Answer.new # Answer | answer
+answer = NucleusApi::Answer.new # Answer | answer
 
 answer_id = 'answer_id_example' # String | UUID answer_id
 
@@ -986,7 +986,7 @@ begin
   #Update an answer
   result = api_instance.update_answer_using_put(answer, answer_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->update_answer_using_put: #{e}"
 end
 ```
@@ -1023,9 +1023,9 @@ Update a client response for a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1034,9 +1034,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-client_response = AtomApi::ClientResponse.new # ClientResponse | client_response
+client_response = NucleusApi::ClientResponse.new # ClientResponse | client_response
 
 client_response_id = 'client_response_id_example' # String | UUID client_response_id
 
@@ -1045,7 +1045,7 @@ begin
   #Update a client response
   result = api_instance.update_client_response_using_put(client_response, client_response_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->update_client_response_using_put: #{e}"
 end
 ```
@@ -1082,9 +1082,9 @@ Update a question for questionnaire.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1093,9 +1093,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-question = AtomApi::Question.new # Question | question
+question = NucleusApi::Question.new # Question | question
 
 question_id = 'question_id_example' # String | UUID question_id
 
@@ -1104,7 +1104,7 @@ begin
   #Update a question.
   result = api_instance.update_question_using_put(question, question_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->update_question_using_put: #{e}"
 end
 ```
@@ -1141,9 +1141,9 @@ Update a questionnaire for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1152,9 +1152,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::QuestionnaireApi.new
+api_instance = NucleusApi::QuestionnaireApi.new
 
-questionnaire = AtomApi::Questionnaire.new # Questionnaire | questionnaire
+questionnaire = NucleusApi::Questionnaire.new # Questionnaire | questionnaire
 
 questionnaire_id = 'questionnaire_id_example' # String | UUID questionnaire_id
 
@@ -1163,7 +1163,7 @@ begin
   #Update a questionnaire
   result = api_instance.update_questionnaire_using_put(questionnaire, questionnaire_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling QuestionnaireApi->update_questionnaire_using_put: #{e}"
 end
 ```

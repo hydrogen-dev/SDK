@@ -1,4 +1,4 @@
-# AtomApi::CategoriesMap
+# NucleusApi::CategoriesMap
 
 ## Properties
 Name | Type | Description | Notes

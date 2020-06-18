@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * PerformanceApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -117,7 +117,7 @@ class PerformanceApi
      * @param  string $stat A stat type - /statistics (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -157,7 +157,7 @@ class PerformanceApi
      * @param  string $stat A stat type - /statistics (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -598,7 +598,7 @@ class PerformanceApi
      * @param  string $stat A stat type found under the Statistics banner (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -639,7 +639,7 @@ class PerformanceApi
      * @param  string $stat A stat type found under the Statistics banner (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1086,7 +1086,7 @@ class PerformanceApi
      * @param  string $stat Stat type - /statistics endpoint (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -1126,7 +1126,7 @@ class PerformanceApi
      * @param  string $stat Stat type - /statistics endpoint (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1566,7 +1566,7 @@ class PerformanceApi
      * @param  string $stat A stat type -- /statistics (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -1606,7 +1606,7 @@ class PerformanceApi
      * @param  string $stat A stat type -- /statistics (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2048,7 +2048,7 @@ class PerformanceApi
      * @param  string $stat A stat type - /statistics (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -2090,7 +2090,7 @@ class PerformanceApi
      * @param  string $stat A stat type - /statistics (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2554,7 +2554,7 @@ class PerformanceApi
      * @param  string $stat Stat Type (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -2594,7 +2594,7 @@ class PerformanceApi
      * @param  string $stat Stat Type (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3037,7 +3037,7 @@ class PerformanceApi
      * @param  string $stat A stat type - /statistics endpoint to get types (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -3080,7 +3080,7 @@ class PerformanceApi
      * @param  string $stat A stat type - /statistics endpoint to get types (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3573,7 +3573,7 @@ class PerformanceApi
      * @param  string $ticker Ticker for security (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -3615,7 +3615,7 @@ class PerformanceApi
      * @param  string $ticker Ticker for security (optional)
      * @param  double $var_conf_interval VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */

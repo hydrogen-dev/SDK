@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.page_daily_deposit import PageDailyDeposit  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.page_daily_deposit import PageDailyDeposit  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestPageDailyDeposit(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPageDailyDeposit(unittest.TestCase):
     def testPageDailyDeposit(self):
         """Test PageDailyDeposit"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.page_daily_deposit.PageDailyDeposit()  # noqa: E501
+        # model = nucleus_api.models.page_daily_deposit.PageDailyDeposit()  # noqa: E501
         pass
 
 

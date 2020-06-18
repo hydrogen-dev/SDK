@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Employment();
+    instance = new HydrogenNucleusApi.Employment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('Employment', function() {
     it('should create an instance of Employment', function() {
       // uncomment below and update the code to test Employment
-      //var instane = new HydrogenAtomApi.Employment();
-      //expect(instance).to.be.a(HydrogenAtomApi.Employment);
+      //var instane = new HydrogenNucleusApi.Employment();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Employment);
     });
 
     it('should have the property employer (base name: "employer")', function() {
       // uncomment below and update the code to test the property employer
-      //var instane = new HydrogenAtomApi.Employment();
+      //var instane = new HydrogenNucleusApi.Employment();
       //expect(instance).to.be();
     });
 
     it('should have the property employmentStatus (base name: "employment_status")', function() {
       // uncomment below and update the code to test the property employmentStatus
-      //var instane = new HydrogenAtomApi.Employment();
+      //var instane = new HydrogenNucleusApi.Employment();
       //expect(instance).to.be();
     });
 
     it('should have the property jobTitle (base name: "job_title")', function() {
       // uncomment below and update the code to test the property jobTitle
-      //var instane = new HydrogenAtomApi.Employment();
+      //var instane = new HydrogenNucleusApi.Employment();
       //expect(instance).to.be();
     });
 
     it('should have the property occupation (base name: "occupation")', function() {
       // uncomment below and update the code to test the property occupation
-      //var instane = new HydrogenAtomApi.Employment();
+      //var instane = new HydrogenNucleusApi.Employment();
       //expect(instance).to.be();
     });
 

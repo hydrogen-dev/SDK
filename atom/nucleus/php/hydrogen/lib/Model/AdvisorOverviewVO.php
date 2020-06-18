@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AdvisorOverviewVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,8 +57,8 @@ class AdvisorOverviewVO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account_list' => '\com\hydrogen\Model\AccountAdvisorVO[]',
-        'client_list' => '\com\hydrogen\Model\ClientAdvisorOverviewVO[]',
+        'account_list' => '\com\hydrogen\nucleus\Model\AccountAdvisorVO[]',
+        'client_list' => '\com\hydrogen\nucleus\Model\ClientAdvisorOverviewVO[]',
         'total_accounts_managed' => 'int',
         'total_assets_managed' => 'double',
         'total_clients_managed' => 'int'
@@ -231,7 +231,7 @@ class AdvisorOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Gets account_list
      *
-     * @return \com\hydrogen\Model\AccountAdvisorVO[]
+     * @return \com\hydrogen\nucleus\Model\AccountAdvisorVO[]
      */
     public function getAccountList()
     {
@@ -241,7 +241,7 @@ class AdvisorOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Sets account_list
      *
-     * @param \com\hydrogen\Model\AccountAdvisorVO[] $account_list account_list
+     * @param \com\hydrogen\nucleus\Model\AccountAdvisorVO[] $account_list account_list
      *
      * @return $this
      */
@@ -255,7 +255,7 @@ class AdvisorOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Gets client_list
      *
-     * @return \com\hydrogen\Model\ClientAdvisorOverviewVO[]
+     * @return \com\hydrogen\nucleus\Model\ClientAdvisorOverviewVO[]
      */
     public function getClientList()
     {
@@ -265,7 +265,7 @@ class AdvisorOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Sets client_list
      *
-     * @param \com\hydrogen\Model\ClientAdvisorOverviewVO[] $client_list client_list
+     * @param \com\hydrogen\nucleus\Model\ClientAdvisorOverviewVO[] $client_list client_list
      *
      * @return $this
      */

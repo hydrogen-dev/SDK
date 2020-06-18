@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ClientAddress
+# HydrogenNucleusApi.ClientAddress
 
 ## Properties
 Name | Type | Description | Notes

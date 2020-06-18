@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ModelComment();
+    instance = new HydrogenNucleusApi.ModelComment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,55 +53,55 @@
   describe('ModelComment', function() {
     it('should create an instance of ModelComment', function() {
       // uncomment below and update the code to test ModelComment
-      //var instane = new HydrogenAtomApi.ModelComment();
-      //expect(instance).to.be.a(HydrogenAtomApi.ModelComment);
+      //var instane = new HydrogenNucleusApi.ModelComment();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ModelComment);
     });
 
     it('should have the property comment (base name: "comment")', function() {
       // uncomment below and update the code to test the property comment
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 
     it('should have the property modelId (base name: "model_id")', function() {
       // uncomment below and update the code to test the property modelId
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.ModelComment();
+      //var instane = new HydrogenNucleusApi.ModelComment();
       //expect(instance).to.be();
     });
 

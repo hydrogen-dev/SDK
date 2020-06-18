@@ -1,4 +1,4 @@
-# HydrogenAtomApi.RiskProfile
+# HydrogenNucleusApi.RiskProfile
 
 ## Properties
 Name | Type | Description | Notes

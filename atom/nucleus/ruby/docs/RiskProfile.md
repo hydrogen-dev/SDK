@@ -1,4 +1,4 @@
-# AtomApi::RiskProfile
+# NucleusApi::RiskProfile
 
 ## Properties
 Name | Type | Description | Notes

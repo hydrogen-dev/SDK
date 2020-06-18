@@ -1,4 +1,4 @@
-# AtomApi::PageNotification
+# NucleusApi::PageNotification
 
 ## Properties
 Name | Type | Description | Notes

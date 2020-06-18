@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Benchmark'), require('../model/DateDoubleVO'), require('../model/PageBenchmark'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.BenchmarkApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Benchmark, root.HydrogenAtomApi.DateDoubleVO, root.HydrogenAtomApi.PageBenchmark);
+    root.HydrogenNucleusApi.BenchmarkApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Benchmark, root.HydrogenNucleusApi.DateDoubleVO, root.HydrogenNucleusApi.PageBenchmark);
   }
 }(this, function(ApiClient, Benchmark, DateDoubleVO, PageBenchmark) {
   'use strict';

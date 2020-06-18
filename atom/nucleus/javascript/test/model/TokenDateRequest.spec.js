@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.TokenDateRequest();
+    instance = new HydrogenNucleusApi.TokenDateRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,43 +53,43 @@
   describe('TokenDateRequest', function() {
     it('should create an instance of TokenDateRequest', function() {
       // uncomment below and update the code to test TokenDateRequest
-      //var instane = new HydrogenAtomApi.TokenDateRequest();
-      //expect(instance).to.be.a(HydrogenAtomApi.TokenDateRequest);
+      //var instane = new HydrogenNucleusApi.TokenDateRequest();
+      //expect(instance).to.be.a(HydrogenNucleusApi.TokenDateRequest);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.TokenDateRequest();
+      //var instane = new HydrogenNucleusApi.TokenDateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property buyTransactionCodeId (base name: "buy_transaction_code_id")', function() {
       // uncomment below and update the code to test the property buyTransactionCodeId
-      //var instane = new HydrogenAtomApi.TokenDateRequest();
+      //var instane = new HydrogenNucleusApi.TokenDateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.TokenDateRequest();
+      //var instane = new HydrogenNucleusApi.TokenDateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.TokenDateRequest();
+      //var instane = new HydrogenNucleusApi.TokenDateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sellTransactionCodeId (base name: "sell_transaction_code_id")', function() {
       // uncomment below and update the code to test the property sellTransactionCodeId
-      //var instane = new HydrogenAtomApi.TokenDateRequest();
+      //var instane = new HydrogenNucleusApi.TokenDateRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property tenantId (base name: "tenant_id")', function() {
       // uncomment below and update the code to test the property tenantId
-      //var instane = new HydrogenAtomApi.TokenDateRequest();
+      //var instane = new HydrogenNucleusApi.TokenDateRequest();
       //expect(instance).to.be();
     });
 

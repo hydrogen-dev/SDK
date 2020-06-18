@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AuditLog();
+    instance = new HydrogenNucleusApi.AuditLog();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,103 +53,103 @@
   describe('AuditLog', function() {
     it('should create an instance of AuditLog', function() {
       // uncomment below and update the code to test AuditLog
-      //var instane = new HydrogenAtomApi.AuditLog();
-      //expect(instance).to.be.a(HydrogenAtomApi.AuditLog);
+      //var instane = new HydrogenNucleusApi.AuditLog();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AuditLog);
     });
 
     it('should have the property accountIds (base name: "account_ids")', function() {
       // uncomment below and update the code to test the property accountIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property aggregationAccountIds (base name: "aggregation_account_ids")', function() {
       // uncomment below and update the code to test the property aggregationAccountIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property allocationIds (base name: "allocation_ids")', function() {
       // uncomment below and update the code to test the property allocationIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property clientIds (base name: "client_ids")', function() {
       // uncomment below and update the code to test the property clientIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property goalIds (base name: "goal_ids")', function() {
       // uncomment below and update the code to test the property goalIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property modelIds (base name: "model_ids")', function() {
       // uncomment below and update the code to test the property modelIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioIds (base name: "portfolio_ids")', function() {
       // uncomment below and update the code to test the property portfolioIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property request (base name: "request")', function() {
       // uncomment below and update the code to test the property request
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property requestUrl (base name: "request_url")', function() {
       // uncomment below and update the code to test the property requestUrl
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property response (base name: "response")', function() {
       // uncomment below and update the code to test the property response
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property securityIds (base name: "security_ids")', function() {
       // uncomment below and update the code to test the property securityIds
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.AuditLog();
+      //var instane = new HydrogenNucleusApi.AuditLog();
       //expect(instance).to.be();
     });
 

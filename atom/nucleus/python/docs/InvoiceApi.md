@@ -1,4 +1,4 @@
-# atom_api.InvoiceApi
+# nucleus_api.InvoiceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -27,15 +27,15 @@ Create a new invoicePayment, for tracking invoice status.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -47,8 +47,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
-invoice_payment = atom_api.InvoicePayment() # InvoicePayment | invoicePayment
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
+invoice_payment = nucleus_api.InvoicePayment() # InvoicePayment | invoicePayment
 
 try:
     # Create a invoicePayment
@@ -90,15 +90,15 @@ Create a new invoice, with your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -110,8 +110,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
-invoice = atom_api.Invoice() # Invoice | invoice
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
+invoice = nucleus_api.Invoice() # Invoice | invoice
 
 try:
     # Create a invoice
@@ -153,15 +153,15 @@ Delete a invoicePayment.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -173,7 +173,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
 
 try:
@@ -215,15 +215,15 @@ Delete a invoice.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -235,7 +235,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_id = 'invoice_id_example' # str | UUID invoice_id
 
 try:
@@ -277,15 +277,15 @@ List all invoice.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -297,7 +297,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -348,15 +348,15 @@ List all invoicePayment.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -368,7 +368,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -419,15 +419,15 @@ Retrieve a invoicePayment.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -439,7 +439,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
 
 try:
@@ -482,15 +482,15 @@ Retrieve a invoice.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -502,7 +502,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_id = 'invoice_id_example' # str | UUID invoice_idd
 
 try:
@@ -545,15 +545,15 @@ Update a invoicePayment.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -565,8 +565,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
-invoice_payment = atom_api.InvoicePayment() # InvoicePayment | invoice_payment
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
+invoice_payment = nucleus_api.InvoicePayment() # InvoicePayment | invoice_payment
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
 
 try:
@@ -610,15 +610,15 @@ Update a invoice.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -630,8 +630,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.InvoiceApi(atom_api.ApiClient(configuration))
-invoice = atom_api.Invoice() # Invoice | invoice
+api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
+invoice = nucleus_api.Invoice() # Invoice | invoice
 invoice_id = 'invoice_id_example' # str | UUID invoice_id
 
 try:

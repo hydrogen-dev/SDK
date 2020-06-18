@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deposit_schedule** | [**\com\hydrogen\Model\SavingsDepositSchedule[]**](SavingsDepositSchedule.md) |  | [optional] 
+**deposit_schedule** | [**\com\hydrogen\proton\Model\SavingsDepositSchedule[]**](SavingsDepositSchedule.md) |  | [optional] 
 **horizon_frequency_interval** | **string** |  | [optional] [default to 'year']
 **initial_balance** | **float** |  | [optional] 
 **return_schedule** | **float[]** |  | 

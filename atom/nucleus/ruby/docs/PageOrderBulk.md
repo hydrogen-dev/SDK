@@ -1,4 +1,4 @@
-# AtomApi::PageOrderBulk
+# NucleusApi::PageOrderBulk
 
 ## Properties
 Name | Type | Description | Notes

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.InsuranceDiscountMap();
+    instance = new HydrogenNucleusApi.InsuranceDiscountMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,13 +53,13 @@
   describe('InsuranceDiscountMap', function() {
     it('should create an instance of InsuranceDiscountMap', function() {
       // uncomment below and update the code to test InsuranceDiscountMap
-      //var instane = new HydrogenAtomApi.InsuranceDiscountMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.InsuranceDiscountMap);
+      //var instane = new HydrogenNucleusApi.InsuranceDiscountMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.InsuranceDiscountMap);
     });
 
     it('should have the property insuranceDiscountId (base name: "insurance_discount_id")', function() {
       // uncomment below and update the code to test the property insuranceDiscountId
-      //var instane = new HydrogenAtomApi.InsuranceDiscountMap();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscountMap();
       //expect(instance).to.be();
     });
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aggregation_account_details** | [**\com\hydrogen\Model\AggregateDataByCategoryForClientFromDbVO[]**](AggregateDataByCategoryForClientFromDbVO.md) |  | [optional] 
+**aggregation_account_details** | [**\com\hydrogen\nucleus\Model\AggregateDataByCategoryForClientFromDbVO[]**](AggregateDataByCategoryForClientFromDbVO.md) |  | [optional] 
 **category** | **string** |  | [optional] 
 **total_available_balance** | **double** |  | [optional] 
 **total_balance** | **double** |  | [optional] 

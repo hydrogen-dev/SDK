@@ -1,4 +1,4 @@
-# atom_api.AllocationApi
+# nucleus_api.AllocationApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -31,15 +31,15 @@ Create a new allocation composition record for an allocation.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -51,8 +51,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
-alloc_request = atom_api.AllocationComposition() # AllocationComposition | allocRequest
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
+alloc_request = nucleus_api.AllocationComposition() # AllocationComposition | allocRequest
 
 try:
     # Create an allocation composition
@@ -94,15 +94,15 @@ Create a new allocation for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -114,8 +114,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
-allocation_request = atom_api.Allocation() # Allocation | allocationRequest
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
+allocation_request = nucleus_api.Allocation() # Allocation | allocationRequest
 
 try:
     # Create an allocation
@@ -157,15 +157,15 @@ Permanently delete an allocation composition record for an allocation.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -177,7 +177,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
 
 try:
@@ -219,15 +219,15 @@ Permanently delete an allocation defined by your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -239,7 +239,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 
 try:
@@ -281,15 +281,15 @@ Get the information for all securities assigned to a specific allocation.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -301,7 +301,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 end_date = 'null' # datetime | end_date (optional) (default to null)
 start_date = 'null' # datetime | start_date (optional) (default to null)
@@ -348,15 +348,15 @@ Get the information for all transactions made under an allocation to achieve the
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -368,7 +368,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 ascending = false # bool | ascending (optional) (default to false)
 end_date = 'null' # datetime | end_date (optional) (default to null)
@@ -421,15 +421,15 @@ List all Allocation aggregated data overview
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -441,7 +441,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | Allocation Id
 
 try:
@@ -484,15 +484,15 @@ Get details for all allocations defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -504,7 +504,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -555,15 +555,15 @@ Get the allocation composition for all allocations.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -575,7 +575,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -626,15 +626,15 @@ Retrieve the information of an allocation composition record for an allocation.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -646,7 +646,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
 
 try:
@@ -689,15 +689,15 @@ Retrieve the information for an allocation defined by your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -709,7 +709,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 
 try:
@@ -752,15 +752,15 @@ Get a list of asset sizes by date for a specific allocation.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -772,7 +772,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 end_date = '2013-10-20' # date | end date (optional)
 get_latest = true # bool | get_latest (optional)
@@ -825,15 +825,15 @@ Update the information of an allocation composition record for an allocation.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -845,8 +845,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
-allocation_composition = atom_api.AllocationComposition() # AllocationComposition | aggregation_composition
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
+allocation_composition = nucleus_api.AllocationComposition() # AllocationComposition | aggregation_composition
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
 
 try:
@@ -890,15 +890,15 @@ Update an allocation defined by your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -910,8 +910,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AllocationApi(atom_api.ApiClient(configuration))
-allocation = atom_api.Allocation() # Allocation | allocation
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
+allocation = nucleus_api.Allocation() # Allocation | allocation
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 
 try:

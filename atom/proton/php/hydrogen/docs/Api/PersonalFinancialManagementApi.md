@@ -1,4 +1,4 @@
-# com\hydrogen\PersonalFinancialManagementApi
+# com\hydrogen\proton\PersonalFinancialManagementApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -25,24 +25,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PersonalFinancialManagementApi(
+$apiInstance = new com\hydrogen\proton\Api\PersonalFinancialManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$budget_calculator_request = new \com\hydrogen\Model\BudgetCalculatorRequest(); // \com\hydrogen\Model\BudgetCalculatorRequest | Request payload for Budget Calculator
+$budget_calculator_request = new \com\hydrogen\proton\Model\BudgetCalculatorRequest(); // \com\hydrogen\proton\Model\BudgetCalculatorRequest | Request payload for Budget Calculator
 
 try {
     $result = $apiInstance->budgetCalculator($budget_calculator_request);
@@ -57,7 +57,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_calculator_request** | [**\com\hydrogen\Model\BudgetCalculatorRequest**](../Model/BudgetCalculatorRequest.md)| Request payload for Budget Calculator |
+ **budget_calculator_request** | [**\com\hydrogen\proton\Model\BudgetCalculatorRequest**](../Model/BudgetCalculatorRequest.md)| Request payload for Budget Calculator |
 
 ### Return type
 
@@ -90,24 +90,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PersonalFinancialManagementApi(
+$apiInstance = new com\hydrogen\proton\Api\PersonalFinancialManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$cash_flow_analysis_request = new \com\hydrogen\Model\CashFlowAnalysisRequest(); // \com\hydrogen\Model\CashFlowAnalysisRequest | Request payload for Cash Flow Analysis
+$cash_flow_analysis_request = new \com\hydrogen\proton\Model\CashFlowAnalysisRequest(); // \com\hydrogen\proton\Model\CashFlowAnalysisRequest | Request payload for Cash Flow Analysis
 
 try {
     $result = $apiInstance->cashFlowAnalysis($cash_flow_analysis_request);
@@ -122,7 +122,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cash_flow_analysis_request** | [**\com\hydrogen\Model\CashFlowAnalysisRequest**](../Model/CashFlowAnalysisRequest.md)| Request payload for Cash Flow Analysis |
+ **cash_flow_analysis_request** | [**\com\hydrogen\proton\Model\CashFlowAnalysisRequest**](../Model/CashFlowAnalysisRequest.md)| Request payload for Cash Flow Analysis |
 
 ### Return type
 
@@ -155,24 +155,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PersonalFinancialManagementApi(
+$apiInstance = new com\hydrogen\proton\Api\PersonalFinancialManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$financial_picture_request = new \com\hydrogen\Model\FinancialPictureRequest(); // \com\hydrogen\Model\FinancialPictureRequest | Request payload for Financial Picture
+$financial_picture_request = new \com\hydrogen\proton\Model\FinancialPictureRequest(); // \com\hydrogen\proton\Model\FinancialPictureRequest | Request payload for Financial Picture
 
 try {
     $result = $apiInstance->financialPicture($financial_picture_request);
@@ -187,7 +187,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_picture_request** | [**\com\hydrogen\Model\FinancialPictureRequest**](../Model/FinancialPictureRequest.md)| Request payload for Financial Picture |
+ **financial_picture_request** | [**\com\hydrogen\proton\Model\FinancialPictureRequest**](../Model/FinancialPictureRequest.md)| Request payload for Financial Picture |
 
 ### Return type
 

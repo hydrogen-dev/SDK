@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PortfolioTransaction();
+    instance = new HydrogenNucleusApi.PortfolioTransaction();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,151 +53,151 @@
   describe('PortfolioTransaction', function() {
     it('should create an instance of PortfolioTransaction', function() {
       // uncomment below and update the code to test PortfolioTransaction
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
-      //expect(instance).to.be.a(HydrogenAtomApi.PortfolioTransaction);
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PortfolioTransaction);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property balance (base name: "balance")', function() {
       // uncomment below and update the code to test the property balance
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property dateAvailable (base name: "date_available")', function() {
       // uncomment below and update the code to test the property dateAvailable
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property isRead (base name: "is_read")', function() {
       // uncomment below and update the code to test the property isRead
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property location (base name: "location")', function() {
       // uncomment below and update the code to test the property location
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property memo (base name: "memo")', function() {
       // uncomment below and update the code to test the property memo
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property merchant (base name: "merchant")', function() {
       // uncomment below and update the code to test the property merchant
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property modelId (base name: "model_id")', function() {
       // uncomment below and update the code to test the property modelId
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property price (base name: "price")', function() {
       // uncomment below and update the code to test the property price
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property quantity (base name: "quantity")', function() {
       // uncomment below and update the code to test the property quantity
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property subcategory (base name: "subcategory")', function() {
       // uncomment below and update the code to test the property subcategory
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionCodeId (base name: "transaction_code_id")', function() {
       // uncomment below and update the code to test the property transactionCodeId
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.PortfolioTransaction();
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });
 

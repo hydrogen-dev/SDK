@@ -1,4 +1,4 @@
-# AtomApi::Cash
+# NucleusApi::Cash
 
 ## Properties
 Name | Type | Description | Notes

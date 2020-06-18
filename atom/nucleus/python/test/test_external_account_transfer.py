@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.external_account_transfer import ExternalAccountTransfer  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.external_account_transfer import ExternalAccountTransfer  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestExternalAccountTransfer(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestExternalAccountTransfer(unittest.TestCase):
     def testExternalAccountTransfer(self):
         """Test ExternalAccountTransfer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.external_account_transfer.ExternalAccountTransfer()  # noqa: E501
+        # model = nucleus_api.models.external_account_transfer.ExternalAccountTransfer()  # noqa: E501
         pass
 
 

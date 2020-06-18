@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.security_exclusion import SecurityExclusion  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.security_exclusion import SecurityExclusion  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestSecurityExclusion(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSecurityExclusion(unittest.TestCase):
     def testSecurityExclusion(self):
         """Test SecurityExclusion"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.security_exclusion.SecurityExclusion()  # noqa: E501
+        # model = nucleus_api.models.security_exclusion.SecurityExclusion()  # noqa: E501
         pass
 
 

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * BenchmarkApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class BenchmarkApi
      *
      * Create a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Benchmark
+     * @return \com\hydrogen\nucleus\Model\Benchmark
      */
     public function createBenchmarkUsingPost($benchmark)
     {
@@ -109,15 +109,15 @@ class BenchmarkApi
      *
      * Create a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Benchmark, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Benchmark, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBenchmarkUsingPostWithHttpInfo($benchmark)
     {
-        $returnType = '\com\hydrogen\Model\Benchmark';
+        $returnType = '\com\hydrogen\nucleus\Model\Benchmark';
         $request = $this->createBenchmarkUsingPostRequest($benchmark);
 
         try {
@@ -169,7 +169,7 @@ class BenchmarkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Benchmark',
+                        '\com\hydrogen\nucleus\Model\Benchmark',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class BenchmarkApi
      *
      * Create a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class BenchmarkApi
      *
      * Create a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createBenchmarkUsingPostAsyncWithHttpInfo($benchmark)
     {
-        $returnType = '\com\hydrogen\Model\Benchmark';
+        $returnType = '\com\hydrogen\nucleus\Model\Benchmark';
         $request = $this->createBenchmarkUsingPostRequest($benchmark);
 
         return $this->client
@@ -254,7 +254,7 @@ class BenchmarkApi
     /**
      * Create request for operation 'createBenchmarkUsingPost'
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,7 +362,7 @@ class BenchmarkApi
      *
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -378,7 +378,7 @@ class BenchmarkApi
      *
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -602,9 +602,9 @@ class BenchmarkApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageBenchmark_
+     * @return \com\hydrogen\nucleus\Model\PageBenchmark_
      */
     public function getBenchmarkAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -623,13 +623,13 @@ class BenchmarkApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageBenchmark_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageBenchmark_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBenchmarkAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageBenchmark_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageBenchmark_';
         $request = $this->getBenchmarkAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -681,7 +681,7 @@ class BenchmarkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageBenchmark_',
+                        '\com\hydrogen\nucleus\Model\PageBenchmark_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class BenchmarkApi
      */
     public function getBenchmarkAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageBenchmark_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageBenchmark_';
         $request = $this->getBenchmarkAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -900,9 +900,9 @@ class BenchmarkApi
      * @param  string $sort_type sort_type (optional)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DateDoubleVO[]
+     * @return \com\hydrogen\nucleus\Model\DateDoubleVO[]
      */
     public function getBenchmarkAssetSizeAllUsingGet($benchmark_id, $end_date = 'null', $sort_type = null, $start_date = 'null')
     {
@@ -920,13 +920,13 @@ class BenchmarkApi
      * @param  string $sort_type sort_type (optional)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBenchmarkAssetSizeAllUsingGetWithHttpInfo($benchmark_id, $end_date = 'null', $sort_type = null, $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\DateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\DateDoubleVO[]';
         $request = $this->getBenchmarkAssetSizeAllUsingGetRequest($benchmark_id, $end_date, $sort_type, $start_date);
 
         try {
@@ -978,7 +978,7 @@ class BenchmarkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DateDoubleVO[]',
+                        '\com\hydrogen\nucleus\Model\DateDoubleVO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1026,7 +1026,7 @@ class BenchmarkApi
      */
     public function getBenchmarkAssetSizeAllUsingGetAsyncWithHttpInfo($benchmark_id, $end_date = 'null', $sort_type = null, $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\DateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\DateDoubleVO[]';
         $request = $this->getBenchmarkAssetSizeAllUsingGetRequest($benchmark_id, $end_date, $sort_type, $start_date);
 
         return $this->client
@@ -1197,9 +1197,9 @@ class BenchmarkApi
      *
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Benchmark
+     * @return \com\hydrogen\nucleus\Model\Benchmark
      */
     public function getBenchmarkUsingGet($benchmark_id)
     {
@@ -1214,13 +1214,13 @@ class BenchmarkApi
      *
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Benchmark, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Benchmark, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBenchmarkUsingGetWithHttpInfo($benchmark_id)
     {
-        $returnType = '\com\hydrogen\Model\Benchmark';
+        $returnType = '\com\hydrogen\nucleus\Model\Benchmark';
         $request = $this->getBenchmarkUsingGetRequest($benchmark_id);
 
         try {
@@ -1272,7 +1272,7 @@ class BenchmarkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Benchmark',
+                        '\com\hydrogen\nucleus\Model\Benchmark',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1314,7 +1314,7 @@ class BenchmarkApi
      */
     public function getBenchmarkUsingGetAsyncWithHttpInfo($benchmark_id)
     {
-        $returnType = '\com\hydrogen\Model\Benchmark';
+        $returnType = '\com\hydrogen\nucleus\Model\Benchmark';
         $request = $this->getBenchmarkUsingGetRequest($benchmark_id);
 
         return $this->client
@@ -1468,12 +1468,12 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Benchmark
+     * @return \com\hydrogen\nucleus\Model\Benchmark
      */
     public function updateBenchmarkUsingPut($benchmark, $benchmark_id)
     {
@@ -1486,16 +1486,16 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Benchmark, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Benchmark, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateBenchmarkUsingPutWithHttpInfo($benchmark, $benchmark_id)
     {
-        $returnType = '\com\hydrogen\Model\Benchmark';
+        $returnType = '\com\hydrogen\nucleus\Model\Benchmark';
         $request = $this->updateBenchmarkUsingPutRequest($benchmark, $benchmark_id);
 
         try {
@@ -1547,7 +1547,7 @@ class BenchmarkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Benchmark',
+                        '\com\hydrogen\nucleus\Model\Benchmark',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1562,7 +1562,7 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1583,7 +1583,7 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1591,7 +1591,7 @@ class BenchmarkApi
      */
     public function updateBenchmarkUsingPutAsyncWithHttpInfo($benchmark, $benchmark_id)
     {
-        $returnType = '\com\hydrogen\Model\Benchmark';
+        $returnType = '\com\hydrogen\nucleus\Model\Benchmark';
         $request = $this->updateBenchmarkUsingPutRequest($benchmark, $benchmark_id);
 
         return $this->client
@@ -1634,7 +1634,7 @@ class BenchmarkApi
     /**
      * Create request for operation 'updateBenchmarkUsingPut'
      *
-     * @param  \com\hydrogen\Model\Benchmark $benchmark benchmark (required)
+     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \InvalidArgumentException

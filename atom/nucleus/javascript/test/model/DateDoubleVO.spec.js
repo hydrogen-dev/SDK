@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.DateDoubleVO();
+    instance = new HydrogenNucleusApi.DateDoubleVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('DateDoubleVO', function() {
     it('should create an instance of DateDoubleVO', function() {
       // uncomment below and update the code to test DateDoubleVO
-      //var instane = new HydrogenAtomApi.DateDoubleVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.DateDoubleVO);
+      //var instane = new HydrogenNucleusApi.DateDoubleVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.DateDoubleVO);
     });
 
     it('should have the property additions (base name: "additions")', function() {
       // uncomment below and update the code to test the property additions
-      //var instane = new HydrogenAtomApi.DateDoubleVO();
+      //var instane = new HydrogenNucleusApi.DateDoubleVO();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.DateDoubleVO();
+      //var instane = new HydrogenNucleusApi.DateDoubleVO();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new HydrogenAtomApi.DateDoubleVO();
+      //var instane = new HydrogenNucleusApi.DateDoubleVO();
       //expect(instance).to.be();
     });
 

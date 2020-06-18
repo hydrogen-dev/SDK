@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * FinancialOfferApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class FinancialOfferApi
      *
      * Create a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financialOffer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financialOffer (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\FinancialOffer
+     * @return \com\hydrogen\nucleus\Model\FinancialOffer
      */
     public function createFinancialOfferUsingPost($financial_offer)
     {
@@ -109,15 +109,15 @@ class FinancialOfferApi
      *
      * Create a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financialOffer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financialOffer (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\FinancialOffer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\FinancialOffer, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFinancialOfferUsingPostWithHttpInfo($financial_offer)
     {
-        $returnType = '\com\hydrogen\Model\FinancialOffer';
+        $returnType = '\com\hydrogen\nucleus\Model\FinancialOffer';
         $request = $this->createFinancialOfferUsingPostRequest($financial_offer);
 
         try {
@@ -169,7 +169,7 @@ class FinancialOfferApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\FinancialOffer',
+                        '\com\hydrogen\nucleus\Model\FinancialOffer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class FinancialOfferApi
      *
      * Create a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financialOffer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financialOffer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class FinancialOfferApi
      *
      * Create a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financialOffer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financialOffer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFinancialOfferUsingPostAsyncWithHttpInfo($financial_offer)
     {
-        $returnType = '\com\hydrogen\Model\FinancialOffer';
+        $returnType = '\com\hydrogen\nucleus\Model\FinancialOffer';
         $request = $this->createFinancialOfferUsingPostRequest($financial_offer);
 
         return $this->client
@@ -254,7 +254,7 @@ class FinancialOfferApi
     /**
      * Create request for operation 'createFinancialOfferUsingPost'
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financialOffer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financialOffer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -363,7 +363,7 @@ class FinancialOfferApi
      * @param  string $financial_offer UUID financial_offer_id (required)
      * @param  string $financial_offer_id financial_offer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -380,7 +380,7 @@ class FinancialOfferApi
      * @param  string $financial_offer UUID financial_offer_id (required)
      * @param  string $financial_offer_id financial_offer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -621,9 +621,9 @@ class FinancialOfferApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageFinancialOffer_
+     * @return \com\hydrogen\nucleus\Model\PageFinancialOffer_
      */
     public function getFinancialOfferAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -642,13 +642,13 @@ class FinancialOfferApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageFinancialOffer_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageFinancialOffer_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFinancialOfferAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFinancialOffer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFinancialOffer_';
         $request = $this->getFinancialOfferAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -700,7 +700,7 @@ class FinancialOfferApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageFinancialOffer_',
+                        '\com\hydrogen\nucleus\Model\PageFinancialOffer_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -750,7 +750,7 @@ class FinancialOfferApi
      */
     public function getFinancialOfferAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFinancialOffer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFinancialOffer_';
         $request = $this->getFinancialOfferAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -917,9 +917,9 @@ class FinancialOfferApi
      * @param  string $financial_offer UUID financial_offer_id (required)
      * @param  string $financial_offer_id financial_offer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\FinancialOffer
+     * @return \com\hydrogen\nucleus\Model\FinancialOffer
      */
     public function getFinancialOfferUsingGet($financial_offer, $financial_offer_id)
     {
@@ -935,13 +935,13 @@ class FinancialOfferApi
      * @param  string $financial_offer UUID financial_offer_id (required)
      * @param  string $financial_offer_id financial_offer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\FinancialOffer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\FinancialOffer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFinancialOfferUsingGetWithHttpInfo($financial_offer, $financial_offer_id)
     {
-        $returnType = '\com\hydrogen\Model\FinancialOffer';
+        $returnType = '\com\hydrogen\nucleus\Model\FinancialOffer';
         $request = $this->getFinancialOfferUsingGetRequest($financial_offer, $financial_offer_id);
 
         try {
@@ -993,7 +993,7 @@ class FinancialOfferApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\FinancialOffer',
+                        '\com\hydrogen\nucleus\Model\FinancialOffer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1037,7 +1037,7 @@ class FinancialOfferApi
      */
     public function getFinancialOfferUsingGetAsyncWithHttpInfo($financial_offer, $financial_offer_id)
     {
-        $returnType = '\com\hydrogen\Model\FinancialOffer';
+        $returnType = '\com\hydrogen\nucleus\Model\FinancialOffer';
         $request = $this->getFinancialOfferUsingGetRequest($financial_offer, $financial_offer_id);
 
         return $this->client
@@ -1206,12 +1206,12 @@ class FinancialOfferApi
      *
      * Update a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financial_offer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financial_offer (required)
      * @param  string $financial_offer_id UUID financial_offer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\FinancialOffer
+     * @return \com\hydrogen\nucleus\Model\FinancialOffer
      */
     public function updateFinancialOfferUsingPut($financial_offer, $financial_offer_id)
     {
@@ -1224,16 +1224,16 @@ class FinancialOfferApi
      *
      * Update a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financial_offer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financial_offer (required)
      * @param  string $financial_offer_id UUID financial_offer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\FinancialOffer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\FinancialOffer, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFinancialOfferUsingPutWithHttpInfo($financial_offer, $financial_offer_id)
     {
-        $returnType = '\com\hydrogen\Model\FinancialOffer';
+        $returnType = '\com\hydrogen\nucleus\Model\FinancialOffer';
         $request = $this->updateFinancialOfferUsingPutRequest($financial_offer, $financial_offer_id);
 
         try {
@@ -1285,7 +1285,7 @@ class FinancialOfferApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\FinancialOffer',
+                        '\com\hydrogen\nucleus\Model\FinancialOffer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1300,7 +1300,7 @@ class FinancialOfferApi
      *
      * Update a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financial_offer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financial_offer (required)
      * @param  string $financial_offer_id UUID financial_offer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1321,7 +1321,7 @@ class FinancialOfferApi
      *
      * Update a comparison request
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financial_offer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financial_offer (required)
      * @param  string $financial_offer_id UUID financial_offer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1329,7 +1329,7 @@ class FinancialOfferApi
      */
     public function updateFinancialOfferUsingPutAsyncWithHttpInfo($financial_offer, $financial_offer_id)
     {
-        $returnType = '\com\hydrogen\Model\FinancialOffer';
+        $returnType = '\com\hydrogen\nucleus\Model\FinancialOffer';
         $request = $this->updateFinancialOfferUsingPutRequest($financial_offer, $financial_offer_id);
 
         return $this->client
@@ -1372,7 +1372,7 @@ class FinancialOfferApi
     /**
      * Create request for operation 'updateFinancialOfferUsingPut'
      *
-     * @param  \com\hydrogen\Model\FinancialOffer $financial_offer financial_offer (required)
+     * @param  \com\hydrogen\nucleus\Model\FinancialOffer $financial_offer financial_offer (required)
      * @param  string $financial_offer_id UUID financial_offer_id (required)
      *
      * @throws \InvalidArgumentException

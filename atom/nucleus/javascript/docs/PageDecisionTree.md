@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageDecisionTree
+# HydrogenNucleusApi.PageDecisionTree
 
 ## Properties
 Name | Type | Description | Notes

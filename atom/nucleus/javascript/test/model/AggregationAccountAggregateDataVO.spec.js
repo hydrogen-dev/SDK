@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AggregationAccountAggregateDataVO();
+    instance = new HydrogenNucleusApi.AggregationAccountAggregateDataVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('AggregationAccountAggregateDataVO', function() {
     it('should create an instance of AggregationAccountAggregateDataVO', function() {
       // uncomment below and update the code to test AggregationAccountAggregateDataVO
-      //var instane = new HydrogenAtomApi.AggregationAccountAggregateDataVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AggregationAccountAggregateDataVO);
+      //var instane = new HydrogenNucleusApi.AggregationAccountAggregateDataVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AggregationAccountAggregateDataVO);
     });
 
     it('should have the property aggregationAccountBalances (base name: "aggregation_account_balances")', function() {
       // uncomment below and update the code to test the property aggregationAccountBalances
-      //var instane = new HydrogenAtomApi.AggregationAccountAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property aggregationAccountDetails (base name: "aggregation_account_details")', function() {
       // uncomment below and update the code to test the property aggregationAccountDetails
-      //var instane = new HydrogenAtomApi.AggregationAccountAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property aggregationAccountHoldings (base name: "aggregation_account_holdings")', function() {
       // uncomment below and update the code to test the property aggregationAccountHoldings
-      //var instane = new HydrogenAtomApi.AggregationAccountAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property aggregationAccountId (base name: "aggregation_account_id")', function() {
       // uncomment below and update the code to test the property aggregationAccountId
-      //var instane = new HydrogenAtomApi.AggregationAccountAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountAggregateDataVO();
       //expect(instance).to.be();
     });
 
     it('should have the property aggregationAccountTransactions (base name: "aggregation_account_transactions")', function() {
       // uncomment below and update the code to test the property aggregationAccountTransactions
-      //var instane = new HydrogenAtomApi.AggregationAccountAggregateDataVO();
+      //var instane = new HydrogenNucleusApi.AggregationAccountAggregateDataVO();
       //expect(instance).to.be();
     });
 

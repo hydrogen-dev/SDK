@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ClientViewGoalData Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class ClientViewGoalData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'accounts' => '\com\hydrogen\Model\VAccountVO[]',
+        'accounts' => '\com\hydrogen\nucleus\Model\VAccountVO[]',
         'accumulation_horizon' => 'double',
         'decumulation_horizon' => 'double',
         'goal_amount' => 'double',
@@ -70,7 +70,7 @@ class ClientViewGoalData implements ModelInterface, ArrayAccess
         'goal_type' => 'string',
         'goal_update_date' => '\DateTime',
         'is_decumulation' => 'bool',
-        'portfolios' => '\com\hydrogen\Model\VPortfolioVO[]'
+        'portfolios' => '\com\hydrogen\nucleus\Model\VPortfolioVO[]'
     ];
 
     /**
@@ -285,7 +285,7 @@ class ClientViewGoalData implements ModelInterface, ArrayAccess
     /**
      * Gets accounts
      *
-     * @return \com\hydrogen\Model\VAccountVO[]
+     * @return \com\hydrogen\nucleus\Model\VAccountVO[]
      */
     public function getAccounts()
     {
@@ -295,7 +295,7 @@ class ClientViewGoalData implements ModelInterface, ArrayAccess
     /**
      * Sets accounts
      *
-     * @param \com\hydrogen\Model\VAccountVO[] $accounts accounts
+     * @param \com\hydrogen\nucleus\Model\VAccountVO[] $accounts accounts
      *
      * @return $this
      */
@@ -597,7 +597,7 @@ class ClientViewGoalData implements ModelInterface, ArrayAccess
     /**
      * Gets portfolios
      *
-     * @return \com\hydrogen\Model\VPortfolioVO[]
+     * @return \com\hydrogen\nucleus\Model\VPortfolioVO[]
      */
     public function getPortfolios()
     {
@@ -607,7 +607,7 @@ class ClientViewGoalData implements ModelInterface, ArrayAccess
     /**
      * Sets portfolios
      *
-     * @param \com\hydrogen\Model\VPortfolioVO[] $portfolios portfolios
+     * @param \com\hydrogen\nucleus\Model\VPortfolioVO[] $portfolios portfolios
      *
      * @return $this
      */

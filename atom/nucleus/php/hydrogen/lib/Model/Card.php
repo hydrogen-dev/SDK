@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Card Class Doc Comment
  *
  * @category Class
  * @description Card Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class Card implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'account_id' => 'string',
-        'address' => '\com\hydrogen\Model\CardAddress[]',
+        'address' => '\com\hydrogen\nucleus\Model\CardAddress[]',
         'card_holder_name' => 'string',
         'card_image' => 'string',
         'card_issuance' => 'string',
@@ -427,7 +427,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \com\hydrogen\Model\CardAddress[]
+     * @return \com\hydrogen\nucleus\Model\CardAddress[]
      */
     public function getAddress()
     {
@@ -437,7 +437,7 @@ class Card implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \com\hydrogen\Model\CardAddress[] $address address
+     * @param \com\hydrogen\nucleus\Model\CardAddress[] $address address
      *
      * @return $this
      */

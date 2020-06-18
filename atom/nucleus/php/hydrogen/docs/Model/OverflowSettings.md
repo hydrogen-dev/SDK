@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **string** | account_id | 
-**bank_links** | [**\com\hydrogen\Model\OverflowBankLinkMap[]**](OverflowBankLinkMap.md) |  | 
+**bank_links** | [**\com\hydrogen\nucleus\Model\OverflowBankLinkMap[]**](OverflowBankLinkMap.md) |  | 
 **client_id** | **string** | clientId | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **id** | **string** |  | [optional] 

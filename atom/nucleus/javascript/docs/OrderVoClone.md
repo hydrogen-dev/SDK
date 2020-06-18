@@ -1,4 +1,4 @@
-# HydrogenAtomApi.OrderVoClone
+# HydrogenNucleusApi.OrderVoClone
 
 ## Properties
 Name | Type | Description | Notes

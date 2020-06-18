@@ -1,4 +1,4 @@
-# AtomApi::AccountHoldingVO
+# NucleusApi::AccountHoldingVO
 
 ## Properties
 Name | Type | Description | Notes

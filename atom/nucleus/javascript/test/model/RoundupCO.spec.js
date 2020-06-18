@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.RoundupCO();
+    instance = new HydrogenNucleusApi.RoundupCO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('RoundupCO', function() {
     it('should create an instance of RoundupCO', function() {
       // uncomment below and update the code to test RoundupCO
-      //var instane = new HydrogenAtomApi.RoundupCO();
-      //expect(instance).to.be.a(HydrogenAtomApi.RoundupCO);
+      //var instane = new HydrogenNucleusApi.RoundupCO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.RoundupCO);
     });
 
     it('should have the property fundingStartDate (base name: "funding_start_date")', function() {
       // uncomment below and update the code to test the property fundingStartDate
-      //var instane = new HydrogenAtomApi.RoundupCO();
+      //var instane = new HydrogenNucleusApi.RoundupCO();
       //expect(instance).to.be();
     });
 
     it('should have the property roundupSettingId (base name: "roundup_setting_id")', function() {
       // uncomment below and update the code to test the property roundupSettingId
-      //var instane = new HydrogenAtomApi.RoundupCO();
+      //var instane = new HydrogenNucleusApi.RoundupCO();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionEndDate (base name: "transaction_end_date")', function() {
       // uncomment below and update the code to test the property transactionEndDate
-      //var instane = new HydrogenAtomApi.RoundupCO();
+      //var instane = new HydrogenNucleusApi.RoundupCO();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionStartDate (base name: "transaction_start_date")', function() {
       // uncomment below and update the code to test the property transactionStartDate
-      //var instane = new HydrogenAtomApi.RoundupCO();
+      //var instane = new HydrogenNucleusApi.RoundupCO();
       //expect(instance).to.be();
     });
 
     it('should have the property updateTransactions (base name: "update_transactions")', function() {
       // uncomment below and update the code to test the property updateTransactions
-      //var instane = new HydrogenAtomApi.RoundupCO();
+      //var instane = new HydrogenNucleusApi.RoundupCO();
       //expect(instance).to.be();
     });
 

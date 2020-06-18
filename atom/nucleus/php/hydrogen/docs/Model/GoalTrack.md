@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | [**\com\hydrogen\Model\GoalTrackAccounts[]**](GoalTrackAccounts.md) |  | [optional] 
+**accounts** | [**\com\hydrogen\nucleus\Model\GoalTrackAccounts[]**](GoalTrackAccounts.md) |  | [optional] 
 **accumulation_horizon** | **double** | accumulationHorizon | [optional] 
 **client_id** | **string** | clientId | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 

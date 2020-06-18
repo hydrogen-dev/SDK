@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **minimum_contribution_term** | **double** | minimumContributionTerm | [optional] 
 **minimum_contribution_term_unit** | **string** | minimumContributionTermUnit | [optional] 
 **name** | **string** | name | 
-**node_map** | [**\com\hydrogen\Model\AllocationNodeMap[]**](AllocationNodeMap.md) |  | [optional] 
+**node_map** | [**\com\hydrogen\nucleus\Model\AllocationNodeMap[]**](AllocationNodeMap.md) |  | [optional] 
 **offer_link** | **string** | offerLink | 
 **offer_term** | **double** | offerTerm | [optional] 
 **offer_term_unit** | **string** | offerTermUnit | [optional] 

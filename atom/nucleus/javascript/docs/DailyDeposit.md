@@ -1,4 +1,4 @@
-# HydrogenAtomApi.DailyDeposit
+# HydrogenNucleusApi.DailyDeposit
 
 ## Properties
 Name | Type | Description | Notes

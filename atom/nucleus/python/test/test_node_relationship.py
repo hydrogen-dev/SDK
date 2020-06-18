@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.node_relationship import NodeRelationship  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.node_relationship import NodeRelationship  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestNodeRelationship(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestNodeRelationship(unittest.TestCase):
     def testNodeRelationship(self):
         """Test NodeRelationship"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.node_relationship.NodeRelationship()  # noqa: E501
+        # model = nucleus_api.models.node_relationship.NodeRelationship()  # noqa: E501
         pass
 
 

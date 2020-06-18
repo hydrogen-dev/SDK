@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **int** |  | [optional] 
-**client_account_list** | [**\com\hydrogen\Model\ClientAccountAdvisorVO[]**](ClientAccountAdvisorVO.md) |  | [optional] 
-**client_assets** | [**\com\hydrogen\Model\ClientAssetsAdvisorVO**](ClientAssetsAdvisorVO.md) |  | [optional] 
+**client_account_list** | [**\com\hydrogen\nucleus\Model\ClientAccountAdvisorVO[]**](ClientAccountAdvisorVO.md) |  | [optional] 
+**client_assets** | [**\com\hydrogen\nucleus\Model\ClientAssetsAdvisorVO**](ClientAssetsAdvisorVO.md) |  | [optional] 
 **client_id** | **string** |  | [optional] 
 **date_of_birth** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **first_name** | **string** |  | [optional] 

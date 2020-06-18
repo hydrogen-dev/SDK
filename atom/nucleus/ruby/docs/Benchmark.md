@@ -1,4 +1,4 @@
-# AtomApi::Benchmark
+# NucleusApi::Benchmark
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::PageDailyDeposit
+# NucleusApi::PageDailyDeposit
 
 ## Properties
 Name | Type | Description | Notes

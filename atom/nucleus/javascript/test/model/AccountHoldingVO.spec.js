@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AccountHoldingVO();
+    instance = new HydrogenNucleusApi.AccountHoldingVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,73 +53,73 @@
   describe('AccountHoldingVO', function() {
     it('should create an instance of AccountHoldingVO', function() {
       // uncomment below and update the code to test AccountHoldingVO
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AccountHoldingVO);
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AccountHoldingVO);
     });
 
     it('should have the property accountHoldingDate (base name: "account_holding_date")', function() {
       // uncomment below and update the code to test the property accountHoldingDate
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityAssetClass (base name: "security_asset_class")', function() {
       // uncomment below and update the code to test the property securityAssetClass
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityCategory (base name: "security_category")', function() {
       // uncomment below and update the code to test the property securityCategory
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityIndustry (base name: "security_industry")', function() {
       // uncomment below and update the code to test the property securityIndustry
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityName (base name: "security_name")', function() {
       // uncomment below and update the code to test the property securityName
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securitySector (base name: "security_sector")', function() {
       // uncomment below and update the code to test the property securitySector
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityTicker (base name: "security_ticker")', function() {
       // uncomment below and update the code to test the property securityTicker
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property shares (base name: "shares")', function() {
       // uncomment below and update the code to test the property shares
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.AccountHoldingVO();
+      //var instane = new HydrogenNucleusApi.AccountHoldingVO();
       //expect(instance).to.be();
     });
 

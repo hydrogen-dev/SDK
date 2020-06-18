@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.v_portfolio_vo import VPortfolioVO  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.v_portfolio_vo import VPortfolioVO  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestVPortfolioVO(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestVPortfolioVO(unittest.TestCase):
     def testVPortfolioVO(self):
         """Test VPortfolioVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.v_portfolio_vo.VPortfolioVO()  # noqa: E501
+        # model = nucleus_api.models.v_portfolio_vo.VPortfolioVO()  # noqa: E501
         pass
 
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AggregationDataForClientByCategoryResponseVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class AggregationDataForClientByCategoryResponseVO implements ModelInterface, Ar
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'aggregation_account_details' => '\com\hydrogen\Model\AggregateDataByCategoryForClientFromDbVO[]',
+        'aggregation_account_details' => '\com\hydrogen\nucleus\Model\AggregateDataByCategoryForClientFromDbVO[]',
         'category' => 'string',
         'total_available_balance' => 'double',
         'total_balance' => 'double'
@@ -225,7 +225,7 @@ class AggregationDataForClientByCategoryResponseVO implements ModelInterface, Ar
     /**
      * Gets aggregation_account_details
      *
-     * @return \com\hydrogen\Model\AggregateDataByCategoryForClientFromDbVO[]
+     * @return \com\hydrogen\nucleus\Model\AggregateDataByCategoryForClientFromDbVO[]
      */
     public function getAggregationAccountDetails()
     {
@@ -235,7 +235,7 @@ class AggregationDataForClientByCategoryResponseVO implements ModelInterface, Ar
     /**
      * Sets aggregation_account_details
      *
-     * @param \com\hydrogen\Model\AggregateDataByCategoryForClientFromDbVO[] $aggregation_account_details aggregation_account_details
+     * @param \com\hydrogen\nucleus\Model\AggregateDataByCategoryForClientFromDbVO[] $aggregation_account_details aggregation_account_details
      *
      * @return $this
      */

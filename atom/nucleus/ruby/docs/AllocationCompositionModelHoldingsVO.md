@@ -1,4 +1,4 @@
-# AtomApi::AllocationCompositionModelHoldingsVO
+# NucleusApi::AllocationCompositionModelHoldingsVO
 
 ## Properties
 Name | Type | Description | Notes

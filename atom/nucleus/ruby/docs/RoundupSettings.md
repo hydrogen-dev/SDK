@@ -1,4 +1,4 @@
-# AtomApi::RoundupSettings
+# NucleusApi::RoundupSettings
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::PageAllocation
+# NucleusApi::PageAllocation
 
 ## Properties
 Name | Type | Description | Notes

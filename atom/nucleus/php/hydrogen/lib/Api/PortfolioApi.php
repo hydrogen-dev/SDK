@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * PortfolioApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class PortfolioApi
      *
      * Create a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioAssetSizeLog
+     * @return \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog
      */
     public function createPortfolioAssetSizeUsingPost($portfolio_asset_size_log_request)
     {
@@ -109,15 +109,15 @@ class PortfolioApi
      *
      * Create a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioAssetSizeLog, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioAssetSizeUsingPostWithHttpInfo($portfolio_asset_size_log_request)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAssetSizeLog';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAssetSizeLog';
         $request = $this->createPortfolioAssetSizeUsingPostRequest($portfolio_asset_size_log_request);
 
         try {
@@ -169,7 +169,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioAssetSizeLog',
+                        '\com\hydrogen\nucleus\Model\PortfolioAssetSizeLog',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class PortfolioApi
      *
      * Create a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class PortfolioApi
      *
      * Create a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioAssetSizeUsingPostAsyncWithHttpInfo($portfolio_asset_size_log_request)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAssetSizeLog';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAssetSizeLog';
         $request = $this->createPortfolioAssetSizeUsingPostRequest($portfolio_asset_size_log_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class PortfolioApi
     /**
      * Create request for operation 'createPortfolioAssetSizeUsingPost'
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size_log_request portfolioAssetSizeLogRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class PortfolioApi
      *
      * Create a portfolio commentary
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolioComment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolioComment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioComment
+     * @return \com\hydrogen\nucleus\Model\PortfolioComment
      */
     public function createPortfolioCommentUsingPost($portfolio_comment)
     {
@@ -377,15 +377,15 @@ class PortfolioApi
      *
      * Create a portfolio commentary
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolioComment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolioComment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioComment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioComment, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioCommentUsingPostWithHttpInfo($portfolio_comment)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioComment';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioComment';
         $request = $this->createPortfolioCommentUsingPostRequest($portfolio_comment);
 
         try {
@@ -437,7 +437,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioComment',
+                        '\com\hydrogen\nucleus\Model\PortfolioComment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class PortfolioApi
      *
      * Create a portfolio commentary
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolioComment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolioComment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class PortfolioApi
      *
      * Create a portfolio commentary
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolioComment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolioComment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioCommentUsingPostAsyncWithHttpInfo($portfolio_comment)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioComment';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioComment';
         $request = $this->createPortfolioCommentUsingPostRequest($portfolio_comment);
 
         return $this->client
@@ -522,7 +522,7 @@ class PortfolioApi
     /**
      * Create request for operation 'createPortfolioCommentUsingPost'
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolioComment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolioComment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class PortfolioApi
      *
      * Create an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioGoal
+     * @return \com\hydrogen\nucleus\Model\PortfolioGoal
      */
     public function createPortfolioGoalUsingPost($portfolio_goal)
     {
@@ -645,15 +645,15 @@ class PortfolioApi
      *
      * Create an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioGoal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioGoal, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioGoalUsingPostWithHttpInfo($portfolio_goal)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioGoal';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioGoal';
         $request = $this->createPortfolioGoalUsingPostRequest($portfolio_goal);
 
         try {
@@ -705,7 +705,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioGoal',
+                        '\com\hydrogen\nucleus\Model\PortfolioGoal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class PortfolioApi
      *
      * Create an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class PortfolioApi
      *
      * Create an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioGoalUsingPostAsyncWithHttpInfo($portfolio_goal)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioGoal';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioGoal';
         $request = $this->createPortfolioGoalUsingPostRequest($portfolio_goal);
 
         return $this->client
@@ -790,7 +790,7 @@ class PortfolioApi
     /**
      * Create request for operation 'createPortfolioGoalUsingPost'
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolioGoal (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,11 +896,11 @@ class PortfolioApi
      *
      * Create a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioHoldingLog
+     * @return \com\hydrogen\nucleus\Model\PortfolioHoldingLog
      */
     public function createPortfolioHoldingUsingPost($portfolio_holdin_log_request)
     {
@@ -913,15 +913,15 @@ class PortfolioApi
      *
      * Create a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioHoldingLog, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioHoldingLog, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioHoldingUsingPostWithHttpInfo($portfolio_holdin_log_request)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingLog';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingLog';
         $request = $this->createPortfolioHoldingUsingPostRequest($portfolio_holdin_log_request);
 
         try {
@@ -973,7 +973,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioHoldingLog',
+                        '\com\hydrogen\nucleus\Model\PortfolioHoldingLog',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class PortfolioApi
      *
      * Create a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,14 +1008,14 @@ class PortfolioApi
      *
      * Create a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioHoldingUsingPostAsyncWithHttpInfo($portfolio_holdin_log_request)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingLog';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingLog';
         $request = $this->createPortfolioHoldingUsingPostRequest($portfolio_holdin_log_request);
 
         return $this->client
@@ -1058,7 +1058,7 @@ class PortfolioApi
     /**
      * Create request for operation 'createPortfolioHoldingUsingPost'
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holdin_log_request portfolioHoldinLogRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,11 +1164,11 @@ class PortfolioApi
      *
      * Create a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioTransaction
+     * @return \com\hydrogen\nucleus\Model\PortfolioTransaction
      */
     public function createPortfolioTransactionUsingPost($portfolio_transaction_request)
     {
@@ -1181,15 +1181,15 @@ class PortfolioApi
      *
      * Create a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioTransactionUsingPostWithHttpInfo($portfolio_transaction_request)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioTransaction';
         $request = $this->createPortfolioTransactionUsingPostRequest($portfolio_transaction_request);
 
         try {
@@ -1241,7 +1241,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioTransaction',
+                        '\com\hydrogen\nucleus\Model\PortfolioTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1256,7 +1256,7 @@ class PortfolioApi
      *
      * Create a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,14 +1276,14 @@ class PortfolioApi
      *
      * Create a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioTransactionUsingPostAsyncWithHttpInfo($portfolio_transaction_request)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioTransaction';
         $request = $this->createPortfolioTransactionUsingPostRequest($portfolio_transaction_request);
 
         return $this->client
@@ -1326,7 +1326,7 @@ class PortfolioApi
     /**
      * Create request for operation 'createPortfolioTransactionUsingPost'
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction_request portfolioTransactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1432,11 +1432,11 @@ class PortfolioApi
      *
      * Create a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio_request portfolioRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio_request portfolioRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Portfolio
+     * @return \com\hydrogen\nucleus\Model\Portfolio
      */
     public function createPortfolioUsingPost($portfolio_request)
     {
@@ -1449,15 +1449,15 @@ class PortfolioApi
      *
      * Create a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio_request portfolioRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio_request portfolioRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Portfolio, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Portfolio, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioUsingPostWithHttpInfo($portfolio_request)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio';
         $request = $this->createPortfolioUsingPostRequest($portfolio_request);
 
         try {
@@ -1509,7 +1509,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Portfolio',
+                        '\com\hydrogen\nucleus\Model\Portfolio',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1524,7 +1524,7 @@ class PortfolioApi
      *
      * Create a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio_request portfolioRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio_request portfolioRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1544,14 +1544,14 @@ class PortfolioApi
      *
      * Create a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio_request portfolioRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio_request portfolioRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioUsingPostAsyncWithHttpInfo($portfolio_request)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio';
         $request = $this->createPortfolioUsingPostRequest($portfolio_request);
 
         return $this->client
@@ -1594,7 +1594,7 @@ class PortfolioApi
     /**
      * Create request for operation 'createPortfolioUsingPost'
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio_request portfolioRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio_request portfolioRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1702,7 +1702,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_asset_size_id UUID portfolio_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1718,7 +1718,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_asset_size_id UUID portfolio_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1938,7 +1938,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1954,7 +1954,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2174,7 +2174,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2190,7 +2190,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2410,7 +2410,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2426,7 +2426,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2646,7 +2646,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2662,7 +2662,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2882,7 +2882,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2898,7 +2898,7 @@ class PortfolioApi
      *
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3123,9 +3123,9 @@ class PortfolioApi
      * @param  bool $show_sector true or false (optional, default to true)
      * @param  bool $show_security_class true or false (optional, default to true)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioAggregatedVO
+     * @return \com\hydrogen\nucleus\Model\PortfolioAggregatedVO
      */
     public function getPortfolioAggregatedDataUsingGet($portfolio_id, $show_asset_class = 'true', $show_category = 'true', $show_industry = 'true', $show_sector = 'true', $show_security_class = 'true')
     {
@@ -3145,13 +3145,13 @@ class PortfolioApi
      * @param  bool $show_sector true or false (optional, default to true)
      * @param  bool $show_security_class true or false (optional, default to true)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioAggregatedVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioAggregatedVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioAggregatedDataUsingGetWithHttpInfo($portfolio_id, $show_asset_class = 'true', $show_category = 'true', $show_industry = 'true', $show_sector = 'true', $show_security_class = 'true')
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAggregatedVO';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAggregatedVO';
         $request = $this->getPortfolioAggregatedDataUsingGetRequest($portfolio_id, $show_asset_class, $show_category, $show_industry, $show_sector, $show_security_class);
 
         try {
@@ -3203,7 +3203,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioAggregatedVO',
+                        '\com\hydrogen\nucleus\Model\PortfolioAggregatedVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3255,7 +3255,7 @@ class PortfolioApi
      */
     public function getPortfolioAggregatedDataUsingGetAsyncWithHttpInfo($portfolio_id, $show_asset_class = 'true', $show_category = 'true', $show_industry = 'true', $show_sector = 'true', $show_security_class = 'true')
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAggregatedVO';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAggregatedVO';
         $request = $this->getPortfolioAggregatedDataUsingGetRequest($portfolio_id, $show_asset_class, $show_category, $show_industry, $show_sector, $show_security_class);
 
         return $this->client
@@ -3440,9 +3440,9 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolio_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolio_
      */
     public function getPortfolioAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3461,13 +3461,13 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolio_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolio_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolio_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolio_';
         $request = $this->getPortfolioAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3519,7 +3519,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolio_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolio_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3569,7 +3569,7 @@ class PortfolioApi
      */
     public function getPortfolioAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolio_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolio_';
         $request = $this->getPortfolioAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3739,9 +3739,9 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolioAssetSizeLog_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioAssetSizeLog_
      */
     public function getPortfolioAssetSizeAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3760,13 +3760,13 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolioAssetSizeLog_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioAssetSizeLog_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioAssetSizeAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioAssetSizeLog_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioAssetSizeLog_';
         $request = $this->getPortfolioAssetSizeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3818,7 +3818,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolioAssetSizeLog_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolioAssetSizeLog_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3868,7 +3868,7 @@ class PortfolioApi
      */
     public function getPortfolioAssetSizeAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioAssetSizeLog_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioAssetSizeLog_';
         $request = $this->getPortfolioAssetSizeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4034,9 +4034,9 @@ class PortfolioApi
      *
      * @param  string $portfolio_asset_size_id portfolio_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioAssetSize
+     * @return \com\hydrogen\nucleus\Model\PortfolioAssetSize
      */
     public function getPortfolioAssetSizeUsingGet($portfolio_asset_size_id)
     {
@@ -4051,13 +4051,13 @@ class PortfolioApi
      *
      * @param  string $portfolio_asset_size_id portfolio_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioAssetSize, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioAssetSize, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioAssetSizeUsingGetWithHttpInfo($portfolio_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAssetSize';
         $request = $this->getPortfolioAssetSizeUsingGetRequest($portfolio_asset_size_id);
 
         try {
@@ -4109,7 +4109,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioAssetSize',
+                        '\com\hydrogen\nucleus\Model\PortfolioAssetSize',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4151,7 +4151,7 @@ class PortfolioApi
      */
     public function getPortfolioAssetSizeUsingGetAsyncWithHttpInfo($portfolio_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAssetSize';
         $request = $this->getPortfolioAssetSizeUsingGetRequest($portfolio_asset_size_id);
 
         return $this->client
@@ -4311,9 +4311,9 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolioComment_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioComment_
      */
     public function getPortfolioCommentAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4332,13 +4332,13 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolioComment_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioComment_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioCommentAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioComment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioComment_';
         $request = $this->getPortfolioCommentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4390,7 +4390,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolioComment_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolioComment_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4440,7 +4440,7 @@ class PortfolioApi
      */
     public function getPortfolioCommentAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioComment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioComment_';
         $request = $this->getPortfolioCommentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4606,9 +4606,9 @@ class PortfolioApi
      *
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioComment
+     * @return \com\hydrogen\nucleus\Model\PortfolioComment
      */
     public function getPortfolioCommentUsingGet($portfolio_comment_id)
     {
@@ -4623,13 +4623,13 @@ class PortfolioApi
      *
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioComment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioComment, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioCommentUsingGetWithHttpInfo($portfolio_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioComment';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioComment';
         $request = $this->getPortfolioCommentUsingGetRequest($portfolio_comment_id);
 
         try {
@@ -4681,7 +4681,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioComment',
+                        '\com\hydrogen\nucleus\Model\PortfolioComment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4723,7 +4723,7 @@ class PortfolioApi
      */
     public function getPortfolioCommentUsingGetAsyncWithHttpInfo($portfolio_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioComment';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioComment';
         $request = $this->getPortfolioCommentUsingGetRequest($portfolio_comment_id);
 
         return $this->client
@@ -4883,9 +4883,9 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolioGoal_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioGoal_
      */
     public function getPortfolioGoalAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4904,13 +4904,13 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolioGoal_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioGoal_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioGoalAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioGoal_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioGoal_';
         $request = $this->getPortfolioGoalAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4962,7 +4962,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolioGoal_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolioGoal_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5012,7 +5012,7 @@ class PortfolioApi
      */
     public function getPortfolioGoalAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioGoal_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioGoal_';
         $request = $this->getPortfolioGoalAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5178,9 +5178,9 @@ class PortfolioApi
      *
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioGoal
+     * @return \com\hydrogen\nucleus\Model\PortfolioGoal
      */
     public function getPortfolioGoalUsingGet($portfolio_goal_id)
     {
@@ -5195,13 +5195,13 @@ class PortfolioApi
      *
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioGoal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioGoal, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioGoalUsingGetWithHttpInfo($portfolio_goal_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioGoal';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioGoal';
         $request = $this->getPortfolioGoalUsingGetRequest($portfolio_goal_id);
 
         try {
@@ -5253,7 +5253,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioGoal',
+                        '\com\hydrogen\nucleus\Model\PortfolioGoal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5295,7 +5295,7 @@ class PortfolioApi
      */
     public function getPortfolioGoalUsingGetAsyncWithHttpInfo($portfolio_goal_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioGoal';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioGoal';
         $request = $this->getPortfolioGoalUsingGetRequest($portfolio_goal_id);
 
         return $this->client
@@ -5455,9 +5455,9 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioHolding
+     * @return \com\hydrogen\nucleus\Model\PortfolioHolding
      */
     public function getPortfolioHoldingAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -5476,13 +5476,13 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioHoldingAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHolding';
         $request = $this->getPortfolioHoldingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -5534,7 +5534,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioHolding',
+                        '\com\hydrogen\nucleus\Model\PortfolioHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5584,7 +5584,7 @@ class PortfolioApi
      */
     public function getPortfolioHoldingAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHolding';
         $request = $this->getPortfolioHoldingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5750,9 +5750,9 @@ class PortfolioApi
      *
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioHolding
+     * @return \com\hydrogen\nucleus\Model\PortfolioHolding
      */
     public function getPortfolioHoldingUsingGet($portfolio_holding_id)
     {
@@ -5767,13 +5767,13 @@ class PortfolioApi
      *
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioHoldingUsingGetWithHttpInfo($portfolio_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHolding';
         $request = $this->getPortfolioHoldingUsingGetRequest($portfolio_holding_id);
 
         try {
@@ -5825,7 +5825,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioHolding',
+                        '\com\hydrogen\nucleus\Model\PortfolioHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5867,7 +5867,7 @@ class PortfolioApi
      */
     public function getPortfolioHoldingUsingGetAsyncWithHttpInfo($portfolio_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHolding';
         $request = $this->getPortfolioHoldingUsingGetRequest($portfolio_holding_id);
 
         return $this->client
@@ -6027,9 +6027,9 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolioTransaction_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioTransaction_
      */
     public function getPortfolioTransactionAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -6048,13 +6048,13 @@ class PortfolioApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioTransactionAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getPortfolioTransactionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -6106,7 +6106,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolioTransaction_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6156,7 +6156,7 @@ class PortfolioApi
      */
     public function getPortfolioTransactionAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getPortfolioTransactionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -6322,9 +6322,9 @@ class PortfolioApi
      *
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioTransaction
+     * @return \com\hydrogen\nucleus\Model\PortfolioTransaction
      */
     public function getPortfolioTransactionUsingGet($portfolio_transaction_id)
     {
@@ -6339,13 +6339,13 @@ class PortfolioApi
      *
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioTransactionUsingGetWithHttpInfo($portfolio_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioTransaction';
         $request = $this->getPortfolioTransactionUsingGetRequest($portfolio_transaction_id);
 
         try {
@@ -6397,7 +6397,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioTransaction',
+                        '\com\hydrogen\nucleus\Model\PortfolioTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6439,7 +6439,7 @@ class PortfolioApi
      */
     public function getPortfolioTransactionUsingGetAsyncWithHttpInfo($portfolio_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioTransaction';
         $request = $this->getPortfolioTransactionUsingGetRequest($portfolio_transaction_id);
 
         return $this->client
@@ -6595,9 +6595,9 @@ class PortfolioApi
      *
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Portfolio
+     * @return \com\hydrogen\nucleus\Model\Portfolio
      */
     public function getPortfolioUsingGet($portfolio_id)
     {
@@ -6612,13 +6612,13 @@ class PortfolioApi
      *
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Portfolio, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Portfolio, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPortfolioUsingGetWithHttpInfo($portfolio_id)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio';
         $request = $this->getPortfolioUsingGetRequest($portfolio_id);
 
         try {
@@ -6670,7 +6670,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Portfolio',
+                        '\com\hydrogen\nucleus\Model\Portfolio',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6712,7 +6712,7 @@ class PortfolioApi
      */
     public function getPortfolioUsingGetAsyncWithHttpInfo($portfolio_id)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio';
         $request = $this->getPortfolioUsingGetRequest($portfolio_id);
 
         return $this->client
@@ -6866,12 +6866,12 @@ class PortfolioApi
      *
      * Update a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
      * @param  string $portfolio_asset_size_id UUID portfolio_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioAssetSize
+     * @return \com\hydrogen\nucleus\Model\PortfolioAssetSize
      */
     public function updatePortfolioAssetSizeUsingPut($portfolio_asset_size, $portfolio_asset_size_id)
     {
@@ -6884,16 +6884,16 @@ class PortfolioApi
      *
      * Update a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
      * @param  string $portfolio_asset_size_id UUID portfolio_asset_size_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioAssetSize, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioAssetSize, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePortfolioAssetSizeUsingPutWithHttpInfo($portfolio_asset_size, $portfolio_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAssetSize';
         $request = $this->updatePortfolioAssetSizeUsingPutRequest($portfolio_asset_size, $portfolio_asset_size_id);
 
         try {
@@ -6945,7 +6945,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioAssetSize',
+                        '\com\hydrogen\nucleus\Model\PortfolioAssetSize',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6960,7 +6960,7 @@ class PortfolioApi
      *
      * Update a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
      * @param  string $portfolio_asset_size_id UUID portfolio_asset_size_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6981,7 +6981,7 @@ class PortfolioApi
      *
      * Update a portfolio asset size
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
      * @param  string $portfolio_asset_size_id UUID portfolio_asset_size_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6989,7 +6989,7 @@ class PortfolioApi
      */
     public function updatePortfolioAssetSizeUsingPutAsyncWithHttpInfo($portfolio_asset_size, $portfolio_asset_size_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioAssetSize';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioAssetSize';
         $request = $this->updatePortfolioAssetSizeUsingPutRequest($portfolio_asset_size, $portfolio_asset_size_id);
 
         return $this->client
@@ -7032,7 +7032,7 @@ class PortfolioApi
     /**
      * Create request for operation 'updatePortfolioAssetSizeUsingPut'
      *
-     * @param  \com\hydrogen\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog $portfolio_asset_size portfolio_asset_size (required)
      * @param  string $portfolio_asset_size_id UUID portfolio_asset_size_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7153,12 +7153,12 @@ class PortfolioApi
      *
      * Update a portfolio comment
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioComment
+     * @return \com\hydrogen\nucleus\Model\PortfolioComment
      */
     public function updatePortfolioCommentUsingPut($portfolio_comment, $portfolio_comment_id)
     {
@@ -7171,16 +7171,16 @@ class PortfolioApi
      *
      * Update a portfolio comment
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioComment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioComment, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePortfolioCommentUsingPutWithHttpInfo($portfolio_comment, $portfolio_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioComment';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioComment';
         $request = $this->updatePortfolioCommentUsingPutRequest($portfolio_comment, $portfolio_comment_id);
 
         try {
@@ -7232,7 +7232,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioComment',
+                        '\com\hydrogen\nucleus\Model\PortfolioComment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7247,7 +7247,7 @@ class PortfolioApi
      *
      * Update a portfolio comment
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7268,7 +7268,7 @@ class PortfolioApi
      *
      * Update a portfolio comment
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7276,7 +7276,7 @@ class PortfolioApi
      */
     public function updatePortfolioCommentUsingPutAsyncWithHttpInfo($portfolio_comment, $portfolio_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioComment';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioComment';
         $request = $this->updatePortfolioCommentUsingPutRequest($portfolio_comment, $portfolio_comment_id);
 
         return $this->client
@@ -7319,7 +7319,7 @@ class PortfolioApi
     /**
      * Create request for operation 'updatePortfolioCommentUsingPut'
      *
-     * @param  \com\hydrogen\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioComment $portfolio_comment portfolio_comment (required)
      * @param  string $portfolio_comment_id UUID portfolio_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7440,12 +7440,12 @@ class PortfolioApi
      *
      * Update an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioGoal
+     * @return \com\hydrogen\nucleus\Model\PortfolioGoal
      */
     public function updatePortfolioGoalUsingPut($portfolio_goal, $portfolio_goal_id)
     {
@@ -7458,16 +7458,16 @@ class PortfolioApi
      *
      * Update an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioGoal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioGoal, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePortfolioGoalUsingPutWithHttpInfo($portfolio_goal, $portfolio_goal_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioGoal';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioGoal';
         $request = $this->updatePortfolioGoalUsingPutRequest($portfolio_goal, $portfolio_goal_id);
 
         try {
@@ -7519,7 +7519,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioGoal',
+                        '\com\hydrogen\nucleus\Model\PortfolioGoal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7534,7 +7534,7 @@ class PortfolioApi
      *
      * Update an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7555,7 +7555,7 @@ class PortfolioApi
      *
      * Update an portfolio goal
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7563,7 +7563,7 @@ class PortfolioApi
      */
     public function updatePortfolioGoalUsingPutAsyncWithHttpInfo($portfolio_goal, $portfolio_goal_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioGoal';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioGoal';
         $request = $this->updatePortfolioGoalUsingPutRequest($portfolio_goal, $portfolio_goal_id);
 
         return $this->client
@@ -7606,7 +7606,7 @@ class PortfolioApi
     /**
      * Create request for operation 'updatePortfolioGoalUsingPut'
      *
-     * @param  \com\hydrogen\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioGoal $portfolio_goal portfolio_goal (required)
      * @param  string $portfolio_goal_id UUID portfolio_goal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7727,12 +7727,12 @@ class PortfolioApi
      *
      * Update a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioHolding
+     * @return \com\hydrogen\nucleus\Model\PortfolioHolding
      */
     public function updatePortfolioHoldingUsingPut($portfolio_holding, $portfolio_holding_id)
     {
@@ -7745,16 +7745,16 @@ class PortfolioApi
      *
      * Update a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePortfolioHoldingUsingPutWithHttpInfo($portfolio_holding, $portfolio_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHolding';
         $request = $this->updatePortfolioHoldingUsingPutRequest($portfolio_holding, $portfolio_holding_id);
 
         try {
@@ -7806,7 +7806,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioHolding',
+                        '\com\hydrogen\nucleus\Model\PortfolioHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7821,7 +7821,7 @@ class PortfolioApi
      *
      * Update a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7842,7 +7842,7 @@ class PortfolioApi
      *
      * Update a portfolio holding
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7850,7 +7850,7 @@ class PortfolioApi
      */
     public function updatePortfolioHoldingUsingPutAsyncWithHttpInfo($portfolio_holding, $portfolio_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHolding';
         $request = $this->updatePortfolioHoldingUsingPutRequest($portfolio_holding, $portfolio_holding_id);
 
         return $this->client
@@ -7893,7 +7893,7 @@ class PortfolioApi
     /**
      * Create request for operation 'updatePortfolioHoldingUsingPut'
      *
-     * @param  \com\hydrogen\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioHoldingLog $portfolio_holding portfolio_holding (required)
      * @param  string $portfolio_holding_id UUID portfolio_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8014,12 +8014,12 @@ class PortfolioApi
      *
      * Update a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioTransaction
+     * @return \com\hydrogen\nucleus\Model\PortfolioTransaction
      */
     public function updatePortfolioTransactionUsingPut($portfolio_transaction, $portfolio_transaction_id)
     {
@@ -8032,16 +8032,16 @@ class PortfolioApi
      *
      * Update a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePortfolioTransactionUsingPutWithHttpInfo($portfolio_transaction, $portfolio_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioTransaction';
         $request = $this->updatePortfolioTransactionUsingPutRequest($portfolio_transaction, $portfolio_transaction_id);
 
         try {
@@ -8093,7 +8093,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioTransaction',
+                        '\com\hydrogen\nucleus\Model\PortfolioTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8108,7 +8108,7 @@ class PortfolioApi
      *
      * Update a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8129,7 +8129,7 @@ class PortfolioApi
      *
      * Update a portfolio transaction
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8137,7 +8137,7 @@ class PortfolioApi
      */
     public function updatePortfolioTransactionUsingPutAsyncWithHttpInfo($portfolio_transaction, $portfolio_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioTransaction';
         $request = $this->updatePortfolioTransactionUsingPutRequest($portfolio_transaction, $portfolio_transaction_id);
 
         return $this->client
@@ -8180,7 +8180,7 @@ class PortfolioApi
     /**
      * Create request for operation 'updatePortfolioTransactionUsingPut'
      *
-     * @param  \com\hydrogen\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\PortfolioTransaction $portfolio_transaction portfolio_transaction (required)
      * @param  string $portfolio_transaction_id UUID portfolio_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8301,12 +8301,12 @@ class PortfolioApi
      *
      * Update a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio portfolio (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio portfolio (required)
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Portfolio
+     * @return \com\hydrogen\nucleus\Model\Portfolio
      */
     public function updatePortfolioUsingPut($portfolio, $portfolio_id)
     {
@@ -8319,16 +8319,16 @@ class PortfolioApi
      *
      * Update a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio portfolio (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio portfolio (required)
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Portfolio, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Portfolio, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePortfolioUsingPutWithHttpInfo($portfolio, $portfolio_id)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio';
         $request = $this->updatePortfolioUsingPutRequest($portfolio, $portfolio_id);
 
         try {
@@ -8380,7 +8380,7 @@ class PortfolioApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Portfolio',
+                        '\com\hydrogen\nucleus\Model\Portfolio',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8395,7 +8395,7 @@ class PortfolioApi
      *
      * Update a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio portfolio (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio portfolio (required)
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8416,7 +8416,7 @@ class PortfolioApi
      *
      * Update a portfolio
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio portfolio (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio portfolio (required)
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8424,7 +8424,7 @@ class PortfolioApi
      */
     public function updatePortfolioUsingPutAsyncWithHttpInfo($portfolio, $portfolio_id)
     {
-        $returnType = '\com\hydrogen\Model\Portfolio';
+        $returnType = '\com\hydrogen\nucleus\Model\Portfolio';
         $request = $this->updatePortfolioUsingPutRequest($portfolio, $portfolio_id);
 
         return $this->client
@@ -8467,7 +8467,7 @@ class PortfolioApi
     /**
      * Create request for operation 'updatePortfolioUsingPut'
      *
-     * @param  \com\hydrogen\Model\Portfolio $portfolio portfolio (required)
+     * @param  \com\hydrogen\nucleus\Model\Portfolio $portfolio portfolio (required)
      * @param  string $portfolio_id UUID portfolio_id (required)
      *
      * @throws \InvalidArgumentException

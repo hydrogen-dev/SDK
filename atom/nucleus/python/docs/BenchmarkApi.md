@@ -1,4 +1,4 @@
-# atom_api.BenchmarkApi
+# nucleus_api.BenchmarkApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -23,15 +23,15 @@ Create a new benchmark for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -43,8 +43,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BenchmarkApi(atom_api.ApiClient(configuration))
-benchmark = atom_api.Benchmark() # Benchmark | benchmark
+api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
+benchmark = nucleus_api.Benchmark() # Benchmark | benchmark
 
 try:
     # Create a benchmark
@@ -86,15 +86,15 @@ Permanently delete a benchmark.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -106,7 +106,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BenchmarkApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
 
 try:
@@ -148,15 +148,15 @@ Get details for all benchmarks defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -168,7 +168,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BenchmarkApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -219,15 +219,15 @@ Get a list of asset sizes by date for a benchmark.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -239,7 +239,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BenchmarkApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | benchmark_id
 end_date = 'null' # datetime | end_date (optional) (default to null)
 sort_type = 'sort_type_example' # str | sort_type (optional)
@@ -288,15 +288,15 @@ Retrieve the information for a benchmark.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -308,7 +308,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BenchmarkApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
 
 try:
@@ -351,15 +351,15 @@ Updated the information for a benchmark.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -371,8 +371,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BenchmarkApi(atom_api.ApiClient(configuration))
-benchmark = atom_api.Benchmark() # Benchmark | benchmark
+api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
+benchmark = nucleus_api.Benchmark() # Benchmark | benchmark
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
 
 try:

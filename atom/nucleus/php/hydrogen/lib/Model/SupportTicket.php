@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * SupportTicket Class Doc Comment
  *
  * @category Class
  * @description SupportTicket Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -70,7 +70,7 @@ class SupportTicket implements ModelInterface, ArrayAccess
         'secondary_id' => 'string',
         'status' => 'string',
         'subject' => 'string',
-        'support_ticket_documents' => '\com\hydrogen\Model\SupportTicketDocument[]',
+        'support_ticket_documents' => '\com\hydrogen\nucleus\Model\SupportTicketDocument[]',
         'update_date' => '\DateTime'
     ];
 
@@ -580,7 +580,7 @@ class SupportTicket implements ModelInterface, ArrayAccess
     /**
      * Gets support_ticket_documents
      *
-     * @return \com\hydrogen\Model\SupportTicketDocument[]
+     * @return \com\hydrogen\nucleus\Model\SupportTicketDocument[]
      */
     public function getSupportTicketDocuments()
     {
@@ -590,7 +590,7 @@ class SupportTicket implements ModelInterface, ArrayAccess
     /**
      * Sets support_ticket_documents
      *
-     * @param \com\hydrogen\Model\SupportTicketDocument[] $support_ticket_documents support_ticket_documents
+     * @param \com\hydrogen\nucleus\Model\SupportTicketDocument[] $support_ticket_documents support_ticket_documents
      *
      * @return $this
      */

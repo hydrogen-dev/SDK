@@ -1,4 +1,4 @@
-# com\hydrogen\RiskProfileApi
+# com\hydrogen\nucleus\RiskProfileApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createRiskProfileUsingPost**
-> \com\hydrogen\Model\RiskProfile createRiskProfileUsingPost($risk_profile)
+> \com\hydrogen\nucleus\Model\RiskProfile createRiskProfileUsingPost($risk_profile)
 
 Create a Risk Profile
 
@@ -21,29 +21,29 @@ Create a new Risk Profile.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskProfileApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RiskProfileApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$risk_profile = new \com\hydrogen\Model\RiskProfile(); // \com\hydrogen\Model\RiskProfile | riskProfile
+$risk_profile = new \com\hydrogen\nucleus\Model\RiskProfile(); // \com\hydrogen\nucleus\Model\RiskProfile | riskProfile
 
 try {
     $result = $apiInstance->createRiskProfileUsingPost($risk_profile);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **risk_profile** | [**\com\hydrogen\Model\RiskProfile**](../Model/RiskProfile.md)| riskProfile |
+ **risk_profile** | [**\com\hydrogen\nucleus\Model\RiskProfile**](../Model/RiskProfile.md)| riskProfile |
 
 ### Return type
 
-[**\com\hydrogen\Model\RiskProfile**](../Model/RiskProfile.md)
+[**\com\hydrogen\nucleus\Model\RiskProfile**](../Model/RiskProfile.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently Delete a Risk Profile.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskProfileApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RiskProfileApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -139,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRiskProfileAllUsingGet**
-> \com\hydrogen\Model\PageRiskProfile_ getRiskProfileAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageRiskProfile_ getRiskProfileAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 Get All Risk Profile
 
@@ -148,23 +148,23 @@ Get All Risk Profile.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskProfileApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RiskProfileApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageRiskProfile_**](../Model/PageRiskProfile_.md)
+[**\com\hydrogen\nucleus\Model\PageRiskProfile_**](../Model/PageRiskProfile_.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRiskProfileUsingGet**
-> \com\hydrogen\Model\RiskProfile getRiskProfileUsingGet($risk_profile_id)
+> \com\hydrogen\nucleus\Model\RiskProfile getRiskProfileUsingGet($risk_profile_id)
 
 Get a Risk Profile
 
@@ -220,23 +220,23 @@ Get a Risk Profile.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskProfileApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RiskProfileApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\RiskProfile**](../Model/RiskProfile.md)
+[**\com\hydrogen\nucleus\Model\RiskProfile**](../Model/RiskProfile.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateRiskProfileUsingPut**
-> \com\hydrogen\Model\RiskProfile updateRiskProfileUsingPut($risk_profile, $risk_profile_id)
+> \com\hydrogen\nucleus\Model\RiskProfile updateRiskProfileUsingPut($risk_profile, $risk_profile_id)
 
 Update a Risk Profile
 
@@ -284,29 +284,29 @@ Update a Risk Profile.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskProfileApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RiskProfileApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$risk_profile = new \com\hydrogen\Model\RiskProfile(); // \com\hydrogen\Model\RiskProfile | risk_profile
+$risk_profile = new \com\hydrogen\nucleus\Model\RiskProfile(); // \com\hydrogen\nucleus\Model\RiskProfile | risk_profile
 $risk_profile_id = "risk_profile_id_example"; // string | UUID risk_profile_id
 
 try {
@@ -322,12 +322,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **risk_profile** | [**\com\hydrogen\Model\RiskProfile**](../Model/RiskProfile.md)| risk_profile |
+ **risk_profile** | [**\com\hydrogen\nucleus\Model\RiskProfile**](../Model/RiskProfile.md)| risk_profile |
  **risk_profile_id** | [**string**](../Model/.md)| UUID risk_profile_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\RiskProfile**](../Model/RiskProfile.md)
+[**\com\hydrogen\nucleus\Model\RiskProfile**](../Model/RiskProfile.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * PortfolioGoal Class Doc Comment
  *
  * @category Class
  * @description PortfolioGoal Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,7 +60,7 @@ class PortfolioGoal implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'create_date' => '\DateTime',
         'date' => '\DateTime',
-        'goals' => '\com\hydrogen\Model\PortfolioGoalMap[]',
+        'goals' => '\com\hydrogen\nucleus\Model\PortfolioGoalMap[]',
         'id' => 'string',
         'portfolio_id' => 'string',
         'secondary_id' => 'string',
@@ -301,7 +301,7 @@ class PortfolioGoal implements ModelInterface, ArrayAccess
     /**
      * Gets goals
      *
-     * @return \com\hydrogen\Model\PortfolioGoalMap[]
+     * @return \com\hydrogen\nucleus\Model\PortfolioGoalMap[]
      */
     public function getGoals()
     {
@@ -311,7 +311,7 @@ class PortfolioGoal implements ModelInterface, ArrayAccess
     /**
      * Sets goals
      *
-     * @param \com\hydrogen\Model\PortfolioGoalMap[] $goals goals
+     * @param \com\hydrogen\nucleus\Model\PortfolioGoalMap[] $goals goals
      *
      * @return $this
      */

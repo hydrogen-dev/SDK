@@ -1,4 +1,4 @@
-# AtomApi::FAQApi
+# NucleusApi::FAQApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Create a new FAQ
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FAQApi.new
+api_instance = NucleusApi::FAQApi.new
 
-faq_request = AtomApi::Faq.new # Faq | faqRequest
+faq_request = NucleusApi::Faq.new # Faq | faqRequest
 
 
 begin
   #Create a FAQ
   result = api_instance.create_faq_using_post(faq_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FAQApi->create_faq_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently delete a FAQ
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FAQApi.new
+api_instance = NucleusApi::FAQApi.new
 
 faq_id = 'faq_id_example' # String | UUID faq_id
 
@@ -96,7 +96,7 @@ faq_id = 'faq_id_example' # String | UUID faq_id
 begin
   #Delete a FAQ
   api_instance.delete_faq_using_delete(faq_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FAQApi->delete_faq_using_delete: #{e}"
 end
 ```
@@ -132,9 +132,9 @@ Get the information for all FAQ
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -143,7 +143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FAQApi.new
+api_instance = NucleusApi::FAQApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -157,7 +157,7 @@ begin
   #List all FAQ
   result = api_instance.get_faq_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FAQApi->get_faq_all_using_get: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Retrieve the information for a FAQ
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FAQApi.new
+api_instance = NucleusApi::FAQApi.new
 
 faq_id = 'faq_id_example' # String | UUID faq_id
 
@@ -217,7 +217,7 @@ begin
   #Retrieve a FAQ
   result = api_instance.get_faq_using_get(faq_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FAQApi->get_faq_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Update the information for a FAQ
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FAQApi.new
+api_instance = NucleusApi::FAQApi.new
 
-faq = AtomApi::Faq.new # Faq | faq
+faq = NucleusApi::Faq.new # Faq | faq
 
 faq_id = 'faq_id_example' # String | UUID faq_id
 
@@ -275,7 +275,7 @@ begin
   #Update a FAQ
   result = api_instance.update_faq_using_put(faq, faq_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FAQApi->update_faq_using_put: #{e}"
 end
 ```

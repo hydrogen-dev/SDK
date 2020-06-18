@@ -1,4 +1,4 @@
-# AtomApi::Location
+# NucleusApi::Location
 
 ## Properties
 Name | Type | Description | Notes

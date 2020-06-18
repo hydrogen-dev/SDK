@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **secondary_id** | **string** |  | [optional] 
 **sector** | **string** | Security sector | [optional] 
 **security_class** | **string** | Security class | [optional] 
-**security_composition** | [**\com\hydrogen\Model\SecuritiesComposition[]**](SecuritiesComposition.md) |  | [optional] 
-**security_country** | [**\com\hydrogen\Model\SecuritiesCountry[]**](SecuritiesCountry.md) |  | [optional] 
+**security_composition** | [**\com\hydrogen\nucleus\Model\SecuritiesComposition[]**](SecuritiesComposition.md) |  | [optional] 
+**security_country** | [**\com\hydrogen\nucleus\Model\SecuritiesCountry[]**](SecuritiesCountry.md) |  | [optional] 
 **ticker** | **string** | Security ticker | 
 **total_expense_ratio** | **float** | total_expense_ratio | [optional] 
 **type** | **string** | Security type | [optional] 

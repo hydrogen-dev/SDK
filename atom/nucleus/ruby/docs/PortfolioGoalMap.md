@@ -1,4 +1,4 @@
-# AtomApi::PortfolioGoalMap
+# NucleusApi::PortfolioGoalMap
 
 ## Properties
 Name | Type | Description | Notes

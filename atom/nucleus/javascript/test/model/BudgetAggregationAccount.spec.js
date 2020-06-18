@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.BudgetAggregationAccount();
+    instance = new HydrogenNucleusApi.BudgetAggregationAccount();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,13 +53,13 @@
   describe('BudgetAggregationAccount', function() {
     it('should create an instance of BudgetAggregationAccount', function() {
       // uncomment below and update the code to test BudgetAggregationAccount
-      //var instane = new HydrogenAtomApi.BudgetAggregationAccount();
-      //expect(instance).to.be.a(HydrogenAtomApi.BudgetAggregationAccount);
+      //var instane = new HydrogenNucleusApi.BudgetAggregationAccount();
+      //expect(instance).to.be.a(HydrogenNucleusApi.BudgetAggregationAccount);
     });
 
     it('should have the property aggregationAccountId (base name: "aggregation_account_id")', function() {
       // uncomment below and update the code to test the property aggregationAccountId
-      //var instane = new HydrogenAtomApi.BudgetAggregationAccount();
+      //var instane = new HydrogenNucleusApi.BudgetAggregationAccount();
       //expect(instance).to.be();
     });
 

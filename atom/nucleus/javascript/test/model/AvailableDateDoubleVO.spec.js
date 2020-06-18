@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AvailableDateDoubleVO();
+    instance = new HydrogenNucleusApi.AvailableDateDoubleVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,43 +53,43 @@
   describe('AvailableDateDoubleVO', function() {
     it('should create an instance of AvailableDateDoubleVO', function() {
       // uncomment below and update the code to test AvailableDateDoubleVO
-      //var instane = new HydrogenAtomApi.AvailableDateDoubleVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AvailableDateDoubleVO);
+      //var instane = new HydrogenNucleusApi.AvailableDateDoubleVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AvailableDateDoubleVO);
     });
 
     it('should have the property additions (base name: "additions")', function() {
       // uncomment below and update the code to test the property additions
-      //var instane = new HydrogenAtomApi.AvailableDateDoubleVO();
+      //var instane = new HydrogenNucleusApi.AvailableDateDoubleVO();
       //expect(instance).to.be();
     });
 
     it('should have the property cashFlow (base name: "cash_flow")', function() {
       // uncomment below and update the code to test the property cashFlow
-      //var instane = new HydrogenAtomApi.AvailableDateDoubleVO();
+      //var instane = new HydrogenNucleusApi.AvailableDateDoubleVO();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.AvailableDateDoubleVO();
+      //var instane = new HydrogenNucleusApi.AvailableDateDoubleVO();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.AvailableDateDoubleVO();
+      //var instane = new HydrogenNucleusApi.AvailableDateDoubleVO();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new HydrogenAtomApi.AvailableDateDoubleVO();
+      //var instane = new HydrogenNucleusApi.AvailableDateDoubleVO();
       //expect(instance).to.be();
     });
 
     it('should have the property valueAvailable (base name: "value_available")', function() {
       // uncomment below and update the code to test the property valueAvailable
-      //var instane = new HydrogenAtomApi.AvailableDateDoubleVO();
+      //var instane = new HydrogenNucleusApi.AvailableDateDoubleVO();
       //expect(instance).to.be();
     });
 

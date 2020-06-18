@@ -1,4 +1,4 @@
-# com\hydrogen\BudgetApi
+# com\hydrogen\nucleus\BudgetApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createBudgetUsingPost**
-> \com\hydrogen\Model\Budget createBudgetUsingPost($budget_request)
+> \com\hydrogen\nucleus\Model\Budget createBudgetUsingPost($budget_request)
 
 Create a budget request
 
@@ -21,29 +21,29 @@ Create a new budget request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BudgetApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BudgetApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$budget_request = new \com\hydrogen\Model\Budget(); // \com\hydrogen\Model\Budget | budgetRequest
+$budget_request = new \com\hydrogen\nucleus\Model\Budget(); // \com\hydrogen\nucleus\Model\Budget | budgetRequest
 
 try {
     $result = $apiInstance->createBudgetUsingPost($budget_request);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_request** | [**\com\hydrogen\Model\Budget**](../Model/Budget.md)| budgetRequest |
+ **budget_request** | [**\com\hydrogen\nucleus\Model\Budget**](../Model/Budget.md)| budgetRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Budget**](../Model/Budget.md)
+[**\com\hydrogen\nucleus\Model\Budget**](../Model/Budget.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently delete a budget request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BudgetApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BudgetApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -139,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBudgetAllUsingGet**
-> \com\hydrogen\Model\PageBudget_ getBudgetAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageBudget_ getBudgetAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all budget requests
 
@@ -148,23 +148,23 @@ Get the information for all budget requests.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BudgetApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BudgetApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageBudget_**](../Model/PageBudget_.md)
+[**\com\hydrogen\nucleus\Model\PageBudget_**](../Model/PageBudget_.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBudgetUsingGet**
-> \com\hydrogen\Model\Budget getBudgetUsingGet($budget_id)
+> \com\hydrogen\nucleus\Model\Budget getBudgetUsingGet($budget_id)
 
 Retrieve a budget request
 
@@ -220,23 +220,23 @@ Retrieve the information for a budget request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BudgetApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BudgetApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Budget**](../Model/Budget.md)
+[**\com\hydrogen\nucleus\Model\Budget**](../Model/Budget.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateBudgetUsingPut**
-> \com\hydrogen\Model\Budget updateBudgetUsingPut($budget, $budget_id)
+> \com\hydrogen\nucleus\Model\Budget updateBudgetUsingPut($budget, $budget_id)
 
 Update a budget request
 
@@ -284,29 +284,29 @@ Update the information for a budget request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BudgetApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BudgetApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$budget = new \com\hydrogen\Model\Budget(); // \com\hydrogen\Model\Budget | budget
+$budget = new \com\hydrogen\nucleus\Model\Budget(); // \com\hydrogen\nucleus\Model\Budget | budget
 $budget_id = "budget_id_example"; // string | UUID budget_id
 
 try {
@@ -322,12 +322,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget** | [**\com\hydrogen\Model\Budget**](../Model/Budget.md)| budget |
+ **budget** | [**\com\hydrogen\nucleus\Model\Budget**](../Model/Budget.md)| budget |
  **budget_id** | [**string**](../Model/.md)| UUID budget_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Budget**](../Model/Budget.md)
+[**\com\hydrogen\nucleus\Model\Budget**](../Model/Budget.md)
 
 ### Authorization
 

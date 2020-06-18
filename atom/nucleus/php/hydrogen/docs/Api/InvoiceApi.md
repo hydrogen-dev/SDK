@@ -1,4 +1,4 @@
-# com\hydrogen\InvoiceApi
+# com\hydrogen\nucleus\InvoiceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createInvoicePaymentUsingPost**
-> \com\hydrogen\Model\InvoicePayment createInvoicePaymentUsingPost($invoice_payment)
+> \com\hydrogen\nucleus\Model\InvoicePayment createInvoicePaymentUsingPost($invoice_payment)
 
 Create a invoicePayment
 
@@ -26,29 +26,29 @@ Create a new invoicePayment, for tracking invoice status.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$invoice_payment = new \com\hydrogen\Model\InvoicePayment(); // \com\hydrogen\Model\InvoicePayment | invoicePayment
+$invoice_payment = new \com\hydrogen\nucleus\Model\InvoicePayment(); // \com\hydrogen\nucleus\Model\InvoicePayment | invoicePayment
 
 try {
     $result = $apiInstance->createInvoicePaymentUsingPost($invoice_payment);
@@ -63,11 +63,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_payment** | [**\com\hydrogen\Model\InvoicePayment**](../Model/InvoicePayment.md)| invoicePayment |
+ **invoice_payment** | [**\com\hydrogen\nucleus\Model\InvoicePayment**](../Model/InvoicePayment.md)| invoicePayment |
 
 ### Return type
 
-[**\com\hydrogen\Model\InvoicePayment**](../Model/InvoicePayment.md)
+[**\com\hydrogen\nucleus\Model\InvoicePayment**](../Model/InvoicePayment.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createInvoiceUsingPost**
-> \com\hydrogen\Model\Invoice createInvoiceUsingPost($invoice)
+> \com\hydrogen\nucleus\Model\Invoice createInvoiceUsingPost($invoice)
 
 Create a invoice
 
@@ -90,29 +90,29 @@ Create a new invoice, with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$invoice = new \com\hydrogen\Model\Invoice(); // \com\hydrogen\Model\Invoice | invoice
+$invoice = new \com\hydrogen\nucleus\Model\Invoice(); // \com\hydrogen\nucleus\Model\Invoice | invoice
 
 try {
     $result = $apiInstance->createInvoiceUsingPost($invoice);
@@ -127,11 +127,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**\com\hydrogen\Model\Invoice**](../Model/Invoice.md)| invoice |
+ **invoice** | [**\com\hydrogen\nucleus\Model\Invoice**](../Model/Invoice.md)| invoice |
 
 ### Return type
 
-[**\com\hydrogen\Model\Invoice**](../Model/Invoice.md)
+[**\com\hydrogen\nucleus\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -154,23 +154,23 @@ Delete a invoicePayment.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -217,23 +217,23 @@ Delete a invoice.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -271,7 +271,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoiceAllUsingGet**
-> \com\hydrogen\Model\PageInvoice_ getInvoiceAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInvoice_ getInvoiceAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all invoice
 
@@ -280,23 +280,23 @@ List all invoice.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageInvoice_**](../Model/PageInvoice_.md)
+[**\com\hydrogen\nucleus\Model\PageInvoice_**](../Model/PageInvoice_.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoicePaymentAllUsingGet**
-> \com\hydrogen\Model\PageInvoicePayment_ getInvoicePaymentAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInvoicePayment_ getInvoicePaymentAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all invoicePayment
 
@@ -352,23 +352,23 @@ List all invoicePayment.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageInvoicePayment_**](../Model/PageInvoicePayment_.md)
+[**\com\hydrogen\nucleus\Model\PageInvoicePayment_**](../Model/PageInvoicePayment_.md)
 
 ### Authorization
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoicePaymentUsingGet**
-> \com\hydrogen\Model\InvoicePayment getInvoicePaymentUsingGet($invoice_payment_id)
+> \com\hydrogen\nucleus\Model\InvoicePayment getInvoicePaymentUsingGet($invoice_payment_id)
 
 Retrieve a invoicePayment
 
@@ -424,23 +424,23 @@ Retrieve a invoicePayment.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\InvoicePayment**](../Model/InvoicePayment.md)
+[**\com\hydrogen\nucleus\Model\InvoicePayment**](../Model/InvoicePayment.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoiceUsingGet**
-> \com\hydrogen\Model\Invoice getInvoiceUsingGet($invoice_id)
+> \com\hydrogen\nucleus\Model\Invoice getInvoiceUsingGet($invoice_id)
 
 Retrieve a invoice
 
@@ -488,23 +488,23 @@ Retrieve a invoice.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Invoice**](../Model/Invoice.md)
+[**\com\hydrogen\nucleus\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateInvoicePaymentUsingPut**
-> \com\hydrogen\Model\InvoicePayment updateInvoicePaymentUsingPut($invoice_payment, $invoice_payment_id)
+> \com\hydrogen\nucleus\Model\InvoicePayment updateInvoicePaymentUsingPut($invoice_payment, $invoice_payment_id)
 
 Update a invoicePayment
 
@@ -552,29 +552,29 @@ Update a invoicePayment.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$invoice_payment = new \com\hydrogen\Model\InvoicePayment(); // \com\hydrogen\Model\InvoicePayment | invoice_payment
+$invoice_payment = new \com\hydrogen\nucleus\Model\InvoicePayment(); // \com\hydrogen\nucleus\Model\InvoicePayment | invoice_payment
 $invoice_payment_id = "invoice_payment_id_example"; // string | UUID invoice_payment_id
 
 try {
@@ -590,12 +590,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_payment** | [**\com\hydrogen\Model\InvoicePayment**](../Model/InvoicePayment.md)| invoice_payment |
+ **invoice_payment** | [**\com\hydrogen\nucleus\Model\InvoicePayment**](../Model/InvoicePayment.md)| invoice_payment |
  **invoice_payment_id** | [**string**](../Model/.md)| UUID invoice_payment_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\InvoicePayment**](../Model/InvoicePayment.md)
+[**\com\hydrogen\nucleus\Model\InvoicePayment**](../Model/InvoicePayment.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateInvoiceUsingPut**
-> \com\hydrogen\Model\Invoice updateInvoiceUsingPut($invoice, $invoice_id)
+> \com\hydrogen\nucleus\Model\Invoice updateInvoiceUsingPut($invoice, $invoice_id)
 
 Update a invoice
 
@@ -618,29 +618,29 @@ Update a invoice.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InvoiceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$invoice = new \com\hydrogen\Model\Invoice(); // \com\hydrogen\Model\Invoice | invoice
+$invoice = new \com\hydrogen\nucleus\Model\Invoice(); // \com\hydrogen\nucleus\Model\Invoice | invoice
 $invoice_id = "invoice_id_example"; // string | UUID invoice_id
 
 try {
@@ -656,12 +656,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**\com\hydrogen\Model\Invoice**](../Model/Invoice.md)| invoice |
+ **invoice** | [**\com\hydrogen\nucleus\Model\Invoice**](../Model/Invoice.md)| invoice |
  **invoice_id** | [**string**](../Model/.md)| UUID invoice_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Invoice**](../Model/Invoice.md)
+[**\com\hydrogen\nucleus\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 

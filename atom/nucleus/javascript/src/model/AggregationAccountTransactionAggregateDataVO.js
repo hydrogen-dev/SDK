@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./BankCredit'), require('./Investment'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AggregationAccountTransactionAggregateDataVO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.BankCredit, root.HydrogenAtomApi.Investment);
+    root.HydrogenNucleusApi.AggregationAccountTransactionAggregateDataVO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.BankCredit, root.HydrogenNucleusApi.Investment);
   }
 }(this, function(ApiClient, BankCredit, Investment) {
   'use strict';

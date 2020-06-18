@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/DecisionTree'), require('../model/DecisionTreeCO'), require('../model/DecisionTreeResultVO'), require('../model/JsonNode'), require('../model/Node'), require('../model/NodeRelationship'), require('../model/PageDecisionTree'), require('../model/PageNode'), require('../model/PageNodeRelationship'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.DecisionTreeApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.DecisionTree, root.HydrogenAtomApi.DecisionTreeCO, root.HydrogenAtomApi.DecisionTreeResultVO, root.HydrogenAtomApi.JsonNode, root.HydrogenAtomApi.Node, root.HydrogenAtomApi.NodeRelationship, root.HydrogenAtomApi.PageDecisionTree, root.HydrogenAtomApi.PageNode, root.HydrogenAtomApi.PageNodeRelationship);
+    root.HydrogenNucleusApi.DecisionTreeApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.DecisionTree, root.HydrogenNucleusApi.DecisionTreeCO, root.HydrogenNucleusApi.DecisionTreeResultVO, root.HydrogenNucleusApi.JsonNode, root.HydrogenNucleusApi.Node, root.HydrogenNucleusApi.NodeRelationship, root.HydrogenNucleusApi.PageDecisionTree, root.HydrogenNucleusApi.PageNode, root.HydrogenNucleusApi.PageNodeRelationship);
   }
 }(this, function(ApiClient, DecisionTree, DecisionTreeCO, DecisionTreeResultVO, JsonNode, Node, NodeRelationship, PageDecisionTree, PageNode, PageNodeRelationship) {
   'use strict';

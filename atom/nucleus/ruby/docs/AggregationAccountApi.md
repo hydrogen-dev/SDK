@@ -1,4 +1,4 @@
-# AtomApi::AggregationAccountApi
+# NucleusApi::AggregationAccountApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -44,9 +44,9 @@ Create a balance records under an aggregation accounts.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -55,16 +55,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_balance = [AtomApi::AggregationAccountBalance.new] # Array<AggregationAccountBalance> | aggregationAccountBalance
+aggregation_account_balance = [NucleusApi::AggregationAccountBalance.new] # Array<AggregationAccountBalance> | aggregationAccountBalance
 
 
 begin
   #Create a bulk aggregation account balance
   result = api_instance.create_aggregation_account_balance_bulk_using_post(aggregation_account_balance)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_balance_bulk_using_post: #{e}"
 end
 ```
@@ -100,9 +100,9 @@ Create a balance record under an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -111,16 +111,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_balance = AtomApi::AggregationAccountBalance.new # AggregationAccountBalance | aggregationAccountBalance
+aggregation_account_balance = NucleusApi::AggregationAccountBalance.new # AggregationAccountBalance | aggregationAccountBalance
 
 
 begin
   #Create an aggregation account balance
   result = api_instance.create_aggregation_account_balance_using_post(aggregation_account_balance)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_balance_using_post: #{e}"
 end
 ```
@@ -156,9 +156,9 @@ Create a bulk aggregation account under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -167,16 +167,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_list = [AtomApi::AggregationAccount.new] # Array<AggregationAccount> | aggregationAccountList
+aggregation_account_list = [NucleusApi::AggregationAccount.new] # Array<AggregationAccount> | aggregationAccountList
 
 
 begin
   #Create a bulk aggregation account
   result = api_instance.create_aggregation_account_bulk_using_post(aggregation_account_list)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_bulk_using_post: #{e}"
 end
 ```
@@ -212,9 +212,9 @@ Create a bulk aggregation account holding.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -223,16 +223,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_transaction = [AtomApi::AggregationAccountHolding.new] # Array<AggregationAccountHolding> | aggregationTransaction
+aggregation_transaction = [NucleusApi::AggregationAccountHolding.new] # Array<AggregationAccountHolding> | aggregationTransaction
 
 
 begin
   #Create a bulk aggregation account holding
   result = api_instance.create_aggregation_account_holding_bulk_using_post(aggregation_transaction)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_holding_bulk_using_post: #{e}"
 end
 ```
@@ -268,9 +268,9 @@ Create a holding record under an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -279,16 +279,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_holding = AtomApi::AggregationAccountHolding.new # AggregationAccountHolding | aggregationAccountHolding
+aggregation_account_holding = NucleusApi::AggregationAccountHolding.new # AggregationAccountHolding | aggregationAccountHolding
 
 
 begin
   #Create an aggregation account holding
   result = api_instance.create_aggregation_account_holding_using_post(aggregation_account_holding)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_holding_using_post: #{e}"
 end
 ```
@@ -324,9 +324,9 @@ Create a bulk transaction record under an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -335,16 +335,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_transactions = [AtomApi::AggregationAccountTransaction.new] # Array<AggregationAccountTransaction> | aggregationAccountTransactions
+aggregation_account_transactions = [NucleusApi::AggregationAccountTransaction.new] # Array<AggregationAccountTransaction> | aggregationAccountTransactions
 
 
 begin
   #Create a bulk aggregation account transaction
   result = api_instance.create_aggregation_account_transaction_bulk_using_post(aggregation_account_transactions)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_transaction_bulk_using_post: #{e}"
 end
 ```
@@ -380,9 +380,9 @@ Create a transaction record under an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -391,16 +391,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_transaction = AtomApi::AggregationAccountTransaction.new # AggregationAccountTransaction | aggregationAccountTransaction
+aggregation_account_transaction = NucleusApi::AggregationAccountTransaction.new # AggregationAccountTransaction | aggregationAccountTransaction
 
 
 begin
   #Create an aggregation account transaction
   result = api_instance.create_aggregation_account_transaction_using_post(aggregation_account_transaction)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_transaction_using_post: #{e}"
 end
 ```
@@ -436,9 +436,9 @@ Create an aggregation account under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -447,16 +447,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account = AtomApi::AggregationAccount.new # AggregationAccount | aggregationAccount
+aggregation_account = NucleusApi::AggregationAccount.new # AggregationAccount | aggregationAccount
 
 
 begin
   #Create an aggregation account
   result = api_instance.create_aggregation_account_using_post(aggregation_account)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->create_aggregation_account_using_post: #{e}"
 end
 ```
@@ -492,9 +492,9 @@ Permanently delete a balance record for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -503,7 +503,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # String | UUID aggregation_account_balance_id
 
@@ -511,7 +511,7 @@ aggregation_account_balance_id = 'aggregation_account_balance_id_example' # Stri
 begin
   #Delete an aggregation account balance
   api_instance.delete_aggregation_account_balance_using_delete(aggregation_account_balance_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->delete_aggregation_account_balance_using_delete: #{e}"
 end
 ```
@@ -547,9 +547,9 @@ Permanently delete a holding record for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -558,7 +558,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID aggregation_account_holding_id
 
@@ -566,7 +566,7 @@ aggregation_account_holding_id = 'aggregation_account_holding_id_example' # Stri
 begin
   #Delete an aggregation account holding
   api_instance.delete_aggregation_account_holding_using_delete(aggregation_account_holding_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->delete_aggregation_account_holding_using_delete: #{e}"
 end
 ```
@@ -602,9 +602,9 @@ Permanently delete a transaction record for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -613,7 +613,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID aggregation_account_transaction_id
 
@@ -622,7 +622,7 @@ begin
   #Delete an aggregation account transaction
   result = api_instance.delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->delete_aggregation_account_transaction_using_delete: #{e}"
 end
 ```
@@ -658,9 +658,9 @@ Permanently delete an aggregation account under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -669,7 +669,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_id = 'aggregation_account_id_example' # String | UUID aggregation_account_id
 
@@ -677,7 +677,7 @@ aggregation_account_id = 'aggregation_account_id_example' # String | UUID aggreg
 begin
   #Delete an aggregation account
   api_instance.delete_aggregation_account_using_delete(aggregation_account_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->delete_aggregation_account_using_delete: #{e}"
 end
 ```
@@ -713,9 +713,9 @@ Retrieve the information for a specific aggregation account associated with a cl
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -724,7 +724,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_id = 'aggregation_account_id_example' # String | UUID aggregation_account_id
 
@@ -733,7 +733,7 @@ begin
   #Retrieve an aggregation account aggregate data
   result = api_instance.get_aggregation_account_aggregate_data_using_get(aggregation_account_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_aggregate_data_using_get: #{e}"
 end
 ```
@@ -769,9 +769,9 @@ Get information for all aggregation accounts for all clients defined for your fi
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -780,7 +780,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -794,7 +794,7 @@ begin
   #List all aggregation accounts
   result = api_instance.get_aggregation_account_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_all_using_get: #{e}"
 end
 ```
@@ -834,9 +834,9 @@ Get all of the balance records for all aggregation accounts defined for your fir
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -845,7 +845,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -859,7 +859,7 @@ begin
   #List all aggregation account balances
   result = api_instance.get_aggregation_account_balance_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_balance_all_using_get: #{e}"
 end
 ```
@@ -899,9 +899,9 @@ Retrieve the information for a specific balance record for an aggregation accoun
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -910,7 +910,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # String | UUID aggregation_account_balance_id
 
@@ -919,7 +919,7 @@ begin
   #Retrieve an aggregation account balance
   result = api_instance.get_aggregation_account_balance_using_get(aggregation_account_balance_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_balance_using_get: #{e}"
 end
 ```
@@ -955,9 +955,9 @@ Get all of the holding records for all aggregation accounts defined for your fir
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -966,7 +966,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -980,7 +980,7 @@ begin
   #List all aggregation account holdings
   result = api_instance.get_aggregation_account_holding_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_holding_all_using_get: #{e}"
 end
 ```
@@ -1020,9 +1020,9 @@ Retrieve the information for a specific holding record for an aggregation accoun
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1031,7 +1031,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID aggregation_account_holding_id
 
@@ -1040,7 +1040,7 @@ begin
   #Retrieve an aggregation account holding
   result = api_instance.get_aggregation_account_holding_using_get(aggregation_account_holding_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_holding_using_get: #{e}"
 end
 ```
@@ -1076,9 +1076,9 @@ Retrieve the information for a specific aggregation account with aggregate data 
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1087,7 +1087,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 client_id = 'client_id_example' # String | UUID client_id
 
@@ -1096,7 +1096,7 @@ begin
   #Retrieve an aggregation account aggregate data
   result = api_instance.get_aggregation_account_overview_using_get(client_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_overview_using_get: #{e}"
 end
 ```
@@ -1132,9 +1132,9 @@ Get all of the transaction records for all aggregation accounts defined for your
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1143,7 +1143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1157,7 +1157,7 @@ begin
   #List all aggregation account transactions
   result = api_instance.get_aggregation_account_transaction_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_transaction_all_using_get: #{e}"
 end
 ```
@@ -1197,9 +1197,9 @@ Retrieve the information for a specific transaction record for an aggregation ac
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1208,7 +1208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID aggregation_account_transaction_id
 
@@ -1217,7 +1217,7 @@ begin
   #Retrieve an aggregation account transaction
   result = api_instance.get_aggregation_account_transaction_using_get(aggregation_account_transaction_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_transaction_using_get: #{e}"
 end
 ```
@@ -1253,9 +1253,9 @@ Retrieve the information for a specific aggregation account associated with a cl
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1264,7 +1264,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_id = 'aggregation_account_id_example' # String | UUID aggregation_account_id
 
@@ -1273,7 +1273,7 @@ begin
   #Retrieve an aggregation account
   result = api_instance.get_aggregation_account_using_get(aggregation_account_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_using_get: #{e}"
 end
 ```
@@ -1309,9 +1309,9 @@ Update a balance record for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1320,9 +1320,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_balance = AtomApi::AggregationAccountBalance.new # AggregationAccountBalance | aggregation_account_balance
+aggregation_account_balance = NucleusApi::AggregationAccountBalance.new # AggregationAccountBalance | aggregation_account_balance
 
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # String | UUID aggregation_account_balance_id
 
@@ -1331,7 +1331,7 @@ begin
   #Update an aggregation account balance
   result = api_instance.update_aggregation_account_balance_using_put(aggregation_account_balance, aggregation_account_balance_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->update_aggregation_account_balance_using_put: #{e}"
 end
 ```
@@ -1368,9 +1368,9 @@ Update a bulk aggregation account under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1379,16 +1379,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_list = [AtomApi::AggregationAccount.new] # Array<AggregationAccount> | aggregationAccountList
+aggregation_account_list = [NucleusApi::AggregationAccount.new] # Array<AggregationAccount> | aggregationAccountList
 
 
 begin
   #Update a bulk aggregation account
   result = api_instance.update_aggregation_account_bulk_using_put(aggregation_account_list)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->update_aggregation_account_bulk_using_put: #{e}"
 end
 ```
@@ -1424,9 +1424,9 @@ Update a bulk holding record for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1435,16 +1435,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_holding = [AtomApi::AggregationAccountHolding.new] # Array<AggregationAccountHolding> | aggregationAccountHolding
+aggregation_account_holding = [NucleusApi::AggregationAccountHolding.new] # Array<AggregationAccountHolding> | aggregationAccountHolding
 
 
 begin
   #Update an bulk aggregation account holding
   result = api_instance.update_aggregation_account_holding_bulk_using_put(aggregation_account_holding)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->update_aggregation_account_holding_bulk_using_put: #{e}"
 end
 ```
@@ -1480,9 +1480,9 @@ Update a holding record for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1491,9 +1491,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_holding = AtomApi::AggregationAccountHolding.new # AggregationAccountHolding | aggregation_account_holding
+aggregation_account_holding = NucleusApi::AggregationAccountHolding.new # AggregationAccountHolding | aggregation_account_holding
 
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID aggregation_account_holding_id
 
@@ -1502,7 +1502,7 @@ begin
   #Update an aggregation account holding
   result = api_instance.update_aggregation_account_holding_using_put(aggregation_account_holding, aggregation_account_holding_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->update_aggregation_account_holding_using_put: #{e}"
 end
 ```
@@ -1539,9 +1539,9 @@ Update a transaction record for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1550,9 +1550,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_transaction = AtomApi::AggregationAccountTransaction.new # AggregationAccountTransaction | aggregation_account_transaction
+aggregation_account_transaction = NucleusApi::AggregationAccountTransaction.new # AggregationAccountTransaction | aggregation_account_transaction
 
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID aggregation_account_transaction_id
 
@@ -1561,7 +1561,7 @@ begin
   #Update an aggregation account transaction
   result = api_instance.update_aggregation_account_transaction_using_put(aggregation_account_transaction, aggregation_account_transaction_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->update_aggregation_account_transaction_using_put: #{e}"
 end
 ```
@@ -1598,9 +1598,9 @@ Update the information for an aggregation account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1609,9 +1609,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AggregationAccountApi.new
+api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account = AtomApi::AggregationAccount.new # AggregationAccount | aggregation_account
+aggregation_account = NucleusApi::AggregationAccount.new # AggregationAccount | aggregation_account
 
 aggregation_account_id = 'aggregation_account_id_example' # String | UUID aggregation_account_id
 
@@ -1620,7 +1620,7 @@ begin
   #Update an aggregation account
   result = api_instance.update_aggregation_account_using_put(aggregation_account, aggregation_account_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->update_aggregation_account_using_put: #{e}"
 end
 ```

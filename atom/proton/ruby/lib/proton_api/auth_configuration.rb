@@ -89,6 +89,10 @@ module ProtonApi
       @config.access_token = body['access_token']
     end
 
+    def set_access_token(token)
+      @config.access_token = token
+    end
+
     def create_password_credential(client_id, client_secret, username, password)
       basic_cred = 'Basic ' + ["#{client_id}:#{client_secret}"].pack('m').delete("\r\n")
       # Request Params

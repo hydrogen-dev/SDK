@@ -1,4 +1,4 @@
-# AtomApi::PagePortfolioGoal
+# NucleusApi::PagePortfolioGoal
 
 ## Properties
 Name | Type | Description | Notes

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * UtilsApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class UtilsApi
      *
      * Create an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status_request accountStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status_request accountStatusRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountStatus
+     * @return \com\hydrogen\nucleus\Model\AccountStatus
      */
     public function createAccountStatusUsingPost($account_status_request)
     {
@@ -109,15 +109,15 @@ class UtilsApi
      *
      * Create an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status_request accountStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status_request accountStatusRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountStatusUsingPostWithHttpInfo($account_status_request)
     {
-        $returnType = '\com\hydrogen\Model\AccountStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountStatus';
         $request = $this->createAccountStatusUsingPostRequest($account_status_request);
 
         try {
@@ -169,7 +169,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountStatus',
+                        '\com\hydrogen\nucleus\Model\AccountStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class UtilsApi
      *
      * Create an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status_request accountStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status_request accountStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class UtilsApi
      *
      * Create an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status_request accountStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status_request accountStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountStatusUsingPostAsyncWithHttpInfo($account_status_request)
     {
-        $returnType = '\com\hydrogen\Model\AccountStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountStatus';
         $request = $this->createAccountStatusUsingPostRequest($account_status_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class UtilsApi
     /**
      * Create request for operation 'createAccountStatusUsingPost'
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status_request accountStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status_request accountStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class UtilsApi
      *
      * Create an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage_request stageRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage_request stageRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Stage
+     * @return \com\hydrogen\nucleus\Model\Stage
      */
     public function createStageUsingPost($stage_request)
     {
@@ -377,15 +377,15 @@ class UtilsApi
      *
      * Create an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage_request stageRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage_request stageRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Stage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Stage, HTTP status code, HTTP response headers (array of strings)
      */
     public function createStageUsingPostWithHttpInfo($stage_request)
     {
-        $returnType = '\com\hydrogen\Model\Stage';
+        $returnType = '\com\hydrogen\nucleus\Model\Stage';
         $request = $this->createStageUsingPostRequest($stage_request);
 
         try {
@@ -437,7 +437,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Stage',
+                        '\com\hydrogen\nucleus\Model\Stage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class UtilsApi
      *
      * Create an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage_request stageRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage_request stageRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class UtilsApi
      *
      * Create an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage_request stageRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage_request stageRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createStageUsingPostAsyncWithHttpInfo($stage_request)
     {
-        $returnType = '\com\hydrogen\Model\Stage';
+        $returnType = '\com\hydrogen\nucleus\Model\Stage';
         $request = $this->createStageUsingPostRequest($stage_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class UtilsApi
     /**
      * Create request for operation 'createStageUsingPost'
      *
-     * @param  \com\hydrogen\Model\Stage $stage_request stageRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage_request stageRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class UtilsApi
      *
      * Create a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_request transactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_request transactionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\TransactionCode
+     * @return \com\hydrogen\nucleus\Model\TransactionCode
      */
     public function createTransactionCodeUsingPost($transaction_request)
     {
@@ -645,15 +645,15 @@ class UtilsApi
      *
      * Create a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_request transactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_request transactionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\TransactionCode, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\TransactionCode, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTransactionCodeUsingPostWithHttpInfo($transaction_request)
     {
-        $returnType = '\com\hydrogen\Model\TransactionCode';
+        $returnType = '\com\hydrogen\nucleus\Model\TransactionCode';
         $request = $this->createTransactionCodeUsingPostRequest($transaction_request);
 
         try {
@@ -705,7 +705,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\TransactionCode',
+                        '\com\hydrogen\nucleus\Model\TransactionCode',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class UtilsApi
      *
      * Create a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_request transactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_request transactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class UtilsApi
      *
      * Create a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_request transactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_request transactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createTransactionCodeUsingPostAsyncWithHttpInfo($transaction_request)
     {
-        $returnType = '\com\hydrogen\Model\TransactionCode';
+        $returnType = '\com\hydrogen\nucleus\Model\TransactionCode';
         $request = $this->createTransactionCodeUsingPostRequest($transaction_request);
 
         return $this->client
@@ -790,7 +790,7 @@ class UtilsApi
     /**
      * Create request for operation 'createTransactionCodeUsingPost'
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_request transactionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_request transactionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -898,7 +898,7 @@ class UtilsApi
      *
      * @param  string $account_status_id UUID account_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -914,7 +914,7 @@ class UtilsApi
      *
      * @param  string $account_status_id UUID account_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1134,7 +1134,7 @@ class UtilsApi
      *
      * @param  string $stage_id UUID stage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1150,7 +1150,7 @@ class UtilsApi
      *
      * @param  string $stage_id UUID stage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1370,7 +1370,7 @@ class UtilsApi
      *
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1386,7 +1386,7 @@ class UtilsApi
      *
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1610,9 +1610,9 @@ class UtilsApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAccountStatus_
+     * @return \com\hydrogen\nucleus\Model\PageAccountStatus_
      */
     public function getAccountStatusAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1631,13 +1631,13 @@ class UtilsApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAccountStatus_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAccountStatus_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountStatusAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountStatus_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountStatus_';
         $request = $this->getAccountStatusAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1689,7 +1689,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAccountStatus_',
+                        '\com\hydrogen\nucleus\Model\PageAccountStatus_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1739,7 +1739,7 @@ class UtilsApi
      */
     public function getAccountStatusAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAccountStatus_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAccountStatus_';
         $request = $this->getAccountStatusAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1905,9 +1905,9 @@ class UtilsApi
      *
      * @param  string $account_status_id UUID account_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountStatus
+     * @return \com\hydrogen\nucleus\Model\AccountStatus
      */
     public function getAccountStatusUsingGet($account_status_id)
     {
@@ -1922,13 +1922,13 @@ class UtilsApi
      *
      * @param  string $account_status_id UUID account_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountStatusUsingGetWithHttpInfo($account_status_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountStatus';
         $request = $this->getAccountStatusUsingGetRequest($account_status_id);
 
         try {
@@ -1980,7 +1980,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountStatus',
+                        '\com\hydrogen\nucleus\Model\AccountStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2022,7 +2022,7 @@ class UtilsApi
      */
     public function getAccountStatusUsingGetAsyncWithHttpInfo($account_status_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountStatus';
         $request = $this->getAccountStatusUsingGetRequest($account_status_id);
 
         return $this->client
@@ -2182,9 +2182,9 @@ class UtilsApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageStage_
+     * @return \com\hydrogen\nucleus\Model\PageStage_
      */
     public function getStageAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2203,13 +2203,13 @@ class UtilsApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageStage_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageStage_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStageAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageStage_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageStage_';
         $request = $this->getStageAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2261,7 +2261,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageStage_',
+                        '\com\hydrogen\nucleus\Model\PageStage_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2311,7 +2311,7 @@ class UtilsApi
      */
     public function getStageAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageStage_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageStage_';
         $request = $this->getStageAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2477,9 +2477,9 @@ class UtilsApi
      *
      * @param  string $stage_id UUID stage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Stage
+     * @return \com\hydrogen\nucleus\Model\Stage
      */
     public function getStageUsingGet($stage_id)
     {
@@ -2494,13 +2494,13 @@ class UtilsApi
      *
      * @param  string $stage_id UUID stage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Stage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Stage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStageUsingGetWithHttpInfo($stage_id)
     {
-        $returnType = '\com\hydrogen\Model\Stage';
+        $returnType = '\com\hydrogen\nucleus\Model\Stage';
         $request = $this->getStageUsingGetRequest($stage_id);
 
         try {
@@ -2552,7 +2552,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Stage',
+                        '\com\hydrogen\nucleus\Model\Stage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2594,7 +2594,7 @@ class UtilsApi
      */
     public function getStageUsingGetAsyncWithHttpInfo($stage_id)
     {
-        $returnType = '\com\hydrogen\Model\Stage';
+        $returnType = '\com\hydrogen\nucleus\Model\Stage';
         $request = $this->getStageUsingGetRequest($stage_id);
 
         return $this->client
@@ -2754,9 +2754,9 @@ class UtilsApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageTransactionCode_
+     * @return \com\hydrogen\nucleus\Model\PageTransactionCode_
      */
     public function getTransactionCodeAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2775,13 +2775,13 @@ class UtilsApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageTransactionCode_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageTransactionCode_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionCodeAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageTransactionCode_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageTransactionCode_';
         $request = $this->getTransactionCodeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2833,7 +2833,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageTransactionCode_',
+                        '\com\hydrogen\nucleus\Model\PageTransactionCode_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2883,7 +2883,7 @@ class UtilsApi
      */
     public function getTransactionCodeAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageTransactionCode_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageTransactionCode_';
         $request = $this->getTransactionCodeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3049,9 +3049,9 @@ class UtilsApi
      *
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\TransactionCode
+     * @return \com\hydrogen\nucleus\Model\TransactionCode
      */
     public function getTransactionCodeUsingGet($transaction_code_id)
     {
@@ -3066,13 +3066,13 @@ class UtilsApi
      *
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\TransactionCode, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\TransactionCode, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionCodeUsingGetWithHttpInfo($transaction_code_id)
     {
-        $returnType = '\com\hydrogen\Model\TransactionCode';
+        $returnType = '\com\hydrogen\nucleus\Model\TransactionCode';
         $request = $this->getTransactionCodeUsingGetRequest($transaction_code_id);
 
         try {
@@ -3124,7 +3124,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\TransactionCode',
+                        '\com\hydrogen\nucleus\Model\TransactionCode',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3166,7 +3166,7 @@ class UtilsApi
      */
     public function getTransactionCodeUsingGetAsyncWithHttpInfo($transaction_code_id)
     {
-        $returnType = '\com\hydrogen\Model\TransactionCode';
+        $returnType = '\com\hydrogen\nucleus\Model\TransactionCode';
         $request = $this->getTransactionCodeUsingGetRequest($transaction_code_id);
 
         return $this->client
@@ -3320,12 +3320,12 @@ class UtilsApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status account_status (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AccountStatus
+     * @return \com\hydrogen\nucleus\Model\AccountStatus
      */
     public function updateAccountStatusUsingPut($account_status, $account_status_id)
     {
@@ -3338,16 +3338,16 @@ class UtilsApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status account_status (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AccountStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AccountStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccountStatusUsingPutWithHttpInfo($account_status, $account_status_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountStatus';
         $request = $this->updateAccountStatusUsingPutRequest($account_status, $account_status_id);
 
         try {
@@ -3399,7 +3399,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AccountStatus',
+                        '\com\hydrogen\nucleus\Model\AccountStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3414,7 +3414,7 @@ class UtilsApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status account_status (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3435,7 +3435,7 @@ class UtilsApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status account_status (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3443,7 +3443,7 @@ class UtilsApi
      */
     public function updateAccountStatusUsingPutAsyncWithHttpInfo($account_status, $account_status_id)
     {
-        $returnType = '\com\hydrogen\Model\AccountStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\AccountStatus';
         $request = $this->updateAccountStatusUsingPutRequest($account_status, $account_status_id);
 
         return $this->client
@@ -3486,7 +3486,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateAccountStatusUsingPut'
      *
-     * @param  \com\hydrogen\Model\AccountStatus $account_status account_status (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3607,12 +3607,12 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage stage (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Stage
+     * @return \com\hydrogen\nucleus\Model\Stage
      */
     public function updateStageUsingPut($stage, $stage_id)
     {
@@ -3625,16 +3625,16 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage stage (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Stage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Stage, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateStageUsingPutWithHttpInfo($stage, $stage_id)
     {
-        $returnType = '\com\hydrogen\Model\Stage';
+        $returnType = '\com\hydrogen\nucleus\Model\Stage';
         $request = $this->updateStageUsingPutRequest($stage, $stage_id);
 
         try {
@@ -3686,7 +3686,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Stage',
+                        '\com\hydrogen\nucleus\Model\Stage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3701,7 +3701,7 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage stage (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3722,7 +3722,7 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\Model\Stage $stage stage (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3730,7 +3730,7 @@ class UtilsApi
      */
     public function updateStageUsingPutAsyncWithHttpInfo($stage, $stage_id)
     {
-        $returnType = '\com\hydrogen\Model\Stage';
+        $returnType = '\com\hydrogen\nucleus\Model\Stage';
         $request = $this->updateStageUsingPutRequest($stage, $stage_id);
 
         return $this->client
@@ -3773,7 +3773,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateStageUsingPut'
      *
-     * @param  \com\hydrogen\Model\Stage $stage stage (required)
+     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3894,12 +3894,12 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\TransactionCode
+     * @return \com\hydrogen\nucleus\Model\TransactionCode
      */
     public function updateTransactionCodeUsingPut($transaction_code, $transaction_code_id)
     {
@@ -3912,16 +3912,16 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\TransactionCode, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\TransactionCode, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTransactionCodeUsingPutWithHttpInfo($transaction_code, $transaction_code_id)
     {
-        $returnType = '\com\hydrogen\Model\TransactionCode';
+        $returnType = '\com\hydrogen\nucleus\Model\TransactionCode';
         $request = $this->updateTransactionCodeUsingPutRequest($transaction_code, $transaction_code_id);
 
         try {
@@ -3973,7 +3973,7 @@ class UtilsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\TransactionCode',
+                        '\com\hydrogen\nucleus\Model\TransactionCode',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3988,7 +3988,7 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4009,7 +4009,7 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4017,7 +4017,7 @@ class UtilsApi
      */
     public function updateTransactionCodeUsingPutAsyncWithHttpInfo($transaction_code, $transaction_code_id)
     {
-        $returnType = '\com\hydrogen\Model\TransactionCode';
+        $returnType = '\com\hydrogen\nucleus\Model\TransactionCode';
         $request = $this->updateTransactionCodeUsingPutRequest($transaction_code, $transaction_code_id);
 
         return $this->client
@@ -4060,7 +4060,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateTransactionCodeUsingPut'
      *
-     * @param  \com\hydrogen\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \InvalidArgumentException

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.invoice import Invoice  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.invoice import Invoice  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestInvoice(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestInvoice(unittest.TestCase):
     def testInvoice(self):
         """Test Invoice"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.invoice.Invoice()  # noqa: E501
+        # model = nucleus_api.models.invoice.Invoice()  # noqa: E501
         pass
 
 

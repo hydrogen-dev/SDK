@@ -1,4 +1,4 @@
-# AtomApi::ModelHolding
+# NucleusApi::ModelHolding
 
 ## Properties
 Name | Type | Description | Notes

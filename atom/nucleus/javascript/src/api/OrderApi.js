@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AccountPortfolioRebalanceRequest'), require('../model/Order'), require('../model/OrderReconcileRequest'), require('../model/OrderReconcileReturnObject'), require('../model/OrderStatus'), require('../model/OrderTrack'), require('../model/OrderVoClone'), require('../model/PageOrder'), require('../model/PageOrderBulk'), require('../model/PageOrderStatus'), require('../model/PageOrderTrack'), require('../model/TokenDateRequest'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.OrderApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AccountPortfolioRebalanceRequest, root.HydrogenAtomApi.Order, root.HydrogenAtomApi.OrderReconcileRequest, root.HydrogenAtomApi.OrderReconcileReturnObject, root.HydrogenAtomApi.OrderStatus, root.HydrogenAtomApi.OrderTrack, root.HydrogenAtomApi.OrderVoClone, root.HydrogenAtomApi.PageOrder, root.HydrogenAtomApi.PageOrderBulk, root.HydrogenAtomApi.PageOrderStatus, root.HydrogenAtomApi.PageOrderTrack, root.HydrogenAtomApi.TokenDateRequest);
+    root.HydrogenNucleusApi.OrderApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AccountPortfolioRebalanceRequest, root.HydrogenNucleusApi.Order, root.HydrogenNucleusApi.OrderReconcileRequest, root.HydrogenNucleusApi.OrderReconcileReturnObject, root.HydrogenNucleusApi.OrderStatus, root.HydrogenNucleusApi.OrderTrack, root.HydrogenNucleusApi.OrderVoClone, root.HydrogenNucleusApi.PageOrder, root.HydrogenNucleusApi.PageOrderBulk, root.HydrogenNucleusApi.PageOrderStatus, root.HydrogenNucleusApi.PageOrderTrack, root.HydrogenNucleusApi.TokenDateRequest);
   }
 }(this, function(ApiClient, AccountPortfolioRebalanceRequest, Order, OrderReconcileRequest, OrderReconcileReturnObject, OrderStatus, OrderTrack, OrderVoClone, PageOrder, PageOrderBulk, PageOrderStatus, PageOrderTrack, TokenDateRequest) {
   'use strict';

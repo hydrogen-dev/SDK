@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ClientAccountMapping
+# HydrogenNucleusApi.ClientAccountMapping
 
 ## Properties
 Name | Type | Description | Notes

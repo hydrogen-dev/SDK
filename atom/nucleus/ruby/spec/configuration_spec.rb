@@ -12,14 +12,14 @@ Swagger Codegen version: 2.4.14
 
 require 'spec_helper'
 
-describe AtomApi::Configuration do
-  let(:config) { AtomApi::Configuration.default }
+describe NucleusApi::Configuration do
+  let(:config) { NucleusApi::Configuration.default }
 
   before(:each) do
     # uncomment below to setup host and base_path
     # require 'URI'
     # uri = URI.parse("https://sandbox.hydrogenplatform.com/nucleus/v1")
-    # AtomApi.configure do |c|
+    # NucleusApi.configure do |c|
     #   c.host = uri.host
     #   c.base_path = uri.path
     # end

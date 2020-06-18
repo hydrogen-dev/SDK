@@ -1,4 +1,4 @@
-# AtomApi::ClientAdvisorOverviewVO
+# NucleusApi::ClientAdvisorOverviewVO
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::OverflowSettings
+# NucleusApi::OverflowSettings
 
 ## Properties
 Name | Type | Description | Notes

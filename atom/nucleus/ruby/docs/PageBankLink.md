@@ -1,4 +1,4 @@
-# AtomApi::PageBankLink
+# NucleusApi::PageBankLink
 
 ## Properties
 Name | Type | Description | Notes

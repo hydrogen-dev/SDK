@@ -1,4 +1,4 @@
-# com\hydrogen\BulkApi
+# com\hydrogen\nucleus\BulkApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createBulkUsingPost**
-> \com\hydrogen\Model\BulkTransaction createBulkUsingPost($data, $entity_uri)
+> \com\hydrogen\nucleus\Model\BulkTransaction createBulkUsingPost($data, $entity_uri)
 
 Create a bulk data
 
@@ -20,29 +20,29 @@ Create a new bulk data for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BulkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BulkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$data = new \com\hydrogen\Model\JsonNode(); // \com\hydrogen\Model\JsonNode | data
+$data = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | data
 $entity_uri = "entity_uri_example"; // string | UUID entity_uri
 
 try {
@@ -58,12 +58,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\com\hydrogen\Model\JsonNode**](../Model/JsonNode.md)| data |
+ **data** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| data |
  **entity_uri** | [**string**](../Model/.md)| UUID entity_uri |
 
 ### Return type
 
-[**\com\hydrogen\Model\BulkTransaction**](../Model/BulkTransaction.md)
+[**\com\hydrogen\nucleus\Model\BulkTransaction**](../Model/BulkTransaction.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteBulkUsingDelete**
-> \com\hydrogen\Model\BulkTransaction deleteBulkUsingDelete($data, $entity_uri)
+> \com\hydrogen\nucleus\Model\BulkTransaction deleteBulkUsingDelete($data, $entity_uri)
 
 Delete a bulk data
 
@@ -86,29 +86,29 @@ Delete a bulk data for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BulkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BulkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$data = new \com\hydrogen\Model\JsonNode(); // \com\hydrogen\Model\JsonNode | data
+$data = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | data
 $entity_uri = "entity_uri_example"; // string | UUID entity_uri
 
 try {
@@ -124,12 +124,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\com\hydrogen\Model\JsonNode**](../Model/JsonNode.md)| data |
+ **data** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| data |
  **entity_uri** | [**string**](../Model/.md)| UUID entity_uri |
 
 ### Return type
 
-[**\com\hydrogen\Model\BulkTransaction**](../Model/BulkTransaction.md)
+[**\com\hydrogen\nucleus\Model\BulkTransaction**](../Model/BulkTransaction.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBulkStatusUsingGet**
-> \com\hydrogen\Model\BulkTransactionVO getBulkStatusUsingGet($id)
+> \com\hydrogen\nucleus\Model\BulkTransactionVO getBulkStatusUsingGet($id)
 
 Status of bulk transaction
 
@@ -152,23 +152,23 @@ Get the status of bulk transaction.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BulkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BulkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\BulkTransactionVO**](../Model/BulkTransactionVO.md)
+[**\com\hydrogen\nucleus\Model\BulkTransactionVO**](../Model/BulkTransactionVO.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateBulkUsingPut**
-> \com\hydrogen\Model\BulkTransaction updateBulkUsingPut($data, $entity_uri)
+> \com\hydrogen\nucleus\Model\BulkTransaction updateBulkUsingPut($data, $entity_uri)
 
 Update a bulk data
 
@@ -216,29 +216,29 @@ Update a bulk data for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BulkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BulkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$data = new \com\hydrogen\Model\JsonNode(); // \com\hydrogen\Model\JsonNode | data
+$data = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | data
 $entity_uri = "entity_uri_example"; // string | UUID entity_uri
 
 try {
@@ -254,12 +254,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\com\hydrogen\Model\JsonNode**](../Model/JsonNode.md)| data |
+ **data** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| data |
  **entity_uri** | [**string**](../Model/.md)| UUID entity_uri |
 
 ### Return type
 
-[**\com\hydrogen\Model\BulkTransaction**](../Model/BulkTransaction.md)
+[**\com\hydrogen\nucleus\Model\BulkTransaction**](../Model/BulkTransaction.md)
 
 ### Authorization
 

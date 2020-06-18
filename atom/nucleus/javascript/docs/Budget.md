@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Budget
+# HydrogenNucleusApi.Budget
 
 ## Properties
 Name | Type | Description | Notes

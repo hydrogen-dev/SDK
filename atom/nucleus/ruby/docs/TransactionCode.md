@@ -1,4 +1,4 @@
-# AtomApi::TransactionCode
+# NucleusApi::TransactionCode
 
 ## Properties
 Name | Type | Description | Notes

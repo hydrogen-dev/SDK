@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ModelHoldingVO();
+    instance = new HydrogenNucleusApi.ModelHoldingVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('ModelHoldingVO', function() {
     it('should create an instance of ModelHoldingVO', function() {
       // uncomment below and update the code to test ModelHoldingVO
-      //var instane = new HydrogenAtomApi.ModelHoldingVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.ModelHoldingVO);
+      //var instane = new HydrogenNucleusApi.ModelHoldingVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ModelHoldingVO);
     });
 
     it('should have the property currentWeight (base name: "current_weight")', function() {
       // uncomment below and update the code to test the property currentWeight
-      //var instane = new HydrogenAtomApi.ModelHoldingVO();
+      //var instane = new HydrogenNucleusApi.ModelHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.ModelHoldingVO();
+      //var instane = new HydrogenNucleusApi.ModelHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.ModelHoldingVO();
+      //var instane = new HydrogenNucleusApi.ModelHoldingVO();
       //expect(instance).to.be();
     });
 
     it('should have the property strategicWeight (base name: "strategic_weight")', function() {
       // uncomment below and update the code to test the property strategicWeight
-      //var instane = new HydrogenAtomApi.ModelHoldingVO();
+      //var instane = new HydrogenNucleusApi.ModelHoldingVO();
       //expect(instance).to.be();
     });
 

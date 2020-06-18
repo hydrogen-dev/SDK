@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./OverflowSettings'), require('./Sort'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.PageOverflowSettings = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.OverflowSettings, root.HydrogenAtomApi.Sort);
+    root.HydrogenNucleusApi.PageOverflowSettings = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.OverflowSettings, root.HydrogenNucleusApi.Sort);
   }
 }(this, function(ApiClient, OverflowSettings, Sort) {
   'use strict';

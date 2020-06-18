@@ -1,4 +1,4 @@
-# AtomApi::Goal
+# NucleusApi::Goal
 
 ## Properties
 Name | Type | Description | Notes

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.page_aggregation_account_holding import PageAggregationAccountHolding  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.page_aggregation_account_holding import PageAggregationAccountHolding  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestPageAggregationAccountHolding(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPageAggregationAccountHolding(unittest.TestCase):
     def testPageAggregationAccountHolding(self):
         """Test PageAggregationAccountHolding"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.page_aggregation_account_holding.PageAggregationAccountHolding()  # noqa: E501
+        # model = nucleus_api.models.page_aggregation_account_holding.PageAggregationAccountHolding()  # noqa: E501
         pass
 
 

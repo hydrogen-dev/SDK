@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Currency
+# HydrogenNucleusApi.Currency
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::DepositAccountVO
+# NucleusApi::DepositAccountVO
 
 ## Properties
 Name | Type | Description | Notes

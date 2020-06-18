@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,17 +26,17 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace com\hydrogen;
+namespace com\hydrogen\nucleus;
 
-use \com\hydrogen\Configuration;
-use \com\hydrogen\ApiException;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\Configuration;
+use \com\hydrogen\nucleus\ApiException;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * SecuritiesApiTest Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

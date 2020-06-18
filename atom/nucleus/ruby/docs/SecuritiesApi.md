@@ -1,4 +1,4 @@
-# AtomApi::SecuritiesApi
+# NucleusApi::SecuritiesApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -31,9 +31,9 @@ Create a new security exclusion for a specific account or portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -42,16 +42,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
-security_exclusion_request = AtomApi::SecurityExclusion.new # SecurityExclusion | securityExclusionRequest
+security_exclusion_request = NucleusApi::SecurityExclusion.new # SecurityExclusion | securityExclusionRequest
 
 
 begin
   #Create a security exclusion
   result = api_instance.create_security_exclusion_using_post(security_exclusion_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->create_security_exclusion_using_post: #{e}"
 end
 ```
@@ -87,9 +87,9 @@ Create a new price for a security defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -98,16 +98,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
-security_price_request = AtomApi::SecurityPrice.new # SecurityPrice | securityPriceRequest
+security_price_request = NucleusApi::SecurityPrice.new # SecurityPrice | securityPriceRequest
 
 
 begin
   #Create a security price
   result = api_instance.create_security_price_using_post(security_price_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->create_security_price_using_post: #{e}"
 end
 ```
@@ -143,9 +143,9 @@ Create a new security for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -154,16 +154,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
-securities_info_request = AtomApi::Security.new # Security | securitiesInfoRequest
+securities_info_request = NucleusApi::Security.new # Security | securitiesInfoRequest
 
 
 begin
   #Create a security
   result = api_instance.create_security_using_post(securities_info_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->create_security_using_post: #{e}"
 end
 ```
@@ -199,9 +199,9 @@ Permanently delete a security exclusion
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -210,7 +210,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 security_exclusion_id = 'security_exclusion_id_example' # String | UUID security_exclusion_id
 
@@ -218,7 +218,7 @@ security_exclusion_id = 'security_exclusion_id_example' # String | UUID security
 begin
   #Delete a security exclusion
   api_instance.delete_security_exclusion_using_delete(security_exclusion_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->delete_security_exclusion_using_delete: #{e}"
 end
 ```
@@ -254,9 +254,9 @@ Permanently delete a security price from a security.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -265,7 +265,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 security_price_id = 'security_price_id_example' # String | UUID security_price_id
 
@@ -273,7 +273,7 @@ security_price_id = 'security_price_id_example' # String | UUID security_price_i
 begin
   #Delete a security price
   api_instance.delete_security_price_using_delete(security_price_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->delete_security_price_using_delete: #{e}"
 end
 ```
@@ -309,9 +309,9 @@ Permanently delete a security for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -320,7 +320,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 security_id = 'security_id_example' # String | UUID security_id
 
@@ -328,7 +328,7 @@ security_id = 'security_id_example' # String | UUID security_id
 begin
   #Delete a security
   api_instance.delete_security_using_delete(security_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->delete_security_using_delete: #{e}"
 end
 ```
@@ -364,9 +364,9 @@ Get details for all securities defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -375,7 +375,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -389,7 +389,7 @@ begin
   #List all securities
   result = api_instance.get_security_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->get_security_all_using_get: #{e}"
 end
 ```
@@ -429,9 +429,9 @@ Get details for all security exclusions defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -440,7 +440,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 security_exclusion_id = 'security_exclusion_id_example' # String | UUID security_exclusion_id
 
@@ -456,7 +456,7 @@ begin
   #List all security exclusions
   result = api_instance.get_security_exclusion_all_using_get(security_exclusion_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->get_security_exclusion_all_using_get: #{e}"
 end
 ```
@@ -497,9 +497,9 @@ Retrieve the information for a security exclusion.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -508,7 +508,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 security_exclusion_id = 'security_exclusion_id_example' # String | security exclusion id
 
@@ -517,7 +517,7 @@ begin
   #Retrieve a security exclusion
   result = api_instance.get_security_exclusion_using_get(security_exclusion_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->get_security_exclusion_using_get: #{e}"
 end
 ```
@@ -553,9 +553,9 @@ Get prices for all securities defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -564,7 +564,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -578,7 +578,7 @@ begin
   #List all security prices
   result = api_instance.get_security_price_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->get_security_price_all_using_get: #{e}"
 end
 ```
@@ -618,9 +618,9 @@ Retrieve the information for a security price for a security.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -629,7 +629,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 security_price_id = 'security_price_id_example' # String | UUID security_price_id
 
@@ -638,7 +638,7 @@ begin
   #Retrieve a security price
   result = api_instance.get_security_price_using_get(security_price_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->get_security_price_using_get: #{e}"
 end
 ```
@@ -674,9 +674,9 @@ Retrieve the information for a security defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -685,7 +685,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
 security_id = 'security_id_example' # String | UUID security_id
 
@@ -694,7 +694,7 @@ begin
   #Retrieve a security
   result = api_instance.get_security_using_get(security_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->get_security_using_get: #{e}"
 end
 ```
@@ -730,9 +730,9 @@ Update the information for a security exclusion.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -741,9 +741,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
-security_exclusion = AtomApi::SecurityExclusion.new # SecurityExclusion | security_exclusion
+security_exclusion = NucleusApi::SecurityExclusion.new # SecurityExclusion | security_exclusion
 
 security_exclusion_id = 'security_exclusion_id_example' # String | UUID security_exclusion_id
 
@@ -752,7 +752,7 @@ begin
   #Update a security exclusion
   result = api_instance.update_security_exclusion_using_put(security_exclusion, security_exclusion_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->update_security_exclusion_using_put: #{e}"
 end
 ```
@@ -789,9 +789,9 @@ Update a security price for a security.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -800,9 +800,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
-security_price = AtomApi::SecurityPrice.new # SecurityPrice | security_price
+security_price = NucleusApi::SecurityPrice.new # SecurityPrice | security_price
 
 security_price_id = 'security_price_id_example' # String | UUID security_price_id
 
@@ -811,7 +811,7 @@ begin
   #Update a security price
   result = api_instance.update_security_price_using_put(security_price, security_price_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->update_security_price_using_put: #{e}"
 end
 ```
@@ -848,9 +848,9 @@ Update a security for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -859,9 +859,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SecuritiesApi.new
+api_instance = NucleusApi::SecuritiesApi.new
 
-security = AtomApi::Security.new # Security | security
+security = NucleusApi::Security.new # Security | security
 
 security_id = 'security_id_example' # String | UUID security_id
 
@@ -870,7 +870,7 @@ begin
   #Update a security
   result = api_instance.update_security_using_put(security, security_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SecuritiesApi->update_security_using_put: #{e}"
 end
 ```

@@ -1,7 +1,7 @@
 {
-  "name": "hydrogen_atom_api",
+  "name": "hydrogen_nucleus_api",
   "version": "1.7.0",
-  "description": "The_Hydrogen_Atom_API",
+  "description": "The_Hydrogen_Nucleus_API",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

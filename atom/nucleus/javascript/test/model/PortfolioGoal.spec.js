@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PortfolioGoal();
+    instance = new HydrogenNucleusApi.PortfolioGoal();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,49 +53,49 @@
   describe('PortfolioGoal', function() {
     it('should create an instance of PortfolioGoal', function() {
       // uncomment below and update the code to test PortfolioGoal
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
-      //expect(instance).to.be.a(HydrogenAtomApi.PortfolioGoal);
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PortfolioGoal);
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
       //expect(instance).to.be();
     });
 
     it('should have the property goals (base name: "goals")', function() {
       // uncomment below and update the code to test the property goals
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.PortfolioGoal();
+      //var instane = new HydrogenNucleusApi.PortfolioGoal();
       //expect(instance).to.be();
     });
 

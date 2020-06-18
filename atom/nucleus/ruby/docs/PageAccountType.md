@@ -1,4 +1,4 @@
-# AtomApi::PageAccountType
+# NucleusApi::PageAccountType
 
 ## Properties
 Name | Type | Description | Notes

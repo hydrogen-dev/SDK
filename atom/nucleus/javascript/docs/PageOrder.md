@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageOrder
+# HydrogenNucleusApi.PageOrder
 
 ## Properties
 Name | Type | Description | Notes

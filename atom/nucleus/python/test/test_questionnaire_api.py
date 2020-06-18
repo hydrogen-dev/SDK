@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.api.questionnaire_api import QuestionnaireApi  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.api.questionnaire_api import QuestionnaireApi  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestQuestionnaireApi(unittest.TestCase):
     """QuestionnaireApi unit test stubs"""
 
     def setUp(self):
-        self.api = atom_api.api.questionnaire_api.QuestionnaireApi()  # noqa: E501
+        self.api = nucleus_api.api.questionnaire_api.QuestionnaireApi()  # noqa: E501
 
     def tearDown(self):
         pass

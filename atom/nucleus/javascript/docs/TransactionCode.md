@@ -1,4 +1,4 @@
-# HydrogenAtomApi.TransactionCode
+# HydrogenNucleusApi.TransactionCode
 
 ## Properties
 Name | Type | Description | Notes

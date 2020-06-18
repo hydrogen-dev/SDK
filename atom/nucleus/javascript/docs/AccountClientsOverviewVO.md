@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AccountClientsOverviewVO
+# HydrogenNucleusApi.AccountClientsOverviewVO
 
 ## Properties
 Name | Type | Description | Notes

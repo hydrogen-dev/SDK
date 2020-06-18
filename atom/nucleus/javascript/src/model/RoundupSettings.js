@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./AccountMap'), require('./AggregationAccountsMap'), require('./BankLinkMap'), require('./CategoriesMap'), require('./MerchantsMap'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.RoundupSettings = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AccountMap, root.HydrogenAtomApi.AggregationAccountsMap, root.HydrogenAtomApi.BankLinkMap, root.HydrogenAtomApi.CategoriesMap, root.HydrogenAtomApi.MerchantsMap);
+    root.HydrogenNucleusApi.RoundupSettings = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AccountMap, root.HydrogenNucleusApi.AggregationAccountsMap, root.HydrogenNucleusApi.BankLinkMap, root.HydrogenNucleusApi.CategoriesMap, root.HydrogenNucleusApi.MerchantsMap);
   }
 }(this, function(ApiClient, AccountMap, AggregationAccountsMap, BankLinkMap, CategoriesMap, MerchantsMap) {
   'use strict';

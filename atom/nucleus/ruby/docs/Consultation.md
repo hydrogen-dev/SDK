@@ -1,4 +1,4 @@
-# AtomApi::Consultation
+# NucleusApi::Consultation
 
 ## Properties
 Name | Type | Description | Notes

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**\com\hydrogen\Model\CustomerAddress[]**](CustomerAddress.md) |  | [optional] 
+**address** | [**\com\hydrogen\nucleus\Model\CustomerAddress[]**](CustomerAddress.md) |  | [optional] 
 **client_id** | **string** | clientId | [optional] 
 **company_name** | **string** | companyName | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 

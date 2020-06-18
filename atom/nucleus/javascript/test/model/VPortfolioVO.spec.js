@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.VPortfolioVO();
+    instance = new HydrogenNucleusApi.VPortfolioVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('VPortfolioVO', function() {
     it('should create an instance of VPortfolioVO', function() {
       // uncomment below and update the code to test VPortfolioVO
-      //var instane = new HydrogenAtomApi.VPortfolioVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.VPortfolioVO);
+      //var instane = new HydrogenNucleusApi.VPortfolioVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.VPortfolioVO);
     });
 
     it('should have the property goalAssetSizeByPortfolio (base name: "goal_asset_size_by_portfolio")', function() {
       // uncomment below and update the code to test the property goalAssetSizeByPortfolio
-      //var instane = new HydrogenAtomApi.VPortfolioVO();
+      //var instane = new HydrogenNucleusApi.VPortfolioVO();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAssetSizeByPortfolioDate (base name: "goal_asset_size_by_portfolio_date")', function() {
       // uncomment below and update the code to test the property goalAssetSizeByPortfolioDate
-      //var instane = new HydrogenAtomApi.VPortfolioVO();
+      //var instane = new HydrogenNucleusApi.VPortfolioVO();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.VPortfolioVO();
+      //var instane = new HydrogenNucleusApi.VPortfolioVO();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioName (base name: "portfolio_name")', function() {
       // uncomment below and update the code to test the property portfolioName
-      //var instane = new HydrogenAtomApi.VPortfolioVO();
+      //var instane = new HydrogenNucleusApi.VPortfolioVO();
       //expect(instance).to.be();
     });
 

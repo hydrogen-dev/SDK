@@ -1,4 +1,4 @@
-# atom_api.OrderApi
+# nucleus_api.OrderApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -46,15 +46,15 @@ Aggregates all orders on a given date for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -66,9 +66,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-req = atom_api.TokenDateRequest() # TokenDateRequest | req
+req = nucleus_api.TokenDateRequest() # TokenDateRequest | req
 
 try:
     # Bulk orders for an account
@@ -111,15 +111,15 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -131,9 +131,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Create buy-only account rebalance orders
@@ -176,15 +176,15 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -196,9 +196,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Create account rebalance orders
@@ -239,15 +239,15 @@ Create account reconciliation order
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -259,9 +259,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-req = atom_api.OrderReconcileRequest() # OrderReconcileRequest | req
+req = nucleus_api.OrderReconcileRequest() # OrderReconcileRequest | req
 
 try:
     # Create account reconciliation order
@@ -304,15 +304,15 @@ Create order records necessary to entirely sell all the holdings within an accou
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -324,9 +324,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Sell all account order
@@ -369,15 +369,15 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -389,9 +389,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Create sell-only account rebalance orders
@@ -434,15 +434,15 @@ Aggregates all orders on a given date for a client
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -454,9 +454,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
-req = atom_api.TokenDateRequest() # TokenDateRequest | req
+req = nucleus_api.TokenDateRequest() # TokenDateRequest | req
 
 try:
     # Bulk orders for a client
@@ -499,15 +499,15 @@ Aggregates all orders on a given date for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -519,8 +519,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
-req = atom_api.TokenDateRequest() # TokenDateRequest | req
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
+req = nucleus_api.TokenDateRequest() # TokenDateRequest | req
 
 try:
     # Bulk orders for your firm
@@ -562,15 +562,15 @@ Create an order status for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -582,8 +582,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
-order_status_request = atom_api.OrderStatus() # OrderStatus | orderStatusRequest
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
+order_status_request = nucleus_api.OrderStatus() # OrderStatus | orderStatusRequest
 
 try:
     # Create an order status
@@ -625,15 +625,15 @@ Create a new order tracking record for an order.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -645,8 +645,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
-order_track_request = atom_api.OrderTrack() # OrderTrack | orderTrackRequest
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
+order_track_request = nucleus_api.OrderTrack() # OrderTrack | orderTrackRequest
 
 try:
     # Create an order tracking record
@@ -688,15 +688,15 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -708,9 +708,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | portfolio_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Create buy-only portfolio rebalance orders
@@ -753,15 +753,15 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -773,9 +773,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | portfolio_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Create portfolio rebalance orders
@@ -816,15 +816,15 @@ Create portfolio reconciliation order
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -836,9 +836,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | portfolio_id
-req = atom_api.OrderReconcileRequest() # OrderReconcileRequest | req
+req = nucleus_api.OrderReconcileRequest() # OrderReconcileRequest | req
 
 try:
     # Create portfolio reconciliation order
@@ -881,15 +881,15 @@ Create order records necessary to entirely sell all the holdings within a portfo
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -901,9 +901,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | portfolio_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Sell all portfolio order
@@ -946,15 +946,15 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -966,9 +966,9 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | portfolio_id
-req = atom_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
+req = nucleus_api.AccountPortfolioRebalanceRequest() # AccountPortfolioRebalanceRequest | req
 
 try:
     # Create sell-only portfolio rebalance orders
@@ -1011,15 +1011,15 @@ Permanently delete an order status defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1031,7 +1031,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 order_status_id = 'order_status_id_example' # str | UUID order_status_id
 
 try:
@@ -1073,15 +1073,15 @@ Permanently delete an order tracking record for an order.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1093,7 +1093,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 order_track_id = 'order_track_id_example' # str | UUID order_track_id
 
 try:
@@ -1135,15 +1135,15 @@ Permanently delete an order record.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1155,7 +1155,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 order_id = 'order_id_example' # str | UUID order_id
 
 try:
@@ -1197,15 +1197,15 @@ Create an order record defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1217,8 +1217,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
-order_info_request = atom_api.Order() # Order | orderInfoRequest
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
+order_info_request = nucleus_api.Order() # Order | orderInfoRequest
 
 try:
     # Create an order record
@@ -1260,15 +1260,15 @@ Get the information for all order records defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1280,7 +1280,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1331,15 +1331,15 @@ Get the information for all bulk order records.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1351,7 +1351,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1402,15 +1402,15 @@ Get the information for all order statuses defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1422,7 +1422,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1473,15 +1473,15 @@ Retrieve the information for an order status defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1493,7 +1493,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 order_status_id = 'order_status_id_example' # str | UUID order_status_id
 
 try:
@@ -1536,15 +1536,15 @@ Get the information for all order tracking record for all order records.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1556,7 +1556,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1607,15 +1607,15 @@ Retrieve the information for an order tracking record for an order.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1627,7 +1627,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 order_track_id = 'order_track_id_example' # str | UUID order_track_id
 
 try:
@@ -1670,15 +1670,15 @@ Retrieve the information for an order record.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1690,7 +1690,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
 order_id = 'order_id_example' # str | UUID order_id
 
 try:
@@ -1733,15 +1733,15 @@ Update the information for an order status defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1753,8 +1753,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
-order_status = atom_api.OrderStatus() # OrderStatus | order_status
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
+order_status = nucleus_api.OrderStatus() # OrderStatus | order_status
 order_status_id = 'order_status_id_example' # str | UUID order_status_id
 
 try:
@@ -1798,15 +1798,15 @@ Update the information for an order tracking record for an order.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1818,8 +1818,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
-order_track = atom_api.OrderTrack() # OrderTrack | order_track
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
+order_track = nucleus_api.OrderTrack() # OrderTrack | order_track
 order_track_id = 'order_track_id_example' # str | UUID order_track_id
 
 try:
@@ -1863,15 +1863,15 @@ Update the information for an order record.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1883,8 +1883,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.OrderApi(atom_api.ApiClient(configuration))
-order = atom_api.Order() # Order | order
+api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
+order = nucleus_api.Order() # Order | order
 order_id = 'order_id_example' # str | UUID order_id
 
 try:

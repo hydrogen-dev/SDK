@@ -22,9 +22,9 @@ Create a new benchmark for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -79,9 +79,9 @@ Permanently delete a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -135,9 +135,9 @@ Get details for all benchmarks defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -200,9 +200,9 @@ Get a list of asset sizes by date for a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -263,9 +263,9 @@ Retrieve the information for a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -320,9 +320,9 @@ Updated the information for a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

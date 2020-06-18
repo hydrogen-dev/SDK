@@ -1,4 +1,4 @@
-# AtomApi::SupportApi
+# NucleusApi::SupportApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -41,9 +41,9 @@ Create a Chat
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -52,16 +52,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-chat_info_request = AtomApi::ChatInfo.new # ChatInfo | chatInfoRequest
+chat_info_request = NucleusApi::ChatInfo.new # ChatInfo | chatInfoRequest
 
 
 begin
   #Create a Chat
   result = api_instance.create_chat_using_post(chat_info_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->create_chat_using_post: #{e}"
 end
 ```
@@ -97,9 +97,9 @@ Create a new CIO Consultation
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -108,16 +108,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-cio_consultation_request = AtomApi::Consultation.new # Consultation | cioConsultationRequest
+cio_consultation_request = NucleusApi::Consultation.new # Consultation | cioConsultationRequest
 
 
 begin
   #Create a CIO Consultation
   result = api_instance.create_consultation_using_post(cio_consultation_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->create_consultation_using_post: #{e}"
 end
 ```
@@ -153,9 +153,9 @@ Create a new sales inquiry for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -164,16 +164,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-sale_request = AtomApi::Sale.new # Sale | saleRequest
+sale_request = NucleusApi::Sale.new # Sale | saleRequest
 
 
 begin
   #Create a sales inquiry
   result = api_instance.create_sale_using_post(sale_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->create_sale_using_post: #{e}"
 end
 ```
@@ -209,9 +209,9 @@ Create a new support ticket comment for a support ticket.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -220,16 +220,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-support_ticker_comment_request = AtomApi::SupportTicketComment.new # SupportTicketComment | supportTickerCommentRequest
+support_ticker_comment_request = NucleusApi::SupportTicketComment.new # SupportTicketComment | supportTickerCommentRequest
 
 
 begin
   #Create a support ticket comment
   result = api_instance.create_support_ticket_comment_using_post(support_ticker_comment_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->create_support_ticket_comment_using_post: #{e}"
 end
 ```
@@ -265,9 +265,9 @@ Create a new support ticket for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -276,16 +276,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-support_ticket_request = AtomApi::SupportTicket.new # SupportTicket | supportTicketRequest
+support_ticket_request = NucleusApi::SupportTicket.new # SupportTicket | supportTicketRequest
 
 
 begin
   #Create a support ticket
   result = api_instance.create_support_ticket_using_post(support_ticket_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->create_support_ticket_using_post: #{e}"
 end
 ```
@@ -321,9 +321,9 @@ Permanently delete a Chat
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -332,7 +332,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 chat_id = 'chat_id_example' # String | UUID chat_info_id
 
@@ -340,7 +340,7 @@ chat_id = 'chat_id_example' # String | UUID chat_info_id
 begin
   #Delete a Chat
   api_instance.delete_chat_using_delete(chat_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->delete_chat_using_delete: #{e}"
 end
 ```
@@ -376,9 +376,9 @@ Permanently delete a CIO Consultation
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -387,7 +387,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 consultation_id = 'consultation_id_example' # String | UUID consultation_id
 
@@ -395,7 +395,7 @@ consultation_id = 'consultation_id_example' # String | UUID consultation_id
 begin
   #Delete a CIO Consultation
   api_instance.delete_consultation_using_delete(consultation_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->delete_consultation_using_delete: #{e}"
 end
 ```
@@ -431,9 +431,9 @@ Permanently delete a sales inquiry.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -442,7 +442,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 sales_id = 'sales_id_example' # String | UUID sales_id
 
@@ -450,7 +450,7 @@ sales_id = 'sales_id_example' # String | UUID sales_id
 begin
   #Delete a sales inquiry
   api_instance.delete_sale_using_delete(sales_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->delete_sale_using_delete: #{e}"
 end
 ```
@@ -486,9 +486,9 @@ Permanently delete a support ticket comment for a support ticket.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -497,7 +497,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 support_ticket_comment_id = 'support_ticket_comment_id_example' # String | UUID support_ticket_comment_id
 
@@ -505,7 +505,7 @@ support_ticket_comment_id = 'support_ticket_comment_id_example' # String | UUID 
 begin
   #Delete a support ticket comment
   api_instance.delete_support_ticket_comment_using_delete(support_ticket_comment_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->delete_support_ticket_comment_using_delete: #{e}"
 end
 ```
@@ -541,9 +541,9 @@ Permanently delete a support ticket for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -552,7 +552,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 support_ticket_id = 'support_ticket_id_example' # String | UUID support_ticket_id
 
@@ -560,7 +560,7 @@ support_ticket_id = 'support_ticket_id_example' # String | UUID support_ticket_i
 begin
   #Delete a support ticket
   api_instance.delete_support_ticket_using_delete(support_ticket_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->delete_support_ticket_using_delete: #{e}"
 end
 ```
@@ -596,9 +596,9 @@ Get details for all open chat
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -607,7 +607,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -621,7 +621,7 @@ begin
   #List all open chats
   result = api_instance.get_chat_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_chat_all_using_get: #{e}"
 end
 ```
@@ -661,9 +661,9 @@ Retrieve the information for a Chat
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -672,7 +672,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 chat_id = 'chat_id_example' # String | UUID chat_info_id
 
@@ -681,7 +681,7 @@ begin
   #Retrieve a Chat
   result = api_instance.get_chat_using_get(chat_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_chat_using_get: #{e}"
 end
 ```
@@ -717,9 +717,9 @@ Get details for all CIO Consultation
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -728,7 +728,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -742,7 +742,7 @@ begin
   #List all CIO Consultation
   result = api_instance.get_consultation_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_consultation_all_using_get: #{e}"
 end
 ```
@@ -782,9 +782,9 @@ Retrieve the information for a CIO Consultation
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -793,7 +793,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 consultation_id = 'consultation_id_example' # String | UUID consultation_id
 
@@ -802,7 +802,7 @@ begin
   #Retrieve a CIO Consultation
   result = api_instance.get_consultation_using_get(consultation_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_consultation_using_get: #{e}"
 end
 ```
@@ -838,9 +838,9 @@ Get all sales inquiries defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -849,7 +849,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -863,7 +863,7 @@ begin
   #List all sales inquiries
   result = api_instance.get_sale_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_sale_all_using_get: #{e}"
 end
 ```
@@ -903,9 +903,9 @@ Retrieve the information for a sales record
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -914,7 +914,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 sales_id = 'sales_id_example' # String | UUID sales_id
 
@@ -923,7 +923,7 @@ begin
   #Retrieve a sales record
   result = api_instance.get_sale_using_get(sales_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_sale_using_get: #{e}"
 end
 ```
@@ -959,9 +959,9 @@ Get the information for all support tickets defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -970,7 +970,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -984,7 +984,7 @@ begin
   #List all support tickets
   result = api_instance.get_support_ticket_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_support_ticket_all_using_get: #{e}"
 end
 ```
@@ -1024,9 +1024,9 @@ Get the information for all support ticket comments defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1035,7 +1035,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1049,7 +1049,7 @@ begin
   #List all support ticket comments
   result = api_instance.get_support_ticket_comment_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_support_ticket_comment_all_using_get: #{e}"
 end
 ```
@@ -1089,9 +1089,9 @@ Retrieve the information for a support ticket comment defined for a support tick
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1100,7 +1100,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 support_ticket_comment_id = 'support_ticket_comment_id_example' # String | UUID support_ticket_comment_id
 
@@ -1109,7 +1109,7 @@ begin
   #Retrieve a support ticket comment
   result = api_instance.get_support_ticket_comment_using_get(support_ticket_comment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_support_ticket_comment_using_get: #{e}"
 end
 ```
@@ -1145,9 +1145,9 @@ Retrieve the information for a support ticket defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1156,7 +1156,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 support_ticket_id = 'support_ticket_id_example' # String | UUID support_ticket_id
 
@@ -1165,7 +1165,7 @@ begin
   #Retrieve a support ticket
   result = api_instance.get_support_ticket_using_get(support_ticket_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->get_support_ticket_using_get: #{e}"
 end
 ```
@@ -1201,9 +1201,9 @@ Updated the information for a Chat
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1212,18 +1212,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
 chat_id = 'chat_id_example' # String | UUID chat_id
 
-chat_info = AtomApi::ChatInfo.new # ChatInfo | chat_info
+chat_info = NucleusApi::ChatInfo.new # ChatInfo | chat_info
 
 
 begin
   #Update a Chat
   result = api_instance.update_chat_using_put(chat_id, chat_info)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->update_chat_using_put: #{e}"
 end
 ```
@@ -1260,9 +1260,9 @@ Updated the information CIO Consultation
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1271,9 +1271,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-consultation = AtomApi::Consultation.new # Consultation | consultation
+consultation = NucleusApi::Consultation.new # Consultation | consultation
 
 consultation_id = 'consultation_id_example' # String | UUID consultation_id
 
@@ -1282,7 +1282,7 @@ begin
   #Update a CIO Consultation
   result = api_instance.update_consultation_using_put(consultation, consultation_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->update_consultation_using_put: #{e}"
 end
 ```
@@ -1319,9 +1319,9 @@ Update the information for a sales inquiry.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1330,9 +1330,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-sales = AtomApi::Sale.new # Sale | sales
+sales = NucleusApi::Sale.new # Sale | sales
 
 sales_id = 'sales_id_example' # String | UUID sales_id
 
@@ -1341,7 +1341,7 @@ begin
   #Update a sales inquiry
   result = api_instance.update_sale_using_put(sales, sales_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->update_sale_using_put: #{e}"
 end
 ```
@@ -1378,9 +1378,9 @@ Update the information for a support ticket comments defined for a support ticke
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1389,9 +1389,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-support_ticket_comment = AtomApi::SupportTicketComment.new # SupportTicketComment | support_ticket_comment
+support_ticket_comment = NucleusApi::SupportTicketComment.new # SupportTicketComment | support_ticket_comment
 
 support_ticket_comment_id = 'support_ticket_comment_id_example' # String | UUID support_ticket_comment_id
 
@@ -1400,7 +1400,7 @@ begin
   #Update a support ticket comment
   result = api_instance.update_support_ticket_comment_using_put(support_ticket_comment, support_ticket_comment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->update_support_ticket_comment_using_put: #{e}"
 end
 ```
@@ -1437,9 +1437,9 @@ Update the information for a support ticket defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1448,9 +1448,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::SupportApi.new
+api_instance = NucleusApi::SupportApi.new
 
-support_ticket = AtomApi::SupportTicket.new # SupportTicket | support_ticket
+support_ticket = NucleusApi::SupportTicket.new # SupportTicket | support_ticket
 
 support_ticket_id = 'support_ticket_id_example' # String | UUID support_ticket_id
 
@@ -1459,7 +1459,7 @@ begin
   #Update a support ticket
   result = api_instance.update_support_ticket_using_put(support_ticket, support_ticket_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling SupportApi->update_support_ticket_using_put: #{e}"
 end
 ```

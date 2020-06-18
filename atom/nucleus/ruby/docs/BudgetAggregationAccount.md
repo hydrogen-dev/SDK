@@ -1,4 +1,4 @@
-# AtomApi::BudgetAggregationAccount
+# NucleusApi::BudgetAggregationAccount
 
 ## Properties
 Name | Type | Description | Notes

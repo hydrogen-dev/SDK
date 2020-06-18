@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.notification_setting import NotificationSetting  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.notification_setting import NotificationSetting  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestNotificationSetting(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestNotificationSetting(unittest.TestCase):
     def testNotificationSetting(self):
         """Test NotificationSetting"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.notification_setting.NotificationSetting()  # noqa: E501
+        # model = nucleus_api.models.notification_setting.NotificationSetting()  # noqa: E501
         pass
 
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientAddress();
+    instance = new HydrogenNucleusApi.ClientAddress();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,55 +53,55 @@
   describe('ClientAddress', function() {
     it('should create an instance of ClientAddress', function() {
       // uncomment below and update the code to test ClientAddress
-      //var instane = new HydrogenAtomApi.ClientAddress();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientAddress);
+      //var instane = new HydrogenNucleusApi.ClientAddress();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientAddress);
     });
 
     it('should have the property addressLine1 (base name: "address_line1")', function() {
       // uncomment below and update the code to test the property addressLine1
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property addressLine2 (base name: "address_line2")', function() {
       // uncomment below and update the code to test the property addressLine2
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property city (base name: "city")', function() {
       // uncomment below and update the code to test the property city
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property isPrimary (base name: "is_primary")', function() {
       // uncomment below and update the code to test the property isPrimary
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property postalcode (base name: "postalcode")', function() {
       // uncomment below and update the code to test the property postalcode
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new HydrogenAtomApi.ClientAddress();
+      //var instane = new HydrogenNucleusApi.ClientAddress();
       //expect(instance).to.be();
     });
 

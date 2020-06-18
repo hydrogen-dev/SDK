@@ -1,4 +1,4 @@
-# AtomApi::SecuritiesComposition
+# NucleusApi::SecuritiesComposition
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::PageOverflowSettings
+# NucleusApi::PageOverflowSettings
 
 ## Properties
 Name | Type | Description | Notes

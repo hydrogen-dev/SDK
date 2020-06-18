@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.OrderTrack();
+    instance = new HydrogenNucleusApi.OrderTrack();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,85 +53,85 @@
   describe('OrderTrack', function() {
     it('should create an instance of OrderTrack', function() {
       // uncomment below and update the code to test OrderTrack
-      //var instane = new HydrogenAtomApi.OrderTrack();
-      //expect(instance).to.be.a(HydrogenAtomApi.OrderTrack);
+      //var instane = new HydrogenNucleusApi.OrderTrack();
+      //expect(instance).to.be.a(HydrogenNucleusApi.OrderTrack);
     });
 
     it('should have the property commission (base name: "commission")', function() {
       // uncomment below and update the code to test the property commission
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property externalTrackId (base name: "external_track_id")', function() {
       // uncomment below and update the code to test the property externalTrackId
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property fee (base name: "fee")', function() {
       // uncomment below and update the code to test the property fee
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property orderId (base name: "order_id")', function() {
       // uncomment below and update the code to test the property orderId
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property orderStatusId (base name: "order_status_id")', function() {
       // uncomment below and update the code to test the property orderStatusId
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property price (base name: "price")', function() {
       // uncomment below and update the code to test the property price
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property quantity (base name: "quantity")', function() {
       // uncomment below and update the code to test the property quantity
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.OrderTrack();
+      //var instane = new HydrogenNucleusApi.OrderTrack();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PagePortfolioTransaction
+# HydrogenNucleusApi.PagePortfolioTransaction
 
 ## Properties
 Name | Type | Description | Notes

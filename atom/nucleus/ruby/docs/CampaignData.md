@@ -1,4 +1,4 @@
-# AtomApi::CampaignData
+# NucleusApi::CampaignData
 
 ## Properties
 Name | Type | Description | Notes

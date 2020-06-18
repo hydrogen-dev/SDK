@@ -1,4 +1,4 @@
-# com\hydrogen\LifeInsuranceApi
+# com\hydrogen\proton\LifeInsuranceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -23,24 +23,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\LifeInsuranceApi(
+$apiInstance = new com\hydrogen\proton\Api\LifeInsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$life_insurance_needs_calculator_request = new \com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest(); // \com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest | Request payload for Life Insurance Needs Calculator
+$life_insurance_needs_calculator_request = new \com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest(); // \com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest | Request payload for Life Insurance Needs Calculator
 
 try {
     $result = $apiInstance->lifeInsuranceNeedsCalculator($life_insurance_needs_calculator_request);
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **life_insurance_needs_calculator_request** | [**\com\hydrogen\Model\LifeInsuranceNeedsCalculatorRequest**](../Model/LifeInsuranceNeedsCalculatorRequest.md)| Request payload for Life Insurance Needs Calculator |
+ **life_insurance_needs_calculator_request** | [**\com\hydrogen\proton\Model\LifeInsuranceNeedsCalculatorRequest**](../Model/LifeInsuranceNeedsCalculatorRequest.md)| Request payload for Life Insurance Needs Calculator |
 
 ### Return type
 

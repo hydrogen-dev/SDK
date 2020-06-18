@@ -1,4 +1,4 @@
-# AtomApi::UtilsApi
+# NucleusApi::UtilsApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -31,9 +31,9 @@ Create an account status record for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -42,16 +42,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
-account_status_request = AtomApi::AccountStatus.new # AccountStatus | accountStatusRequest
+account_status_request = NucleusApi::AccountStatus.new # AccountStatus | accountStatusRequest
 
 
 begin
   #Create an account status
   result = api_instance.create_account_status_using_post(account_status_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->create_account_status_using_post: #{e}"
 end
 ```
@@ -87,9 +87,9 @@ Create a new account stage
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -98,16 +98,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
-stage_request = AtomApi::Stage.new # Stage | stageRequest
+stage_request = NucleusApi::Stage.new # Stage | stageRequest
 
 
 begin
   #Create an account stage
   result = api_instance.create_stage_using_post(stage_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->create_stage_using_post: #{e}"
 end
 ```
@@ -143,9 +143,9 @@ Create a new transaction code for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -154,16 +154,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
-transaction_request = AtomApi::TransactionCode.new # TransactionCode | transactionRequest
+transaction_request = NucleusApi::TransactionCode.new # TransactionCode | transactionRequest
 
 
 begin
   #Create a transaction code
   result = api_instance.create_transaction_code_using_post(transaction_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->create_transaction_code_using_post: #{e}"
 end
 ```
@@ -199,9 +199,9 @@ Permanently delete an account status record from an account’s history.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -210,7 +210,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 account_status_id = 'account_status_id_example' # String | UUID account_status_id
 
@@ -218,7 +218,7 @@ account_status_id = 'account_status_id_example' # String | UUID account_status_i
 begin
   #Delete an account status
   api_instance.delete_account_status_using_delete(account_status_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->delete_account_status_using_delete: #{e}"
 end
 ```
@@ -254,9 +254,9 @@ Permanently delete an account stage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -265,7 +265,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 stage_id = 'stage_id_example' # String | UUID stage_id
 
@@ -273,7 +273,7 @@ stage_id = 'stage_id_example' # String | UUID stage_id
 begin
   #Delete an account stage
   api_instance.delete_stage_using_delete(stage_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->delete_stage_using_delete: #{e}"
 end
 ```
@@ -309,9 +309,9 @@ Permanently delete a transaction code for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -320,7 +320,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 transaction_code_id = 'transaction_code_id_example' # String | UUID transaction_code_id
 
@@ -328,7 +328,7 @@ transaction_code_id = 'transaction_code_id_example' # String | UUID transaction_
 begin
   #Delete a transaction code
   api_instance.delete_transaction_code_using_delete(transaction_code_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->delete_transaction_code_using_delete: #{e}"
 end
 ```
@@ -364,9 +364,9 @@ Get the account status history information for all accounts.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -375,7 +375,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -389,7 +389,7 @@ begin
   #List all account statuses
   result = api_instance.get_account_status_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->get_account_status_all_using_get: #{e}"
 end
 ```
@@ -429,9 +429,9 @@ Retrieve the information for a specific account status record for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -440,7 +440,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 account_status_id = 'account_status_id_example' # String | UUID account_status_id
 
@@ -449,7 +449,7 @@ begin
   #Retrieve an account status
   result = api_instance.get_account_status_using_get(account_status_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->get_account_status_using_get: #{e}"
 end
 ```
@@ -485,9 +485,9 @@ Get the information for all possible account stages.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -496,7 +496,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -510,7 +510,7 @@ begin
   #List all account stages
   result = api_instance.get_stage_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->get_stage_all_using_get: #{e}"
 end
 ```
@@ -550,9 +550,9 @@ Retrieve the information for a specific account stage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -561,7 +561,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 stage_id = 'stage_id_example' # String | UUID stage_id
 
@@ -570,7 +570,7 @@ begin
   #Retrieve an account stage
   result = api_instance.get_stage_using_get(stage_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->get_stage_using_get: #{e}"
 end
 ```
@@ -606,9 +606,9 @@ Get the information for all transaction codes defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -617,7 +617,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -631,7 +631,7 @@ begin
   #List all transaction codes
   result = api_instance.get_transaction_code_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->get_transaction_code_all_using_get: #{e}"
 end
 ```
@@ -671,9 +671,9 @@ Retrieve the information for a transaction code defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -682,7 +682,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
 transaction_code_id = 'transaction_code_id_example' # String | UUID transaction_code_id
 
@@ -691,7 +691,7 @@ begin
   #Retrieve a transaction code
   result = api_instance.get_transaction_code_using_get(transaction_code_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->get_transaction_code_using_get: #{e}"
 end
 ```
@@ -727,9 +727,9 @@ Update an account status record for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -738,9 +738,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
-account_status = AtomApi::AccountStatus.new # AccountStatus | account_status
+account_status = NucleusApi::AccountStatus.new # AccountStatus | account_status
 
 account_status_id = 'account_status_id_example' # String | UUID account_status_id
 
@@ -749,7 +749,7 @@ begin
   #Update an account status
   result = api_instance.update_account_status_using_put(account_status, account_status_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->update_account_status_using_put: #{e}"
 end
 ```
@@ -786,9 +786,9 @@ Update the information for an account stage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -797,9 +797,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
-stage = AtomApi::Stage.new # Stage | stage
+stage = NucleusApi::Stage.new # Stage | stage
 
 stage_id = 'stage_id_example' # String | UUID stage_id
 
@@ -808,7 +808,7 @@ begin
   #Update an account stage
   result = api_instance.update_stage_using_put(stage, stage_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->update_stage_using_put: #{e}"
 end
 ```
@@ -845,9 +845,9 @@ Update a transaction code for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -856,9 +856,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::UtilsApi.new
+api_instance = NucleusApi::UtilsApi.new
 
-transaction_code = AtomApi::TransactionCode.new # TransactionCode | transaction_code
+transaction_code = NucleusApi::TransactionCode.new # TransactionCode | transaction_code
 
 transaction_code_id = 'transaction_code_id_example' # String | UUID transaction_code_id
 
@@ -867,7 +867,7 @@ begin
   #Update a transaction code
   result = api_instance.update_transaction_code_using_put(transaction_code, transaction_code_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling UtilsApi->update_transaction_code_using_put: #{e}"
 end
 ```

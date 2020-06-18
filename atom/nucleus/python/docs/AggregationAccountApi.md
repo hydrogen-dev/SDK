@@ -1,4 +1,4 @@
-# atom_api.AggregationAccountApi
+# nucleus_api.AggregationAccountApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -45,15 +45,15 @@ Create a balance records under an aggregation accounts.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -65,8 +65,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_balance = [atom_api.AggregationAccountBalance()] # list[AggregationAccountBalance] | aggregationAccountBalance
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_balance = [nucleus_api.AggregationAccountBalance()] # list[AggregationAccountBalance] | aggregationAccountBalance
 
 try:
     # Create a bulk aggregation account balance
@@ -108,15 +108,15 @@ Create a balance record under an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -128,8 +128,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_balance = atom_api.AggregationAccountBalance() # AggregationAccountBalance | aggregationAccountBalance
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_balance = nucleus_api.AggregationAccountBalance() # AggregationAccountBalance | aggregationAccountBalance
 
 try:
     # Create an aggregation account balance
@@ -171,15 +171,15 @@ Create a bulk aggregation account under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -191,8 +191,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_list = [atom_api.AggregationAccount()] # list[AggregationAccount] | aggregationAccountList
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_list = [nucleus_api.AggregationAccount()] # list[AggregationAccount] | aggregationAccountList
 
 try:
     # Create a bulk aggregation account
@@ -234,15 +234,15 @@ Create a bulk aggregation account holding.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -254,8 +254,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_transaction = [atom_api.AggregationAccountHolding()] # list[AggregationAccountHolding] | aggregationTransaction
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_transaction = [nucleus_api.AggregationAccountHolding()] # list[AggregationAccountHolding] | aggregationTransaction
 
 try:
     # Create a bulk aggregation account holding
@@ -297,15 +297,15 @@ Create a holding record under an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -317,8 +317,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_holding = atom_api.AggregationAccountHolding() # AggregationAccountHolding | aggregationAccountHolding
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_holding = nucleus_api.AggregationAccountHolding() # AggregationAccountHolding | aggregationAccountHolding
 
 try:
     # Create an aggregation account holding
@@ -360,15 +360,15 @@ Create a bulk transaction record under an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -380,8 +380,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_transactions = [atom_api.AggregationAccountTransaction()] # list[AggregationAccountTransaction] | aggregationAccountTransactions
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_transactions = [nucleus_api.AggregationAccountTransaction()] # list[AggregationAccountTransaction] | aggregationAccountTransactions
 
 try:
     # Create a bulk aggregation account transaction
@@ -423,15 +423,15 @@ Create a transaction record under an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -443,8 +443,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_transaction = atom_api.AggregationAccountTransaction() # AggregationAccountTransaction | aggregationAccountTransaction
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_transaction = nucleus_api.AggregationAccountTransaction() # AggregationAccountTransaction | aggregationAccountTransaction
 
 try:
     # Create an aggregation account transaction
@@ -486,15 +486,15 @@ Create an aggregation account under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -506,8 +506,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account = atom_api.AggregationAccount() # AggregationAccount | aggregationAccount
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account = nucleus_api.AggregationAccount() # AggregationAccount | aggregationAccount
 
 try:
     # Create an aggregation account
@@ -549,15 +549,15 @@ Permanently delete a balance record for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -569,7 +569,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # str | UUID aggregation_account_balance_id
 
 try:
@@ -611,15 +611,15 @@ Permanently delete a holding record for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -631,7 +631,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # str | UUID aggregation_account_holding_id
 
 try:
@@ -673,15 +673,15 @@ Permanently delete a transaction record for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -693,7 +693,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # str | UUID aggregation_account_transaction_id
 
 try:
@@ -736,15 +736,15 @@ Permanently delete an aggregation account under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -756,7 +756,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_id = 'aggregation_account_id_example' # str | UUID aggregation_account_id
 
 try:
@@ -798,15 +798,15 @@ Retrieve the information for a specific aggregation account associated with a cl
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -818,7 +818,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_id = 'aggregation_account_id_example' # str | UUID aggregation_account_id
 
 try:
@@ -861,15 +861,15 @@ Get information for all aggregation accounts for all clients defined for your fi
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -881,7 +881,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -932,15 +932,15 @@ Get all of the balance records for all aggregation accounts defined for your fir
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -952,7 +952,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1003,15 +1003,15 @@ Retrieve the information for a specific balance record for an aggregation accoun
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1023,7 +1023,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # str | UUID aggregation_account_balance_id
 
 try:
@@ -1066,15 +1066,15 @@ Get all of the holding records for all aggregation accounts defined for your fir
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1086,7 +1086,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1137,15 +1137,15 @@ Retrieve the information for a specific holding record for an aggregation accoun
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1157,7 +1157,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # str | UUID aggregation_account_holding_id
 
 try:
@@ -1200,15 +1200,15 @@ Retrieve the information for a specific aggregation account with aggregate data 
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1220,7 +1220,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 
 try:
@@ -1263,15 +1263,15 @@ Get all of the transaction records for all aggregation accounts defined for your
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1283,7 +1283,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1334,15 +1334,15 @@ Retrieve the information for a specific transaction record for an aggregation ac
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1354,7 +1354,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # str | UUID aggregation_account_transaction_id
 
 try:
@@ -1397,15 +1397,15 @@ Retrieve the information for a specific aggregation account associated with a cl
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1417,7 +1417,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_id = 'aggregation_account_id_example' # str | UUID aggregation_account_id
 
 try:
@@ -1460,15 +1460,15 @@ Update a balance record for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1480,8 +1480,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_balance = atom_api.AggregationAccountBalance() # AggregationAccountBalance | aggregation_account_balance
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_balance = nucleus_api.AggregationAccountBalance() # AggregationAccountBalance | aggregation_account_balance
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # str | UUID aggregation_account_balance_id
 
 try:
@@ -1525,15 +1525,15 @@ Update a bulk aggregation account under a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1545,8 +1545,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_list = [atom_api.AggregationAccount()] # list[AggregationAccount] | aggregationAccountList
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_list = [nucleus_api.AggregationAccount()] # list[AggregationAccount] | aggregationAccountList
 
 try:
     # Update a bulk aggregation account
@@ -1588,15 +1588,15 @@ Update a bulk holding record for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1608,8 +1608,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_holding = [atom_api.AggregationAccountHolding()] # list[AggregationAccountHolding] | aggregationAccountHolding
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_holding = [nucleus_api.AggregationAccountHolding()] # list[AggregationAccountHolding] | aggregationAccountHolding
 
 try:
     # Update an bulk aggregation account holding
@@ -1651,15 +1651,15 @@ Update a holding record for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1671,8 +1671,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_holding = atom_api.AggregationAccountHolding() # AggregationAccountHolding | aggregation_account_holding
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_holding = nucleus_api.AggregationAccountHolding() # AggregationAccountHolding | aggregation_account_holding
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # str | UUID aggregation_account_holding_id
 
 try:
@@ -1716,15 +1716,15 @@ Update a transaction record for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1736,8 +1736,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account_transaction = atom_api.AggregationAccountTransaction() # AggregationAccountTransaction | aggregation_account_transaction
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account_transaction = nucleus_api.AggregationAccountTransaction() # AggregationAccountTransaction | aggregation_account_transaction
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # str | UUID aggregation_account_transaction_id
 
 try:
@@ -1781,15 +1781,15 @@ Update the information for an aggregation account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1801,8 +1801,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.AggregationAccountApi(atom_api.ApiClient(configuration))
-aggregation_account = atom_api.AggregationAccount() # AggregationAccount | aggregation_account
+api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
+aggregation_account = nucleus_api.AggregationAccount() # AggregationAccount | aggregation_account
 aggregation_account_id = 'aggregation_account_id_example' # str | UUID aggregation_account_id
 
 try:

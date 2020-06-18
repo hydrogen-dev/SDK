@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AllocationVO();
+    instance = new HydrogenNucleusApi.AllocationVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,55 +53,55 @@
   describe('AllocationVO', function() {
     it('should create an instance of AllocationVO', function() {
       // uncomment below and update the code to test AllocationVO
-      //var instane = new HydrogenAtomApi.AllocationVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AllocationVO);
+      //var instane = new HydrogenNucleusApi.AllocationVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AllocationVO);
     });
 
     it('should have the property accountAllocationDate (base name: "account_allocation_date")', function() {
       // uncomment below and update the code to test the property accountAllocationDate
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountAllocationId (base name: "account_allocation_id")', function() {
       // uncomment below and update the code to test the property accountAllocationId
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountAllocationWeight (base name: "account_allocation_weight")', function() {
       // uncomment below and update the code to test the property accountAllocationWeight
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 
     it('should have the property allocationCategory (base name: "allocation_category")', function() {
       // uncomment below and update the code to test the property allocationCategory
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 
     it('should have the property allocationDescription (base name: "allocation_description")', function() {
       // uncomment below and update the code to test the property allocationDescription
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 
     it('should have the property allocationId (base name: "allocation_id")', function() {
       // uncomment below and update the code to test the property allocationId
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 
     it('should have the property allocationName (base name: "allocation_name")', function() {
       // uncomment below and update the code to test the property allocationName
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 
     it('should have the property allocationSecondaryId (base name: "allocation_secondary_id")', function() {
       // uncomment below and update the code to test the property allocationSecondaryId
-      //var instane = new HydrogenAtomApi.AllocationVO();
+      //var instane = new HydrogenNucleusApi.AllocationVO();
       //expect(instance).to.be();
     });
 

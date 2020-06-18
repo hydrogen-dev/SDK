@@ -1,4 +1,4 @@
-# com\hydrogen\FundingApi
+# com\hydrogen\nucleus\FundingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 
 # **createBankLinkUsingPost**
-> \com\hydrogen\Model\BankLink createBankLinkUsingPost($bank_link_info_request)
+> \com\hydrogen\nucleus\Model\BankLink createBankLinkUsingPost($bank_link_info_request)
 
 Create a bank link
 
@@ -42,29 +42,29 @@ Create a new bank link for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$bank_link_info_request = new \com\hydrogen\Model\BankLink(); // \com\hydrogen\Model\BankLink | bankLinkInfoRequest
+$bank_link_info_request = new \com\hydrogen\nucleus\Model\BankLink(); // \com\hydrogen\nucleus\Model\BankLink | bankLinkInfoRequest
 
 try {
     $result = $apiInstance->createBankLinkUsingPost($bank_link_info_request);
@@ -79,11 +79,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link_info_request** | [**\com\hydrogen\Model\BankLink**](../Model/BankLink.md)| bankLinkInfoRequest |
+ **bank_link_info_request** | [**\com\hydrogen\nucleus\Model\BankLink**](../Model/BankLink.md)| bankLinkInfoRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\BankLink**](../Model/BankLink.md)
+[**\com\hydrogen\nucleus\Model\BankLink**](../Model/BankLink.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createDepositUsingPost**
-> \com\hydrogen\Model\DailyDeposit createDepositUsingPost($daily_deposit_request)
+> \com\hydrogen\nucleus\Model\DailyDeposit createDepositUsingPost($daily_deposit_request)
 
 Create a deposit request
 
@@ -106,29 +106,29 @@ Create a new deposit request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$daily_deposit_request = new \com\hydrogen\Model\DailyDeposit(); // \com\hydrogen\Model\DailyDeposit | dailyDepositRequest
+$daily_deposit_request = new \com\hydrogen\nucleus\Model\DailyDeposit(); // \com\hydrogen\nucleus\Model\DailyDeposit | dailyDepositRequest
 
 try {
     $result = $apiInstance->createDepositUsingPost($daily_deposit_request);
@@ -143,11 +143,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **daily_deposit_request** | [**\com\hydrogen\Model\DailyDeposit**](../Model/DailyDeposit.md)| dailyDepositRequest |
+ **daily_deposit_request** | [**\com\hydrogen\nucleus\Model\DailyDeposit**](../Model/DailyDeposit.md)| dailyDepositRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\DailyDeposit**](../Model/DailyDeposit.md)
+[**\com\hydrogen\nucleus\Model\DailyDeposit**](../Model/DailyDeposit.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createFundingUsingPost**
-> \com\hydrogen\Model\Funding createFundingUsingPost($funding_request)
+> \com\hydrogen\nucleus\Model\Funding createFundingUsingPost($funding_request)
 
 Create a funding request
 
@@ -170,29 +170,29 @@ Create a new funding request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$funding_request = new \com\hydrogen\Model\Funding(); // \com\hydrogen\Model\Funding | fundingRequest
+$funding_request = new \com\hydrogen\nucleus\Model\Funding(); // \com\hydrogen\nucleus\Model\Funding | fundingRequest
 
 try {
     $result = $apiInstance->createFundingUsingPost($funding_request);
@@ -207,11 +207,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **funding_request** | [**\com\hydrogen\Model\Funding**](../Model/Funding.md)| fundingRequest |
+ **funding_request** | [**\com\hydrogen\nucleus\Model\Funding**](../Model/Funding.md)| fundingRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Funding**](../Model/Funding.md)
+[**\com\hydrogen\nucleus\Model\Funding**](../Model/Funding.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createTransferUsingPost**
-> \com\hydrogen\Model\ExternalAccountTransfer createTransferUsingPost($external_account_transfer_request)
+> \com\hydrogen\nucleus\Model\ExternalAccountTransfer createTransferUsingPost($external_account_transfer_request)
 
 Create a transfer requests
 
@@ -234,29 +234,29 @@ Create a new external account transfer for a client account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$external_account_transfer_request = new \com\hydrogen\Model\ExternalAccountTransfer(); // \com\hydrogen\Model\ExternalAccountTransfer | externalAccountTransferRequest
+$external_account_transfer_request = new \com\hydrogen\nucleus\Model\ExternalAccountTransfer(); // \com\hydrogen\nucleus\Model\ExternalAccountTransfer | externalAccountTransferRequest
 
 try {
     $result = $apiInstance->createTransferUsingPost($external_account_transfer_request);
@@ -271,11 +271,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **external_account_transfer_request** | [**\com\hydrogen\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)| externalAccountTransferRequest |
+ **external_account_transfer_request** | [**\com\hydrogen\nucleus\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)| externalAccountTransferRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)
+[**\com\hydrogen\nucleus\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createWithdrawalUsingPost**
-> \com\hydrogen\Model\DailyWithdrawal createWithdrawalUsingPost($daily_withdrawal_request)
+> \com\hydrogen\nucleus\Model\DailyWithdrawal createWithdrawalUsingPost($daily_withdrawal_request)
 
 Create a withdrawal request
 
@@ -298,29 +298,29 @@ Create a new withdrawal request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$daily_withdrawal_request = new \com\hydrogen\Model\DailyWithdrawal(); // \com\hydrogen\Model\DailyWithdrawal | dailyWithdrawalRequest
+$daily_withdrawal_request = new \com\hydrogen\nucleus\Model\DailyWithdrawal(); // \com\hydrogen\nucleus\Model\DailyWithdrawal | dailyWithdrawalRequest
 
 try {
     $result = $apiInstance->createWithdrawalUsingPost($daily_withdrawal_request);
@@ -335,11 +335,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **daily_withdrawal_request** | [**\com\hydrogen\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)| dailyWithdrawalRequest |
+ **daily_withdrawal_request** | [**\com\hydrogen\nucleus\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)| dailyWithdrawalRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)
+[**\com\hydrogen\nucleus\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)
 
 ### Authorization
 
@@ -362,23 +362,23 @@ Permanently delete a bank link defined for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -425,23 +425,23 @@ Permanently delete a deposit request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -488,23 +488,23 @@ Permanently delete a funding request defined for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -551,23 +551,23 @@ Permanently delete a external account transfer from a client account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -616,23 +616,23 @@ Permanently delete a withdrawal request from an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -670,7 +670,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBankLinkAllUsingGet**
-> \com\hydrogen\Model\PageBankLink_ getBankLinkAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageBankLink_ getBankLinkAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all bank links
 
@@ -679,23 +679,23 @@ Get all bank links defined for all clients defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -728,7 +728,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageBankLink_**](../Model/PageBankLink_.md)
+[**\com\hydrogen\nucleus\Model\PageBankLink_**](../Model/PageBankLink_.md)
 
 ### Authorization
 
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBankLinkUsingGet**
-> \com\hydrogen\Model\BankLink getBankLinkUsingGet($bank_link_id)
+> \com\hydrogen\nucleus\Model\BankLink getBankLinkUsingGet($bank_link_id)
 
 Retrieve a bank link
 
@@ -751,23 +751,23 @@ Retrieve the information for a bank link for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -792,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\BankLink**](../Model/BankLink.md)
+[**\com\hydrogen\nucleus\Model\BankLink**](../Model/BankLink.md)
 
 ### Authorization
 
@@ -806,7 +806,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDepositAllUsingGet**
-> \com\hydrogen\Model\PageDailyDeposit_ getDepositAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageDailyDeposit_ getDepositAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all deposit requests
 
@@ -815,23 +815,23 @@ Get the information for all deposit requests for all clients.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageDailyDeposit_**](../Model/PageDailyDeposit_.md)
+[**\com\hydrogen\nucleus\Model\PageDailyDeposit_**](../Model/PageDailyDeposit_.md)
 
 ### Authorization
 
@@ -878,7 +878,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDepositUsingGet**
-> \com\hydrogen\Model\DailyDeposit getDepositUsingGet($deposit_id)
+> \com\hydrogen\nucleus\Model\DailyDeposit getDepositUsingGet($deposit_id)
 
 Retrieve a deposit request
 
@@ -887,23 +887,23 @@ Retrieve the information for a deposit request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -928,7 +928,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\DailyDeposit**](../Model/DailyDeposit.md)
+[**\com\hydrogen\nucleus\Model\DailyDeposit**](../Model/DailyDeposit.md)
 
 ### Authorization
 
@@ -942,7 +942,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFundingAllUsingGet**
-> \com\hydrogen\Model\PageFunding_ getFundingAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageFunding_ getFundingAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all funding requests
 
@@ -951,23 +951,23 @@ Get the information for all funding requests defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1000,7 +1000,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageFunding_**](../Model/PageFunding_.md)
+[**\com\hydrogen\nucleus\Model\PageFunding_**](../Model/PageFunding_.md)
 
 ### Authorization
 
@@ -1014,7 +1014,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFundingUsingGet**
-> \com\hydrogen\Model\Funding getFundingUsingGet($funding_id)
+> \com\hydrogen\nucleus\Model\Funding getFundingUsingGet($funding_id)
 
 Retrieve a funding request
 
@@ -1023,23 +1023,23 @@ Retrieve the information for a funding request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1064,7 +1064,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Funding**](../Model/Funding.md)
+[**\com\hydrogen\nucleus\Model\Funding**](../Model/Funding.md)
 
 ### Authorization
 
@@ -1078,7 +1078,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransferAllUsingGet**
-> \com\hydrogen\Model\PageExternalAccountTransfer_ getTransferAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageExternalAccountTransfer_ getTransferAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all transfer requests
 
@@ -1087,23 +1087,23 @@ Get the information for all external account transfers defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1136,7 +1136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageExternalAccountTransfer_**](../Model/PageExternalAccountTransfer_.md)
+[**\com\hydrogen\nucleus\Model\PageExternalAccountTransfer_**](../Model/PageExternalAccountTransfer_.md)
 
 ### Authorization
 
@@ -1150,7 +1150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransferUsingGet**
-> \com\hydrogen\Model\ExternalAccountTransfer getTransferUsingGet($external_account_transfer_id, $transfer_id)
+> \com\hydrogen\nucleus\Model\ExternalAccountTransfer getTransferUsingGet($external_account_transfer_id, $transfer_id)
 
 Retrieve a transfer request
 
@@ -1159,23 +1159,23 @@ Retrieve the information for a external account transfer for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1202,7 +1202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)
+[**\com\hydrogen\nucleus\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)
 
 ### Authorization
 
@@ -1216,7 +1216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWithdrawalAllUsingGet**
-> \com\hydrogen\Model\PageDailyWithdrawal_ getWithdrawalAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageDailyWithdrawal_ getWithdrawalAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all withdrawal requests
 
@@ -1225,23 +1225,23 @@ Get the information for all withdrawal requests for all clients.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1274,7 +1274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageDailyWithdrawal_**](../Model/PageDailyWithdrawal_.md)
+[**\com\hydrogen\nucleus\Model\PageDailyWithdrawal_**](../Model/PageDailyWithdrawal_.md)
 
 ### Authorization
 
@@ -1288,7 +1288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWithdrawalUsingGet**
-> \com\hydrogen\Model\DailyWithdrawal getWithdrawalUsingGet($withdrawal_id)
+> \com\hydrogen\nucleus\Model\DailyWithdrawal getWithdrawalUsingGet($withdrawal_id)
 
 Retrieve a withdrawal request
 
@@ -1297,23 +1297,23 @@ Retrieve the information for a withdrawal request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1338,7 +1338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)
+[**\com\hydrogen\nucleus\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)
 
 ### Authorization
 
@@ -1352,7 +1352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateBankLinkBulkUsingPut**
-> \com\hydrogen\Model\BankLink[] updateBankLinkBulkUsingPut($bank_link_list)
+> \com\hydrogen\nucleus\Model\BankLink[] updateBankLinkBulkUsingPut($bank_link_list)
 
 Update list of bank link
 
@@ -1361,29 +1361,29 @@ Update bank link list for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$bank_link_list = array(new \com\hydrogen\Model\BankLink()); // \com\hydrogen\Model\BankLink[] | bankLinkList
+$bank_link_list = array(new \com\hydrogen\nucleus\Model\BankLink()); // \com\hydrogen\nucleus\Model\BankLink[] | bankLinkList
 
 try {
     $result = $apiInstance->updateBankLinkBulkUsingPut($bank_link_list);
@@ -1398,11 +1398,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link_list** | [**\com\hydrogen\Model\BankLink[]**](../Model/BankLink.md)| bankLinkList |
+ **bank_link_list** | [**\com\hydrogen\nucleus\Model\BankLink[]**](../Model/BankLink.md)| bankLinkList |
 
 ### Return type
 
-[**\com\hydrogen\Model\BankLink[]**](../Model/BankLink.md)
+[**\com\hydrogen\nucleus\Model\BankLink[]**](../Model/BankLink.md)
 
 ### Authorization
 
@@ -1416,7 +1416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateBankLinkUsingPut**
-> \com\hydrogen\Model\BankLink updateBankLinkUsingPut($bank_link, $bank_link_id)
+> \com\hydrogen\nucleus\Model\BankLink updateBankLinkUsingPut($bank_link, $bank_link_id)
 
 Update a bank link
 
@@ -1425,29 +1425,29 @@ Update the information for a bank link for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$bank_link = new \com\hydrogen\Model\BankLink(); // \com\hydrogen\Model\BankLink | bank_link
+$bank_link = new \com\hydrogen\nucleus\Model\BankLink(); // \com\hydrogen\nucleus\Model\BankLink | bank_link
 $bank_link_id = "bank_link_id_example"; // string | UUID bank_link_id
 
 try {
@@ -1463,12 +1463,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link** | [**\com\hydrogen\Model\BankLink**](../Model/BankLink.md)| bank_link |
+ **bank_link** | [**\com\hydrogen\nucleus\Model\BankLink**](../Model/BankLink.md)| bank_link |
  **bank_link_id** | [**string**](../Model/.md)| UUID bank_link_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\BankLink**](../Model/BankLink.md)
+[**\com\hydrogen\nucleus\Model\BankLink**](../Model/BankLink.md)
 
 ### Authorization
 
@@ -1482,7 +1482,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDepositUsingPut**
-> \com\hydrogen\Model\DailyDeposit updateDepositUsingPut($deposit, $deposit_id)
+> \com\hydrogen\nucleus\Model\DailyDeposit updateDepositUsingPut($deposit, $deposit_id)
 
 Update a deposit request
 
@@ -1491,29 +1491,29 @@ Update the information for a deposit request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$deposit = new \com\hydrogen\Model\DailyDeposit(); // \com\hydrogen\Model\DailyDeposit | deposit
+$deposit = new \com\hydrogen\nucleus\Model\DailyDeposit(); // \com\hydrogen\nucleus\Model\DailyDeposit | deposit
 $deposit_id = "deposit_id_example"; // string | UUID deposit_id
 
 try {
@@ -1529,12 +1529,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deposit** | [**\com\hydrogen\Model\DailyDeposit**](../Model/DailyDeposit.md)| deposit |
+ **deposit** | [**\com\hydrogen\nucleus\Model\DailyDeposit**](../Model/DailyDeposit.md)| deposit |
  **deposit_id** | [**string**](../Model/.md)| UUID deposit_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\DailyDeposit**](../Model/DailyDeposit.md)
+[**\com\hydrogen\nucleus\Model\DailyDeposit**](../Model/DailyDeposit.md)
 
 ### Authorization
 
@@ -1548,7 +1548,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateFundingUsingPut**
-> \com\hydrogen\Model\Funding updateFundingUsingPut($funding, $funding_id)
+> \com\hydrogen\nucleus\Model\Funding updateFundingUsingPut($funding, $funding_id)
 
 Update a funding request
 
@@ -1557,29 +1557,29 @@ Update the information for a funding request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$funding = new \com\hydrogen\Model\Funding(); // \com\hydrogen\Model\Funding | funding
+$funding = new \com\hydrogen\nucleus\Model\Funding(); // \com\hydrogen\nucleus\Model\Funding | funding
 $funding_id = "funding_id_example"; // string | UUID funding_id
 
 try {
@@ -1595,12 +1595,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **funding** | [**\com\hydrogen\Model\Funding**](../Model/Funding.md)| funding |
+ **funding** | [**\com\hydrogen\nucleus\Model\Funding**](../Model/Funding.md)| funding |
  **funding_id** | [**string**](../Model/.md)| UUID funding_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Funding**](../Model/Funding.md)
+[**\com\hydrogen\nucleus\Model\Funding**](../Model/Funding.md)
 
 ### Authorization
 
@@ -1614,7 +1614,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateTransferUsingPut**
-> \com\hydrogen\Model\ExternalAccountTransfer updateTransferUsingPut($transfer, $transfer_id)
+> \com\hydrogen\nucleus\Model\ExternalAccountTransfer updateTransferUsingPut($transfer, $transfer_id)
 
 Update a transfer request
 
@@ -1623,29 +1623,29 @@ Update the information for a external account transfer for a client account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$transfer = new \com\hydrogen\Model\ExternalAccountTransfer(); // \com\hydrogen\Model\ExternalAccountTransfer | transfer
+$transfer = new \com\hydrogen\nucleus\Model\ExternalAccountTransfer(); // \com\hydrogen\nucleus\Model\ExternalAccountTransfer | transfer
 $transfer_id = "transfer_id_example"; // string | UUID external_account_transfer_id
 
 try {
@@ -1661,12 +1661,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**\com\hydrogen\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)| transfer |
+ **transfer** | [**\com\hydrogen\nucleus\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)| transfer |
  **transfer_id** | [**string**](../Model/.md)| UUID external_account_transfer_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)
+[**\com\hydrogen\nucleus\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)
 
 ### Authorization
 
@@ -1680,7 +1680,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWithdrawalUsingPut**
-> \com\hydrogen\Model\DailyWithdrawal updateWithdrawalUsingPut($withdrawal, $withdrawal_id)
+> \com\hydrogen\nucleus\Model\DailyWithdrawal updateWithdrawalUsingPut($withdrawal, $withdrawal_id)
 
 Update a withdrawal request
 
@@ -1689,29 +1689,29 @@ Update the information for a withdrawal request for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FundingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$withdrawal = new \com\hydrogen\Model\DailyWithdrawal(); // \com\hydrogen\Model\DailyWithdrawal | withdrawal
+$withdrawal = new \com\hydrogen\nucleus\Model\DailyWithdrawal(); // \com\hydrogen\nucleus\Model\DailyWithdrawal | withdrawal
 $withdrawal_id = "withdrawal_id_example"; // string | UUID withdrawal_id
 
 try {
@@ -1727,12 +1727,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawal** | [**\com\hydrogen\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)| withdrawal |
+ **withdrawal** | [**\com\hydrogen\nucleus\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)| withdrawal |
  **withdrawal_id** | [**string**](../Model/.md)| UUID withdrawal_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)
+[**\com\hydrogen\nucleus\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)
 
 ### Authorization
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.BankLinkMap();
+    instance = new HydrogenNucleusApi.BankLinkMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('BankLinkMap', function() {
     it('should create an instance of BankLinkMap', function() {
       // uncomment below and update the code to test BankLinkMap
-      //var instane = new HydrogenAtomApi.BankLinkMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.BankLinkMap);
+      //var instane = new HydrogenNucleusApi.BankLinkMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.BankLinkMap);
     });
 
     it('should have the property bankLinkId (base name: "bank_link_id")', function() {
       // uncomment below and update the code to test the property bankLinkId
-      //var instane = new HydrogenAtomApi.BankLinkMap();
+      //var instane = new HydrogenNucleusApi.BankLinkMap();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.BankLinkMap();
+      //var instane = new HydrogenNucleusApi.BankLinkMap();
       //expect(instance).to.be();
     });
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_id** | **string** | clientId | [optional] 
-**composition** | [**\com\hydrogen\Model\BenchmarkComposition[]**](BenchmarkComposition.md) | composition | [optional] 
+**composition** | [**\com\hydrogen\nucleus\Model\BenchmarkComposition[]**](BenchmarkComposition.md) | composition | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **description** | **string** | description | [optional] 
 **id** | **string** |  | [optional] 

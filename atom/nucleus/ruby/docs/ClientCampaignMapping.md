@@ -1,4 +1,4 @@
-# AtomApi::ClientCampaignMapping
+# NucleusApi::ClientCampaignMapping
 
 ## Properties
 Name | Type | Description | Notes

@@ -21,9 +21,9 @@ Create a new Document for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -78,9 +78,9 @@ Permanently delete a tenant document by Id
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -134,9 +134,9 @@ Get the information for all Documents
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -199,9 +199,9 @@ Retrieve the information for a Tenant Document by Document Id
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -256,9 +256,9 @@ Updated the information for a Tenant Documents
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

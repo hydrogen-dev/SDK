@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AccountAllocationMapping
+# HydrogenNucleusApi.AccountAllocationMapping
 
 ## Properties
 Name | Type | Description | Notes

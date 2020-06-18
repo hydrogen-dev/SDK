@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.client_analytics_response import ClientAnalyticsResponse  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.client_analytics_response import ClientAnalyticsResponse  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestClientAnalyticsResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestClientAnalyticsResponse(unittest.TestCase):
     def testClientAnalyticsResponse(self):
         """Test ClientAnalyticsResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.client_analytics_response.ClientAnalyticsResponse()  # noqa: E501
+        # model = nucleus_api.models.client_analytics_response.ClientAnalyticsResponse()  # noqa: E501
         pass
 
 

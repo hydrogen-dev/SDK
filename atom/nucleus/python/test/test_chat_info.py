@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.chat_info import ChatInfo  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.chat_info import ChatInfo  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestChatInfo(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestChatInfo(unittest.TestCase):
     def testChatInfo(self):
         """Test ChatInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.chat_info.ChatInfo()  # noqa: E501
+        # model = nucleus_api.models.chat_info.ChatInfo()  # noqa: E501
         pass
 
 

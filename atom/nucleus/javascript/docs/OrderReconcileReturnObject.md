@@ -1,4 +1,4 @@
-# HydrogenAtomApi.OrderReconcileReturnObject
+# HydrogenNucleusApi.OrderReconcileReturnObject
 
 ## Properties
 Name | Type | Description | Notes

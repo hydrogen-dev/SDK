@@ -1,4 +1,4 @@
-# AtomApi::DateDoubleVO
+# NucleusApi::DateDoubleVO
 
 ## Properties
 Name | Type | Description | Notes

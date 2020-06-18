@@ -1,4 +1,4 @@
-# AtomApi::ClientAnalyticsTenants
+# NucleusApi::ClientAnalyticsTenants
 
 ## Properties
 Name | Type | Description | Notes

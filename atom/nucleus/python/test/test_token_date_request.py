@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.token_date_request import TokenDateRequest  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.token_date_request import TokenDateRequest  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestTokenDateRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestTokenDateRequest(unittest.TestCase):
     def testTokenDateRequest(self):
         """Test TokenDateRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.token_date_request.TokenDateRequest()  # noqa: E501
+        # model = nucleus_api.models.token_date_request.TokenDateRequest()  # noqa: E501
         pass
 
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.FundingRequestMap();
+    instance = new HydrogenNucleusApi.FundingRequestMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,13 +53,13 @@
   describe('FundingRequestMap', function() {
     it('should create an instance of FundingRequestMap', function() {
       // uncomment below and update the code to test FundingRequestMap
-      //var instane = new HydrogenAtomApi.FundingRequestMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.FundingRequestMap);
+      //var instane = new HydrogenNucleusApi.FundingRequestMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.FundingRequestMap);
     });
 
     it('should have the property fundingId (base name: "funding_id")', function() {
       // uncomment below and update the code to test the property fundingId
-      //var instane = new HydrogenAtomApi.FundingRequestMap();
+      //var instane = new HydrogenNucleusApi.FundingRequestMap();
       //expect(instance).to.be();
     });
 

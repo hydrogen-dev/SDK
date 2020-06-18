@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * RoundupSettings Class Doc Comment
  *
  * @category Class
  * @description Roundup Settings Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,15 +59,15 @@ class RoundupSettings implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'account_id' => 'string',
-        'accounts' => '\com\hydrogen\Model\AccountMap[]',
-        'aggregation_accounts' => '\com\hydrogen\Model\AggregationAccountsMap[]',
-        'bank_links' => '\com\hydrogen\Model\BankLinkMap[]',
-        'categories' => '\com\hydrogen\Model\CategoriesMap[]',
+        'accounts' => '\com\hydrogen\nucleus\Model\AccountMap[]',
+        'aggregation_accounts' => '\com\hydrogen\nucleus\Model\AggregationAccountsMap[]',
+        'bank_links' => '\com\hydrogen\nucleus\Model\BankLinkMap[]',
+        'categories' => '\com\hydrogen\nucleus\Model\CategoriesMap[]',
         'client_id' => 'string',
         'create_date' => '\DateTime',
         'id' => 'string',
         'is_active' => 'bool',
-        'merchants' => '\com\hydrogen\Model\MerchantsMap[]',
+        'merchants' => '\com\hydrogen\nucleus\Model\MerchantsMap[]',
         'metadata' => 'map[string,string]',
         'portfolio_id' => 'string',
         'secondary_id' => 'string',
@@ -319,7 +319,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Gets accounts
      *
-     * @return \com\hydrogen\Model\AccountMap[]
+     * @return \com\hydrogen\nucleus\Model\AccountMap[]
      */
     public function getAccounts()
     {
@@ -329,7 +329,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Sets accounts
      *
-     * @param \com\hydrogen\Model\AccountMap[] $accounts accounts
+     * @param \com\hydrogen\nucleus\Model\AccountMap[] $accounts accounts
      *
      * @return $this
      */
@@ -343,7 +343,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Gets aggregation_accounts
      *
-     * @return \com\hydrogen\Model\AggregationAccountsMap[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountsMap[]
      */
     public function getAggregationAccounts()
     {
@@ -353,7 +353,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Sets aggregation_accounts
      *
-     * @param \com\hydrogen\Model\AggregationAccountsMap[] $aggregation_accounts aggregation_accounts
+     * @param \com\hydrogen\nucleus\Model\AggregationAccountsMap[] $aggregation_accounts aggregation_accounts
      *
      * @return $this
      */
@@ -367,7 +367,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Gets bank_links
      *
-     * @return \com\hydrogen\Model\BankLinkMap[]
+     * @return \com\hydrogen\nucleus\Model\BankLinkMap[]
      */
     public function getBankLinks()
     {
@@ -377,7 +377,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Sets bank_links
      *
-     * @param \com\hydrogen\Model\BankLinkMap[] $bank_links bank_links
+     * @param \com\hydrogen\nucleus\Model\BankLinkMap[] $bank_links bank_links
      *
      * @return $this
      */
@@ -391,7 +391,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Gets categories
      *
-     * @return \com\hydrogen\Model\CategoriesMap[]
+     * @return \com\hydrogen\nucleus\Model\CategoriesMap[]
      */
     public function getCategories()
     {
@@ -401,7 +401,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Sets categories
      *
-     * @param \com\hydrogen\Model\CategoriesMap[] $categories categories
+     * @param \com\hydrogen\nucleus\Model\CategoriesMap[] $categories categories
      *
      * @return $this
      */
@@ -511,7 +511,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Gets merchants
      *
-     * @return \com\hydrogen\Model\MerchantsMap[]
+     * @return \com\hydrogen\nucleus\Model\MerchantsMap[]
      */
     public function getMerchants()
     {
@@ -521,7 +521,7 @@ class RoundupSettings implements ModelInterface, ArrayAccess
     /**
      * Sets merchants
      *
-     * @param \com\hydrogen\Model\MerchantsMap[] $merchants merchants
+     * @param \com\hydrogen\nucleus\Model\MerchantsMap[] $merchants merchants
      *
      * @return $this
      */

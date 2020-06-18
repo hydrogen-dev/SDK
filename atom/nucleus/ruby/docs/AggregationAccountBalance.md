@@ -1,4 +1,4 @@
-# AtomApi::AggregationAccountBalance
+# NucleusApi::AggregationAccountBalance
 
 ## Properties
 Name | Type | Description | Notes

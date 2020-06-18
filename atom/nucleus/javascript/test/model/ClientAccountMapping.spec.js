@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientAccountMapping();
+    instance = new HydrogenNucleusApi.ClientAccountMapping();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('ClientAccountMapping', function() {
     it('should create an instance of ClientAccountMapping', function() {
       // uncomment below and update the code to test ClientAccountMapping
-      //var instane = new HydrogenAtomApi.ClientAccountMapping();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientAccountMapping);
+      //var instane = new HydrogenNucleusApi.ClientAccountMapping();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientAccountMapping);
     });
 
     it('should have the property clientAccountAssociationType (base name: "client_account_association_type")', function() {
       // uncomment below and update the code to test the property clientAccountAssociationType
-      //var instane = new HydrogenAtomApi.ClientAccountMapping();
+      //var instane = new HydrogenNucleusApi.ClientAccountMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.ClientAccountMapping();
+      //var instane = new HydrogenNucleusApi.ClientAccountMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property signatureData (base name: "signature_data")', function() {
       // uncomment below and update the code to test the property signatureData
-      //var instane = new HydrogenAtomApi.ClientAccountMapping();
+      //var instane = new HydrogenNucleusApi.ClientAccountMapping();
       //expect(instance).to.be();
     });
 

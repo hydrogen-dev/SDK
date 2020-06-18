@@ -1,4 +1,4 @@
-# AtomApi::Sort
+# NucleusApi::Sort
 
 ## Properties
 Name | Type | Description | Notes

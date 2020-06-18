@@ -1,4 +1,4 @@
-# HydrogenAtomApi.JsonNode
+# HydrogenNucleusApi.JsonNode
 
 ## Properties
 Name | Type | Description | Notes

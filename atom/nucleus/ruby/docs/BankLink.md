@@ -1,4 +1,4 @@
-# AtomApi::BankLink
+# NucleusApi::BankLink
 
 ## Properties
 Name | Type | Description | Notes

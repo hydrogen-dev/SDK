@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AccountPortfolioRebalanceRequest
+# HydrogenNucleusApi.AccountPortfolioRebalanceRequest
 
 ## Properties
 Name | Type | Description | Notes

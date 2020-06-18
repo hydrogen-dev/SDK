@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * OverflowApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class OverflowApi
      *
      * Create a Overflow Settings request
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflowSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflowSettings (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OverflowSettings
+     * @return \com\hydrogen\nucleus\Model\OverflowSettings
      */
     public function createOverflowSettingsUsingPost($overflow_settings)
     {
@@ -109,15 +109,15 @@ class OverflowApi
      *
      * Create a Overflow Settings request
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflowSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflowSettings (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OverflowSettings, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OverflowSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function createOverflowSettingsUsingPostWithHttpInfo($overflow_settings)
     {
-        $returnType = '\com\hydrogen\Model\OverflowSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\OverflowSettings';
         $request = $this->createOverflowSettingsUsingPostRequest($overflow_settings);
 
         try {
@@ -169,7 +169,7 @@ class OverflowApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OverflowSettings',
+                        '\com\hydrogen\nucleus\Model\OverflowSettings',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class OverflowApi
      *
      * Create a Overflow Settings request
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflowSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflowSettings (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class OverflowApi
      *
      * Create a Overflow Settings request
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflowSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflowSettings (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOverflowSettingsUsingPostAsyncWithHttpInfo($overflow_settings)
     {
-        $returnType = '\com\hydrogen\Model\OverflowSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\OverflowSettings';
         $request = $this->createOverflowSettingsUsingPostRequest($overflow_settings);
 
         return $this->client
@@ -254,7 +254,7 @@ class OverflowApi
     /**
      * Create request for operation 'createOverflowSettingsUsingPost'
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflowSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflowSettings (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class OverflowApi
      *
      * Create a Overflow request
      *
-     * @param  \com\hydrogen\Model\Overflow $overflow_vo overflowVO (required)
+     * @param  \com\hydrogen\nucleus\Model\Overflow $overflow_vo overflowVO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Overflow
+     * @return \com\hydrogen\nucleus\Model\Overflow
      */
     public function createOverflowUsingPost($overflow_vo)
     {
@@ -377,15 +377,15 @@ class OverflowApi
      *
      * Create a Overflow request
      *
-     * @param  \com\hydrogen\Model\Overflow $overflow_vo overflowVO (required)
+     * @param  \com\hydrogen\nucleus\Model\Overflow $overflow_vo overflowVO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Overflow, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Overflow, HTTP status code, HTTP response headers (array of strings)
      */
     public function createOverflowUsingPostWithHttpInfo($overflow_vo)
     {
-        $returnType = '\com\hydrogen\Model\Overflow';
+        $returnType = '\com\hydrogen\nucleus\Model\Overflow';
         $request = $this->createOverflowUsingPostRequest($overflow_vo);
 
         try {
@@ -437,7 +437,7 @@ class OverflowApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Overflow',
+                        '\com\hydrogen\nucleus\Model\Overflow',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class OverflowApi
      *
      * Create a Overflow request
      *
-     * @param  \com\hydrogen\Model\Overflow $overflow_vo overflowVO (required)
+     * @param  \com\hydrogen\nucleus\Model\Overflow $overflow_vo overflowVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class OverflowApi
      *
      * Create a Overflow request
      *
-     * @param  \com\hydrogen\Model\Overflow $overflow_vo overflowVO (required)
+     * @param  \com\hydrogen\nucleus\Model\Overflow $overflow_vo overflowVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOverflowUsingPostAsyncWithHttpInfo($overflow_vo)
     {
-        $returnType = '\com\hydrogen\Model\Overflow';
+        $returnType = '\com\hydrogen\nucleus\Model\Overflow';
         $request = $this->createOverflowUsingPostRequest($overflow_vo);
 
         return $this->client
@@ -522,7 +522,7 @@ class OverflowApi
     /**
      * Create request for operation 'createOverflowUsingPost'
      *
-     * @param  \com\hydrogen\Model\Overflow $overflow_vo overflowVO (required)
+     * @param  \com\hydrogen\nucleus\Model\Overflow $overflow_vo overflowVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -630,7 +630,7 @@ class OverflowApi
      *
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -646,7 +646,7 @@ class OverflowApi
      *
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -870,9 +870,9 @@ class OverflowApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageOverflow_
+     * @return \com\hydrogen\nucleus\Model\PageOverflow_
      */
     public function getOverflowAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -891,13 +891,13 @@ class OverflowApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageOverflow_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageOverflow_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOverflowAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOverflow_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOverflow_';
         $request = $this->getOverflowAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -949,7 +949,7 @@ class OverflowApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageOverflow_',
+                        '\com\hydrogen\nucleus\Model\PageOverflow_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class OverflowApi
      */
     public function getOverflowAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOverflow_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOverflow_';
         $request = $this->getOverflowAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1169,9 +1169,9 @@ class OverflowApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageOverflowSettings_
+     * @return \com\hydrogen\nucleus\Model\PageOverflowSettings_
      */
     public function getOverflowSettingsAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1190,13 +1190,13 @@ class OverflowApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageOverflowSettings_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageOverflowSettings_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOverflowSettingsAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOverflowSettings_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOverflowSettings_';
         $request = $this->getOverflowSettingsAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1248,7 +1248,7 @@ class OverflowApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageOverflowSettings_',
+                        '\com\hydrogen\nucleus\Model\PageOverflowSettings_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1298,7 +1298,7 @@ class OverflowApi
      */
     public function getOverflowSettingsAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOverflowSettings_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOverflowSettings_';
         $request = $this->getOverflowSettingsAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1464,9 +1464,9 @@ class OverflowApi
      *
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OverflowSettings
+     * @return \com\hydrogen\nucleus\Model\OverflowSettings
      */
     public function getOverflowSettingsUsingGet($overflow_settings_id)
     {
@@ -1481,13 +1481,13 @@ class OverflowApi
      *
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OverflowSettings, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OverflowSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOverflowSettingsUsingGetWithHttpInfo($overflow_settings_id)
     {
-        $returnType = '\com\hydrogen\Model\OverflowSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\OverflowSettings';
         $request = $this->getOverflowSettingsUsingGetRequest($overflow_settings_id);
 
         try {
@@ -1539,7 +1539,7 @@ class OverflowApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OverflowSettings',
+                        '\com\hydrogen\nucleus\Model\OverflowSettings',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1581,7 +1581,7 @@ class OverflowApi
      */
     public function getOverflowSettingsUsingGetAsyncWithHttpInfo($overflow_settings_id)
     {
-        $returnType = '\com\hydrogen\Model\OverflowSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\OverflowSettings';
         $request = $this->getOverflowSettingsUsingGetRequest($overflow_settings_id);
 
         return $this->client
@@ -1737,9 +1737,9 @@ class OverflowApi
      *
      * @param  string $overflow_id UUID overflow_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Overflow
+     * @return \com\hydrogen\nucleus\Model\Overflow
      */
     public function getOverflowUsingGet($overflow_id)
     {
@@ -1754,13 +1754,13 @@ class OverflowApi
      *
      * @param  string $overflow_id UUID overflow_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Overflow, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Overflow, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOverflowUsingGetWithHttpInfo($overflow_id)
     {
-        $returnType = '\com\hydrogen\Model\Overflow';
+        $returnType = '\com\hydrogen\nucleus\Model\Overflow';
         $request = $this->getOverflowUsingGetRequest($overflow_id);
 
         try {
@@ -1812,7 +1812,7 @@ class OverflowApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Overflow',
+                        '\com\hydrogen\nucleus\Model\Overflow',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1854,7 +1854,7 @@ class OverflowApi
      */
     public function getOverflowUsingGetAsyncWithHttpInfo($overflow_id)
     {
-        $returnType = '\com\hydrogen\Model\Overflow';
+        $returnType = '\com\hydrogen\nucleus\Model\Overflow';
         $request = $this->getOverflowUsingGetRequest($overflow_id);
 
         return $this->client
@@ -2008,12 +2008,12 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OverflowSettings
+     * @return \com\hydrogen\nucleus\Model\OverflowSettings
      */
     public function updateOverflowSettingsUsingPut($overflow_settings, $overflow_settings_id)
     {
@@ -2026,16 +2026,16 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OverflowSettings, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OverflowSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateOverflowSettingsUsingPutWithHttpInfo($overflow_settings, $overflow_settings_id)
     {
-        $returnType = '\com\hydrogen\Model\OverflowSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\OverflowSettings';
         $request = $this->updateOverflowSettingsUsingPutRequest($overflow_settings, $overflow_settings_id);
 
         try {
@@ -2087,7 +2087,7 @@ class OverflowApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OverflowSettings',
+                        '\com\hydrogen\nucleus\Model\OverflowSettings',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2102,7 +2102,7 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2123,7 +2123,7 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2131,7 +2131,7 @@ class OverflowApi
      */
     public function updateOverflowSettingsUsingPutAsyncWithHttpInfo($overflow_settings, $overflow_settings_id)
     {
-        $returnType = '\com\hydrogen\Model\OverflowSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\OverflowSettings';
         $request = $this->updateOverflowSettingsUsingPutRequest($overflow_settings, $overflow_settings_id);
 
         return $this->client
@@ -2174,7 +2174,7 @@ class OverflowApi
     /**
      * Create request for operation 'updateOverflowSettingsUsingPut'
      *
-     * @param  \com\hydrogen\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \InvalidArgumentException

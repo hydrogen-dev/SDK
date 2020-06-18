@@ -21,10 +21,10 @@ Assess how well a group of investments is diversified
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -81,10 +81,10 @@ Calculate a target emergency fund amount and savings plan
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -141,10 +141,10 @@ Calculate a series of financial ratios to assess financial health
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -201,10 +201,10 @@ Analyze a group of investments against the optimized result
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

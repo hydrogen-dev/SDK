@@ -1,4 +1,4 @@
-# com\hydrogen\ApplicationApi
+# com\hydrogen\nucleus\ApplicationApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createApplicationUsingPost**
-> \com\hydrogen\Model\Application createApplicationUsingPost($application)
+> \com\hydrogen\nucleus\Model\Application createApplicationUsingPost($application)
 
 Create an application
 
@@ -21,29 +21,29 @@ Create an application
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\ApplicationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\ApplicationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$application = new \com\hydrogen\Model\Application(); // \com\hydrogen\Model\Application | application
+$application = new \com\hydrogen\nucleus\Model\Application(); // \com\hydrogen\nucleus\Model\Application | application
 
 try {
     $result = $apiInstance->createApplicationUsingPost($application);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | [**\com\hydrogen\Model\Application**](../Model/Application.md)| application |
+ **application** | [**\com\hydrogen\nucleus\Model\Application**](../Model/Application.md)| application |
 
 ### Return type
 
-[**\com\hydrogen\Model\Application**](../Model/Application.md)
+[**\com\hydrogen\nucleus\Model\Application**](../Model/Application.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently delete an Application.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\ApplicationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\ApplicationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -139,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getApplicationAllUsingGet**
-> \com\hydrogen\Model\PageApplication_ getApplicationAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageApplication_ getApplicationAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all Application
 
@@ -148,23 +148,23 @@ Get details for all Application.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\ApplicationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\ApplicationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageApplication_**](../Model/PageApplication_.md)
+[**\com\hydrogen\nucleus\Model\PageApplication_**](../Model/PageApplication_.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getApplicationUsingGet**
-> \com\hydrogen\Model\Application getApplicationUsingGet($application_id)
+> \com\hydrogen\nucleus\Model\Application getApplicationUsingGet($application_id)
 
 Retrieve an Application
 
@@ -220,23 +220,23 @@ Retrieve the information for an Application.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\ApplicationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\ApplicationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Application**](../Model/Application.md)
+[**\com\hydrogen\nucleus\Model\Application**](../Model/Application.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateApplicationUsingPut**
-> \com\hydrogen\Model\Application updateApplicationUsingPut($application, $application_id)
+> \com\hydrogen\nucleus\Model\Application updateApplicationUsingPut($application, $application_id)
 
 Update an Application
 
@@ -284,29 +284,29 @@ Update the information for an Application
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\ApplicationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\ApplicationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$application = new \com\hydrogen\Model\Application(); // \com\hydrogen\Model\Application | application
+$application = new \com\hydrogen\nucleus\Model\Application(); // \com\hydrogen\nucleus\Model\Application | application
 $application_id = "application_id_example"; // string | UUID application_id
 
 try {
@@ -322,12 +322,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | [**\com\hydrogen\Model\Application**](../Model/Application.md)| application |
+ **application** | [**\com\hydrogen\nucleus\Model\Application**](../Model/Application.md)| application |
  **application_id** | [**string**](../Model/.md)| UUID application_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Application**](../Model/Application.md)
+[**\com\hydrogen\nucleus\Model\Application**](../Model/Application.md)
 
 ### Authorization
 

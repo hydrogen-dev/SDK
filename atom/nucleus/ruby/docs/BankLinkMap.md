@@ -1,4 +1,4 @@
-# AtomApi::BankLinkMap
+# NucleusApi::BankLinkMap
 
 ## Properties
 Name | Type | Description | Notes

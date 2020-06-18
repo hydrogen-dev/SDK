@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AuditLogApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class AuditLogApi
      *
      * Create a audit log
      *
-     * @param  \com\hydrogen\Model\AuditLog $audit_log auditLog (required)
+     * @param  \com\hydrogen\nucleus\Model\AuditLog $audit_log auditLog (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AuditLog
+     * @return \com\hydrogen\nucleus\Model\AuditLog
      */
     public function createAuditLogUsingPost($audit_log)
     {
@@ -109,15 +109,15 @@ class AuditLogApi
      *
      * Create a audit log
      *
-     * @param  \com\hydrogen\Model\AuditLog $audit_log auditLog (required)
+     * @param  \com\hydrogen\nucleus\Model\AuditLog $audit_log auditLog (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AuditLog, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AuditLog, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAuditLogUsingPostWithHttpInfo($audit_log)
     {
-        $returnType = '\com\hydrogen\Model\AuditLog';
+        $returnType = '\com\hydrogen\nucleus\Model\AuditLog';
         $request = $this->createAuditLogUsingPostRequest($audit_log);
 
         try {
@@ -169,7 +169,7 @@ class AuditLogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AuditLog',
+                        '\com\hydrogen\nucleus\Model\AuditLog',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class AuditLogApi
      *
      * Create a audit log
      *
-     * @param  \com\hydrogen\Model\AuditLog $audit_log auditLog (required)
+     * @param  \com\hydrogen\nucleus\Model\AuditLog $audit_log auditLog (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class AuditLogApi
      *
      * Create a audit log
      *
-     * @param  \com\hydrogen\Model\AuditLog $audit_log auditLog (required)
+     * @param  \com\hydrogen\nucleus\Model\AuditLog $audit_log auditLog (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAuditLogUsingPostAsyncWithHttpInfo($audit_log)
     {
-        $returnType = '\com\hydrogen\Model\AuditLog';
+        $returnType = '\com\hydrogen\nucleus\Model\AuditLog';
         $request = $this->createAuditLogUsingPostRequest($audit_log);
 
         return $this->client
@@ -254,7 +254,7 @@ class AuditLogApi
     /**
      * Create request for operation 'createAuditLogUsingPost'
      *
-     * @param  \com\hydrogen\Model\AuditLog $audit_log auditLog (required)
+     * @param  \com\hydrogen\nucleus\Model\AuditLog $audit_log auditLog (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -366,9 +366,9 @@ class AuditLogApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAuditLog_
+     * @return \com\hydrogen\nucleus\Model\PageAuditLog_
      */
     public function getAuditLogAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -387,13 +387,13 @@ class AuditLogApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAuditLog_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAuditLog_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAuditLogAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAuditLog_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAuditLog_';
         $request = $this->getAuditLogAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -445,7 +445,7 @@ class AuditLogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAuditLog_',
+                        '\com\hydrogen\nucleus\Model\PageAuditLog_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -495,7 +495,7 @@ class AuditLogApi
      */
     public function getAuditLogAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAuditLog_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAuditLog_';
         $request = $this->getAuditLogAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -661,9 +661,9 @@ class AuditLogApi
      *
      * @param  string $audit_log_id UUID audit_log_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AuditLog
+     * @return \com\hydrogen\nucleus\Model\AuditLog
      */
     public function getAuditLogUsingGet($audit_log_id)
     {
@@ -678,13 +678,13 @@ class AuditLogApi
      *
      * @param  string $audit_log_id UUID audit_log_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AuditLog, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AuditLog, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAuditLogUsingGetWithHttpInfo($audit_log_id)
     {
-        $returnType = '\com\hydrogen\Model\AuditLog';
+        $returnType = '\com\hydrogen\nucleus\Model\AuditLog';
         $request = $this->getAuditLogUsingGetRequest($audit_log_id);
 
         try {
@@ -736,7 +736,7 @@ class AuditLogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AuditLog',
+                        '\com\hydrogen\nucleus\Model\AuditLog',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -778,7 +778,7 @@ class AuditLogApi
      */
     public function getAuditLogUsingGetAsyncWithHttpInfo($audit_log_id)
     {
-        $returnType = '\com\hydrogen\Model\AuditLog';
+        $returnType = '\com\hydrogen\nucleus\Model\AuditLog';
         $request = $this->getAuditLogUsingGetRequest($audit_log_id);
 
         return $this->client

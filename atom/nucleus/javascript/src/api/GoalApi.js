@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AvailableDateDoubleVO'), require('../model/Goal'), require('../model/GoalTrack'), require('../model/PageGoal'), require('../model/PageGoalTrack'), require('../model/PagePortfolioTransaction'), require('../model/PortfolioHoldingAgg'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.GoalApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AvailableDateDoubleVO, root.HydrogenAtomApi.Goal, root.HydrogenAtomApi.GoalTrack, root.HydrogenAtomApi.PageGoal, root.HydrogenAtomApi.PageGoalTrack, root.HydrogenAtomApi.PagePortfolioTransaction, root.HydrogenAtomApi.PortfolioHoldingAgg);
+    root.HydrogenNucleusApi.GoalApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AvailableDateDoubleVO, root.HydrogenNucleusApi.Goal, root.HydrogenNucleusApi.GoalTrack, root.HydrogenNucleusApi.PageGoal, root.HydrogenNucleusApi.PageGoalTrack, root.HydrogenNucleusApi.PagePortfolioTransaction, root.HydrogenNucleusApi.PortfolioHoldingAgg);
   }
 }(this, function(ApiClient, AvailableDateDoubleVO, Goal, GoalTrack, PageGoal, PageGoalTrack, PagePortfolioTransaction, PortfolioHoldingAgg) {
   'use strict';

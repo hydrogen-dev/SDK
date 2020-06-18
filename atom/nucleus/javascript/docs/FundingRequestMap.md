@@ -1,4 +1,4 @@
-# HydrogenAtomApi.FundingRequestMap
+# HydrogenNucleusApi.FundingRequestMap
 
 ## Properties
 Name | Type | Description | Notes

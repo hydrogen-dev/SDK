@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.goal_account_mapping import GoalAccountMapping  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.goal_account_mapping import GoalAccountMapping  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestGoalAccountMapping(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestGoalAccountMapping(unittest.TestCase):
     def testGoalAccountMapping(self):
         """Test GoalAccountMapping"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.goal_account_mapping.GoalAccountMapping()  # noqa: E501
+        # model = nucleus_api.models.goal_account_mapping.GoalAccountMapping()  # noqa: E501
         pass
 
 

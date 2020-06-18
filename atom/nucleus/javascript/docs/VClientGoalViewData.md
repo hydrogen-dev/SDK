@@ -1,4 +1,4 @@
-# HydrogenAtomApi.VClientGoalViewData
+# HydrogenNucleusApi.VClientGoalViewData
 
 ## Properties
 Name | Type | Description | Notes

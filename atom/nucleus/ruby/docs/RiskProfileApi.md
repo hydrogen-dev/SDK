@@ -1,4 +1,4 @@
-# AtomApi::RiskProfileApi
+# NucleusApi::RiskProfileApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Create a new Risk Profile.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RiskProfileApi.new
+api_instance = NucleusApi::RiskProfileApi.new
 
-risk_profile = AtomApi::RiskProfile.new # RiskProfile | riskProfile
+risk_profile = NucleusApi::RiskProfile.new # RiskProfile | riskProfile
 
 
 begin
   #Create a Risk Profile
   result = api_instance.create_risk_profile_using_post(risk_profile)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RiskProfileApi->create_risk_profile_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently Delete a Risk Profile.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RiskProfileApi.new
+api_instance = NucleusApi::RiskProfileApi.new
 
 risk_profile_id = 'risk_profile_id_example' # String | UUID risk_profile_id
 
@@ -96,7 +96,7 @@ risk_profile_id = 'risk_profile_id_example' # String | UUID risk_profile_id
 begin
   #Delete a Risk Profile
   api_instance.delete_risk_profile_using_delete(risk_profile_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RiskProfileApi->delete_risk_profile_using_delete: #{e}"
 end
 ```
@@ -132,9 +132,9 @@ Get All Risk Profile.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -143,7 +143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RiskProfileApi.new
+api_instance = NucleusApi::RiskProfileApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -157,7 +157,7 @@ begin
   #Get All Risk Profile
   result = api_instance.get_risk_profile_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RiskProfileApi->get_risk_profile_all_using_get: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Get a Risk Profile.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RiskProfileApi.new
+api_instance = NucleusApi::RiskProfileApi.new
 
 risk_profile_id = 'risk_profile_id_example' # String | UUID risk_profile_id
 
@@ -217,7 +217,7 @@ begin
   #Get a Risk Profile
   result = api_instance.get_risk_profile_using_get(risk_profile_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RiskProfileApi->get_risk_profile_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Update a Risk Profile.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RiskProfileApi.new
+api_instance = NucleusApi::RiskProfileApi.new
 
-risk_profile = AtomApi::RiskProfile.new # RiskProfile | risk_profile
+risk_profile = NucleusApi::RiskProfile.new # RiskProfile | risk_profile
 
 risk_profile_id = 'risk_profile_id_example' # String | UUID risk_profile_id
 
@@ -275,7 +275,7 @@ begin
   #Update a Risk Profile
   result = api_instance.update_risk_profile_using_put(risk_profile, risk_profile_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RiskProfileApi->update_risk_profile_using_put: #{e}"
 end
 ```

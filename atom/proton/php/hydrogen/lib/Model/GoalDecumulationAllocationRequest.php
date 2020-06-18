@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\proton\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\proton\ObjectSerializer;
 
 /**
  * GoalDecumulationAllocationRequest Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -78,7 +78,7 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
         'use_proxy_data' => 'bool',
         'thresh' => 'float',
         'a_horizon' => 'int',
-        'withdrawal_config' => '\com\hydrogen\Model\GoalWithdrawalConfig[]',
+        'withdrawal_config' => '\com\hydrogen\proton\Model\GoalWithdrawalConfig[]',
         'curr_inv' => 'float',
         'remove_outliers' => 'bool',
         'allocation_priority' => 'string',
@@ -1189,7 +1189,7 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     /**
      * Gets withdrawal_config
      *
-     * @return \com\hydrogen\Model\GoalWithdrawalConfig[]
+     * @return \com\hydrogen\proton\Model\GoalWithdrawalConfig[]
      */
     public function getWithdrawalConfig()
     {
@@ -1199,7 +1199,7 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets withdrawal_config
      *
-     * @param \com\hydrogen\Model\GoalWithdrawalConfig[] $withdrawal_config withdrawal_config
+     * @param \com\hydrogen\proton\Model\GoalWithdrawalConfig[] $withdrawal_config withdrawal_config
      *
      * @return $this
      */

@@ -1,4 +1,4 @@
-# AtomApi::NotificationApi
+# NucleusApi::NotificationApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -31,9 +31,9 @@ Create a new Notification Client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -42,16 +42,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
-notification_client = AtomApi::NotificationClient.new # NotificationClient | notificationClient
+notification_client = NucleusApi::NotificationClient.new # NotificationClient | notificationClient
 
 
 begin
   #Create a Notification Client
   result = api_instance.create_notification_client_using_post(notification_client)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->create_notification_client_using_post: #{e}"
 end
 ```
@@ -87,9 +87,9 @@ Create a new Notification Setting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -98,16 +98,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
-notification_setting = AtomApi::NotificationSetting.new # NotificationSetting | notificationSetting
+notification_setting = NucleusApi::NotificationSetting.new # NotificationSetting | notificationSetting
 
 
 begin
   #Create a Notification Setting
   result = api_instance.create_notification_setting_using_post(notification_setting)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->create_notification_setting_using_post: #{e}"
 end
 ```
@@ -143,9 +143,9 @@ Create a new Notification.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -154,16 +154,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
-notification = AtomApi::Notification.new # Notification | notification
+notification = NucleusApi::Notification.new # Notification | notification
 
 
 begin
   #Create a Notification
   result = api_instance.create_notification_using_post(notification)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->create_notification_using_post: #{e}"
 end
 ```
@@ -199,9 +199,9 @@ Permanently Delete Notification Client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -210,7 +210,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 notification_client_id = 'notification_client_id_example' # String | notification_client_id
 
@@ -218,7 +218,7 @@ notification_client_id = 'notification_client_id_example' # String | notificatio
 begin
   #Delete a Notification Client
   api_instance.delete_notification_client_using_delete(notification_client_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->delete_notification_client_using_delete: #{e}"
 end
 ```
@@ -254,9 +254,9 @@ Permanently Delete Notification Setting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -265,7 +265,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 notification_setting_id = 'notification_setting_id_example' # String | notification_setting_id
 
@@ -273,7 +273,7 @@ notification_setting_id = 'notification_setting_id_example' # String | notificat
 begin
   #Delete a Notification Setting
   api_instance.delete_notification_setting_using_delete(notification_setting_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->delete_notification_setting_using_delete: #{e}"
 end
 ```
@@ -309,9 +309,9 @@ Permanently Delete a Notification.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -320,7 +320,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 notification_id = 'notification_id_example' # String | UUID notification_id
 
@@ -328,7 +328,7 @@ notification_id = 'notification_id_example' # String | UUID notification_id
 begin
   #Delete a Notification
   api_instance.delete_notification_using_delete(notification_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->delete_notification_using_delete: #{e}"
 end
 ```
@@ -364,9 +364,9 @@ Get All Notification.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -375,7 +375,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -389,7 +389,7 @@ begin
   #Get All Notification
   result = api_instance.get_notification_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->get_notification_all_using_get: #{e}"
 end
 ```
@@ -429,9 +429,9 @@ List all Notification Client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -440,7 +440,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -454,7 +454,7 @@ begin
   #List all Notification Client
   result = api_instance.get_notification_client_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->get_notification_client_all_using_get: #{e}"
 end
 ```
@@ -494,9 +494,9 @@ Retrieve a  Notification Client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -505,7 +505,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 notification_client_id = 'notification_client_id_example' # String | notification_client_id
 
@@ -514,7 +514,7 @@ begin
   #Retrieve a Notification Client
   result = api_instance.get_notification_client_using_get(notification_client_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->get_notification_client_using_get: #{e}"
 end
 ```
@@ -550,9 +550,9 @@ List all Notification Setting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -561,7 +561,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -575,7 +575,7 @@ begin
   #List all Notification Setting
   result = api_instance.get_notification_setting_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->get_notification_setting_all_using_get: #{e}"
 end
 ```
@@ -615,9 +615,9 @@ Retrieve a  Notification Setting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -626,7 +626,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 notification_setting_id = 'notification_setting_id_example' # String | notification_setting_id
 
@@ -635,7 +635,7 @@ begin
   #Retrieve a Notification Setting
   result = api_instance.get_notification_setting_using_get(notification_setting_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->get_notification_setting_using_get: #{e}"
 end
 ```
@@ -671,9 +671,9 @@ Get a Notification.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -682,7 +682,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
 notification_id = 'notification_id_example' # String | notification_id
 
@@ -691,7 +691,7 @@ begin
   #Get a Notification
   result = api_instance.get_notification_using_get(notification_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->get_notification_using_get: #{e}"
 end
 ```
@@ -727,9 +727,9 @@ Update a  Notification Client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -738,9 +738,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
-notification_client = AtomApi::NotificationClient.new # NotificationClient | notification_client
+notification_client = NucleusApi::NotificationClient.new # NotificationClient | notification_client
 
 notification_client_id = 'notification_client_id_example' # String | UUID notification_client_id
 
@@ -749,7 +749,7 @@ begin
   #Update a Notification Client
   result = api_instance.update_notification_client_using_put(notification_client, notification_client_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->update_notification_client_using_put: #{e}"
 end
 ```
@@ -786,9 +786,9 @@ Update a  Notification Setting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -797,9 +797,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
-notification_setting = AtomApi::NotificationSetting.new # NotificationSetting | notification_setting
+notification_setting = NucleusApi::NotificationSetting.new # NotificationSetting | notification_setting
 
 notification_setting_id = 'notification_setting_id_example' # String | UUID notification_setting_id
 
@@ -808,7 +808,7 @@ begin
   #Update a Notification Setting
   result = api_instance.update_notification_setting_using_put(notification_setting, notification_setting_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->update_notification_setting_using_put: #{e}"
 end
 ```
@@ -845,9 +845,9 @@ Update a Notification.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -856,9 +856,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::NotificationApi.new
+api_instance = NucleusApi::NotificationApi.new
 
-notification = AtomApi::Notification.new # Notification | notification
+notification = NucleusApi::Notification.new # Notification | notification
 
 notification_id = 'notification_id_example' # String | UUID notification_id
 
@@ -867,7 +867,7 @@ begin
   #Update a Notification
   result = api_instance.update_notification_using_put(notification, notification_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling NotificationApi->update_notification_using_put: #{e}"
 end
 ```

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **secondary_id** | **string** |  | [optional] 
 **status** | **string** | SupportTicket status | [optional] 
 **subject** | **string** | SupportTicket subject | [optional] 
-**support_ticket_documents** | [**\com\hydrogen\Model\SupportTicketDocument[]**](SupportTicketDocument.md) |  | [optional] 
+**support_ticket_documents** | [**\com\hydrogen\nucleus\Model\SupportTicketDocument[]**](SupportTicketDocument.md) |  | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

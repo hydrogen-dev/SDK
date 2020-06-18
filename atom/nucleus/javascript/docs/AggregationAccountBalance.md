@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AggregationAccountBalance
+# HydrogenNucleusApi.AggregationAccountBalance
 
 ## Properties
 Name | Type | Description | Notes

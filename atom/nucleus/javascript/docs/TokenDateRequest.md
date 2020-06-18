@@ -1,4 +1,4 @@
-# HydrogenAtomApi.TokenDateRequest
+# HydrogenNucleusApi.TokenDateRequest
 
 ## Properties
 Name | Type | Description | Notes

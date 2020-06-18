@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageAuditLog
+# HydrogenNucleusApi.PageAuditLog
 
 ## Properties
 Name | Type | Description | Notes

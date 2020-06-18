@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Employment
+# HydrogenNucleusApi.Employment
 
 ## Properties
 Name | Type | Description | Notes

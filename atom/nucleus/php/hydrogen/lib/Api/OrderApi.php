@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * OrderApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,11 +93,11 @@ class OrderApi
      * Bulk orders for an account
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Order[]
+     * @return \com\hydrogen\nucleus\Model\Order[]
      */
     public function createAccountOrderBulkUsingPost($account_id, $req)
     {
@@ -111,15 +111,15 @@ class OrderApi
      * Bulk orders for an account
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Order[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountOrderBulkUsingPostWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\Order[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Order[]';
         $request = $this->createAccountOrderBulkUsingPostRequest($account_id, $req);
 
         try {
@@ -171,7 +171,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Order[]',
+                        '\com\hydrogen\nucleus\Model\Order[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -187,7 +187,7 @@ class OrderApi
      * Bulk orders for an account
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -208,14 +208,14 @@ class OrderApi
      * Bulk orders for an account
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountOrderBulkUsingPostAsyncWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\Order[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Order[]';
         $request = $this->createAccountOrderBulkUsingPostRequest($account_id, $req);
 
         return $this->client
@@ -259,7 +259,7 @@ class OrderApi
      * Create request for operation 'createAccountOrderBulkUsingPost'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -380,11 +380,11 @@ class OrderApi
      * Create buy-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createAccountOrderBuyOnlyUsingPost($account_id, $req)
     {
@@ -398,15 +398,15 @@ class OrderApi
      * Create buy-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountOrderBuyOnlyUsingPostWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderBuyOnlyUsingPostRequest($account_id, $req);
 
         try {
@@ -458,7 +458,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -474,7 +474,7 @@ class OrderApi
      * Create buy-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -495,14 +495,14 @@ class OrderApi
      * Create buy-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountOrderBuyOnlyUsingPostAsyncWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderBuyOnlyUsingPostRequest($account_id, $req);
 
         return $this->client
@@ -546,7 +546,7 @@ class OrderApi
      * Create request for operation 'createAccountOrderBuyOnlyUsingPost'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -667,11 +667,11 @@ class OrderApi
      * Create account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createAccountOrderRebalanceUsingPost($account_id, $req)
     {
@@ -685,15 +685,15 @@ class OrderApi
      * Create account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountOrderRebalanceUsingPostWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderRebalanceUsingPostRequest($account_id, $req);
 
         try {
@@ -745,7 +745,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -761,7 +761,7 @@ class OrderApi
      * Create account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -782,14 +782,14 @@ class OrderApi
      * Create account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountOrderRebalanceUsingPostAsyncWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderRebalanceUsingPostRequest($account_id, $req);
 
         return $this->client
@@ -833,7 +833,7 @@ class OrderApi
      * Create request for operation 'createAccountOrderRebalanceUsingPost'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -954,11 +954,11 @@ class OrderApi
      * Create account reconciliation order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderReconcileReturnObject
+     * @return \com\hydrogen\nucleus\Model\OrderReconcileReturnObject
      */
     public function createAccountOrderReconciliation($account_id, $req)
     {
@@ -972,15 +972,15 @@ class OrderApi
      * Create account reconciliation order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderReconcileReturnObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderReconcileReturnObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountOrderReconciliationWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderReconcileReturnObject';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderReconcileReturnObject';
         $request = $this->createAccountOrderReconciliationRequest($account_id, $req);
 
         try {
@@ -1032,7 +1032,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderReconcileReturnObject',
+                        '\com\hydrogen\nucleus\Model\OrderReconcileReturnObject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1048,7 +1048,7 @@ class OrderApi
      * Create account reconciliation order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1069,14 +1069,14 @@ class OrderApi
      * Create account reconciliation order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountOrderReconciliationAsyncWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderReconcileReturnObject';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderReconcileReturnObject';
         $request = $this->createAccountOrderReconciliationRequest($account_id, $req);
 
         return $this->client
@@ -1120,7 +1120,7 @@ class OrderApi
      * Create request for operation 'createAccountOrderReconciliation'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1241,11 +1241,11 @@ class OrderApi
      * Sell all account order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createAccountOrderSellAllUsingPost($account_id, $req)
     {
@@ -1259,15 +1259,15 @@ class OrderApi
      * Sell all account order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountOrderSellAllUsingPostWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderSellAllUsingPostRequest($account_id, $req);
 
         try {
@@ -1319,7 +1319,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1335,7 +1335,7 @@ class OrderApi
      * Sell all account order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1356,14 +1356,14 @@ class OrderApi
      * Sell all account order
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountOrderSellAllUsingPostAsyncWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderSellAllUsingPostRequest($account_id, $req);
 
         return $this->client
@@ -1407,7 +1407,7 @@ class OrderApi
      * Create request for operation 'createAccountOrderSellAllUsingPost'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1528,11 +1528,11 @@ class OrderApi
      * Create sell-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createAccountOrderSellOnlyUsingPost($account_id, $req)
     {
@@ -1546,15 +1546,15 @@ class OrderApi
      * Create sell-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountOrderSellOnlyUsingPostWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderSellOnlyUsingPostRequest($account_id, $req);
 
         try {
@@ -1606,7 +1606,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1622,7 +1622,7 @@ class OrderApi
      * Create sell-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1643,14 +1643,14 @@ class OrderApi
      * Create sell-only account rebalance orders
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccountOrderSellOnlyUsingPostAsyncWithHttpInfo($account_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createAccountOrderSellOnlyUsingPostRequest($account_id, $req);
 
         return $this->client
@@ -1694,7 +1694,7 @@ class OrderApi
      * Create request for operation 'createAccountOrderSellOnlyUsingPost'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1815,11 +1815,11 @@ class OrderApi
      * Bulk orders for a client
      *
      * @param  string $client_id client_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Order[]
+     * @return \com\hydrogen\nucleus\Model\Order[]
      */
     public function createClientOrderBulkUsingPost($client_id, $req)
     {
@@ -1833,15 +1833,15 @@ class OrderApi
      * Bulk orders for a client
      *
      * @param  string $client_id client_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Order[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createClientOrderBulkUsingPostWithHttpInfo($client_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\Order[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Order[]';
         $request = $this->createClientOrderBulkUsingPostRequest($client_id, $req);
 
         try {
@@ -1893,7 +1893,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Order[]',
+                        '\com\hydrogen\nucleus\Model\Order[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1909,7 +1909,7 @@ class OrderApi
      * Bulk orders for a client
      *
      * @param  string $client_id client_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1930,14 +1930,14 @@ class OrderApi
      * Bulk orders for a client
      *
      * @param  string $client_id client_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createClientOrderBulkUsingPostAsyncWithHttpInfo($client_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\Order[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Order[]';
         $request = $this->createClientOrderBulkUsingPostRequest($client_id, $req);
 
         return $this->client
@@ -1981,7 +1981,7 @@ class OrderApi
      * Create request for operation 'createClientOrderBulkUsingPost'
      *
      * @param  string $client_id client_id (required)
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2101,11 +2101,11 @@ class OrderApi
      *
      * Bulk orders for your firm
      *
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Order[]
+     * @return \com\hydrogen\nucleus\Model\Order[]
      */
     public function createOrderBulkUsingPost($req)
     {
@@ -2118,15 +2118,15 @@ class OrderApi
      *
      * Bulk orders for your firm
      *
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Order[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createOrderBulkUsingPostWithHttpInfo($req)
     {
-        $returnType = '\com\hydrogen\Model\Order[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Order[]';
         $request = $this->createOrderBulkUsingPostRequest($req);
 
         try {
@@ -2178,7 +2178,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Order[]',
+                        '\com\hydrogen\nucleus\Model\Order[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2193,7 +2193,7 @@ class OrderApi
      *
      * Bulk orders for your firm
      *
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2213,14 +2213,14 @@ class OrderApi
      *
      * Bulk orders for your firm
      *
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOrderBulkUsingPostAsyncWithHttpInfo($req)
     {
-        $returnType = '\com\hydrogen\Model\Order[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Order[]';
         $request = $this->createOrderBulkUsingPostRequest($req);
 
         return $this->client
@@ -2263,7 +2263,7 @@ class OrderApi
     /**
      * Create request for operation 'createOrderBulkUsingPost'
      *
-     * @param  \com\hydrogen\Model\TokenDateRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\TokenDateRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2369,11 +2369,11 @@ class OrderApi
      *
      * Create an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status_request orderStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status_request orderStatusRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderStatus
+     * @return \com\hydrogen\nucleus\Model\OrderStatus
      */
     public function createOrderStatusUsingPost($order_status_request)
     {
@@ -2386,15 +2386,15 @@ class OrderApi
      *
      * Create an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status_request orderStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status_request orderStatusRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function createOrderStatusUsingPostWithHttpInfo($order_status_request)
     {
-        $returnType = '\com\hydrogen\Model\OrderStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderStatus';
         $request = $this->createOrderStatusUsingPostRequest($order_status_request);
 
         try {
@@ -2446,7 +2446,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderStatus',
+                        '\com\hydrogen\nucleus\Model\OrderStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2461,7 +2461,7 @@ class OrderApi
      *
      * Create an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status_request orderStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status_request orderStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2481,14 +2481,14 @@ class OrderApi
      *
      * Create an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status_request orderStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status_request orderStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOrderStatusUsingPostAsyncWithHttpInfo($order_status_request)
     {
-        $returnType = '\com\hydrogen\Model\OrderStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderStatus';
         $request = $this->createOrderStatusUsingPostRequest($order_status_request);
 
         return $this->client
@@ -2531,7 +2531,7 @@ class OrderApi
     /**
      * Create request for operation 'createOrderStatusUsingPost'
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status_request orderStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status_request orderStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2637,11 +2637,11 @@ class OrderApi
      *
      * Create an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track_request orderTrackRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track_request orderTrackRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderTrack
+     * @return \com\hydrogen\nucleus\Model\OrderTrack
      */
     public function createOrderTrackUsingPost($order_track_request)
     {
@@ -2654,15 +2654,15 @@ class OrderApi
      *
      * Create an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track_request orderTrackRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track_request orderTrackRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function createOrderTrackUsingPostWithHttpInfo($order_track_request)
     {
-        $returnType = '\com\hydrogen\Model\OrderTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderTrack';
         $request = $this->createOrderTrackUsingPostRequest($order_track_request);
 
         try {
@@ -2714,7 +2714,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderTrack',
+                        '\com\hydrogen\nucleus\Model\OrderTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2729,7 +2729,7 @@ class OrderApi
      *
      * Create an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track_request orderTrackRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track_request orderTrackRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2749,14 +2749,14 @@ class OrderApi
      *
      * Create an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track_request orderTrackRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track_request orderTrackRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOrderTrackUsingPostAsyncWithHttpInfo($order_track_request)
     {
-        $returnType = '\com\hydrogen\Model\OrderTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderTrack';
         $request = $this->createOrderTrackUsingPostRequest($order_track_request);
 
         return $this->client
@@ -2799,7 +2799,7 @@ class OrderApi
     /**
      * Create request for operation 'createOrderTrackUsingPost'
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track_request orderTrackRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track_request orderTrackRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2906,11 +2906,11 @@ class OrderApi
      * Create buy-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createPortfolioOrderBuyOnlyUsingPost($portfolio_id, $req)
     {
@@ -2924,15 +2924,15 @@ class OrderApi
      * Create buy-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioOrderBuyOnlyUsingPostWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderBuyOnlyUsingPostRequest($portfolio_id, $req);
 
         try {
@@ -2984,7 +2984,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3000,7 +3000,7 @@ class OrderApi
      * Create buy-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3021,14 +3021,14 @@ class OrderApi
      * Create buy-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioOrderBuyOnlyUsingPostAsyncWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderBuyOnlyUsingPostRequest($portfolio_id, $req);
 
         return $this->client
@@ -3072,7 +3072,7 @@ class OrderApi
      * Create request for operation 'createPortfolioOrderBuyOnlyUsingPost'
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3193,11 +3193,11 @@ class OrderApi
      * Create portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createPortfolioOrderRebalanceUsingPost($portfolio_id, $req)
     {
@@ -3211,15 +3211,15 @@ class OrderApi
      * Create portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioOrderRebalanceUsingPostWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderRebalanceUsingPostRequest($portfolio_id, $req);
 
         try {
@@ -3271,7 +3271,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3287,7 +3287,7 @@ class OrderApi
      * Create portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3308,14 +3308,14 @@ class OrderApi
      * Create portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioOrderRebalanceUsingPostAsyncWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderRebalanceUsingPostRequest($portfolio_id, $req);
 
         return $this->client
@@ -3359,7 +3359,7 @@ class OrderApi
      * Create request for operation 'createPortfolioOrderRebalanceUsingPost'
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3480,11 +3480,11 @@ class OrderApi
      * Create portfolio reconciliation order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderReconcileReturnObject
+     * @return \com\hydrogen\nucleus\Model\OrderReconcileReturnObject
      */
     public function createPortfolioOrderReconciliation($portfolio_id, $req)
     {
@@ -3498,15 +3498,15 @@ class OrderApi
      * Create portfolio reconciliation order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderReconcileReturnObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderReconcileReturnObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioOrderReconciliationWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderReconcileReturnObject';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderReconcileReturnObject';
         $request = $this->createPortfolioOrderReconciliationRequest($portfolio_id, $req);
 
         try {
@@ -3558,7 +3558,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderReconcileReturnObject',
+                        '\com\hydrogen\nucleus\Model\OrderReconcileReturnObject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3574,7 +3574,7 @@ class OrderApi
      * Create portfolio reconciliation order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3595,14 +3595,14 @@ class OrderApi
      * Create portfolio reconciliation order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioOrderReconciliationAsyncWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderReconcileReturnObject';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderReconcileReturnObject';
         $request = $this->createPortfolioOrderReconciliationRequest($portfolio_id, $req);
 
         return $this->client
@@ -3646,7 +3646,7 @@ class OrderApi
      * Create request for operation 'createPortfolioOrderReconciliation'
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\OrderReconcileRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderReconcileRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3767,11 +3767,11 @@ class OrderApi
      * Sell all portfolio order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createPortfolioOrderSellAllUsingPost($portfolio_id, $req)
     {
@@ -3785,15 +3785,15 @@ class OrderApi
      * Sell all portfolio order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioOrderSellAllUsingPostWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderSellAllUsingPostRequest($portfolio_id, $req);
 
         try {
@@ -3845,7 +3845,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3861,7 +3861,7 @@ class OrderApi
      * Sell all portfolio order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3882,14 +3882,14 @@ class OrderApi
      * Sell all portfolio order
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioOrderSellAllUsingPostAsyncWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderSellAllUsingPostRequest($portfolio_id, $req);
 
         return $this->client
@@ -3933,7 +3933,7 @@ class OrderApi
      * Create request for operation 'createPortfolioOrderSellAllUsingPost'
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4054,11 +4054,11 @@ class OrderApi
      * Create sell-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderVoClone[]
+     * @return \com\hydrogen\nucleus\Model\OrderVoClone[]
      */
     public function createPortfolioOrderSellOnlyUsingPost($portfolio_id, $req)
     {
@@ -4072,15 +4072,15 @@ class OrderApi
      * Create sell-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderVoClone[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createPortfolioOrderSellOnlyUsingPostWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderSellOnlyUsingPostRequest($portfolio_id, $req);
 
         try {
@@ -4132,7 +4132,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderVoClone[]',
+                        '\com\hydrogen\nucleus\Model\OrderVoClone[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4148,7 +4148,7 @@ class OrderApi
      * Create sell-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4169,14 +4169,14 @@ class OrderApi
      * Create sell-only portfolio rebalance orders
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPortfolioOrderSellOnlyUsingPostAsyncWithHttpInfo($portfolio_id, $req)
     {
-        $returnType = '\com\hydrogen\Model\OrderVoClone[]';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderVoClone[]';
         $request = $this->createPortfolioOrderSellOnlyUsingPostRequest($portfolio_id, $req);
 
         return $this->client
@@ -4220,7 +4220,7 @@ class OrderApi
      * Create request for operation 'createPortfolioOrderSellOnlyUsingPost'
      *
      * @param  string $portfolio_id portfolio_id (required)
-     * @param  \com\hydrogen\Model\AccountPortfolioRebalanceRequest $req req (required)
+     * @param  \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest $req req (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4342,7 +4342,7 @@ class OrderApi
      *
      * @param  string $order_status_id UUID order_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4358,7 +4358,7 @@ class OrderApi
      *
      * @param  string $order_status_id UUID order_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4578,7 +4578,7 @@ class OrderApi
      *
      * @param  string $order_track_id UUID order_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4594,7 +4594,7 @@ class OrderApi
      *
      * @param  string $order_track_id UUID order_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4814,7 +4814,7 @@ class OrderApi
      *
      * @param  string $order_id UUID order_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4830,7 +4830,7 @@ class OrderApi
      *
      * @param  string $order_id UUID order_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5048,11 +5048,11 @@ class OrderApi
      *
      * Create an order record
      *
-     * @param  \com\hydrogen\Model\Order $order_info_request orderInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order_info_request orderInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Order
+     * @return \com\hydrogen\nucleus\Model\Order
      */
     public function getOrderAllUsingGet($order_info_request)
     {
@@ -5065,15 +5065,15 @@ class OrderApi
      *
      * Create an order record
      *
-     * @param  \com\hydrogen\Model\Order $order_info_request orderInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order_info_request orderInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderAllUsingGetWithHttpInfo($order_info_request)
     {
-        $returnType = '\com\hydrogen\Model\Order';
+        $returnType = '\com\hydrogen\nucleus\Model\Order';
         $request = $this->getOrderAllUsingGetRequest($order_info_request);
 
         try {
@@ -5125,7 +5125,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Order',
+                        '\com\hydrogen\nucleus\Model\Order',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5140,7 +5140,7 @@ class OrderApi
      *
      * Create an order record
      *
-     * @param  \com\hydrogen\Model\Order $order_info_request orderInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order_info_request orderInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5160,14 +5160,14 @@ class OrderApi
      *
      * Create an order record
      *
-     * @param  \com\hydrogen\Model\Order $order_info_request orderInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order_info_request orderInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrderAllUsingGetAsyncWithHttpInfo($order_info_request)
     {
-        $returnType = '\com\hydrogen\Model\Order';
+        $returnType = '\com\hydrogen\nucleus\Model\Order';
         $request = $this->getOrderAllUsingGetRequest($order_info_request);
 
         return $this->client
@@ -5210,7 +5210,7 @@ class OrderApi
     /**
      * Create request for operation 'getOrderAllUsingGet'
      *
-     * @param  \com\hydrogen\Model\Order $order_info_request orderInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order_info_request orderInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5322,9 +5322,9 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageOrder_
+     * @return \com\hydrogen\nucleus\Model\PageOrder_
      */
     public function getOrderAllUsingGet1($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -5343,13 +5343,13 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageOrder_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageOrder_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderAllUsingGet1WithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrder_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrder_';
         $request = $this->getOrderAllUsingGet1Request($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -5401,7 +5401,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageOrder_',
+                        '\com\hydrogen\nucleus\Model\PageOrder_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5451,7 +5451,7 @@ class OrderApi
      */
     public function getOrderAllUsingGet1AsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrder_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrder_';
         $request = $this->getOrderAllUsingGet1Request($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5621,9 +5621,9 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageOrderBulk_
+     * @return \com\hydrogen\nucleus\Model\PageOrderBulk_
      */
     public function getOrderBulkAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -5642,13 +5642,13 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageOrderBulk_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageOrderBulk_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderBulkAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrderBulk_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrderBulk_';
         $request = $this->getOrderBulkAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -5700,7 +5700,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageOrderBulk_',
+                        '\com\hydrogen\nucleus\Model\PageOrderBulk_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5750,7 +5750,7 @@ class OrderApi
      */
     public function getOrderBulkAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrderBulk_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrderBulk_';
         $request = $this->getOrderBulkAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5920,9 +5920,9 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageOrderStatus_
+     * @return \com\hydrogen\nucleus\Model\PageOrderStatus_
      */
     public function getOrderStatusAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -5941,13 +5941,13 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageOrderStatus_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageOrderStatus_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderStatusAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrderStatus_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrderStatus_';
         $request = $this->getOrderStatusAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -5999,7 +5999,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageOrderStatus_',
+                        '\com\hydrogen\nucleus\Model\PageOrderStatus_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6049,7 +6049,7 @@ class OrderApi
      */
     public function getOrderStatusAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrderStatus_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrderStatus_';
         $request = $this->getOrderStatusAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -6215,9 +6215,9 @@ class OrderApi
      *
      * @param  string $order_status_id UUID order_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderStatus
+     * @return \com\hydrogen\nucleus\Model\OrderStatus
      */
     public function getOrderStatusUsingGet($order_status_id)
     {
@@ -6232,13 +6232,13 @@ class OrderApi
      *
      * @param  string $order_status_id UUID order_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderStatusUsingGetWithHttpInfo($order_status_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderStatus';
         $request = $this->getOrderStatusUsingGetRequest($order_status_id);
 
         try {
@@ -6290,7 +6290,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderStatus',
+                        '\com\hydrogen\nucleus\Model\OrderStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6332,7 +6332,7 @@ class OrderApi
      */
     public function getOrderStatusUsingGetAsyncWithHttpInfo($order_status_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderStatus';
         $request = $this->getOrderStatusUsingGetRequest($order_status_id);
 
         return $this->client
@@ -6492,9 +6492,9 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageOrderTrack_
+     * @return \com\hydrogen\nucleus\Model\PageOrderTrack_
      */
     public function getOrderTrackAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -6513,13 +6513,13 @@ class OrderApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageOrderTrack_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageOrderTrack_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderTrackAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrderTrack_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrderTrack_';
         $request = $this->getOrderTrackAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -6571,7 +6571,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageOrderTrack_',
+                        '\com\hydrogen\nucleus\Model\PageOrderTrack_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6621,7 +6621,7 @@ class OrderApi
      */
     public function getOrderTrackAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageOrderTrack_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageOrderTrack_';
         $request = $this->getOrderTrackAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -6787,9 +6787,9 @@ class OrderApi
      *
      * @param  string $order_track_id UUID order_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderTrack
+     * @return \com\hydrogen\nucleus\Model\OrderTrack
      */
     public function getOrderTrackUsingGet($order_track_id)
     {
@@ -6804,13 +6804,13 @@ class OrderApi
      *
      * @param  string $order_track_id UUID order_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderTrackUsingGetWithHttpInfo($order_track_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderTrack';
         $request = $this->getOrderTrackUsingGetRequest($order_track_id);
 
         try {
@@ -6862,7 +6862,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderTrack',
+                        '\com\hydrogen\nucleus\Model\OrderTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6904,7 +6904,7 @@ class OrderApi
      */
     public function getOrderTrackUsingGetAsyncWithHttpInfo($order_track_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderTrack';
         $request = $this->getOrderTrackUsingGetRequest($order_track_id);
 
         return $this->client
@@ -7060,9 +7060,9 @@ class OrderApi
      *
      * @param  string $order_id UUID order_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Order
+     * @return \com\hydrogen\nucleus\Model\Order
      */
     public function getOrderUsingGet($order_id)
     {
@@ -7077,13 +7077,13 @@ class OrderApi
      *
      * @param  string $order_id UUID order_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderUsingGetWithHttpInfo($order_id)
     {
-        $returnType = '\com\hydrogen\Model\Order';
+        $returnType = '\com\hydrogen\nucleus\Model\Order';
         $request = $this->getOrderUsingGetRequest($order_id);
 
         try {
@@ -7135,7 +7135,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Order',
+                        '\com\hydrogen\nucleus\Model\Order',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7177,7 +7177,7 @@ class OrderApi
      */
     public function getOrderUsingGetAsyncWithHttpInfo($order_id)
     {
-        $returnType = '\com\hydrogen\Model\Order';
+        $returnType = '\com\hydrogen\nucleus\Model\Order';
         $request = $this->getOrderUsingGetRequest($order_id);
 
         return $this->client
@@ -7331,12 +7331,12 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status order_status (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderStatus
+     * @return \com\hydrogen\nucleus\Model\OrderStatus
      */
     public function updateOrderStatusUsingPut($order_status, $order_status_id)
     {
@@ -7349,16 +7349,16 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status order_status (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateOrderStatusUsingPutWithHttpInfo($order_status, $order_status_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderStatus';
         $request = $this->updateOrderStatusUsingPutRequest($order_status, $order_status_id);
 
         try {
@@ -7410,7 +7410,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderStatus',
+                        '\com\hydrogen\nucleus\Model\OrderStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7425,7 +7425,7 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status order_status (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7446,7 +7446,7 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status order_status (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7454,7 +7454,7 @@ class OrderApi
      */
     public function updateOrderStatusUsingPutAsyncWithHttpInfo($order_status, $order_status_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderStatus';
         $request = $this->updateOrderStatusUsingPutRequest($order_status, $order_status_id);
 
         return $this->client
@@ -7497,7 +7497,7 @@ class OrderApi
     /**
      * Create request for operation 'updateOrderStatusUsingPut'
      *
-     * @param  \com\hydrogen\Model\OrderStatus $order_status order_status (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7618,12 +7618,12 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track order_track (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\OrderTrack
+     * @return \com\hydrogen\nucleus\Model\OrderTrack
      */
     public function updateOrderTrackUsingPut($order_track, $order_track_id)
     {
@@ -7636,16 +7636,16 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track order_track (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\OrderTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\OrderTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateOrderTrackUsingPutWithHttpInfo($order_track, $order_track_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderTrack';
         $request = $this->updateOrderTrackUsingPutRequest($order_track, $order_track_id);
 
         try {
@@ -7697,7 +7697,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\OrderTrack',
+                        '\com\hydrogen\nucleus\Model\OrderTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7712,7 +7712,7 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track order_track (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7733,7 +7733,7 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track order_track (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7741,7 +7741,7 @@ class OrderApi
      */
     public function updateOrderTrackUsingPutAsyncWithHttpInfo($order_track, $order_track_id)
     {
-        $returnType = '\com\hydrogen\Model\OrderTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\OrderTrack';
         $request = $this->updateOrderTrackUsingPutRequest($order_track, $order_track_id);
 
         return $this->client
@@ -7784,7 +7784,7 @@ class OrderApi
     /**
      * Create request for operation 'updateOrderTrackUsingPut'
      *
-     * @param  \com\hydrogen\Model\OrderTrack $order_track order_track (required)
+     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7905,12 +7905,12 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\Model\Order $order order (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Order
+     * @return \com\hydrogen\nucleus\Model\Order
      */
     public function updateOrderUsingPut($order, $order_id)
     {
@@ -7923,16 +7923,16 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\Model\Order $order order (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateOrderUsingPutWithHttpInfo($order, $order_id)
     {
-        $returnType = '\com\hydrogen\Model\Order';
+        $returnType = '\com\hydrogen\nucleus\Model\Order';
         $request = $this->updateOrderUsingPutRequest($order, $order_id);
 
         try {
@@ -7984,7 +7984,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Order',
+                        '\com\hydrogen\nucleus\Model\Order',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7999,7 +7999,7 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\Model\Order $order order (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8020,7 +8020,7 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\Model\Order $order order (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8028,7 +8028,7 @@ class OrderApi
      */
     public function updateOrderUsingPutAsyncWithHttpInfo($order, $order_id)
     {
-        $returnType = '\com\hydrogen\Model\Order';
+        $returnType = '\com\hydrogen\nucleus\Model\Order';
         $request = $this->updateOrderUsingPutRequest($order, $order_id);
 
         return $this->client
@@ -8071,7 +8071,7 @@ class OrderApi
     /**
      * Create request for operation 'updateOrderUsingPut'
      *
-     * @param  \com\hydrogen\Model\Order $order order (required)
+     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \InvalidArgumentException

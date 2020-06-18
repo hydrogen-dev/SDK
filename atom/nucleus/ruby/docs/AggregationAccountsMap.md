@@ -1,4 +1,4 @@
-# AtomApi::AggregationAccountsMap
+# NucleusApi::AggregationAccountsMap
 
 ## Properties
 Name | Type | Description | Notes

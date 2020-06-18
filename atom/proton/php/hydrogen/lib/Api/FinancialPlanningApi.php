@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\proton\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\proton\ApiException;
+use com\hydrogen\proton\Configuration;
+use com\hydrogen\proton\HeaderSelector;
+use com\hydrogen\proton\ObjectSerializer;
 
 /**
  * FinancialPlanningApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class FinancialPlanningApi
      *
      * Education Calculator - Annual Cost
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -109,9 +109,9 @@ class FinancialPlanningApi
      *
      * Education Calculator - Annual Cost
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -184,7 +184,7 @@ class FinancialPlanningApi
      *
      * Education Calculator - Annual Cost
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,7 +204,7 @@ class FinancialPlanningApi
      *
      * Education Calculator - Annual Cost
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -254,7 +254,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'educationCalculatorAnnualCost'
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest $education_calculator_annual_cost_request Request payload for Education Calculator - Annual Cost (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,9 +360,9 @@ class FinancialPlanningApi
      *
      * Education Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -377,9 +377,9 @@ class FinancialPlanningApi
      *
      * Education Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -452,7 +452,7 @@ class FinancialPlanningApi
      *
      * Education Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,7 +472,7 @@ class FinancialPlanningApi
      *
      * Education Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -522,7 +522,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'educationCalculatorDepositAmount'
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest $education_calculator_deposit_amount_request Request payload for Education Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,9 +628,9 @@ class FinancialPlanningApi
      *
      * Education Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -645,9 +645,9 @@ class FinancialPlanningApi
      *
      * Education Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -720,7 +720,7 @@ class FinancialPlanningApi
      *
      * Education Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,7 +740,7 @@ class FinancialPlanningApi
      *
      * Education Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -790,7 +790,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'educationCalculatorPercentCovered'
      *
-     * @param  \com\hydrogen\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest $education_calculator_percent_covered_request Request payload for Education Calculator - Percent Covered (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,9 +896,9 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Down Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -913,9 +913,9 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Down Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -988,7 +988,7 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Down Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,7 +1008,7 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Down Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1058,7 +1058,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'mortgageCalculatorDownPayment'
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest $mortgage_calculator_down_payment_request Request payload for Mortgage Calculator - Down Payment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,9 +1164,9 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Home Price
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1181,9 +1181,9 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Home Price
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1256,7 +1256,7 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Home Price
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,7 +1276,7 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Home Price
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1326,7 +1326,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'mortgageCalculatorHomePrice'
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest $mortgage_calculator_home_price_request Request payload for Mortgage Calculator - Home Price (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1432,9 +1432,9 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Periodic Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1449,9 +1449,9 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Periodic Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1524,7 +1524,7 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Periodic Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1544,7 +1544,7 @@ class FinancialPlanningApi
      *
      * Mortgage Calculator - Periodic Payment
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1594,7 +1594,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'mortgageCalculatorPeriodicPayment'
      *
-     * @param  \com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
+     * @param  \com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest $mortgage_calculator_periodic_payment_request Request payload for Mortgage Calculator - Periodic Payment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1700,9 +1700,9 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1717,9 +1717,9 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1792,7 +1792,7 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1812,7 +1812,7 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1862,7 +1862,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'purchaseCalculatorAmount'
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest $purchase_calculator_amount_request Request payload for Purchase Calculator - Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1968,9 +1968,9 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1985,9 +1985,9 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -2060,7 +2060,7 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2080,7 +2080,7 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2130,7 +2130,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'purchaseCalculatorDepositAmount'
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest $purchase_calculator_deposit_amount_request Request payload for Purchase Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2236,9 +2236,9 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Horizon
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -2253,9 +2253,9 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Horizon
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -2328,7 +2328,7 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Horizon
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2348,7 +2348,7 @@ class FinancialPlanningApi
      *
      * Purchase Calculator - Horizon
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2398,7 +2398,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'purchaseCalculatorHorizon'
      *
-     * @param  \com\hydrogen\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
+     * @param  \com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest $purchase_calculator_horizon_request Request payload for Purchase Calculator - Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2504,9 +2504,9 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -2521,9 +2521,9 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -2596,7 +2596,7 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2616,7 +2616,7 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2666,7 +2666,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'retirementCalculatorDepositAmount'
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest $retirement_calculator_deposit_amount_request Request payload for Retirement Calculator - Deposit AMount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2772,9 +2772,9 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Expenses
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -2789,9 +2789,9 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Expenses
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -2864,7 +2864,7 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Expenses
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2884,7 +2884,7 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Expenses
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2934,7 +2934,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'retirementCalculatorExpenses'
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest $retirement_calculator_expenses_request Request payload for Retirement Calculator - Expenses (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3040,9 +3040,9 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -3057,9 +3057,9 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -3132,7 +3132,7 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3152,7 +3152,7 @@ class FinancialPlanningApi
      *
      * Retirement Calculator - Percent Covered
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3202,7 +3202,7 @@ class FinancialPlanningApi
     /**
      * Create request for operation 'retirementCalculatorPercentCovered'
      *
-     * @param  \com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
+     * @param  \com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest $retirement_calculator_percent_covered_request Request payload for Retirement Calculator - Percent Covered (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -1,4 +1,4 @@
-# com\hydrogen\AggregationAccountApi
+# com\hydrogen\nucleus\AggregationAccountApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 
 # **createAggregationAccountBalanceBulkUsingPost**
-> \com\hydrogen\Model\AggregationAccountBalance[] createAggregationAccountBalanceBulkUsingPost($aggregation_account_balance)
+> \com\hydrogen\nucleus\Model\AggregationAccountBalance[] createAggregationAccountBalanceBulkUsingPost($aggregation_account_balance)
 
 Create a bulk aggregation account balance
 
@@ -44,29 +44,29 @@ Create a balance records under an aggregation accounts.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_balance = array(new \com\hydrogen\Model\AggregationAccountBalance()); // \com\hydrogen\Model\AggregationAccountBalance[] | aggregationAccountBalance
+$aggregation_account_balance = array(new \com\hydrogen\nucleus\Model\AggregationAccountBalance()); // \com\hydrogen\nucleus\Model\AggregationAccountBalance[] | aggregationAccountBalance
 
 try {
     $result = $apiInstance->createAggregationAccountBalanceBulkUsingPost($aggregation_account_balance);
@@ -81,11 +81,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_balance** | [**\com\hydrogen\Model\AggregationAccountBalance[]**](../Model/AggregationAccountBalance.md)| aggregationAccountBalance |
+ **aggregation_account_balance** | [**\com\hydrogen\nucleus\Model\AggregationAccountBalance[]**](../Model/AggregationAccountBalance.md)| aggregationAccountBalance |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountBalance[]**](../Model/AggregationAccountBalance.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountBalance[]**](../Model/AggregationAccountBalance.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAggregationAccountBalanceUsingPost**
-> \com\hydrogen\Model\AggregationAccountBalance createAggregationAccountBalanceUsingPost($aggregation_account_balance)
+> \com\hydrogen\nucleus\Model\AggregationAccountBalance createAggregationAccountBalanceUsingPost($aggregation_account_balance)
 
 Create an aggregation account balance
 
@@ -108,29 +108,29 @@ Create a balance record under an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_balance = new \com\hydrogen\Model\AggregationAccountBalance(); // \com\hydrogen\Model\AggregationAccountBalance | aggregationAccountBalance
+$aggregation_account_balance = new \com\hydrogen\nucleus\Model\AggregationAccountBalance(); // \com\hydrogen\nucleus\Model\AggregationAccountBalance | aggregationAccountBalance
 
 try {
     $result = $apiInstance->createAggregationAccountBalanceUsingPost($aggregation_account_balance);
@@ -145,11 +145,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_balance** | [**\com\hydrogen\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)| aggregationAccountBalance |
+ **aggregation_account_balance** | [**\com\hydrogen\nucleus\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)| aggregationAccountBalance |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAggregationAccountBulkUsingPost**
-> \com\hydrogen\Model\AggregationAccount[] createAggregationAccountBulkUsingPost($aggregation_account_list)
+> \com\hydrogen\nucleus\Model\AggregationAccount[] createAggregationAccountBulkUsingPost($aggregation_account_list)
 
 Create a bulk aggregation account
 
@@ -172,29 +172,29 @@ Create a bulk aggregation account under a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_list = array(new \com\hydrogen\Model\AggregationAccount()); // \com\hydrogen\Model\AggregationAccount[] | aggregationAccountList
+$aggregation_account_list = array(new \com\hydrogen\nucleus\Model\AggregationAccount()); // \com\hydrogen\nucleus\Model\AggregationAccount[] | aggregationAccountList
 
 try {
     $result = $apiInstance->createAggregationAccountBulkUsingPost($aggregation_account_list);
@@ -209,11 +209,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_list** | [**\com\hydrogen\Model\AggregationAccount[]**](../Model/AggregationAccount.md)| aggregationAccountList |
+ **aggregation_account_list** | [**\com\hydrogen\nucleus\Model\AggregationAccount[]**](../Model/AggregationAccount.md)| aggregationAccountList |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccount[]**](../Model/AggregationAccount.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccount[]**](../Model/AggregationAccount.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAggregationAccountHoldingBulkUsingPost**
-> \com\hydrogen\Model\AggregationAccountHolding[] createAggregationAccountHoldingBulkUsingPost($aggregation_transaction)
+> \com\hydrogen\nucleus\Model\AggregationAccountHolding[] createAggregationAccountHoldingBulkUsingPost($aggregation_transaction)
 
 Create a bulk aggregation account holding
 
@@ -236,29 +236,29 @@ Create a bulk aggregation account holding.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_transaction = array(new \com\hydrogen\Model\AggregationAccountHolding()); // \com\hydrogen\Model\AggregationAccountHolding[] | aggregationTransaction
+$aggregation_transaction = array(new \com\hydrogen\nucleus\Model\AggregationAccountHolding()); // \com\hydrogen\nucleus\Model\AggregationAccountHolding[] | aggregationTransaction
 
 try {
     $result = $apiInstance->createAggregationAccountHoldingBulkUsingPost($aggregation_transaction);
@@ -273,11 +273,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_transaction** | [**\com\hydrogen\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)| aggregationTransaction |
+ **aggregation_transaction** | [**\com\hydrogen\nucleus\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)| aggregationTransaction |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAggregationAccountHoldingUsingPost**
-> \com\hydrogen\Model\AggregationAccountHolding createAggregationAccountHoldingUsingPost($aggregation_account_holding)
+> \com\hydrogen\nucleus\Model\AggregationAccountHolding createAggregationAccountHoldingUsingPost($aggregation_account_holding)
 
 Create an aggregation account holding
 
@@ -300,29 +300,29 @@ Create a holding record under an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_holding = new \com\hydrogen\Model\AggregationAccountHolding(); // \com\hydrogen\Model\AggregationAccountHolding | aggregationAccountHolding
+$aggregation_account_holding = new \com\hydrogen\nucleus\Model\AggregationAccountHolding(); // \com\hydrogen\nucleus\Model\AggregationAccountHolding | aggregationAccountHolding
 
 try {
     $result = $apiInstance->createAggregationAccountHoldingUsingPost($aggregation_account_holding);
@@ -337,11 +337,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_holding** | [**\com\hydrogen\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)| aggregationAccountHolding |
+ **aggregation_account_holding** | [**\com\hydrogen\nucleus\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)| aggregationAccountHolding |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)
 
 ### Authorization
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAggregationAccountTransactionBulkUsingPost**
-> \com\hydrogen\Model\AggregationAccountTransaction[] createAggregationAccountTransactionBulkUsingPost($aggregation_account_transactions)
+> \com\hydrogen\nucleus\Model\AggregationAccountTransaction[] createAggregationAccountTransactionBulkUsingPost($aggregation_account_transactions)
 
 Create a bulk aggregation account transaction
 
@@ -364,29 +364,29 @@ Create a bulk transaction record under an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_transactions = array(new \com\hydrogen\Model\AggregationAccountTransaction()); // \com\hydrogen\Model\AggregationAccountTransaction[] | aggregationAccountTransactions
+$aggregation_account_transactions = array(new \com\hydrogen\nucleus\Model\AggregationAccountTransaction()); // \com\hydrogen\nucleus\Model\AggregationAccountTransaction[] | aggregationAccountTransactions
 
 try {
     $result = $apiInstance->createAggregationAccountTransactionBulkUsingPost($aggregation_account_transactions);
@@ -401,11 +401,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_transactions** | [**\com\hydrogen\Model\AggregationAccountTransaction[]**](../Model/AggregationAccountTransaction.md)| aggregationAccountTransactions |
+ **aggregation_account_transactions** | [**\com\hydrogen\nucleus\Model\AggregationAccountTransaction[]**](../Model/AggregationAccountTransaction.md)| aggregationAccountTransactions |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountTransaction[]**](../Model/AggregationAccountTransaction.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountTransaction[]**](../Model/AggregationAccountTransaction.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAggregationAccountTransactionUsingPost**
-> \com\hydrogen\Model\AggregationAccountTransaction createAggregationAccountTransactionUsingPost($aggregation_account_transaction)
+> \com\hydrogen\nucleus\Model\AggregationAccountTransaction createAggregationAccountTransactionUsingPost($aggregation_account_transaction)
 
 Create an aggregation account transaction
 
@@ -428,29 +428,29 @@ Create a transaction record under an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_transaction = new \com\hydrogen\Model\AggregationAccountTransaction(); // \com\hydrogen\Model\AggregationAccountTransaction | aggregationAccountTransaction
+$aggregation_account_transaction = new \com\hydrogen\nucleus\Model\AggregationAccountTransaction(); // \com\hydrogen\nucleus\Model\AggregationAccountTransaction | aggregationAccountTransaction
 
 try {
     $result = $apiInstance->createAggregationAccountTransactionUsingPost($aggregation_account_transaction);
@@ -465,11 +465,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_transaction** | [**\com\hydrogen\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)| aggregationAccountTransaction |
+ **aggregation_account_transaction** | [**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)| aggregationAccountTransaction |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
 
 ### Authorization
 
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAggregationAccountUsingPost**
-> \com\hydrogen\Model\AggregationAccount createAggregationAccountUsingPost($aggregation_account)
+> \com\hydrogen\nucleus\Model\AggregationAccount createAggregationAccountUsingPost($aggregation_account)
 
 Create an aggregation account
 
@@ -492,29 +492,29 @@ Create an aggregation account under a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account = new \com\hydrogen\Model\AggregationAccount(); // \com\hydrogen\Model\AggregationAccount | aggregationAccount
+$aggregation_account = new \com\hydrogen\nucleus\Model\AggregationAccount(); // \com\hydrogen\nucleus\Model\AggregationAccount | aggregationAccount
 
 try {
     $result = $apiInstance->createAggregationAccountUsingPost($aggregation_account);
@@ -529,11 +529,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account** | [**\com\hydrogen\Model\AggregationAccount**](../Model/AggregationAccount.md)| aggregationAccount |
+ **aggregation_account** | [**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)| aggregationAccount |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccount**](../Model/AggregationAccount.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)
 
 ### Authorization
 
@@ -556,23 +556,23 @@ Permanently delete a balance record for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -619,23 +619,23 @@ Permanently delete a holding record for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -673,7 +673,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAggregationAccountTransactionUsingDelete**
-> \com\hydrogen\Model\AggregationAccountTransaction deleteAggregationAccountTransactionUsingDelete($aggregation_account_transaction_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountTransaction deleteAggregationAccountTransactionUsingDelete($aggregation_account_transaction_id)
 
 Delete an aggregation account transaction
 
@@ -682,23 +682,23 @@ Permanently delete a transaction record for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
 
 ### Authorization
 
@@ -746,23 +746,23 @@ Permanently delete an aggregation account under a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -800,7 +800,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountAggregateDataUsingGet**
-> \com\hydrogen\Model\AggregationAccountAggregateDataVO getAggregationAccountAggregateDataUsingGet($aggregation_account_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO getAggregationAccountAggregateDataUsingGet($aggregation_account_id)
 
 Retrieve an aggregation account aggregate data
 
@@ -809,23 +809,23 @@ Retrieve the information for a specific aggregation account associated with a cl
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -850,7 +850,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountAggregateDataVO**](../Model/AggregationAccountAggregateDataVO.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO**](../Model/AggregationAccountAggregateDataVO.md)
 
 ### Authorization
 
@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountAllUsingGet**
-> \com\hydrogen\Model\PageAggregationAccount_ getAggregationAccountAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAggregationAccount_ getAggregationAccountAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all aggregation accounts
 
@@ -873,23 +873,23 @@ Get information for all aggregation accounts for all clients defined for your fi
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAggregationAccount_**](../Model/PageAggregationAccount_.md)
+[**\com\hydrogen\nucleus\Model\PageAggregationAccount_**](../Model/PageAggregationAccount_.md)
 
 ### Authorization
 
@@ -936,7 +936,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountBalanceAllUsingGet**
-> \com\hydrogen\Model\PageAggregationAccountBalance_ getAggregationAccountBalanceAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAggregationAccountBalance_ getAggregationAccountBalanceAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all aggregation account balances
 
@@ -945,23 +945,23 @@ Get all of the balance records for all aggregation accounts defined for your fir
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -994,7 +994,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAggregationAccountBalance_**](../Model/PageAggregationAccountBalance_.md)
+[**\com\hydrogen\nucleus\Model\PageAggregationAccountBalance_**](../Model/PageAggregationAccountBalance_.md)
 
 ### Authorization
 
@@ -1008,7 +1008,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountBalanceUsingGet**
-> \com\hydrogen\Model\AggregationAccountBalance getAggregationAccountBalanceUsingGet($aggregation_account_balance_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountBalance getAggregationAccountBalanceUsingGet($aggregation_account_balance_id)
 
 Retrieve an aggregation account balance
 
@@ -1017,23 +1017,23 @@ Retrieve the information for a specific balance record for an aggregation accoun
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1058,7 +1058,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)
 
 ### Authorization
 
@@ -1072,7 +1072,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountHoldingAllUsingGet**
-> \com\hydrogen\Model\PageAggregationAccountHolding_ getAggregationAccountHoldingAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAggregationAccountHolding_ getAggregationAccountHoldingAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all aggregation account holdings
 
@@ -1081,23 +1081,23 @@ Get all of the holding records for all aggregation accounts defined for your fir
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1130,7 +1130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAggregationAccountHolding_**](../Model/PageAggregationAccountHolding_.md)
+[**\com\hydrogen\nucleus\Model\PageAggregationAccountHolding_**](../Model/PageAggregationAccountHolding_.md)
 
 ### Authorization
 
@@ -1144,7 +1144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountHoldingUsingGet**
-> \com\hydrogen\Model\AggregationAccountHolding getAggregationAccountHoldingUsingGet($aggregation_account_holding_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountHolding getAggregationAccountHoldingUsingGet($aggregation_account_holding_id)
 
 Retrieve an aggregation account holding
 
@@ -1153,23 +1153,23 @@ Retrieve the information for a specific holding record for an aggregation accoun
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1194,7 +1194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)
 
 ### Authorization
 
@@ -1208,7 +1208,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountOverviewUsingGet**
-> \com\hydrogen\Model\AggregationDataForClientParentResponseVO getAggregationAccountOverviewUsingGet($client_id)
+> \com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO getAggregationAccountOverviewUsingGet($client_id)
 
 Retrieve an aggregation account aggregate data
 
@@ -1217,23 +1217,23 @@ Retrieve the information for a specific aggregation account with aggregate data 
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1258,7 +1258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationDataForClientParentResponseVO**](../Model/AggregationDataForClientParentResponseVO.md)
+[**\com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO**](../Model/AggregationDataForClientParentResponseVO.md)
 
 ### Authorization
 
@@ -1272,7 +1272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountTransactionAllUsingGet**
-> \com\hydrogen\Model\PageAggregationAccountTransaction_ getAggregationAccountTransactionAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_ getAggregationAccountTransactionAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all aggregation account transactions
 
@@ -1281,23 +1281,23 @@ Get all of the transaction records for all aggregation accounts defined for your
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1330,7 +1330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAggregationAccountTransaction_**](../Model/PageAggregationAccountTransaction_.md)
+[**\com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_**](../Model/PageAggregationAccountTransaction_.md)
 
 ### Authorization
 
@@ -1344,7 +1344,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountTransactionUsingGet**
-> \com\hydrogen\Model\AggregationAccountTransaction getAggregationAccountTransactionUsingGet($aggregation_account_transaction_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountTransaction getAggregationAccountTransactionUsingGet($aggregation_account_transaction_id)
 
 Retrieve an aggregation account transaction
 
@@ -1353,23 +1353,23 @@ Retrieve the information for a specific transaction record for an aggregation ac
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1394,7 +1394,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
 
 ### Authorization
 
@@ -1408,7 +1408,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountUsingGet**
-> \com\hydrogen\Model\AggregationAccount getAggregationAccountUsingGet($aggregation_account_id)
+> \com\hydrogen\nucleus\Model\AggregationAccount getAggregationAccountUsingGet($aggregation_account_id)
 
 Retrieve an aggregation account
 
@@ -1417,23 +1417,23 @@ Retrieve the information for a specific aggregation account associated with a cl
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1458,7 +1458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccount**](../Model/AggregationAccount.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)
 
 ### Authorization
 
@@ -1472,7 +1472,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAggregationAccountBalanceUsingPut**
-> \com\hydrogen\Model\AggregationAccountBalance updateAggregationAccountBalanceUsingPut($aggregation_account_balance, $aggregation_account_balance_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountBalance updateAggregationAccountBalanceUsingPut($aggregation_account_balance, $aggregation_account_balance_id)
 
 Update an aggregation account balance
 
@@ -1481,29 +1481,29 @@ Update a balance record for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_balance = new \com\hydrogen\Model\AggregationAccountBalance(); // \com\hydrogen\Model\AggregationAccountBalance | aggregation_account_balance
+$aggregation_account_balance = new \com\hydrogen\nucleus\Model\AggregationAccountBalance(); // \com\hydrogen\nucleus\Model\AggregationAccountBalance | aggregation_account_balance
 $aggregation_account_balance_id = "aggregation_account_balance_id_example"; // string | UUID aggregation_account_balance_id
 
 try {
@@ -1519,12 +1519,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_balance** | [**\com\hydrogen\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)| aggregation_account_balance |
+ **aggregation_account_balance** | [**\com\hydrogen\nucleus\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)| aggregation_account_balance |
  **aggregation_account_balance_id** | [**string**](../Model/.md)| UUID aggregation_account_balance_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)
 
 ### Authorization
 
@@ -1538,7 +1538,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAggregationAccountBulkUsingPut**
-> \com\hydrogen\Model\AggregationAccount updateAggregationAccountBulkUsingPut($aggregation_account_list)
+> \com\hydrogen\nucleus\Model\AggregationAccount updateAggregationAccountBulkUsingPut($aggregation_account_list)
 
 Update a bulk aggregation account
 
@@ -1547,29 +1547,29 @@ Update a bulk aggregation account under a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_list = array(new \com\hydrogen\Model\AggregationAccount()); // \com\hydrogen\Model\AggregationAccount[] | aggregationAccountList
+$aggregation_account_list = array(new \com\hydrogen\nucleus\Model\AggregationAccount()); // \com\hydrogen\nucleus\Model\AggregationAccount[] | aggregationAccountList
 
 try {
     $result = $apiInstance->updateAggregationAccountBulkUsingPut($aggregation_account_list);
@@ -1584,11 +1584,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_list** | [**\com\hydrogen\Model\AggregationAccount[]**](../Model/AggregationAccount.md)| aggregationAccountList |
+ **aggregation_account_list** | [**\com\hydrogen\nucleus\Model\AggregationAccount[]**](../Model/AggregationAccount.md)| aggregationAccountList |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccount**](../Model/AggregationAccount.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)
 
 ### Authorization
 
@@ -1602,7 +1602,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAggregationAccountHoldingBulkUsingPut**
-> \com\hydrogen\Model\AggregationAccountHolding[] updateAggregationAccountHoldingBulkUsingPut($aggregation_account_holding)
+> \com\hydrogen\nucleus\Model\AggregationAccountHolding[] updateAggregationAccountHoldingBulkUsingPut($aggregation_account_holding)
 
 Update an bulk aggregation account holding
 
@@ -1611,29 +1611,29 @@ Update a bulk holding record for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_holding = array(new \com\hydrogen\Model\AggregationAccountHolding()); // \com\hydrogen\Model\AggregationAccountHolding[] | aggregationAccountHolding
+$aggregation_account_holding = array(new \com\hydrogen\nucleus\Model\AggregationAccountHolding()); // \com\hydrogen\nucleus\Model\AggregationAccountHolding[] | aggregationAccountHolding
 
 try {
     $result = $apiInstance->updateAggregationAccountHoldingBulkUsingPut($aggregation_account_holding);
@@ -1648,11 +1648,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_holding** | [**\com\hydrogen\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)| aggregationAccountHolding |
+ **aggregation_account_holding** | [**\com\hydrogen\nucleus\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)| aggregationAccountHolding |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)
 
 ### Authorization
 
@@ -1666,7 +1666,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAggregationAccountHoldingUsingPut**
-> \com\hydrogen\Model\AggregationAccountHolding updateAggregationAccountHoldingUsingPut($aggregation_account_holding, $aggregation_account_holding_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountHolding updateAggregationAccountHoldingUsingPut($aggregation_account_holding, $aggregation_account_holding_id)
 
 Update an aggregation account holding
 
@@ -1675,29 +1675,29 @@ Update a holding record for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_holding = new \com\hydrogen\Model\AggregationAccountHolding(); // \com\hydrogen\Model\AggregationAccountHolding | aggregation_account_holding
+$aggregation_account_holding = new \com\hydrogen\nucleus\Model\AggregationAccountHolding(); // \com\hydrogen\nucleus\Model\AggregationAccountHolding | aggregation_account_holding
 $aggregation_account_holding_id = "aggregation_account_holding_id_example"; // string | UUID aggregation_account_holding_id
 
 try {
@@ -1713,12 +1713,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_holding** | [**\com\hydrogen\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)| aggregation_account_holding |
+ **aggregation_account_holding** | [**\com\hydrogen\nucleus\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)| aggregation_account_holding |
  **aggregation_account_holding_id** | [**string**](../Model/.md)| UUID aggregation_account_holding_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)
 
 ### Authorization
 
@@ -1732,7 +1732,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAggregationAccountTransactionUsingPut**
-> \com\hydrogen\Model\AggregationAccountTransaction updateAggregationAccountTransactionUsingPut($aggregation_account_transaction, $aggregation_account_transaction_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountTransaction updateAggregationAccountTransactionUsingPut($aggregation_account_transaction, $aggregation_account_transaction_id)
 
 Update an aggregation account transaction
 
@@ -1741,29 +1741,29 @@ Update a transaction record for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_transaction = new \com\hydrogen\Model\AggregationAccountTransaction(); // \com\hydrogen\Model\AggregationAccountTransaction | aggregation_account_transaction
+$aggregation_account_transaction = new \com\hydrogen\nucleus\Model\AggregationAccountTransaction(); // \com\hydrogen\nucleus\Model\AggregationAccountTransaction | aggregation_account_transaction
 $aggregation_account_transaction_id = "aggregation_account_transaction_id_example"; // string | UUID aggregation_account_transaction_id
 
 try {
@@ -1779,12 +1779,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_transaction** | [**\com\hydrogen\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)| aggregation_account_transaction |
+ **aggregation_account_transaction** | [**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)| aggregation_account_transaction |
  **aggregation_account_transaction_id** | [**string**](../Model/.md)| UUID aggregation_account_transaction_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
 
 ### Authorization
 
@@ -1798,7 +1798,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAggregationAccountUsingPut**
-> \com\hydrogen\Model\AggregationAccount updateAggregationAccountUsingPut($aggregation_account, $aggregation_account_id)
+> \com\hydrogen\nucleus\Model\AggregationAccount updateAggregationAccountUsingPut($aggregation_account, $aggregation_account_id)
 
 Update an aggregation account
 
@@ -1807,29 +1807,29 @@ Update the information for an aggregation account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AggregationAccountApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account = new \com\hydrogen\Model\AggregationAccount(); // \com\hydrogen\Model\AggregationAccount | aggregation_account
+$aggregation_account = new \com\hydrogen\nucleus\Model\AggregationAccount(); // \com\hydrogen\nucleus\Model\AggregationAccount | aggregation_account
 $aggregation_account_id = "aggregation_account_id_example"; // string | UUID aggregation_account_id
 
 try {
@@ -1845,12 +1845,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account** | [**\com\hydrogen\Model\AggregationAccount**](../Model/AggregationAccount.md)| aggregation_account |
+ **aggregation_account** | [**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)| aggregation_account |
  **aggregation_account_id** | [**string**](../Model/.md)| UUID aggregation_account_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\AggregationAccount**](../Model/AggregationAccount.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)
 
 ### Authorization
 

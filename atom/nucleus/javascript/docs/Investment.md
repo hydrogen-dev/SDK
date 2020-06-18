@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Investment
+# HydrogenNucleusApi.Investment
 
 ## Properties
 Name | Type | Description | Notes

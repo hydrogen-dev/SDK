@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ClientAnalyticsHistory
+# HydrogenNucleusApi.ClientAnalyticsHistory
 
 ## Properties
 Name | Type | Description | Notes

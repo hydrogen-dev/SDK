@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * PageInsuranceQuote_ Class Doc Comment
  *
  * @category Class
  * @description Page Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,13 +58,13 @@ class PageInsuranceQuote_ implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content' => '\com\hydrogen\Model\InsuranceQuote[]',
+        'content' => '\com\hydrogen\nucleus\Model\InsuranceQuote[]',
         'first' => 'bool',
         'last' => 'bool',
         'number' => 'int',
         'number_of_elements' => 'int',
         'size' => 'int',
-        'sort' => '\com\hydrogen\Model\Sort[]',
+        'sort' => '\com\hydrogen\nucleus\Model\Sort[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
     ];
@@ -256,7 +256,7 @@ class PageInsuranceQuote_ implements ModelInterface, ArrayAccess
     /**
      * Gets content
      *
-     * @return \com\hydrogen\Model\InsuranceQuote[]
+     * @return \com\hydrogen\nucleus\Model\InsuranceQuote[]
      */
     public function getContent()
     {
@@ -266,7 +266,7 @@ class PageInsuranceQuote_ implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param \com\hydrogen\Model\InsuranceQuote[] $content content
+     * @param \com\hydrogen\nucleus\Model\InsuranceQuote[] $content content
      *
      * @return $this
      */
@@ -400,7 +400,7 @@ class PageInsuranceQuote_ implements ModelInterface, ArrayAccess
     /**
      * Gets sort
      *
-     * @return \com\hydrogen\Model\Sort[]
+     * @return \com\hydrogen\nucleus\Model\Sort[]
      */
     public function getSort()
     {
@@ -410,7 +410,7 @@ class PageInsuranceQuote_ implements ModelInterface, ArrayAccess
     /**
      * Sets sort
      *
-     * @param \com\hydrogen\Model\Sort[] $sort sort
+     * @param \com\hydrogen\nucleus\Model\Sort[] $sort sort
      *
      * @return $this
      */

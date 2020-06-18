@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.State();
+    instance = new HydrogenNucleusApi.State();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('State', function() {
     it('should create an instance of State', function() {
       // uncomment below and update the code to test State
-      //var instane = new HydrogenAtomApi.State();
-      //expect(instance).to.be.a(HydrogenAtomApi.State);
+      //var instane = new HydrogenNucleusApi.State();
+      //expect(instance).to.be.a(HydrogenNucleusApi.State);
     });
 
     it('should have the property abbreviation (base name: "abbreviation")', function() {
       // uncomment below and update the code to test the property abbreviation
-      //var instane = new HydrogenAtomApi.State();
+      //var instane = new HydrogenNucleusApi.State();
       //expect(instance).to.be();
     });
 
     it('should have the property countryCode (base name: "country_code")', function() {
       // uncomment below and update the code to test the property countryCode
-      //var instane = new HydrogenAtomApi.State();
+      //var instane = new HydrogenNucleusApi.State();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new HydrogenAtomApi.State();
+      //var instane = new HydrogenNucleusApi.State();
       //expect(instance).to.be();
     });
 

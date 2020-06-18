@@ -1,4 +1,4 @@
-# AtomApi::InsuranceQuote
+# NucleusApi::InsuranceQuote
 
 ## Properties
 Name | Type | Description | Notes

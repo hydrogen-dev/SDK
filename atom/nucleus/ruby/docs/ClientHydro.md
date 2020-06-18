@@ -1,4 +1,4 @@
-# AtomApi::ClientHydro
+# NucleusApi::ClientHydro
 
 ## Properties
 Name | Type | Description | Notes

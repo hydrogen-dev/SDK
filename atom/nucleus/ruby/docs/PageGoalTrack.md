@@ -1,4 +1,4 @@
-# AtomApi::PageGoalTrack
+# NucleusApi::PageGoalTrack
 
 ## Properties
 Name | Type | Description | Notes

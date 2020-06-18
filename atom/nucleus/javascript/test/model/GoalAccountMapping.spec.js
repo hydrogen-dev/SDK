@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.GoalAccountMapping();
+    instance = new HydrogenNucleusApi.GoalAccountMapping();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('GoalAccountMapping', function() {
     it('should create an instance of GoalAccountMapping', function() {
       // uncomment below and update the code to test GoalAccountMapping
-      //var instane = new HydrogenAtomApi.GoalAccountMapping();
-      //expect(instance).to.be.a(HydrogenAtomApi.GoalAccountMapping);
+      //var instane = new HydrogenNucleusApi.GoalAccountMapping();
+      //expect(instance).to.be.a(HydrogenNucleusApi.GoalAccountMapping);
     });
 
     it('should have the property accumulationHorizon (base name: "accumulation_horizon")', function() {
       // uncomment below and update the code to test the property accumulationHorizon
-      //var instane = new HydrogenAtomApi.GoalAccountMapping();
+      //var instane = new HydrogenNucleusApi.GoalAccountMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAmount (base name: "goal_amount")', function() {
       // uncomment below and update the code to test the property goalAmount
-      //var instane = new HydrogenAtomApi.GoalAccountMapping();
+      //var instane = new HydrogenNucleusApi.GoalAccountMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property goalId (base name: "goal_id")', function() {
       // uncomment below and update the code to test the property goalId
-      //var instane = new HydrogenAtomApi.GoalAccountMapping();
+      //var instane = new HydrogenNucleusApi.GoalAccountMapping();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageRoundupSettings
+# HydrogenNucleusApi.PageRoundupSettings
 
 ## Properties
 Name | Type | Description | Notes

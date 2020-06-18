@@ -1,4 +1,4 @@
-# com\hydrogen\RiskScoringApi
+# com\hydrogen\proton\RiskScoringApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -25,24 +25,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskScoringApi(
+$apiInstance = new com\hydrogen\proton\Api\RiskScoringApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$dimensional_risk_score_request = new \com\hydrogen\Model\DimensionalRiskScoreRequest(); // \com\hydrogen\Model\DimensionalRiskScoreRequest | Request payload for Dimensional Risk Score
+$dimensional_risk_score_request = new \com\hydrogen\proton\Model\DimensionalRiskScoreRequest(); // \com\hydrogen\proton\Model\DimensionalRiskScoreRequest | Request payload for Dimensional Risk Score
 
 try {
     $result = $apiInstance->dimensionalRiskScore($dimensional_risk_score_request);
@@ -57,7 +57,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dimensional_risk_score_request** | [**\com\hydrogen\Model\DimensionalRiskScoreRequest**](../Model/DimensionalRiskScoreRequest.md)| Request payload for Dimensional Risk Score |
+ **dimensional_risk_score_request** | [**\com\hydrogen\proton\Model\DimensionalRiskScoreRequest**](../Model/DimensionalRiskScoreRequest.md)| Request payload for Dimensional Risk Score |
 
 ### Return type
 
@@ -90,24 +90,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskScoringApi(
+$apiInstance = new com\hydrogen\proton\Api\RiskScoringApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$risk_allocation_request = new \com\hydrogen\Model\RiskAllocationRequest(); // \com\hydrogen\Model\RiskAllocationRequest | Request payload for Risk Allocation
+$risk_allocation_request = new \com\hydrogen\proton\Model\RiskAllocationRequest(); // \com\hydrogen\proton\Model\RiskAllocationRequest | Request payload for Risk Allocation
 
 try {
     $result = $apiInstance->riskAllocation($risk_allocation_request);
@@ -122,7 +122,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **risk_allocation_request** | [**\com\hydrogen\Model\RiskAllocationRequest**](../Model/RiskAllocationRequest.md)| Request payload for Risk Allocation |
+ **risk_allocation_request** | [**\com\hydrogen\proton\Model\RiskAllocationRequest**](../Model/RiskAllocationRequest.md)| Request payload for Risk Allocation |
 
 ### Return type
 
@@ -155,24 +155,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RiskScoringApi(
+$apiInstance = new com\hydrogen\proton\Api\RiskScoringApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$risk_score_request = new \com\hydrogen\Model\RiskScoreRequest(); // \com\hydrogen\Model\RiskScoreRequest | Request payload for Risk Score
+$risk_score_request = new \com\hydrogen\proton\Model\RiskScoreRequest(); // \com\hydrogen\proton\Model\RiskScoreRequest | Request payload for Risk Score
 
 try {
     $result = $apiInstance->riskScore($risk_score_request);
@@ -187,7 +187,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **risk_score_request** | [**\com\hydrogen\Model\RiskScoreRequest**](../Model/RiskScoreRequest.md)| Request payload for Risk Score |
+ **risk_score_request** | [**\com\hydrogen\proton\Model\RiskScoreRequest**](../Model/RiskScoreRequest.md)| Request payload for Risk Score |
 
 ### Return type
 

@@ -1,4 +1,4 @@
-# AtomApi::TokenDateRequest
+# NucleusApi::TokenDateRequest
 
 ## Properties
 Name | Type | Description | Notes

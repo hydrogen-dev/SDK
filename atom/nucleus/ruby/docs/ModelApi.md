@@ -1,4 +1,4 @@
-# AtomApi::ModelApi
+# NucleusApi::ModelApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -42,9 +42,9 @@ Create a new asset size record for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -53,16 +53,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-req = AtomApi::ModelAssetSize.new # ModelAssetSize | req
+req = NucleusApi::ModelAssetSize.new # ModelAssetSize | req
 
 
 begin
   #Create a model asset size
   result = api_instance.create_model_asset_size_using_post(req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->create_model_asset_size_using_post: #{e}"
 end
 ```
@@ -98,9 +98,9 @@ Model composition changes represent a change in a model’s holdings.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -109,9 +109,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-change_request = AtomApi::OrderReconcileRequest.new # OrderReconcileRequest | changeRequest
+change_request = NucleusApi::OrderReconcileRequest.new # OrderReconcileRequest | changeRequest
 
 model_id = 'model_id_example' # String | UUID model_id
 
@@ -120,7 +120,7 @@ begin
   #Change a model composition
   result = api_instance.create_model_change_using_post(change_request, model_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->create_model_change_using_post: #{e}"
 end
 ```
@@ -157,9 +157,9 @@ Create a new comment for a model available for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -168,16 +168,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_comment_request = AtomApi::ModelComment.new # ModelComment | modelCommentRequest
+model_comment_request = NucleusApi::ModelComment.new # ModelComment | modelCommentRequest
 
 
 begin
   #Create a model commentary
   result = api_instance.create_model_comment_using_post(model_comment_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->create_model_comment_using_post: #{e}"
 end
 ```
@@ -213,9 +213,9 @@ Create a new model holding record for a specific model and date.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -224,16 +224,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_holding_request = AtomApi::ModelHolding.new # ModelHolding | modelHoldingRequest
+model_holding_request = NucleusApi::ModelHolding.new # ModelHolding | modelHoldingRequest
 
 
 begin
   #Create a model holding
   result = api_instance.create_model_holding_using_post(model_holding_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->create_model_holding_using_post: #{e}"
 end
 ```
@@ -269,9 +269,9 @@ Create a new transaction record for a security under a model for a specific date
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -280,16 +280,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_transaction_request = AtomApi::ModelTransaction.new # ModelTransaction | modelTransactionRequest
+model_transaction_request = NucleusApi::ModelTransaction.new # ModelTransaction | modelTransactionRequest
 
 
 begin
   #Create a model transaction
   result = api_instance.create_model_transaction_using_post(model_transaction_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->create_model_transaction_using_post: #{e}"
 end
 ```
@@ -325,9 +325,9 @@ Create a new model for your firm to which a portfolios can later subscribe.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -336,16 +336,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_info_request = AtomApi::Model.new # Model | modelInfoRequest
+model_info_request = NucleusApi::Model.new # Model | modelInfoRequest
 
 
 begin
   #Create a model
   result = api_instance.create_model_using_post(model_info_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->create_model_using_post: #{e}"
 end
 ```
@@ -381,9 +381,9 @@ Permanently delete a model asset size record for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -392,7 +392,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_asset_size_id = 'model_asset_size_id_example' # String | UUID model_asset_size_id
 
@@ -400,7 +400,7 @@ model_asset_size_id = 'model_asset_size_id_example' # String | UUID model_asset_
 begin
   #Delete a model asset size
   api_instance.delete_model_asset_size_using_delete(model_asset_size_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->delete_model_asset_size_using_delete: #{e}"
 end
 ```
@@ -436,9 +436,9 @@ Permanently delete a model comment for a model
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -447,7 +447,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_comment_id = 'model_comment_id_example' # String | UUID model_comment_id
 
@@ -455,7 +455,7 @@ model_comment_id = 'model_comment_id_example' # String | UUID model_comment_id
 begin
   #Delete a model commentary
   api_instance.delete_model_comment_using_delete(model_comment_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->delete_model_comment_using_delete: #{e}"
 end
 ```
@@ -491,9 +491,9 @@ Permanently delete a model holding record for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -502,7 +502,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_holding_id = 'model_holding_id_example' # String | UUID model_holding_id
 
@@ -510,7 +510,7 @@ model_holding_id = 'model_holding_id_example' # String | UUID model_holding_id
 begin
   #Delete a model holding
   api_instance.delete_model_holding_using_delete(model_holding_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->delete_model_holding_using_delete: #{e}"
 end
 ```
@@ -546,9 +546,9 @@ Permanently delete a model transaction for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -557,7 +557,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_transaction_id = 'model_transaction_id_example' # String | UUID model_transaction_id
 
@@ -565,7 +565,7 @@ model_transaction_id = 'model_transaction_id_example' # String | UUID model_tran
 begin
   #Delete a model transaction
   api_instance.delete_model_transaction_using_delete(model_transaction_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->delete_model_transaction_using_delete: #{e}"
 end
 ```
@@ -601,9 +601,9 @@ Permanently delete a model for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -612,7 +612,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_id = 'model_id_example' # String | UUID model_id
 
@@ -620,7 +620,7 @@ model_id = 'model_id_example' # String | UUID model_id
 begin
   #Delete a model
   api_instance.delete_model_using_delete(model_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->delete_model_using_delete: #{e}"
 end
 ```
@@ -656,9 +656,9 @@ Get details for all models defined for your firm to which portfolios can subscri
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -667,7 +667,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -681,7 +681,7 @@ begin
   #List all models
   result = api_instance.get_model_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_all_using_get: #{e}"
 end
 ```
@@ -721,9 +721,9 @@ Get a list of asset sizes per date for all models defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -732,7 +732,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -746,7 +746,7 @@ begin
   #List all model asset sizes
   result = api_instance.get_model_asset_size_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_asset_size_all_using_get: #{e}"
 end
 ```
@@ -786,9 +786,9 @@ Retrieve the information for a model asset size record for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -797,7 +797,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_asset_size_id = 'model_asset_size_id_example' # String | UUID model_asset_size_id
 
@@ -806,7 +806,7 @@ begin
   #Retrieve a model asset size
   result = api_instance.get_model_asset_size_using_get(model_asset_size_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_asset_size_using_get: #{e}"
 end
 ```
@@ -842,9 +842,9 @@ List all comments for all models defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -853,7 +853,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -867,7 +867,7 @@ begin
   #List all model commentary
   result = api_instance.get_model_comment_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_comment_all_using_get: #{e}"
 end
 ```
@@ -907,9 +907,9 @@ Retrieve the information for a model comment for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -918,7 +918,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_comment_id = 'model_comment_id_example' # String | UUID model_comment_id
 
@@ -927,7 +927,7 @@ begin
   #Retrieve a model commentary
   result = api_instance.get_model_comment_using_get(model_comment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_comment_using_get: #{e}"
 end
 ```
@@ -963,9 +963,9 @@ Get all model holding records for all models defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -974,7 +974,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -988,7 +988,7 @@ begin
   #List all model holdings
   result = api_instance.get_model_holding_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_holding_all_using_get: #{e}"
 end
 ```
@@ -1028,9 +1028,9 @@ Retrieve the information for a model holding record for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1039,7 +1039,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_holding_id = 'model_holding_id_example' # String | UUID model_holding_id
 
@@ -1048,7 +1048,7 @@ begin
   #Retrieve a model holding
   result = api_instance.get_model_holding_using_get(model_holding_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_holding_using_get: #{e}"
 end
 ```
@@ -1084,9 +1084,9 @@ Get details for all transaction records for all models defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1095,7 +1095,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1109,7 +1109,7 @@ begin
   #List all model transactions
   result = api_instance.get_model_transaction_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_transaction_all_using_get: #{e}"
 end
 ```
@@ -1149,9 +1149,9 @@ Retrieve the information for a model transaction for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1160,7 +1160,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_transaction_id = 'model_transaction_id_example' # String | UUID model_transaction_id
 
@@ -1169,7 +1169,7 @@ begin
   #Retrieve a model transaction
   result = api_instance.get_model_transaction_using_get(model_transaction_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_transaction_using_get: #{e}"
 end
 ```
@@ -1205,9 +1205,9 @@ Get the information for a model for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1216,7 +1216,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
 model_id = 'model_id_example' # String | UUID model_id
 
@@ -1225,7 +1225,7 @@ begin
   #Retrieve a model
   result = api_instance.get_model_using_get(model_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->get_model_using_get: #{e}"
 end
 ```
@@ -1261,9 +1261,9 @@ Update a model asset size record for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1272,9 +1272,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_asset_size = AtomApi::ModelAssetSize.new # ModelAssetSize | model_asset_size
+model_asset_size = NucleusApi::ModelAssetSize.new # ModelAssetSize | model_asset_size
 
 model_asset_size_id = 'model_asset_size_id_example' # String | UUID model_asset_size_id
 
@@ -1283,7 +1283,7 @@ begin
   #Update a model asset size
   result = api_instance.update_model_asset_size_using_put(model_asset_size, model_asset_size_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->update_model_asset_size_using_put: #{e}"
 end
 ```
@@ -1320,9 +1320,9 @@ Update a model comment for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1331,9 +1331,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_comment = AtomApi::ModelComment.new # ModelComment | model_comment
+model_comment = NucleusApi::ModelComment.new # ModelComment | model_comment
 
 model_comment_id = 'model_comment_id_example' # String | UUID model_comment_id
 
@@ -1342,7 +1342,7 @@ begin
   #Update a model commentary
   result = api_instance.update_model_comment_using_put(model_comment, model_comment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->update_model_comment_using_put: #{e}"
 end
 ```
@@ -1379,9 +1379,9 @@ Update a model holding record for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1390,9 +1390,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_holding = AtomApi::ModelHolding.new # ModelHolding | model_holding
+model_holding = NucleusApi::ModelHolding.new # ModelHolding | model_holding
 
 model_holding_id = 'model_holding_id_example' # String | UUID model_holding_id
 
@@ -1401,7 +1401,7 @@ begin
   #Update a model holding
   result = api_instance.update_model_holding_using_put(model_holding, model_holding_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->update_model_holding_using_put: #{e}"
 end
 ```
@@ -1438,9 +1438,9 @@ Update a model transaction for a model.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1449,9 +1449,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model_transaction = AtomApi::ModelTransaction.new # ModelTransaction | model_transaction
+model_transaction = NucleusApi::ModelTransaction.new # ModelTransaction | model_transaction
 
 model_transaction_id = 'model_transaction_id_example' # String | UUID model_transaction_id
 
@@ -1460,7 +1460,7 @@ begin
   #Update a model transaction
   result = api_instance.update_model_transaction_using_put(model_transaction, model_transaction_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->update_model_transaction_using_put: #{e}"
 end
 ```
@@ -1497,9 +1497,9 @@ Update a model for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1508,9 +1508,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::ModelApi.new
+api_instance = NucleusApi::ModelApi.new
 
-model = AtomApi::Model.new # Model | model
+model = NucleusApi::Model.new # Model | model
 
 model_id = 'model_id_example' # String | UUID model_id
 
@@ -1519,7 +1519,7 @@ begin
   #Update a model
   result = api_instance.update_model_using_put(model, model_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling ModelApi->update_model_using_put: #{e}"
 end
 ```

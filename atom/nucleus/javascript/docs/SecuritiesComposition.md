@@ -1,4 +1,4 @@
-# HydrogenAtomApi.SecuritiesComposition
+# HydrogenNucleusApi.SecuritiesComposition
 
 ## Properties
 Name | Type | Description | Notes

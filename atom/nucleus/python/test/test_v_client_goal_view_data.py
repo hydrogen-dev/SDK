@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.v_client_goal_view_data import VClientGoalViewData  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.v_client_goal_view_data import VClientGoalViewData  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestVClientGoalViewData(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestVClientGoalViewData(unittest.TestCase):
     def testVClientGoalViewData(self):
         """Test VClientGoalViewData"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.v_client_goal_view_data.VClientGoalViewData()  # noqa: E501
+        # model = nucleus_api.models.v_client_goal_view_data.VClientGoalViewData()  # noqa: E501
         pass
 
 

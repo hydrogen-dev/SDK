@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.DailyWithdrawal();
+    instance = new HydrogenNucleusApi.DailyWithdrawal();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,133 +53,133 @@
   describe('DailyWithdrawal', function() {
     it('should create an instance of DailyWithdrawal', function() {
       // uncomment below and update the code to test DailyWithdrawal
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
-      //expect(instance).to.be.a(HydrogenAtomApi.DailyWithdrawal);
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
+      //expect(instance).to.be.a(HydrogenNucleusApi.DailyWithdrawal);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property accountNumber (base name: "account_number")', function() {
       // uncomment below and update the code to test the property accountNumber
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property direction (base name: "direction")', function() {
       // uncomment below and update the code to test the property direction
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property fees (base name: "fees")', function() {
       // uncomment below and update the code to test the property fees
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property fundingId (base name: "funding_id")', function() {
       // uncomment below and update the code to test the property fundingId
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property lastRequestDate (base name: "last_request_date")', function() {
       // uncomment below and update the code to test the property lastRequestDate
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property notes (base name: "notes")', function() {
       // uncomment below and update the code to test the property notes
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property receivedDate (base name: "received_date")', function() {
       // uncomment below and update the code to test the property receivedDate
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property statusTimeStamp (base name: "status_time_stamp")', function() {
       // uncomment below and update the code to test the property statusTimeStamp
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 
     it('should have the property withdrawalDate (base name: "withdrawal_date")', function() {
       // uncomment below and update the code to test the property withdrawalDate
-      //var instane = new HydrogenAtomApi.DailyWithdrawal();
+      //var instane = new HydrogenNucleusApi.DailyWithdrawal();
       //expect(instance).to.be();
     });
 

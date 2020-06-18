@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Country
+# HydrogenNucleusApi.Country
 
 ## Properties
 Name | Type | Description | Notes

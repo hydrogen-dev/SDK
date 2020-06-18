@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * FundingApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class FundingApi
      *
      * Create a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BankLink
+     * @return \com\hydrogen\nucleus\Model\BankLink
      */
     public function createBankLinkUsingPost($bank_link_info_request)
     {
@@ -109,15 +109,15 @@ class FundingApi
      *
      * Create a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BankLink, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BankLink, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBankLinkUsingPostWithHttpInfo($bank_link_info_request)
     {
-        $returnType = '\com\hydrogen\Model\BankLink';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink';
         $request = $this->createBankLinkUsingPostRequest($bank_link_info_request);
 
         try {
@@ -169,7 +169,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BankLink',
+                        '\com\hydrogen\nucleus\Model\BankLink',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class FundingApi
      *
      * Create a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class FundingApi
      *
      * Create a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createBankLinkUsingPostAsyncWithHttpInfo($bank_link_info_request)
     {
-        $returnType = '\com\hydrogen\Model\BankLink';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink';
         $request = $this->createBankLinkUsingPostRequest($bank_link_info_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class FundingApi
     /**
      * Create request for operation 'createBankLinkUsingPost'
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link_info_request bankLinkInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class FundingApi
      *
      * Create a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DailyDeposit
+     * @return \com\hydrogen\nucleus\Model\DailyDeposit
      */
     public function createDepositUsingPost($daily_deposit_request)
     {
@@ -377,15 +377,15 @@ class FundingApi
      *
      * Create a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DailyDeposit, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DailyDeposit, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDepositUsingPostWithHttpInfo($daily_deposit_request)
     {
-        $returnType = '\com\hydrogen\Model\DailyDeposit';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyDeposit';
         $request = $this->createDepositUsingPostRequest($daily_deposit_request);
 
         try {
@@ -437,7 +437,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DailyDeposit',
+                        '\com\hydrogen\nucleus\Model\DailyDeposit',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class FundingApi
      *
      * Create a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class FundingApi
      *
      * Create a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDepositUsingPostAsyncWithHttpInfo($daily_deposit_request)
     {
-        $returnType = '\com\hydrogen\Model\DailyDeposit';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyDeposit';
         $request = $this->createDepositUsingPostRequest($daily_deposit_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class FundingApi
     /**
      * Create request for operation 'createDepositUsingPost'
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $daily_deposit_request dailyDepositRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class FundingApi
      *
      * Create a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding_request fundingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding_request fundingRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Funding
+     * @return \com\hydrogen\nucleus\Model\Funding
      */
     public function createFundingUsingPost($funding_request)
     {
@@ -645,15 +645,15 @@ class FundingApi
      *
      * Create a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding_request fundingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding_request fundingRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Funding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Funding, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFundingUsingPostWithHttpInfo($funding_request)
     {
-        $returnType = '\com\hydrogen\Model\Funding';
+        $returnType = '\com\hydrogen\nucleus\Model\Funding';
         $request = $this->createFundingUsingPostRequest($funding_request);
 
         try {
@@ -705,7 +705,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Funding',
+                        '\com\hydrogen\nucleus\Model\Funding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class FundingApi
      *
      * Create a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding_request fundingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding_request fundingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class FundingApi
      *
      * Create a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding_request fundingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding_request fundingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFundingUsingPostAsyncWithHttpInfo($funding_request)
     {
-        $returnType = '\com\hydrogen\Model\Funding';
+        $returnType = '\com\hydrogen\nucleus\Model\Funding';
         $request = $this->createFundingUsingPostRequest($funding_request);
 
         return $this->client
@@ -790,7 +790,7 @@ class FundingApi
     /**
      * Create request for operation 'createFundingUsingPost'
      *
-     * @param  \com\hydrogen\Model\Funding $funding_request fundingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding_request fundingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,11 +896,11 @@ class FundingApi
      *
      * Create a transfer requests
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ExternalAccountTransfer
+     * @return \com\hydrogen\nucleus\Model\ExternalAccountTransfer
      */
     public function createTransferUsingPost($external_account_transfer_request)
     {
@@ -913,15 +913,15 @@ class FundingApi
      *
      * Create a transfer requests
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ExternalAccountTransfer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ExternalAccountTransfer, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTransferUsingPostWithHttpInfo($external_account_transfer_request)
     {
-        $returnType = '\com\hydrogen\Model\ExternalAccountTransfer';
+        $returnType = '\com\hydrogen\nucleus\Model\ExternalAccountTransfer';
         $request = $this->createTransferUsingPostRequest($external_account_transfer_request);
 
         try {
@@ -973,7 +973,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ExternalAccountTransfer',
+                        '\com\hydrogen\nucleus\Model\ExternalAccountTransfer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class FundingApi
      *
      * Create a transfer requests
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,14 +1008,14 @@ class FundingApi
      *
      * Create a transfer requests
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createTransferUsingPostAsyncWithHttpInfo($external_account_transfer_request)
     {
-        $returnType = '\com\hydrogen\Model\ExternalAccountTransfer';
+        $returnType = '\com\hydrogen\nucleus\Model\ExternalAccountTransfer';
         $request = $this->createTransferUsingPostRequest($external_account_transfer_request);
 
         return $this->client
@@ -1058,7 +1058,7 @@ class FundingApi
     /**
      * Create request for operation 'createTransferUsingPost'
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $external_account_transfer_request externalAccountTransferRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,11 +1164,11 @@ class FundingApi
      *
      * Create a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DailyWithdrawal
+     * @return \com\hydrogen\nucleus\Model\DailyWithdrawal
      */
     public function createWithdrawalUsingPost($daily_withdrawal_request)
     {
@@ -1181,15 +1181,15 @@ class FundingApi
      *
      * Create a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DailyWithdrawal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DailyWithdrawal, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWithdrawalUsingPostWithHttpInfo($daily_withdrawal_request)
     {
-        $returnType = '\com\hydrogen\Model\DailyWithdrawal';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyWithdrawal';
         $request = $this->createWithdrawalUsingPostRequest($daily_withdrawal_request);
 
         try {
@@ -1241,7 +1241,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DailyWithdrawal',
+                        '\com\hydrogen\nucleus\Model\DailyWithdrawal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1256,7 +1256,7 @@ class FundingApi
      *
      * Create a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,14 +1276,14 @@ class FundingApi
      *
      * Create a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWithdrawalUsingPostAsyncWithHttpInfo($daily_withdrawal_request)
     {
-        $returnType = '\com\hydrogen\Model\DailyWithdrawal';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyWithdrawal';
         $request = $this->createWithdrawalUsingPostRequest($daily_withdrawal_request);
 
         return $this->client
@@ -1326,7 +1326,7 @@ class FundingApi
     /**
      * Create request for operation 'createWithdrawalUsingPost'
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $daily_withdrawal_request dailyWithdrawalRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1434,7 +1434,7 @@ class FundingApi
      *
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1450,7 +1450,7 @@ class FundingApi
      *
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1670,7 +1670,7 @@ class FundingApi
      *
      * @param  string $deposit_id UUID deposit_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1686,7 +1686,7 @@ class FundingApi
      *
      * @param  string $deposit_id UUID deposit_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1906,7 +1906,7 @@ class FundingApi
      *
      * @param  string $funding_id UUID funding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1922,7 +1922,7 @@ class FundingApi
      *
      * @param  string $funding_id UUID funding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2143,7 +2143,7 @@ class FundingApi
      * @param  string $transfer UUID external_account_transfer_id (required)
      * @param  string $transfer_id transfer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2160,7 +2160,7 @@ class FundingApi
      * @param  string $transfer UUID external_account_transfer_id (required)
      * @param  string $transfer_id transfer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2397,7 +2397,7 @@ class FundingApi
      *
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2413,7 +2413,7 @@ class FundingApi
      *
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2637,9 +2637,9 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageBankLink_
+     * @return \com\hydrogen\nucleus\Model\PageBankLink_
      */
     public function getBankLinkAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2658,13 +2658,13 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageBankLink_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageBankLink_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBankLinkAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageBankLink_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageBankLink_';
         $request = $this->getBankLinkAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2716,7 +2716,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageBankLink_',
+                        '\com\hydrogen\nucleus\Model\PageBankLink_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2766,7 +2766,7 @@ class FundingApi
      */
     public function getBankLinkAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageBankLink_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageBankLink_';
         $request = $this->getBankLinkAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2932,9 +2932,9 @@ class FundingApi
      *
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BankLink
+     * @return \com\hydrogen\nucleus\Model\BankLink
      */
     public function getBankLinkUsingGet($bank_link_id)
     {
@@ -2949,13 +2949,13 @@ class FundingApi
      *
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BankLink, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BankLink, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBankLinkUsingGetWithHttpInfo($bank_link_id)
     {
-        $returnType = '\com\hydrogen\Model\BankLink';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink';
         $request = $this->getBankLinkUsingGetRequest($bank_link_id);
 
         try {
@@ -3007,7 +3007,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BankLink',
+                        '\com\hydrogen\nucleus\Model\BankLink',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3049,7 +3049,7 @@ class FundingApi
      */
     public function getBankLinkUsingGetAsyncWithHttpInfo($bank_link_id)
     {
-        $returnType = '\com\hydrogen\Model\BankLink';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink';
         $request = $this->getBankLinkUsingGetRequest($bank_link_id);
 
         return $this->client
@@ -3209,9 +3209,9 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageDailyDeposit_
+     * @return \com\hydrogen\nucleus\Model\PageDailyDeposit_
      */
     public function getDepositAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3230,13 +3230,13 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageDailyDeposit_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageDailyDeposit_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDepositAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDailyDeposit_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDailyDeposit_';
         $request = $this->getDepositAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3288,7 +3288,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageDailyDeposit_',
+                        '\com\hydrogen\nucleus\Model\PageDailyDeposit_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3338,7 +3338,7 @@ class FundingApi
      */
     public function getDepositAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDailyDeposit_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDailyDeposit_';
         $request = $this->getDepositAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3504,9 +3504,9 @@ class FundingApi
      *
      * @param  string $deposit_id UUID deposit_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DailyDeposit
+     * @return \com\hydrogen\nucleus\Model\DailyDeposit
      */
     public function getDepositUsingGet($deposit_id)
     {
@@ -3521,13 +3521,13 @@ class FundingApi
      *
      * @param  string $deposit_id UUID deposit_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DailyDeposit, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DailyDeposit, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDepositUsingGetWithHttpInfo($deposit_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyDeposit';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyDeposit';
         $request = $this->getDepositUsingGetRequest($deposit_id);
 
         try {
@@ -3579,7 +3579,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DailyDeposit',
+                        '\com\hydrogen\nucleus\Model\DailyDeposit',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3621,7 +3621,7 @@ class FundingApi
      */
     public function getDepositUsingGetAsyncWithHttpInfo($deposit_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyDeposit';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyDeposit';
         $request = $this->getDepositUsingGetRequest($deposit_id);
 
         return $this->client
@@ -3781,9 +3781,9 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageFunding_
+     * @return \com\hydrogen\nucleus\Model\PageFunding_
      */
     public function getFundingAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3802,13 +3802,13 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageFunding_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageFunding_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFundingAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFunding_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFunding_';
         $request = $this->getFundingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3860,7 +3860,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageFunding_',
+                        '\com\hydrogen\nucleus\Model\PageFunding_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3910,7 +3910,7 @@ class FundingApi
      */
     public function getFundingAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFunding_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFunding_';
         $request = $this->getFundingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4076,9 +4076,9 @@ class FundingApi
      *
      * @param  string $funding_id UUID funding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Funding
+     * @return \com\hydrogen\nucleus\Model\Funding
      */
     public function getFundingUsingGet($funding_id)
     {
@@ -4093,13 +4093,13 @@ class FundingApi
      *
      * @param  string $funding_id UUID funding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Funding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Funding, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFundingUsingGetWithHttpInfo($funding_id)
     {
-        $returnType = '\com\hydrogen\Model\Funding';
+        $returnType = '\com\hydrogen\nucleus\Model\Funding';
         $request = $this->getFundingUsingGetRequest($funding_id);
 
         try {
@@ -4151,7 +4151,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Funding',
+                        '\com\hydrogen\nucleus\Model\Funding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4193,7 +4193,7 @@ class FundingApi
      */
     public function getFundingUsingGetAsyncWithHttpInfo($funding_id)
     {
-        $returnType = '\com\hydrogen\Model\Funding';
+        $returnType = '\com\hydrogen\nucleus\Model\Funding';
         $request = $this->getFundingUsingGetRequest($funding_id);
 
         return $this->client
@@ -4353,9 +4353,9 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageExternalAccountTransfer_
+     * @return \com\hydrogen\nucleus\Model\PageExternalAccountTransfer_
      */
     public function getTransferAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4374,13 +4374,13 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageExternalAccountTransfer_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageExternalAccountTransfer_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransferAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageExternalAccountTransfer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageExternalAccountTransfer_';
         $request = $this->getTransferAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4432,7 +4432,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageExternalAccountTransfer_',
+                        '\com\hydrogen\nucleus\Model\PageExternalAccountTransfer_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4482,7 +4482,7 @@ class FundingApi
      */
     public function getTransferAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageExternalAccountTransfer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageExternalAccountTransfer_';
         $request = $this->getTransferAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4649,9 +4649,9 @@ class FundingApi
      * @param  string $external_account_transfer_id UUID external_account_transfer_id (required)
      * @param  string $transfer_id transfer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ExternalAccountTransfer
+     * @return \com\hydrogen\nucleus\Model\ExternalAccountTransfer
      */
     public function getTransferUsingGet($external_account_transfer_id, $transfer_id)
     {
@@ -4667,13 +4667,13 @@ class FundingApi
      * @param  string $external_account_transfer_id UUID external_account_transfer_id (required)
      * @param  string $transfer_id transfer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ExternalAccountTransfer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ExternalAccountTransfer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransferUsingGetWithHttpInfo($external_account_transfer_id, $transfer_id)
     {
-        $returnType = '\com\hydrogen\Model\ExternalAccountTransfer';
+        $returnType = '\com\hydrogen\nucleus\Model\ExternalAccountTransfer';
         $request = $this->getTransferUsingGetRequest($external_account_transfer_id, $transfer_id);
 
         try {
@@ -4725,7 +4725,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ExternalAccountTransfer',
+                        '\com\hydrogen\nucleus\Model\ExternalAccountTransfer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4769,7 +4769,7 @@ class FundingApi
      */
     public function getTransferUsingGetAsyncWithHttpInfo($external_account_transfer_id, $transfer_id)
     {
-        $returnType = '\com\hydrogen\Model\ExternalAccountTransfer';
+        $returnType = '\com\hydrogen\nucleus\Model\ExternalAccountTransfer';
         $request = $this->getTransferUsingGetRequest($external_account_transfer_id, $transfer_id);
 
         return $this->client
@@ -4944,9 +4944,9 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageDailyWithdrawal_
+     * @return \com\hydrogen\nucleus\Model\PageDailyWithdrawal_
      */
     public function getWithdrawalAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4965,13 +4965,13 @@ class FundingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageDailyWithdrawal_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageDailyWithdrawal_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithdrawalAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDailyWithdrawal_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDailyWithdrawal_';
         $request = $this->getWithdrawalAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -5023,7 +5023,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageDailyWithdrawal_',
+                        '\com\hydrogen\nucleus\Model\PageDailyWithdrawal_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5073,7 +5073,7 @@ class FundingApi
      */
     public function getWithdrawalAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDailyWithdrawal_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDailyWithdrawal_';
         $request = $this->getWithdrawalAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5239,9 +5239,9 @@ class FundingApi
      *
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DailyWithdrawal
+     * @return \com\hydrogen\nucleus\Model\DailyWithdrawal
      */
     public function getWithdrawalUsingGet($withdrawal_id)
     {
@@ -5256,13 +5256,13 @@ class FundingApi
      *
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DailyWithdrawal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DailyWithdrawal, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWithdrawalUsingGetWithHttpInfo($withdrawal_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyWithdrawal';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyWithdrawal';
         $request = $this->getWithdrawalUsingGetRequest($withdrawal_id);
 
         try {
@@ -5314,7 +5314,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DailyWithdrawal',
+                        '\com\hydrogen\nucleus\Model\DailyWithdrawal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5356,7 +5356,7 @@ class FundingApi
      */
     public function getWithdrawalUsingGetAsyncWithHttpInfo($withdrawal_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyWithdrawal';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyWithdrawal';
         $request = $this->getWithdrawalUsingGetRequest($withdrawal_id);
 
         return $this->client
@@ -5510,11 +5510,11 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BankLink[]
+     * @return \com\hydrogen\nucleus\Model\BankLink[]
      */
     public function updateBankLinkBulkUsingPut($bank_link_list)
     {
@@ -5527,15 +5527,15 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BankLink[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BankLink[], HTTP status code, HTTP response headers (array of strings)
      */
     public function updateBankLinkBulkUsingPutWithHttpInfo($bank_link_list)
     {
-        $returnType = '\com\hydrogen\Model\BankLink[]';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink[]';
         $request = $this->updateBankLinkBulkUsingPutRequest($bank_link_list);
 
         try {
@@ -5587,7 +5587,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BankLink[]',
+                        '\com\hydrogen\nucleus\Model\BankLink[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5602,7 +5602,7 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5622,14 +5622,14 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateBankLinkBulkUsingPutAsyncWithHttpInfo($bank_link_list)
     {
-        $returnType = '\com\hydrogen\Model\BankLink[]';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink[]';
         $request = $this->updateBankLinkBulkUsingPutRequest($bank_link_list);
 
         return $this->client
@@ -5672,7 +5672,7 @@ class FundingApi
     /**
      * Create request for operation 'updateBankLinkBulkUsingPut'
      *
-     * @param  \com\hydrogen\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5778,12 +5778,12 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link bank_link (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BankLink
+     * @return \com\hydrogen\nucleus\Model\BankLink
      */
     public function updateBankLinkUsingPut($bank_link, $bank_link_id)
     {
@@ -5796,16 +5796,16 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link bank_link (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BankLink, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BankLink, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateBankLinkUsingPutWithHttpInfo($bank_link, $bank_link_id)
     {
-        $returnType = '\com\hydrogen\Model\BankLink';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink';
         $request = $this->updateBankLinkUsingPutRequest($bank_link, $bank_link_id);
 
         try {
@@ -5857,7 +5857,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BankLink',
+                        '\com\hydrogen\nucleus\Model\BankLink',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5872,7 +5872,7 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link bank_link (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5893,7 +5893,7 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link bank_link (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5901,7 +5901,7 @@ class FundingApi
      */
     public function updateBankLinkUsingPutAsyncWithHttpInfo($bank_link, $bank_link_id)
     {
-        $returnType = '\com\hydrogen\Model\BankLink';
+        $returnType = '\com\hydrogen\nucleus\Model\BankLink';
         $request = $this->updateBankLinkUsingPutRequest($bank_link, $bank_link_id);
 
         return $this->client
@@ -5944,7 +5944,7 @@ class FundingApi
     /**
      * Create request for operation 'updateBankLinkUsingPut'
      *
-     * @param  \com\hydrogen\Model\BankLink $bank_link bank_link (required)
+     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6065,12 +6065,12 @@ class FundingApi
      *
      * Update a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $deposit deposit (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $deposit deposit (required)
      * @param  string $deposit_id UUID deposit_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DailyDeposit
+     * @return \com\hydrogen\nucleus\Model\DailyDeposit
      */
     public function updateDepositUsingPut($deposit, $deposit_id)
     {
@@ -6083,16 +6083,16 @@ class FundingApi
      *
      * Update a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $deposit deposit (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $deposit deposit (required)
      * @param  string $deposit_id UUID deposit_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DailyDeposit, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DailyDeposit, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateDepositUsingPutWithHttpInfo($deposit, $deposit_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyDeposit';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyDeposit';
         $request = $this->updateDepositUsingPutRequest($deposit, $deposit_id);
 
         try {
@@ -6144,7 +6144,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DailyDeposit',
+                        '\com\hydrogen\nucleus\Model\DailyDeposit',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6159,7 +6159,7 @@ class FundingApi
      *
      * Update a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $deposit deposit (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $deposit deposit (required)
      * @param  string $deposit_id UUID deposit_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6180,7 +6180,7 @@ class FundingApi
      *
      * Update a deposit request
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $deposit deposit (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $deposit deposit (required)
      * @param  string $deposit_id UUID deposit_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6188,7 +6188,7 @@ class FundingApi
      */
     public function updateDepositUsingPutAsyncWithHttpInfo($deposit, $deposit_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyDeposit';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyDeposit';
         $request = $this->updateDepositUsingPutRequest($deposit, $deposit_id);
 
         return $this->client
@@ -6231,7 +6231,7 @@ class FundingApi
     /**
      * Create request for operation 'updateDepositUsingPut'
      *
-     * @param  \com\hydrogen\Model\DailyDeposit $deposit deposit (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyDeposit $deposit deposit (required)
      * @param  string $deposit_id UUID deposit_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6352,12 +6352,12 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding funding (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Funding
+     * @return \com\hydrogen\nucleus\Model\Funding
      */
     public function updateFundingUsingPut($funding, $funding_id)
     {
@@ -6370,16 +6370,16 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding funding (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Funding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Funding, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFundingUsingPutWithHttpInfo($funding, $funding_id)
     {
-        $returnType = '\com\hydrogen\Model\Funding';
+        $returnType = '\com\hydrogen\nucleus\Model\Funding';
         $request = $this->updateFundingUsingPutRequest($funding, $funding_id);
 
         try {
@@ -6431,7 +6431,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Funding',
+                        '\com\hydrogen\nucleus\Model\Funding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6446,7 +6446,7 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding funding (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6467,7 +6467,7 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\Model\Funding $funding funding (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6475,7 +6475,7 @@ class FundingApi
      */
     public function updateFundingUsingPutAsyncWithHttpInfo($funding, $funding_id)
     {
-        $returnType = '\com\hydrogen\Model\Funding';
+        $returnType = '\com\hydrogen\nucleus\Model\Funding';
         $request = $this->updateFundingUsingPutRequest($funding, $funding_id);
 
         return $this->client
@@ -6518,7 +6518,7 @@ class FundingApi
     /**
      * Create request for operation 'updateFundingUsingPut'
      *
-     * @param  \com\hydrogen\Model\Funding $funding funding (required)
+     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6639,12 +6639,12 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ExternalAccountTransfer
+     * @return \com\hydrogen\nucleus\Model\ExternalAccountTransfer
      */
     public function updateTransferUsingPut($transfer, $transfer_id)
     {
@@ -6657,16 +6657,16 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ExternalAccountTransfer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ExternalAccountTransfer, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTransferUsingPutWithHttpInfo($transfer, $transfer_id)
     {
-        $returnType = '\com\hydrogen\Model\ExternalAccountTransfer';
+        $returnType = '\com\hydrogen\nucleus\Model\ExternalAccountTransfer';
         $request = $this->updateTransferUsingPutRequest($transfer, $transfer_id);
 
         try {
@@ -6718,7 +6718,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ExternalAccountTransfer',
+                        '\com\hydrogen\nucleus\Model\ExternalAccountTransfer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6733,7 +6733,7 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6754,7 +6754,7 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6762,7 +6762,7 @@ class FundingApi
      */
     public function updateTransferUsingPutAsyncWithHttpInfo($transfer, $transfer_id)
     {
-        $returnType = '\com\hydrogen\Model\ExternalAccountTransfer';
+        $returnType = '\com\hydrogen\nucleus\Model\ExternalAccountTransfer';
         $request = $this->updateTransferUsingPutRequest($transfer, $transfer_id);
 
         return $this->client
@@ -6805,7 +6805,7 @@ class FundingApi
     /**
      * Create request for operation 'updateTransferUsingPut'
      *
-     * @param  \com\hydrogen\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6926,12 +6926,12 @@ class FundingApi
      *
      * Update a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $withdrawal withdrawal (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $withdrawal withdrawal (required)
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DailyWithdrawal
+     * @return \com\hydrogen\nucleus\Model\DailyWithdrawal
      */
     public function updateWithdrawalUsingPut($withdrawal, $withdrawal_id)
     {
@@ -6944,16 +6944,16 @@ class FundingApi
      *
      * Update a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $withdrawal withdrawal (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $withdrawal withdrawal (required)
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DailyWithdrawal, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DailyWithdrawal, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWithdrawalUsingPutWithHttpInfo($withdrawal, $withdrawal_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyWithdrawal';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyWithdrawal';
         $request = $this->updateWithdrawalUsingPutRequest($withdrawal, $withdrawal_id);
 
         try {
@@ -7005,7 +7005,7 @@ class FundingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DailyWithdrawal',
+                        '\com\hydrogen\nucleus\Model\DailyWithdrawal',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7020,7 +7020,7 @@ class FundingApi
      *
      * Update a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $withdrawal withdrawal (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $withdrawal withdrawal (required)
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7041,7 +7041,7 @@ class FundingApi
      *
      * Update a withdrawal request
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $withdrawal withdrawal (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $withdrawal withdrawal (required)
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7049,7 +7049,7 @@ class FundingApi
      */
     public function updateWithdrawalUsingPutAsyncWithHttpInfo($withdrawal, $withdrawal_id)
     {
-        $returnType = '\com\hydrogen\Model\DailyWithdrawal';
+        $returnType = '\com\hydrogen\nucleus\Model\DailyWithdrawal';
         $request = $this->updateWithdrawalUsingPutRequest($withdrawal, $withdrawal_id);
 
         return $this->client
@@ -7092,7 +7092,7 @@ class FundingApi
     /**
      * Create request for operation 'updateWithdrawalUsingPut'
      *
-     * @param  \com\hydrogen\Model\DailyWithdrawal $withdrawal withdrawal (required)
+     * @param  \com\hydrogen\nucleus\Model\DailyWithdrawal $withdrawal withdrawal (required)
      * @param  string $withdrawal_id UUID withdrawal_id (required)
      *
      * @throws \InvalidArgumentException

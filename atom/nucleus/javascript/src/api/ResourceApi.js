@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Country'), require('../model/Currency'), require('../model/State'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.ResourceApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Country, root.HydrogenAtomApi.Currency, root.HydrogenAtomApi.State);
+    root.HydrogenNucleusApi.ResourceApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Country, root.HydrogenNucleusApi.Currency, root.HydrogenNucleusApi.State);
   }
 }(this, function(ApiClient, Country, Currency, State) {
   'use strict';

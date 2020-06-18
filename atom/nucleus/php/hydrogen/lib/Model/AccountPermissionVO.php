@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AccountPermissionVO Class Doc Comment
  *
  * @category Class
  * @description AccountPermissionVO Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class AccountPermissionVO implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'account_id' => 'string',
-        'clients' => '\com\hydrogen\Model\PermissionVO[]'
+        'clients' => '\com\hydrogen\nucleus\Model\PermissionVO[]'
     ];
 
     /**
@@ -238,7 +238,7 @@ class AccountPermissionVO implements ModelInterface, ArrayAccess
     /**
      * Gets clients
      *
-     * @return \com\hydrogen\Model\PermissionVO[]
+     * @return \com\hydrogen\nucleus\Model\PermissionVO[]
      */
     public function getClients()
     {
@@ -248,7 +248,7 @@ class AccountPermissionVO implements ModelInterface, ArrayAccess
     /**
      * Sets clients
      *
-     * @param \com\hydrogen\Model\PermissionVO[] $clients PermissionVO
+     * @param \com\hydrogen\nucleus\Model\PermissionVO[] $clients PermissionVO
      *
      * @return $this
      */

@@ -1,4 +1,4 @@
-# com\hydrogen\FinancialHealthApi
+# com\hydrogen\proton\FinancialHealthApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -26,24 +26,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialHealthApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialHealthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$diversification_score_request = new \com\hydrogen\Model\DiversificationScoreRequest(); // \com\hydrogen\Model\DiversificationScoreRequest | Request payload for Diversification Score
+$diversification_score_request = new \com\hydrogen\proton\Model\DiversificationScoreRequest(); // \com\hydrogen\proton\Model\DiversificationScoreRequest | Request payload for Diversification Score
 
 try {
     $result = $apiInstance->diversificationScore($diversification_score_request);
@@ -58,7 +58,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **diversification_score_request** | [**\com\hydrogen\Model\DiversificationScoreRequest**](../Model/DiversificationScoreRequest.md)| Request payload for Diversification Score |
+ **diversification_score_request** | [**\com\hydrogen\proton\Model\DiversificationScoreRequest**](../Model/DiversificationScoreRequest.md)| Request payload for Diversification Score |
 
 ### Return type
 
@@ -91,24 +91,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialHealthApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialHealthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$emergency_fund_calculator_request = new \com\hydrogen\Model\EmergencyFundCalculatorRequest(); // \com\hydrogen\Model\EmergencyFundCalculatorRequest | Request payload for Emergency Fund Calculator
+$emergency_fund_calculator_request = new \com\hydrogen\proton\Model\EmergencyFundCalculatorRequest(); // \com\hydrogen\proton\Model\EmergencyFundCalculatorRequest | Request payload for Emergency Fund Calculator
 
 try {
     $result = $apiInstance->emergencyFundCalculator($emergency_fund_calculator_request);
@@ -123,7 +123,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **emergency_fund_calculator_request** | [**\com\hydrogen\Model\EmergencyFundCalculatorRequest**](../Model/EmergencyFundCalculatorRequest.md)| Request payload for Emergency Fund Calculator |
+ **emergency_fund_calculator_request** | [**\com\hydrogen\proton\Model\EmergencyFundCalculatorRequest**](../Model/EmergencyFundCalculatorRequest.md)| Request payload for Emergency Fund Calculator |
 
 ### Return type
 
@@ -156,24 +156,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialHealthApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialHealthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$financial_health_check_request = new \com\hydrogen\Model\FinancialHealthCheckRequest(); // \com\hydrogen\Model\FinancialHealthCheckRequest | Request payload for Financial Health Check
+$financial_health_check_request = new \com\hydrogen\proton\Model\FinancialHealthCheckRequest(); // \com\hydrogen\proton\Model\FinancialHealthCheckRequest | Request payload for Financial Health Check
 
 try {
     $result = $apiInstance->financialHealthCheck($financial_health_check_request);
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_health_check_request** | [**\com\hydrogen\Model\FinancialHealthCheckRequest**](../Model/FinancialHealthCheckRequest.md)| Request payload for Financial Health Check |
+ **financial_health_check_request** | [**\com\hydrogen\proton\Model\FinancialHealthCheckRequest**](../Model/FinancialHealthCheckRequest.md)| Request payload for Financial Health Check |
 
 ### Return type
 
@@ -221,24 +221,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialHealthApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialHealthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_optimization_score_request = new \com\hydrogen\Model\PortfolioOptimizationScoreRequest(); // \com\hydrogen\Model\PortfolioOptimizationScoreRequest | Request payload for Portfolio Optimization Score
+$portfolio_optimization_score_request = new \com\hydrogen\proton\Model\PortfolioOptimizationScoreRequest(); // \com\hydrogen\proton\Model\PortfolioOptimizationScoreRequest | Request payload for Portfolio Optimization Score
 
 try {
     $result = $apiInstance->portfolioOptimizationScore($portfolio_optimization_score_request);
@@ -253,7 +253,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_optimization_score_request** | [**\com\hydrogen\Model\PortfolioOptimizationScoreRequest**](../Model/PortfolioOptimizationScoreRequest.md)| Request payload for Portfolio Optimization Score |
+ **portfolio_optimization_score_request** | [**\com\hydrogen\proton\Model\PortfolioOptimizationScoreRequest**](../Model/PortfolioOptimizationScoreRequest.md)| Request payload for Portfolio Optimization Score |
 
 ### Return type
 

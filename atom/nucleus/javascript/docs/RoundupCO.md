@@ -1,4 +1,4 @@
-# HydrogenAtomApi.RoundupCO
+# HydrogenNucleusApi.RoundupCO
 
 ## Properties
 Name | Type | Description | Notes

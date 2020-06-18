@@ -18,10 +18,10 @@ Run a mean-variance optimization for a group of potential investments
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import PortfolioConstructionApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

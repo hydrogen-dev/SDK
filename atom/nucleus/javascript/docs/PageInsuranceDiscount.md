@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageInsuranceDiscount
+# HydrogenNucleusApi.PageInsuranceDiscount
 
 ## Properties
 Name | Type | Description | Notes

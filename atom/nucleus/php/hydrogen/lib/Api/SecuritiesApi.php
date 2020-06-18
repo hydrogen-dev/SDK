@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * SecuritiesApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class SecuritiesApi
      *
      * Create a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SecurityExclusion
+     * @return \com\hydrogen\nucleus\Model\SecurityExclusion
      */
     public function createSecurityExclusionUsingPost($security_exclusion_request)
     {
@@ -109,15 +109,15 @@ class SecuritiesApi
      *
      * Create a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SecurityExclusion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SecurityExclusion, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSecurityExclusionUsingPostWithHttpInfo($security_exclusion_request)
     {
-        $returnType = '\com\hydrogen\Model\SecurityExclusion';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityExclusion';
         $request = $this->createSecurityExclusionUsingPostRequest($security_exclusion_request);
 
         try {
@@ -169,7 +169,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SecurityExclusion',
+                        '\com\hydrogen\nucleus\Model\SecurityExclusion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class SecuritiesApi
      *
      * Create a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class SecuritiesApi
      *
      * Create a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSecurityExclusionUsingPostAsyncWithHttpInfo($security_exclusion_request)
     {
-        $returnType = '\com\hydrogen\Model\SecurityExclusion';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityExclusion';
         $request = $this->createSecurityExclusionUsingPostRequest($security_exclusion_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class SecuritiesApi
     /**
      * Create request for operation 'createSecurityExclusionUsingPost'
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion_request securityExclusionRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class SecuritiesApi
      *
      * Create a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price_request securityPriceRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price_request securityPriceRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SecurityPrice
+     * @return \com\hydrogen\nucleus\Model\SecurityPrice
      */
     public function createSecurityPriceUsingPost($security_price_request)
     {
@@ -377,15 +377,15 @@ class SecuritiesApi
      *
      * Create a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price_request securityPriceRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price_request securityPriceRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SecurityPrice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SecurityPrice, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSecurityPriceUsingPostWithHttpInfo($security_price_request)
     {
-        $returnType = '\com\hydrogen\Model\SecurityPrice';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityPrice';
         $request = $this->createSecurityPriceUsingPostRequest($security_price_request);
 
         try {
@@ -437,7 +437,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SecurityPrice',
+                        '\com\hydrogen\nucleus\Model\SecurityPrice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class SecuritiesApi
      *
      * Create a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price_request securityPriceRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price_request securityPriceRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class SecuritiesApi
      *
      * Create a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price_request securityPriceRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price_request securityPriceRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSecurityPriceUsingPostAsyncWithHttpInfo($security_price_request)
     {
-        $returnType = '\com\hydrogen\Model\SecurityPrice';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityPrice';
         $request = $this->createSecurityPriceUsingPostRequest($security_price_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class SecuritiesApi
     /**
      * Create request for operation 'createSecurityPriceUsingPost'
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price_request securityPriceRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price_request securityPriceRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class SecuritiesApi
      *
      * Create a security
      *
-     * @param  \com\hydrogen\Model\Security $securities_info_request securitiesInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $securities_info_request securitiesInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Security
+     * @return \com\hydrogen\nucleus\Model\Security
      */
     public function createSecurityUsingPost($securities_info_request)
     {
@@ -645,15 +645,15 @@ class SecuritiesApi
      *
      * Create a security
      *
-     * @param  \com\hydrogen\Model\Security $securities_info_request securitiesInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $securities_info_request securitiesInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Security, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Security, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSecurityUsingPostWithHttpInfo($securities_info_request)
     {
-        $returnType = '\com\hydrogen\Model\Security';
+        $returnType = '\com\hydrogen\nucleus\Model\Security';
         $request = $this->createSecurityUsingPostRequest($securities_info_request);
 
         try {
@@ -705,7 +705,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Security',
+                        '\com\hydrogen\nucleus\Model\Security',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class SecuritiesApi
      *
      * Create a security
      *
-     * @param  \com\hydrogen\Model\Security $securities_info_request securitiesInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $securities_info_request securitiesInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class SecuritiesApi
      *
      * Create a security
      *
-     * @param  \com\hydrogen\Model\Security $securities_info_request securitiesInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $securities_info_request securitiesInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSecurityUsingPostAsyncWithHttpInfo($securities_info_request)
     {
-        $returnType = '\com\hydrogen\Model\Security';
+        $returnType = '\com\hydrogen\nucleus\Model\Security';
         $request = $this->createSecurityUsingPostRequest($securities_info_request);
 
         return $this->client
@@ -790,7 +790,7 @@ class SecuritiesApi
     /**
      * Create request for operation 'createSecurityUsingPost'
      *
-     * @param  \com\hydrogen\Model\Security $securities_info_request securitiesInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $securities_info_request securitiesInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -898,7 +898,7 @@ class SecuritiesApi
      *
      * @param  string $security_exclusion_id UUID security_exclusion_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -914,7 +914,7 @@ class SecuritiesApi
      *
      * @param  string $security_exclusion_id UUID security_exclusion_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1134,7 +1134,7 @@ class SecuritiesApi
      *
      * @param  string $security_price_id UUID security_price_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1150,7 +1150,7 @@ class SecuritiesApi
      *
      * @param  string $security_price_id UUID security_price_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1370,7 +1370,7 @@ class SecuritiesApi
      *
      * @param  string $security_id UUID security_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1386,7 +1386,7 @@ class SecuritiesApi
      *
      * @param  string $security_id UUID security_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1610,9 +1610,9 @@ class SecuritiesApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageSecurity_
+     * @return \com\hydrogen\nucleus\Model\PageSecurity_
      */
     public function getSecurityAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1631,13 +1631,13 @@ class SecuritiesApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageSecurity_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageSecurity_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSecurityAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSecurity_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSecurity_';
         $request = $this->getSecurityAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1689,7 +1689,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageSecurity_',
+                        '\com\hydrogen\nucleus\Model\PageSecurity_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1739,7 +1739,7 @@ class SecuritiesApi
      */
     public function getSecurityAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSecurity_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSecurity_';
         $request = $this->getSecurityAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1910,9 +1910,9 @@ class SecuritiesApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageSecurityExclusion_
+     * @return \com\hydrogen\nucleus\Model\PageSecurityExclusion_
      */
     public function getSecurityExclusionAllUsingGet($security_exclusion_id, $ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1932,13 +1932,13 @@ class SecuritiesApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageSecurityExclusion_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageSecurityExclusion_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSecurityExclusionAllUsingGetWithHttpInfo($security_exclusion_id, $ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSecurityExclusion_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSecurityExclusion_';
         $request = $this->getSecurityExclusionAllUsingGetRequest($security_exclusion_id, $ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1990,7 +1990,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageSecurityExclusion_',
+                        '\com\hydrogen\nucleus\Model\PageSecurityExclusion_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2042,7 +2042,7 @@ class SecuritiesApi
      */
     public function getSecurityExclusionAllUsingGetAsyncWithHttpInfo($security_exclusion_id, $ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSecurityExclusion_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSecurityExclusion_';
         $request = $this->getSecurityExclusionAllUsingGetRequest($security_exclusion_id, $ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2223,9 +2223,9 @@ class SecuritiesApi
      *
      * @param  string $security_exclusion_id security exclusion id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SecurityExclusion
+     * @return \com\hydrogen\nucleus\Model\SecurityExclusion
      */
     public function getSecurityExclusionUsingGet($security_exclusion_id)
     {
@@ -2240,13 +2240,13 @@ class SecuritiesApi
      *
      * @param  string $security_exclusion_id security exclusion id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SecurityExclusion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SecurityExclusion, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSecurityExclusionUsingGetWithHttpInfo($security_exclusion_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityExclusion';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityExclusion';
         $request = $this->getSecurityExclusionUsingGetRequest($security_exclusion_id);
 
         try {
@@ -2298,7 +2298,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SecurityExclusion',
+                        '\com\hydrogen\nucleus\Model\SecurityExclusion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2340,7 +2340,7 @@ class SecuritiesApi
      */
     public function getSecurityExclusionUsingGetAsyncWithHttpInfo($security_exclusion_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityExclusion';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityExclusion';
         $request = $this->getSecurityExclusionUsingGetRequest($security_exclusion_id);
 
         return $this->client
@@ -2500,9 +2500,9 @@ class SecuritiesApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageSecurityPrice_
+     * @return \com\hydrogen\nucleus\Model\PageSecurityPrice_
      */
     public function getSecurityPriceAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2521,13 +2521,13 @@ class SecuritiesApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageSecurityPrice_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageSecurityPrice_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSecurityPriceAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSecurityPrice_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSecurityPrice_';
         $request = $this->getSecurityPriceAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2579,7 +2579,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageSecurityPrice_',
+                        '\com\hydrogen\nucleus\Model\PageSecurityPrice_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2629,7 +2629,7 @@ class SecuritiesApi
      */
     public function getSecurityPriceAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSecurityPrice_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSecurityPrice_';
         $request = $this->getSecurityPriceAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2795,9 +2795,9 @@ class SecuritiesApi
      *
      * @param  string $security_price_id UUID security_price_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SecurityPrice
+     * @return \com\hydrogen\nucleus\Model\SecurityPrice
      */
     public function getSecurityPriceUsingGet($security_price_id)
     {
@@ -2812,13 +2812,13 @@ class SecuritiesApi
      *
      * @param  string $security_price_id UUID security_price_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SecurityPrice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SecurityPrice, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSecurityPriceUsingGetWithHttpInfo($security_price_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityPrice';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityPrice';
         $request = $this->getSecurityPriceUsingGetRequest($security_price_id);
 
         try {
@@ -2870,7 +2870,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SecurityPrice',
+                        '\com\hydrogen\nucleus\Model\SecurityPrice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2912,7 +2912,7 @@ class SecuritiesApi
      */
     public function getSecurityPriceUsingGetAsyncWithHttpInfo($security_price_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityPrice';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityPrice';
         $request = $this->getSecurityPriceUsingGetRequest($security_price_id);
 
         return $this->client
@@ -3068,9 +3068,9 @@ class SecuritiesApi
      *
      * @param  string $security_id UUID security_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Security
+     * @return \com\hydrogen\nucleus\Model\Security
      */
     public function getSecurityUsingGet($security_id)
     {
@@ -3085,13 +3085,13 @@ class SecuritiesApi
      *
      * @param  string $security_id UUID security_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Security, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Security, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSecurityUsingGetWithHttpInfo($security_id)
     {
-        $returnType = '\com\hydrogen\Model\Security';
+        $returnType = '\com\hydrogen\nucleus\Model\Security';
         $request = $this->getSecurityUsingGetRequest($security_id);
 
         try {
@@ -3143,7 +3143,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Security',
+                        '\com\hydrogen\nucleus\Model\Security',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3185,7 +3185,7 @@ class SecuritiesApi
      */
     public function getSecurityUsingGetAsyncWithHttpInfo($security_id)
     {
-        $returnType = '\com\hydrogen\Model\Security';
+        $returnType = '\com\hydrogen\nucleus\Model\Security';
         $request = $this->getSecurityUsingGetRequest($security_id);
 
         return $this->client
@@ -3339,12 +3339,12 @@ class SecuritiesApi
      *
      * Update a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion security_exclusion (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion security_exclusion (required)
      * @param  string $security_exclusion_id UUID security_exclusion_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SecurityExclusion
+     * @return \com\hydrogen\nucleus\Model\SecurityExclusion
      */
     public function updateSecurityExclusionUsingPut($security_exclusion, $security_exclusion_id)
     {
@@ -3357,16 +3357,16 @@ class SecuritiesApi
      *
      * Update a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion security_exclusion (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion security_exclusion (required)
      * @param  string $security_exclusion_id UUID security_exclusion_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SecurityExclusion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SecurityExclusion, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSecurityExclusionUsingPutWithHttpInfo($security_exclusion, $security_exclusion_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityExclusion';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityExclusion';
         $request = $this->updateSecurityExclusionUsingPutRequest($security_exclusion, $security_exclusion_id);
 
         try {
@@ -3418,7 +3418,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SecurityExclusion',
+                        '\com\hydrogen\nucleus\Model\SecurityExclusion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3433,7 +3433,7 @@ class SecuritiesApi
      *
      * Update a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion security_exclusion (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion security_exclusion (required)
      * @param  string $security_exclusion_id UUID security_exclusion_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3454,7 +3454,7 @@ class SecuritiesApi
      *
      * Update a security exclusion
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion security_exclusion (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion security_exclusion (required)
      * @param  string $security_exclusion_id UUID security_exclusion_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3462,7 +3462,7 @@ class SecuritiesApi
      */
     public function updateSecurityExclusionUsingPutAsyncWithHttpInfo($security_exclusion, $security_exclusion_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityExclusion';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityExclusion';
         $request = $this->updateSecurityExclusionUsingPutRequest($security_exclusion, $security_exclusion_id);
 
         return $this->client
@@ -3505,7 +3505,7 @@ class SecuritiesApi
     /**
      * Create request for operation 'updateSecurityExclusionUsingPut'
      *
-     * @param  \com\hydrogen\Model\SecurityExclusion $security_exclusion security_exclusion (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityExclusion $security_exclusion security_exclusion (required)
      * @param  string $security_exclusion_id UUID security_exclusion_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3626,12 +3626,12 @@ class SecuritiesApi
      *
      * Update a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price security_price (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price security_price (required)
      * @param  string $security_price_id UUID security_price_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SecurityPrice
+     * @return \com\hydrogen\nucleus\Model\SecurityPrice
      */
     public function updateSecurityPriceUsingPut($security_price, $security_price_id)
     {
@@ -3644,16 +3644,16 @@ class SecuritiesApi
      *
      * Update a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price security_price (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price security_price (required)
      * @param  string $security_price_id UUID security_price_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SecurityPrice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SecurityPrice, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSecurityPriceUsingPutWithHttpInfo($security_price, $security_price_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityPrice';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityPrice';
         $request = $this->updateSecurityPriceUsingPutRequest($security_price, $security_price_id);
 
         try {
@@ -3705,7 +3705,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SecurityPrice',
+                        '\com\hydrogen\nucleus\Model\SecurityPrice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3720,7 +3720,7 @@ class SecuritiesApi
      *
      * Update a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price security_price (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price security_price (required)
      * @param  string $security_price_id UUID security_price_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3741,7 +3741,7 @@ class SecuritiesApi
      *
      * Update a security price
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price security_price (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price security_price (required)
      * @param  string $security_price_id UUID security_price_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3749,7 +3749,7 @@ class SecuritiesApi
      */
     public function updateSecurityPriceUsingPutAsyncWithHttpInfo($security_price, $security_price_id)
     {
-        $returnType = '\com\hydrogen\Model\SecurityPrice';
+        $returnType = '\com\hydrogen\nucleus\Model\SecurityPrice';
         $request = $this->updateSecurityPriceUsingPutRequest($security_price, $security_price_id);
 
         return $this->client
@@ -3792,7 +3792,7 @@ class SecuritiesApi
     /**
      * Create request for operation 'updateSecurityPriceUsingPut'
      *
-     * @param  \com\hydrogen\Model\SecurityPrice $security_price security_price (required)
+     * @param  \com\hydrogen\nucleus\Model\SecurityPrice $security_price security_price (required)
      * @param  string $security_price_id UUID security_price_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3913,12 +3913,12 @@ class SecuritiesApi
      *
      * Update a security
      *
-     * @param  \com\hydrogen\Model\Security $security security (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $security security (required)
      * @param  string $security_id UUID security_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Security
+     * @return \com\hydrogen\nucleus\Model\Security
      */
     public function updateSecurityUsingPut($security, $security_id)
     {
@@ -3931,16 +3931,16 @@ class SecuritiesApi
      *
      * Update a security
      *
-     * @param  \com\hydrogen\Model\Security $security security (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $security security (required)
      * @param  string $security_id UUID security_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Security, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Security, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSecurityUsingPutWithHttpInfo($security, $security_id)
     {
-        $returnType = '\com\hydrogen\Model\Security';
+        $returnType = '\com\hydrogen\nucleus\Model\Security';
         $request = $this->updateSecurityUsingPutRequest($security, $security_id);
 
         try {
@@ -3992,7 +3992,7 @@ class SecuritiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Security',
+                        '\com\hydrogen\nucleus\Model\Security',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4007,7 +4007,7 @@ class SecuritiesApi
      *
      * Update a security
      *
-     * @param  \com\hydrogen\Model\Security $security security (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $security security (required)
      * @param  string $security_id UUID security_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4028,7 +4028,7 @@ class SecuritiesApi
      *
      * Update a security
      *
-     * @param  \com\hydrogen\Model\Security $security security (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $security security (required)
      * @param  string $security_id UUID security_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4036,7 +4036,7 @@ class SecuritiesApi
      */
     public function updateSecurityUsingPutAsyncWithHttpInfo($security, $security_id)
     {
-        $returnType = '\com\hydrogen\Model\Security';
+        $returnType = '\com\hydrogen\nucleus\Model\Security';
         $request = $this->updateSecurityUsingPutRequest($security, $security_id);
 
         return $this->client
@@ -4079,7 +4079,7 @@ class SecuritiesApi
     /**
      * Create request for operation 'updateSecurityUsingPut'
      *
-     * @param  \com\hydrogen\Model\Security $security security (required)
+     * @param  \com\hydrogen\nucleus\Model\Security $security security (required)
      * @param  string $security_id UUID security_id (required)
      *
      * @throws \InvalidArgumentException

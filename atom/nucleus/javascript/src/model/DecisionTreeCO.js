@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./AnswerMap'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.DecisionTreeCO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AnswerMap);
+    root.HydrogenNucleusApi.DecisionTreeCO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AnswerMap);
   }
 }(this, function(ApiClient, AnswerMap) {
   'use strict';

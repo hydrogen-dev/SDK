@@ -1,4 +1,4 @@
-# com\hydrogen\SimulationsApi
+# com\hydrogen\proton\SimulationsApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -29,24 +29,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SimulationsApi(
+$apiInstance = new com\hydrogen\proton\Api\SimulationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$backtest_request = new \com\hydrogen\Model\BacktestRequest(); // \com\hydrogen\Model\BacktestRequest | Request payload for Backtest
+$backtest_request = new \com\hydrogen\proton\Model\BacktestRequest(); // \com\hydrogen\proton\Model\BacktestRequest | Request payload for Backtest
 
 try {
     $result = $apiInstance->backtest($backtest_request);
@@ -61,7 +61,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backtest_request** | [**\com\hydrogen\Model\BacktestRequest**](../Model/BacktestRequest.md)| Request payload for Backtest |
+ **backtest_request** | [**\com\hydrogen\proton\Model\BacktestRequest**](../Model/BacktestRequest.md)| Request payload for Backtest |
 
 ### Return type
 
@@ -94,24 +94,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SimulationsApi(
+$apiInstance = new com\hydrogen\proton\Api\SimulationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$event_study_request = new \com\hydrogen\Model\EventStudyRequest(); // \com\hydrogen\Model\EventStudyRequest | Request payload for Event Study
+$event_study_request = new \com\hydrogen\proton\Model\EventStudyRequest(); // \com\hydrogen\proton\Model\EventStudyRequest | Request payload for Event Study
 
 try {
     $result = $apiInstance->eventStudy($event_study_request);
@@ -126,7 +126,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_study_request** | [**\com\hydrogen\Model\EventStudyRequest**](../Model/EventStudyRequest.md)| Request payload for Event Study |
+ **event_study_request** | [**\com\hydrogen\proton\Model\EventStudyRequest**](../Model/EventStudyRequest.md)| Request payload for Event Study |
 
 ### Return type
 
@@ -159,24 +159,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SimulationsApi(
+$apiInstance = new com\hydrogen\proton\Api\SimulationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$monte_carlo_request = new \com\hydrogen\Model\MonteCarloRequest(); // \com\hydrogen\Model\MonteCarloRequest | Request payload for Monte Carlo
+$monte_carlo_request = new \com\hydrogen\proton\Model\MonteCarloRequest(); // \com\hydrogen\proton\Model\MonteCarloRequest | Request payload for Monte Carlo
 
 try {
     $result = $apiInstance->monteCarlo($monte_carlo_request);
@@ -191,7 +191,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **monte_carlo_request** | [**\com\hydrogen\Model\MonteCarloRequest**](../Model/MonteCarloRequest.md)| Request payload for Monte Carlo |
+ **monte_carlo_request** | [**\com\hydrogen\proton\Model\MonteCarloRequest**](../Model/MonteCarloRequest.md)| Request payload for Monte Carlo |
 
 ### Return type
 
@@ -224,24 +224,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SimulationsApi(
+$apiInstance = new com\hydrogen\proton\Api\SimulationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_what_if_request = new \com\hydrogen\Model\PortfolioWhatIfRequest(); // \com\hydrogen\Model\PortfolioWhatIfRequest | Request payload for Portfolio What-If
+$portfolio_what_if_request = new \com\hydrogen\proton\Model\PortfolioWhatIfRequest(); // \com\hydrogen\proton\Model\PortfolioWhatIfRequest | Request payload for Portfolio What-If
 
 try {
     $result = $apiInstance->portfolioWhatIf($portfolio_what_if_request);
@@ -256,7 +256,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_what_if_request** | [**\com\hydrogen\Model\PortfolioWhatIfRequest**](../Model/PortfolioWhatIfRequest.md)| Request payload for Portfolio What-If |
+ **portfolio_what_if_request** | [**\com\hydrogen\proton\Model\PortfolioWhatIfRequest**](../Model/PortfolioWhatIfRequest.md)| Request payload for Portfolio What-If |
 
 ### Return type
 
@@ -289,24 +289,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SimulationsApi(
+$apiInstance = new com\hydrogen\proton\Api\SimulationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$savings_calculator_request = new \com\hydrogen\Model\SavingsCalculatorRequest(); // \com\hydrogen\Model\SavingsCalculatorRequest | Request payload for Savings Calculator
+$savings_calculator_request = new \com\hydrogen\proton\Model\SavingsCalculatorRequest(); // \com\hydrogen\proton\Model\SavingsCalculatorRequest | Request payload for Savings Calculator
 
 try {
     $result = $apiInstance->savingsCalculator($savings_calculator_request);
@@ -321,7 +321,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **savings_calculator_request** | [**\com\hydrogen\Model\SavingsCalculatorRequest**](../Model/SavingsCalculatorRequest.md)| Request payload for Savings Calculator |
+ **savings_calculator_request** | [**\com\hydrogen\proton\Model\SavingsCalculatorRequest**](../Model/SavingsCalculatorRequest.md)| Request payload for Savings Calculator |
 
 ### Return type
 
@@ -354,24 +354,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SimulationsApi(
+$apiInstance = new com\hydrogen\proton\Api\SimulationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$scneario_analysis_request = new \com\hydrogen\Model\ScenarioAnalysisRequest(); // \com\hydrogen\Model\ScenarioAnalysisRequest | Request payload for Scenario Analysis
+$scneario_analysis_request = new \com\hydrogen\proton\Model\ScenarioAnalysisRequest(); // \com\hydrogen\proton\Model\ScenarioAnalysisRequest | Request payload for Scenario Analysis
 
 try {
     $result = $apiInstance->scenarioAnalysis($scneario_analysis_request);
@@ -386,7 +386,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scneario_analysis_request** | [**\com\hydrogen\Model\ScenarioAnalysisRequest**](../Model/ScenarioAnalysisRequest.md)| Request payload for Scenario Analysis |
+ **scneario_analysis_request** | [**\com\hydrogen\proton\Model\ScenarioAnalysisRequest**](../Model/ScenarioAnalysisRequest.md)| Request payload for Scenario Analysis |
 
 ### Return type
 
@@ -419,24 +419,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\SimulationsApi(
+$apiInstance = new com\hydrogen\proton\Api\SimulationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$sensitivity_analysis_request = new \com\hydrogen\Model\SensitivityAnalysisRequest(); // \com\hydrogen\Model\SensitivityAnalysisRequest | Request payload for Sensitivity Analysis
+$sensitivity_analysis_request = new \com\hydrogen\proton\Model\SensitivityAnalysisRequest(); // \com\hydrogen\proton\Model\SensitivityAnalysisRequest | Request payload for Sensitivity Analysis
 
 try {
     $result = $apiInstance->sensitivityAnalysis($sensitivity_analysis_request);
@@ -451,7 +451,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sensitivity_analysis_request** | [**\com\hydrogen\Model\SensitivityAnalysisRequest**](../Model/SensitivityAnalysisRequest.md)| Request payload for Sensitivity Analysis |
+ **sensitivity_analysis_request** | [**\com\hydrogen\proton\Model\SensitivityAnalysisRequest**](../Model/SensitivityAnalysisRequest.md)| Request payload for Sensitivity Analysis |
 
 ### Return type
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.StatisticResourceVO();
+    instance = new HydrogenNucleusApi.StatisticResourceVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('StatisticResourceVO', function() {
     it('should create an instance of StatisticResourceVO', function() {
       // uncomment below and update the code to test StatisticResourceVO
-      //var instane = new HydrogenAtomApi.StatisticResourceVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.StatisticResourceVO);
+      //var instane = new HydrogenNucleusApi.StatisticResourceVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.StatisticResourceVO);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.StatisticResourceVO();
+      //var instane = new HydrogenNucleusApi.StatisticResourceVO();
       //expect(instance).to.be();
     });
 
     it('should have the property parameter (base name: "parameter")', function() {
       // uncomment below and update the code to test the property parameter
-      //var instane = new HydrogenAtomApi.StatisticResourceVO();
+      //var instane = new HydrogenNucleusApi.StatisticResourceVO();
       //expect(instance).to.be();
     });
 
     it('should have the property statName (base name: "stat_name")', function() {
       // uncomment below and update the code to test the property statName
-      //var instane = new HydrogenAtomApi.StatisticResourceVO();
+      //var instane = new HydrogenNucleusApi.StatisticResourceVO();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new HydrogenAtomApi.StatisticResourceVO();
+      //var instane = new HydrogenNucleusApi.StatisticResourceVO();
       //expect(instance).to.be();
     });
 

@@ -36,9 +36,9 @@ Create a new  campaign data record for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -93,9 +93,9 @@ Create a new campaign plan for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -150,9 +150,9 @@ Create a new campaign for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -207,9 +207,9 @@ We are adding a campaign association to a clientId or ip.  We create this associ
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -264,9 +264,9 @@ Permanently delete a campaign data record
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -320,9 +320,9 @@ Permanently delete a campaign plan
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -376,9 +376,9 @@ Permanently delete a campaign
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -432,9 +432,9 @@ Permanently delete a clients/ips pair under a campaign
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -488,9 +488,9 @@ Get details for all campaigns defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -553,9 +553,9 @@ Get details for all campaign data defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -618,9 +618,9 @@ Retrieve the information for a campaign data record
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -675,9 +675,9 @@ Get details for all campaign plans defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -740,9 +740,9 @@ Retrieve the information for a campaign plan
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -797,9 +797,9 @@ Retrieve the information for a campaign.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -854,9 +854,9 @@ Get details for all clients/ips under a campaign
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -919,9 +919,9 @@ Retrieve the information for a clients/ips pair under a campaign
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -976,9 +976,9 @@ Updated the information for a campaign data record
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1035,9 +1035,9 @@ Updated the information for a campaign plan
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1094,9 +1094,9 @@ Updated the information for a campaign
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1153,9 +1153,9 @@ Updated the information for clients/ips pair under a campaign
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import MarketingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

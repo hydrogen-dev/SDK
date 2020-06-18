@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * BulkApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,12 +92,12 @@ class BulkApi
      *
      * Create a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BulkTransaction
+     * @return \com\hydrogen\nucleus\Model\BulkTransaction
      */
     public function createBulkUsingPost($data, $entity_uri)
     {
@@ -110,16 +110,16 @@ class BulkApi
      *
      * Create a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BulkTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BulkTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBulkUsingPostWithHttpInfo($data, $entity_uri)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransaction';
         $request = $this->createBulkUsingPostRequest($data, $entity_uri);
 
         try {
@@ -171,7 +171,7 @@ class BulkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BulkTransaction',
+                        '\com\hydrogen\nucleus\Model\BulkTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -186,7 +186,7 @@ class BulkApi
      *
      * Create a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -207,7 +207,7 @@ class BulkApi
      *
      * Create a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -215,7 +215,7 @@ class BulkApi
      */
     public function createBulkUsingPostAsyncWithHttpInfo($data, $entity_uri)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransaction';
         $request = $this->createBulkUsingPostRequest($data, $entity_uri);
 
         return $this->client
@@ -258,7 +258,7 @@ class BulkApi
     /**
      * Create request for operation 'createBulkUsingPost'
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -379,12 +379,12 @@ class BulkApi
      *
      * Delete a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BulkTransaction
+     * @return \com\hydrogen\nucleus\Model\BulkTransaction
      */
     public function deleteBulkUsingDelete($data, $entity_uri)
     {
@@ -397,16 +397,16 @@ class BulkApi
      *
      * Delete a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BulkTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BulkTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBulkUsingDeleteWithHttpInfo($data, $entity_uri)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransaction';
         $request = $this->deleteBulkUsingDeleteRequest($data, $entity_uri);
 
         try {
@@ -458,7 +458,7 @@ class BulkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BulkTransaction',
+                        '\com\hydrogen\nucleus\Model\BulkTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -473,7 +473,7 @@ class BulkApi
      *
      * Delete a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -494,7 +494,7 @@ class BulkApi
      *
      * Delete a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -502,7 +502,7 @@ class BulkApi
      */
     public function deleteBulkUsingDeleteAsyncWithHttpInfo($data, $entity_uri)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransaction';
         $request = $this->deleteBulkUsingDeleteRequest($data, $entity_uri);
 
         return $this->client
@@ -545,7 +545,7 @@ class BulkApi
     /**
      * Create request for operation 'deleteBulkUsingDelete'
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -668,9 +668,9 @@ class BulkApi
      *
      * @param  string $id UUID Bulk Transaction Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BulkTransactionVO
+     * @return \com\hydrogen\nucleus\Model\BulkTransactionVO
      */
     public function getBulkStatusUsingGet($id)
     {
@@ -685,13 +685,13 @@ class BulkApi
      *
      * @param  string $id UUID Bulk Transaction Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BulkTransactionVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BulkTransactionVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBulkStatusUsingGetWithHttpInfo($id)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransactionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransactionVO';
         $request = $this->getBulkStatusUsingGetRequest($id);
 
         try {
@@ -743,7 +743,7 @@ class BulkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BulkTransactionVO',
+                        '\com\hydrogen\nucleus\Model\BulkTransactionVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -785,7 +785,7 @@ class BulkApi
      */
     public function getBulkStatusUsingGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransactionVO';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransactionVO';
         $request = $this->getBulkStatusUsingGetRequest($id);
 
         return $this->client
@@ -939,12 +939,12 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\BulkTransaction
+     * @return \com\hydrogen\nucleus\Model\BulkTransaction
      */
     public function updateBulkUsingPut($data, $entity_uri)
     {
@@ -957,16 +957,16 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\BulkTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\BulkTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateBulkUsingPutWithHttpInfo($data, $entity_uri)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransaction';
         $request = $this->updateBulkUsingPutRequest($data, $entity_uri);
 
         try {
@@ -1018,7 +1018,7 @@ class BulkApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\BulkTransaction',
+                        '\com\hydrogen\nucleus\Model\BulkTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1033,7 +1033,7 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -1054,7 +1054,7 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -1062,7 +1062,7 @@ class BulkApi
      */
     public function updateBulkUsingPutAsyncWithHttpInfo($data, $entity_uri)
     {
-        $returnType = '\com\hydrogen\Model\BulkTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\BulkTransaction';
         $request = $this->updateBulkUsingPutRequest($data, $entity_uri);
 
         return $this->client
@@ -1105,7 +1105,7 @@ class BulkApi
     /**
      * Create request for operation 'updateBulkUsingPut'
      *
-     * @param  \com\hydrogen\Model\JsonNode $data data (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException

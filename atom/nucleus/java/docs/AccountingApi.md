@@ -21,9 +21,9 @@ Store stats pulled from accounting vendors.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AccountingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -78,9 +78,9 @@ Permanently delete an accounting.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AccountingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -134,9 +134,9 @@ Get information for all accounting for all clients defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AccountingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -199,9 +199,9 @@ Retrieve the information for a specific accounting associated with a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AccountingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -256,9 +256,9 @@ Update the information for an accounting.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AccountingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

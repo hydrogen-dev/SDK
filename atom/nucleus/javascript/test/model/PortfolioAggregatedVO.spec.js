@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PortfolioAggregatedVO();
+    instance = new HydrogenNucleusApi.PortfolioAggregatedVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,73 +53,73 @@
   describe('PortfolioAggregatedVO', function() {
     it('should create an instance of PortfolioAggregatedVO', function() {
       // uncomment below and update the code to test PortfolioAggregatedVO
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.PortfolioAggregatedVO);
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PortfolioAggregatedVO);
     });
 
     it('should have the property assetClasses (base name: "asset_classes")', function() {
       // uncomment below and update the code to test the property assetClasses
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property categories (base name: "categories")', function() {
       // uncomment below and update the code to test the property categories
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property industries (base name: "industries")', function() {
       // uncomment below and update the code to test the property industries
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property sectors (base name: "sectors")', function() {
       // uncomment below and update the code to test the property sectors
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityClasses (base name: "security_classes")', function() {
       // uncomment below and update the code to test the property securityClasses
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.PortfolioAggregatedVO();
+      //var instane = new HydrogenNucleusApi.PortfolioAggregatedVO();
       //expect(instance).to.be();
     });
 

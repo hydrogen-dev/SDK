@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AllocationAggregatedVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class AllocationAggregatedVO implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'allocation_category' => 'string',
-        'allocation_compositions' => '\com\hydrogen\Model\AllocationCompositionAggregatedVO[]',
+        'allocation_compositions' => '\com\hydrogen\nucleus\Model\AllocationCompositionAggregatedVO[]',
         'allocation_description' => 'string',
         'allocation_id' => 'string',
         'allocation_name' => 'string',
@@ -261,7 +261,7 @@ class AllocationAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Gets allocation_compositions
      *
-     * @return \com\hydrogen\Model\AllocationCompositionAggregatedVO[]
+     * @return \com\hydrogen\nucleus\Model\AllocationCompositionAggregatedVO[]
      */
     public function getAllocationCompositions()
     {
@@ -271,7 +271,7 @@ class AllocationAggregatedVO implements ModelInterface, ArrayAccess
     /**
      * Sets allocation_compositions
      *
-     * @param \com\hydrogen\Model\AllocationCompositionAggregatedVO[] $allocation_compositions allocation_compositions
+     * @param \com\hydrogen\nucleus\Model\AllocationCompositionAggregatedVO[] $allocation_compositions allocation_compositions
      *
      * @return $this
      */

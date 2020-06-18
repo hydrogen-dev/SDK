@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.NodeRelationship();
+    instance = new HydrogenNucleusApi.NodeRelationship();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,73 +53,73 @@
   describe('NodeRelationship', function() {
     it('should create an instance of NodeRelationship', function() {
       // uncomment below and update the code to test NodeRelationship
-      //var instane = new HydrogenAtomApi.NodeRelationship();
-      //expect(instance).to.be.a(HydrogenAtomApi.NodeRelationship);
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
+      //expect(instance).to.be.a(HydrogenNucleusApi.NodeRelationship);
     });
 
     it('should have the property answerId (base name: "answer_id")', function() {
       // uncomment below and update the code to test the property answerId
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property decisionTreeId (base name: "decision_tree_id")', function() {
       // uncomment below and update the code to test the property decisionTreeId
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property isLeaf (base name: "is_leaf")', function() {
       // uncomment below and update the code to test the property isLeaf
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property nodeChildId (base name: "node_child_id")', function() {
       // uncomment below and update the code to test the property nodeChildId
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property nodeParentId (base name: "node_parent_id")', function() {
       // uncomment below and update the code to test the property nodeParentId
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new HydrogenAtomApi.NodeRelationship();
+      //var instane = new HydrogenNucleusApi.NodeRelationship();
       //expect(instance).to.be();
     });
 

@@ -42,9 +42,9 @@ Create a new asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -99,9 +99,9 @@ Model composition changes represent a change in a model’s holdings.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -158,9 +158,9 @@ Create a new comment for a model available for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -215,9 +215,9 @@ Create a new model holding record for a specific model and date.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -272,9 +272,9 @@ Create a new transaction record for a security under a model for a specific date
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -329,9 +329,9 @@ Create a new model for your firm to which a portfolios can later subscribe.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -386,9 +386,9 @@ Permanently delete a model asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -442,9 +442,9 @@ Permanently delete a model comment for a model
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -498,9 +498,9 @@ Permanently delete a model holding record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -554,9 +554,9 @@ Permanently delete a model transaction for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -610,9 +610,9 @@ Permanently delete a model for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -666,9 +666,9 @@ Get details for all models defined for your firm to which portfolios can subscri
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -731,9 +731,9 @@ Get a list of asset sizes per date for all models defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -796,9 +796,9 @@ Retrieve the information for a model asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -853,9 +853,9 @@ List all comments for all models defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -918,9 +918,9 @@ Retrieve the information for a model comment for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -975,9 +975,9 @@ Get all model holding records for all models defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1040,9 +1040,9 @@ Retrieve the information for a model holding record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1097,9 +1097,9 @@ Get details for all transaction records for all models defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1162,9 +1162,9 @@ Retrieve the information for a model transaction for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1219,9 +1219,9 @@ Get the information for a model for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1276,9 +1276,9 @@ Update a model asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1335,9 +1335,9 @@ Update a model comment for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1394,9 +1394,9 @@ Update a model holding record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1453,9 +1453,9 @@ Update a model transaction for a model.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1512,9 +1512,9 @@ Update a model for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

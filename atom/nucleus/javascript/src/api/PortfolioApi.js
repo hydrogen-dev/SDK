@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/PagePortfolio'), require('../model/PagePortfolioAssetSizeLog'), require('../model/PagePortfolioComment'), require('../model/PagePortfolioGoal'), require('../model/PagePortfolioTransaction'), require('../model/Portfolio'), require('../model/PortfolioAggregatedVO'), require('../model/PortfolioAssetSize'), require('../model/PortfolioAssetSizeLog'), require('../model/PortfolioComment'), require('../model/PortfolioGoal'), require('../model/PortfolioHolding'), require('../model/PortfolioHoldingLog'), require('../model/PortfolioTransaction'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.PortfolioApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.PagePortfolio, root.HydrogenAtomApi.PagePortfolioAssetSizeLog, root.HydrogenAtomApi.PagePortfolioComment, root.HydrogenAtomApi.PagePortfolioGoal, root.HydrogenAtomApi.PagePortfolioTransaction, root.HydrogenAtomApi.Portfolio, root.HydrogenAtomApi.PortfolioAggregatedVO, root.HydrogenAtomApi.PortfolioAssetSize, root.HydrogenAtomApi.PortfolioAssetSizeLog, root.HydrogenAtomApi.PortfolioComment, root.HydrogenAtomApi.PortfolioGoal, root.HydrogenAtomApi.PortfolioHolding, root.HydrogenAtomApi.PortfolioHoldingLog, root.HydrogenAtomApi.PortfolioTransaction);
+    root.HydrogenNucleusApi.PortfolioApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.PagePortfolio, root.HydrogenNucleusApi.PagePortfolioAssetSizeLog, root.HydrogenNucleusApi.PagePortfolioComment, root.HydrogenNucleusApi.PagePortfolioGoal, root.HydrogenNucleusApi.PagePortfolioTransaction, root.HydrogenNucleusApi.Portfolio, root.HydrogenNucleusApi.PortfolioAggregatedVO, root.HydrogenNucleusApi.PortfolioAssetSize, root.HydrogenNucleusApi.PortfolioAssetSizeLog, root.HydrogenNucleusApi.PortfolioComment, root.HydrogenNucleusApi.PortfolioGoal, root.HydrogenNucleusApi.PortfolioHolding, root.HydrogenNucleusApi.PortfolioHoldingLog, root.HydrogenNucleusApi.PortfolioTransaction);
   }
 }(this, function(ApiClient, PagePortfolio, PagePortfolioAssetSizeLog, PagePortfolioComment, PagePortfolioGoal, PagePortfolioTransaction, Portfolio, PortfolioAggregatedVO, PortfolioAssetSize, PortfolioAssetSizeLog, PortfolioComment, PortfolioGoal, PortfolioHolding, PortfolioHoldingLog, PortfolioTransaction) {
   'use strict';

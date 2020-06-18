@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Customer();
+    instance = new HydrogenNucleusApi.Customer();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,91 +53,91 @@
   describe('Customer', function() {
     it('should create an instance of Customer', function() {
       // uncomment below and update the code to test Customer
-      //var instane = new HydrogenAtomApi.Customer();
-      //expect(instance).to.be.a(HydrogenAtomApi.Customer);
+      //var instane = new HydrogenNucleusApi.Customer();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Customer);
     });
 
     it('should have the property address (base name: "address")', function() {
       // uncomment below and update the code to test the property address
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property companyName (base name: "company_name")', function() {
       // uncomment below and update the code to test the property companyName
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property firstName (base name: "first_name")', function() {
       // uncomment below and update the code to test the property firstName
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property identificationNumber (base name: "identification_number")', function() {
       // uncomment below and update the code to test the property identificationNumber
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property lastName (base name: "last_name")', function() {
       // uncomment below and update the code to test the property lastName
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.Customer();
+      //var instane = new HydrogenNucleusApi.Customer();
       //expect(instance).to.be();
     });
 

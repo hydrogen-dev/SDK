@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageSupportTicketComment
+# HydrogenNucleusApi.PageSupportTicketComment
 
 ## Properties
 Name | Type | Description | Notes

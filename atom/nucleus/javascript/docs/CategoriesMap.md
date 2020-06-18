@@ -1,4 +1,4 @@
-# HydrogenAtomApi.CategoriesMap
+# HydrogenNucleusApi.CategoriesMap
 
 ## Properties
 Name | Type | Description | Notes

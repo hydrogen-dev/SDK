@@ -1,4 +1,4 @@
-# atom_api.SecuritiesApi
+# nucleus_api.SecuritiesApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -32,15 +32,15 @@ Create a new security exclusion for a specific account or portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -52,8 +52,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
-security_exclusion_request = atom_api.SecurityExclusion() # SecurityExclusion | securityExclusionRequest
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
+security_exclusion_request = nucleus_api.SecurityExclusion() # SecurityExclusion | securityExclusionRequest
 
 try:
     # Create a security exclusion
@@ -95,15 +95,15 @@ Create a new price for a security defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -115,8 +115,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
-security_price_request = atom_api.SecurityPrice() # SecurityPrice | securityPriceRequest
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
+security_price_request = nucleus_api.SecurityPrice() # SecurityPrice | securityPriceRequest
 
 try:
     # Create a security price
@@ -158,15 +158,15 @@ Create a new security for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -178,8 +178,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
-securities_info_request = atom_api.Security() # Security | securitiesInfoRequest
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
+securities_info_request = nucleus_api.Security() # Security | securitiesInfoRequest
 
 try:
     # Create a security
@@ -221,15 +221,15 @@ Permanently delete a security exclusion
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -241,7 +241,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
 
 try:
@@ -283,15 +283,15 @@ Permanently delete a security price from a security.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -303,7 +303,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
 
 try:
@@ -345,15 +345,15 @@ Permanently delete a security for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -365,7 +365,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | UUID security_id
 
 try:
@@ -407,15 +407,15 @@ Get details for all securities defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -427,7 +427,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -478,15 +478,15 @@ Get details for all security exclusions defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -498,7 +498,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
@@ -551,15 +551,15 @@ Retrieve the information for a security exclusion.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -571,7 +571,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_id = 'security_exclusion_id_example' # str | security exclusion id
 
 try:
@@ -614,15 +614,15 @@ Get prices for all securities defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -634,7 +634,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -685,15 +685,15 @@ Retrieve the information for a security price for a security.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -705,7 +705,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
 
 try:
@@ -748,15 +748,15 @@ Retrieve the information for a security defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -768,7 +768,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | UUID security_id
 
 try:
@@ -811,15 +811,15 @@ Update the information for a security exclusion.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -831,8 +831,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
-security_exclusion = atom_api.SecurityExclusion() # SecurityExclusion | security_exclusion
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
+security_exclusion = nucleus_api.SecurityExclusion() # SecurityExclusion | security_exclusion
 security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
 
 try:
@@ -876,15 +876,15 @@ Update a security price for a security.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -896,8 +896,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
-security_price = atom_api.SecurityPrice() # SecurityPrice | security_price
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
+security_price = nucleus_api.SecurityPrice() # SecurityPrice | security_price
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
 
 try:
@@ -941,15 +941,15 @@ Update a security for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -961,8 +961,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.SecuritiesApi(atom_api.ApiClient(configuration))
-security = atom_api.Security() # Security | security
+api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
+security = nucleus_api.Security() # Security | security
 security_id = 'security_id_example' # str | UUID security_id
 
 try:

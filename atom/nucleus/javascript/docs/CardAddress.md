@@ -1,4 +1,4 @@
-# HydrogenAtomApi.CardAddress
+# HydrogenNucleusApi.CardAddress
 
 ## Properties
 Name | Type | Description | Notes

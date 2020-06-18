@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **description** | **string** | description | [optional] 
 **id** | **string** |  | [optional] 
 **is_read** | **bool** | isRead | [optional] 
-**location** | [**\com\hydrogen\Model\Location**](Location.md) | location | [optional] 
+**location** | [**\com\hydrogen\nucleus\Model\Location**](Location.md) | location | [optional] 
 **memo** | **string** | memo | [optional] 
 **merchant** | **string** | merchant | [optional] 
 **model_id** | **string** | modelId | 

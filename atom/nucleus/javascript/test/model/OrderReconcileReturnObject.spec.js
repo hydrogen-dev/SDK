@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.OrderReconcileReturnObject();
+    instance = new HydrogenNucleusApi.OrderReconcileReturnObject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('OrderReconcileReturnObject', function() {
     it('should create an instance of OrderReconcileReturnObject', function() {
       // uncomment below and update the code to test OrderReconcileReturnObject
-      //var instane = new HydrogenAtomApi.OrderReconcileReturnObject();
-      //expect(instance).to.be.a(HydrogenAtomApi.OrderReconcileReturnObject);
+      //var instane = new HydrogenNucleusApi.OrderReconcileReturnObject();
+      //expect(instance).to.be.a(HydrogenNucleusApi.OrderReconcileReturnObject);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.OrderReconcileReturnObject();
+      //var instane = new HydrogenNucleusApi.OrderReconcileReturnObject();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioAssetSizeId (base name: "portfolio_asset_size_id")', function() {
       // uncomment below and update the code to test the property portfolioAssetSizeId
-      //var instane = new HydrogenAtomApi.OrderReconcileReturnObject();
+      //var instane = new HydrogenNucleusApi.OrderReconcileReturnObject();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioHoldingId (base name: "portfolio_holding_id")', function() {
       // uncomment below and update the code to test the property portfolioHoldingId
-      //var instane = new HydrogenAtomApi.OrderReconcileReturnObject();
+      //var instane = new HydrogenNucleusApi.OrderReconcileReturnObject();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.OrderReconcileReturnObject();
+      //var instane = new HydrogenNucleusApi.OrderReconcileReturnObject();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioTransactionId (base name: "portfolio_transaction_id")', function() {
       // uncomment below and update the code to test the property portfolioTransactionId
-      //var instane = new HydrogenAtomApi.OrderReconcileReturnObject();
+      //var instane = new HydrogenNucleusApi.OrderReconcileReturnObject();
       //expect(instance).to.be();
     });
 

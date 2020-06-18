@@ -1,4 +1,4 @@
-# AtomApi::MerchantsMap
+# NucleusApi::MerchantsMap
 
 ## Properties
 Name | Type | Description | Notes

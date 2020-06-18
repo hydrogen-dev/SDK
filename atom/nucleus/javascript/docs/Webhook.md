@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Webhook
+# HydrogenNucleusApi.Webhook
 
 ## Properties
 Name | Type | Description | Notes

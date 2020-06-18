@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * RiskProfileApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class RiskProfileApi
      *
      * Create a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile riskProfile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile riskProfile (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\RiskProfile
+     * @return \com\hydrogen\nucleus\Model\RiskProfile
      */
     public function createRiskProfileUsingPost($risk_profile)
     {
@@ -109,15 +109,15 @@ class RiskProfileApi
      *
      * Create a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile riskProfile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile riskProfile (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\RiskProfile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\RiskProfile, HTTP status code, HTTP response headers (array of strings)
      */
     public function createRiskProfileUsingPostWithHttpInfo($risk_profile)
     {
-        $returnType = '\com\hydrogen\Model\RiskProfile';
+        $returnType = '\com\hydrogen\nucleus\Model\RiskProfile';
         $request = $this->createRiskProfileUsingPostRequest($risk_profile);
 
         try {
@@ -169,7 +169,7 @@ class RiskProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\RiskProfile',
+                        '\com\hydrogen\nucleus\Model\RiskProfile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class RiskProfileApi
      *
      * Create a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile riskProfile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile riskProfile (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class RiskProfileApi
      *
      * Create a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile riskProfile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile riskProfile (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createRiskProfileUsingPostAsyncWithHttpInfo($risk_profile)
     {
-        $returnType = '\com\hydrogen\Model\RiskProfile';
+        $returnType = '\com\hydrogen\nucleus\Model\RiskProfile';
         $request = $this->createRiskProfileUsingPostRequest($risk_profile);
 
         return $this->client
@@ -254,7 +254,7 @@ class RiskProfileApi
     /**
      * Create request for operation 'createRiskProfileUsingPost'
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile riskProfile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile riskProfile (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,7 +362,7 @@ class RiskProfileApi
      *
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -378,7 +378,7 @@ class RiskProfileApi
      *
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -602,9 +602,9 @@ class RiskProfileApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageRiskProfile_
+     * @return \com\hydrogen\nucleus\Model\PageRiskProfile_
      */
     public function getRiskProfileAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -623,13 +623,13 @@ class RiskProfileApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageRiskProfile_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageRiskProfile_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRiskProfileAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageRiskProfile_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageRiskProfile_';
         $request = $this->getRiskProfileAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -681,7 +681,7 @@ class RiskProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageRiskProfile_',
+                        '\com\hydrogen\nucleus\Model\PageRiskProfile_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class RiskProfileApi
      */
     public function getRiskProfileAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageRiskProfile_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageRiskProfile_';
         $request = $this->getRiskProfileAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -897,9 +897,9 @@ class RiskProfileApi
      *
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\RiskProfile
+     * @return \com\hydrogen\nucleus\Model\RiskProfile
      */
     public function getRiskProfileUsingGet($risk_profile_id)
     {
@@ -914,13 +914,13 @@ class RiskProfileApi
      *
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\RiskProfile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\RiskProfile, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRiskProfileUsingGetWithHttpInfo($risk_profile_id)
     {
-        $returnType = '\com\hydrogen\Model\RiskProfile';
+        $returnType = '\com\hydrogen\nucleus\Model\RiskProfile';
         $request = $this->getRiskProfileUsingGetRequest($risk_profile_id);
 
         try {
@@ -972,7 +972,7 @@ class RiskProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\RiskProfile',
+                        '\com\hydrogen\nucleus\Model\RiskProfile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1014,7 +1014,7 @@ class RiskProfileApi
      */
     public function getRiskProfileUsingGetAsyncWithHttpInfo($risk_profile_id)
     {
-        $returnType = '\com\hydrogen\Model\RiskProfile';
+        $returnType = '\com\hydrogen\nucleus\Model\RiskProfile';
         $request = $this->getRiskProfileUsingGetRequest($risk_profile_id);
 
         return $this->client
@@ -1168,12 +1168,12 @@ class RiskProfileApi
      *
      * Update a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile risk_profile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile risk_profile (required)
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\RiskProfile
+     * @return \com\hydrogen\nucleus\Model\RiskProfile
      */
     public function updateRiskProfileUsingPut($risk_profile, $risk_profile_id)
     {
@@ -1186,16 +1186,16 @@ class RiskProfileApi
      *
      * Update a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile risk_profile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile risk_profile (required)
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\RiskProfile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\RiskProfile, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateRiskProfileUsingPutWithHttpInfo($risk_profile, $risk_profile_id)
     {
-        $returnType = '\com\hydrogen\Model\RiskProfile';
+        $returnType = '\com\hydrogen\nucleus\Model\RiskProfile';
         $request = $this->updateRiskProfileUsingPutRequest($risk_profile, $risk_profile_id);
 
         try {
@@ -1247,7 +1247,7 @@ class RiskProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\RiskProfile',
+                        '\com\hydrogen\nucleus\Model\RiskProfile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class RiskProfileApi
      *
      * Update a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile risk_profile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile risk_profile (required)
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class RiskProfileApi
      *
      * Update a Risk Profile
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile risk_profile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile risk_profile (required)
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class RiskProfileApi
      */
     public function updateRiskProfileUsingPutAsyncWithHttpInfo($risk_profile, $risk_profile_id)
     {
-        $returnType = '\com\hydrogen\Model\RiskProfile';
+        $returnType = '\com\hydrogen\nucleus\Model\RiskProfile';
         $request = $this->updateRiskProfileUsingPutRequest($risk_profile, $risk_profile_id);
 
         return $this->client
@@ -1334,7 +1334,7 @@ class RiskProfileApi
     /**
      * Create request for operation 'updateRiskProfileUsingPut'
      *
-     * @param  \com\hydrogen\Model\RiskProfile $risk_profile risk_profile (required)
+     * @param  \com\hydrogen\nucleus\Model\RiskProfile $risk_profile risk_profile (required)
      * @param  string $risk_profile_id UUID risk_profile_id (required)
      *
      * @throws \InvalidArgumentException

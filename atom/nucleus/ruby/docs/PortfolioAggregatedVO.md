@@ -1,4 +1,4 @@
-# AtomApi::PortfolioAggregatedVO
+# NucleusApi::PortfolioAggregatedVO
 
 ## Properties
 Name | Type | Description | Notes

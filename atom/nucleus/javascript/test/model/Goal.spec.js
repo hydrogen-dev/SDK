@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Goal();
+    instance = new HydrogenNucleusApi.Goal();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,109 +53,109 @@
   describe('Goal', function() {
     it('should create an instance of Goal', function() {
       // uncomment below and update the code to test Goal
-      //var instane = new HydrogenAtomApi.Goal();
-      //expect(instance).to.be.a(HydrogenAtomApi.Goal);
+      //var instane = new HydrogenNucleusApi.Goal();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Goal);
     });
 
     it('should have the property accumulationHorizon (base name: "accumulation_horizon")', function() {
       // uncomment below and update the code to test the property accumulationHorizon
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property decumulationHorizon (base name: "decumulation_horizon")', function() {
       // uncomment below and update the code to test the property decumulationHorizon
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAmount (base name: "goal_amount")', function() {
       // uncomment below and update the code to test the property goalAmount
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property isDecumulation (base name: "is_decumulation")', function() {
       // uncomment below and update the code to test the property isDecumulation
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property parentGoalId (base name: "parent_goal_id")', function() {
       // uncomment below and update the code to test the property parentGoalId
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property questionnaireId (base name: "questionnaire_id")', function() {
       // uncomment below and update the code to test the property questionnaireId
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.Goal();
+      //var instane = new HydrogenNucleusApi.Goal();
       //expect(instance).to.be();
     });
 

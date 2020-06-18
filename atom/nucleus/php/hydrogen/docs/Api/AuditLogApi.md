@@ -1,4 +1,4 @@
-# com\hydrogen\AuditLogApi
+# com\hydrogen\nucleus\AuditLogApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createAuditLogUsingPost**
-> \com\hydrogen\Model\AuditLog createAuditLogUsingPost($audit_log)
+> \com\hydrogen\nucleus\Model\AuditLog createAuditLogUsingPost($audit_log)
 
 Create a audit log
 
@@ -19,29 +19,29 @@ Create a new audit log.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AuditLogApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AuditLogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$audit_log = new \com\hydrogen\Model\AuditLog(); // \com\hydrogen\Model\AuditLog | auditLog
+$audit_log = new \com\hydrogen\nucleus\Model\AuditLog(); // \com\hydrogen\nucleus\Model\AuditLog | auditLog
 
 try {
     $result = $apiInstance->createAuditLogUsingPost($audit_log);
@@ -56,11 +56,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audit_log** | [**\com\hydrogen\Model\AuditLog**](../Model/AuditLog.md)| auditLog |
+ **audit_log** | [**\com\hydrogen\nucleus\Model\AuditLog**](../Model/AuditLog.md)| auditLog |
 
 ### Return type
 
-[**\com\hydrogen\Model\AuditLog**](../Model/AuditLog.md)
+[**\com\hydrogen\nucleus\Model\AuditLog**](../Model/AuditLog.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAuditLogAllUsingGet**
-> \com\hydrogen\Model\PageAuditLog_ getAuditLogAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAuditLog_ getAuditLogAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all audit log
 
@@ -83,23 +83,23 @@ Get details for all audit log.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AuditLogApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AuditLogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAuditLog_**](../Model/PageAuditLog_.md)
+[**\com\hydrogen\nucleus\Model\PageAuditLog_**](../Model/PageAuditLog_.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAuditLogUsingGet**
-> \com\hydrogen\Model\AuditLog getAuditLogUsingGet($audit_log_id)
+> \com\hydrogen\nucleus\Model\AuditLog getAuditLogUsingGet($audit_log_id)
 
 Retrieve a audit log
 
@@ -155,23 +155,23 @@ Retrieve the information for a audit log.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AuditLogApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AuditLogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AuditLog**](../Model/AuditLog.md)
+[**\com\hydrogen\nucleus\Model\AuditLog**](../Model/AuditLog.md)
 
 ### Authorization
 

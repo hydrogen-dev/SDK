@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.page_roundup import PageRoundup  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.page_roundup import PageRoundup  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestPageRoundup(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPageRoundup(unittest.TestCase):
     def testPageRoundup(self):
         """Test PageRoundup"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.page_roundup.PageRoundup()  # noqa: E501
+        # model = nucleus_api.models.page_roundup.PageRoundup()  # noqa: E501
         pass
 
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **model_category** | **string** |  | [optional] 
 **model_current_weight** | **double** |  | [optional] 
 **model_description** | **string** |  | [optional] 
-**model_holdings** | [**\com\hydrogen\Model\AllocationCompositionModelHoldingsVO[]**](AllocationCompositionModelHoldingsVO.md) |  | [optional] 
+**model_holdings** | [**\com\hydrogen\nucleus\Model\AllocationCompositionModelHoldingsVO[]**](AllocationCompositionModelHoldingsVO.md) |  | [optional] 
 **model_id** | **string** |  | [optional] 
 **model_name** | **string** |  | [optional] 
 **model_secondary_id** | **string** |  | [optional] 

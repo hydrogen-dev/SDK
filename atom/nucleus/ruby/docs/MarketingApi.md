@@ -1,4 +1,4 @@
-# AtomApi::MarketingApi
+# NucleusApi::MarketingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -36,9 +36,9 @@ Create a new  campaign data record for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -47,16 +47,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
-campaign_data_request = AtomApi::CampaignData.new # CampaignData | campaignDataRequest
+campaign_data_request = NucleusApi::CampaignData.new # CampaignData | campaignDataRequest
 
 
 begin
   #Create a campaign data record
   result = api_instance.create_campaign_data_using_post(campaign_data_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->create_campaign_data_using_post: #{e}"
 end
 ```
@@ -92,9 +92,9 @@ Create a new campaign plan for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -103,16 +103,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
-campaign_plan_request = AtomApi::CampaignPlan.new # CampaignPlan | campaignPlanRequest
+campaign_plan_request = NucleusApi::CampaignPlan.new # CampaignPlan | campaignPlanRequest
 
 
 begin
   #Create a campaign plan
   result = api_instance.create_campaign_plan_using_post(campaign_plan_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->create_campaign_plan_using_post: #{e}"
 end
 ```
@@ -148,9 +148,9 @@ Create a new campaign for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -159,16 +159,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
-campaign_request = AtomApi::Campaign.new # Campaign | campaignRequest
+campaign_request = NucleusApi::Campaign.new # Campaign | campaignRequest
 
 
 begin
   #Create a campaign
   result = api_instance.create_campaign_using_post(campaign_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->create_campaign_using_post: #{e}"
 end
 ```
@@ -204,9 +204,9 @@ We are adding a campaign association to a clientId or ip.  We create this associ
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -215,16 +215,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
-campaign_mapping_request = AtomApi::ClientCampaignMapping.new # ClientCampaignMapping | campaignMappingRequest
+campaign_mapping_request = NucleusApi::ClientCampaignMapping.new # ClientCampaignMapping | campaignMappingRequest
 
 
 begin
   #Mark a client signing up through a campaign
   result = api_instance.create_client_campaign_using_post(campaign_mapping_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->create_client_campaign_using_post: #{e}"
 end
 ```
@@ -260,9 +260,9 @@ Permanently delete a campaign data record
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -271,7 +271,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 campaign_data_id = 'campaign_data_id_example' # String | UUID campaign_data_id
 
@@ -279,7 +279,7 @@ campaign_data_id = 'campaign_data_id_example' # String | UUID campaign_data_id
 begin
   #Delete a campaign data record
   api_instance.delete_campaign_data_using_delete(campaign_data_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->delete_campaign_data_using_delete: #{e}"
 end
 ```
@@ -315,9 +315,9 @@ Permanently delete a campaign plan
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -326,7 +326,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 campaign_plan_id = 'campaign_plan_id_example' # String | UUID campaign_plan_id
 
@@ -334,7 +334,7 @@ campaign_plan_id = 'campaign_plan_id_example' # String | UUID campaign_plan_id
 begin
   #Delete a campaign plan
   api_instance.delete_campaign_plan_using_delete(campaign_plan_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->delete_campaign_plan_using_delete: #{e}"
 end
 ```
@@ -370,9 +370,9 @@ Permanently delete a campaign
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -381,7 +381,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 campaign_id = 'campaign_id_example' # String | Campaign Id
 
@@ -389,7 +389,7 @@ campaign_id = 'campaign_id_example' # String | Campaign Id
 begin
   #Delete a campaign
   api_instance.delete_campaign_using_delete(campaign_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->delete_campaign_using_delete: #{e}"
 end
 ```
@@ -425,9 +425,9 @@ Permanently delete a clients/ips pair under a campaign
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -436,7 +436,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 client_campaign_id = 'client_campaign_id_example' # String | UUID client_campaign_id
 
@@ -444,7 +444,7 @@ client_campaign_id = 'client_campaign_id_example' # String | UUID client_campaig
 begin
   #Delete a clients/ips pair under a campaign
   api_instance.delete_client_campaign_using_delete(client_campaign_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->delete_client_campaign_using_delete: #{e}"
 end
 ```
@@ -480,9 +480,9 @@ Get details for all campaigns defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -491,7 +491,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -505,7 +505,7 @@ begin
   #List all campaigns
   result = api_instance.get_campaign_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_campaign_all_using_get: #{e}"
 end
 ```
@@ -545,9 +545,9 @@ Get details for all campaign data defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -556,7 +556,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -570,7 +570,7 @@ begin
   #List all campaign data
   result = api_instance.get_campaign_data_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_campaign_data_all_using_get: #{e}"
 end
 ```
@@ -610,9 +610,9 @@ Retrieve the information for a campaign data record
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -621,7 +621,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 campaign_data_id = 'campaign_data_id_example' # String | UUID campaign_data_id
 
@@ -630,7 +630,7 @@ begin
   #Retrieve a campaign data record
   result = api_instance.get_campaign_data_using_get(campaign_data_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_campaign_data_using_get: #{e}"
 end
 ```
@@ -666,9 +666,9 @@ Get details for all campaign plans defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -677,7 +677,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -691,7 +691,7 @@ begin
   #List all campaign plans
   result = api_instance.get_campaign_plan_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_campaign_plan_all_using_get: #{e}"
 end
 ```
@@ -731,9 +731,9 @@ Retrieve the information for a campaign plan
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -742,7 +742,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 campaign_plan_id = 'campaign_plan_id_example' # String | UUID campaign_plan_id
 
@@ -751,7 +751,7 @@ begin
   #Retrieve a campaign plan
   result = api_instance.get_campaign_plan_using_get(campaign_plan_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_campaign_plan_using_get: #{e}"
 end
 ```
@@ -787,9 +787,9 @@ Retrieve the information for a campaign.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -798,7 +798,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 campaign_id = 'campaign_id_example' # String | Campaign Id
 
@@ -807,7 +807,7 @@ begin
   #Retrieve a campaign
   result = api_instance.get_campaign_using_get(campaign_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_campaign_using_get: #{e}"
 end
 ```
@@ -843,9 +843,9 @@ Get details for all clients/ips under a campaign
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -854,7 +854,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -868,7 +868,7 @@ begin
   #List all clients/ips under a campaign
   result = api_instance.get_client_campaign_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_client_campaign_all_using_get: #{e}"
 end
 ```
@@ -908,9 +908,9 @@ Retrieve the information for a clients/ips pair under a campaign
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -919,7 +919,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 client_campaign_id = 'client_campaign_id_example' # String | UUID client_campaign_id
 
@@ -928,7 +928,7 @@ begin
   #Retrieve a clients/ips pair under a campaign
   result = api_instance.get_client_campaign_using_get(client_campaign_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->get_client_campaign_using_get: #{e}"
 end
 ```
@@ -964,9 +964,9 @@ Updated the information for a campaign data record
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -975,9 +975,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
-campaign_data = AtomApi::CampaignPlan.new # CampaignPlan | campaign_data
+campaign_data = NucleusApi::CampaignPlan.new # CampaignPlan | campaign_data
 
 campaign_data_id = 'campaign_data_id_example' # String | UUID campaign_data_id
 
@@ -986,7 +986,7 @@ begin
   #Update a campaign data record
   result = api_instance.update_campaign_data_using_put(campaign_data, campaign_data_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->update_campaign_data_using_put: #{e}"
 end
 ```
@@ -1023,9 +1023,9 @@ Updated the information for a campaign plan
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1034,9 +1034,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
-campaign_plan = AtomApi::CampaignPlan.new # CampaignPlan | campaign_plan
+campaign_plan = NucleusApi::CampaignPlan.new # CampaignPlan | campaign_plan
 
 campaign_plan_id = 'campaign_plan_id_example' # String | UUID campaign_plan_id
 
@@ -1045,7 +1045,7 @@ begin
   #Update a campaign plan
   result = api_instance.update_campaign_plan_using_put(campaign_plan, campaign_plan_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->update_campaign_plan_using_put: #{e}"
 end
 ```
@@ -1082,9 +1082,9 @@ Updated the information for a campaign
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1093,9 +1093,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
-campaign = AtomApi::Campaign.new # Campaign | campaign
+campaign = NucleusApi::Campaign.new # Campaign | campaign
 
 campaign_id = 'campaign_id_example' # String | UUID campaign_id
 
@@ -1104,7 +1104,7 @@ begin
   #Update a campaign
   result = api_instance.update_campaign_using_put(campaign, campaign_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->update_campaign_using_put: #{e}"
 end
 ```
@@ -1141,9 +1141,9 @@ Updated the information for clients/ips pair under a campaign
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1152,18 +1152,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::MarketingApi.new
+api_instance = NucleusApi::MarketingApi.new
 
 client_campaign_id = 'client_campaign_id_example' # String | UUID client_campaign_id
 
-json_node = AtomApi::JsonNode.new # JsonNode | jsonNode
+json_node = NucleusApi::JsonNode.new # JsonNode | jsonNode
 
 
 begin
   #Update a clients/ips pair under a campaign
   result = api_instance.update_client_campaign_using_put(client_campaign_id, json_node)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling MarketingApi->update_client_campaign_using_put: #{e}"
 end
 ```

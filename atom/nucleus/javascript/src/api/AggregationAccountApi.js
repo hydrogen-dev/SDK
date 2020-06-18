@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AggregationAccount'), require('../model/AggregationAccountAggregateDataVO'), require('../model/AggregationAccountBalance'), require('../model/AggregationAccountHolding'), require('../model/AggregationAccountTransaction'), require('../model/AggregationDataForClientParentResponseVO'), require('../model/PageAggregationAccount'), require('../model/PageAggregationAccountBalance'), require('../model/PageAggregationAccountHolding'), require('../model/PageAggregationAccountTransaction'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AggregationAccountApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AggregationAccount, root.HydrogenAtomApi.AggregationAccountAggregateDataVO, root.HydrogenAtomApi.AggregationAccountBalance, root.HydrogenAtomApi.AggregationAccountHolding, root.HydrogenAtomApi.AggregationAccountTransaction, root.HydrogenAtomApi.AggregationDataForClientParentResponseVO, root.HydrogenAtomApi.PageAggregationAccount, root.HydrogenAtomApi.PageAggregationAccountBalance, root.HydrogenAtomApi.PageAggregationAccountHolding, root.HydrogenAtomApi.PageAggregationAccountTransaction);
+    root.HydrogenNucleusApi.AggregationAccountApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AggregationAccount, root.HydrogenNucleusApi.AggregationAccountAggregateDataVO, root.HydrogenNucleusApi.AggregationAccountBalance, root.HydrogenNucleusApi.AggregationAccountHolding, root.HydrogenNucleusApi.AggregationAccountTransaction, root.HydrogenNucleusApi.AggregationDataForClientParentResponseVO, root.HydrogenNucleusApi.PageAggregationAccount, root.HydrogenNucleusApi.PageAggregationAccountBalance, root.HydrogenNucleusApi.PageAggregationAccountHolding, root.HydrogenNucleusApi.PageAggregationAccountTransaction);
   }
 }(this, function(ApiClient, AggregationAccount, AggregationAccountAggregateDataVO, AggregationAccountBalance, AggregationAccountHolding, AggregationAccountTransaction, AggregationDataForClientParentResponseVO, PageAggregationAccount, PageAggregationAccountBalance, PageAggregationAccountHolding, PageAggregationAccountTransaction) {
   'use strict';

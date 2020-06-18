@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.SupportTicketDocument();
+    instance = new HydrogenNucleusApi.SupportTicketDocument();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('SupportTicketDocument', function() {
     it('should create an instance of SupportTicketDocument', function() {
       // uncomment below and update the code to test SupportTicketDocument
-      //var instane = new HydrogenAtomApi.SupportTicketDocument();
-      //expect(instance).to.be.a(HydrogenAtomApi.SupportTicketDocument);
+      //var instane = new HydrogenNucleusApi.SupportTicketDocument();
+      //expect(instance).to.be.a(HydrogenNucleusApi.SupportTicketDocument);
     });
 
     it('should have the property docFile (base name: "doc_file")', function() {
       // uncomment below and update the code to test the property docFile
-      //var instane = new HydrogenAtomApi.SupportTicketDocument();
+      //var instane = new HydrogenNucleusApi.SupportTicketDocument();
       //expect(instance).to.be();
     });
 
     it('should have the property docName (base name: "doc_name")', function() {
       // uncomment below and update the code to test the property docName
-      //var instane = new HydrogenAtomApi.SupportTicketDocument();
+      //var instane = new HydrogenNucleusApi.SupportTicketDocument();
       //expect(instance).to.be();
     });
 
     it('should have the property docSize (base name: "doc_size")', function() {
       // uncomment below and update the code to test the property docSize
-      //var instane = new HydrogenAtomApi.SupportTicketDocument();
+      //var instane = new HydrogenNucleusApi.SupportTicketDocument();
       //expect(instance).to.be();
     });
 
     it('should have the property docType (base name: "doc_type")', function() {
       // uncomment below and update the code to test the property docType
-      //var instane = new HydrogenAtomApi.SupportTicketDocument();
+      //var instane = new HydrogenNucleusApi.SupportTicketDocument();
       //expect(instance).to.be();
     });
 
     it('should have the property urlPath (base name: "url_path")', function() {
       // uncomment below and update the code to test the property urlPath
-      //var instane = new HydrogenAtomApi.SupportTicketDocument();
+      //var instane = new HydrogenNucleusApi.SupportTicketDocument();
       //expect(instance).to.be();
     });
 

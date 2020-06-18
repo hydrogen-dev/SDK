@@ -1,4 +1,4 @@
-# AtomApi::CustomerRevenue
+# NucleusApi::CustomerRevenue
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# com\hydrogen\PortfolioApi
+# com\hydrogen\nucleus\PortfolioApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -38,7 +38,7 @@ Method | HTTP request | Description
 
 
 # **createPortfolioAssetSizeUsingPost**
-> \com\hydrogen\Model\PortfolioAssetSizeLog createPortfolioAssetSizeUsingPost($portfolio_asset_size_log_request)
+> \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog createPortfolioAssetSizeUsingPost($portfolio_asset_size_log_request)
 
 Create a portfolio asset size
 
@@ -47,29 +47,29 @@ Create a new asset size record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_asset_size_log_request = new \com\hydrogen\Model\PortfolioAssetSizeLog(); // \com\hydrogen\Model\PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
+$portfolio_asset_size_log_request = new \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog(); // \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
 
 try {
     $result = $apiInstance->createPortfolioAssetSizeUsingPost($portfolio_asset_size_log_request);
@@ -84,11 +84,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_asset_size_log_request** | [**\com\hydrogen\Model\PortfolioAssetSizeLog**](../Model/PortfolioAssetSizeLog.md)| portfolioAssetSizeLogRequest |
+ **portfolio_asset_size_log_request** | [**\com\hydrogen\nucleus\Model\PortfolioAssetSizeLog**](../Model/PortfolioAssetSizeLog.md)| portfolioAssetSizeLogRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioAssetSizeLog**](../Model/PortfolioAssetSizeLog.md)
+[**\com\hydrogen\nucleus\Model\PortfolioAssetSizeLog**](../Model/PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioCommentUsingPost**
-> \com\hydrogen\Model\PortfolioComment createPortfolioCommentUsingPost($portfolio_comment)
+> \com\hydrogen\nucleus\Model\PortfolioComment createPortfolioCommentUsingPost($portfolio_comment)
 
 Create a portfolio commentary
 
@@ -111,29 +111,29 @@ Create a new comment for a portfolio defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_comment = new \com\hydrogen\Model\PortfolioComment(); // \com\hydrogen\Model\PortfolioComment | portfolioComment
+$portfolio_comment = new \com\hydrogen\nucleus\Model\PortfolioComment(); // \com\hydrogen\nucleus\Model\PortfolioComment | portfolioComment
 
 try {
     $result = $apiInstance->createPortfolioCommentUsingPost($portfolio_comment);
@@ -148,11 +148,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_comment** | [**\com\hydrogen\Model\PortfolioComment**](../Model/PortfolioComment.md)| portfolioComment |
+ **portfolio_comment** | [**\com\hydrogen\nucleus\Model\PortfolioComment**](../Model/PortfolioComment.md)| portfolioComment |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioComment**](../Model/PortfolioComment.md)
+[**\com\hydrogen\nucleus\Model\PortfolioComment**](../Model/PortfolioComment.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioGoalUsingPost**
-> \com\hydrogen\Model\PortfolioGoal createPortfolioGoalUsingPost($portfolio_goal)
+> \com\hydrogen\nucleus\Model\PortfolioGoal createPortfolioGoalUsingPost($portfolio_goal)
 
 Create an portfolio goal
 
@@ -175,29 +175,29 @@ Create an portfolio goal.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_goal = new \com\hydrogen\Model\PortfolioGoal(); // \com\hydrogen\Model\PortfolioGoal | portfolioGoal
+$portfolio_goal = new \com\hydrogen\nucleus\Model\PortfolioGoal(); // \com\hydrogen\nucleus\Model\PortfolioGoal | portfolioGoal
 
 try {
     $result = $apiInstance->createPortfolioGoalUsingPost($portfolio_goal);
@@ -212,11 +212,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_goal** | [**\com\hydrogen\Model\PortfolioGoal**](../Model/PortfolioGoal.md)| portfolioGoal |
+ **portfolio_goal** | [**\com\hydrogen\nucleus\Model\PortfolioGoal**](../Model/PortfolioGoal.md)| portfolioGoal |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioGoal**](../Model/PortfolioGoal.md)
+[**\com\hydrogen\nucleus\Model\PortfolioGoal**](../Model/PortfolioGoal.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioHoldingUsingPost**
-> \com\hydrogen\Model\PortfolioHoldingLog createPortfolioHoldingUsingPost($portfolio_holdin_log_request)
+> \com\hydrogen\nucleus\Model\PortfolioHoldingLog createPortfolioHoldingUsingPost($portfolio_holdin_log_request)
 
 Create a portfolio holding
 
@@ -239,29 +239,29 @@ Create a new holding record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_holdin_log_request = new \com\hydrogen\Model\PortfolioHoldingLog(); // \com\hydrogen\Model\PortfolioHoldingLog | portfolioHoldinLogRequest
+$portfolio_holdin_log_request = new \com\hydrogen\nucleus\Model\PortfolioHoldingLog(); // \com\hydrogen\nucleus\Model\PortfolioHoldingLog | portfolioHoldinLogRequest
 
 try {
     $result = $apiInstance->createPortfolioHoldingUsingPost($portfolio_holdin_log_request);
@@ -276,11 +276,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_holdin_log_request** | [**\com\hydrogen\Model\PortfolioHoldingLog**](../Model/PortfolioHoldingLog.md)| portfolioHoldinLogRequest |
+ **portfolio_holdin_log_request** | [**\com\hydrogen\nucleus\Model\PortfolioHoldingLog**](../Model/PortfolioHoldingLog.md)| portfolioHoldinLogRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioHoldingLog**](../Model/PortfolioHoldingLog.md)
+[**\com\hydrogen\nucleus\Model\PortfolioHoldingLog**](../Model/PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioTransactionUsingPost**
-> \com\hydrogen\Model\PortfolioTransaction createPortfolioTransactionUsingPost($portfolio_transaction_request)
+> \com\hydrogen\nucleus\Model\PortfolioTransaction createPortfolioTransactionUsingPost($portfolio_transaction_request)
 
 Create a portfolio transaction
 
@@ -303,29 +303,29 @@ Create a new transaction record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_transaction_request = new \com\hydrogen\Model\PortfolioTransaction(); // \com\hydrogen\Model\PortfolioTransaction | portfolioTransactionRequest
+$portfolio_transaction_request = new \com\hydrogen\nucleus\Model\PortfolioTransaction(); // \com\hydrogen\nucleus\Model\PortfolioTransaction | portfolioTransactionRequest
 
 try {
     $result = $apiInstance->createPortfolioTransactionUsingPost($portfolio_transaction_request);
@@ -340,11 +340,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_transaction_request** | [**\com\hydrogen\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)| portfolioTransactionRequest |
+ **portfolio_transaction_request** | [**\com\hydrogen\nucleus\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)| portfolioTransactionRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)
+[**\com\hydrogen\nucleus\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioUsingPost**
-> \com\hydrogen\Model\Portfolio createPortfolioUsingPost($portfolio_request)
+> \com\hydrogen\nucleus\Model\Portfolio createPortfolioUsingPost($portfolio_request)
 
 Create a portfolio
 
@@ -367,29 +367,29 @@ Create a new portfolio for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_request = new \com\hydrogen\Model\Portfolio(); // \com\hydrogen\Model\Portfolio | portfolioRequest
+$portfolio_request = new \com\hydrogen\nucleus\Model\Portfolio(); // \com\hydrogen\nucleus\Model\Portfolio | portfolioRequest
 
 try {
     $result = $apiInstance->createPortfolioUsingPost($portfolio_request);
@@ -404,11 +404,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_request** | [**\com\hydrogen\Model\Portfolio**](../Model/Portfolio.md)| portfolioRequest |
+ **portfolio_request** | [**\com\hydrogen\nucleus\Model\Portfolio**](../Model/Portfolio.md)| portfolioRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Portfolio**](../Model/Portfolio.md)
+[**\com\hydrogen\nucleus\Model\Portfolio**](../Model/Portfolio.md)
 
 ### Authorization
 
@@ -431,23 +431,23 @@ Permanently delete a portfolio asset size record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -494,23 +494,23 @@ Permanently delete a portfolio comment for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -557,23 +557,23 @@ Permanently delete an portfolio-goal mapping.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -620,23 +620,23 @@ Permanently delete a portfolio holding record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -683,23 +683,23 @@ Permanently delete a portfolio transaction record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -746,23 +746,23 @@ Permanently delete a portfolio for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -800,7 +800,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioAggregatedDataUsingGet**
-> \com\hydrogen\Model\PortfolioAggregatedVO getPortfolioAggregatedDataUsingGet($portfolio_id, $show_asset_class, $show_category, $show_industry, $show_sector, $show_security_class)
+> \com\hydrogen\nucleus\Model\PortfolioAggregatedVO getPortfolioAggregatedDataUsingGet($portfolio_id, $show_asset_class, $show_category, $show_industry, $show_sector, $show_security_class)
 
 Retrieve an portfolio aggregate data
 
@@ -809,23 +809,23 @@ Retrieve the information for a securities associated with a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -860,7 +860,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioAggregatedVO**](../Model/PortfolioAggregatedVO.md)
+[**\com\hydrogen\nucleus\Model\PortfolioAggregatedVO**](../Model/PortfolioAggregatedVO.md)
 
 ### Authorization
 
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioAllUsingGet**
-> \com\hydrogen\Model\PagePortfolio_ getPortfolioAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PagePortfolio_ getPortfolioAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all portfolios
 
@@ -883,23 +883,23 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PagePortfolio_**](../Model/PagePortfolio_.md)
+[**\com\hydrogen\nucleus\Model\PagePortfolio_**](../Model/PagePortfolio_.md)
 
 ### Authorization
 
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioAssetSizeAllUsingGet**
-> \com\hydrogen\Model\PagePortfolioAssetSizeLog_ getPortfolioAssetSizeAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PagePortfolioAssetSizeLog_ getPortfolioAssetSizeAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 Retrieve a portfolio asset size
 
@@ -955,23 +955,23 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1004,7 +1004,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PagePortfolioAssetSizeLog_**](../Model/PagePortfolioAssetSizeLog_.md)
+[**\com\hydrogen\nucleus\Model\PagePortfolioAssetSizeLog_**](../Model/PagePortfolioAssetSizeLog_.md)
 
 ### Authorization
 
@@ -1018,7 +1018,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioAssetSizeUsingGet**
-> \com\hydrogen\Model\PortfolioAssetSize getPortfolioAssetSizeUsingGet($portfolio_asset_size_id)
+> \com\hydrogen\nucleus\Model\PortfolioAssetSize getPortfolioAssetSizeUsingGet($portfolio_asset_size_id)
 
 Retrieve a portfolio asset size
 
@@ -1027,23 +1027,23 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1068,7 +1068,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioAssetSize**](../Model/PortfolioAssetSize.md)
+[**\com\hydrogen\nucleus\Model\PortfolioAssetSize**](../Model/PortfolioAssetSize.md)
 
 ### Authorization
 
@@ -1082,7 +1082,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioCommentAllUsingGet**
-> \com\hydrogen\Model\PagePortfolioComment_ getPortfolioCommentAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PagePortfolioComment_ getPortfolioCommentAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all portfolio commentary
 
@@ -1091,23 +1091,23 @@ List all comments for all portfolios defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1140,7 +1140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PagePortfolioComment_**](../Model/PagePortfolioComment_.md)
+[**\com\hydrogen\nucleus\Model\PagePortfolioComment_**](../Model/PagePortfolioComment_.md)
 
 ### Authorization
 
@@ -1154,7 +1154,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioCommentUsingGet**
-> \com\hydrogen\Model\PortfolioComment getPortfolioCommentUsingGet($portfolio_comment_id)
+> \com\hydrogen\nucleus\Model\PortfolioComment getPortfolioCommentUsingGet($portfolio_comment_id)
 
 Retrieve a portfolio commentary
 
@@ -1163,23 +1163,23 @@ Retrieve the information for a portfolio comment for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1204,7 +1204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioComment**](../Model/PortfolioComment.md)
+[**\com\hydrogen\nucleus\Model\PortfolioComment**](../Model/PortfolioComment.md)
 
 ### Authorization
 
@@ -1218,7 +1218,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioGoalAllUsingGet**
-> \com\hydrogen\Model\PagePortfolioGoal_ getPortfolioGoalAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PagePortfolioGoal_ getPortfolioGoalAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all portfolio goals
 
@@ -1227,23 +1227,23 @@ Get information for all portfolio-goal mappings defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1276,7 +1276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PagePortfolioGoal_**](../Model/PagePortfolioGoal_.md)
+[**\com\hydrogen\nucleus\Model\PagePortfolioGoal_**](../Model/PagePortfolioGoal_.md)
 
 ### Authorization
 
@@ -1290,7 +1290,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioGoalUsingGet**
-> \com\hydrogen\Model\PortfolioGoal getPortfolioGoalUsingGet($portfolio_goal_id)
+> \com\hydrogen\nucleus\Model\PortfolioGoal getPortfolioGoalUsingGet($portfolio_goal_id)
 
 Retrieve an portfolio goal
 
@@ -1299,23 +1299,23 @@ Retrieve the information for a specific portfolio-goal mapping.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1340,7 +1340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioGoal**](../Model/PortfolioGoal.md)
+[**\com\hydrogen\nucleus\Model\PortfolioGoal**](../Model/PortfolioGoal.md)
 
 ### Authorization
 
@@ -1354,7 +1354,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioHoldingAllUsingGet**
-> \com\hydrogen\Model\PortfolioHolding getPortfolioHoldingAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PortfolioHolding getPortfolioHoldingAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all portfolio holdings
 
@@ -1363,23 +1363,23 @@ Get the information for all holding records for all portfolios defined for your 
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1412,7 +1412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioHolding**](../Model/PortfolioHolding.md)
+[**\com\hydrogen\nucleus\Model\PortfolioHolding**](../Model/PortfolioHolding.md)
 
 ### Authorization
 
@@ -1426,7 +1426,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioHoldingUsingGet**
-> \com\hydrogen\Model\PortfolioHolding getPortfolioHoldingUsingGet($portfolio_holding_id)
+> \com\hydrogen\nucleus\Model\PortfolioHolding getPortfolioHoldingUsingGet($portfolio_holding_id)
 
 Retrieve a portfolio holding
 
@@ -1435,23 +1435,23 @@ Retrieve the information for a portfolio holding record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioHolding**](../Model/PortfolioHolding.md)
+[**\com\hydrogen\nucleus\Model\PortfolioHolding**](../Model/PortfolioHolding.md)
 
 ### Authorization
 
@@ -1490,7 +1490,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioTransactionAllUsingGet**
-> \com\hydrogen\Model\PagePortfolioTransaction_ getPortfolioTransactionAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getPortfolioTransactionAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all portfolio transactions
 
@@ -1499,23 +1499,23 @@ Get the information for all transaction records for all portfolios defined for y
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1548,7 +1548,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PagePortfolioTransaction_**](../Model/PagePortfolioTransaction_.md)
+[**\com\hydrogen\nucleus\Model\PagePortfolioTransaction_**](../Model/PagePortfolioTransaction_.md)
 
 ### Authorization
 
@@ -1562,7 +1562,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioTransactionUsingGet**
-> \com\hydrogen\Model\PortfolioTransaction getPortfolioTransactionUsingGet($portfolio_transaction_id)
+> \com\hydrogen\nucleus\Model\PortfolioTransaction getPortfolioTransactionUsingGet($portfolio_transaction_id)
 
 Retrieve a portfolio transaction
 
@@ -1571,23 +1571,23 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1612,7 +1612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)
+[**\com\hydrogen\nucleus\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)
 
 ### Authorization
 
@@ -1626,7 +1626,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioUsingGet**
-> \com\hydrogen\Model\Portfolio getPortfolioUsingGet($portfolio_id)
+> \com\hydrogen\nucleus\Model\Portfolio getPortfolioUsingGet($portfolio_id)
 
 Retrieve a portfolio
 
@@ -1635,23 +1635,23 @@ Retrieve a portfolio for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1676,7 +1676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Portfolio**](../Model/Portfolio.md)
+[**\com\hydrogen\nucleus\Model\Portfolio**](../Model/Portfolio.md)
 
 ### Authorization
 
@@ -1690,7 +1690,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePortfolioAssetSizeUsingPut**
-> \com\hydrogen\Model\PortfolioAssetSize updatePortfolioAssetSizeUsingPut($portfolio_asset_size, $portfolio_asset_size_id)
+> \com\hydrogen\nucleus\Model\PortfolioAssetSize updatePortfolioAssetSizeUsingPut($portfolio_asset_size, $portfolio_asset_size_id)
 
 Update a portfolio asset size
 
@@ -1699,29 +1699,29 @@ Update the information for a portfolio asset size record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_asset_size = new \com\hydrogen\Model\PortfolioAssetSizeLog(); // \com\hydrogen\Model\PortfolioAssetSizeLog | portfolio_asset_size
+$portfolio_asset_size = new \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog(); // \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog | portfolio_asset_size
 $portfolio_asset_size_id = "portfolio_asset_size_id_example"; // string | UUID portfolio_asset_size_id
 
 try {
@@ -1737,12 +1737,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_asset_size** | [**\com\hydrogen\Model\PortfolioAssetSizeLog**](../Model/PortfolioAssetSizeLog.md)| portfolio_asset_size |
+ **portfolio_asset_size** | [**\com\hydrogen\nucleus\Model\PortfolioAssetSizeLog**](../Model/PortfolioAssetSizeLog.md)| portfolio_asset_size |
  **portfolio_asset_size_id** | [**string**](../Model/.md)| UUID portfolio_asset_size_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioAssetSize**](../Model/PortfolioAssetSize.md)
+[**\com\hydrogen\nucleus\Model\PortfolioAssetSize**](../Model/PortfolioAssetSize.md)
 
 ### Authorization
 
@@ -1756,7 +1756,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePortfolioCommentUsingPut**
-> \com\hydrogen\Model\PortfolioComment updatePortfolioCommentUsingPut($portfolio_comment, $portfolio_comment_id)
+> \com\hydrogen\nucleus\Model\PortfolioComment updatePortfolioCommentUsingPut($portfolio_comment, $portfolio_comment_id)
 
 Update a portfolio comment
 
@@ -1765,29 +1765,29 @@ Update the information for a portfolio comment for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_comment = new \com\hydrogen\Model\PortfolioComment(); // \com\hydrogen\Model\PortfolioComment | portfolio_comment
+$portfolio_comment = new \com\hydrogen\nucleus\Model\PortfolioComment(); // \com\hydrogen\nucleus\Model\PortfolioComment | portfolio_comment
 $portfolio_comment_id = "portfolio_comment_id_example"; // string | UUID portfolio_comment_id
 
 try {
@@ -1803,12 +1803,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_comment** | [**\com\hydrogen\Model\PortfolioComment**](../Model/PortfolioComment.md)| portfolio_comment |
+ **portfolio_comment** | [**\com\hydrogen\nucleus\Model\PortfolioComment**](../Model/PortfolioComment.md)| portfolio_comment |
  **portfolio_comment_id** | [**string**](../Model/.md)| UUID portfolio_comment_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioComment**](../Model/PortfolioComment.md)
+[**\com\hydrogen\nucleus\Model\PortfolioComment**](../Model/PortfolioComment.md)
 
 ### Authorization
 
@@ -1822,7 +1822,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePortfolioGoalUsingPut**
-> \com\hydrogen\Model\PortfolioGoal updatePortfolioGoalUsingPut($portfolio_goal, $portfolio_goal_id)
+> \com\hydrogen\nucleus\Model\PortfolioGoal updatePortfolioGoalUsingPut($portfolio_goal, $portfolio_goal_id)
 
 Update an portfolio goal
 
@@ -1831,29 +1831,29 @@ Update the information for an portfolio-goal mapping.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_goal = new \com\hydrogen\Model\PortfolioGoal(); // \com\hydrogen\Model\PortfolioGoal | portfolio_goal
+$portfolio_goal = new \com\hydrogen\nucleus\Model\PortfolioGoal(); // \com\hydrogen\nucleus\Model\PortfolioGoal | portfolio_goal
 $portfolio_goal_id = "portfolio_goal_id_example"; // string | UUID portfolio_goal_id
 
 try {
@@ -1869,12 +1869,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_goal** | [**\com\hydrogen\Model\PortfolioGoal**](../Model/PortfolioGoal.md)| portfolio_goal |
+ **portfolio_goal** | [**\com\hydrogen\nucleus\Model\PortfolioGoal**](../Model/PortfolioGoal.md)| portfolio_goal |
  **portfolio_goal_id** | [**string**](../Model/.md)| UUID portfolio_goal_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioGoal**](../Model/PortfolioGoal.md)
+[**\com\hydrogen\nucleus\Model\PortfolioGoal**](../Model/PortfolioGoal.md)
 
 ### Authorization
 
@@ -1888,7 +1888,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePortfolioHoldingUsingPut**
-> \com\hydrogen\Model\PortfolioHolding updatePortfolioHoldingUsingPut($portfolio_holding, $portfolio_holding_id)
+> \com\hydrogen\nucleus\Model\PortfolioHolding updatePortfolioHoldingUsingPut($portfolio_holding, $portfolio_holding_id)
 
 Update a portfolio holding
 
@@ -1897,29 +1897,29 @@ Update the information for a portfolio holding record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_holding = new \com\hydrogen\Model\PortfolioHoldingLog(); // \com\hydrogen\Model\PortfolioHoldingLog | portfolio_holding
+$portfolio_holding = new \com\hydrogen\nucleus\Model\PortfolioHoldingLog(); // \com\hydrogen\nucleus\Model\PortfolioHoldingLog | portfolio_holding
 $portfolio_holding_id = "portfolio_holding_id_example"; // string | UUID portfolio_holding_id
 
 try {
@@ -1935,12 +1935,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_holding** | [**\com\hydrogen\Model\PortfolioHoldingLog**](../Model/PortfolioHoldingLog.md)| portfolio_holding |
+ **portfolio_holding** | [**\com\hydrogen\nucleus\Model\PortfolioHoldingLog**](../Model/PortfolioHoldingLog.md)| portfolio_holding |
  **portfolio_holding_id** | [**string**](../Model/.md)| UUID portfolio_holding_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioHolding**](../Model/PortfolioHolding.md)
+[**\com\hydrogen\nucleus\Model\PortfolioHolding**](../Model/PortfolioHolding.md)
 
 ### Authorization
 
@@ -1954,7 +1954,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePortfolioTransactionUsingPut**
-> \com\hydrogen\Model\PortfolioTransaction updatePortfolioTransactionUsingPut($portfolio_transaction, $portfolio_transaction_id)
+> \com\hydrogen\nucleus\Model\PortfolioTransaction updatePortfolioTransactionUsingPut($portfolio_transaction, $portfolio_transaction_id)
 
 Update a portfolio transaction
 
@@ -1963,29 +1963,29 @@ Update the information for a portfolio transaction record for a portfolio.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_transaction = new \com\hydrogen\Model\PortfolioTransaction(); // \com\hydrogen\Model\PortfolioTransaction | portfolio_transaction
+$portfolio_transaction = new \com\hydrogen\nucleus\Model\PortfolioTransaction(); // \com\hydrogen\nucleus\Model\PortfolioTransaction | portfolio_transaction
 $portfolio_transaction_id = "portfolio_transaction_id_example"; // string | UUID portfolio_transaction_id
 
 try {
@@ -2001,12 +2001,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_transaction** | [**\com\hydrogen\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)| portfolio_transaction |
+ **portfolio_transaction** | [**\com\hydrogen\nucleus\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)| portfolio_transaction |
  **portfolio_transaction_id** | [**string**](../Model/.md)| UUID portfolio_transaction_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)
+[**\com\hydrogen\nucleus\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)
 
 ### Authorization
 
@@ -2020,7 +2020,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePortfolioUsingPut**
-> \com\hydrogen\Model\Portfolio updatePortfolioUsingPut($portfolio, $portfolio_id)
+> \com\hydrogen\nucleus\Model\Portfolio updatePortfolioUsingPut($portfolio, $portfolio_id)
 
 Update a portfolio
 
@@ -2029,29 +2029,29 @@ Update a portfolio for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioApi(
+$apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio = new \com\hydrogen\Model\Portfolio(); // \com\hydrogen\Model\Portfolio | portfolio
+$portfolio = new \com\hydrogen\nucleus\Model\Portfolio(); // \com\hydrogen\nucleus\Model\Portfolio | portfolio
 $portfolio_id = "portfolio_id_example"; // string | UUID portfolio_id
 
 try {
@@ -2067,12 +2067,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio** | [**\com\hydrogen\Model\Portfolio**](../Model/Portfolio.md)| portfolio |
+ **portfolio** | [**\com\hydrogen\nucleus\Model\Portfolio**](../Model/Portfolio.md)| portfolio |
  **portfolio_id** | [**string**](../Model/.md)| UUID portfolio_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Portfolio**](../Model/Portfolio.md)
+[**\com\hydrogen\nucleus\Model\Portfolio**](../Model/Portfolio.md)
 
 ### Authorization
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO();
+    instance = new HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('AggregationDataForClientByCategoryResponseVO', function() {
     it('should create an instance of AggregationDataForClientByCategoryResponseVO', function() {
       // uncomment below and update the code to test AggregationDataForClientByCategoryResponseVO
-      //var instane = new HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO);
+      //var instane = new HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO);
     });
 
     it('should have the property aggregationAccountDetails (base name: "aggregation_account_details")', function() {
       // uncomment below and update the code to test the property aggregationAccountDetails
-      //var instane = new HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO();
+      //var instane = new HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO();
+      //var instane = new HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO();
       //expect(instance).to.be();
     });
 
     it('should have the property totalAvailableBalance (base name: "total_available_balance")', function() {
       // uncomment below and update the code to test the property totalAvailableBalance
-      //var instane = new HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO();
+      //var instane = new HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO();
       //expect(instance).to.be();
     });
 
     it('should have the property totalBalance (base name: "total_balance")', function() {
       // uncomment below and update the code to test the property totalBalance
-      //var instane = new HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO();
+      //var instane = new HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO();
       //expect(instance).to.be();
     });
 

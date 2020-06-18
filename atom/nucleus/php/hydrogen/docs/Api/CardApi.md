@@ -1,4 +1,4 @@
-# com\hydrogen\CardApi
+# com\hydrogen\nucleus\CardApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createCardProgramUsingPost**
-> \com\hydrogen\Model\CardProgram createCardProgramUsingPost($card_program_request)
+> \com\hydrogen\nucleus\Model\CardProgram createCardProgramUsingPost($card_program_request)
 
 Create a cardProgram request
 
@@ -26,29 +26,29 @@ Create a new cardProgram request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$card_program_request = new \com\hydrogen\Model\CardProgram(); // \com\hydrogen\Model\CardProgram | cardProgramRequest
+$card_program_request = new \com\hydrogen\nucleus\Model\CardProgram(); // \com\hydrogen\nucleus\Model\CardProgram | cardProgramRequest
 
 try {
     $result = $apiInstance->createCardProgramUsingPost($card_program_request);
@@ -63,11 +63,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card_program_request** | [**\com\hydrogen\Model\CardProgram**](../Model/CardProgram.md)| cardProgramRequest |
+ **card_program_request** | [**\com\hydrogen\nucleus\Model\CardProgram**](../Model/CardProgram.md)| cardProgramRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\CardProgram**](../Model/CardProgram.md)
+[**\com\hydrogen\nucleus\Model\CardProgram**](../Model/CardProgram.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCardUsingPost**
-> \com\hydrogen\Model\Card createCardUsingPost($card_request, $authorization)
+> \com\hydrogen\nucleus\Model\Card createCardUsingPost($card_request, $authorization)
 
 Create a card request
 
@@ -90,29 +90,29 @@ Create a new card request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$card_request = new \com\hydrogen\Model\Card(); // \com\hydrogen\Model\Card | cardRequest
+$card_request = new \com\hydrogen\nucleus\Model\Card(); // \com\hydrogen\nucleus\Model\Card | cardRequest
 $authorization = "authorization_example"; // string | Authorization
 
 try {
@@ -128,12 +128,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card_request** | [**\com\hydrogen\Model\Card**](../Model/Card.md)| cardRequest |
+ **card_request** | [**\com\hydrogen\nucleus\Model\Card**](../Model/Card.md)| cardRequest |
  **authorization** | **string**| Authorization | [optional]
 
 ### Return type
 
-[**\com\hydrogen\Model\Card**](../Model/Card.md)
+[**\com\hydrogen\nucleus\Model\Card**](../Model/Card.md)
 
 ### Authorization
 
@@ -156,23 +156,23 @@ Permanently delete an cardProgram.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -219,23 +219,23 @@ Permanently delete a card request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -273,7 +273,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardAllUsingGet**
-> \com\hydrogen\Model\PageCard_ getCardAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageCard_ getCardAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all card requests
 
@@ -282,23 +282,23 @@ Get the information for all card requests.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageCard_**](../Model/PageCard_.md)
+[**\com\hydrogen\nucleus\Model\PageCard_**](../Model/PageCard_.md)
 
 ### Authorization
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardProgramAllUsingGet**
-> \com\hydrogen\Model\PageCardProgram_ getCardProgramAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageCardProgram_ getCardProgramAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all cardProgram
 
@@ -354,23 +354,23 @@ Get information for all cardProgram.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageCardProgram_**](../Model/PageCardProgram_.md)
+[**\com\hydrogen\nucleus\Model\PageCardProgram_**](../Model/PageCardProgram_.md)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardProgramUsingGet**
-> \com\hydrogen\Model\CardProgram getCardProgramUsingGet($card_program_id)
+> \com\hydrogen\nucleus\Model\CardProgram getCardProgramUsingGet($card_program_id)
 
 Retrieve an cardProgram
 
@@ -426,23 +426,23 @@ Retrieve the information for a specific cardProgram.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\CardProgram**](../Model/CardProgram.md)
+[**\com\hydrogen\nucleus\Model\CardProgram**](../Model/CardProgram.md)
 
 ### Authorization
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardUsingGet**
-> \com\hydrogen\Model\Card getCardUsingGet($card_id)
+> \com\hydrogen\nucleus\Model\Card getCardUsingGet($card_id)
 
 Retrieve a card request
 
@@ -490,23 +490,23 @@ Retrieve the information for a card request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Card**](../Model/Card.md)
+[**\com\hydrogen\nucleus\Model\Card**](../Model/Card.md)
 
 ### Authorization
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCardProgramUsingPut**
-> \com\hydrogen\Model\CardProgram updateCardProgramUsingPut($card_program, $card_program_id)
+> \com\hydrogen\nucleus\Model\CardProgram updateCardProgramUsingPut($card_program, $card_program_id)
 
 Update an cardProgram
 
@@ -554,29 +554,29 @@ Update the information for an cardProgram.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$card_program = new \com\hydrogen\Model\CardProgram(); // \com\hydrogen\Model\CardProgram | card_program
+$card_program = new \com\hydrogen\nucleus\Model\CardProgram(); // \com\hydrogen\nucleus\Model\CardProgram | card_program
 $card_program_id = "card_program_id_example"; // string | UUID card_program_id
 
 try {
@@ -592,12 +592,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card_program** | [**\com\hydrogen\Model\CardProgram**](../Model/CardProgram.md)| card_program |
+ **card_program** | [**\com\hydrogen\nucleus\Model\CardProgram**](../Model/CardProgram.md)| card_program |
  **card_program_id** | [**string**](../Model/.md)| UUID card_program_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\CardProgram**](../Model/CardProgram.md)
+[**\com\hydrogen\nucleus\Model\CardProgram**](../Model/CardProgram.md)
 
 ### Authorization
 
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCardUsingPut**
-> \com\hydrogen\Model\Card updateCardUsingPut($card, $card_id)
+> \com\hydrogen\nucleus\Model\Card updateCardUsingPut($card, $card_id)
 
 Update a card request
 
@@ -620,29 +620,29 @@ Update the information for a card request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CardApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$card = new \com\hydrogen\Model\Card(); // \com\hydrogen\Model\Card | card
+$card = new \com\hydrogen\nucleus\Model\Card(); // \com\hydrogen\nucleus\Model\Card | card
 $card_id = "card_id_example"; // string | UUID card_id
 
 try {
@@ -658,12 +658,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card** | [**\com\hydrogen\Model\Card**](../Model/Card.md)| card |
+ **card** | [**\com\hydrogen\nucleus\Model\Card**](../Model/Card.md)| card |
  **card_id** | [**string**](../Model/.md)| UUID card_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Card**](../Model/Card.md)
+[**\com\hydrogen\nucleus\Model\Card**](../Model/Card.md)
 
 ### Authorization
 

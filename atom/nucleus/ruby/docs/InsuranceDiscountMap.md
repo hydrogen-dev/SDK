@@ -1,4 +1,4 @@
-# AtomApi::InsuranceDiscountMap
+# NucleusApi::InsuranceDiscountMap
 
 ## Properties
 Name | Type | Description | Notes

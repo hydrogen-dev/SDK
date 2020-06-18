@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.BulkTransactionVO();
+    instance = new HydrogenNucleusApi.BulkTransactionVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('BulkTransactionVO', function() {
     it('should create an instance of BulkTransactionVO', function() {
       // uncomment below and update the code to test BulkTransactionVO
-      //var instane = new HydrogenAtomApi.BulkTransactionVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.BulkTransactionVO);
+      //var instane = new HydrogenNucleusApi.BulkTransactionVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.BulkTransactionVO);
     });
 
     it('should have the property error (base name: "error")', function() {
       // uncomment below and update the code to test the property error
-      //var instane = new HydrogenAtomApi.BulkTransactionVO();
+      //var instane = new HydrogenNucleusApi.BulkTransactionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.BulkTransactionVO();
+      //var instane = new HydrogenNucleusApi.BulkTransactionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property progress (base name: "progress")', function() {
       // uncomment below and update the code to test the property progress
-      //var instane = new HydrogenAtomApi.BulkTransactionVO();
+      //var instane = new HydrogenNucleusApi.BulkTransactionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new HydrogenAtomApi.BulkTransactionVO();
+      //var instane = new HydrogenNucleusApi.BulkTransactionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property success (base name: "success")', function() {
       // uncomment below and update the code to test the property success
-      //var instane = new HydrogenAtomApi.BulkTransactionVO();
+      //var instane = new HydrogenNucleusApi.BulkTransactionVO();
       //expect(instance).to.be();
     });
 

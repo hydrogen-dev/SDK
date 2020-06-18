@@ -1,4 +1,4 @@
-# AtomApi::PageInsuranceCoverage
+# NucleusApi::PageInsuranceCoverage
 
 ## Properties
 Name | Type | Description | Notes

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\proton\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\proton\ObjectSerializer;
 
 /**
  * SavingsCalculatorRequest Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class SavingsCalculatorRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'deposit_schedule' => '\com\hydrogen\Model\SavingsDepositSchedule[]',
+        'deposit_schedule' => '\com\hydrogen\proton\Model\SavingsDepositSchedule[]',
         'horizon_frequency_interval' => 'string',
         'initial_balance' => 'float',
         'return_schedule' => 'float[]',
@@ -310,7 +310,7 @@ class SavingsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Gets deposit_schedule
      *
-     * @return \com\hydrogen\Model\SavingsDepositSchedule[]
+     * @return \com\hydrogen\proton\Model\SavingsDepositSchedule[]
      */
     public function getDepositSchedule()
     {
@@ -320,7 +320,7 @@ class SavingsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Sets deposit_schedule
      *
-     * @param \com\hydrogen\Model\SavingsDepositSchedule[] $deposit_schedule deposit_schedule
+     * @param \com\hydrogen\proton\Model\SavingsDepositSchedule[] $deposit_schedule deposit_schedule
      *
      * @return $this
      */

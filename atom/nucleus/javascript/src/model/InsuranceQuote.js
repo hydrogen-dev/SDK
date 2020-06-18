@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./AllocationNodeMap'), require('./InsuranceCoverageMap'), require('./InsuranceDiscountMap'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.InsuranceQuote = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AllocationNodeMap, root.HydrogenAtomApi.InsuranceCoverageMap, root.HydrogenAtomApi.InsuranceDiscountMap);
+    root.HydrogenNucleusApi.InsuranceQuote = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AllocationNodeMap, root.HydrogenNucleusApi.InsuranceCoverageMap, root.HydrogenNucleusApi.InsuranceDiscountMap);
   }
 }(this, function(ApiClient, AllocationNodeMap, InsuranceCoverageMap, InsuranceDiscountMap) {
   'use strict';

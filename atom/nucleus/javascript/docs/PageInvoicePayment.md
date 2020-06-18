@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageInvoicePayment
+# HydrogenNucleusApi.PageInvoicePayment
 
 ## Properties
 Name | Type | Description | Notes

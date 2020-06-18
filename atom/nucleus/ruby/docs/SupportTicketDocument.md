@@ -1,4 +1,4 @@
-# AtomApi::SupportTicketDocument
+# NucleusApi::SupportTicketDocument
 
 ## Properties
 Name | Type | Description | Notes

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AccountAllocationMapping();
+    instance = new HydrogenNucleusApi.AccountAllocationMapping();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,67 +53,67 @@
   describe('AccountAllocationMapping', function() {
     it('should create an instance of AccountAllocationMapping', function() {
       // uncomment below and update the code to test AccountAllocationMapping
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
-      //expect(instance).to.be.a(HydrogenAtomApi.AccountAllocationMapping);
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AccountAllocationMapping);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property allocationId (base name: "allocation_id")', function() {
       // uncomment below and update the code to test the property allocationId
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property currentWeight (base name: "current_weight")', function() {
       // uncomment below and update the code to test the property currentWeight
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property goalId (base name: "goal_id")', function() {
       // uncomment below and update the code to test the property goalId
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property strategicWeight (base name: "strategic_weight")', function() {
       // uncomment below and update the code to test the property strategicWeight
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.AccountAllocationMapping();
+      //var instane = new HydrogenNucleusApi.AccountAllocationMapping();
       //expect(instance).to.be();
     });
 

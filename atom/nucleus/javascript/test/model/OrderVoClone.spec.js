@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.OrderVoClone();
+    instance = new HydrogenNucleusApi.OrderVoClone();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,85 +53,85 @@
   describe('OrderVoClone', function() {
     it('should create an instance of OrderVoClone', function() {
       // uncomment below and update the code to test OrderVoClone
-      //var instane = new HydrogenAtomApi.OrderVoClone();
-      //expect(instance).to.be.a(HydrogenAtomApi.OrderVoClone);
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
+      //expect(instance).to.be.a(HydrogenNucleusApi.OrderVoClone);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property isRead (base name: "is_read")', function() {
       // uncomment below and update the code to test the property isRead
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property modelId (base name: "model_id")', function() {
       // uncomment below and update the code to test the property modelId
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property orderBulkId (base name: "order_bulk_id")', function() {
       // uncomment below and update the code to test the property orderBulkId
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property orderTicketId (base name: "order_ticket_id")', function() {
       // uncomment below and update the code to test the property orderTicketId
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property orderType (base name: "order_type")', function() {
       // uncomment below and update the code to test the property orderType
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property price (base name: "price")', function() {
       // uncomment below and update the code to test the property price
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property quantity (base name: "quantity")', function() {
       // uncomment below and update the code to test the property quantity
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionCodeId (base name: "transaction_code_id")', function() {
       // uncomment below and update the code to test the property transactionCodeId
-      //var instane = new HydrogenAtomApi.OrderVoClone();
+      //var instane = new HydrogenNucleusApi.OrderVoClone();
       //expect(instance).to.be();
     });
 

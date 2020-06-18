@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\proton\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\proton\ApiException;
+use com\hydrogen\proton\Configuration;
+use com\hydrogen\proton\HeaderSelector;
+use com\hydrogen\proton\ObjectSerializer;
 
 /**
  * RiskScoringApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class RiskScoringApi
      *
      * Dimensional Risk Score
      *
-     * @param  \com\hydrogen\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -109,9 +109,9 @@ class RiskScoringApi
      *
      * Dimensional Risk Score
      *
-     * @param  \com\hydrogen\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -184,7 +184,7 @@ class RiskScoringApi
      *
      * Dimensional Risk Score
      *
-     * @param  \com\hydrogen\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,7 +204,7 @@ class RiskScoringApi
      *
      * Dimensional Risk Score
      *
-     * @param  \com\hydrogen\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -254,7 +254,7 @@ class RiskScoringApi
     /**
      * Create request for operation 'dimensionalRiskScore'
      *
-     * @param  \com\hydrogen\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\DimensionalRiskScoreRequest $dimensional_risk_score_request Request payload for Dimensional Risk Score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,9 +360,9 @@ class RiskScoringApi
      *
      * Risk Allocation
      *
-     * @param  \com\hydrogen\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
+     * @param  \com\hydrogen\proton\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -377,9 +377,9 @@ class RiskScoringApi
      *
      * Risk Allocation
      *
-     * @param  \com\hydrogen\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
+     * @param  \com\hydrogen\proton\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -452,7 +452,7 @@ class RiskScoringApi
      *
      * Risk Allocation
      *
-     * @param  \com\hydrogen\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
+     * @param  \com\hydrogen\proton\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,7 +472,7 @@ class RiskScoringApi
      *
      * Risk Allocation
      *
-     * @param  \com\hydrogen\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
+     * @param  \com\hydrogen\proton\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -522,7 +522,7 @@ class RiskScoringApi
     /**
      * Create request for operation 'riskAllocation'
      *
-     * @param  \com\hydrogen\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
+     * @param  \com\hydrogen\proton\Model\RiskAllocationRequest $risk_allocation_request Request payload for Risk Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,9 +628,9 @@ class RiskScoringApi
      *
      * Risk Score
      *
-     * @param  \com\hydrogen\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -645,9 +645,9 @@ class RiskScoringApi
      *
      * Risk Score
      *
-     * @param  \com\hydrogen\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -720,7 +720,7 @@ class RiskScoringApi
      *
      * Risk Score
      *
-     * @param  \com\hydrogen\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,7 +740,7 @@ class RiskScoringApi
      *
      * Risk Score
      *
-     * @param  \com\hydrogen\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -790,7 +790,7 @@ class RiskScoringApi
     /**
      * Create request for operation 'riskScore'
      *
-     * @param  \com\hydrogen\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
+     * @param  \com\hydrogen\proton\Model\RiskScoreRequest $risk_score_request Request payload for Risk Score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

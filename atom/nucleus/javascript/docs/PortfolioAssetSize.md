@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PortfolioAssetSize
+# HydrogenNucleusApi.PortfolioAssetSize
 
 ## Properties
 Name | Type | Description | Notes

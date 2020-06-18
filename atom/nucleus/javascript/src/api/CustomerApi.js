@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Customer'), require('../model/CustomerRevenue'), require('../model/PageCustomer'), require('../model/PageCustomerRevenue'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.CustomerApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Customer, root.HydrogenAtomApi.CustomerRevenue, root.HydrogenAtomApi.PageCustomer, root.HydrogenAtomApi.PageCustomerRevenue);
+    root.HydrogenNucleusApi.CustomerApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Customer, root.HydrogenNucleusApi.CustomerRevenue, root.HydrogenNucleusApi.PageCustomer, root.HydrogenNucleusApi.PageCustomerRevenue);
   }
 }(this, function(ApiClient, Customer, CustomerRevenue, PageCustomer, PageCustomerRevenue) {
   'use strict';

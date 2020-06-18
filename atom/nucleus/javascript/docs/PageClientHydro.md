@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageClientHydro
+# HydrogenNucleusApi.PageClientHydro
 
 ## Properties
 Name | Type | Description | Notes

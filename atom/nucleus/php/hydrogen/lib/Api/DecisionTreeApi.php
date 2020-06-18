@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * DecisionTreeApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class DecisionTreeApi
      *
      * Decision tree result
      *
-     * @param  \com\hydrogen\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DecisionTreeResultVO
+     * @return \com\hydrogen\nucleus\Model\DecisionTreeResultVO
      */
     public function createDecisionTreeResultUsingPost($decision_tree_co)
     {
@@ -109,15 +109,15 @@ class DecisionTreeApi
      *
      * Decision tree result
      *
-     * @param  \com\hydrogen\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DecisionTreeResultVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DecisionTreeResultVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDecisionTreeResultUsingPostWithHttpInfo($decision_tree_co)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTreeResultVO';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTreeResultVO';
         $request = $this->createDecisionTreeResultUsingPostRequest($decision_tree_co);
 
         try {
@@ -169,7 +169,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DecisionTreeResultVO',
+                        '\com\hydrogen\nucleus\Model\DecisionTreeResultVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class DecisionTreeApi
      *
      * Decision tree result
      *
-     * @param  \com\hydrogen\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class DecisionTreeApi
      *
      * Decision tree result
      *
-     * @param  \com\hydrogen\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDecisionTreeResultUsingPostAsyncWithHttpInfo($decision_tree_co)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTreeResultVO';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTreeResultVO';
         $request = $this->createDecisionTreeResultUsingPostRequest($decision_tree_co);
 
         return $this->client
@@ -254,7 +254,7 @@ class DecisionTreeApi
     /**
      * Create request for operation 'createDecisionTreeResultUsingPost'
      *
-     * @param  \com\hydrogen\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTreeCO $decision_tree_co decisionTreeCO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class DecisionTreeApi
      *
      * Create a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decisionTree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decisionTree (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DecisionTree
+     * @return \com\hydrogen\nucleus\Model\DecisionTree
      */
     public function createDecisionTreeUsingPost($decision_tree)
     {
@@ -377,15 +377,15 @@ class DecisionTreeApi
      *
      * Create a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decisionTree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decisionTree (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDecisionTreeUsingPostWithHttpInfo($decision_tree)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->createDecisionTreeUsingPostRequest($decision_tree);
 
         try {
@@ -437,7 +437,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DecisionTree',
+                        '\com\hydrogen\nucleus\Model\DecisionTree',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class DecisionTreeApi
      *
      * Create a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decisionTree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decisionTree (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class DecisionTreeApi
      *
      * Create a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decisionTree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decisionTree (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDecisionTreeUsingPostAsyncWithHttpInfo($decision_tree)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->createDecisionTreeUsingPostRequest($decision_tree);
 
         return $this->client
@@ -522,7 +522,7 @@ class DecisionTreeApi
     /**
      * Create request for operation 'createDecisionTreeUsingPost'
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decisionTree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decisionTree (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class DecisionTreeApi
      *
      * Create a node relationship
      *
-     * @param  \com\hydrogen\Model\NodeRelationship $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\NodeRelationship $node node (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NodeRelationship
+     * @return \com\hydrogen\nucleus\Model\NodeRelationship
      */
     public function createNodeRelationshipUsingPost($node)
     {
@@ -645,15 +645,15 @@ class DecisionTreeApi
      *
      * Create a node relationship
      *
-     * @param  \com\hydrogen\Model\NodeRelationship $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\NodeRelationship $node node (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNodeRelationshipUsingPostWithHttpInfo($node)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->createNodeRelationshipUsingPostRequest($node);
 
         try {
@@ -705,7 +705,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NodeRelationship',
+                        '\com\hydrogen\nucleus\Model\NodeRelationship',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class DecisionTreeApi
      *
      * Create a node relationship
      *
-     * @param  \com\hydrogen\Model\NodeRelationship $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\NodeRelationship $node node (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class DecisionTreeApi
      *
      * Create a node relationship
      *
-     * @param  \com\hydrogen\Model\NodeRelationship $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\NodeRelationship $node node (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createNodeRelationshipUsingPostAsyncWithHttpInfo($node)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->createNodeRelationshipUsingPostRequest($node);
 
         return $this->client
@@ -790,7 +790,7 @@ class DecisionTreeApi
     /**
      * Create request for operation 'createNodeRelationshipUsingPost'
      *
-     * @param  \com\hydrogen\Model\NodeRelationship $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\NodeRelationship $node node (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,11 +896,11 @@ class DecisionTreeApi
      *
      * Create a node
      *
-     * @param  \com\hydrogen\Model\Node $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\Node $node node (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Node
+     * @return \com\hydrogen\nucleus\Model\Node
      */
     public function createNodeUsingPost($node)
     {
@@ -913,15 +913,15 @@ class DecisionTreeApi
      *
      * Create a node
      *
-     * @param  \com\hydrogen\Model\Node $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\Node $node node (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Node, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Node, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNodeUsingPostWithHttpInfo($node)
     {
-        $returnType = '\com\hydrogen\Model\Node';
+        $returnType = '\com\hydrogen\nucleus\Model\Node';
         $request = $this->createNodeUsingPostRequest($node);
 
         try {
@@ -973,7 +973,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Node',
+                        '\com\hydrogen\nucleus\Model\Node',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class DecisionTreeApi
      *
      * Create a node
      *
-     * @param  \com\hydrogen\Model\Node $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\Node $node node (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,14 +1008,14 @@ class DecisionTreeApi
      *
      * Create a node
      *
-     * @param  \com\hydrogen\Model\Node $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\Node $node node (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createNodeUsingPostAsyncWithHttpInfo($node)
     {
-        $returnType = '\com\hydrogen\Model\Node';
+        $returnType = '\com\hydrogen\nucleus\Model\Node';
         $request = $this->createNodeUsingPostRequest($node);
 
         return $this->client
@@ -1058,7 +1058,7 @@ class DecisionTreeApi
     /**
      * Create request for operation 'createNodeUsingPost'
      *
-     * @param  \com\hydrogen\Model\Node $node node (required)
+     * @param  \com\hydrogen\nucleus\Model\Node $node node (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1166,7 +1166,7 @@ class DecisionTreeApi
      *
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1182,7 +1182,7 @@ class DecisionTreeApi
      *
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1402,9 +1402,9 @@ class DecisionTreeApi
      *
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NodeRelationship
+     * @return \com\hydrogen\nucleus\Model\NodeRelationship
      */
     public function deleteNodeRelationshipUsingDelete($node_relationship_id)
     {
@@ -1419,13 +1419,13 @@ class DecisionTreeApi
      *
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteNodeRelationshipUsingDeleteWithHttpInfo($node_relationship_id)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->deleteNodeRelationshipUsingDeleteRequest($node_relationship_id);
 
         try {
@@ -1477,7 +1477,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NodeRelationship',
+                        '\com\hydrogen\nucleus\Model\NodeRelationship',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1519,7 +1519,7 @@ class DecisionTreeApi
      */
     public function deleteNodeRelationshipUsingDeleteAsyncWithHttpInfo($node_relationship_id)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->deleteNodeRelationshipUsingDeleteRequest($node_relationship_id);
 
         return $this->client
@@ -1675,9 +1675,9 @@ class DecisionTreeApi
      *
      * @param  string $node_id UUID node_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DecisionTree
+     * @return \com\hydrogen\nucleus\Model\DecisionTree
      */
     public function deleteNodeUsingDelete($node_id)
     {
@@ -1692,13 +1692,13 @@ class DecisionTreeApi
      *
      * @param  string $node_id UUID node_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteNodeUsingDeleteWithHttpInfo($node_id)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->deleteNodeUsingDeleteRequest($node_id);
 
         try {
@@ -1750,7 +1750,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DecisionTree',
+                        '\com\hydrogen\nucleus\Model\DecisionTree',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1792,7 +1792,7 @@ class DecisionTreeApi
      */
     public function deleteNodeUsingDeleteAsyncWithHttpInfo($node_id)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->deleteNodeUsingDeleteRequest($node_id);
 
         return $this->client
@@ -1952,9 +1952,9 @@ class DecisionTreeApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageDecisionTree_
+     * @return \com\hydrogen\nucleus\Model\PageDecisionTree_
      */
     public function getDecisionTreeAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1973,13 +1973,13 @@ class DecisionTreeApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageDecisionTree_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageDecisionTree_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDecisionTreeAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDecisionTree_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDecisionTree_';
         $request = $this->getDecisionTreeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2031,7 +2031,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageDecisionTree_',
+                        '\com\hydrogen\nucleus\Model\PageDecisionTree_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2081,7 +2081,7 @@ class DecisionTreeApi
      */
     public function getDecisionTreeAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDecisionTree_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDecisionTree_';
         $request = $this->getDecisionTreeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2247,9 +2247,9 @@ class DecisionTreeApi
      *
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DecisionTree
+     * @return \com\hydrogen\nucleus\Model\DecisionTree
      */
     public function getDecisionTreeUsingGet($decision_tree_id)
     {
@@ -2264,13 +2264,13 @@ class DecisionTreeApi
      *
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDecisionTreeUsingGetWithHttpInfo($decision_tree_id)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->getDecisionTreeUsingGetRequest($decision_tree_id);
 
         try {
@@ -2322,7 +2322,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DecisionTree',
+                        '\com\hydrogen\nucleus\Model\DecisionTree',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2364,7 +2364,7 @@ class DecisionTreeApi
      */
     public function getDecisionTreeUsingGetAsyncWithHttpInfo($decision_tree_id)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->getDecisionTreeUsingGetRequest($decision_tree_id);
 
         return $this->client
@@ -2524,9 +2524,9 @@ class DecisionTreeApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageNode_
+     * @return \com\hydrogen\nucleus\Model\PageNode_
      */
     public function getNodeAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2545,13 +2545,13 @@ class DecisionTreeApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageNode_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageNode_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNodeAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNode_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNode_';
         $request = $this->getNodeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2603,7 +2603,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageNode_',
+                        '\com\hydrogen\nucleus\Model\PageNode_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2653,7 +2653,7 @@ class DecisionTreeApi
      */
     public function getNodeAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNode_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNode_';
         $request = $this->getNodeAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2823,9 +2823,9 @@ class DecisionTreeApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageNodeRelationship_
+     * @return \com\hydrogen\nucleus\Model\PageNodeRelationship_
      */
     public function getNodeRelationshipAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2844,13 +2844,13 @@ class DecisionTreeApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageNodeRelationship_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageNodeRelationship_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNodeRelationshipAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNodeRelationship_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNodeRelationship_';
         $request = $this->getNodeRelationshipAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2902,7 +2902,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageNodeRelationship_',
+                        '\com\hydrogen\nucleus\Model\PageNodeRelationship_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2952,7 +2952,7 @@ class DecisionTreeApi
      */
     public function getNodeRelationshipAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNodeRelationship_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNodeRelationship_';
         $request = $this->getNodeRelationshipAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3118,9 +3118,9 @@ class DecisionTreeApi
      *
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NodeRelationship
+     * @return \com\hydrogen\nucleus\Model\NodeRelationship
      */
     public function getNodeRelationshipUsingGet($node_relationship_id)
     {
@@ -3135,13 +3135,13 @@ class DecisionTreeApi
      *
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNodeRelationshipUsingGetWithHttpInfo($node_relationship_id)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->getNodeRelationshipUsingGetRequest($node_relationship_id);
 
         try {
@@ -3193,7 +3193,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NodeRelationship',
+                        '\com\hydrogen\nucleus\Model\NodeRelationship',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3235,7 +3235,7 @@ class DecisionTreeApi
      */
     public function getNodeRelationshipUsingGetAsyncWithHttpInfo($node_relationship_id)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->getNodeRelationshipUsingGetRequest($node_relationship_id);
 
         return $this->client
@@ -3391,9 +3391,9 @@ class DecisionTreeApi
      *
      * @param  string $node_id UUID node_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Node
+     * @return \com\hydrogen\nucleus\Model\Node
      */
     public function getNodeUsingGet($node_id)
     {
@@ -3408,13 +3408,13 @@ class DecisionTreeApi
      *
      * @param  string $node_id UUID node_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Node, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Node, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNodeUsingGetWithHttpInfo($node_id)
     {
-        $returnType = '\com\hydrogen\Model\Node';
+        $returnType = '\com\hydrogen\nucleus\Model\Node';
         $request = $this->getNodeUsingGetRequest($node_id);
 
         try {
@@ -3466,7 +3466,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Node',
+                        '\com\hydrogen\nucleus\Model\Node',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3508,7 +3508,7 @@ class DecisionTreeApi
      */
     public function getNodeUsingGetAsyncWithHttpInfo($node_id)
     {
-        $returnType = '\com\hydrogen\Model\Node';
+        $returnType = '\com\hydrogen\nucleus\Model\Node';
         $request = $this->getNodeUsingGetRequest($node_id);
 
         return $this->client
@@ -3662,12 +3662,12 @@ class DecisionTreeApi
      *
      * Update a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decision_tree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decision_tree (required)
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DecisionTree
+     * @return \com\hydrogen\nucleus\Model\DecisionTree
      */
     public function updateDecisionTreeUsingPut($decision_tree, $decision_tree_id)
     {
@@ -3680,16 +3680,16 @@ class DecisionTreeApi
      *
      * Update a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decision_tree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decision_tree (required)
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DecisionTree, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateDecisionTreeUsingPutWithHttpInfo($decision_tree, $decision_tree_id)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->updateDecisionTreeUsingPutRequest($decision_tree, $decision_tree_id);
 
         try {
@@ -3741,7 +3741,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DecisionTree',
+                        '\com\hydrogen\nucleus\Model\DecisionTree',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3756,7 +3756,7 @@ class DecisionTreeApi
      *
      * Update a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decision_tree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decision_tree (required)
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3777,7 +3777,7 @@ class DecisionTreeApi
      *
      * Update a decision tree
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decision_tree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decision_tree (required)
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3785,7 +3785,7 @@ class DecisionTreeApi
      */
     public function updateDecisionTreeUsingPutAsyncWithHttpInfo($decision_tree, $decision_tree_id)
     {
-        $returnType = '\com\hydrogen\Model\DecisionTree';
+        $returnType = '\com\hydrogen\nucleus\Model\DecisionTree';
         $request = $this->updateDecisionTreeUsingPutRequest($decision_tree, $decision_tree_id);
 
         return $this->client
@@ -3828,7 +3828,7 @@ class DecisionTreeApi
     /**
      * Create request for operation 'updateDecisionTreeUsingPut'
      *
-     * @param  \com\hydrogen\Model\DecisionTree $decision_tree decision_tree (required)
+     * @param  \com\hydrogen\nucleus\Model\DecisionTree $decision_tree decision_tree (required)
      * @param  string $decision_tree_id UUID decision_tree_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3949,12 +3949,12 @@ class DecisionTreeApi
      *
      * Update a node relationship
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NodeRelationship
+     * @return \com\hydrogen\nucleus\Model\NodeRelationship
      */
     public function updateNodeRelationshipUsingPut($json_node, $node_relationship_id)
     {
@@ -3967,16 +3967,16 @@ class DecisionTreeApi
      *
      * Update a node relationship
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NodeRelationship, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNodeRelationshipUsingPutWithHttpInfo($json_node, $node_relationship_id)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->updateNodeRelationshipUsingPutRequest($json_node, $node_relationship_id);
 
         try {
@@ -4028,7 +4028,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NodeRelationship',
+                        '\com\hydrogen\nucleus\Model\NodeRelationship',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4043,7 +4043,7 @@ class DecisionTreeApi
      *
      * Update a node relationship
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4064,7 +4064,7 @@ class DecisionTreeApi
      *
      * Update a node relationship
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4072,7 +4072,7 @@ class DecisionTreeApi
      */
     public function updateNodeRelationshipUsingPutAsyncWithHttpInfo($json_node, $node_relationship_id)
     {
-        $returnType = '\com\hydrogen\Model\NodeRelationship';
+        $returnType = '\com\hydrogen\nucleus\Model\NodeRelationship';
         $request = $this->updateNodeRelationshipUsingPutRequest($json_node, $node_relationship_id);
 
         return $this->client
@@ -4115,7 +4115,7 @@ class DecisionTreeApi
     /**
      * Create request for operation 'updateNodeRelationshipUsingPut'
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_relationship_id UUID node_relationship_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4236,12 +4236,12 @@ class DecisionTreeApi
      *
      * Update a node
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_id UUID node_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Node
+     * @return \com\hydrogen\nucleus\Model\Node
      */
     public function updateNodeUsingPut($json_node, $node_id)
     {
@@ -4254,16 +4254,16 @@ class DecisionTreeApi
      *
      * Update a node
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_id UUID node_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Node, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Node, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNodeUsingPutWithHttpInfo($json_node, $node_id)
     {
-        $returnType = '\com\hydrogen\Model\Node';
+        $returnType = '\com\hydrogen\nucleus\Model\Node';
         $request = $this->updateNodeUsingPutRequest($json_node, $node_id);
 
         try {
@@ -4315,7 +4315,7 @@ class DecisionTreeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Node',
+                        '\com\hydrogen\nucleus\Model\Node',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4330,7 +4330,7 @@ class DecisionTreeApi
      *
      * Update a node
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_id UUID node_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4351,7 +4351,7 @@ class DecisionTreeApi
      *
      * Update a node
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_id UUID node_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4359,7 +4359,7 @@ class DecisionTreeApi
      */
     public function updateNodeUsingPutAsyncWithHttpInfo($json_node, $node_id)
     {
-        $returnType = '\com\hydrogen\Model\Node';
+        $returnType = '\com\hydrogen\nucleus\Model\Node';
         $request = $this->updateNodeUsingPutRequest($json_node, $node_id);
 
         return $this->client
@@ -4402,7 +4402,7 @@ class DecisionTreeApi
     /**
      * Create request for operation 'updateNodeUsingPut'
      *
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      * @param  string $node_id UUID node_id (required)
      *
      * @throws \InvalidArgumentException

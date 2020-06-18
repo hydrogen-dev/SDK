@@ -1,4 +1,4 @@
-# AtomApi::PageScore
+# NucleusApi::PageScore
 
 ## Properties
 Name | Type | Description | Notes

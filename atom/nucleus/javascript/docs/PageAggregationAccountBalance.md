@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageAggregationAccountBalance
+# HydrogenNucleusApi.PageAggregationAccountBalance
 
 ## Properties
 Name | Type | Description | Notes

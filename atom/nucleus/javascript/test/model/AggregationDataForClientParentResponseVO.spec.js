@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AggregationDataForClientParentResponseVO();
+    instance = new HydrogenNucleusApi.AggregationDataForClientParentResponseVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,13 +53,13 @@
   describe('AggregationDataForClientParentResponseVO', function() {
     it('should create an instance of AggregationDataForClientParentResponseVO', function() {
       // uncomment below and update the code to test AggregationDataForClientParentResponseVO
-      //var instane = new HydrogenAtomApi.AggregationDataForClientParentResponseVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AggregationDataForClientParentResponseVO);
+      //var instane = new HydrogenNucleusApi.AggregationDataForClientParentResponseVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AggregationDataForClientParentResponseVO);
     });
 
     it('should have the property byCategory (base name: "by_category")', function() {
       // uncomment below and update the code to test the property byCategory
-      //var instane = new HydrogenAtomApi.AggregationDataForClientParentResponseVO();
+      //var instane = new HydrogenNucleusApi.AggregationDataForClientParentResponseVO();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# AtomApi::DocumentApi
+# NucleusApi::DocumentApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Create a new Document for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DocumentApi.new
+api_instance = NucleusApi::DocumentApi.new
 
-document_request = AtomApi::Document.new # Document | documentRequest
+document_request = NucleusApi::Document.new # Document | documentRequest
 
 
 begin
   #Create a Document
   result = api_instance.create_document_using_post(document_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DocumentApi->create_document_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently delete a tenant document by Id
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DocumentApi.new
+api_instance = NucleusApi::DocumentApi.new
 
 document_id = 'document_id_example' # String | UUID document_id
 
@@ -96,7 +96,7 @@ document_id = 'document_id_example' # String | UUID document_id
 begin
   #Delete a tenant document by Id
   api_instance.delete_document_using_delete(document_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DocumentApi->delete_document_using_delete: #{e}"
 end
 ```
@@ -132,9 +132,9 @@ Get the information for all Documents
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -143,7 +143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DocumentApi.new
+api_instance = NucleusApi::DocumentApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -157,7 +157,7 @@ begin
   #List all Documents
   result = api_instance.get_document_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DocumentApi->get_document_all_using_get: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Retrieve the information for a Tenant Document by Document Id
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DocumentApi.new
+api_instance = NucleusApi::DocumentApi.new
 
 document_id = 'document_id_example' # String | UUID document_id
 
@@ -217,7 +217,7 @@ begin
   #Retrieve a Tenant Document by Document Id
   result = api_instance.get_document_using_get(document_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DocumentApi->get_document_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Updated the information for a Tenant Documents
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::DocumentApi.new
+api_instance = NucleusApi::DocumentApi.new
 
-document = AtomApi::Document.new # Document | document
+document = NucleusApi::Document.new # Document | document
 
 document_id = 'document_id_example' # String | UUID document_id
 
@@ -275,7 +275,7 @@ begin
   #Update a Tenant Document
   result = api_instance.update_document_using_put(document, document_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling DocumentApi->update_document_using_put: #{e}"
 end
 ```

@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./AggregateDataByCategoryForClientFromDbVO'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AggregationDataForClientByCategoryResponseVO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AggregateDataByCategoryForClientFromDbVO);
+    root.HydrogenNucleusApi.AggregationDataForClientByCategoryResponseVO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AggregateDataByCategoryForClientFromDbVO);
   }
 }(this, function(ApiClient, AggregateDataByCategoryForClientFromDbVO) {
   'use strict';

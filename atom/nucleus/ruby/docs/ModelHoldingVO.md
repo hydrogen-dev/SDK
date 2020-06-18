@@ -1,4 +1,4 @@
-# AtomApi::ModelHoldingVO
+# NucleusApi::ModelHoldingVO
 
 ## Properties
 Name | Type | Description | Notes

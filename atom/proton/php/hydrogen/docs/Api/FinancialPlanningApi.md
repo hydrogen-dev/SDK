@@ -1,4 +1,4 @@
-# com\hydrogen\FinancialPlanningApi
+# com\hydrogen\proton\FinancialPlanningApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -34,24 +34,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$education_calculator_annual_cost_request = new \com\hydrogen\Model\EducationCalculatorAnnualCostRequest(); // \com\hydrogen\Model\EducationCalculatorAnnualCostRequest | Request payload for Education Calculator - Annual Cost
+$education_calculator_annual_cost_request = new \com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest(); // \com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest | Request payload for Education Calculator - Annual Cost
 
 try {
     $result = $apiInstance->educationCalculatorAnnualCost($education_calculator_annual_cost_request);
@@ -66,7 +66,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **education_calculator_annual_cost_request** | [**\com\hydrogen\Model\EducationCalculatorAnnualCostRequest**](../Model/EducationCalculatorAnnualCostRequest.md)| Request payload for Education Calculator - Annual Cost |
+ **education_calculator_annual_cost_request** | [**\com\hydrogen\proton\Model\EducationCalculatorAnnualCostRequest**](../Model/EducationCalculatorAnnualCostRequest.md)| Request payload for Education Calculator - Annual Cost |
 
 ### Return type
 
@@ -99,24 +99,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$education_calculator_deposit_amount_request = new \com\hydrogen\Model\EducationCalculatorDepositAmountRequest(); // \com\hydrogen\Model\EducationCalculatorDepositAmountRequest | Request payload for Education Calculator - Deposit Amount
+$education_calculator_deposit_amount_request = new \com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest(); // \com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest | Request payload for Education Calculator - Deposit Amount
 
 try {
     $result = $apiInstance->educationCalculatorDepositAmount($education_calculator_deposit_amount_request);
@@ -131,7 +131,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **education_calculator_deposit_amount_request** | [**\com\hydrogen\Model\EducationCalculatorDepositAmountRequest**](../Model/EducationCalculatorDepositAmountRequest.md)| Request payload for Education Calculator - Deposit Amount |
+ **education_calculator_deposit_amount_request** | [**\com\hydrogen\proton\Model\EducationCalculatorDepositAmountRequest**](../Model/EducationCalculatorDepositAmountRequest.md)| Request payload for Education Calculator - Deposit Amount |
 
 ### Return type
 
@@ -164,24 +164,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$education_calculator_percent_covered_request = new \com\hydrogen\Model\EducationCalculatorPercentCoveredRequest(); // \com\hydrogen\Model\EducationCalculatorPercentCoveredRequest | Request payload for Education Calculator - Percent Covered
+$education_calculator_percent_covered_request = new \com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest(); // \com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest | Request payload for Education Calculator - Percent Covered
 
 try {
     $result = $apiInstance->educationCalculatorPercentCovered($education_calculator_percent_covered_request);
@@ -196,7 +196,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **education_calculator_percent_covered_request** | [**\com\hydrogen\Model\EducationCalculatorPercentCoveredRequest**](../Model/EducationCalculatorPercentCoveredRequest.md)| Request payload for Education Calculator - Percent Covered |
+ **education_calculator_percent_covered_request** | [**\com\hydrogen\proton\Model\EducationCalculatorPercentCoveredRequest**](../Model/EducationCalculatorPercentCoveredRequest.md)| Request payload for Education Calculator - Percent Covered |
 
 ### Return type
 
@@ -229,24 +229,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$mortgage_calculator_down_payment_request = new \com\hydrogen\Model\MortgageCalculatorDownPaymentRequest(); // \com\hydrogen\Model\MortgageCalculatorDownPaymentRequest | Request payload for Mortgage Calculator - Down Payment
+$mortgage_calculator_down_payment_request = new \com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest(); // \com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest | Request payload for Mortgage Calculator - Down Payment
 
 try {
     $result = $apiInstance->mortgageCalculatorDownPayment($mortgage_calculator_down_payment_request);
@@ -261,7 +261,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mortgage_calculator_down_payment_request** | [**\com\hydrogen\Model\MortgageCalculatorDownPaymentRequest**](../Model/MortgageCalculatorDownPaymentRequest.md)| Request payload for Mortgage Calculator - Down Payment |
+ **mortgage_calculator_down_payment_request** | [**\com\hydrogen\proton\Model\MortgageCalculatorDownPaymentRequest**](../Model/MortgageCalculatorDownPaymentRequest.md)| Request payload for Mortgage Calculator - Down Payment |
 
 ### Return type
 
@@ -294,24 +294,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$mortgage_calculator_home_price_request = new \com\hydrogen\Model\MortgageCalculatorHomePriceRequest(); // \com\hydrogen\Model\MortgageCalculatorHomePriceRequest | Request payload for Mortgage Calculator - Home Price
+$mortgage_calculator_home_price_request = new \com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest(); // \com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest | Request payload for Mortgage Calculator - Home Price
 
 try {
     $result = $apiInstance->mortgageCalculatorHomePrice($mortgage_calculator_home_price_request);
@@ -326,7 +326,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mortgage_calculator_home_price_request** | [**\com\hydrogen\Model\MortgageCalculatorHomePriceRequest**](../Model/MortgageCalculatorHomePriceRequest.md)| Request payload for Mortgage Calculator - Home Price |
+ **mortgage_calculator_home_price_request** | [**\com\hydrogen\proton\Model\MortgageCalculatorHomePriceRequest**](../Model/MortgageCalculatorHomePriceRequest.md)| Request payload for Mortgage Calculator - Home Price |
 
 ### Return type
 
@@ -359,24 +359,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$mortgage_calculator_periodic_payment_request = new \com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest(); // \com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest | Request payload for Mortgage Calculator - Periodic Payment
+$mortgage_calculator_periodic_payment_request = new \com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest(); // \com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest | Request payload for Mortgage Calculator - Periodic Payment
 
 try {
     $result = $apiInstance->mortgageCalculatorPeriodicPayment($mortgage_calculator_periodic_payment_request);
@@ -391,7 +391,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mortgage_calculator_periodic_payment_request** | [**\com\hydrogen\Model\MortgageCalculatorPeriodicPaymentRequest**](../Model/MortgageCalculatorPeriodicPaymentRequest.md)| Request payload for Mortgage Calculator - Periodic Payment |
+ **mortgage_calculator_periodic_payment_request** | [**\com\hydrogen\proton\Model\MortgageCalculatorPeriodicPaymentRequest**](../Model/MortgageCalculatorPeriodicPaymentRequest.md)| Request payload for Mortgage Calculator - Periodic Payment |
 
 ### Return type
 
@@ -424,24 +424,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$purchase_calculator_amount_request = new \com\hydrogen\Model\PurchaseCalculatorAmountRequest(); // \com\hydrogen\Model\PurchaseCalculatorAmountRequest | Request payload for Purchase Calculator - Amount
+$purchase_calculator_amount_request = new \com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest(); // \com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest | Request payload for Purchase Calculator - Amount
 
 try {
     $result = $apiInstance->purchaseCalculatorAmount($purchase_calculator_amount_request);
@@ -456,7 +456,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchase_calculator_amount_request** | [**\com\hydrogen\Model\PurchaseCalculatorAmountRequest**](../Model/PurchaseCalculatorAmountRequest.md)| Request payload for Purchase Calculator - Amount |
+ **purchase_calculator_amount_request** | [**\com\hydrogen\proton\Model\PurchaseCalculatorAmountRequest**](../Model/PurchaseCalculatorAmountRequest.md)| Request payload for Purchase Calculator - Amount |
 
 ### Return type
 
@@ -489,24 +489,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$purchase_calculator_deposit_amount_request = new \com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest(); // \com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest | Request payload for Purchase Calculator - Deposit Amount
+$purchase_calculator_deposit_amount_request = new \com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest(); // \com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest | Request payload for Purchase Calculator - Deposit Amount
 
 try {
     $result = $apiInstance->purchaseCalculatorDepositAmount($purchase_calculator_deposit_amount_request);
@@ -521,7 +521,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchase_calculator_deposit_amount_request** | [**\com\hydrogen\Model\PurchaseCalculatorDepositAmountRequest**](../Model/PurchaseCalculatorDepositAmountRequest.md)| Request payload for Purchase Calculator - Deposit Amount |
+ **purchase_calculator_deposit_amount_request** | [**\com\hydrogen\proton\Model\PurchaseCalculatorDepositAmountRequest**](../Model/PurchaseCalculatorDepositAmountRequest.md)| Request payload for Purchase Calculator - Deposit Amount |
 
 ### Return type
 
@@ -554,24 +554,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$purchase_calculator_horizon_request = new \com\hydrogen\Model\PurchaseCalculatorHorizonRequest(); // \com\hydrogen\Model\PurchaseCalculatorHorizonRequest | Request payload for Purchase Calculator - Horizon
+$purchase_calculator_horizon_request = new \com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest(); // \com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest | Request payload for Purchase Calculator - Horizon
 
 try {
     $result = $apiInstance->purchaseCalculatorHorizon($purchase_calculator_horizon_request);
@@ -586,7 +586,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **purchase_calculator_horizon_request** | [**\com\hydrogen\Model\PurchaseCalculatorHorizonRequest**](../Model/PurchaseCalculatorHorizonRequest.md)| Request payload for Purchase Calculator - Horizon |
+ **purchase_calculator_horizon_request** | [**\com\hydrogen\proton\Model\PurchaseCalculatorHorizonRequest**](../Model/PurchaseCalculatorHorizonRequest.md)| Request payload for Purchase Calculator - Horizon |
 
 ### Return type
 
@@ -619,24 +619,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$retirement_calculator_deposit_amount_request = new \com\hydrogen\Model\RetirementCalculatorDepositAmountRequest(); // \com\hydrogen\Model\RetirementCalculatorDepositAmountRequest | Request payload for Retirement Calculator - Deposit AMount
+$retirement_calculator_deposit_amount_request = new \com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest(); // \com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest | Request payload for Retirement Calculator - Deposit AMount
 
 try {
     $result = $apiInstance->retirementCalculatorDepositAmount($retirement_calculator_deposit_amount_request);
@@ -651,7 +651,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retirement_calculator_deposit_amount_request** | [**\com\hydrogen\Model\RetirementCalculatorDepositAmountRequest**](../Model/RetirementCalculatorDepositAmountRequest.md)| Request payload for Retirement Calculator - Deposit AMount |
+ **retirement_calculator_deposit_amount_request** | [**\com\hydrogen\proton\Model\RetirementCalculatorDepositAmountRequest**](../Model/RetirementCalculatorDepositAmountRequest.md)| Request payload for Retirement Calculator - Deposit AMount |
 
 ### Return type
 
@@ -684,24 +684,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$retirement_calculator_expenses_request = new \com\hydrogen\Model\RetirementCalculatorExpensesRequest(); // \com\hydrogen\Model\RetirementCalculatorExpensesRequest | Request payload for Retirement Calculator - Expenses
+$retirement_calculator_expenses_request = new \com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest(); // \com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest | Request payload for Retirement Calculator - Expenses
 
 try {
     $result = $apiInstance->retirementCalculatorExpenses($retirement_calculator_expenses_request);
@@ -716,7 +716,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retirement_calculator_expenses_request** | [**\com\hydrogen\Model\RetirementCalculatorExpensesRequest**](../Model/RetirementCalculatorExpensesRequest.md)| Request payload for Retirement Calculator - Expenses |
+ **retirement_calculator_expenses_request** | [**\com\hydrogen\proton\Model\RetirementCalculatorExpensesRequest**](../Model/RetirementCalculatorExpensesRequest.md)| Request payload for Retirement Calculator - Expenses |
 
 ### Return type
 
@@ -749,24 +749,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FinancialPlanningApi(
+$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$retirement_calculator_percent_covered_request = new \com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest(); // \com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest | Request payload for Retirement Calculator - Percent Covered
+$retirement_calculator_percent_covered_request = new \com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest(); // \com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest | Request payload for Retirement Calculator - Percent Covered
 
 try {
     $result = $apiInstance->retirementCalculatorPercentCovered($retirement_calculator_percent_covered_request);
@@ -781,7 +781,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retirement_calculator_percent_covered_request** | [**\com\hydrogen\Model\RetirementCalculatorPercentCoveredRequest**](../Model/RetirementCalculatorPercentCoveredRequest.md)| Request payload for Retirement Calculator - Percent Covered |
+ **retirement_calculator_percent_covered_request** | [**\com\hydrogen\proton\Model\RetirementCalculatorPercentCoveredRequest**](../Model/RetirementCalculatorPercentCoveredRequest.md)| Request payload for Retirement Calculator - Percent Covered |
 
 ### Return type
 

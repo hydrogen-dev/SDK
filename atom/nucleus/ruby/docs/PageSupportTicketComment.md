@@ -1,4 +1,4 @@
-# AtomApi::PageSupportTicketComment
+# NucleusApi::PageSupportTicketComment
 
 ## Properties
 Name | Type | Description | Notes

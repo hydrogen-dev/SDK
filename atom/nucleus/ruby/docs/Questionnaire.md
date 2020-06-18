@@ -1,4 +1,4 @@
-# AtomApi::Questionnaire
+# NucleusApi::Questionnaire
 
 ## Properties
 Name | Type | Description | Notes

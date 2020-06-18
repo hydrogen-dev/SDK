@@ -1,4 +1,4 @@
-# AtomApi::Budget
+# NucleusApi::Budget
 
 ## Properties
 Name | Type | Description | Notes

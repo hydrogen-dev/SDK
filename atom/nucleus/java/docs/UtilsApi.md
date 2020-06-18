@@ -31,9 +31,9 @@ Create an account status record for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -88,9 +88,9 @@ Create a new account stage
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -145,9 +145,9 @@ Create a new transaction code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -202,9 +202,9 @@ Permanently delete an account status record from an account’s history.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -258,9 +258,9 @@ Permanently delete an account stage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -314,9 +314,9 @@ Permanently delete a transaction code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -370,9 +370,9 @@ Get the account status history information for all accounts.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -435,9 +435,9 @@ Retrieve the information for a specific account status record for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -492,9 +492,9 @@ Get the information for all possible account stages.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -557,9 +557,9 @@ Retrieve the information for a specific account stage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -614,9 +614,9 @@ Get the information for all transaction codes defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -679,9 +679,9 @@ Retrieve the information for a transaction code defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -736,9 +736,9 @@ Update an account status record for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -795,9 +795,9 @@ Update the information for an account stage.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -854,9 +854,9 @@ Update a transaction code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

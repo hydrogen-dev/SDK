@@ -1,4 +1,4 @@
-# HydrogenAtomApi.MerchantsMap
+# HydrogenNucleusApi.MerchantsMap
 
 ## Properties
 Name | Type | Description | Notes

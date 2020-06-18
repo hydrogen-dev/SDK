@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageNode
+# HydrogenNucleusApi.PageNode
 
 ## Properties
 Name | Type | Description | Notes

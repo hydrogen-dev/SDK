@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.OverflowBankLinkMap();
+    instance = new HydrogenNucleusApi.OverflowBankLinkMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('OverflowBankLinkMap', function() {
     it('should create an instance of OverflowBankLinkMap', function() {
       // uncomment below and update the code to test OverflowBankLinkMap
-      //var instane = new HydrogenAtomApi.OverflowBankLinkMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.OverflowBankLinkMap);
+      //var instane = new HydrogenNucleusApi.OverflowBankLinkMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.OverflowBankLinkMap);
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.OverflowBankLinkMap();
+      //var instane = new HydrogenNucleusApi.OverflowBankLinkMap();
       //expect(instance).to.be();
     });
 
     it('should have the property bankLinkId (base name: "bank_link_id")', function() {
       // uncomment below and update the code to test the property bankLinkId
-      //var instane = new HydrogenAtomApi.OverflowBankLinkMap();
+      //var instane = new HydrogenNucleusApi.OverflowBankLinkMap();
       //expect(instance).to.be();
     });
 

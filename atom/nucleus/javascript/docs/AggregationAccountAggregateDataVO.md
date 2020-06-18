@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AggregationAccountAggregateDataVO
+# HydrogenNucleusApi.AggregationAccountAggregateDataVO
 
 ## Properties
 Name | Type | Description | Notes

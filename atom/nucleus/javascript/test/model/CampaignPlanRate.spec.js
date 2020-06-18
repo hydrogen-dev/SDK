@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.CampaignPlanRate();
+    instance = new HydrogenNucleusApi.CampaignPlanRate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('CampaignPlanRate', function() {
     it('should create an instance of CampaignPlanRate', function() {
       // uncomment below and update the code to test CampaignPlanRate
-      //var instane = new HydrogenAtomApi.CampaignPlanRate();
-      //expect(instance).to.be.a(HydrogenAtomApi.CampaignPlanRate);
+      //var instane = new HydrogenNucleusApi.CampaignPlanRate();
+      //expect(instance).to.be.a(HydrogenNucleusApi.CampaignPlanRate);
     });
 
     it('should have the property maxAsset (base name: "max_asset")', function() {
       // uncomment below and update the code to test the property maxAsset
-      //var instane = new HydrogenAtomApi.CampaignPlanRate();
+      //var instane = new HydrogenNucleusApi.CampaignPlanRate();
       //expect(instance).to.be();
     });
 
     it('should have the property minAsset (base name: "min_asset")', function() {
       // uncomment below and update the code to test the property minAsset
-      //var instane = new HydrogenAtomApi.CampaignPlanRate();
+      //var instane = new HydrogenNucleusApi.CampaignPlanRate();
       //expect(instance).to.be();
     });
 
     it('should have the property rate (base name: "rate")', function() {
       // uncomment below and update the code to test the property rate
-      //var instane = new HydrogenAtomApi.CampaignPlanRate();
+      //var instane = new HydrogenNucleusApi.CampaignPlanRate();
       //expect(instance).to.be();
     });
 

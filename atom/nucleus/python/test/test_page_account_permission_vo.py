@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.page_account_permission_vo import PageAccountPermissionVO  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.page_account_permission_vo import PageAccountPermissionVO  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestPageAccountPermissionVO(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPageAccountPermissionVO(unittest.TestCase):
     def testPageAccountPermissionVO(self):
         """Test PageAccountPermissionVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.page_account_permission_vo.PageAccountPermissionVO()  # noqa: E501
+        # model = nucleus_api.models.page_account_permission_vo.PageAccountPermissionVO()  # noqa: E501
         pass
 
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Country();
+    instance = new HydrogenNucleusApi.Country();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,37 +53,37 @@
   describe('Country', function() {
     it('should create an instance of Country', function() {
       // uncomment below and update the code to test Country
-      //var instane = new HydrogenAtomApi.Country();
-      //expect(instance).to.be.a(HydrogenAtomApi.Country);
+      //var instane = new HydrogenNucleusApi.Country();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Country);
     });
 
     it('should have the property alpha2Code (base name: "alpha2_code")', function() {
       // uncomment below and update the code to test the property alpha2Code
-      //var instane = new HydrogenAtomApi.Country();
+      //var instane = new HydrogenNucleusApi.Country();
       //expect(instance).to.be();
     });
 
     it('should have the property alpha3Code (base name: "alpha3_code")', function() {
       // uncomment below and update the code to test the property alpha3Code
-      //var instane = new HydrogenAtomApi.Country();
+      //var instane = new HydrogenNucleusApi.Country();
       //expect(instance).to.be();
     });
 
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
-      //var instane = new HydrogenAtomApi.Country();
+      //var instane = new HydrogenNucleusApi.Country();
       //expect(instance).to.be();
     });
 
     it('should have the property latitude (base name: "latitude")', function() {
       // uncomment below and update the code to test the property latitude
-      //var instane = new HydrogenAtomApi.Country();
+      //var instane = new HydrogenNucleusApi.Country();
       //expect(instance).to.be();
     });
 
     it('should have the property longitude (base name: "longitude")', function() {
       // uncomment below and update the code to test the property longitude
-      //var instane = new HydrogenAtomApi.Country();
+      //var instane = new HydrogenNucleusApi.Country();
       //expect(instance).to.be();
     });
 

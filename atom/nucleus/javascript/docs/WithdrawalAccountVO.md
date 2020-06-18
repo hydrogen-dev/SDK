@@ -1,4 +1,4 @@
-# HydrogenAtomApi.WithdrawalAccountVO
+# HydrogenNucleusApi.WithdrawalAccountVO
 
 ## Properties
 Name | Type | Description | Notes

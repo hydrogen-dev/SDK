@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PageClientCampaignMapping();
+    instance = new HydrogenNucleusApi.PageClientCampaignMapping();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,61 +53,61 @@
   describe('PageClientCampaignMapping', function() {
     it('should create an instance of PageClientCampaignMapping', function() {
       // uncomment below and update the code to test PageClientCampaignMapping
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
-      //expect(instance).to.be.a(HydrogenAtomApi.PageClientCampaignMapping);
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PageClientCampaignMapping);
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property first (base name: "first")', function() {
       // uncomment below and update the code to test the property first
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property last (base name: "last")', function() {
       // uncomment below and update the code to test the property last
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property numberOfElements (base name: "number_of_elements")', function() {
       // uncomment below and update the code to test the property numberOfElements
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property sort (base name: "sort")', function() {
       // uncomment below and update the code to test the property sort
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property totalElements (base name: "total_elements")', function() {
       // uncomment below and update the code to test the property totalElements
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 
     it('should have the property totalPages (base name: "total_pages")', function() {
       // uncomment below and update the code to test the property totalPages
-      //var instane = new HydrogenAtomApi.PageClientCampaignMapping();
+      //var instane = new HydrogenNucleusApi.PageClientCampaignMapping();
       //expect(instance).to.be();
     });
 

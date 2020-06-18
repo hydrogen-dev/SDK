@@ -1,4 +1,4 @@
-# AtomApi::SecurityExclusion
+# NucleusApi::SecurityExclusion
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AllocationNodeMap
+# HydrogenNucleusApi.AllocationNodeMap
 
 ## Properties
 Name | Type | Description | Notes

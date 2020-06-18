@@ -1,4 +1,4 @@
-# HydrogenAtomApi.BulkTransactionVO
+# HydrogenNucleusApi.BulkTransactionVO
 
 ## Properties
 Name | Type | Description | Notes

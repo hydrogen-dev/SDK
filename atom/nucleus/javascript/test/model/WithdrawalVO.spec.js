@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.WithdrawalVO();
+    instance = new HydrogenNucleusApi.WithdrawalVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('WithdrawalVO', function() {
     it('should create an instance of WithdrawalVO', function() {
       // uncomment below and update the code to test WithdrawalVO
-      //var instane = new HydrogenAtomApi.WithdrawalVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.WithdrawalVO);
+      //var instane = new HydrogenNucleusApi.WithdrawalVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.WithdrawalVO);
     });
 
     it('should have the property withdrawalAmount (base name: "withdrawal_amount")', function() {
       // uncomment below and update the code to test the property withdrawalAmount
-      //var instane = new HydrogenAtomApi.WithdrawalVO();
+      //var instane = new HydrogenNucleusApi.WithdrawalVO();
       //expect(instance).to.be();
     });
 
     it('should have the property withdrawalDate (base name: "withdrawal_date")', function() {
       // uncomment below and update the code to test the property withdrawalDate
-      //var instane = new HydrogenAtomApi.WithdrawalVO();
+      //var instane = new HydrogenNucleusApi.WithdrawalVO();
       //expect(instance).to.be();
     });
 
     it('should have the property withdrawalDirection (base name: "withdrawal_direction")', function() {
       // uncomment below and update the code to test the property withdrawalDirection
-      //var instane = new HydrogenAtomApi.WithdrawalVO();
+      //var instane = new HydrogenNucleusApi.WithdrawalVO();
       //expect(instance).to.be();
     });
 
     it('should have the property withdrawalId (base name: "withdrawal_id")', function() {
       // uncomment below and update the code to test the property withdrawalId
-      //var instane = new HydrogenAtomApi.WithdrawalVO();
+      //var instane = new HydrogenNucleusApi.WithdrawalVO();
       //expect(instance).to.be();
     });
 

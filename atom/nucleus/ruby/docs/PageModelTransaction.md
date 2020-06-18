@@ -1,4 +1,4 @@
-# AtomApi::PageModelTransaction
+# NucleusApi::PageModelTransaction
 
 ## Properties
 Name | Type | Description | Notes

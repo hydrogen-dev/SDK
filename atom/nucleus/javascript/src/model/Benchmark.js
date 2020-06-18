@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./BenchmarkComposition'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.Benchmark = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.BenchmarkComposition);
+    root.HydrogenNucleusApi.Benchmark = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.BenchmarkComposition);
   }
 }(this, function(ApiClient, BenchmarkComposition) {
   'use strict';

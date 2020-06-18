@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**\com\hydrogen\Model\ClientAddress[]**](ClientAddress.md) |  | [optional] 
+**address** | [**\com\hydrogen\nucleus\Model\ClientAddress[]**](ClientAddress.md) |  | [optional] 
 **citizenship_status** | **string** | citizenshipStatus | [optional] 
 **client_type** | **string** | clientTypeId | 
 **country_of_citizenship** | **string[]** | countryOfCitizenship | [optional] 
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **date_of_birth** | [**\DateTime**](\DateTime.md) | dateOfBirth | [optional] 
 **email** | **string** | email | [optional] 
-**employment** | [**\com\hydrogen\Model\Employment**](Employment.md) |  | [optional] 
+**employment** | [**\com\hydrogen\nucleus\Model\Employment**](Employment.md) |  | [optional] 
 **firm_name** | **string** | firmName | [optional] 
 **first_name** | **string** | firstName | [optional] 
 **gender** | **string** | gender | [optional] 

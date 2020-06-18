@@ -1,4 +1,4 @@
-# AtomApi::PageSecurity
+# NucleusApi::PageSecurity
 
 ## Properties
 Name | Type | Description | Notes

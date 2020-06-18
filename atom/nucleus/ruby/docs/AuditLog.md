@@ -1,4 +1,4 @@
-# AtomApi::AuditLog
+# NucleusApi::AuditLog
 
 ## Properties
 Name | Type | Description | Notes

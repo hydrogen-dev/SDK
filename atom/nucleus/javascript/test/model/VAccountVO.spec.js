@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.VAccountVO();
+    instance = new HydrogenNucleusApi.VAccountVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,43 +53,43 @@
   describe('VAccountVO', function() {
     it('should create an instance of VAccountVO', function() {
       // uncomment below and update the code to test VAccountVO
-      //var instane = new HydrogenAtomApi.VAccountVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.VAccountVO);
+      //var instane = new HydrogenNucleusApi.VAccountVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.VAccountVO);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.VAccountVO();
+      //var instane = new HydrogenNucleusApi.VAccountVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountName (base name: "account_name")', function() {
       // uncomment below and update the code to test the property accountName
-      //var instane = new HydrogenAtomApi.VAccountVO();
+      //var instane = new HydrogenNucleusApi.VAccountVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountTypeId (base name: "account_type_id")', function() {
       // uncomment below and update the code to test the property accountTypeId
-      //var instane = new HydrogenAtomApi.VAccountVO();
+      //var instane = new HydrogenNucleusApi.VAccountVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountTypeName (base name: "account_type_name")', function() {
       // uncomment below and update the code to test the property accountTypeName
-      //var instane = new HydrogenAtomApi.VAccountVO();
+      //var instane = new HydrogenNucleusApi.VAccountVO();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAssetSizeByAccount (base name: "goal_asset_size_by_account")', function() {
       // uncomment below and update the code to test the property goalAssetSizeByAccount
-      //var instane = new HydrogenAtomApi.VAccountVO();
+      //var instane = new HydrogenNucleusApi.VAccountVO();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAssetSizeByAccountDate (base name: "goal_asset_size_by_account_date")', function() {
       // uncomment below and update the code to test the property goalAssetSizeByAccountDate
-      //var instane = new HydrogenAtomApi.VAccountVO();
+      //var instane = new HydrogenNucleusApi.VAccountVO();
       //expect(instance).to.be();
     });
 

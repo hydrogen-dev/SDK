@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AccountOverviewVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,15 +59,15 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'account_asset_size' => 'double',
         'account_asset_size_date' => '\DateTime',
-        'account_holdings' => '\com\hydrogen\Model\AccountHoldingVO[]',
+        'account_holdings' => '\com\hydrogen\nucleus\Model\AccountHoldingVO[]',
         'account_id' => 'string',
         'account_name' => 'string',
         'account_type_id' => 'string',
         'account_type_name' => 'string',
-        'allocations' => '\com\hydrogen\Model\AllocationVO[]',
-        'clients' => '\com\hydrogen\Model\AccountClientsOverviewVO[]',
-        'deposits' => '\com\hydrogen\Model\DepositVO[]',
-        'withdrawals' => '\com\hydrogen\Model\WithdrawalVO[]'
+        'allocations' => '\com\hydrogen\nucleus\Model\AllocationVO[]',
+        'clients' => '\com\hydrogen\nucleus\Model\AccountClientsOverviewVO[]',
+        'deposits' => '\com\hydrogen\nucleus\Model\DepositVO[]',
+        'withdrawals' => '\com\hydrogen\nucleus\Model\WithdrawalVO[]'
     ];
 
     /**
@@ -315,7 +315,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Gets account_holdings
      *
-     * @return \com\hydrogen\Model\AccountHoldingVO[]
+     * @return \com\hydrogen\nucleus\Model\AccountHoldingVO[]
      */
     public function getAccountHoldings()
     {
@@ -325,7 +325,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Sets account_holdings
      *
-     * @param \com\hydrogen\Model\AccountHoldingVO[] $account_holdings account_holdings
+     * @param \com\hydrogen\nucleus\Model\AccountHoldingVO[] $account_holdings account_holdings
      *
      * @return $this
      */
@@ -435,7 +435,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Gets allocations
      *
-     * @return \com\hydrogen\Model\AllocationVO[]
+     * @return \com\hydrogen\nucleus\Model\AllocationVO[]
      */
     public function getAllocations()
     {
@@ -445,7 +445,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Sets allocations
      *
-     * @param \com\hydrogen\Model\AllocationVO[] $allocations allocations
+     * @param \com\hydrogen\nucleus\Model\AllocationVO[] $allocations allocations
      *
      * @return $this
      */
@@ -459,7 +459,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Gets clients
      *
-     * @return \com\hydrogen\Model\AccountClientsOverviewVO[]
+     * @return \com\hydrogen\nucleus\Model\AccountClientsOverviewVO[]
      */
     public function getClients()
     {
@@ -469,7 +469,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Sets clients
      *
-     * @param \com\hydrogen\Model\AccountClientsOverviewVO[] $clients clients
+     * @param \com\hydrogen\nucleus\Model\AccountClientsOverviewVO[] $clients clients
      *
      * @return $this
      */
@@ -483,7 +483,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Gets deposits
      *
-     * @return \com\hydrogen\Model\DepositVO[]
+     * @return \com\hydrogen\nucleus\Model\DepositVO[]
      */
     public function getDeposits()
     {
@@ -493,7 +493,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Sets deposits
      *
-     * @param \com\hydrogen\Model\DepositVO[] $deposits deposits
+     * @param \com\hydrogen\nucleus\Model\DepositVO[] $deposits deposits
      *
      * @return $this
      */
@@ -507,7 +507,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Gets withdrawals
      *
-     * @return \com\hydrogen\Model\WithdrawalVO[]
+     * @return \com\hydrogen\nucleus\Model\WithdrawalVO[]
      */
     public function getWithdrawals()
     {
@@ -517,7 +517,7 @@ class AccountOverviewVO implements ModelInterface, ArrayAccess
     /**
      * Sets withdrawals
      *
-     * @param \com\hydrogen\Model\WithdrawalVO[] $withdrawals withdrawals
+     * @param \com\hydrogen\nucleus\Model\WithdrawalVO[] $withdrawals withdrawals
      *
      * @return $this
      */

@@ -1,4 +1,4 @@
-# AtomApi::PageApplication
+# NucleusApi::PageApplication
 
 ## Properties
 Name | Type | Description | Notes

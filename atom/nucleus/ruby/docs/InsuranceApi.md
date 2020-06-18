@@ -1,4 +1,4 @@
-# AtomApi::InsuranceApi
+# NucleusApi::InsuranceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -31,9 +31,9 @@ Create a new insurance coverage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -42,16 +42,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
-insurance_coverage = AtomApi::InsuranceCoverage.new # InsuranceCoverage | insuranceCoverage
+insurance_coverage = NucleusApi::InsuranceCoverage.new # InsuranceCoverage | insuranceCoverage
 
 
 begin
   #Create a insurance coverage request
   result = api_instance.create_insurance_coverage_using_post(insurance_coverage)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->create_insurance_coverage_using_post: #{e}"
 end
 ```
@@ -87,9 +87,9 @@ Create a new insurance discount.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -98,16 +98,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
-insurance_discount = AtomApi::InsuranceDiscount.new # InsuranceDiscount | insuranceDiscount
+insurance_discount = NucleusApi::InsuranceDiscount.new # InsuranceDiscount | insuranceDiscount
 
 
 begin
   #Create a insurance discount request
   result = api_instance.create_insurance_discount_using_post(insurance_discount)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->create_insurance_discount_using_post: #{e}"
 end
 ```
@@ -143,9 +143,9 @@ Create a new insuranceQuote request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -154,16 +154,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
-insurance_quote = AtomApi::InsuranceQuote.new # InsuranceQuote | insuranceQuote
+insurance_quote = NucleusApi::InsuranceQuote.new # InsuranceQuote | insuranceQuote
 
 
 begin
   #Create a insuranceQuote request
   result = api_instance.create_insurance_quote_using_post(insurance_quote)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->create_insurance_quote_using_post: #{e}"
 end
 ```
@@ -199,9 +199,9 @@ Delete an  insurance coverage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -210,7 +210,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 insurance_coverage_id = 'insurance_coverage_id_example' # String | UUID insurance_coverage_id
 
@@ -218,7 +218,7 @@ insurance_coverage_id = 'insurance_coverage_id_example' # String | UUID insuranc
 begin
   #Delete an insurance coverage request
   api_instance.delete_insurance_coverage_using_delete(insurance_coverage_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->delete_insurance_coverage_using_delete: #{e}"
 end
 ```
@@ -254,9 +254,9 @@ Delete an  insurance discount.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -265,7 +265,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 insurance_discount_id = 'insurance_discount_id_example' # String | UUID insurance_discount_id
 
@@ -273,7 +273,7 @@ insurance_discount_id = 'insurance_discount_id_example' # String | UUID insuranc
 begin
   #Delete an insurance discount request
   api_instance.delete_insurance_discount_using_delete(insurance_discount_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->delete_insurance_discount_using_delete: #{e}"
 end
 ```
@@ -309,9 +309,9 @@ Permanently delete a insuranceQuote request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -320,7 +320,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 insurance_quote = 'insurance_quote_example' # String | UUID insurance_quote_id
 
@@ -330,7 +330,7 @@ insurance_quote_id = 'insurance_quote_id_example' # String | insurance_quote_id
 begin
   #Delete a insuranceQuote request
   api_instance.delete_insurance_quote_using_delete(insurance_quote, insurance_quote_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->delete_insurance_quote_using_delete: #{e}"
 end
 ```
@@ -367,9 +367,9 @@ Get all new insurance coverage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -378,7 +378,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -392,7 +392,7 @@ begin
   #Get all insurance coverage request
   result = api_instance.get_insurance_coverage_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_coverage_all_using_get: #{e}"
 end
 ```
@@ -432,9 +432,9 @@ Get a new insurance coverage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -443,7 +443,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 insurance_coverage_id = 'insurance_coverage_id_example' # String | UUID insurance_coverage_id
 
@@ -452,7 +452,7 @@ begin
   #Get a insurance coverage request
   result = api_instance.get_insurance_coverage_using_get(insurance_coverage_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_coverage_using_get: #{e}"
 end
 ```
@@ -488,9 +488,9 @@ Get all new insurance discount.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -499,7 +499,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -513,7 +513,7 @@ begin
   #Get all insurance discount request
   result = api_instance.get_insurance_discount_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_discount_all_using_get: #{e}"
 end
 ```
@@ -553,9 +553,9 @@ Get a new insurance discount.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -564,7 +564,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 insurance_discount_id = 'insurance_discount_id_example' # String |  UUID insurance_discount_id
 
@@ -573,7 +573,7 @@ begin
   #Get a insurance discount request
   result = api_instance.get_insurance_discount_using_get(insurance_discount_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_discount_using_get: #{e}"
 end
 ```
@@ -609,9 +609,9 @@ Get the information for all insuranceQuote requests.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -620,7 +620,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -634,7 +634,7 @@ begin
   #List all insuranceQuote requests
   result = api_instance.get_insurance_quote_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_quote_all_using_get: #{e}"
 end
 ```
@@ -674,9 +674,9 @@ Retrieve the information for a insuranceQuote request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -685,7 +685,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
 insurance_quote = 'insurance_quote_example' # String | UUID insurance_quote_id
 
@@ -696,7 +696,7 @@ begin
   #Retrieve a insuranceQuote request
   result = api_instance.get_insurance_quote_using_get(insurance_quote, insurance_quote_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_quote_using_get: #{e}"
 end
 ```
@@ -733,9 +733,9 @@ Update a new insurance coverage.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -744,9 +744,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
-insurance_coverage = AtomApi::InsuranceCoverage.new # InsuranceCoverage | insurance_coverage
+insurance_coverage = NucleusApi::InsuranceCoverage.new # InsuranceCoverage | insurance_coverage
 
 insurance_coverage_id = 'insurance_coverage_id_example' # String | UUID insurance_coverage_id
 
@@ -755,7 +755,7 @@ begin
   #Update a insurance coverage request
   result = api_instance.update_insurance_coverage_using_put(insurance_coverage, insurance_coverage_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->update_insurance_coverage_using_put: #{e}"
 end
 ```
@@ -792,9 +792,9 @@ Update an new insurance .
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -803,9 +803,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
-insurance_discount = AtomApi::InsuranceDiscount.new # InsuranceDiscount | insurance_discount
+insurance_discount = NucleusApi::InsuranceDiscount.new # InsuranceDiscount | insurance_discount
 
 insurance_discount_id = 'insurance_discount_id_example' # String | UUID insurance_discount_id
 
@@ -814,7 +814,7 @@ begin
   #Update an insurance discount 
   result = api_instance.update_insurance_discount_using_put(insurance_discount, insurance_discount_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->update_insurance_discount_using_put: #{e}"
 end
 ```
@@ -851,9 +851,9 @@ Update the information for a insuranceQuote request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -862,9 +862,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::InsuranceApi.new
+api_instance = NucleusApi::InsuranceApi.new
 
-insurance_quote = AtomApi::InsuranceQuote.new # InsuranceQuote | insurance_quote
+insurance_quote = NucleusApi::InsuranceQuote.new # InsuranceQuote | insurance_quote
 
 insurance_quote_id = 'insurance_quote_id_example' # String | UUID insurance_quote_id
 
@@ -873,7 +873,7 @@ begin
   #Update a insuranceQuote request
   result = api_instance.update_insurance_quote_using_put(insurance_quote, insurance_quote_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->update_insurance_quote_using_put: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# AtomApi::ModelTransaction
+# NucleusApi::ModelTransaction
 
 ## Properties
 Name | Type | Description | Notes

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Customer Class Doc Comment
  *
  * @category Class
  * @description Customer Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class Customer implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => '\com\hydrogen\Model\CustomerAddress[]',
+        'address' => '\com\hydrogen\nucleus\Model\CustomerAddress[]',
         'client_id' => 'string',
         'company_name' => 'string',
         'create_date' => '\DateTime',
@@ -289,7 +289,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets address
      *
-     * @return \com\hydrogen\Model\CustomerAddress[]
+     * @return \com\hydrogen\nucleus\Model\CustomerAddress[]
      */
     public function getAddress()
     {
@@ -299,7 +299,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param \com\hydrogen\Model\CustomerAddress[] $address address
+     * @param \com\hydrogen\nucleus\Model\CustomerAddress[] $address address
      *
      * @return $this
      */

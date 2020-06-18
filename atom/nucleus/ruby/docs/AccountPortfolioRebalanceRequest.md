@@ -1,4 +1,4 @@
-# AtomApi::AccountPortfolioRebalanceRequest
+# NucleusApi::AccountPortfolioRebalanceRequest
 
 ## Properties
 Name | Type | Description | Notes

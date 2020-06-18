@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Overflow();
+    instance = new HydrogenNucleusApi.Overflow();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,67 +53,67 @@
   describe('Overflow', function() {
     it('should create an instance of Overflow', function() {
       // uncomment below and update the code to test Overflow
-      //var instane = new HydrogenAtomApi.Overflow();
-      //expect(instance).to.be.a(HydrogenAtomApi.Overflow);
+      //var instane = new HydrogenNucleusApi.Overflow();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Overflow);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property fundingRequests (base name: "funding_requests")', function() {
       // uncomment below and update the code to test the property fundingRequests
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property fundingStartDate (base name: "funding_start_date")', function() {
       // uncomment below and update the code to test the property fundingStartDate
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property overflowSettingId (base name: "overflow_setting_id")', function() {
       // uncomment below and update the code to test the property overflowSettingId
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property totalOverflowAmount (base name: "total_overflow_amount")', function() {
       // uncomment below and update the code to test the property totalOverflowAmount
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property updateBalances (base name: "update_balances")', function() {
       // uncomment below and update the code to test the property updateBalances
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.Overflow();
+      //var instane = new HydrogenNucleusApi.Overflow();
       //expect(instance).to.be();
     });
 

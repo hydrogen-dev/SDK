@@ -1,4 +1,4 @@
-# AtomApi::ClientAccountVO
+# NucleusApi::ClientAccountVO
 
 ## Properties
 Name | Type | Description | Notes

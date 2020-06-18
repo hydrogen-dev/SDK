@@ -1,4 +1,4 @@
-# AtomApi::InsuranceCoverage
+# NucleusApi::InsuranceCoverage
 
 ## Properties
 Name | Type | Description | Notes

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **security_asset_class** | **string** |  | [optional] 
-**security_countries** | [**\com\hydrogen\Model\SecurityCountryVO[]**](SecurityCountryVO.md) |  | [optional] 
+**security_countries** | [**\com\hydrogen\nucleus\Model\SecurityCountryVO[]**](SecurityCountryVO.md) |  | [optional] 
 **security_create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **security_id** | **string** |  | [optional] 
 **security_industry** | **string** |  | [optional] 

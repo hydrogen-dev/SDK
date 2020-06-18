@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * OverflowSettings Class Doc Comment
  *
  * @category Class
  * @description Overflow Settings Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class OverflowSettings implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'account_id' => 'string',
-        'bank_links' => '\com\hydrogen\Model\OverflowBankLinkMap[]',
+        'bank_links' => '\com\hydrogen\nucleus\Model\OverflowBankLinkMap[]',
         'client_id' => 'string',
         'create_date' => '\DateTime',
         'id' => 'string',
@@ -295,7 +295,7 @@ class OverflowSettings implements ModelInterface, ArrayAccess
     /**
      * Gets bank_links
      *
-     * @return \com\hydrogen\Model\OverflowBankLinkMap[]
+     * @return \com\hydrogen\nucleus\Model\OverflowBankLinkMap[]
      */
     public function getBankLinks()
     {
@@ -305,7 +305,7 @@ class OverflowSettings implements ModelInterface, ArrayAccess
     /**
      * Sets bank_links
      *
-     * @param \com\hydrogen\Model\OverflowBankLinkMap[] $bank_links bank_links
+     * @param \com\hydrogen\nucleus\Model\OverflowBankLinkMap[] $bank_links bank_links
      *
      * @return $this
      */

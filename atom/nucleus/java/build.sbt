@@ -1,7 +1,7 @@
 lazy val root = (project in file(".")).
   settings(
     organization := "com.hydrogen",
-    name := "hydrogen-atom-api",
+    name := "hydrogen-nucleus-api",
     version := "1.7.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),

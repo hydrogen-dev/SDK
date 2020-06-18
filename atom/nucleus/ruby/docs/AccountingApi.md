@@ -1,4 +1,4 @@
-# AtomApi::AccountingApi
+# NucleusApi::AccountingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Store stats pulled from accounting vendors.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountingApi.new
+api_instance = NucleusApi::AccountingApi.new
 
-accounting = AtomApi::Accounting.new # Accounting | accounting
+accounting = NucleusApi::Accounting.new # Accounting | accounting
 
 
 begin
   #Create an accounting
   result = api_instance.create_accounting_using_post(accounting)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountingApi->create_accounting_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently delete an accounting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountingApi.new
+api_instance = NucleusApi::AccountingApi.new
 
 accounting_id = 'accounting_id_example' # String | UUID accounting_id
 
@@ -96,7 +96,7 @@ accounting_id = 'accounting_id_example' # String | UUID accounting_id
 begin
   #Delete an accounting
   api_instance.delete_accounting_using_delete(accounting_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountingApi->delete_accounting_using_delete: #{e}"
 end
 ```
@@ -132,9 +132,9 @@ Get information for all accounting for all clients defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -143,7 +143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountingApi.new
+api_instance = NucleusApi::AccountingApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -157,7 +157,7 @@ begin
   #List all accounting
   result = api_instance.get_accounting_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountingApi->get_accounting_all_using_get: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Retrieve the information for a specific accounting associated with a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountingApi.new
+api_instance = NucleusApi::AccountingApi.new
 
 accounting_id = 'accounting_id_example' # String | UUID accounting_id
 
@@ -217,7 +217,7 @@ begin
   #Retrieve an accounting
   result = api_instance.get_accounting_using_get(accounting_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountingApi->get_accounting_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Update the information for an accounting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::AccountingApi.new
+api_instance = NucleusApi::AccountingApi.new
 
-accounting = AtomApi::Accounting.new # Accounting | accounting
+accounting = NucleusApi::Accounting.new # Accounting | accounting
 
 accounting_id = 'accounting_id_example' # String | UUID accounting_id
 
@@ -275,7 +275,7 @@ begin
   #Update an accounting
   result = api_instance.update_accounting_using_put(accounting, accounting_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountingApi->update_accounting_using_put: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# com\hydrogen\RoundupApi
+# com\hydrogen\nucleus\RoundupApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createRoundupSettingsUsingPost**
-> \com\hydrogen\Model\RoundupSettings createRoundupSettingsUsingPost($roundup_settings)
+> \com\hydrogen\nucleus\Model\RoundupSettings createRoundupSettingsUsingPost($roundup_settings)
 
 Create a Roundup Settings
 
@@ -24,29 +24,29 @@ Create a Roundup Settings for Roundup amount with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$roundup_settings = new \com\hydrogen\Model\RoundupSettings(); // \com\hydrogen\Model\RoundupSettings | roundupSettings
+$roundup_settings = new \com\hydrogen\nucleus\Model\RoundupSettings(); // \com\hydrogen\nucleus\Model\RoundupSettings | roundupSettings
 
 try {
     $result = $apiInstance->createRoundupSettingsUsingPost($roundup_settings);
@@ -61,11 +61,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundup_settings** | [**\com\hydrogen\Model\RoundupSettings**](../Model/RoundupSettings.md)| roundupSettings |
+ **roundup_settings** | [**\com\hydrogen\nucleus\Model\RoundupSettings**](../Model/RoundupSettings.md)| roundupSettings |
 
 ### Return type
 
-[**\com\hydrogen\Model\RoundupSettings**](../Model/RoundupSettings.md)
+[**\com\hydrogen\nucleus\Model\RoundupSettings**](../Model/RoundupSettings.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createRoundupUsingPost**
-> \com\hydrogen\Model\Roundup createRoundupUsingPost($roundup_co)
+> \com\hydrogen\nucleus\Model\Roundup createRoundupUsingPost($roundup_co)
 
 Create a roundup
 
@@ -88,29 +88,29 @@ Create a new roundup with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$roundup_co = new \com\hydrogen\Model\RoundupCO(); // \com\hydrogen\Model\RoundupCO | roundupCO
+$roundup_co = new \com\hydrogen\nucleus\Model\RoundupCO(); // \com\hydrogen\nucleus\Model\RoundupCO | roundupCO
 
 try {
     $result = $apiInstance->createRoundupUsingPost($roundup_co);
@@ -125,11 +125,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundup_co** | [**\com\hydrogen\Model\RoundupCO**](../Model/RoundupCO.md)| roundupCO |
+ **roundup_co** | [**\com\hydrogen\nucleus\Model\RoundupCO**](../Model/RoundupCO.md)| roundupCO |
 
 ### Return type
 
-[**\com\hydrogen\Model\Roundup**](../Model/Roundup.md)
+[**\com\hydrogen\nucleus\Model\Roundup**](../Model/Roundup.md)
 
 ### Authorization
 
@@ -152,23 +152,23 @@ Permanently delete a  roundup settings registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -206,7 +206,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRoundupAllUsingGet**
-> \com\hydrogen\Model\PageRoundup_ getRoundupAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageRoundup_ getRoundupAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all roundups
 
@@ -215,23 +215,23 @@ Get details for all roundups.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageRoundup_**](../Model/PageRoundup_.md)
+[**\com\hydrogen\nucleus\Model\PageRoundup_**](../Model/PageRoundup_.md)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRoundupSettingsAllUsingGet**
-> \com\hydrogen\Model\PageRoundupSettings_ getRoundupSettingsAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageRoundupSettings_ getRoundupSettingsAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all roundup settings
 
@@ -287,23 +287,23 @@ Get details for all roundup setting with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageRoundupSettings_**](../Model/PageRoundupSettings_.md)
+[**\com\hydrogen\nucleus\Model\PageRoundupSettings_**](../Model/PageRoundupSettings_.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRoundupSettingsUsingGet**
-> \com\hydrogen\Model\RoundupSettings getRoundupSettingsUsingGet($roundup_setting_id)
+> \com\hydrogen\nucleus\Model\RoundupSettings getRoundupSettingsUsingGet($roundup_setting_id)
 
 Retrieve a Roundup Setting
 
@@ -359,23 +359,23 @@ Retrieve the information for a Roundup Settings with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\RoundupSettings**](../Model/RoundupSettings.md)
+[**\com\hydrogen\nucleus\Model\RoundupSettings**](../Model/RoundupSettings.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRoundupUsingGet**
-> \com\hydrogen\Model\Roundup getRoundupUsingGet($roundup_id)
+> \com\hydrogen\nucleus\Model\Roundup getRoundupUsingGet($roundup_id)
 
 Retrieve a Roundup
 
@@ -423,23 +423,23 @@ Retrieve the information for a Roundup.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Roundup**](../Model/Roundup.md)
+[**\com\hydrogen\nucleus\Model\Roundup**](../Model/Roundup.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateRoundupSettingsUsingPut**
-> \com\hydrogen\Model\RoundupSettings updateRoundupSettingsUsingPut($roundup_setting, $roundup_setting_id)
+> \com\hydrogen\nucleus\Model\RoundupSettings updateRoundupSettingsUsingPut($roundup_setting, $roundup_setting_id)
 
 Update a roundup settings
 
@@ -487,29 +487,29 @@ Update the information for a roundup setting registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\RoundupApi(
+$apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$roundup_setting = new \com\hydrogen\Model\RoundupSettings(); // \com\hydrogen\Model\RoundupSettings | roundup_setting
+$roundup_setting = new \com\hydrogen\nucleus\Model\RoundupSettings(); // \com\hydrogen\nucleus\Model\RoundupSettings | roundup_setting
 $roundup_setting_id = "roundup_setting_id_example"; // string | UUID roundup_setting_id
 
 try {
@@ -525,12 +525,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundup_setting** | [**\com\hydrogen\Model\RoundupSettings**](../Model/RoundupSettings.md)| roundup_setting |
+ **roundup_setting** | [**\com\hydrogen\nucleus\Model\RoundupSettings**](../Model/RoundupSettings.md)| roundup_setting |
  **roundup_setting_id** | [**string**](../Model/.md)| UUID roundup_setting_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\RoundupSettings**](../Model/RoundupSettings.md)
+[**\com\hydrogen\nucleus\Model\RoundupSettings**](../Model/RoundupSettings.md)
 
 ### Authorization
 

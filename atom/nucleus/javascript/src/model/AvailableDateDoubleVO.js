@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AvailableDateDoubleVO = factory(root.HydrogenAtomApi.ApiClient);
+    root.HydrogenNucleusApi.AvailableDateDoubleVO = factory(root.HydrogenNucleusApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';

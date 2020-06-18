@@ -1,4 +1,4 @@
-# atom_api.BulkApi
+# nucleus_api.BulkApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,15 +21,15 @@ Create a new bulk data for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -41,8 +41,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BulkApi(atom_api.ApiClient(configuration))
-data = atom_api.JsonNode() # JsonNode | data
+api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
+data = nucleus_api.JsonNode() # JsonNode | data
 entity_uri = 'entity_uri_example' # str | UUID entity_uri
 
 try:
@@ -86,15 +86,15 @@ Delete a bulk data for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -106,8 +106,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BulkApi(atom_api.ApiClient(configuration))
-data = atom_api.JsonNode() # JsonNode | data
+api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
+data = nucleus_api.JsonNode() # JsonNode | data
 entity_uri = 'entity_uri_example' # str | UUID entity_uri
 
 try:
@@ -151,15 +151,15 @@ Get the status of bulk transaction.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -171,7 +171,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BulkApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
 id = 'id_example' # str | UUID Bulk Transaction Id
 
 try:
@@ -214,15 +214,15 @@ Update a bulk data for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -234,8 +234,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.BulkApi(atom_api.ApiClient(configuration))
-data = atom_api.JsonNode() # JsonNode | data
+api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
+data = nucleus_api.JsonNode() # JsonNode | data
 entity_uri = 'entity_uri_example' # str | UUID entity_uri
 
 try:

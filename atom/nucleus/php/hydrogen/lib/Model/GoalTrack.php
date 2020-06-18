@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * GoalTrack Class Doc Comment
  *
  * @category Class
  * @description Goal Simulation Result Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,7 +58,7 @@ class GoalTrack implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'accounts' => '\com\hydrogen\Model\GoalTrackAccounts[]',
+        'accounts' => '\com\hydrogen\nucleus\Model\GoalTrackAccounts[]',
         'accumulation_horizon' => 'double',
         'client_id' => 'string',
         'create_date' => '\DateTime',
@@ -322,7 +322,7 @@ class GoalTrack implements ModelInterface, ArrayAccess
     /**
      * Gets accounts
      *
-     * @return \com\hydrogen\Model\GoalTrackAccounts[]
+     * @return \com\hydrogen\nucleus\Model\GoalTrackAccounts[]
      */
     public function getAccounts()
     {
@@ -332,7 +332,7 @@ class GoalTrack implements ModelInterface, ArrayAccess
     /**
      * Sets accounts
      *
-     * @param \com\hydrogen\Model\GoalTrackAccounts[] $accounts accounts
+     * @param \com\hydrogen\nucleus\Model\GoalTrackAccounts[] $accounts accounts
      *
      * @return $this
      */

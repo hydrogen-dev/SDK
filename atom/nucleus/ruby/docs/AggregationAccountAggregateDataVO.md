@@ -1,4 +1,4 @@
-# AtomApi::AggregationAccountAggregateDataVO
+# NucleusApi::AggregationAccountAggregateDataVO
 
 ## Properties
 Name | Type | Description | Notes

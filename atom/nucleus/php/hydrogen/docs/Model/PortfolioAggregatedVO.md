@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asset_classes** | [**\com\hydrogen\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
-**categories** | [**\com\hydrogen\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
+**asset_classes** | [**\com\hydrogen\nucleus\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
+**categories** | [**\com\hydrogen\nucleus\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **description** | **string** |  | [optional] 
-**industries** | [**\com\hydrogen\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
+**industries** | [**\com\hydrogen\nucleus\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
 **name** | **string** |  | [optional] 
 **portfolio_id** | **string** |  | [optional] 
-**sectors** | [**\com\hydrogen\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
-**security_classes** | [**\com\hydrogen\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
+**sectors** | [**\com\hydrogen\nucleus\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
+**security_classes** | [**\com\hydrogen\nucleus\Model\SecurityDetailVO[]**](SecurityDetailVO.md) |  | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **weight** | **double** |  | [optional] 
 

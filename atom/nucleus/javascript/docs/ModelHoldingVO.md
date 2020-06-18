@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ModelHoldingVO
+# HydrogenNucleusApi.ModelHoldingVO
 
 ## Properties
 Name | Type | Description | Notes

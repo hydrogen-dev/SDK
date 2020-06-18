@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ClientAccountVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,14 +57,14 @@ class ClientAccountVO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'accounts' => '\com\hydrogen\Model\AccountVO[]',
+        'accounts' => '\com\hydrogen\nucleus\Model\AccountVO[]',
         'client_asset_size' => 'double',
         'client_asset_size_date' => '\DateTime',
         'client_first_name' => 'string',
         'client_id' => 'string',
         'client_last_name' => 'string',
-        'deposits' => '\com\hydrogen\Model\DepositAccountVO[]',
-        'withdrawals' => '\com\hydrogen\Model\WithdrawalAccountVO[]'
+        'deposits' => '\com\hydrogen\nucleus\Model\DepositAccountVO[]',
+        'withdrawals' => '\com\hydrogen\nucleus\Model\WithdrawalAccountVO[]'
     ];
 
     /**
@@ -249,7 +249,7 @@ class ClientAccountVO implements ModelInterface, ArrayAccess
     /**
      * Gets accounts
      *
-     * @return \com\hydrogen\Model\AccountVO[]
+     * @return \com\hydrogen\nucleus\Model\AccountVO[]
      */
     public function getAccounts()
     {
@@ -259,7 +259,7 @@ class ClientAccountVO implements ModelInterface, ArrayAccess
     /**
      * Sets accounts
      *
-     * @param \com\hydrogen\Model\AccountVO[] $accounts accounts
+     * @param \com\hydrogen\nucleus\Model\AccountVO[] $accounts accounts
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class ClientAccountVO implements ModelInterface, ArrayAccess
     /**
      * Gets deposits
      *
-     * @return \com\hydrogen\Model\DepositAccountVO[]
+     * @return \com\hydrogen\nucleus\Model\DepositAccountVO[]
      */
     public function getDeposits()
     {
@@ -403,7 +403,7 @@ class ClientAccountVO implements ModelInterface, ArrayAccess
     /**
      * Sets deposits
      *
-     * @param \com\hydrogen\Model\DepositAccountVO[] $deposits deposits
+     * @param \com\hydrogen\nucleus\Model\DepositAccountVO[] $deposits deposits
      *
      * @return $this
      */
@@ -417,7 +417,7 @@ class ClientAccountVO implements ModelInterface, ArrayAccess
     /**
      * Gets withdrawals
      *
-     * @return \com\hydrogen\Model\WithdrawalAccountVO[]
+     * @return \com\hydrogen\nucleus\Model\WithdrawalAccountVO[]
      */
     public function getWithdrawals()
     {
@@ -427,7 +427,7 @@ class ClientAccountVO implements ModelInterface, ArrayAccess
     /**
      * Sets withdrawals
      *
-     * @param \com\hydrogen\Model\WithdrawalAccountVO[] $withdrawals withdrawals
+     * @param \com\hydrogen\nucleus\Model\WithdrawalAccountVO[] $withdrawals withdrawals
      *
      * @return $this
      */

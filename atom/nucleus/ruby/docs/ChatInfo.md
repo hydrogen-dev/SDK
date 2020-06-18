@@ -1,4 +1,4 @@
-# AtomApi::ChatInfo
+# NucleusApi::ChatInfo
 
 ## Properties
 Name | Type | Description | Notes

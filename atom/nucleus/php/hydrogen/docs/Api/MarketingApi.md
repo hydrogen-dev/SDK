@@ -1,4 +1,4 @@
-# com\hydrogen\MarketingApi
+# com\hydrogen\nucleus\MarketingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **createCampaignDataUsingPost**
-> \com\hydrogen\Model\CampaignData createCampaignDataUsingPost($campaign_data_request)
+> \com\hydrogen\nucleus\Model\CampaignData createCampaignDataUsingPost($campaign_data_request)
 
 Create a campaign data record
 
@@ -36,29 +36,29 @@ Create a new  campaign data record for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_data_request = new \com\hydrogen\Model\CampaignData(); // \com\hydrogen\Model\CampaignData | campaignDataRequest
+$campaign_data_request = new \com\hydrogen\nucleus\Model\CampaignData(); // \com\hydrogen\nucleus\Model\CampaignData | campaignDataRequest
 
 try {
     $result = $apiInstance->createCampaignDataUsingPost($campaign_data_request);
@@ -73,11 +73,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_data_request** | [**\com\hydrogen\Model\CampaignData**](../Model/CampaignData.md)| campaignDataRequest |
+ **campaign_data_request** | [**\com\hydrogen\nucleus\Model\CampaignData**](../Model/CampaignData.md)| campaignDataRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\CampaignData**](../Model/CampaignData.md)
+[**\com\hydrogen\nucleus\Model\CampaignData**](../Model/CampaignData.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCampaignPlanUsingPost**
-> \com\hydrogen\Model\CampaignPlan createCampaignPlanUsingPost($campaign_plan_request)
+> \com\hydrogen\nucleus\Model\CampaignPlan createCampaignPlanUsingPost($campaign_plan_request)
 
 Create a campaign plan
 
@@ -100,29 +100,29 @@ Create a new campaign plan for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_plan_request = new \com\hydrogen\Model\CampaignPlan(); // \com\hydrogen\Model\CampaignPlan | campaignPlanRequest
+$campaign_plan_request = new \com\hydrogen\nucleus\Model\CampaignPlan(); // \com\hydrogen\nucleus\Model\CampaignPlan | campaignPlanRequest
 
 try {
     $result = $apiInstance->createCampaignPlanUsingPost($campaign_plan_request);
@@ -137,11 +137,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_plan_request** | [**\com\hydrogen\Model\CampaignPlan**](../Model/CampaignPlan.md)| campaignPlanRequest |
+ **campaign_plan_request** | [**\com\hydrogen\nucleus\Model\CampaignPlan**](../Model/CampaignPlan.md)| campaignPlanRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\CampaignPlan**](../Model/CampaignPlan.md)
+[**\com\hydrogen\nucleus\Model\CampaignPlan**](../Model/CampaignPlan.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCampaignUsingPost**
-> \com\hydrogen\Model\Campaign createCampaignUsingPost($campaign_request)
+> \com\hydrogen\nucleus\Model\Campaign createCampaignUsingPost($campaign_request)
 
 Create a campaign
 
@@ -164,29 +164,29 @@ Create a new campaign for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_request = new \com\hydrogen\Model\Campaign(); // \com\hydrogen\Model\Campaign | campaignRequest
+$campaign_request = new \com\hydrogen\nucleus\Model\Campaign(); // \com\hydrogen\nucleus\Model\Campaign | campaignRequest
 
 try {
     $result = $apiInstance->createCampaignUsingPost($campaign_request);
@@ -201,11 +201,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_request** | [**\com\hydrogen\Model\Campaign**](../Model/Campaign.md)| campaignRequest |
+ **campaign_request** | [**\com\hydrogen\nucleus\Model\Campaign**](../Model/Campaign.md)| campaignRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Campaign**](../Model/Campaign.md)
+[**\com\hydrogen\nucleus\Model\Campaign**](../Model/Campaign.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createClientCampaignUsingPost**
-> \com\hydrogen\Model\ClientCampaignMapping createClientCampaignUsingPost($campaign_mapping_request)
+> \com\hydrogen\nucleus\Model\ClientCampaignMapping createClientCampaignUsingPost($campaign_mapping_request)
 
 Mark a client signing up through a campaign
 
@@ -228,29 +228,29 @@ We are adding a campaign association to a clientId or ip.  We create this associ
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_mapping_request = new \com\hydrogen\Model\ClientCampaignMapping(); // \com\hydrogen\Model\ClientCampaignMapping | campaignMappingRequest
+$campaign_mapping_request = new \com\hydrogen\nucleus\Model\ClientCampaignMapping(); // \com\hydrogen\nucleus\Model\ClientCampaignMapping | campaignMappingRequest
 
 try {
     $result = $apiInstance->createClientCampaignUsingPost($campaign_mapping_request);
@@ -265,11 +265,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_mapping_request** | [**\com\hydrogen\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)| campaignMappingRequest |
+ **campaign_mapping_request** | [**\com\hydrogen\nucleus\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)| campaignMappingRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)
+[**\com\hydrogen\nucleus\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)
 
 ### Authorization
 
@@ -292,23 +292,23 @@ Permanently delete a campaign data record
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -355,23 +355,23 @@ Permanently delete a campaign plan
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -418,23 +418,23 @@ Permanently delete a campaign
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -481,23 +481,23 @@ Permanently delete a clients/ips pair under a campaign
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -535,7 +535,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCampaignAllUsingGet**
-> \com\hydrogen\Model\PageCampaign_ getCampaignAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageCampaign_ getCampaignAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all campaigns
 
@@ -544,23 +544,23 @@ Get details for all campaigns defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageCampaign_**](../Model/PageCampaign_.md)
+[**\com\hydrogen\nucleus\Model\PageCampaign_**](../Model/PageCampaign_.md)
 
 ### Authorization
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCampaignDataAllUsingGet**
-> \com\hydrogen\Model\PageCampaignData_ getCampaignDataAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageCampaignData_ getCampaignDataAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all campaign data
 
@@ -616,23 +616,23 @@ Get details for all campaign data defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -665,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageCampaignData_**](../Model/PageCampaignData_.md)
+[**\com\hydrogen\nucleus\Model\PageCampaignData_**](../Model/PageCampaignData_.md)
 
 ### Authorization
 
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCampaignDataUsingGet**
-> \com\hydrogen\Model\CampaignData getCampaignDataUsingGet($campaign_data_id)
+> \com\hydrogen\nucleus\Model\CampaignData getCampaignDataUsingGet($campaign_data_id)
 
 Retrieve a campaign data record
 
@@ -688,23 +688,23 @@ Retrieve the information for a campaign data record
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -729,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\CampaignData**](../Model/CampaignData.md)
+[**\com\hydrogen\nucleus\Model\CampaignData**](../Model/CampaignData.md)
 
 ### Authorization
 
@@ -743,7 +743,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCampaignPlanAllUsingGet**
-> \com\hydrogen\Model\PageCampaignPlan_ getCampaignPlanAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageCampaignPlan_ getCampaignPlanAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all campaign plans
 
@@ -752,23 +752,23 @@ Get details for all campaign plans defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -801,7 +801,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageCampaignPlan_**](../Model/PageCampaignPlan_.md)
+[**\com\hydrogen\nucleus\Model\PageCampaignPlan_**](../Model/PageCampaignPlan_.md)
 
 ### Authorization
 
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCampaignPlanUsingGet**
-> \com\hydrogen\Model\CampaignPlan getCampaignPlanUsingGet($campaign_plan_id)
+> \com\hydrogen\nucleus\Model\CampaignPlan getCampaignPlanUsingGet($campaign_plan_id)
 
 Retrieve a campaign plan
 
@@ -824,23 +824,23 @@ Retrieve the information for a campaign plan
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -865,7 +865,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\CampaignPlan**](../Model/CampaignPlan.md)
+[**\com\hydrogen\nucleus\Model\CampaignPlan**](../Model/CampaignPlan.md)
 
 ### Authorization
 
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCampaignUsingGet**
-> \com\hydrogen\Model\Campaign getCampaignUsingGet($campaign_id)
+> \com\hydrogen\nucleus\Model\Campaign getCampaignUsingGet($campaign_id)
 
 Retrieve a campaign
 
@@ -888,23 +888,23 @@ Retrieve the information for a campaign.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -929,7 +929,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Campaign**](../Model/Campaign.md)
+[**\com\hydrogen\nucleus\Model\Campaign**](../Model/Campaign.md)
 
 ### Authorization
 
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientCampaignAllUsingGet**
-> \com\hydrogen\Model\PageClientCampaignMapping_ getClientCampaignAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageClientCampaignMapping_ getClientCampaignAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all clients/ips under a campaign
 
@@ -952,23 +952,23 @@ Get details for all clients/ips under a campaign
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1001,7 +1001,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageClientCampaignMapping_**](../Model/PageClientCampaignMapping_.md)
+[**\com\hydrogen\nucleus\Model\PageClientCampaignMapping_**](../Model/PageClientCampaignMapping_.md)
 
 ### Authorization
 
@@ -1015,7 +1015,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientCampaignUsingGet**
-> \com\hydrogen\Model\ClientCampaignMapping getClientCampaignUsingGet($client_campaign_id)
+> \com\hydrogen\nucleus\Model\ClientCampaignMapping getClientCampaignUsingGet($client_campaign_id)
 
 Retrieve a clients/ips pair under a campaign
 
@@ -1024,23 +1024,23 @@ Retrieve the information for a clients/ips pair under a campaign
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1065,7 +1065,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)
+[**\com\hydrogen\nucleus\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)
 
 ### Authorization
 
@@ -1079,7 +1079,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCampaignDataUsingPut**
-> \com\hydrogen\Model\CampaignData updateCampaignDataUsingPut($campaign_data, $campaign_data_id)
+> \com\hydrogen\nucleus\Model\CampaignData updateCampaignDataUsingPut($campaign_data, $campaign_data_id)
 
 Update a campaign data record
 
@@ -1088,29 +1088,29 @@ Updated the information for a campaign data record
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_data = new \com\hydrogen\Model\CampaignPlan(); // \com\hydrogen\Model\CampaignPlan | campaign_data
+$campaign_data = new \com\hydrogen\nucleus\Model\CampaignPlan(); // \com\hydrogen\nucleus\Model\CampaignPlan | campaign_data
 $campaign_data_id = "campaign_data_id_example"; // string | UUID campaign_data_id
 
 try {
@@ -1126,12 +1126,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_data** | [**\com\hydrogen\Model\CampaignPlan**](../Model/CampaignPlan.md)| campaign_data |
+ **campaign_data** | [**\com\hydrogen\nucleus\Model\CampaignPlan**](../Model/CampaignPlan.md)| campaign_data |
  **campaign_data_id** | [**string**](../Model/.md)| UUID campaign_data_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\CampaignData**](../Model/CampaignData.md)
+[**\com\hydrogen\nucleus\Model\CampaignData**](../Model/CampaignData.md)
 
 ### Authorization
 
@@ -1145,7 +1145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCampaignPlanUsingPut**
-> \com\hydrogen\Model\CampaignPlan updateCampaignPlanUsingPut($campaign_plan, $campaign_plan_id)
+> \com\hydrogen\nucleus\Model\CampaignPlan updateCampaignPlanUsingPut($campaign_plan, $campaign_plan_id)
 
 Update a campaign plan
 
@@ -1154,29 +1154,29 @@ Updated the information for a campaign plan
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_plan = new \com\hydrogen\Model\CampaignPlan(); // \com\hydrogen\Model\CampaignPlan | campaign_plan
+$campaign_plan = new \com\hydrogen\nucleus\Model\CampaignPlan(); // \com\hydrogen\nucleus\Model\CampaignPlan | campaign_plan
 $campaign_plan_id = "campaign_plan_id_example"; // string | UUID campaign_plan_id
 
 try {
@@ -1192,12 +1192,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_plan** | [**\com\hydrogen\Model\CampaignPlan**](../Model/CampaignPlan.md)| campaign_plan |
+ **campaign_plan** | [**\com\hydrogen\nucleus\Model\CampaignPlan**](../Model/CampaignPlan.md)| campaign_plan |
  **campaign_plan_id** | [**string**](../Model/.md)| UUID campaign_plan_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\CampaignPlan**](../Model/CampaignPlan.md)
+[**\com\hydrogen\nucleus\Model\CampaignPlan**](../Model/CampaignPlan.md)
 
 ### Authorization
 
@@ -1211,7 +1211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCampaignUsingPut**
-> \com\hydrogen\Model\Campaign updateCampaignUsingPut($campaign, $campaign_id)
+> \com\hydrogen\nucleus\Model\Campaign updateCampaignUsingPut($campaign, $campaign_id)
 
 Update a campaign
 
@@ -1220,29 +1220,29 @@ Updated the information for a campaign
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$campaign = new \com\hydrogen\Model\Campaign(); // \com\hydrogen\Model\Campaign | campaign
+$campaign = new \com\hydrogen\nucleus\Model\Campaign(); // \com\hydrogen\nucleus\Model\Campaign | campaign
 $campaign_id = "campaign_id_example"; // string | UUID campaign_id
 
 try {
@@ -1258,12 +1258,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign** | [**\com\hydrogen\Model\Campaign**](../Model/Campaign.md)| campaign |
+ **campaign** | [**\com\hydrogen\nucleus\Model\Campaign**](../Model/Campaign.md)| campaign |
  **campaign_id** | [**string**](../Model/.md)| UUID campaign_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Campaign**](../Model/Campaign.md)
+[**\com\hydrogen\nucleus\Model\Campaign**](../Model/Campaign.md)
 
 ### Authorization
 
@@ -1277,7 +1277,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateClientCampaignUsingPut**
-> \com\hydrogen\Model\ClientCampaignMapping updateClientCampaignUsingPut($client_campaign_id, $json_node)
+> \com\hydrogen\nucleus\Model\ClientCampaignMapping updateClientCampaignUsingPut($client_campaign_id, $json_node)
 
 Update a clients/ips pair under a campaign
 
@@ -1286,30 +1286,30 @@ Updated the information for clients/ips pair under a campaign
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\MarketingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\MarketingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $client_campaign_id = "client_campaign_id_example"; // string | UUID client_campaign_id
-$json_node = new \com\hydrogen\Model\JsonNode(); // \com\hydrogen\Model\JsonNode | jsonNode
+$json_node = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | jsonNode
 
 try {
     $result = $apiInstance->updateClientCampaignUsingPut($client_campaign_id, $json_node);
@@ -1325,11 +1325,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_campaign_id** | [**string**](../Model/.md)| UUID client_campaign_id |
- **json_node** | [**\com\hydrogen\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
+ **json_node** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
 
 ### Return type
 
-[**\com\hydrogen\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)
+[**\com\hydrogen\nucleus\Model\ClientCampaignMapping**](../Model/ClientCampaignMapping.md)
 
 ### Authorization
 

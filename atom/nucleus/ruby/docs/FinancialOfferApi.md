@@ -1,4 +1,4 @@
-# AtomApi::FinancialOfferApi
+# NucleusApi::FinancialOfferApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Create a new comparison request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FinancialOfferApi.new
+api_instance = NucleusApi::FinancialOfferApi.new
 
-financial_offer = AtomApi::FinancialOffer.new # FinancialOffer | financialOffer
+financial_offer = NucleusApi::FinancialOffer.new # FinancialOffer | financialOffer
 
 
 begin
   #Create a comparison request
   result = api_instance.create_financial_offer_using_post(financial_offer)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FinancialOfferApi->create_financial_offer_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently delete a comparison request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FinancialOfferApi.new
+api_instance = NucleusApi::FinancialOfferApi.new
 
 financial_offer = 'financial_offer_example' # String | UUID financial_offer_id
 
@@ -98,7 +98,7 @@ financial_offer_id = 'financial_offer_id_example' # String | financial_offer_id
 begin
   #Delete a comparison request
   api_instance.delete_financial_offer_using_delete(financial_offer, financial_offer_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FinancialOfferApi->delete_financial_offer_using_delete: #{e}"
 end
 ```
@@ -135,9 +135,9 @@ Get the information for all comparison requests.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -146,7 +146,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FinancialOfferApi.new
+api_instance = NucleusApi::FinancialOfferApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -160,7 +160,7 @@ begin
   #List all comparison requests
   result = api_instance.get_financial_offer_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FinancialOfferApi->get_financial_offer_all_using_get: #{e}"
 end
 ```
@@ -200,9 +200,9 @@ Retrieve the information for a comparison request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -211,7 +211,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FinancialOfferApi.new
+api_instance = NucleusApi::FinancialOfferApi.new
 
 financial_offer = 'financial_offer_example' # String | UUID financial_offer_id
 
@@ -222,7 +222,7 @@ begin
   #Retrieve a comparison request
   result = api_instance.get_financial_offer_using_get(financial_offer, financial_offer_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FinancialOfferApi->get_financial_offer_using_get: #{e}"
 end
 ```
@@ -259,9 +259,9 @@ Update the information for a comparison request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -270,9 +270,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::FinancialOfferApi.new
+api_instance = NucleusApi::FinancialOfferApi.new
 
-financial_offer = AtomApi::FinancialOffer.new # FinancialOffer | financial_offer
+financial_offer = NucleusApi::FinancialOffer.new # FinancialOffer | financial_offer
 
 financial_offer_id = 'financial_offer_id_example' # String | UUID financial_offer_id
 
@@ -281,7 +281,7 @@ begin
   #Update a comparison request
   result = api_instance.update_financial_offer_using_put(financial_offer, financial_offer_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling FinancialOfferApi->update_financial_offer_using_put: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# atom_api.PerformanceApi
+# nucleus_api.PerformanceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -25,15 +25,15 @@ Get information on the performance of an account using IRR (Internal Rate of Ret
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -45,7 +45,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | Account Id -/account
 active_premium_period = 'active_premium_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
 annualized_return_period = 'annualized_return_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
@@ -134,15 +134,15 @@ Get information on the performance of an allocation using TWR (Time Weighted Ret
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -154,7 +154,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | Allocation Id -/allocation
 active_premium_period = 'active_premium_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
 annualized_return_period = 'annualized_return_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
@@ -245,15 +245,15 @@ Get information on the performance of a benchmark using TWR (Time Weighted Retur
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -265,7 +265,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | Benchmark Id - /benchmark
 active_premium_period = 'active_premium_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
 annualized_return_period = 'annualized_return_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
@@ -354,15 +354,15 @@ Get information on the performance of a client using IRR (Internal Rate of Retur
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -374,7 +374,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | Client Id -/client
 active_premium_period = 'active_premium_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
 annualized_return_period = 'annualized_return_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
@@ -463,15 +463,15 @@ Get information on the performance of a goal using IRR (Internal Rate of Return)
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -483,7 +483,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | Client associated with the account - /client
 goal_id = 'goal_id_example' # str | Goal Id - /account
 active_premium_period = 'active_premium_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
@@ -576,15 +576,15 @@ Get information on the performance of a model using TWR (Time Weighted Return). 
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -596,7 +596,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 model_id = 'model_id_example' # str | Model Id - /model
 active_premium_period = 'active_premium_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
 annualized_return_period = 'annualized_return_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
@@ -685,15 +685,15 @@ Get information on the performance of a portfolio using IRR (Internal Rate of Re
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -705,7 +705,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | Account Id -/account
 client_id = 'client_id_example' # str | Client Id -/client
 portfolio_id = 'portfolio_id_example' # str | portfolio_id
@@ -800,15 +800,15 @@ Get performance statistics for a security using TWR (Time Weighted Return). You 
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -820,7 +820,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PerformanceApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | security_id
 active_premium_period = 'active_premium_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)
 annualized_return_period = 'annualized_return_period_example' # str | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D') (optional)

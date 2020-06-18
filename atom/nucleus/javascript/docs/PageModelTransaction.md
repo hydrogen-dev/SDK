@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageModelTransaction
+# HydrogenNucleusApi.PageModelTransaction
 
 ## Properties
 Name | Type | Description | Notes

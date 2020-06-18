@@ -1,4 +1,4 @@
-# AtomApi::Account
+# NucleusApi::Account
 
 ## Properties
 Name | Type | Description | Notes

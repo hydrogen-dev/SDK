@@ -1,4 +1,4 @@
-# AtomApi::ModelComment
+# NucleusApi::ModelComment
 
 ## Properties
 Name | Type | Description | Notes

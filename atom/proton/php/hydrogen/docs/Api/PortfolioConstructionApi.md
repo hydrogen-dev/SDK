@@ -1,4 +1,4 @@
-# com\hydrogen\PortfolioConstructionApi
+# com\hydrogen\proton\PortfolioConstructionApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -23,24 +23,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\PortfolioConstructionApi(
+$apiInstance = new com\hydrogen\proton\Api\PortfolioConstructionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$mvo_request = new \com\hydrogen\Model\MvoRequest(); // \com\hydrogen\Model\MvoRequest | Request payload for MVO
+$mvo_request = new \com\hydrogen\proton\Model\MvoRequest(); // \com\hydrogen\proton\Model\MvoRequest | Request payload for MVO
 
 try {
     $result = $apiInstance->mvo($mvo_request);
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mvo_request** | [**\com\hydrogen\Model\MvoRequest**](../Model/MvoRequest.md)| Request payload for MVO |
+ **mvo_request** | [**\com\hydrogen\proton\Model\MvoRequest**](../Model/MvoRequest.md)| Request payload for MVO |
 
 ### Return type
 

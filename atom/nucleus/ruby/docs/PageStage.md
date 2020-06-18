@@ -1,4 +1,4 @@
-# AtomApi::PageStage
+# NucleusApi::PageStage
 
 ## Properties
 Name | Type | Description | Notes

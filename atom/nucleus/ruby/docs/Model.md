@@ -1,4 +1,4 @@
-# AtomApi::Model
+# NucleusApi::Model
 
 ## Properties
 Name | Type | Description | Notes

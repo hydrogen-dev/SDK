@@ -29,9 +29,9 @@ Create a goal track record for a goal under a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -86,9 +86,9 @@ Create a new goal for your firm that clients can customize for themselves.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -143,9 +143,9 @@ Permanently delete an goal track record for a goal under a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -201,9 +201,9 @@ Permanently delete a goal for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -257,9 +257,9 @@ Get the details for all goals defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -322,9 +322,9 @@ Get a list of asset sizes per date for a goal for a specified client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -391,9 +391,9 @@ Get the information for all the securities that are currently being held in port
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -456,9 +456,9 @@ Get information for all goal track records stored for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -527,9 +527,9 @@ Retrieve the information for a specific goal track record for a goal under a cli
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -586,9 +586,9 @@ Get the information for all transactions under portfolios associated with a part
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -659,9 +659,9 @@ Retrieve the information for a goal defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -716,9 +716,9 @@ Update the information for a goal track record.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -775,9 +775,9 @@ Update a goal defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

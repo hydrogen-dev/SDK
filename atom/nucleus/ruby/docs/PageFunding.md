@@ -1,4 +1,4 @@
-# AtomApi::PageFunding
+# NucleusApi::PageFunding
 
 ## Properties
 Name | Type | Description | Notes

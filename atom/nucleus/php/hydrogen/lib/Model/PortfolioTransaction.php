@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * PortfolioTransaction Class Doc Comment
  *
  * @category Class
  * @description PortfolioTransaction Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -69,7 +69,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'description' => 'string',
         'id' => 'string',
         'is_read' => 'bool',
-        'location' => '\com\hydrogen\Model\Location',
+        'location' => '\com\hydrogen\nucleus\Model\Location',
         'memo' => 'string',
         'merchant' => 'string',
         'model_id' => 'string',
@@ -625,7 +625,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets location
      *
-     * @return \com\hydrogen\Model\Location
+     * @return \com\hydrogen\nucleus\Model\Location
      */
     public function getLocation()
     {
@@ -635,7 +635,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets location
      *
-     * @param \com\hydrogen\Model\Location $location location
+     * @param \com\hydrogen\nucleus\Model\Location $location location
      *
      * @return $this
      */

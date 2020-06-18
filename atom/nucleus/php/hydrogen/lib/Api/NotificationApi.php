@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * NotificationApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class NotificationApi
      *
      * Create a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notificationClient (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notificationClient (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NotificationClient
+     * @return \com\hydrogen\nucleus\Model\NotificationClient
      */
     public function createNotificationClientUsingPost($notification_client)
     {
@@ -109,15 +109,15 @@ class NotificationApi
      *
      * Create a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notificationClient (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notificationClient (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NotificationClient, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NotificationClient, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNotificationClientUsingPostWithHttpInfo($notification_client)
     {
-        $returnType = '\com\hydrogen\Model\NotificationClient';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationClient';
         $request = $this->createNotificationClientUsingPostRequest($notification_client);
 
         try {
@@ -169,7 +169,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NotificationClient',
+                        '\com\hydrogen\nucleus\Model\NotificationClient',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class NotificationApi
      *
      * Create a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notificationClient (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notificationClient (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class NotificationApi
      *
      * Create a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notificationClient (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notificationClient (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createNotificationClientUsingPostAsyncWithHttpInfo($notification_client)
     {
-        $returnType = '\com\hydrogen\Model\NotificationClient';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationClient';
         $request = $this->createNotificationClientUsingPostRequest($notification_client);
 
         return $this->client
@@ -254,7 +254,7 @@ class NotificationApi
     /**
      * Create request for operation 'createNotificationClientUsingPost'
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notificationClient (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notificationClient (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class NotificationApi
      *
      * Create a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notificationSetting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notificationSetting (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NotificationSetting
+     * @return \com\hydrogen\nucleus\Model\NotificationSetting
      */
     public function createNotificationSettingUsingPost($notification_setting)
     {
@@ -377,15 +377,15 @@ class NotificationApi
      *
      * Create a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notificationSetting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notificationSetting (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NotificationSetting, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NotificationSetting, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNotificationSettingUsingPostWithHttpInfo($notification_setting)
     {
-        $returnType = '\com\hydrogen\Model\NotificationSetting';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationSetting';
         $request = $this->createNotificationSettingUsingPostRequest($notification_setting);
 
         try {
@@ -437,7 +437,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NotificationSetting',
+                        '\com\hydrogen\nucleus\Model\NotificationSetting',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class NotificationApi
      *
      * Create a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notificationSetting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notificationSetting (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class NotificationApi
      *
      * Create a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notificationSetting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notificationSetting (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createNotificationSettingUsingPostAsyncWithHttpInfo($notification_setting)
     {
-        $returnType = '\com\hydrogen\Model\NotificationSetting';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationSetting';
         $request = $this->createNotificationSettingUsingPostRequest($notification_setting);
 
         return $this->client
@@ -522,7 +522,7 @@ class NotificationApi
     /**
      * Create request for operation 'createNotificationSettingUsingPost'
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notificationSetting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notificationSetting (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class NotificationApi
      *
      * Create a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Notification
+     * @return \com\hydrogen\nucleus\Model\Notification
      */
     public function createNotificationUsingPost($notification)
     {
@@ -645,15 +645,15 @@ class NotificationApi
      *
      * Create a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Notification, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Notification, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNotificationUsingPostWithHttpInfo($notification)
     {
-        $returnType = '\com\hydrogen\Model\Notification';
+        $returnType = '\com\hydrogen\nucleus\Model\Notification';
         $request = $this->createNotificationUsingPostRequest($notification);
 
         try {
@@ -705,7 +705,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Notification',
+                        '\com\hydrogen\nucleus\Model\Notification',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class NotificationApi
      *
      * Create a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class NotificationApi
      *
      * Create a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createNotificationUsingPostAsyncWithHttpInfo($notification)
     {
-        $returnType = '\com\hydrogen\Model\Notification';
+        $returnType = '\com\hydrogen\nucleus\Model\Notification';
         $request = $this->createNotificationUsingPostRequest($notification);
 
         return $this->client
@@ -790,7 +790,7 @@ class NotificationApi
     /**
      * Create request for operation 'createNotificationUsingPost'
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -898,7 +898,7 @@ class NotificationApi
      *
      * @param  string $notification_client_id notification_client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -914,7 +914,7 @@ class NotificationApi
      *
      * @param  string $notification_client_id notification_client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1134,7 +1134,7 @@ class NotificationApi
      *
      * @param  string $notification_setting_id notification_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1150,7 +1150,7 @@ class NotificationApi
      *
      * @param  string $notification_setting_id notification_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1370,7 +1370,7 @@ class NotificationApi
      *
      * @param  string $notification_id UUID notification_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1386,7 +1386,7 @@ class NotificationApi
      *
      * @param  string $notification_id UUID notification_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1610,9 +1610,9 @@ class NotificationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageNotification_
+     * @return \com\hydrogen\nucleus\Model\PageNotification_
      */
     public function getNotificationAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1631,13 +1631,13 @@ class NotificationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageNotification_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageNotification_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNotification_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNotification_';
         $request = $this->getNotificationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1689,7 +1689,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageNotification_',
+                        '\com\hydrogen\nucleus\Model\PageNotification_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1739,7 +1739,7 @@ class NotificationApi
      */
     public function getNotificationAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNotification_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNotification_';
         $request = $this->getNotificationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1909,9 +1909,9 @@ class NotificationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageNotificationClient_
+     * @return \com\hydrogen\nucleus\Model\PageNotificationClient_
      */
     public function getNotificationClientAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1930,13 +1930,13 @@ class NotificationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageNotificationClient_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageNotificationClient_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationClientAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNotificationClient_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNotificationClient_';
         $request = $this->getNotificationClientAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1988,7 +1988,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageNotificationClient_',
+                        '\com\hydrogen\nucleus\Model\PageNotificationClient_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2038,7 +2038,7 @@ class NotificationApi
      */
     public function getNotificationClientAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNotificationClient_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNotificationClient_';
         $request = $this->getNotificationClientAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2204,9 +2204,9 @@ class NotificationApi
      *
      * @param  string $notification_client_id notification_client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NotificationClient
+     * @return \com\hydrogen\nucleus\Model\NotificationClient
      */
     public function getNotificationClientUsingGet($notification_client_id)
     {
@@ -2221,13 +2221,13 @@ class NotificationApi
      *
      * @param  string $notification_client_id notification_client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NotificationClient, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NotificationClient, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationClientUsingGetWithHttpInfo($notification_client_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationClient';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationClient';
         $request = $this->getNotificationClientUsingGetRequest($notification_client_id);
 
         try {
@@ -2279,7 +2279,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NotificationClient',
+                        '\com\hydrogen\nucleus\Model\NotificationClient',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2321,7 +2321,7 @@ class NotificationApi
      */
     public function getNotificationClientUsingGetAsyncWithHttpInfo($notification_client_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationClient';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationClient';
         $request = $this->getNotificationClientUsingGetRequest($notification_client_id);
 
         return $this->client
@@ -2481,9 +2481,9 @@ class NotificationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageNotificationSetting_
+     * @return \com\hydrogen\nucleus\Model\PageNotificationSetting_
      */
     public function getNotificationSettingAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2502,13 +2502,13 @@ class NotificationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageNotificationSetting_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageNotificationSetting_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationSettingAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNotificationSetting_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNotificationSetting_';
         $request = $this->getNotificationSettingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2560,7 +2560,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageNotificationSetting_',
+                        '\com\hydrogen\nucleus\Model\PageNotificationSetting_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2610,7 +2610,7 @@ class NotificationApi
      */
     public function getNotificationSettingAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageNotificationSetting_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageNotificationSetting_';
         $request = $this->getNotificationSettingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2776,9 +2776,9 @@ class NotificationApi
      *
      * @param  string $notification_setting_id notification_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NotificationSetting
+     * @return \com\hydrogen\nucleus\Model\NotificationSetting
      */
     public function getNotificationSettingUsingGet($notification_setting_id)
     {
@@ -2793,13 +2793,13 @@ class NotificationApi
      *
      * @param  string $notification_setting_id notification_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NotificationSetting, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NotificationSetting, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationSettingUsingGetWithHttpInfo($notification_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationSetting';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationSetting';
         $request = $this->getNotificationSettingUsingGetRequest($notification_setting_id);
 
         try {
@@ -2851,7 +2851,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NotificationSetting',
+                        '\com\hydrogen\nucleus\Model\NotificationSetting',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2893,7 +2893,7 @@ class NotificationApi
      */
     public function getNotificationSettingUsingGetAsyncWithHttpInfo($notification_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationSetting';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationSetting';
         $request = $this->getNotificationSettingUsingGetRequest($notification_setting_id);
 
         return $this->client
@@ -3049,9 +3049,9 @@ class NotificationApi
      *
      * @param  string $notification_id notification_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Notification
+     * @return \com\hydrogen\nucleus\Model\Notification
      */
     public function getNotificationUsingGet($notification_id)
     {
@@ -3066,13 +3066,13 @@ class NotificationApi
      *
      * @param  string $notification_id notification_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Notification, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Notification, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationUsingGetWithHttpInfo($notification_id)
     {
-        $returnType = '\com\hydrogen\Model\Notification';
+        $returnType = '\com\hydrogen\nucleus\Model\Notification';
         $request = $this->getNotificationUsingGetRequest($notification_id);
 
         try {
@@ -3124,7 +3124,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Notification',
+                        '\com\hydrogen\nucleus\Model\Notification',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3166,7 +3166,7 @@ class NotificationApi
      */
     public function getNotificationUsingGetAsyncWithHttpInfo($notification_id)
     {
-        $returnType = '\com\hydrogen\Model\Notification';
+        $returnType = '\com\hydrogen\nucleus\Model\Notification';
         $request = $this->getNotificationUsingGetRequest($notification_id);
 
         return $this->client
@@ -3320,12 +3320,12 @@ class NotificationApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notification_client (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NotificationClient
+     * @return \com\hydrogen\nucleus\Model\NotificationClient
      */
     public function updateNotificationClientUsingPut($notification_client, $notification_client_id)
     {
@@ -3338,16 +3338,16 @@ class NotificationApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notification_client (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NotificationClient, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NotificationClient, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNotificationClientUsingPutWithHttpInfo($notification_client, $notification_client_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationClient';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationClient';
         $request = $this->updateNotificationClientUsingPutRequest($notification_client, $notification_client_id);
 
         try {
@@ -3399,7 +3399,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NotificationClient',
+                        '\com\hydrogen\nucleus\Model\NotificationClient',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3414,7 +3414,7 @@ class NotificationApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notification_client (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3435,7 +3435,7 @@ class NotificationApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notification_client (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3443,7 +3443,7 @@ class NotificationApi
      */
     public function updateNotificationClientUsingPutAsyncWithHttpInfo($notification_client, $notification_client_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationClient';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationClient';
         $request = $this->updateNotificationClientUsingPutRequest($notification_client, $notification_client_id);
 
         return $this->client
@@ -3486,7 +3486,7 @@ class NotificationApi
     /**
      * Create request for operation 'updateNotificationClientUsingPut'
      *
-     * @param  \com\hydrogen\Model\NotificationClient $notification_client notification_client (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3607,12 +3607,12 @@ class NotificationApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\NotificationSetting
+     * @return \com\hydrogen\nucleus\Model\NotificationSetting
      */
     public function updateNotificationSettingUsingPut($notification_setting, $notification_setting_id)
     {
@@ -3625,16 +3625,16 @@ class NotificationApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\NotificationSetting, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\NotificationSetting, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNotificationSettingUsingPutWithHttpInfo($notification_setting, $notification_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationSetting';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationSetting';
         $request = $this->updateNotificationSettingUsingPutRequest($notification_setting, $notification_setting_id);
 
         try {
@@ -3686,7 +3686,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\NotificationSetting',
+                        '\com\hydrogen\nucleus\Model\NotificationSetting',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3701,7 +3701,7 @@ class NotificationApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3722,7 +3722,7 @@ class NotificationApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3730,7 +3730,7 @@ class NotificationApi
      */
     public function updateNotificationSettingUsingPutAsyncWithHttpInfo($notification_setting, $notification_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\NotificationSetting';
+        $returnType = '\com\hydrogen\nucleus\Model\NotificationSetting';
         $request = $this->updateNotificationSettingUsingPutRequest($notification_setting, $notification_setting_id);
 
         return $this->client
@@ -3773,7 +3773,7 @@ class NotificationApi
     /**
      * Create request for operation 'updateNotificationSettingUsingPut'
      *
-     * @param  \com\hydrogen\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3894,12 +3894,12 @@ class NotificationApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Notification
+     * @return \com\hydrogen\nucleus\Model\Notification
      */
     public function updateNotificationUsingPut($notification, $notification_id)
     {
@@ -3912,16 +3912,16 @@ class NotificationApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Notification, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Notification, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNotificationUsingPutWithHttpInfo($notification, $notification_id)
     {
-        $returnType = '\com\hydrogen\Model\Notification';
+        $returnType = '\com\hydrogen\nucleus\Model\Notification';
         $request = $this->updateNotificationUsingPutRequest($notification, $notification_id);
 
         try {
@@ -3973,7 +3973,7 @@ class NotificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Notification',
+                        '\com\hydrogen\nucleus\Model\Notification',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3988,7 +3988,7 @@ class NotificationApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4009,7 +4009,7 @@ class NotificationApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4017,7 +4017,7 @@ class NotificationApi
      */
     public function updateNotificationUsingPutAsyncWithHttpInfo($notification, $notification_id)
     {
-        $returnType = '\com\hydrogen\Model\Notification';
+        $returnType = '\com\hydrogen\nucleus\Model\Notification';
         $request = $this->updateNotificationUsingPutRequest($notification, $notification_id);
 
         return $this->client
@@ -4060,7 +4060,7 @@ class NotificationApi
     /**
      * Create request for operation 'updateNotificationUsingPut'
      *
-     * @param  \com\hydrogen\Model\Notification $notification notification (required)
+     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \InvalidArgumentException

@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregation_account_transaction_id** | **string** |  | [optional] 
-**bank_credit** | [**\com\hydrogen\Model\BankCredit**](BankCredit.md) |  | [optional] 
+**bank_credit** | [**\com\hydrogen\nucleus\Model\BankCredit**](BankCredit.md) |  | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **currency_code** | **string** |  | [optional] 
-**investment** | [**\com\hydrogen\Model\Investment**](Investment.md) |  | [optional] 
+**investment** | [**\com\hydrogen\nucleus\Model\Investment**](Investment.md) |  | [optional] 
 **is_excluded_analysis** | **bool** |  | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
 **secondary_id** | **string** |  | [optional] 

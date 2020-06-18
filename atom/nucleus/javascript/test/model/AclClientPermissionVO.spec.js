@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AclClientPermissionVO();
+    instance = new HydrogenNucleusApi.AclClientPermissionVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('AclClientPermissionVO', function() {
     it('should create an instance of AclClientPermissionVO', function() {
       // uncomment below and update the code to test AclClientPermissionVO
-      //var instane = new HydrogenAtomApi.AclClientPermissionVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AclClientPermissionVO);
+      //var instane = new HydrogenNucleusApi.AclClientPermissionVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AclClientPermissionVO);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.AclClientPermissionVO();
+      //var instane = new HydrogenNucleusApi.AclClientPermissionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.AclClientPermissionVO();
+      //var instane = new HydrogenNucleusApi.AclClientPermissionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property permissionType (base name: "permission_type")', function() {
       // uncomment below and update the code to test the property permissionType
-      //var instane = new HydrogenAtomApi.AclClientPermissionVO();
+      //var instane = new HydrogenNucleusApi.AclClientPermissionVO();
       //expect(instance).to.be();
     });
 

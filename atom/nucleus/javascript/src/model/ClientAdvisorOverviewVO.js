@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./ClientAccountAdvisorVO'), require('./ClientAssetsAdvisorVO'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.ClientAdvisorOverviewVO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.ClientAccountAdvisorVO, root.HydrogenAtomApi.ClientAssetsAdvisorVO);
+    root.HydrogenNucleusApi.ClientAdvisorOverviewVO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.ClientAccountAdvisorVO, root.HydrogenNucleusApi.ClientAssetsAdvisorVO);
   }
 }(this, function(ApiClient, ClientAccountAdvisorVO, ClientAssetsAdvisorVO) {
   'use strict';

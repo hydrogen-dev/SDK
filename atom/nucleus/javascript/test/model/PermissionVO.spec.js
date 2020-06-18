@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PermissionVO();
+    instance = new HydrogenNucleusApi.PermissionVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('PermissionVO', function() {
     it('should create an instance of PermissionVO', function() {
       // uncomment below and update the code to test PermissionVO
-      //var instane = new HydrogenAtomApi.PermissionVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.PermissionVO);
+      //var instane = new HydrogenNucleusApi.PermissionVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PermissionVO);
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.PermissionVO();
+      //var instane = new HydrogenNucleusApi.PermissionVO();
       //expect(instance).to.be();
     });
 
     it('should have the property permissionType (base name: "permission_type")', function() {
       // uncomment below and update the code to test the property permissionType
-      //var instane = new HydrogenAtomApi.PermissionVO();
+      //var instane = new HydrogenNucleusApi.PermissionVO();
       //expect(instance).to.be();
     });
 

@@ -45,9 +45,9 @@ Aggregates all orders on a given date for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -104,9 +104,9 @@ Create order records necessary to rebalance an account and all its portfolios ac
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -163,9 +163,9 @@ Create order records necessary to rebalance an account and all its portfolios ac
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -220,9 +220,9 @@ Create account reconciliation order
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -279,9 +279,9 @@ Create order records necessary to entirely sell all the holdings within an accou
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -338,9 +338,9 @@ Create order records necessary to rebalance an account and all its portfolios ac
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -397,9 +397,9 @@ Aggregates all orders on a given date for a client
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -456,9 +456,9 @@ Aggregates all orders on a given date for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -513,9 +513,9 @@ Create an order status for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -570,9 +570,9 @@ Create a new order tracking record for an order.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -627,9 +627,9 @@ Create order records necessary to rebalance a portfolio to the model to which it
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -686,9 +686,9 @@ Create order records necessary to rebalance a portfolio to the model to which it
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -743,9 +743,9 @@ Create portfolio reconciliation order
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -802,9 +802,9 @@ Create order records necessary to entirely sell all the holdings within a portfo
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -861,9 +861,9 @@ Create order records necessary to rebalance a portfolio to the model to which it
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -920,9 +920,9 @@ Permanently delete an order status defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -976,9 +976,9 @@ Permanently delete an order tracking record for an order.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1032,9 +1032,9 @@ Permanently delete an order record.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1088,9 +1088,9 @@ Create an order record defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1145,9 +1145,9 @@ Get the information for all order records defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1210,9 +1210,9 @@ Get the information for all bulk order records.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1275,9 +1275,9 @@ Get the information for all order statuses defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1340,9 +1340,9 @@ Retrieve the information for an order status defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1397,9 +1397,9 @@ Get the information for all order tracking record for all order records.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1462,9 +1462,9 @@ Retrieve the information for an order tracking record for an order.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1519,9 +1519,9 @@ Retrieve the information for an order record.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1576,9 +1576,9 @@ Update the information for an order status defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1635,9 +1635,9 @@ Update the information for an order tracking record for an order.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1694,9 +1694,9 @@ Update the information for an order record.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

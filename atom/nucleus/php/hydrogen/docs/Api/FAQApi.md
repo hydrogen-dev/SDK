@@ -1,4 +1,4 @@
-# com\hydrogen\FAQApi
+# com\hydrogen\nucleus\FAQApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createFaqUsingPost**
-> \com\hydrogen\Model\Faq createFaqUsingPost($faq_request)
+> \com\hydrogen\nucleus\Model\Faq createFaqUsingPost($faq_request)
 
 Create a FAQ
 
@@ -21,29 +21,29 @@ Create a new FAQ
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FAQApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FAQApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$faq_request = new \com\hydrogen\Model\Faq(); // \com\hydrogen\Model\Faq | faqRequest
+$faq_request = new \com\hydrogen\nucleus\Model\Faq(); // \com\hydrogen\nucleus\Model\Faq | faqRequest
 
 try {
     $result = $apiInstance->createFaqUsingPost($faq_request);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **faq_request** | [**\com\hydrogen\Model\Faq**](../Model/Faq.md)| faqRequest |
+ **faq_request** | [**\com\hydrogen\nucleus\Model\Faq**](../Model/Faq.md)| faqRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Faq**](../Model/Faq.md)
+[**\com\hydrogen\nucleus\Model\Faq**](../Model/Faq.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently delete a FAQ
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FAQApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FAQApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -139,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFaqAllUsingGet**
-> \com\hydrogen\Model\PageFaq_ getFaqAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageFaq_ getFaqAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all FAQ
 
@@ -148,23 +148,23 @@ Get the information for all FAQ
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FAQApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FAQApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageFaq_**](../Model/PageFaq_.md)
+[**\com\hydrogen\nucleus\Model\PageFaq_**](../Model/PageFaq_.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFaqUsingGet**
-> \com\hydrogen\Model\Faq getFaqUsingGet($faq_id)
+> \com\hydrogen\nucleus\Model\Faq getFaqUsingGet($faq_id)
 
 Retrieve a FAQ
 
@@ -220,23 +220,23 @@ Retrieve the information for a FAQ
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FAQApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FAQApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Faq**](../Model/Faq.md)
+[**\com\hydrogen\nucleus\Model\Faq**](../Model/Faq.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateFaqUsingPut**
-> \com\hydrogen\Model\Faq updateFaqUsingPut($faq, $faq_id)
+> \com\hydrogen\nucleus\Model\Faq updateFaqUsingPut($faq, $faq_id)
 
 Update a FAQ
 
@@ -284,29 +284,29 @@ Update the information for a FAQ
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\FAQApi(
+$apiInstance = new com\hydrogen\nucleus\Api\FAQApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$faq = new \com\hydrogen\Model\Faq(); // \com\hydrogen\Model\Faq | faq
+$faq = new \com\hydrogen\nucleus\Model\Faq(); // \com\hydrogen\nucleus\Model\Faq | faq
 $faq_id = "faq_id_example"; // string | UUID faq_id
 
 try {
@@ -322,12 +322,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **faq** | [**\com\hydrogen\Model\Faq**](../Model/Faq.md)| faq |
+ **faq** | [**\com\hydrogen\nucleus\Model\Faq**](../Model/Faq.md)| faq |
  **faq_id** | [**string**](../Model/.md)| UUID faq_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Faq**](../Model/Faq.md)
+[**\com\hydrogen\nucleus\Model\Faq**](../Model/Faq.md)
 
 ### Authorization
 

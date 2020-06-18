@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * FeatureApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class FeatureApi
      *
      * Create a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track featureTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track featureTrack (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\FeatureTrack
+     * @return \com\hydrogen\nucleus\Model\FeatureTrack
      */
     public function createFeatureTrackUsingPost($feature_track)
     {
@@ -109,15 +109,15 @@ class FeatureApi
      *
      * Create a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track featureTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track featureTrack (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\FeatureTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\FeatureTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFeatureTrackUsingPostWithHttpInfo($feature_track)
     {
-        $returnType = '\com\hydrogen\Model\FeatureTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\FeatureTrack';
         $request = $this->createFeatureTrackUsingPostRequest($feature_track);
 
         try {
@@ -169,7 +169,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\FeatureTrack',
+                        '\com\hydrogen\nucleus\Model\FeatureTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class FeatureApi
      *
      * Create a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track featureTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track featureTrack (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class FeatureApi
      *
      * Create a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track featureTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track featureTrack (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFeatureTrackUsingPostAsyncWithHttpInfo($feature_track)
     {
-        $returnType = '\com\hydrogen\Model\FeatureTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\FeatureTrack';
         $request = $this->createFeatureTrackUsingPostRequest($feature_track);
 
         return $this->client
@@ -254,7 +254,7 @@ class FeatureApi
     /**
      * Create request for operation 'createFeatureTrackUsingPost'
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track featureTrack (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track featureTrack (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class FeatureApi
      *
      * Create a  Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Feature
+     * @return \com\hydrogen\nucleus\Model\Feature
      */
     public function createFeatureUsingPost($feature)
     {
@@ -377,15 +377,15 @@ class FeatureApi
      *
      * Create a  Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Feature, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Feature, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFeatureUsingPostWithHttpInfo($feature)
     {
-        $returnType = '\com\hydrogen\Model\Feature';
+        $returnType = '\com\hydrogen\nucleus\Model\Feature';
         $request = $this->createFeatureUsingPostRequest($feature);
 
         try {
@@ -437,7 +437,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Feature',
+                        '\com\hydrogen\nucleus\Model\Feature',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class FeatureApi
      *
      * Create a  Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class FeatureApi
      *
      * Create a  Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFeatureUsingPostAsyncWithHttpInfo($feature)
     {
-        $returnType = '\com\hydrogen\Model\Feature';
+        $returnType = '\com\hydrogen\nucleus\Model\Feature';
         $request = $this->createFeatureUsingPostRequest($feature);
 
         return $this->client
@@ -522,7 +522,7 @@ class FeatureApi
     /**
      * Create request for operation 'createFeatureUsingPost'
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -630,7 +630,7 @@ class FeatureApi
      *
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -646,7 +646,7 @@ class FeatureApi
      *
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -866,7 +866,7 @@ class FeatureApi
      *
      * @param  string $feature_id UUID feature_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -882,7 +882,7 @@ class FeatureApi
      *
      * @param  string $feature_id UUID feature_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1106,9 +1106,9 @@ class FeatureApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageFeature_
+     * @return \com\hydrogen\nucleus\Model\PageFeature_
      */
     public function getFeatureAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1127,13 +1127,13 @@ class FeatureApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageFeature_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageFeature_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeatureAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFeature_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFeature_';
         $request = $this->getFeatureAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1185,7 +1185,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageFeature_',
+                        '\com\hydrogen\nucleus\Model\PageFeature_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1235,7 +1235,7 @@ class FeatureApi
      */
     public function getFeatureAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFeature_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFeature_';
         $request = $this->getFeatureAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1405,9 +1405,9 @@ class FeatureApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageFeatureTrack_
+     * @return \com\hydrogen\nucleus\Model\PageFeatureTrack_
      */
     public function getFeatureTrackAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1426,13 +1426,13 @@ class FeatureApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageFeatureTrack_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageFeatureTrack_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeatureTrackAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFeatureTrack_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFeatureTrack_';
         $request = $this->getFeatureTrackAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1484,7 +1484,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageFeatureTrack_',
+                        '\com\hydrogen\nucleus\Model\PageFeatureTrack_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1534,7 +1534,7 @@ class FeatureApi
      */
     public function getFeatureTrackAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFeatureTrack_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFeatureTrack_';
         $request = $this->getFeatureTrackAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1700,9 +1700,9 @@ class FeatureApi
      *
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\FeatureTrack
+     * @return \com\hydrogen\nucleus\Model\FeatureTrack
      */
     public function getFeatureTrackUsingGet($feature_track_id)
     {
@@ -1717,13 +1717,13 @@ class FeatureApi
      *
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\FeatureTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\FeatureTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeatureTrackUsingGetWithHttpInfo($feature_track_id)
     {
-        $returnType = '\com\hydrogen\Model\FeatureTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\FeatureTrack';
         $request = $this->getFeatureTrackUsingGetRequest($feature_track_id);
 
         try {
@@ -1775,7 +1775,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\FeatureTrack',
+                        '\com\hydrogen\nucleus\Model\FeatureTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1817,7 +1817,7 @@ class FeatureApi
      */
     public function getFeatureTrackUsingGetAsyncWithHttpInfo($feature_track_id)
     {
-        $returnType = '\com\hydrogen\Model\FeatureTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\FeatureTrack';
         $request = $this->getFeatureTrackUsingGetRequest($feature_track_id);
 
         return $this->client
@@ -1973,9 +1973,9 @@ class FeatureApi
      *
      * @param  string $feature_id UUID feature_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Feature
+     * @return \com\hydrogen\nucleus\Model\Feature
      */
     public function getFeatureUsingGet($feature_id)
     {
@@ -1990,13 +1990,13 @@ class FeatureApi
      *
      * @param  string $feature_id UUID feature_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Feature, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Feature, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeatureUsingGetWithHttpInfo($feature_id)
     {
-        $returnType = '\com\hydrogen\Model\Feature';
+        $returnType = '\com\hydrogen\nucleus\Model\Feature';
         $request = $this->getFeatureUsingGetRequest($feature_id);
 
         try {
@@ -2048,7 +2048,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Feature',
+                        '\com\hydrogen\nucleus\Model\Feature',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2090,7 +2090,7 @@ class FeatureApi
      */
     public function getFeatureUsingGetAsyncWithHttpInfo($feature_id)
     {
-        $returnType = '\com\hydrogen\Model\Feature';
+        $returnType = '\com\hydrogen\nucleus\Model\Feature';
         $request = $this->getFeatureUsingGetRequest($feature_id);
 
         return $this->client
@@ -2244,12 +2244,12 @@ class FeatureApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\FeatureTrack
+     * @return \com\hydrogen\nucleus\Model\FeatureTrack
      */
     public function updateFeatureTrackUsingPut($feature_track, $feature_track_id)
     {
@@ -2262,16 +2262,16 @@ class FeatureApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\FeatureTrack, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\FeatureTrack, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFeatureTrackUsingPutWithHttpInfo($feature_track, $feature_track_id)
     {
-        $returnType = '\com\hydrogen\Model\FeatureTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\FeatureTrack';
         $request = $this->updateFeatureTrackUsingPutRequest($feature_track, $feature_track_id);
 
         try {
@@ -2323,7 +2323,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\FeatureTrack',
+                        '\com\hydrogen\nucleus\Model\FeatureTrack',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2338,7 +2338,7 @@ class FeatureApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2359,7 +2359,7 @@ class FeatureApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2367,7 +2367,7 @@ class FeatureApi
      */
     public function updateFeatureTrackUsingPutAsyncWithHttpInfo($feature_track, $feature_track_id)
     {
-        $returnType = '\com\hydrogen\Model\FeatureTrack';
+        $returnType = '\com\hydrogen\nucleus\Model\FeatureTrack';
         $request = $this->updateFeatureTrackUsingPutRequest($feature_track, $feature_track_id);
 
         return $this->client
@@ -2410,7 +2410,7 @@ class FeatureApi
     /**
      * Create request for operation 'updateFeatureTrackUsingPut'
      *
-     * @param  \com\hydrogen\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2531,12 +2531,12 @@ class FeatureApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Feature
+     * @return \com\hydrogen\nucleus\Model\Feature
      */
     public function updateFeatureUsingPut($feature, $feature_id)
     {
@@ -2549,16 +2549,16 @@ class FeatureApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Feature, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Feature, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFeatureUsingPutWithHttpInfo($feature, $feature_id)
     {
-        $returnType = '\com\hydrogen\Model\Feature';
+        $returnType = '\com\hydrogen\nucleus\Model\Feature';
         $request = $this->updateFeatureUsingPutRequest($feature, $feature_id);
 
         try {
@@ -2610,7 +2610,7 @@ class FeatureApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Feature',
+                        '\com\hydrogen\nucleus\Model\Feature',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2625,7 +2625,7 @@ class FeatureApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2646,7 +2646,7 @@ class FeatureApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2654,7 +2654,7 @@ class FeatureApi
      */
     public function updateFeatureUsingPutAsyncWithHttpInfo($feature, $feature_id)
     {
-        $returnType = '\com\hydrogen\Model\Feature';
+        $returnType = '\com\hydrogen\nucleus\Model\Feature';
         $request = $this->updateFeatureUsingPutRequest($feature, $feature_id);
 
         return $this->client
@@ -2697,7 +2697,7 @@ class FeatureApi
     /**
      * Create request for operation 'updateFeatureUsingPut'
      *
-     * @param  \com\hydrogen\Model\Feature $feature feature (required)
+     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \InvalidArgumentException

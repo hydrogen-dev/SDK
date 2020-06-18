@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,14 +27,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace com\hydrogen;
+namespace com\hydrogen\nucleus;
 
 /**
  * DepositAccountVOTest Class Doc Comment
  *
  * @category    Class
  * @description DepositAccountVO
- * @package     com\hydrogen
+ * @package     com\hydrogen\nucleus
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

@@ -24,9 +24,9 @@ Create a Roundup Settings for Roundup amount with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -81,9 +81,9 @@ Create a new roundup with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -138,9 +138,9 @@ Permanently delete a  roundup settings registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -194,9 +194,9 @@ Get details for all roundups.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -259,9 +259,9 @@ Get details for all roundup setting with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -324,9 +324,9 @@ Retrieve the information for a Roundup Settings with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -381,9 +381,9 @@ Retrieve the information for a Roundup.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -438,9 +438,9 @@ Update the information for a roundup setting registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

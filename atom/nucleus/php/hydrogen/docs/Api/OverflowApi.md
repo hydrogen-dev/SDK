@@ -1,4 +1,4 @@
-# com\hydrogen\OverflowApi
+# com\hydrogen\nucleus\OverflowApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createOverflowSettingsUsingPost**
-> \com\hydrogen\Model\OverflowSettings createOverflowSettingsUsingPost($overflow_settings)
+> \com\hydrogen\nucleus\Model\OverflowSettings createOverflowSettingsUsingPost($overflow_settings)
 
 Create a Overflow Settings request
 
@@ -24,29 +24,29 @@ Create a new Overflow Settings request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$overflow_settings = new \com\hydrogen\Model\OverflowSettings(); // \com\hydrogen\Model\OverflowSettings | overflowSettings
+$overflow_settings = new \com\hydrogen\nucleus\Model\OverflowSettings(); // \com\hydrogen\nucleus\Model\OverflowSettings | overflowSettings
 
 try {
     $result = $apiInstance->createOverflowSettingsUsingPost($overflow_settings);
@@ -61,11 +61,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_settings** | [**\com\hydrogen\Model\OverflowSettings**](../Model/OverflowSettings.md)| overflowSettings |
+ **overflow_settings** | [**\com\hydrogen\nucleus\Model\OverflowSettings**](../Model/OverflowSettings.md)| overflowSettings |
 
 ### Return type
 
-[**\com\hydrogen\Model\OverflowSettings**](../Model/OverflowSettings.md)
+[**\com\hydrogen\nucleus\Model\OverflowSettings**](../Model/OverflowSettings.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOverflowUsingPost**
-> \com\hydrogen\Model\Overflow createOverflowUsingPost($overflow_vo)
+> \com\hydrogen\nucleus\Model\Overflow createOverflowUsingPost($overflow_vo)
 
 Create a Overflow request
 
@@ -88,29 +88,29 @@ Create a new Overflow request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$overflow_vo = new \com\hydrogen\Model\Overflow(); // \com\hydrogen\Model\Overflow | overflowVO
+$overflow_vo = new \com\hydrogen\nucleus\Model\Overflow(); // \com\hydrogen\nucleus\Model\Overflow | overflowVO
 
 try {
     $result = $apiInstance->createOverflowUsingPost($overflow_vo);
@@ -125,11 +125,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_vo** | [**\com\hydrogen\Model\Overflow**](../Model/Overflow.md)| overflowVO |
+ **overflow_vo** | [**\com\hydrogen\nucleus\Model\Overflow**](../Model/Overflow.md)| overflowVO |
 
 ### Return type
 
-[**\com\hydrogen\Model\Overflow**](../Model/Overflow.md)
+[**\com\hydrogen\nucleus\Model\Overflow**](../Model/Overflow.md)
 
 ### Authorization
 
@@ -152,23 +152,23 @@ Permanently delete a  overflow settings registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -206,7 +206,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOverflowAllUsingGet**
-> \com\hydrogen\Model\PageOverflow_ getOverflowAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageOverflow_ getOverflowAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all overflow objects
 
@@ -215,23 +215,23 @@ Get details for all overflow.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageOverflow_**](../Model/PageOverflow_.md)
+[**\com\hydrogen\nucleus\Model\PageOverflow_**](../Model/PageOverflow_.md)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOverflowSettingsAllUsingGet**
-> \com\hydrogen\Model\PageOverflowSettings_ getOverflowSettingsAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageOverflowSettings_ getOverflowSettingsAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all overflow settings
 
@@ -287,23 +287,23 @@ Get details for all overflow setting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageOverflowSettings_**](../Model/PageOverflowSettings_.md)
+[**\com\hydrogen\nucleus\Model\PageOverflowSettings_**](../Model/PageOverflowSettings_.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOverflowSettingsUsingGet**
-> \com\hydrogen\Model\OverflowSettings getOverflowSettingsUsingGet($overflow_settings_id)
+> \com\hydrogen\nucleus\Model\OverflowSettings getOverflowSettingsUsingGet($overflow_settings_id)
 
 Retrieve a Overflow Setting
 
@@ -359,23 +359,23 @@ Retrieve the information for a Overflow Settings.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\OverflowSettings**](../Model/OverflowSettings.md)
+[**\com\hydrogen\nucleus\Model\OverflowSettings**](../Model/OverflowSettings.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOverflowUsingGet**
-> \com\hydrogen\Model\Overflow getOverflowUsingGet($overflow_id)
+> \com\hydrogen\nucleus\Model\Overflow getOverflowUsingGet($overflow_id)
 
 Retrieve a Overflow object
 
@@ -423,23 +423,23 @@ Retrieve the information for a Overflow.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Overflow**](../Model/Overflow.md)
+[**\com\hydrogen\nucleus\Model\Overflow**](../Model/Overflow.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOverflowSettingsUsingPut**
-> \com\hydrogen\Model\OverflowSettings updateOverflowSettingsUsingPut($overflow_settings, $overflow_settings_id)
+> \com\hydrogen\nucleus\Model\OverflowSettings updateOverflowSettingsUsingPut($overflow_settings, $overflow_settings_id)
 
 Update a overflow settings
 
@@ -487,29 +487,29 @@ Update the information for a overflow setting registered with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OverflowApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$overflow_settings = new \com\hydrogen\Model\OverflowSettings(); // \com\hydrogen\Model\OverflowSettings | overflow_settings
+$overflow_settings = new \com\hydrogen\nucleus\Model\OverflowSettings(); // \com\hydrogen\nucleus\Model\OverflowSettings | overflow_settings
 $overflow_settings_id = "overflow_settings_id_example"; // string | UUID overflow_settings_id
 
 try {
@@ -525,12 +525,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_settings** | [**\com\hydrogen\Model\OverflowSettings**](../Model/OverflowSettings.md)| overflow_settings |
+ **overflow_settings** | [**\com\hydrogen\nucleus\Model\OverflowSettings**](../Model/OverflowSettings.md)| overflow_settings |
  **overflow_settings_id** | [**string**](../Model/.md)| UUID overflow_settings_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\OverflowSettings**](../Model/OverflowSettings.md)
+[**\com\hydrogen\nucleus\Model\OverflowSettings**](../Model/OverflowSettings.md)
 
 ### Authorization
 

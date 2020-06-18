@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.aggregation_data_for_client_by_category_response_vo import AggregationDataForClientByCategoryResponseVO  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.aggregation_data_for_client_by_category_response_vo import AggregationDataForClientByCategoryResponseVO  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestAggregationDataForClientByCategoryResponseVO(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAggregationDataForClientByCategoryResponseVO(unittest.TestCase):
     def testAggregationDataForClientByCategoryResponseVO(self):
         """Test AggregationDataForClientByCategoryResponseVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.aggregation_data_for_client_by_category_response_vo.AggregationDataForClientByCategoryResponseVO()  # noqa: E501
+        # model = nucleus_api.models.aggregation_data_for_client_by_category_response_vo.AggregationDataForClientByCategoryResponseVO()  # noqa: E501
         pass
 
 

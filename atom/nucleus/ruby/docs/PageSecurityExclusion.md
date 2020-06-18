@@ -1,4 +1,4 @@
-# AtomApi::PageSecurityExclusion
+# NucleusApi::PageSecurityExclusion
 
 ## Properties
 Name | Type | Description | Notes

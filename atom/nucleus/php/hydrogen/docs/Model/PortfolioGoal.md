@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **date** | [**\DateTime**](\DateTime.md) | date | 
-**goals** | [**\com\hydrogen\Model\PortfolioGoalMap[]**](PortfolioGoalMap.md) |  | 
+**goals** | [**\com\hydrogen\nucleus\Model\PortfolioGoalMap[]**](PortfolioGoalMap.md) |  | 
 **id** | **string** |  | [optional] 
 **portfolio_id** | **string** | portfolioId | 
 **secondary_id** | **string** |  | [optional] 

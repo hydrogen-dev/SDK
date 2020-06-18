@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **account_id** | **string** | account_id | 
 **client_id** | **string** | client_id | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**funding_requests** | [**\com\hydrogen\Model\FundingRequestMap[]**](FundingRequestMap.md) |  | [optional] 
+**funding_requests** | [**\com\hydrogen\nucleus\Model\FundingRequestMap[]**](FundingRequestMap.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **roundup_setting_id** | **string** | roundup_setting_id | 
 **total_roundup_amount** | **double** | totalRoundupAmount | [optional] 

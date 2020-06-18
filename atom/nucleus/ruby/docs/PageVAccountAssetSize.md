@@ -1,4 +1,4 @@
-# AtomApi::PageVAccountAssetSize
+# NucleusApi::PageVAccountAssetSize
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# AtomApi::PageSecurityPrice
+# NucleusApi::PageSecurityPrice
 
 ## Properties
 Name | Type | Description | Notes

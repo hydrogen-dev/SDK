@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ClientApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class ClientApi
      *
      * Create a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro clientHydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro clientHydro (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientHydro
+     * @return \com\hydrogen\nucleus\Model\ClientHydro
      */
     public function createClientHydroUsingPost($client_hydro)
     {
@@ -109,15 +109,15 @@ class ClientApi
      *
      * Create a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro clientHydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro clientHydro (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientHydro, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientHydro, HTTP status code, HTTP response headers (array of strings)
      */
     public function createClientHydroUsingPostWithHttpInfo($client_hydro)
     {
-        $returnType = '\com\hydrogen\Model\ClientHydro';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientHydro';
         $request = $this->createClientHydroUsingPostRequest($client_hydro);
 
         try {
@@ -169,7 +169,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientHydro',
+                        '\com\hydrogen\nucleus\Model\ClientHydro',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class ClientApi
      *
      * Create a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro clientHydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro clientHydro (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class ClientApi
      *
      * Create a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro clientHydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro clientHydro (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createClientHydroUsingPostAsyncWithHttpInfo($client_hydro)
     {
-        $returnType = '\com\hydrogen\Model\ClientHydro';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientHydro';
         $request = $this->createClientHydroUsingPostRequest($client_hydro);
 
         return $this->client
@@ -254,7 +254,7 @@ class ClientApi
     /**
      * Create request for operation 'createClientHydroUsingPost'
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro clientHydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro clientHydro (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class ClientApi
      *
      * Create an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status_request clientStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status_request clientStatusRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientStatus
+     * @return \com\hydrogen\nucleus\Model\ClientStatus
      */
     public function createClientStatusUsingPost($client_status_request)
     {
@@ -377,15 +377,15 @@ class ClientApi
      *
      * Create an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status_request clientStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status_request clientStatusRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function createClientStatusUsingPostWithHttpInfo($client_status_request)
     {
-        $returnType = '\com\hydrogen\Model\ClientStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientStatus';
         $request = $this->createClientStatusUsingPostRequest($client_status_request);
 
         try {
@@ -437,7 +437,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientStatus',
+                        '\com\hydrogen\nucleus\Model\ClientStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class ClientApi
      *
      * Create an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status_request clientStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status_request clientStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class ClientApi
      *
      * Create an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status_request clientStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status_request clientStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createClientStatusUsingPostAsyncWithHttpInfo($client_status_request)
     {
-        $returnType = '\com\hydrogen\Model\ClientStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientStatus';
         $request = $this->createClientStatusUsingPostRequest($client_status_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class ClientApi
     /**
      * Create request for operation 'createClientStatusUsingPost'
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status_request clientStatusRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status_request clientStatusRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class ClientApi
      *
      * Create a client
      *
-     * @param  \com\hydrogen\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client_request clientRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Client
+     * @return \com\hydrogen\nucleus\Model\Client
      */
     public function createClientUsingPost($client_request)
     {
@@ -645,15 +645,15 @@ class ClientApi
      *
      * Create a client
      *
-     * @param  \com\hydrogen\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client_request clientRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Client, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Client, HTTP status code, HTTP response headers (array of strings)
      */
     public function createClientUsingPostWithHttpInfo($client_request)
     {
-        $returnType = '\com\hydrogen\Model\Client';
+        $returnType = '\com\hydrogen\nucleus\Model\Client';
         $request = $this->createClientUsingPostRequest($client_request);
 
         try {
@@ -705,7 +705,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Client',
+                        '\com\hydrogen\nucleus\Model\Client',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class ClientApi
      *
      * Create a client
      *
-     * @param  \com\hydrogen\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client_request clientRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class ClientApi
      *
      * Create a client
      *
-     * @param  \com\hydrogen\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client_request clientRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createClientUsingPostAsyncWithHttpInfo($client_request)
     {
-        $returnType = '\com\hydrogen\Model\Client';
+        $returnType = '\com\hydrogen\nucleus\Model\Client';
         $request = $this->createClientUsingPostRequest($client_request);
 
         return $this->client
@@ -790,7 +790,7 @@ class ClientApi
     /**
      * Create request for operation 'createClientUsingPost'
      *
-     * @param  \com\hydrogen\Model\Client $client_request clientRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client_request clientRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -898,7 +898,7 @@ class ClientApi
      *
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -914,7 +914,7 @@ class ClientApi
      *
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1134,7 +1134,7 @@ class ClientApi
      *
      * @param  string $client_status_id UUID client_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1150,7 +1150,7 @@ class ClientApi
      *
      * @param  string $client_status_id UUID client_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1370,7 +1370,7 @@ class ClientApi
      *
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1386,7 +1386,7 @@ class ClientApi
      *
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1608,9 +1608,9 @@ class ClientApi
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $order_by order_by (optional, default to update_date)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientAccountVO
+     * @return \com\hydrogen\nucleus\Model\ClientAccountVO
      */
     public function getClientAccountOverviewUsingGet($client_id, $ascending = 'false', $order_by = 'update_date')
     {
@@ -1627,13 +1627,13 @@ class ClientApi
      * @param  bool $ascending ascending (optional, default to false)
      * @param  string $order_by order_by (optional, default to update_date)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientAccountVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientAccountVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientAccountOverviewUsingGetWithHttpInfo($client_id, $ascending = 'false', $order_by = 'update_date')
     {
-        $returnType = '\com\hydrogen\Model\ClientAccountVO';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientAccountVO';
         $request = $this->getClientAccountOverviewUsingGetRequest($client_id, $ascending, $order_by);
 
         try {
@@ -1685,7 +1685,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientAccountVO',
+                        '\com\hydrogen\nucleus\Model\ClientAccountVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1731,7 +1731,7 @@ class ClientApi
      */
     public function getClientAccountOverviewUsingGetAsyncWithHttpInfo($client_id, $ascending = 'false', $order_by = 'update_date')
     {
-        $returnType = '\com\hydrogen\Model\ClientAccountVO';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientAccountVO';
         $request = $this->getClientAccountOverviewUsingGetRequest($client_id, $ascending, $order_by);
 
         return $this->client
@@ -1898,9 +1898,9 @@ class ClientApi
      * @param  string $client_id UUID client_id (required)
      * @param  bool $show_clients show_clients (optional, default to false)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AdvisorOverviewVO
+     * @return \com\hydrogen\nucleus\Model\AdvisorOverviewVO
      */
     public function getClientAdvisorOverviewUsingGet($client_id, $show_clients = 'false')
     {
@@ -1916,13 +1916,13 @@ class ClientApi
      * @param  string $client_id UUID client_id (required)
      * @param  bool $show_clients show_clients (optional, default to false)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AdvisorOverviewVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AdvisorOverviewVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientAdvisorOverviewUsingGetWithHttpInfo($client_id, $show_clients = 'false')
     {
-        $returnType = '\com\hydrogen\Model\AdvisorOverviewVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AdvisorOverviewVO';
         $request = $this->getClientAdvisorOverviewUsingGetRequest($client_id, $show_clients);
 
         try {
@@ -1974,7 +1974,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AdvisorOverviewVO',
+                        '\com\hydrogen\nucleus\Model\AdvisorOverviewVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2018,7 +2018,7 @@ class ClientApi
      */
     public function getClientAdvisorOverviewUsingGetAsyncWithHttpInfo($client_id, $show_clients = 'false')
     {
-        $returnType = '\com\hydrogen\Model\AdvisorOverviewVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AdvisorOverviewVO';
         $request = $this->getClientAdvisorOverviewUsingGetRequest($client_id, $show_clients);
 
         return $this->client
@@ -2183,9 +2183,9 @@ class ClientApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageClient_
+     * @return \com\hydrogen\nucleus\Model\PageClient_
      */
     public function getClientAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2204,13 +2204,13 @@ class ClientApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageClient_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageClient_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClient_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClient_';
         $request = $this->getClientAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2262,7 +2262,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageClient_',
+                        '\com\hydrogen\nucleus\Model\PageClient_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2312,7 +2312,7 @@ class ClientApi
      */
     public function getClientAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClient_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClient_';
         $request = $this->getClientAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2483,9 +2483,9 @@ class ClientApi
      * @param  string $sort_type Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () (optional)
      * @param  \DateTime $start_date start date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AvailableDateDoubleVO[]
+     * @return \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]
      */
     public function getClientAssetSizeUsingGet($client_id, $end_date = 'null', $exclude_subledger = 'false', $get_latest = null, $sort_type = null, $start_date = 'null')
     {
@@ -2505,13 +2505,13 @@ class ClientApi
      * @param  string $sort_type Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () (optional)
      * @param  \DateTime $start_date start date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AvailableDateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientAssetSizeUsingGetWithHttpInfo($client_id, $end_date = 'null', $exclude_subledger = 'false', $get_latest = null, $sort_type = null, $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\AvailableDateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]';
         $request = $this->getClientAssetSizeUsingGetRequest($client_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
 
         try {
@@ -2563,7 +2563,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AvailableDateDoubleVO[]',
+                        '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2615,7 +2615,7 @@ class ClientApi
      */
     public function getClientAssetSizeUsingGetAsyncWithHttpInfo($client_id, $end_date = 'null', $exclude_subledger = 'false', $get_latest = null, $sort_type = null, $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\AvailableDateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]';
         $request = $this->getClientAssetSizeUsingGetRequest($client_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
 
         return $this->client
@@ -2797,9 +2797,9 @@ class ClientApi
      * @param  string $client_id UUID client_id (required)
      * @param  bool $portfolio_goal portfolio_goal (optional, default to false)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\VClientGoalViewData
+     * @return \com\hydrogen\nucleus\Model\VClientGoalViewData
      */
     public function getClientGoalOverviewUsingGet($client_id, $portfolio_goal = 'false')
     {
@@ -2815,13 +2815,13 @@ class ClientApi
      * @param  string $client_id UUID client_id (required)
      * @param  bool $portfolio_goal portfolio_goal (optional, default to false)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\VClientGoalViewData, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\VClientGoalViewData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientGoalOverviewUsingGetWithHttpInfo($client_id, $portfolio_goal = 'false')
     {
-        $returnType = '\com\hydrogen\Model\VClientGoalViewData';
+        $returnType = '\com\hydrogen\nucleus\Model\VClientGoalViewData';
         $request = $this->getClientGoalOverviewUsingGetRequest($client_id, $portfolio_goal);
 
         try {
@@ -2873,7 +2873,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\VClientGoalViewData',
+                        '\com\hydrogen\nucleus\Model\VClientGoalViewData',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2917,7 +2917,7 @@ class ClientApi
      */
     public function getClientGoalOverviewUsingGetAsyncWithHttpInfo($client_id, $portfolio_goal = 'false')
     {
-        $returnType = '\com\hydrogen\Model\VClientGoalViewData';
+        $returnType = '\com\hydrogen\nucleus\Model\VClientGoalViewData';
         $request = $this->getClientGoalOverviewUsingGetRequest($client_id, $portfolio_goal);
 
         return $this->client
@@ -3081,9 +3081,9 @@ class ClientApi
      * @param  bool $get_latest true or false (optional)
      * @param  string $start_date start date - yyyy-mm-dd (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PortfolioHoldingAgg[]
+     * @return \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]
      */
     public function getClientHoldingUsingGet($client_id, $end_date = null, $get_latest = null, $start_date = null)
     {
@@ -3101,13 +3101,13 @@ class ClientApi
      * @param  bool $get_latest true or false (optional)
      * @param  string $start_date start date - yyyy-mm-dd (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PortfolioHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientHoldingUsingGetWithHttpInfo($client_id, $end_date = null, $get_latest = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]';
         $request = $this->getClientHoldingUsingGetRequest($client_id, $end_date, $get_latest, $start_date);
 
         try {
@@ -3159,7 +3159,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PortfolioHoldingAgg[]',
+                        '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3207,7 +3207,7 @@ class ClientApi
      */
     public function getClientHoldingUsingGetAsyncWithHttpInfo($client_id, $end_date = null, $get_latest = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\PortfolioHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]';
         $request = $this->getClientHoldingUsingGetRequest($client_id, $end_date, $get_latest, $start_date);
 
         return $this->client
@@ -3382,9 +3382,9 @@ class ClientApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageClientHydro_
+     * @return \com\hydrogen\nucleus\Model\PageClientHydro_
      */
     public function getClientHydroAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3403,13 +3403,13 @@ class ClientApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageClientHydro_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageClientHydro_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientHydroAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientHydro_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientHydro_';
         $request = $this->getClientHydroAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3461,7 +3461,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageClientHydro_',
+                        '\com\hydrogen\nucleus\Model\PageClientHydro_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3511,7 +3511,7 @@ class ClientApi
      */
     public function getClientHydroAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientHydro_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientHydro_';
         $request = $this->getClientHydroAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3677,9 +3677,9 @@ class ClientApi
      *
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientHydro
+     * @return \com\hydrogen\nucleus\Model\ClientHydro
      */
     public function getClientHydroUsingGet($client_hydro_id)
     {
@@ -3694,13 +3694,13 @@ class ClientApi
      *
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientHydro, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientHydro, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientHydroUsingGetWithHttpInfo($client_hydro_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientHydro';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientHydro';
         $request = $this->getClientHydroUsingGetRequest($client_hydro_id);
 
         try {
@@ -3752,7 +3752,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientHydro',
+                        '\com\hydrogen\nucleus\Model\ClientHydro',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3794,7 +3794,7 @@ class ClientApi
      */
     public function getClientHydroUsingGetAsyncWithHttpInfo($client_hydro_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientHydro';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientHydro';
         $request = $this->getClientHydroUsingGetRequest($client_hydro_id);
 
         return $this->client
@@ -3954,9 +3954,9 @@ class ClientApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageClientStatus_
+     * @return \com\hydrogen\nucleus\Model\PageClientStatus_
      */
     public function getClientStatusAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3975,13 +3975,13 @@ class ClientApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageClientStatus_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageClientStatus_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientStatusAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientStatus_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientStatus_';
         $request = $this->getClientStatusAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4033,7 +4033,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageClientStatus_',
+                        '\com\hydrogen\nucleus\Model\PageClientStatus_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4083,7 +4083,7 @@ class ClientApi
      */
     public function getClientStatusAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientStatus_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientStatus_';
         $request = $this->getClientStatusAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4249,9 +4249,9 @@ class ClientApi
      *
      * @param  string $client_status_id UUID client_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientStatus
+     * @return \com\hydrogen\nucleus\Model\ClientStatus
      */
     public function getClientStatusUsingGet($client_status_id)
     {
@@ -4266,13 +4266,13 @@ class ClientApi
      *
      * @param  string $client_status_id UUID client_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientStatusUsingGetWithHttpInfo($client_status_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientStatus';
         $request = $this->getClientStatusUsingGetRequest($client_status_id);
 
         try {
@@ -4324,7 +4324,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientStatus',
+                        '\com\hydrogen\nucleus\Model\ClientStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4366,7 +4366,7 @@ class ClientApi
      */
     public function getClientStatusUsingGetAsyncWithHttpInfo($client_status_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientStatus';
         $request = $this->getClientStatusUsingGetRequest($client_status_id);
 
         return $this->client
@@ -4528,9 +4528,9 @@ class ClientApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PagePortfolioTransaction_
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioTransaction_
      */
     public function getClientTransactionUsingGet($client_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
@@ -4551,13 +4551,13 @@ class ClientApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientTransactionUsingGetWithHttpInfo($client_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getClientTransactionUsingGetRequest($client_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
 
         try {
@@ -4609,7 +4609,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PagePortfolioTransaction_',
+                        '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4663,7 +4663,7 @@ class ClientApi
      */
     public function getClientTransactionUsingGetAsyncWithHttpInfo($client_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\PagePortfolioTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
         $request = $this->getClientTransactionUsingGetRequest($client_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
 
         return $this->client
@@ -4849,9 +4849,9 @@ class ClientApi
      *
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Client
+     * @return \com\hydrogen\nucleus\Model\Client
      */
     public function getClientUsingGet($client_id)
     {
@@ -4866,13 +4866,13 @@ class ClientApi
      *
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Client, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Client, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientUsingGetWithHttpInfo($client_id)
     {
-        $returnType = '\com\hydrogen\Model\Client';
+        $returnType = '\com\hydrogen\nucleus\Model\Client';
         $request = $this->getClientUsingGetRequest($client_id);
 
         try {
@@ -4924,7 +4924,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Client',
+                        '\com\hydrogen\nucleus\Model\Client',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4966,7 +4966,7 @@ class ClientApi
      */
     public function getClientUsingGetAsyncWithHttpInfo($client_id)
     {
-        $returnType = '\com\hydrogen\Model\Client';
+        $returnType = '\com\hydrogen\nucleus\Model\Client';
         $request = $this->getClientUsingGetRequest($client_id);
 
         return $this->client
@@ -5126,9 +5126,9 @@ class ClientApi
      * @param  bool $show_history show_history (optional, default to false)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientAnalyticsResponse
+     * @return \com\hydrogen\nucleus\Model\ClientAnalyticsResponse
      */
     public function getTotalClientsUsingGet($as_of_date = '#{new java.util.Date()}', $client_id = null, $end_date = null, $show_history = 'false', $start_date = null)
     {
@@ -5147,13 +5147,13 @@ class ClientApi
      * @param  bool $show_history show_history (optional, default to false)
      * @param  \DateTime $start_date start_date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientAnalyticsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientAnalyticsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTotalClientsUsingGetWithHttpInfo($as_of_date = '#{new java.util.Date()}', $client_id = null, $end_date = null, $show_history = 'false', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\ClientAnalyticsResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientAnalyticsResponse';
         $request = $this->getTotalClientsUsingGetRequest($as_of_date, $client_id, $end_date, $show_history, $start_date);
 
         try {
@@ -5205,7 +5205,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientAnalyticsResponse',
+                        '\com\hydrogen\nucleus\Model\ClientAnalyticsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5255,7 +5255,7 @@ class ClientApi
      */
     public function getTotalClientsUsingGetAsyncWithHttpInfo($as_of_date = '#{new java.util.Date()}', $client_id = null, $end_date = null, $show_history = 'false', $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\ClientAnalyticsResponse';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientAnalyticsResponse';
         $request = $this->getTotalClientsUsingGetRequest($as_of_date, $client_id, $end_date, $show_history, $start_date);
 
         return $this->client
@@ -5419,12 +5419,12 @@ class ClientApi
      *
      * Update a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro client_hydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro client_hydro (required)
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientHydro
+     * @return \com\hydrogen\nucleus\Model\ClientHydro
      */
     public function updateClientHydroUsingPut($client_hydro, $client_hydro_id)
     {
@@ -5437,16 +5437,16 @@ class ClientApi
      *
      * Update a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro client_hydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro client_hydro (required)
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientHydro, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientHydro, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateClientHydroUsingPutWithHttpInfo($client_hydro, $client_hydro_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientHydro';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientHydro';
         $request = $this->updateClientHydroUsingPutRequest($client_hydro, $client_hydro_id);
 
         try {
@@ -5498,7 +5498,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientHydro',
+                        '\com\hydrogen\nucleus\Model\ClientHydro',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5513,7 +5513,7 @@ class ClientApi
      *
      * Update a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro client_hydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro client_hydro (required)
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5534,7 +5534,7 @@ class ClientApi
      *
      * Update a client-hydro relationship
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro client_hydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro client_hydro (required)
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5542,7 +5542,7 @@ class ClientApi
      */
     public function updateClientHydroUsingPutAsyncWithHttpInfo($client_hydro, $client_hydro_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientHydro';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientHydro';
         $request = $this->updateClientHydroUsingPutRequest($client_hydro, $client_hydro_id);
 
         return $this->client
@@ -5585,7 +5585,7 @@ class ClientApi
     /**
      * Create request for operation 'updateClientHydroUsingPut'
      *
-     * @param  \com\hydrogen\Model\ClientHydro $client_hydro client_hydro (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientHydro $client_hydro client_hydro (required)
      * @param  string $client_hydro_id UUID client_hydro_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5706,12 +5706,12 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status client_status (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientStatus
+     * @return \com\hydrogen\nucleus\Model\ClientStatus
      */
     public function updateClientStatusUsingPut($client_status, $client_status_id)
     {
@@ -5724,16 +5724,16 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status client_status (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateClientStatusUsingPutWithHttpInfo($client_status, $client_status_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientStatus';
         $request = $this->updateClientStatusUsingPutRequest($client_status, $client_status_id);
 
         try {
@@ -5785,7 +5785,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientStatus',
+                        '\com\hydrogen\nucleus\Model\ClientStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5800,7 +5800,7 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status client_status (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5821,7 +5821,7 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status client_status (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5829,7 +5829,7 @@ class ClientApi
      */
     public function updateClientStatusUsingPutAsyncWithHttpInfo($client_status, $client_status_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientStatus';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientStatus';
         $request = $this->updateClientStatusUsingPutRequest($client_status, $client_status_id);
 
         return $this->client
@@ -5872,7 +5872,7 @@ class ClientApi
     /**
      * Create request for operation 'updateClientStatusUsingPut'
      *
-     * @param  \com\hydrogen\Model\ClientStatus $client_status client_status (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5993,12 +5993,12 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\Model\Client $client client (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Client
+     * @return \com\hydrogen\nucleus\Model\Client
      */
     public function updateClientUsingPut($client, $client_id)
     {
@@ -6011,16 +6011,16 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\Model\Client $client client (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Client, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Client, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateClientUsingPutWithHttpInfo($client, $client_id)
     {
-        $returnType = '\com\hydrogen\Model\Client';
+        $returnType = '\com\hydrogen\nucleus\Model\Client';
         $request = $this->updateClientUsingPutRequest($client, $client_id);
 
         try {
@@ -6072,7 +6072,7 @@ class ClientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Client',
+                        '\com\hydrogen\nucleus\Model\Client',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6087,7 +6087,7 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\Model\Client $client client (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6108,7 +6108,7 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\Model\Client $client client (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6116,7 +6116,7 @@ class ClientApi
      */
     public function updateClientUsingPutAsyncWithHttpInfo($client, $client_id)
     {
-        $returnType = '\com\hydrogen\Model\Client';
+        $returnType = '\com\hydrogen\nucleus\Model\Client';
         $request = $this->updateClientUsingPutRequest($client, $client_id);
 
         return $this->client
@@ -6159,7 +6159,7 @@ class ClientApi
     /**
      * Create request for operation 'updateClientUsingPut'
      *
-     * @param  \com\hydrogen\Model\Client $client client (required)
+     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \InvalidArgumentException

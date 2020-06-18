@@ -1,4 +1,4 @@
-# AtomApi::BudgetApi
+# NucleusApi::BudgetApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,9 +21,9 @@ Create a new budget request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -32,16 +32,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BudgetApi.new
+api_instance = NucleusApi::BudgetApi.new
 
-budget_request = AtomApi::Budget.new # Budget | budgetRequest
+budget_request = NucleusApi::Budget.new # Budget | budgetRequest
 
 
 begin
   #Create a budget request
   result = api_instance.create_budget_using_post(budget_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BudgetApi->create_budget_using_post: #{e}"
 end
 ```
@@ -77,9 +77,9 @@ Permanently delete a budget request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -88,7 +88,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BudgetApi.new
+api_instance = NucleusApi::BudgetApi.new
 
 budget_id = 'budget_id_example' # String | UUID budget_id
 
@@ -96,7 +96,7 @@ budget_id = 'budget_id_example' # String | UUID budget_id
 begin
   #Delete a budget request
   api_instance.delete_budget_using_delete(budget_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BudgetApi->delete_budget_using_delete: #{e}"
 end
 ```
@@ -132,9 +132,9 @@ Get the information for all budget requests.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -143,7 +143,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BudgetApi.new
+api_instance = NucleusApi::BudgetApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -157,7 +157,7 @@ begin
   #List all budget requests
   result = api_instance.get_budget_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BudgetApi->get_budget_all_using_get: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Retrieve the information for a budget request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BudgetApi.new
+api_instance = NucleusApi::BudgetApi.new
 
 budget_id = 'budget_id_example' # String | UUID budget_id
 
@@ -217,7 +217,7 @@ begin
   #Retrieve a budget request
   result = api_instance.get_budget_using_get(budget_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BudgetApi->get_budget_using_get: #{e}"
 end
 ```
@@ -253,9 +253,9 @@ Update the information for a budget request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -264,9 +264,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BudgetApi.new
+api_instance = NucleusApi::BudgetApi.new
 
-budget = AtomApi::Budget.new # Budget | budget
+budget = NucleusApi::Budget.new # Budget | budget
 
 budget_id = 'budget_id_example' # String | UUID budget_id
 
@@ -275,7 +275,7 @@ begin
   #Update a budget request
   result = api_instance.update_budget_using_put(budget, budget_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BudgetApi->update_budget_using_put: #{e}"
 end
 ```

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Cash();
+    instance = new HydrogenNucleusApi.Cash();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,25 +53,25 @@
   describe('Cash', function() {
     it('should create an instance of Cash', function() {
       // uncomment below and update the code to test Cash
-      //var instane = new HydrogenAtomApi.Cash();
-      //expect(instance).to.be.a(HydrogenAtomApi.Cash);
+      //var instane = new HydrogenNucleusApi.Cash();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Cash);
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.Cash();
+      //var instane = new HydrogenNucleusApi.Cash();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.Cash();
+      //var instane = new HydrogenNucleusApi.Cash();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionType (base name: "transaction_type")', function() {
       // uncomment below and update the code to test the property transactionType
-      //var instane = new HydrogenAtomApi.Cash();
+      //var instane = new HydrogenNucleusApi.Cash();
       //expect(instance).to.be();
     });
 

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientAnalyticsHistory();
+    instance = new HydrogenNucleusApi.ClientAnalyticsHistory();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('ClientAnalyticsHistory', function() {
     it('should create an instance of ClientAnalyticsHistory', function() {
       // uncomment below and update the code to test ClientAnalyticsHistory
-      //var instane = new HydrogenAtomApi.ClientAnalyticsHistory();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientAnalyticsHistory);
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsHistory();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientAnalyticsHistory);
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.ClientAnalyticsHistory();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsHistory();
       //expect(instance).to.be();
     });
 
     it('should have the property totalNucleusClients (base name: "total_nucleus_clients")', function() {
       // uncomment below and update the code to test the property totalNucleusClients
-      //var instane = new HydrogenAtomApi.ClientAnalyticsHistory();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsHistory();
       //expect(instance).to.be();
     });
 
     it('should have the property totalNucleusClientsActive (base name: "total_nucleus_clients_active")', function() {
       // uncomment below and update the code to test the property totalNucleusClientsActive
-      //var instane = new HydrogenAtomApi.ClientAnalyticsHistory();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsHistory();
       //expect(instance).to.be();
     });
 
     it('should have the property totalNucleusClientsInactive (base name: "total_nucleus_clients_inactive")', function() {
       // uncomment below and update the code to test the property totalNucleusClientsInactive
-      //var instane = new HydrogenAtomApi.ClientAnalyticsHistory();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsHistory();
       //expect(instance).to.be();
     });
 

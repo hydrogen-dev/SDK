@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "atom_api"
+NAME = "nucleus_api"
 VERSION = "1.7.0"
 # To install the library, run the following
 #

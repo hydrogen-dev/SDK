@@ -47,9 +47,9 @@ Create a new asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -104,9 +104,9 @@ Create a new comment for a portfolio defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,9 +161,9 @@ Create an portfolio goal.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -218,9 +218,9 @@ Create a new holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -275,9 +275,9 @@ Create a new transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -332,9 +332,9 @@ Create a new portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -389,9 +389,9 @@ Permanently delete a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -445,9 +445,9 @@ Permanently delete a portfolio comment for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -501,9 +501,9 @@ Permanently delete an portfolio-goal mapping.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -557,9 +557,9 @@ Permanently delete a portfolio holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -613,9 +613,9 @@ Permanently delete a portfolio transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -669,9 +669,9 @@ Permanently delete a portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -725,9 +725,9 @@ Retrieve the information for a securities associated with a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -792,9 +792,9 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -857,9 +857,9 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -922,9 +922,9 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -979,9 +979,9 @@ List all comments for all portfolios defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1044,9 +1044,9 @@ Retrieve the information for a portfolio comment for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1101,9 +1101,9 @@ Get information for all portfolio-goal mappings defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1166,9 +1166,9 @@ Retrieve the information for a specific portfolio-goal mapping.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1223,9 +1223,9 @@ Get the information for all holding records for all portfolios defined for your 
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1288,9 +1288,9 @@ Retrieve the information for a portfolio holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1345,9 +1345,9 @@ Get the information for all transaction records for all portfolios defined for y
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1410,9 +1410,9 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1467,9 +1467,9 @@ Retrieve a portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1524,9 +1524,9 @@ Update the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1583,9 +1583,9 @@ Update the information for a portfolio comment for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1642,9 +1642,9 @@ Update the information for an portfolio-goal mapping.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1701,9 +1701,9 @@ Update the information for a portfolio holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1760,9 +1760,9 @@ Update the information for a portfolio transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1819,9 +1819,9 @@ Update a portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

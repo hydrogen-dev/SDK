@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AllocationNodeMap();
+    instance = new HydrogenNucleusApi.AllocationNodeMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,13 +53,13 @@
   describe('AllocationNodeMap', function() {
     it('should create an instance of AllocationNodeMap', function() {
       // uncomment below and update the code to test AllocationNodeMap
-      //var instane = new HydrogenAtomApi.AllocationNodeMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.AllocationNodeMap);
+      //var instane = new HydrogenNucleusApi.AllocationNodeMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AllocationNodeMap);
     });
 
     it('should have the property nodeId (base name: "node_id")', function() {
       // uncomment below and update the code to test the property nodeId
-      //var instane = new HydrogenAtomApi.AllocationNodeMap();
+      //var instane = new HydrogenNucleusApi.AllocationNodeMap();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# AtomApi::ClientViewGoalData
+# NucleusApi::ClientViewGoalData
 
 ## Properties
 Name | Type | Description | Notes

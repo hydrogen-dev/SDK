@@ -1,4 +1,4 @@
-# HydrogenAtomApi.NodeRelationship
+# HydrogenNucleusApi.NodeRelationship
 
 ## Properties
 Name | Type | Description | Notes

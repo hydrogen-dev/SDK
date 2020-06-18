@@ -1,0 +1,22 @@
+{
+  "name": "hydrogen_integration_api",
+  "version": "1.2.1",
+  "description": "The_Hydrogen_Integration_API",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.7.0",
+    "querystring": "0.2.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "^8.0.1",
+    "sinon": "1.17.3"
+  }
+}

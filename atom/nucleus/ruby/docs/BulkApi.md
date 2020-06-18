@@ -1,4 +1,4 @@
-# AtomApi::BulkApi
+# NucleusApi::BulkApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -20,9 +20,9 @@ Create a new bulk data for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -31,9 +31,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BulkApi.new
+api_instance = NucleusApi::BulkApi.new
 
-data = AtomApi::JsonNode.new # JsonNode | data
+data = NucleusApi::JsonNode.new # JsonNode | data
 
 entity_uri = 'entity_uri_example' # String | UUID entity_uri
 
@@ -42,7 +42,7 @@ begin
   #Create a bulk data
   result = api_instance.create_bulk_using_post(data, entity_uri)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BulkApi->create_bulk_using_post: #{e}"
 end
 ```
@@ -79,9 +79,9 @@ Delete a bulk data for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -90,9 +90,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BulkApi.new
+api_instance = NucleusApi::BulkApi.new
 
-data = AtomApi::JsonNode.new # JsonNode | data
+data = NucleusApi::JsonNode.new # JsonNode | data
 
 entity_uri = 'entity_uri_example' # String | UUID entity_uri
 
@@ -101,7 +101,7 @@ begin
   #Delete a bulk data
   result = api_instance.delete_bulk_using_delete(data, entity_uri)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BulkApi->delete_bulk_using_delete: #{e}"
 end
 ```
@@ -138,9 +138,9 @@ Get the status of bulk transaction.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -149,7 +149,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BulkApi.new
+api_instance = NucleusApi::BulkApi.new
 
 id = 'id_example' # String | UUID Bulk Transaction Id
 
@@ -158,7 +158,7 @@ begin
   #Status of bulk transaction
   result = api_instance.get_bulk_status_using_get(id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BulkApi->get_bulk_status_using_get: #{e}"
 end
 ```
@@ -194,9 +194,9 @@ Update a bulk data for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -205,9 +205,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::BulkApi.new
+api_instance = NucleusApi::BulkApi.new
 
-data = AtomApi::JsonNode.new # JsonNode | data
+data = NucleusApi::JsonNode.new # JsonNode | data
 
 entity_uri = 'entity_uri_example' # String | UUID entity_uri
 
@@ -216,7 +216,7 @@ begin
   #Update a bulk data
   result = api_instance.update_bulk_using_put(data, entity_uri)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling BulkApi->update_bulk_using_put: #{e}"
 end
 ```

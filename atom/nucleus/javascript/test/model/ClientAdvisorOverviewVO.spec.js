@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+    instance = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,61 +53,61 @@
   describe('ClientAdvisorOverviewVO', function() {
     it('should create an instance of ClientAdvisorOverviewVO', function() {
       // uncomment below and update the code to test ClientAdvisorOverviewVO
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientAdvisorOverviewVO);
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientAdvisorOverviewVO);
     });
 
     it('should have the property age (base name: "age")', function() {
       // uncomment below and update the code to test the property age
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientAccountList (base name: "client_account_list")', function() {
       // uncomment below and update the code to test the property clientAccountList
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientAssets (base name: "client_assets")', function() {
       // uncomment below and update the code to test the property clientAssets
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property dateOfBirth (base name: "date_of_birth")', function() {
       // uncomment below and update the code to test the property dateOfBirth
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property firstName (base name: "first_name")', function() {
       // uncomment below and update the code to test the property firstName
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property gender (base name: "gender")', function() {
       // uncomment below and update the code to test the property gender
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property income (base name: "income")', function() {
       // uncomment below and update the code to test the property income
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 
     it('should have the property lastName (base name: "last_name")', function() {
       // uncomment below and update the code to test the property lastName
-      //var instane = new HydrogenAtomApi.ClientAdvisorOverviewVO();
+      //var instane = new HydrogenNucleusApi.ClientAdvisorOverviewVO();
       //expect(instance).to.be();
     });
 

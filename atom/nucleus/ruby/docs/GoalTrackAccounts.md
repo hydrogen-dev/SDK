@@ -1,4 +1,4 @@
-# AtomApi::GoalTrackAccounts
+# NucleusApi::GoalTrackAccounts
 
 ## Properties
 Name | Type | Description | Notes

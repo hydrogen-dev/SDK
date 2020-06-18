@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientAccountAdvisorVO();
+    instance = new HydrogenNucleusApi.ClientAccountAdvisorVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('ClientAccountAdvisorVO', function() {
     it('should create an instance of ClientAccountAdvisorVO', function() {
       // uncomment below and update the code to test ClientAccountAdvisorVO
-      //var instane = new HydrogenAtomApi.ClientAccountAdvisorVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientAccountAdvisorVO);
+      //var instane = new HydrogenNucleusApi.ClientAccountAdvisorVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientAccountAdvisorVO);
     });
 
     it('should have the property accountAssets (base name: "account_assets")', function() {
       // uncomment below and update the code to test the property accountAssets
-      //var instane = new HydrogenAtomApi.ClientAccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.ClientAccountAdvisorVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountName (base name: "account_name")', function() {
       // uncomment below and update the code to test the property accountName
-      //var instane = new HydrogenAtomApi.ClientAccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.ClientAccountAdvisorVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountType (base name: "account_type")', function() {
       // uncomment below and update the code to test the property accountType
-      //var instane = new HydrogenAtomApi.ClientAccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.ClientAccountAdvisorVO();
       //expect(instance).to.be();
     });
 
     it('should have the property asOfDate (base name: "as_of_date")', function() {
       // uncomment below and update the code to test the property asOfDate
-      //var instane = new HydrogenAtomApi.ClientAccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.ClientAccountAdvisorVO();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace com\hydrogen;
+namespace com\hydrogen\nucleus;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -92,6 +92,10 @@ class AuthApiClient
         } catch (RequestException $e) {
             throw new ApiException($e->getMessage(), $e->getCode(), null, null);
         }
+    }
+
+    function setAccessToken($token) {
+        return Configuration::getDefaultConfiguration()->setAccessToken($token);
     }
 }
 

@@ -1,4 +1,4 @@
-# HydrogenAtomApi.GoalTrackAccounts
+# HydrogenNucleusApi.GoalTrackAccounts
 
 ## Properties
 Name | Type | Description | Notes

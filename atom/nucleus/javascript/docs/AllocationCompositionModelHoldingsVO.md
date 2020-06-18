@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AllocationCompositionModelHoldingsVO
+# HydrogenNucleusApi.AllocationCompositionModelHoldingsVO
 
 ## Properties
 Name | Type | Description | Notes

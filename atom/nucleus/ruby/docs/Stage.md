@@ -1,4 +1,4 @@
-# AtomApi::Stage
+# NucleusApi::Stage
 
 ## Properties
 Name | Type | Description | Notes

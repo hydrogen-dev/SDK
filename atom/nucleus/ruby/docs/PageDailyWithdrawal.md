@@ -1,4 +1,4 @@
-# AtomApi::PageDailyWithdrawal
+# NucleusApi::PageDailyWithdrawal
 
 ## Properties
 Name | Type | Description | Notes

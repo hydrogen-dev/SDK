@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./AllocationCompositionModelHoldingsVO'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AllocationCompositionAggregatedVO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AllocationCompositionModelHoldingsVO);
+    root.HydrogenNucleusApi.AllocationCompositionAggregatedVO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AllocationCompositionModelHoldingsVO);
   }
 }(this, function(ApiClient, AllocationCompositionModelHoldingsVO) {
   'use strict';

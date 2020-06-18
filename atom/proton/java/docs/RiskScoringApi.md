@@ -20,10 +20,10 @@ Calculate a dimensional risk score based on questionnaire responses
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import RiskScoringApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -80,10 +80,10 @@ Allocate based on a risk score
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import RiskScoringApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -140,10 +140,10 @@ Calculate a risk score based on questionnaire responses
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import RiskScoringApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

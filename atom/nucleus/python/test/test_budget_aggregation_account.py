@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.budget_aggregation_account import BudgetAggregationAccount  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.budget_aggregation_account import BudgetAggregationAccount  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestBudgetAggregationAccount(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBudgetAggregationAccount(unittest.TestCase):
     def testBudgetAggregationAccount(self):
         """Test BudgetAggregationAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.budget_aggregation_account.BudgetAggregationAccount()  # noqa: E501
+        # model = nucleus_api.models.budget_aggregation_account.BudgetAggregationAccount()  # noqa: E501
         pass
 
 

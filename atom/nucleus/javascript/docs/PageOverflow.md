@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageOverflow
+# HydrogenNucleusApi.PageOverflow
 
 ## Properties
 Name | Type | Description | Notes

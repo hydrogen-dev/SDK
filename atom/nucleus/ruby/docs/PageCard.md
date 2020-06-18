@@ -1,4 +1,4 @@
-# AtomApi::PageCard
+# NucleusApi::PageCard
 
 ## Properties
 Name | Type | Description | Notes

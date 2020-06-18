@@ -1,4 +1,4 @@
-# AtomApi::PageNode
+# NucleusApi::PageNode
 
 ## Properties
 Name | Type | Description | Notes

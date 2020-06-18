@@ -1,4 +1,4 @@
-# AtomApi::InsuranceDiscount
+# NucleusApi::InsuranceDiscount
 
 ## Properties
 Name | Type | Description | Notes

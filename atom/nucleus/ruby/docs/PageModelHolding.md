@@ -1,4 +1,4 @@
-# AtomApi::PageModelHolding
+# NucleusApi::PageModelHolding
 
 ## Properties
 Name | Type | Description | Notes

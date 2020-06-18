@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Model'), require('../model/ModelAssetSize'), require('../model/ModelComment'), require('../model/ModelHolding'), require('../model/ModelTransaction'), require('../model/OrderReconcileRequest'), require('../model/PageModel'), require('../model/PageModelAssetSize'), require('../model/PageModelComment'), require('../model/PageModelHolding'), require('../model/PageModelTransaction'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.ModelApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Model, root.HydrogenAtomApi.ModelAssetSize, root.HydrogenAtomApi.ModelComment, root.HydrogenAtomApi.ModelHolding, root.HydrogenAtomApi.ModelTransaction, root.HydrogenAtomApi.OrderReconcileRequest, root.HydrogenAtomApi.PageModel, root.HydrogenAtomApi.PageModelAssetSize, root.HydrogenAtomApi.PageModelComment, root.HydrogenAtomApi.PageModelHolding, root.HydrogenAtomApi.PageModelTransaction);
+    root.HydrogenNucleusApi.ModelApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Model, root.HydrogenNucleusApi.ModelAssetSize, root.HydrogenNucleusApi.ModelComment, root.HydrogenNucleusApi.ModelHolding, root.HydrogenNucleusApi.ModelTransaction, root.HydrogenNucleusApi.OrderReconcileRequest, root.HydrogenNucleusApi.PageModel, root.HydrogenNucleusApi.PageModelAssetSize, root.HydrogenNucleusApi.PageModelComment, root.HydrogenNucleusApi.PageModelHolding, root.HydrogenNucleusApi.PageModelTransaction);
   }
 }(this, function(ApiClient, Model, ModelAssetSize, ModelComment, ModelHolding, ModelTransaction, OrderReconcileRequest, PageModel, PageModelAssetSize, PageModelComment, PageModelHolding, PageModelTransaction) {
   'use strict';

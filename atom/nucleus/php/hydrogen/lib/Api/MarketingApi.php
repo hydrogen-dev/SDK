@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * MarketingApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class MarketingApi
      *
      * Create a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignData $campaign_data_request campaignDataRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignData $campaign_data_request campaignDataRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CampaignData
+     * @return \com\hydrogen\nucleus\Model\CampaignData
      */
     public function createCampaignDataUsingPost($campaign_data_request)
     {
@@ -109,15 +109,15 @@ class MarketingApi
      *
      * Create a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignData $campaign_data_request campaignDataRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignData $campaign_data_request campaignDataRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CampaignData, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CampaignData, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCampaignDataUsingPostWithHttpInfo($campaign_data_request)
     {
-        $returnType = '\com\hydrogen\Model\CampaignData';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignData';
         $request = $this->createCampaignDataUsingPostRequest($campaign_data_request);
 
         try {
@@ -169,7 +169,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CampaignData',
+                        '\com\hydrogen\nucleus\Model\CampaignData',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class MarketingApi
      *
      * Create a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignData $campaign_data_request campaignDataRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignData $campaign_data_request campaignDataRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class MarketingApi
      *
      * Create a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignData $campaign_data_request campaignDataRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignData $campaign_data_request campaignDataRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCampaignDataUsingPostAsyncWithHttpInfo($campaign_data_request)
     {
-        $returnType = '\com\hydrogen\Model\CampaignData';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignData';
         $request = $this->createCampaignDataUsingPostRequest($campaign_data_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class MarketingApi
     /**
      * Create request for operation 'createCampaignDataUsingPost'
      *
-     * @param  \com\hydrogen\Model\CampaignData $campaign_data_request campaignDataRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignData $campaign_data_request campaignDataRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class MarketingApi
      *
      * Create a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CampaignPlan
+     * @return \com\hydrogen\nucleus\Model\CampaignPlan
      */
     public function createCampaignPlanUsingPost($campaign_plan_request)
     {
@@ -377,15 +377,15 @@ class MarketingApi
      *
      * Create a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CampaignPlan, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CampaignPlan, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCampaignPlanUsingPostWithHttpInfo($campaign_plan_request)
     {
-        $returnType = '\com\hydrogen\Model\CampaignPlan';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignPlan';
         $request = $this->createCampaignPlanUsingPostRequest($campaign_plan_request);
 
         try {
@@ -437,7 +437,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CampaignPlan',
+                        '\com\hydrogen\nucleus\Model\CampaignPlan',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class MarketingApi
      *
      * Create a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class MarketingApi
      *
      * Create a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCampaignPlanUsingPostAsyncWithHttpInfo($campaign_plan_request)
     {
-        $returnType = '\com\hydrogen\Model\CampaignPlan';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignPlan';
         $request = $this->createCampaignPlanUsingPostRequest($campaign_plan_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class MarketingApi
     /**
      * Create request for operation 'createCampaignPlanUsingPost'
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan_request campaignPlanRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class MarketingApi
      *
      * Create a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign_request campaignRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign_request campaignRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Campaign
+     * @return \com\hydrogen\nucleus\Model\Campaign
      */
     public function createCampaignUsingPost($campaign_request)
     {
@@ -645,15 +645,15 @@ class MarketingApi
      *
      * Create a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign_request campaignRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign_request campaignRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Campaign, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Campaign, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCampaignUsingPostWithHttpInfo($campaign_request)
     {
-        $returnType = '\com\hydrogen\Model\Campaign';
+        $returnType = '\com\hydrogen\nucleus\Model\Campaign';
         $request = $this->createCampaignUsingPostRequest($campaign_request);
 
         try {
@@ -705,7 +705,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Campaign',
+                        '\com\hydrogen\nucleus\Model\Campaign',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class MarketingApi
      *
      * Create a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign_request campaignRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign_request campaignRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class MarketingApi
      *
      * Create a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign_request campaignRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign_request campaignRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCampaignUsingPostAsyncWithHttpInfo($campaign_request)
     {
-        $returnType = '\com\hydrogen\Model\Campaign';
+        $returnType = '\com\hydrogen\nucleus\Model\Campaign';
         $request = $this->createCampaignUsingPostRequest($campaign_request);
 
         return $this->client
@@ -790,7 +790,7 @@ class MarketingApi
     /**
      * Create request for operation 'createCampaignUsingPost'
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign_request campaignRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign_request campaignRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,11 +896,11 @@ class MarketingApi
      *
      * Mark a client signing up through a campaign
      *
-     * @param  \com\hydrogen\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientCampaignMapping
+     * @return \com\hydrogen\nucleus\Model\ClientCampaignMapping
      */
     public function createClientCampaignUsingPost($campaign_mapping_request)
     {
@@ -913,15 +913,15 @@ class MarketingApi
      *
      * Mark a client signing up through a campaign
      *
-     * @param  \com\hydrogen\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientCampaignMapping, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientCampaignMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function createClientCampaignUsingPostWithHttpInfo($campaign_mapping_request)
     {
-        $returnType = '\com\hydrogen\Model\ClientCampaignMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientCampaignMapping';
         $request = $this->createClientCampaignUsingPostRequest($campaign_mapping_request);
 
         try {
@@ -973,7 +973,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientCampaignMapping',
+                        '\com\hydrogen\nucleus\Model\ClientCampaignMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class MarketingApi
      *
      * Mark a client signing up through a campaign
      *
-     * @param  \com\hydrogen\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,14 +1008,14 @@ class MarketingApi
      *
      * Mark a client signing up through a campaign
      *
-     * @param  \com\hydrogen\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createClientCampaignUsingPostAsyncWithHttpInfo($campaign_mapping_request)
     {
-        $returnType = '\com\hydrogen\Model\ClientCampaignMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientCampaignMapping';
         $request = $this->createClientCampaignUsingPostRequest($campaign_mapping_request);
 
         return $this->client
@@ -1058,7 +1058,7 @@ class MarketingApi
     /**
      * Create request for operation 'createClientCampaignUsingPost'
      *
-     * @param  \com\hydrogen\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ClientCampaignMapping $campaign_mapping_request campaignMappingRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1166,7 +1166,7 @@ class MarketingApi
      *
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1182,7 +1182,7 @@ class MarketingApi
      *
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1402,7 +1402,7 @@ class MarketingApi
      *
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1418,7 +1418,7 @@ class MarketingApi
      *
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1638,7 +1638,7 @@ class MarketingApi
      *
      * @param  string $campaign_id Campaign Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1654,7 +1654,7 @@ class MarketingApi
      *
      * @param  string $campaign_id Campaign Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1874,7 +1874,7 @@ class MarketingApi
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1890,7 +1890,7 @@ class MarketingApi
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2114,9 +2114,9 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageCampaign_
+     * @return \com\hydrogen\nucleus\Model\PageCampaign_
      */
     public function getCampaignAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2135,13 +2135,13 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageCampaign_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageCampaign_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCampaignAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCampaign_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCampaign_';
         $request = $this->getCampaignAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2193,7 +2193,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageCampaign_',
+                        '\com\hydrogen\nucleus\Model\PageCampaign_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2243,7 +2243,7 @@ class MarketingApi
      */
     public function getCampaignAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCampaign_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCampaign_';
         $request = $this->getCampaignAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2413,9 +2413,9 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageCampaignData_
+     * @return \com\hydrogen\nucleus\Model\PageCampaignData_
      */
     public function getCampaignDataAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2434,13 +2434,13 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageCampaignData_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageCampaignData_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCampaignDataAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCampaignData_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCampaignData_';
         $request = $this->getCampaignDataAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2492,7 +2492,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageCampaignData_',
+                        '\com\hydrogen\nucleus\Model\PageCampaignData_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2542,7 +2542,7 @@ class MarketingApi
      */
     public function getCampaignDataAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCampaignData_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCampaignData_';
         $request = $this->getCampaignDataAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2708,9 +2708,9 @@ class MarketingApi
      *
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CampaignData
+     * @return \com\hydrogen\nucleus\Model\CampaignData
      */
     public function getCampaignDataUsingGet($campaign_data_id)
     {
@@ -2725,13 +2725,13 @@ class MarketingApi
      *
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CampaignData, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CampaignData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCampaignDataUsingGetWithHttpInfo($campaign_data_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignData';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignData';
         $request = $this->getCampaignDataUsingGetRequest($campaign_data_id);
 
         try {
@@ -2783,7 +2783,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CampaignData',
+                        '\com\hydrogen\nucleus\Model\CampaignData',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2825,7 +2825,7 @@ class MarketingApi
      */
     public function getCampaignDataUsingGetAsyncWithHttpInfo($campaign_data_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignData';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignData';
         $request = $this->getCampaignDataUsingGetRequest($campaign_data_id);
 
         return $this->client
@@ -2985,9 +2985,9 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageCampaignPlan_
+     * @return \com\hydrogen\nucleus\Model\PageCampaignPlan_
      */
     public function getCampaignPlanAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3006,13 +3006,13 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageCampaignPlan_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageCampaignPlan_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCampaignPlanAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCampaignPlan_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCampaignPlan_';
         $request = $this->getCampaignPlanAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3064,7 +3064,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageCampaignPlan_',
+                        '\com\hydrogen\nucleus\Model\PageCampaignPlan_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3114,7 +3114,7 @@ class MarketingApi
      */
     public function getCampaignPlanAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCampaignPlan_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCampaignPlan_';
         $request = $this->getCampaignPlanAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3280,9 +3280,9 @@ class MarketingApi
      *
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CampaignPlan
+     * @return \com\hydrogen\nucleus\Model\CampaignPlan
      */
     public function getCampaignPlanUsingGet($campaign_plan_id)
     {
@@ -3297,13 +3297,13 @@ class MarketingApi
      *
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CampaignPlan, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CampaignPlan, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCampaignPlanUsingGetWithHttpInfo($campaign_plan_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignPlan';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignPlan';
         $request = $this->getCampaignPlanUsingGetRequest($campaign_plan_id);
 
         try {
@@ -3355,7 +3355,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CampaignPlan',
+                        '\com\hydrogen\nucleus\Model\CampaignPlan',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3397,7 +3397,7 @@ class MarketingApi
      */
     public function getCampaignPlanUsingGetAsyncWithHttpInfo($campaign_plan_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignPlan';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignPlan';
         $request = $this->getCampaignPlanUsingGetRequest($campaign_plan_id);
 
         return $this->client
@@ -3553,9 +3553,9 @@ class MarketingApi
      *
      * @param  string $campaign_id Campaign Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Campaign
+     * @return \com\hydrogen\nucleus\Model\Campaign
      */
     public function getCampaignUsingGet($campaign_id)
     {
@@ -3570,13 +3570,13 @@ class MarketingApi
      *
      * @param  string $campaign_id Campaign Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Campaign, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Campaign, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCampaignUsingGetWithHttpInfo($campaign_id)
     {
-        $returnType = '\com\hydrogen\Model\Campaign';
+        $returnType = '\com\hydrogen\nucleus\Model\Campaign';
         $request = $this->getCampaignUsingGetRequest($campaign_id);
 
         try {
@@ -3628,7 +3628,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Campaign',
+                        '\com\hydrogen\nucleus\Model\Campaign',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3670,7 +3670,7 @@ class MarketingApi
      */
     public function getCampaignUsingGetAsyncWithHttpInfo($campaign_id)
     {
-        $returnType = '\com\hydrogen\Model\Campaign';
+        $returnType = '\com\hydrogen\nucleus\Model\Campaign';
         $request = $this->getCampaignUsingGetRequest($campaign_id);
 
         return $this->client
@@ -3830,9 +3830,9 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageClientCampaignMapping_
+     * @return \com\hydrogen\nucleus\Model\PageClientCampaignMapping_
      */
     public function getClientCampaignAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3851,13 +3851,13 @@ class MarketingApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageClientCampaignMapping_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageClientCampaignMapping_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientCampaignAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientCampaignMapping_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientCampaignMapping_';
         $request = $this->getClientCampaignAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3909,7 +3909,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageClientCampaignMapping_',
+                        '\com\hydrogen\nucleus\Model\PageClientCampaignMapping_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3959,7 +3959,7 @@ class MarketingApi
      */
     public function getClientCampaignAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageClientCampaignMapping_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientCampaignMapping_';
         $request = $this->getClientCampaignAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4125,9 +4125,9 @@ class MarketingApi
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientCampaignMapping
+     * @return \com\hydrogen\nucleus\Model\ClientCampaignMapping
      */
     public function getClientCampaignUsingGet($client_campaign_id)
     {
@@ -4142,13 +4142,13 @@ class MarketingApi
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientCampaignMapping, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientCampaignMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientCampaignUsingGetWithHttpInfo($client_campaign_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientCampaignMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientCampaignMapping';
         $request = $this->getClientCampaignUsingGetRequest($client_campaign_id);
 
         try {
@@ -4200,7 +4200,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientCampaignMapping',
+                        '\com\hydrogen\nucleus\Model\ClientCampaignMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4242,7 +4242,7 @@ class MarketingApi
      */
     public function getClientCampaignUsingGetAsyncWithHttpInfo($client_campaign_id)
     {
-        $returnType = '\com\hydrogen\Model\ClientCampaignMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientCampaignMapping';
         $request = $this->getClientCampaignUsingGetRequest($client_campaign_id);
 
         return $this->client
@@ -4396,12 +4396,12 @@ class MarketingApi
      *
      * Update a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_data campaign_data (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_data campaign_data (required)
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CampaignData
+     * @return \com\hydrogen\nucleus\Model\CampaignData
      */
     public function updateCampaignDataUsingPut($campaign_data, $campaign_data_id)
     {
@@ -4414,16 +4414,16 @@ class MarketingApi
      *
      * Update a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_data campaign_data (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_data campaign_data (required)
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CampaignData, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CampaignData, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCampaignDataUsingPutWithHttpInfo($campaign_data, $campaign_data_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignData';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignData';
         $request = $this->updateCampaignDataUsingPutRequest($campaign_data, $campaign_data_id);
 
         try {
@@ -4475,7 +4475,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CampaignData',
+                        '\com\hydrogen\nucleus\Model\CampaignData',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4490,7 +4490,7 @@ class MarketingApi
      *
      * Update a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_data campaign_data (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_data campaign_data (required)
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4511,7 +4511,7 @@ class MarketingApi
      *
      * Update a campaign data record
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_data campaign_data (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_data campaign_data (required)
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4519,7 +4519,7 @@ class MarketingApi
      */
     public function updateCampaignDataUsingPutAsyncWithHttpInfo($campaign_data, $campaign_data_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignData';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignData';
         $request = $this->updateCampaignDataUsingPutRequest($campaign_data, $campaign_data_id);
 
         return $this->client
@@ -4562,7 +4562,7 @@ class MarketingApi
     /**
      * Create request for operation 'updateCampaignDataUsingPut'
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_data campaign_data (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_data campaign_data (required)
      * @param  string $campaign_data_id UUID campaign_data_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4683,12 +4683,12 @@ class MarketingApi
      *
      * Update a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan campaign_plan (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan campaign_plan (required)
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CampaignPlan
+     * @return \com\hydrogen\nucleus\Model\CampaignPlan
      */
     public function updateCampaignPlanUsingPut($campaign_plan, $campaign_plan_id)
     {
@@ -4701,16 +4701,16 @@ class MarketingApi
      *
      * Update a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan campaign_plan (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan campaign_plan (required)
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CampaignPlan, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CampaignPlan, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCampaignPlanUsingPutWithHttpInfo($campaign_plan, $campaign_plan_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignPlan';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignPlan';
         $request = $this->updateCampaignPlanUsingPutRequest($campaign_plan, $campaign_plan_id);
 
         try {
@@ -4762,7 +4762,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CampaignPlan',
+                        '\com\hydrogen\nucleus\Model\CampaignPlan',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4777,7 +4777,7 @@ class MarketingApi
      *
      * Update a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan campaign_plan (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan campaign_plan (required)
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4798,7 +4798,7 @@ class MarketingApi
      *
      * Update a campaign plan
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan campaign_plan (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan campaign_plan (required)
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4806,7 +4806,7 @@ class MarketingApi
      */
     public function updateCampaignPlanUsingPutAsyncWithHttpInfo($campaign_plan, $campaign_plan_id)
     {
-        $returnType = '\com\hydrogen\Model\CampaignPlan';
+        $returnType = '\com\hydrogen\nucleus\Model\CampaignPlan';
         $request = $this->updateCampaignPlanUsingPutRequest($campaign_plan, $campaign_plan_id);
 
         return $this->client
@@ -4849,7 +4849,7 @@ class MarketingApi
     /**
      * Create request for operation 'updateCampaignPlanUsingPut'
      *
-     * @param  \com\hydrogen\Model\CampaignPlan $campaign_plan campaign_plan (required)
+     * @param  \com\hydrogen\nucleus\Model\CampaignPlan $campaign_plan campaign_plan (required)
      * @param  string $campaign_plan_id UUID campaign_plan_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4970,12 +4970,12 @@ class MarketingApi
      *
      * Update a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign campaign (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign campaign (required)
      * @param  string $campaign_id UUID campaign_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Campaign
+     * @return \com\hydrogen\nucleus\Model\Campaign
      */
     public function updateCampaignUsingPut($campaign, $campaign_id)
     {
@@ -4988,16 +4988,16 @@ class MarketingApi
      *
      * Update a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign campaign (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign campaign (required)
      * @param  string $campaign_id UUID campaign_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Campaign, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Campaign, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCampaignUsingPutWithHttpInfo($campaign, $campaign_id)
     {
-        $returnType = '\com\hydrogen\Model\Campaign';
+        $returnType = '\com\hydrogen\nucleus\Model\Campaign';
         $request = $this->updateCampaignUsingPutRequest($campaign, $campaign_id);
 
         try {
@@ -5049,7 +5049,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Campaign',
+                        '\com\hydrogen\nucleus\Model\Campaign',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5064,7 +5064,7 @@ class MarketingApi
      *
      * Update a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign campaign (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign campaign (required)
      * @param  string $campaign_id UUID campaign_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5085,7 +5085,7 @@ class MarketingApi
      *
      * Update a campaign
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign campaign (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign campaign (required)
      * @param  string $campaign_id UUID campaign_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5093,7 +5093,7 @@ class MarketingApi
      */
     public function updateCampaignUsingPutAsyncWithHttpInfo($campaign, $campaign_id)
     {
-        $returnType = '\com\hydrogen\Model\Campaign';
+        $returnType = '\com\hydrogen\nucleus\Model\Campaign';
         $request = $this->updateCampaignUsingPutRequest($campaign, $campaign_id);
 
         return $this->client
@@ -5136,7 +5136,7 @@ class MarketingApi
     /**
      * Create request for operation 'updateCampaignUsingPut'
      *
-     * @param  \com\hydrogen\Model\Campaign $campaign campaign (required)
+     * @param  \com\hydrogen\nucleus\Model\Campaign $campaign campaign (required)
      * @param  string $campaign_id UUID campaign_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5258,11 +5258,11 @@ class MarketingApi
      * Update a clients/ips pair under a campaign
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ClientCampaignMapping
+     * @return \com\hydrogen\nucleus\Model\ClientCampaignMapping
      */
     public function updateClientCampaignUsingPut($client_campaign_id, $json_node)
     {
@@ -5276,15 +5276,15 @@ class MarketingApi
      * Update a clients/ips pair under a campaign
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ClientCampaignMapping, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ClientCampaignMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateClientCampaignUsingPutWithHttpInfo($client_campaign_id, $json_node)
     {
-        $returnType = '\com\hydrogen\Model\ClientCampaignMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientCampaignMapping';
         $request = $this->updateClientCampaignUsingPutRequest($client_campaign_id, $json_node);
 
         try {
@@ -5336,7 +5336,7 @@ class MarketingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ClientCampaignMapping',
+                        '\com\hydrogen\nucleus\Model\ClientCampaignMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5352,7 +5352,7 @@ class MarketingApi
      * Update a clients/ips pair under a campaign
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5373,14 +5373,14 @@ class MarketingApi
      * Update a clients/ips pair under a campaign
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateClientCampaignUsingPutAsyncWithHttpInfo($client_campaign_id, $json_node)
     {
-        $returnType = '\com\hydrogen\Model\ClientCampaignMapping';
+        $returnType = '\com\hydrogen\nucleus\Model\ClientCampaignMapping';
         $request = $this->updateClientCampaignUsingPutRequest($client_campaign_id, $json_node);
 
         return $this->client
@@ -5424,7 +5424,7 @@ class MarketingApi
      * Create request for operation 'updateClientCampaignUsingPut'
      *
      * @param  string $client_campaign_id UUID client_campaign_id (required)
-     * @param  \com\hydrogen\Model\JsonNode $json_node jsonNode (required)
+     * @param  \com\hydrogen\nucleus\Model\JsonNode $json_node jsonNode (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

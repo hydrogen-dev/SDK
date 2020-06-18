@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * CustomerApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class CustomerApi
      *
      * Create a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customerRevenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customerRevenue (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CustomerRevenue
+     * @return \com\hydrogen\nucleus\Model\CustomerRevenue
      */
     public function createCustomerRevenueUsingPost($customer_revenue)
     {
@@ -109,15 +109,15 @@ class CustomerApi
      *
      * Create a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customerRevenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customerRevenue (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CustomerRevenue, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CustomerRevenue, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCustomerRevenueUsingPostWithHttpInfo($customer_revenue)
     {
-        $returnType = '\com\hydrogen\Model\CustomerRevenue';
+        $returnType = '\com\hydrogen\nucleus\Model\CustomerRevenue';
         $request = $this->createCustomerRevenueUsingPostRequest($customer_revenue);
 
         try {
@@ -169,7 +169,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CustomerRevenue',
+                        '\com\hydrogen\nucleus\Model\CustomerRevenue',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class CustomerApi
      *
      * Create a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customerRevenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customerRevenue (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class CustomerApi
      *
      * Create a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customerRevenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customerRevenue (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCustomerRevenueUsingPostAsyncWithHttpInfo($customer_revenue)
     {
-        $returnType = '\com\hydrogen\Model\CustomerRevenue';
+        $returnType = '\com\hydrogen\nucleus\Model\CustomerRevenue';
         $request = $this->createCustomerRevenueUsingPostRequest($customer_revenue);
 
         return $this->client
@@ -254,7 +254,7 @@ class CustomerApi
     /**
      * Create request for operation 'createCustomerRevenueUsingPost'
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customerRevenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customerRevenue (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class CustomerApi
      *
      * Create a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Customer
+     * @return \com\hydrogen\nucleus\Model\Customer
      */
     public function createCustomerUsingPost($customer)
     {
@@ -377,15 +377,15 @@ class CustomerApi
      *
      * Create a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCustomerUsingPostWithHttpInfo($customer)
     {
-        $returnType = '\com\hydrogen\Model\Customer';
+        $returnType = '\com\hydrogen\nucleus\Model\Customer';
         $request = $this->createCustomerUsingPostRequest($customer);
 
         try {
@@ -437,7 +437,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Customer',
+                        '\com\hydrogen\nucleus\Model\Customer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class CustomerApi
      *
      * Create a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class CustomerApi
      *
      * Create a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCustomerUsingPostAsyncWithHttpInfo($customer)
     {
-        $returnType = '\com\hydrogen\Model\Customer';
+        $returnType = '\com\hydrogen\nucleus\Model\Customer';
         $request = $this->createCustomerUsingPostRequest($customer);
 
         return $this->client
@@ -522,7 +522,7 @@ class CustomerApi
     /**
      * Create request for operation 'createCustomerUsingPost'
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -630,7 +630,7 @@ class CustomerApi
      *
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -646,7 +646,7 @@ class CustomerApi
      *
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -866,7 +866,7 @@ class CustomerApi
      *
      * @param  string $customer_id UUID customer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -882,7 +882,7 @@ class CustomerApi
      *
      * @param  string $customer_id UUID customer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1106,9 +1106,9 @@ class CustomerApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageCustomer_
+     * @return \com\hydrogen\nucleus\Model\PageCustomer_
      */
     public function getCustomerAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1127,13 +1127,13 @@ class CustomerApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageCustomer_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageCustomer_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCustomer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCustomer_';
         $request = $this->getCustomerAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1185,7 +1185,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageCustomer_',
+                        '\com\hydrogen\nucleus\Model\PageCustomer_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1235,7 +1235,7 @@ class CustomerApi
      */
     public function getCustomerAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCustomer_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCustomer_';
         $request = $this->getCustomerAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1405,9 +1405,9 @@ class CustomerApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageCustomerRevenue_
+     * @return \com\hydrogen\nucleus\Model\PageCustomerRevenue_
      */
     public function getCustomerRevenueAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1426,13 +1426,13 @@ class CustomerApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageCustomerRevenue_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageCustomerRevenue_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerRevenueAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCustomerRevenue_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCustomerRevenue_';
         $request = $this->getCustomerRevenueAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1484,7 +1484,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageCustomerRevenue_',
+                        '\com\hydrogen\nucleus\Model\PageCustomerRevenue_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1534,7 +1534,7 @@ class CustomerApi
      */
     public function getCustomerRevenueAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageCustomerRevenue_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageCustomerRevenue_';
         $request = $this->getCustomerRevenueAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1700,9 +1700,9 @@ class CustomerApi
      *
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CustomerRevenue
+     * @return \com\hydrogen\nucleus\Model\CustomerRevenue
      */
     public function getCustomerRevenueUsingGet($customer_revenue_id)
     {
@@ -1717,13 +1717,13 @@ class CustomerApi
      *
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CustomerRevenue, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CustomerRevenue, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerRevenueUsingGetWithHttpInfo($customer_revenue_id)
     {
-        $returnType = '\com\hydrogen\Model\CustomerRevenue';
+        $returnType = '\com\hydrogen\nucleus\Model\CustomerRevenue';
         $request = $this->getCustomerRevenueUsingGetRequest($customer_revenue_id);
 
         try {
@@ -1775,7 +1775,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CustomerRevenue',
+                        '\com\hydrogen\nucleus\Model\CustomerRevenue',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1817,7 +1817,7 @@ class CustomerApi
      */
     public function getCustomerRevenueUsingGetAsyncWithHttpInfo($customer_revenue_id)
     {
-        $returnType = '\com\hydrogen\Model\CustomerRevenue';
+        $returnType = '\com\hydrogen\nucleus\Model\CustomerRevenue';
         $request = $this->getCustomerRevenueUsingGetRequest($customer_revenue_id);
 
         return $this->client
@@ -1973,9 +1973,9 @@ class CustomerApi
      *
      * @param  string $customer_id UUID customer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Customer
+     * @return \com\hydrogen\nucleus\Model\Customer
      */
     public function getCustomerUsingGet($customer_id)
     {
@@ -1990,13 +1990,13 @@ class CustomerApi
      *
      * @param  string $customer_id UUID customer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerUsingGetWithHttpInfo($customer_id)
     {
-        $returnType = '\com\hydrogen\Model\Customer';
+        $returnType = '\com\hydrogen\nucleus\Model\Customer';
         $request = $this->getCustomerUsingGetRequest($customer_id);
 
         try {
@@ -2048,7 +2048,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Customer',
+                        '\com\hydrogen\nucleus\Model\Customer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2090,7 +2090,7 @@ class CustomerApi
      */
     public function getCustomerUsingGetAsyncWithHttpInfo($customer_id)
     {
-        $returnType = '\com\hydrogen\Model\Customer';
+        $returnType = '\com\hydrogen\nucleus\Model\Customer';
         $request = $this->getCustomerUsingGetRequest($customer_id);
 
         return $this->client
@@ -2244,12 +2244,12 @@ class CustomerApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\CustomerRevenue
+     * @return \com\hydrogen\nucleus\Model\CustomerRevenue
      */
     public function updateCustomerRevenueUsingPut($customer_revenue, $customer_revenue_id)
     {
@@ -2262,16 +2262,16 @@ class CustomerApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\CustomerRevenue, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\CustomerRevenue, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCustomerRevenueUsingPutWithHttpInfo($customer_revenue, $customer_revenue_id)
     {
-        $returnType = '\com\hydrogen\Model\CustomerRevenue';
+        $returnType = '\com\hydrogen\nucleus\Model\CustomerRevenue';
         $request = $this->updateCustomerRevenueUsingPutRequest($customer_revenue, $customer_revenue_id);
 
         try {
@@ -2323,7 +2323,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\CustomerRevenue',
+                        '\com\hydrogen\nucleus\Model\CustomerRevenue',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2338,7 +2338,7 @@ class CustomerApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2359,7 +2359,7 @@ class CustomerApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2367,7 +2367,7 @@ class CustomerApi
      */
     public function updateCustomerRevenueUsingPutAsyncWithHttpInfo($customer_revenue, $customer_revenue_id)
     {
-        $returnType = '\com\hydrogen\Model\CustomerRevenue';
+        $returnType = '\com\hydrogen\nucleus\Model\CustomerRevenue';
         $request = $this->updateCustomerRevenueUsingPutRequest($customer_revenue, $customer_revenue_id);
 
         return $this->client
@@ -2410,7 +2410,7 @@ class CustomerApi
     /**
      * Create request for operation 'updateCustomerRevenueUsingPut'
      *
-     * @param  \com\hydrogen\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2531,12 +2531,12 @@ class CustomerApi
      *
      * Update a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      * @param  string $customer_id UUID customer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Customer
+     * @return \com\hydrogen\nucleus\Model\Customer
      */
     public function updateCustomerUsingPut($customer, $customer_id)
     {
@@ -2549,16 +2549,16 @@ class CustomerApi
      *
      * Update a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      * @param  string $customer_id UUID customer_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCustomerUsingPutWithHttpInfo($customer, $customer_id)
     {
-        $returnType = '\com\hydrogen\Model\Customer';
+        $returnType = '\com\hydrogen\nucleus\Model\Customer';
         $request = $this->updateCustomerUsingPutRequest($customer, $customer_id);
 
         try {
@@ -2610,7 +2610,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Customer',
+                        '\com\hydrogen\nucleus\Model\Customer',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2625,7 +2625,7 @@ class CustomerApi
      *
      * Update a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      * @param  string $customer_id UUID customer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2646,7 +2646,7 @@ class CustomerApi
      *
      * Update a customer
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      * @param  string $customer_id UUID customer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2654,7 +2654,7 @@ class CustomerApi
      */
     public function updateCustomerUsingPutAsyncWithHttpInfo($customer, $customer_id)
     {
-        $returnType = '\com\hydrogen\Model\Customer';
+        $returnType = '\com\hydrogen\nucleus\Model\Customer';
         $request = $this->updateCustomerUsingPutRequest($customer, $customer_id);
 
         return $this->client
@@ -2697,7 +2697,7 @@ class CustomerApi
     /**
      * Create request for operation 'updateCustomerUsingPut'
      *
-     * @param  \com\hydrogen\Model\Customer $customer customer (required)
+     * @param  \com\hydrogen\nucleus\Model\Customer $customer customer (required)
      * @param  string $customer_id UUID customer_id (required)
      *
      * @throws \InvalidArgumentException

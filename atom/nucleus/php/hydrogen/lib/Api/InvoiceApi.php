@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * InvoiceApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class InvoiceApi
      *
      * Create a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoicePayment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoicePayment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InvoicePayment
+     * @return \com\hydrogen\nucleus\Model\InvoicePayment
      */
     public function createInvoicePaymentUsingPost($invoice_payment)
     {
@@ -109,15 +109,15 @@ class InvoiceApi
      *
      * Create a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoicePayment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoicePayment (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InvoicePayment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InvoicePayment, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInvoicePaymentUsingPostWithHttpInfo($invoice_payment)
     {
-        $returnType = '\com\hydrogen\Model\InvoicePayment';
+        $returnType = '\com\hydrogen\nucleus\Model\InvoicePayment';
         $request = $this->createInvoicePaymentUsingPostRequest($invoice_payment);
 
         try {
@@ -169,7 +169,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InvoicePayment',
+                        '\com\hydrogen\nucleus\Model\InvoicePayment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class InvoiceApi
      *
      * Create a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoicePayment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoicePayment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class InvoiceApi
      *
      * Create a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoicePayment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoicePayment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInvoicePaymentUsingPostAsyncWithHttpInfo($invoice_payment)
     {
-        $returnType = '\com\hydrogen\Model\InvoicePayment';
+        $returnType = '\com\hydrogen\nucleus\Model\InvoicePayment';
         $request = $this->createInvoicePaymentUsingPostRequest($invoice_payment);
 
         return $this->client
@@ -254,7 +254,7 @@ class InvoiceApi
     /**
      * Create request for operation 'createInvoicePaymentUsingPost'
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoicePayment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoicePayment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class InvoiceApi
      *
      * Create a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Invoice
+     * @return \com\hydrogen\nucleus\Model\Invoice
      */
     public function createInvoiceUsingPost($invoice)
     {
@@ -377,15 +377,15 @@ class InvoiceApi
      *
      * Create a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInvoiceUsingPostWithHttpInfo($invoice)
     {
-        $returnType = '\com\hydrogen\Model\Invoice';
+        $returnType = '\com\hydrogen\nucleus\Model\Invoice';
         $request = $this->createInvoiceUsingPostRequest($invoice);
 
         try {
@@ -437,7 +437,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Invoice',
+                        '\com\hydrogen\nucleus\Model\Invoice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class InvoiceApi
      *
      * Create a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class InvoiceApi
      *
      * Create a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInvoiceUsingPostAsyncWithHttpInfo($invoice)
     {
-        $returnType = '\com\hydrogen\Model\Invoice';
+        $returnType = '\com\hydrogen\nucleus\Model\Invoice';
         $request = $this->createInvoiceUsingPostRequest($invoice);
 
         return $this->client
@@ -522,7 +522,7 @@ class InvoiceApi
     /**
      * Create request for operation 'createInvoiceUsingPost'
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -630,7 +630,7 @@ class InvoiceApi
      *
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -646,7 +646,7 @@ class InvoiceApi
      *
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -866,7 +866,7 @@ class InvoiceApi
      *
      * @param  string $invoice_id UUID invoice_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -882,7 +882,7 @@ class InvoiceApi
      *
      * @param  string $invoice_id UUID invoice_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1106,9 +1106,9 @@ class InvoiceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageInvoice_
+     * @return \com\hydrogen\nucleus\Model\PageInvoice_
      */
     public function getInvoiceAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1127,13 +1127,13 @@ class InvoiceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageInvoice_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageInvoice_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoiceAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInvoice_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInvoice_';
         $request = $this->getInvoiceAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1185,7 +1185,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageInvoice_',
+                        '\com\hydrogen\nucleus\Model\PageInvoice_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1235,7 +1235,7 @@ class InvoiceApi
      */
     public function getInvoiceAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInvoice_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInvoice_';
         $request = $this->getInvoiceAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1405,9 +1405,9 @@ class InvoiceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageInvoicePayment_
+     * @return \com\hydrogen\nucleus\Model\PageInvoicePayment_
      */
     public function getInvoicePaymentAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1426,13 +1426,13 @@ class InvoiceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageInvoicePayment_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageInvoicePayment_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoicePaymentAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInvoicePayment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInvoicePayment_';
         $request = $this->getInvoicePaymentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1484,7 +1484,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageInvoicePayment_',
+                        '\com\hydrogen\nucleus\Model\PageInvoicePayment_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1534,7 +1534,7 @@ class InvoiceApi
      */
     public function getInvoicePaymentAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInvoicePayment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInvoicePayment_';
         $request = $this->getInvoicePaymentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1700,9 +1700,9 @@ class InvoiceApi
      *
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InvoicePayment
+     * @return \com\hydrogen\nucleus\Model\InvoicePayment
      */
     public function getInvoicePaymentUsingGet($invoice_payment_id)
     {
@@ -1717,13 +1717,13 @@ class InvoiceApi
      *
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InvoicePayment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InvoicePayment, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoicePaymentUsingGetWithHttpInfo($invoice_payment_id)
     {
-        $returnType = '\com\hydrogen\Model\InvoicePayment';
+        $returnType = '\com\hydrogen\nucleus\Model\InvoicePayment';
         $request = $this->getInvoicePaymentUsingGetRequest($invoice_payment_id);
 
         try {
@@ -1775,7 +1775,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InvoicePayment',
+                        '\com\hydrogen\nucleus\Model\InvoicePayment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1817,7 +1817,7 @@ class InvoiceApi
      */
     public function getInvoicePaymentUsingGetAsyncWithHttpInfo($invoice_payment_id)
     {
-        $returnType = '\com\hydrogen\Model\InvoicePayment';
+        $returnType = '\com\hydrogen\nucleus\Model\InvoicePayment';
         $request = $this->getInvoicePaymentUsingGetRequest($invoice_payment_id);
 
         return $this->client
@@ -1973,9 +1973,9 @@ class InvoiceApi
      *
      * @param  string $invoice_id UUID invoice_idd (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Invoice
+     * @return \com\hydrogen\nucleus\Model\Invoice
      */
     public function getInvoiceUsingGet($invoice_id)
     {
@@ -1990,13 +1990,13 @@ class InvoiceApi
      *
      * @param  string $invoice_id UUID invoice_idd (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoiceUsingGetWithHttpInfo($invoice_id)
     {
-        $returnType = '\com\hydrogen\Model\Invoice';
+        $returnType = '\com\hydrogen\nucleus\Model\Invoice';
         $request = $this->getInvoiceUsingGetRequest($invoice_id);
 
         try {
@@ -2048,7 +2048,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Invoice',
+                        '\com\hydrogen\nucleus\Model\Invoice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2090,7 +2090,7 @@ class InvoiceApi
      */
     public function getInvoiceUsingGetAsyncWithHttpInfo($invoice_id)
     {
-        $returnType = '\com\hydrogen\Model\Invoice';
+        $returnType = '\com\hydrogen\nucleus\Model\Invoice';
         $request = $this->getInvoiceUsingGetRequest($invoice_id);
 
         return $this->client
@@ -2244,12 +2244,12 @@ class InvoiceApi
      *
      * Update a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoice_payment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoice_payment (required)
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InvoicePayment
+     * @return \com\hydrogen\nucleus\Model\InvoicePayment
      */
     public function updateInvoicePaymentUsingPut($invoice_payment, $invoice_payment_id)
     {
@@ -2262,16 +2262,16 @@ class InvoiceApi
      *
      * Update a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoice_payment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoice_payment (required)
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InvoicePayment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InvoicePayment, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInvoicePaymentUsingPutWithHttpInfo($invoice_payment, $invoice_payment_id)
     {
-        $returnType = '\com\hydrogen\Model\InvoicePayment';
+        $returnType = '\com\hydrogen\nucleus\Model\InvoicePayment';
         $request = $this->updateInvoicePaymentUsingPutRequest($invoice_payment, $invoice_payment_id);
 
         try {
@@ -2323,7 +2323,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InvoicePayment',
+                        '\com\hydrogen\nucleus\Model\InvoicePayment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2338,7 +2338,7 @@ class InvoiceApi
      *
      * Update a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoice_payment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoice_payment (required)
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2359,7 +2359,7 @@ class InvoiceApi
      *
      * Update a invoicePayment
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoice_payment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoice_payment (required)
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2367,7 +2367,7 @@ class InvoiceApi
      */
     public function updateInvoicePaymentUsingPutAsyncWithHttpInfo($invoice_payment, $invoice_payment_id)
     {
-        $returnType = '\com\hydrogen\Model\InvoicePayment';
+        $returnType = '\com\hydrogen\nucleus\Model\InvoicePayment';
         $request = $this->updateInvoicePaymentUsingPutRequest($invoice_payment, $invoice_payment_id);
 
         return $this->client
@@ -2410,7 +2410,7 @@ class InvoiceApi
     /**
      * Create request for operation 'updateInvoicePaymentUsingPut'
      *
-     * @param  \com\hydrogen\Model\InvoicePayment $invoice_payment invoice_payment (required)
+     * @param  \com\hydrogen\nucleus\Model\InvoicePayment $invoice_payment invoice_payment (required)
      * @param  string $invoice_payment_id UUID invoice_payment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2531,12 +2531,12 @@ class InvoiceApi
      *
      * Update a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      * @param  string $invoice_id UUID invoice_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Invoice
+     * @return \com\hydrogen\nucleus\Model\Invoice
      */
     public function updateInvoiceUsingPut($invoice, $invoice_id)
     {
@@ -2549,16 +2549,16 @@ class InvoiceApi
      *
      * Update a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      * @param  string $invoice_id UUID invoice_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Invoice, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInvoiceUsingPutWithHttpInfo($invoice, $invoice_id)
     {
-        $returnType = '\com\hydrogen\Model\Invoice';
+        $returnType = '\com\hydrogen\nucleus\Model\Invoice';
         $request = $this->updateInvoiceUsingPutRequest($invoice, $invoice_id);
 
         try {
@@ -2610,7 +2610,7 @@ class InvoiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Invoice',
+                        '\com\hydrogen\nucleus\Model\Invoice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2625,7 +2625,7 @@ class InvoiceApi
      *
      * Update a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      * @param  string $invoice_id UUID invoice_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2646,7 +2646,7 @@ class InvoiceApi
      *
      * Update a invoice
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      * @param  string $invoice_id UUID invoice_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2654,7 +2654,7 @@ class InvoiceApi
      */
     public function updateInvoiceUsingPutAsyncWithHttpInfo($invoice, $invoice_id)
     {
-        $returnType = '\com\hydrogen\Model\Invoice';
+        $returnType = '\com\hydrogen\nucleus\Model\Invoice';
         $request = $this->updateInvoiceUsingPutRequest($invoice, $invoice_id);
 
         return $this->client
@@ -2697,7 +2697,7 @@ class InvoiceApi
     /**
      * Create request for operation 'updateInvoiceUsingPut'
      *
-     * @param  \com\hydrogen\Model\Invoice $invoice invoice (required)
+     * @param  \com\hydrogen\nucleus\Model\Invoice $invoice invoice (required)
      * @param  string $invoice_id UUID invoice_id (required)
      *
      * @throws \InvalidArgumentException

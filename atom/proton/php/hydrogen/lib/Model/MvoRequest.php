@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\proton\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\proton\ObjectSerializer;
 
 /**
  * MvoRequest Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class MvoRequest implements ModelInterface, ArrayAccess
         'start_date' => '\DateTime',
         'tgt_val' => 'float',
         'end_date' => '\DateTime',
-        'w_config' => '\com\hydrogen\Model\WConfig',
+        'w_config' => '\com\hydrogen\proton\Model\WConfig',
         'sec_types' => 'string[]',
         'tgt_type' => 'string',
         'min_assets' => 'int',
@@ -442,7 +442,7 @@ class MvoRequest implements ModelInterface, ArrayAccess
     /**
      * Gets w_config
      *
-     * @return \com\hydrogen\Model\WConfig
+     * @return \com\hydrogen\proton\Model\WConfig
      */
     public function getWConfig()
     {
@@ -452,7 +452,7 @@ class MvoRequest implements ModelInterface, ArrayAccess
     /**
      * Sets w_config
      *
-     * @param \com\hydrogen\Model\WConfig $w_config w_config
+     * @param \com\hydrogen\proton\Model\WConfig $w_config w_config
      *
      * @return $this
      */

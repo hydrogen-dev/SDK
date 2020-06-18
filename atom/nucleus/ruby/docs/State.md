@@ -1,4 +1,4 @@
-# AtomApi::State
+# NucleusApi::State
 
 ## Properties
 Name | Type | Description | Notes

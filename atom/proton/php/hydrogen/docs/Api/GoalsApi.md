@@ -1,4 +1,4 @@
-# com\hydrogen\GoalsApi
+# com\hydrogen\proton\GoalsApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -28,24 +28,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalsApi(
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_accumulation_allocation_request = new \com\hydrogen\Model\GoalAccumulationAllocationRequest(); // \com\hydrogen\Model\GoalAccumulationAllocationRequest | Request payload for Goal Accumulation Allocation
+$goal_accumulation_allocation_request = new \com\hydrogen\proton\Model\GoalAccumulationAllocationRequest(); // \com\hydrogen\proton\Model\GoalAccumulationAllocationRequest | Request payload for Goal Accumulation Allocation
 
 try {
     $result = $apiInstance->goalAccumulationAllocation($goal_accumulation_allocation_request);
@@ -60,7 +60,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_accumulation_allocation_request** | [**\com\hydrogen\Model\GoalAccumulationAllocationRequest**](../Model/GoalAccumulationAllocationRequest.md)| Request payload for Goal Accumulation Allocation |
+ **goal_accumulation_allocation_request** | [**\com\hydrogen\proton\Model\GoalAccumulationAllocationRequest**](../Model/GoalAccumulationAllocationRequest.md)| Request payload for Goal Accumulation Allocation |
 
 ### Return type
 
@@ -93,24 +93,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalsApi(
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_accumulation_recommendation_request = new \com\hydrogen\Model\GoalAccumulationRecommendationRequest(); // \com\hydrogen\Model\GoalAccumulationRecommendationRequest | Request payload for Goal Accumulation Recommendation
+$goal_accumulation_recommendation_request = new \com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest(); // \com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest | Request payload for Goal Accumulation Recommendation
 
 try {
     $result = $apiInstance->goalAccumulationRecommendation($goal_accumulation_recommendation_request);
@@ -125,7 +125,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_accumulation_recommendation_request** | [**\com\hydrogen\Model\GoalAccumulationRecommendationRequest**](../Model/GoalAccumulationRecommendationRequest.md)| Request payload for Goal Accumulation Recommendation |
+ **goal_accumulation_recommendation_request** | [**\com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest**](../Model/GoalAccumulationRecommendationRequest.md)| Request payload for Goal Accumulation Recommendation |
 
 ### Return type
 
@@ -158,24 +158,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalsApi(
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_accumulation_status_request = new \com\hydrogen\Model\GoalAccumulationStatusRequest(); // \com\hydrogen\Model\GoalAccumulationStatusRequest | Request payload for Goal Accumulation Status
+$goal_accumulation_status_request = new \com\hydrogen\proton\Model\GoalAccumulationStatusRequest(); // \com\hydrogen\proton\Model\GoalAccumulationStatusRequest | Request payload for Goal Accumulation Status
 
 try {
     $result = $apiInstance->goalAccumulationStatus($goal_accumulation_status_request);
@@ -190,7 +190,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_accumulation_status_request** | [**\com\hydrogen\Model\GoalAccumulationStatusRequest**](../Model/GoalAccumulationStatusRequest.md)| Request payload for Goal Accumulation Status |
+ **goal_accumulation_status_request** | [**\com\hydrogen\proton\Model\GoalAccumulationStatusRequest**](../Model/GoalAccumulationStatusRequest.md)| Request payload for Goal Accumulation Status |
 
 ### Return type
 
@@ -223,24 +223,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalsApi(
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_decumulation_allocation_request = new \com\hydrogen\Model\GoalDecumulationAllocationRequest(); // \com\hydrogen\Model\GoalDecumulationAllocationRequest | Request payload for Goal Decumulation Allocation
+$goal_decumulation_allocation_request = new \com\hydrogen\proton\Model\GoalDecumulationAllocationRequest(); // \com\hydrogen\proton\Model\GoalDecumulationAllocationRequest | Request payload for Goal Decumulation Allocation
 
 try {
     $result = $apiInstance->goalDecumulationAllocation($goal_decumulation_allocation_request);
@@ -255,7 +255,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_decumulation_allocation_request** | [**\com\hydrogen\Model\GoalDecumulationAllocationRequest**](../Model/GoalDecumulationAllocationRequest.md)| Request payload for Goal Decumulation Allocation |
+ **goal_decumulation_allocation_request** | [**\com\hydrogen\proton\Model\GoalDecumulationAllocationRequest**](../Model/GoalDecumulationAllocationRequest.md)| Request payload for Goal Decumulation Allocation |
 
 ### Return type
 
@@ -288,24 +288,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalsApi(
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_decumulation_recommendation_request = new \com\hydrogen\Model\GoalDecumulationRecommendationRequest(); // \com\hydrogen\Model\GoalDecumulationRecommendationRequest | Request payload for Goal Decumulation Recommendation
+$goal_decumulation_recommendation_request = new \com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest(); // \com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest | Request payload for Goal Decumulation Recommendation
 
 try {
     $result = $apiInstance->goalDecumulationRecommendation($goal_decumulation_recommendation_request);
@@ -320,7 +320,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_decumulation_recommendation_request** | [**\com\hydrogen\Model\GoalDecumulationRecommendationRequest**](../Model/GoalDecumulationRecommendationRequest.md)| Request payload for Goal Decumulation Recommendation |
+ **goal_decumulation_recommendation_request** | [**\com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest**](../Model/GoalDecumulationRecommendationRequest.md)| Request payload for Goal Decumulation Recommendation |
 
 ### Return type
 
@@ -353,24 +353,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalsApi(
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_decumulation_status_request = new \com\hydrogen\Model\GoalDecumulationStatusRequest(); // \com\hydrogen\Model\GoalDecumulationStatusRequest | Request payload for Goal Decumulation Status
+$goal_decumulation_status_request = new \com\hydrogen\proton\Model\GoalDecumulationStatusRequest(); // \com\hydrogen\proton\Model\GoalDecumulationStatusRequest | Request payload for Goal Decumulation Status
 
 try {
     $result = $apiInstance->goalDecumulationStatus($goal_decumulation_status_request);
@@ -385,7 +385,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_decumulation_status_request** | [**\com\hydrogen\Model\GoalDecumulationStatusRequest**](../Model/GoalDecumulationStatusRequest.md)| Request payload for Goal Decumulation Status |
+ **goal_decumulation_status_request** | [**\com\hydrogen\proton\Model\GoalDecumulationStatusRequest**](../Model/GoalDecumulationStatusRequest.md)| Request payload for Goal Decumulation Status |
 
 ### Return type
 

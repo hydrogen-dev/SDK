@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Allocation
+# HydrogenNucleusApi.Allocation
 
 ## Properties
 Name | Type | Description | Notes

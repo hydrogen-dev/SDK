@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageClientCampaignMapping
+# HydrogenNucleusApi.PageClientCampaignMapping
 
 ## Properties
 Name | Type | Description | Notes

@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.api.notification_api import NotificationApi  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.api.notification_api import NotificationApi  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestNotificationApi(unittest.TestCase):
     """NotificationApi unit test stubs"""
 
     def setUp(self):
-        self.api = atom_api.api.notification_api.NotificationApi()  # noqa: E501
+        self.api = nucleus_api.api.notification_api.NotificationApi()  # noqa: E501
 
     def tearDown(self):
         pass

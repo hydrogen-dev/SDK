@@ -1,4 +1,4 @@
-# AtomApi::Document
+# NucleusApi::Document
 
 ## Properties
 Name | Type | Description | Notes

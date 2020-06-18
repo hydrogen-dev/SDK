@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageSecurityExclusion
+# HydrogenNucleusApi.PageSecurityExclusion
 
 ## Properties
 Name | Type | Description | Notes

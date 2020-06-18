@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\proton\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\proton\ObjectSerializer;
 
 /**
  * LifeInsuranceNeedsCalculatorRequest Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -68,10 +68,10 @@ class LifeInsuranceNeedsCalculatorRequest implements ModelInterface, ArrayAccess
         'client_id' => 'string',
         'mortgage_balance' => 'float',
         'benefit_amount_rounding' => 'int',
-        'income_config' => '\com\hydrogen\Model\IncomeConfig[]',
-        'beneficiary_bequest_config' => '\com\hydrogen\Model\BeneficiaryBequestConfig[]',
+        'income_config' => '\com\hydrogen\proton\Model\IncomeConfig[]',
+        'beneficiary_bequest_config' => '\com\hydrogen\proton\Model\BeneficiaryBequestConfig[]',
         'general_inflation_rate' => 'float',
-        'children_education_config' => '\com\hydrogen\Model\ChildrenEducationConfig[]'
+        'children_education_config' => '\com\hydrogen\proton\Model\ChildrenEducationConfig[]'
     ];
 
     /**
@@ -666,7 +666,7 @@ class LifeInsuranceNeedsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Gets income_config
      *
-     * @return \com\hydrogen\Model\IncomeConfig[]
+     * @return \com\hydrogen\proton\Model\IncomeConfig[]
      */
     public function getIncomeConfig()
     {
@@ -676,7 +676,7 @@ class LifeInsuranceNeedsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Sets income_config
      *
-     * @param \com\hydrogen\Model\IncomeConfig[] $income_config income_config
+     * @param \com\hydrogen\proton\Model\IncomeConfig[] $income_config income_config
      *
      * @return $this
      */
@@ -690,7 +690,7 @@ class LifeInsuranceNeedsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Gets beneficiary_bequest_config
      *
-     * @return \com\hydrogen\Model\BeneficiaryBequestConfig[]
+     * @return \com\hydrogen\proton\Model\BeneficiaryBequestConfig[]
      */
     public function getBeneficiaryBequestConfig()
     {
@@ -700,7 +700,7 @@ class LifeInsuranceNeedsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Sets beneficiary_bequest_config
      *
-     * @param \com\hydrogen\Model\BeneficiaryBequestConfig[] $beneficiary_bequest_config beneficiary_bequest_config
+     * @param \com\hydrogen\proton\Model\BeneficiaryBequestConfig[] $beneficiary_bequest_config beneficiary_bequest_config
      *
      * @return $this
      */
@@ -743,7 +743,7 @@ class LifeInsuranceNeedsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Gets children_education_config
      *
-     * @return \com\hydrogen\Model\ChildrenEducationConfig[]
+     * @return \com\hydrogen\proton\Model\ChildrenEducationConfig[]
      */
     public function getChildrenEducationConfig()
     {
@@ -753,7 +753,7 @@ class LifeInsuranceNeedsCalculatorRequest implements ModelInterface, ArrayAccess
     /**
      * Sets children_education_config
      *
-     * @param \com\hydrogen\Model\ChildrenEducationConfig[] $children_education_config children_education_config
+     * @param \com\hydrogen\proton\Model\ChildrenEducationConfig[] $children_education_config children_education_config
      *
      * @return $this
      */

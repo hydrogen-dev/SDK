@@ -1,4 +1,4 @@
-# AtomApi::PerformanceApi
+# NucleusApi::PerformanceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -24,9 +24,9 @@ Get information on the performance of an account using IRR (Internal Rate of Ret
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -35,7 +35,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 account_id = 'account_id_example' # String | Account Id -/account
 
@@ -69,7 +69,7 @@ begin
   #Account Performance
   result = api_instance.get_account_performance_using_get(account_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_account_performance_using_get: #{e}"
 end
 ```
@@ -128,9 +128,9 @@ Get information on the performance of an allocation using TWR (Time Weighted Ret
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -139,7 +139,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 allocation_id = 'allocation_id_example' # String | Allocation Id -/allocation
 
@@ -174,7 +174,7 @@ begin
   #Allocation Performance
   result = api_instance.get_allocation_performance_using_get(allocation_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_allocation_performance_using_get: #{e}"
 end
 ```
@@ -234,9 +234,9 @@ Get information on the performance of a benchmark using TWR (Time Weighted Retur
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -245,7 +245,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 benchmark_id = 'benchmark_id_example' # String | Benchmark Id - /benchmark
 
@@ -279,7 +279,7 @@ begin
   #Benchmark Performance
   result = api_instance.get_benchmark_performance_using_get(benchmark_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_benchmark_performance_using_get: #{e}"
 end
 ```
@@ -338,9 +338,9 @@ Get information on the performance of a client using IRR (Internal Rate of Retur
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -349,7 +349,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 client_id = 'client_id_example' # String | Client Id -/client
 
@@ -383,7 +383,7 @@ begin
   #Client Performance
   result = api_instance.get_client_performance_using_get(client_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_client_performance_using_get: #{e}"
 end
 ```
@@ -442,9 +442,9 @@ Get information on the performance of a goal using IRR (Internal Rate of Return)
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -453,7 +453,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 client_id = 'client_id_example' # String | Client associated with the account - /client
 
@@ -490,7 +490,7 @@ begin
   #Goal Performance
   result = api_instance.get_goal_performance_using_get(client_id, goal_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_goal_performance_using_get: #{e}"
 end
 ```
@@ -551,9 +551,9 @@ Get information on the performance of a model using TWR (Time Weighted Return). 
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -562,7 +562,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 model_id = 'model_id_example' # String | Model Id - /model
 
@@ -596,7 +596,7 @@ begin
   #Model Performance
   result = api_instance.get_model_performance_using_get(model_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_model_performance_using_get: #{e}"
 end
 ```
@@ -655,9 +655,9 @@ Get information on the performance of a portfolio using IRR (Internal Rate of Re
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -666,7 +666,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 account_id = 'account_id_example' # String | Account Id -/account
 
@@ -706,7 +706,7 @@ begin
   #Portfolio Performance
   result = api_instance.get_portfolio_performance_using_get(account_id, client_id, portfolio_id, portfolioid, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_portfolio_performance_using_get: #{e}"
 end
 ```
@@ -768,9 +768,9 @@ Get performance statistics for a security using TWR (Time Weighted Return). You 
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -779,7 +779,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PerformanceApi.new
+api_instance = NucleusApi::PerformanceApi.new
 
 security_id = 'security_id_example' # String | security_id
 
@@ -815,7 +815,7 @@ begin
   #Security Performance
   result = api_instance.get_security_performance_using_get(security_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_security_performance_using_get: #{e}"
 end
 ```

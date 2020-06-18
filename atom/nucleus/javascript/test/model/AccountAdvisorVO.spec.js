@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AccountAdvisorVO();
+    instance = new HydrogenNucleusApi.AccountAdvisorVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('AccountAdvisorVO', function() {
     it('should create an instance of AccountAdvisorVO', function() {
       // uncomment below and update the code to test AccountAdvisorVO
-      //var instane = new HydrogenAtomApi.AccountAdvisorVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.AccountAdvisorVO);
+      //var instane = new HydrogenNucleusApi.AccountAdvisorVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AccountAdvisorVO);
     });
 
     it('should have the property accountType (base name: "account_type")', function() {
       // uncomment below and update the code to test the property accountType
-      //var instane = new HydrogenAtomApi.AccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.AccountAdvisorVO();
       //expect(instance).to.be();
     });
 
     it('should have the property accountsManaged (base name: "accounts_managed")', function() {
       // uncomment below and update the code to test the property accountsManaged
-      //var instane = new HydrogenAtomApi.AccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.AccountAdvisorVO();
       //expect(instance).to.be();
     });
 
     it('should have the property assetsManaged (base name: "assets_managed")', function() {
       // uncomment below and update the code to test the property assetsManaged
-      //var instane = new HydrogenAtomApi.AccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.AccountAdvisorVO();
       //expect(instance).to.be();
     });
 
     it('should have the property clientsManaged (base name: "clients_managed")', function() {
       // uncomment below and update the code to test the property clientsManaged
-      //var instane = new HydrogenAtomApi.AccountAdvisorVO();
+      //var instane = new HydrogenNucleusApi.AccountAdvisorVO();
       //expect(instance).to.be();
     });
 

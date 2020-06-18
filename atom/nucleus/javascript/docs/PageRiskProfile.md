@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageRiskProfile
+# HydrogenNucleusApi.PageRiskProfile
 
 ## Properties
 Name | Type | Description | Notes

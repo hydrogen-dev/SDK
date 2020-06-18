@@ -1,4 +1,4 @@
-# AtomApi::RoundupApi
+# NucleusApi::RoundupApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -24,9 +24,9 @@ Create a Roundup Settings for Roundup amount with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -35,16 +35,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
-roundup_settings = AtomApi::RoundupSettings.new # RoundupSettings | roundupSettings
+roundup_settings = NucleusApi::RoundupSettings.new # RoundupSettings | roundupSettings
 
 
 begin
   #Create a Roundup Settings
   result = api_instance.create_roundup_settings_using_post(roundup_settings)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->create_roundup_settings_using_post: #{e}"
 end
 ```
@@ -80,9 +80,9 @@ Create a new roundup with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -91,16 +91,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
-roundup_co = AtomApi::RoundupCO.new # RoundupCO | roundupCO
+roundup_co = NucleusApi::RoundupCO.new # RoundupCO | roundupCO
 
 
 begin
   #Create a roundup
   result = api_instance.create_roundup_using_post(roundup_co)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->create_roundup_using_post: #{e}"
 end
 ```
@@ -136,9 +136,9 @@ Permanently delete a  roundup settings registered with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -147,7 +147,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
 roundup_setting_id = 'roundup_setting_id_example' # String | UUID roundup_setting_id
 
@@ -155,7 +155,7 @@ roundup_setting_id = 'roundup_setting_id_example' # String | UUID roundup_settin
 begin
   #Delete a roundup settings
   api_instance.delete_roundup_settings_using_delete(roundup_setting_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->delete_roundup_settings_using_delete: #{e}"
 end
 ```
@@ -191,9 +191,9 @@ Get details for all roundups.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -202,7 +202,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -216,7 +216,7 @@ begin
   #List all roundups
   result = api_instance.get_roundup_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->get_roundup_all_using_get: #{e}"
 end
 ```
@@ -256,9 +256,9 @@ Get details for all roundup setting with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -267,7 +267,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -281,7 +281,7 @@ begin
   #List all roundup settings
   result = api_instance.get_roundup_settings_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->get_roundup_settings_all_using_get: #{e}"
 end
 ```
@@ -321,9 +321,9 @@ Retrieve the information for a Roundup Settings with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -332,7 +332,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
 roundup_setting_id = 'roundup_setting_id_example' # String | UUID roundup_setting_id
 
@@ -341,7 +341,7 @@ begin
   #Retrieve a Roundup Setting
   result = api_instance.get_roundup_settings_using_get(roundup_setting_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->get_roundup_settings_using_get: #{e}"
 end
 ```
@@ -377,9 +377,9 @@ Retrieve the information for a Roundup.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -388,7 +388,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
 roundup_id = 'roundup_id_example' # String | UUID roundup_id
 
@@ -397,7 +397,7 @@ begin
   #Retrieve a Roundup
   result = api_instance.get_roundup_using_get(roundup_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->get_roundup_using_get: #{e}"
 end
 ```
@@ -433,9 +433,9 @@ Update the information for a roundup setting registered with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -444,9 +444,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::RoundupApi.new
+api_instance = NucleusApi::RoundupApi.new
 
-roundup_setting = AtomApi::RoundupSettings.new # RoundupSettings | roundup_setting
+roundup_setting = NucleusApi::RoundupSettings.new # RoundupSettings | roundup_setting
 
 roundup_setting_id = 'roundup_setting_id_example' # String | UUID roundup_setting_id
 
@@ -455,7 +455,7 @@ begin
   #Update a roundup settings
   result = api_instance.update_roundup_settings_using_put(roundup_setting, roundup_setting_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling RoundupApi->update_roundup_settings_using_put: #{e}"
 end
 ```

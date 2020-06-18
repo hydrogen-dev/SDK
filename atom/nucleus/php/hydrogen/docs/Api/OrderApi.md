@@ -1,4 +1,4 @@
-# com\hydrogen\OrderApi
+# com\hydrogen\nucleus\OrderApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 
 # **createAccountOrderBulkUsingPost**
-> \com\hydrogen\Model\Order[] createAccountOrderBulkUsingPost($account_id, $req)
+> \com\hydrogen\nucleus\Model\Order[] createAccountOrderBulkUsingPost($account_id, $req)
 
 Bulk orders for an account
 
@@ -45,30 +45,30 @@ Aggregates all orders on a given date for an account.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\Model\TokenDateRequest(); // \com\hydrogen\Model\TokenDateRequest | req
+$req = new \com\hydrogen\nucleus\Model\TokenDateRequest(); // \com\hydrogen\nucleus\Model\TokenDateRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderBulkUsingPost($account_id, $req);
@@ -84,11 +84,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\Order[]**](../Model/Order.md)
+[**\com\hydrogen\nucleus\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderBuyOnlyUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createAccountOrderBuyOnlyUsingPost($account_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderBuyOnlyUsingPost($account_id, $req)
 
 Create buy-only account rebalance orders
 
@@ -111,30 +111,30 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderBuyOnlyUsingPost($account_id, $req);
@@ -150,11 +150,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderRebalanceUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createAccountOrderRebalanceUsingPost($account_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderRebalanceUsingPost($account_id, $req)
 
 Create account rebalance orders
 
@@ -177,30 +177,30 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderRebalanceUsingPost($account_id, $req);
@@ -216,11 +216,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -234,37 +234,37 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderReconciliation**
-> \com\hydrogen\Model\OrderReconcileReturnObject createAccountOrderReconciliation($account_id, $req)
+> \com\hydrogen\nucleus\Model\OrderReconcileReturnObject createAccountOrderReconciliation($account_id, $req)
 
 Create account reconciliation order
 
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\Model\OrderReconcileRequest(); // \com\hydrogen\Model\OrderReconcileRequest | req
+$req = new \com\hydrogen\nucleus\Model\OrderReconcileRequest(); // \com\hydrogen\nucleus\Model\OrderReconcileRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderReconciliation($account_id, $req);
@@ -280,11 +280,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
+[**\com\hydrogen\nucleus\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
 
 ### Authorization
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderSellAllUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createAccountOrderSellAllUsingPost($account_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderSellAllUsingPost($account_id, $req)
 
 Sell all account order
 
@@ -307,30 +307,30 @@ Create order records necessary to entirely sell all the holdings within an accou
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderSellAllUsingPost($account_id, $req);
@@ -346,11 +346,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderSellOnlyUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createAccountOrderSellOnlyUsingPost($account_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderSellOnlyUsingPost($account_id, $req)
 
 Create sell-only account rebalance orders
 
@@ -373,30 +373,30 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderSellOnlyUsingPost($account_id, $req);
@@ -412,11 +412,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createClientOrderBulkUsingPost**
-> \com\hydrogen\Model\Order[] createClientOrderBulkUsingPost($client_id, $req)
+> \com\hydrogen\nucleus\Model\Order[] createClientOrderBulkUsingPost($client_id, $req)
 
 Bulk orders for a client
 
@@ -439,30 +439,30 @@ Aggregates all orders on a given date for a client
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $client_id = "client_id_example"; // string | client_id
-$req = new \com\hydrogen\Model\TokenDateRequest(); // \com\hydrogen\Model\TokenDateRequest | req
+$req = new \com\hydrogen\nucleus\Model\TokenDateRequest(); // \com\hydrogen\nucleus\Model\TokenDateRequest | req
 
 try {
     $result = $apiInstance->createClientOrderBulkUsingPost($client_id, $req);
@@ -478,11 +478,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| client_id |
- **req** | [**\com\hydrogen\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\Order[]**](../Model/Order.md)
+[**\com\hydrogen\nucleus\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrderBulkUsingPost**
-> \com\hydrogen\Model\Order[] createOrderBulkUsingPost($req)
+> \com\hydrogen\nucleus\Model\Order[] createOrderBulkUsingPost($req)
 
 Bulk orders for your firm
 
@@ -505,29 +505,29 @@ Aggregates all orders on a given date for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$req = new \com\hydrogen\Model\TokenDateRequest(); // \com\hydrogen\Model\TokenDateRequest | req
+$req = new \com\hydrogen\nucleus\Model\TokenDateRequest(); // \com\hydrogen\nucleus\Model\TokenDateRequest | req
 
 try {
     $result = $apiInstance->createOrderBulkUsingPost($req);
@@ -542,11 +542,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **req** | [**\com\hydrogen\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\Order[]**](../Model/Order.md)
+[**\com\hydrogen\nucleus\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrderStatusUsingPost**
-> \com\hydrogen\Model\OrderStatus createOrderStatusUsingPost($order_status_request)
+> \com\hydrogen\nucleus\Model\OrderStatus createOrderStatusUsingPost($order_status_request)
 
 Create an order status
 
@@ -569,29 +569,29 @@ Create an order status for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_status_request = new \com\hydrogen\Model\OrderStatus(); // \com\hydrogen\Model\OrderStatus | orderStatusRequest
+$order_status_request = new \com\hydrogen\nucleus\Model\OrderStatus(); // \com\hydrogen\nucleus\Model\OrderStatus | orderStatusRequest
 
 try {
     $result = $apiInstance->createOrderStatusUsingPost($order_status_request);
@@ -606,11 +606,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_status_request** | [**\com\hydrogen\Model\OrderStatus**](../Model/OrderStatus.md)| orderStatusRequest |
+ **order_status_request** | [**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)| orderStatusRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderStatus**](../Model/OrderStatus.md)
+[**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)
 
 ### Authorization
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrderTrackUsingPost**
-> \com\hydrogen\Model\OrderTrack createOrderTrackUsingPost($order_track_request)
+> \com\hydrogen\nucleus\Model\OrderTrack createOrderTrackUsingPost($order_track_request)
 
 Create an order tracking record
 
@@ -633,29 +633,29 @@ Create a new order tracking record for an order.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_track_request = new \com\hydrogen\Model\OrderTrack(); // \com\hydrogen\Model\OrderTrack | orderTrackRequest
+$order_track_request = new \com\hydrogen\nucleus\Model\OrderTrack(); // \com\hydrogen\nucleus\Model\OrderTrack | orderTrackRequest
 
 try {
     $result = $apiInstance->createOrderTrackUsingPost($order_track_request);
@@ -670,11 +670,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_track_request** | [**\com\hydrogen\Model\OrderTrack**](../Model/OrderTrack.md)| orderTrackRequest |
+ **order_track_request** | [**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)| orderTrackRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderTrack**](../Model/OrderTrack.md)
+[**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)
 
 ### Authorization
 
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderBuyOnlyUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createPortfolioOrderBuyOnlyUsingPost($portfolio_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderBuyOnlyUsingPost($portfolio_id, $req)
 
 Create buy-only portfolio rebalance orders
 
@@ -697,30 +697,30 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderBuyOnlyUsingPost($portfolio_id, $req);
@@ -736,11 +736,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -754,7 +754,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderRebalanceUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createPortfolioOrderRebalanceUsingPost($portfolio_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderRebalanceUsingPost($portfolio_id, $req)
 
 Create portfolio rebalance orders
 
@@ -763,30 +763,30 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderRebalanceUsingPost($portfolio_id, $req);
@@ -802,11 +802,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -820,37 +820,37 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderReconciliation**
-> \com\hydrogen\Model\OrderReconcileReturnObject createPortfolioOrderReconciliation($portfolio_id, $req)
+> \com\hydrogen\nucleus\Model\OrderReconcileReturnObject createPortfolioOrderReconciliation($portfolio_id, $req)
 
 Create portfolio reconciliation order
 
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\Model\OrderReconcileRequest(); // \com\hydrogen\Model\OrderReconcileRequest | req
+$req = new \com\hydrogen\nucleus\Model\OrderReconcileRequest(); // \com\hydrogen\nucleus\Model\OrderReconcileRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderReconciliation($portfolio_id, $req);
@@ -866,11 +866,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
+[**\com\hydrogen\nucleus\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
 
 ### Authorization
 
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderSellAllUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createPortfolioOrderSellAllUsingPost($portfolio_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderSellAllUsingPost($portfolio_id, $req)
 
 Sell all portfolio order
 
@@ -893,30 +893,30 @@ Create order records necessary to entirely sell all the holdings within a portfo
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderSellAllUsingPost($portfolio_id, $req);
@@ -932,11 +932,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -950,7 +950,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderSellOnlyUsingPost**
-> \com\hydrogen\Model\OrderVoClone[] createPortfolioOrderSellOnlyUsingPost($portfolio_id, $req)
+> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderSellOnlyUsingPost($portfolio_id, $req)
 
 Create sell-only portfolio rebalance orders
 
@@ -959,30 +959,30 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\Model\AccountPortfolioRebalanceRequest | req
+$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderSellOnlyUsingPost($portfolio_id, $req);
@@ -998,11 +998,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -1025,23 +1025,23 @@ Permanently delete an order status defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1088,23 +1088,23 @@ Permanently delete an order tracking record for an order.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1151,23 +1151,23 @@ Permanently delete an order record.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1205,7 +1205,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderAllUsingGet**
-> \com\hydrogen\Model\Order getOrderAllUsingGet($order_info_request)
+> \com\hydrogen\nucleus\Model\Order getOrderAllUsingGet($order_info_request)
 
 Create an order record
 
@@ -1214,29 +1214,29 @@ Create an order record defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_info_request = new \com\hydrogen\Model\Order(); // \com\hydrogen\Model\Order | orderInfoRequest
+$order_info_request = new \com\hydrogen\nucleus\Model\Order(); // \com\hydrogen\nucleus\Model\Order | orderInfoRequest
 
 try {
     $result = $apiInstance->getOrderAllUsingGet($order_info_request);
@@ -1251,11 +1251,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_info_request** | [**\com\hydrogen\Model\Order**](../Model/Order.md)| orderInfoRequest |
+ **order_info_request** | [**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)| orderInfoRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Order**](../Model/Order.md)
+[**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -1269,7 +1269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderAllUsingGet1**
-> \com\hydrogen\Model\PageOrder_ getOrderAllUsingGet1($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageOrder_ getOrderAllUsingGet1($ascending, $filter, $order_by, $page, $size)
 
 List all order records
 
@@ -1278,23 +1278,23 @@ Get the information for all order records defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1327,7 +1327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageOrder_**](../Model/PageOrder_.md)
+[**\com\hydrogen\nucleus\Model\PageOrder_**](../Model/PageOrder_.md)
 
 ### Authorization
 
@@ -1341,7 +1341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderBulkAllUsingGet**
-> \com\hydrogen\Model\PageOrderBulk_ getOrderBulkAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageOrderBulk_ getOrderBulkAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all bulk orders
 
@@ -1350,23 +1350,23 @@ Get the information for all bulk order records.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1399,7 +1399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageOrderBulk_**](../Model/PageOrderBulk_.md)
+[**\com\hydrogen\nucleus\Model\PageOrderBulk_**](../Model/PageOrderBulk_.md)
 
 ### Authorization
 
@@ -1413,7 +1413,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderStatusAllUsingGet**
-> \com\hydrogen\Model\PageOrderStatus_ getOrderStatusAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageOrderStatus_ getOrderStatusAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all order statuses
 
@@ -1422,23 +1422,23 @@ Get the information for all order statuses defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1471,7 +1471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageOrderStatus_**](../Model/PageOrderStatus_.md)
+[**\com\hydrogen\nucleus\Model\PageOrderStatus_**](../Model/PageOrderStatus_.md)
 
 ### Authorization
 
@@ -1485,7 +1485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderStatusUsingGet**
-> \com\hydrogen\Model\OrderStatus getOrderStatusUsingGet($order_status_id)
+> \com\hydrogen\nucleus\Model\OrderStatus getOrderStatusUsingGet($order_status_id)
 
 Retrieve an order status
 
@@ -1494,23 +1494,23 @@ Retrieve the information for an order status defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1535,7 +1535,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderStatus**](../Model/OrderStatus.md)
+[**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)
 
 ### Authorization
 
@@ -1549,7 +1549,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderTrackAllUsingGet**
-> \com\hydrogen\Model\PageOrderTrack_ getOrderTrackAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageOrderTrack_ getOrderTrackAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all order tracking records
 
@@ -1558,23 +1558,23 @@ Get the information for all order tracking record for all order records.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1607,7 +1607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageOrderTrack_**](../Model/PageOrderTrack_.md)
+[**\com\hydrogen\nucleus\Model\PageOrderTrack_**](../Model/PageOrderTrack_.md)
 
 ### Authorization
 
@@ -1621,7 +1621,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderTrackUsingGet**
-> \com\hydrogen\Model\OrderTrack getOrderTrackUsingGet($order_track_id)
+> \com\hydrogen\nucleus\Model\OrderTrack getOrderTrackUsingGet($order_track_id)
 
 Retrieve an order tracking record
 
@@ -1630,23 +1630,23 @@ Retrieve the information for an order tracking record for an order.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1671,7 +1671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderTrack**](../Model/OrderTrack.md)
+[**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)
 
 ### Authorization
 
@@ -1685,7 +1685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderUsingGet**
-> \com\hydrogen\Model\Order getOrderUsingGet($order_id)
+> \com\hydrogen\nucleus\Model\Order getOrderUsingGet($order_id)
 
 Retrieve an order record
 
@@ -1694,23 +1694,23 @@ Retrieve the information for an order record.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1735,7 +1735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Order**](../Model/Order.md)
+[**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -1749,7 +1749,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrderStatusUsingPut**
-> \com\hydrogen\Model\OrderStatus updateOrderStatusUsingPut($order_status, $order_status_id)
+> \com\hydrogen\nucleus\Model\OrderStatus updateOrderStatusUsingPut($order_status, $order_status_id)
 
 Update an order status
 
@@ -1758,29 +1758,29 @@ Update the information for an order status defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_status = new \com\hydrogen\Model\OrderStatus(); // \com\hydrogen\Model\OrderStatus | order_status
+$order_status = new \com\hydrogen\nucleus\Model\OrderStatus(); // \com\hydrogen\nucleus\Model\OrderStatus | order_status
 $order_status_id = "order_status_id_example"; // string | UUID order_status_id
 
 try {
@@ -1796,12 +1796,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_status** | [**\com\hydrogen\Model\OrderStatus**](../Model/OrderStatus.md)| order_status |
+ **order_status** | [**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)| order_status |
  **order_status_id** | [**string**](../Model/.md)| UUID order_status_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderStatus**](../Model/OrderStatus.md)
+[**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)
 
 ### Authorization
 
@@ -1815,7 +1815,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrderTrackUsingPut**
-> \com\hydrogen\Model\OrderTrack updateOrderTrackUsingPut($order_track, $order_track_id)
+> \com\hydrogen\nucleus\Model\OrderTrack updateOrderTrackUsingPut($order_track, $order_track_id)
 
 Update an order tracking record
 
@@ -1824,29 +1824,29 @@ Update the information for an order tracking record for an order.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_track = new \com\hydrogen\Model\OrderTrack(); // \com\hydrogen\Model\OrderTrack | order_track
+$order_track = new \com\hydrogen\nucleus\Model\OrderTrack(); // \com\hydrogen\nucleus\Model\OrderTrack | order_track
 $order_track_id = "order_track_id_example"; // string | UUID order_track_id
 
 try {
@@ -1862,12 +1862,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_track** | [**\com\hydrogen\Model\OrderTrack**](../Model/OrderTrack.md)| order_track |
+ **order_track** | [**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)| order_track |
  **order_track_id** | [**string**](../Model/.md)| UUID order_track_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\OrderTrack**](../Model/OrderTrack.md)
+[**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)
 
 ### Authorization
 
@@ -1881,7 +1881,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrderUsingPut**
-> \com\hydrogen\Model\Order updateOrderUsingPut($order, $order_id)
+> \com\hydrogen\nucleus\Model\Order updateOrderUsingPut($order, $order_id)
 
 Update an order record
 
@@ -1890,29 +1890,29 @@ Update the information for an order record.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\OrderApi(
+$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order = new \com\hydrogen\Model\Order(); // \com\hydrogen\Model\Order | order
+$order = new \com\hydrogen\nucleus\Model\Order(); // \com\hydrogen\nucleus\Model\Order | order
 $order_id = "order_id_example"; // string | UUID order_id
 
 try {
@@ -1928,12 +1928,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**\com\hydrogen\Model\Order**](../Model/Order.md)| order |
+ **order** | [**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)| order |
  **order_id** | [**string**](../Model/.md)| UUID order_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Order**](../Model/Order.md)
+[**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)
 
 ### Authorization
 

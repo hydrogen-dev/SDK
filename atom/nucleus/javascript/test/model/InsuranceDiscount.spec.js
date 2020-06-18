@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.InsuranceDiscount();
+    instance = new HydrogenNucleusApi.InsuranceDiscount();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,91 +53,91 @@
   describe('InsuranceDiscount', function() {
     it('should create an instance of InsuranceDiscount', function() {
       // uncomment below and update the code to test InsuranceDiscount
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
-      //expect(instance).to.be.a(HydrogenAtomApi.InsuranceDiscount);
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
+      //expect(instance).to.be.a(HydrogenNucleusApi.InsuranceDiscount);
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property discountAmount (base name: "discount_amount")', function() {
       // uncomment below and update the code to test the property discountAmount
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property discountPercentage (base name: "discount_percentage")', function() {
       // uncomment below and update the code to test the property discountPercentage
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property nodeMap (base name: "node_map")', function() {
       // uncomment below and update the code to test the property nodeMap
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property subcategory (base name: "subcategory")', function() {
       // uncomment below and update the code to test the property subcategory
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.InsuranceDiscount();
+      //var instane = new HydrogenNucleusApi.InsuranceDiscount();
       //expect(instance).to.be();
     });
 

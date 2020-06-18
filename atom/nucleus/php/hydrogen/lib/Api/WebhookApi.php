@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * WebhookApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class WebhookApi
      *
      * Create a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook_request webhookRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook_request webhookRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Webhook
+     * @return \com\hydrogen\nucleus\Model\Webhook
      */
     public function createWebhookUsingPost($webhook_request)
     {
@@ -109,15 +109,15 @@ class WebhookApi
      *
      * Create a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook_request webhookRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook_request webhookRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Webhook, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Webhook, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebhookUsingPostWithHttpInfo($webhook_request)
     {
-        $returnType = '\com\hydrogen\Model\Webhook';
+        $returnType = '\com\hydrogen\nucleus\Model\Webhook';
         $request = $this->createWebhookUsingPostRequest($webhook_request);
 
         try {
@@ -169,7 +169,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Webhook',
+                        '\com\hydrogen\nucleus\Model\Webhook',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class WebhookApi
      *
      * Create a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook_request webhookRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook_request webhookRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class WebhookApi
      *
      * Create a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook_request webhookRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook_request webhookRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebhookUsingPostAsyncWithHttpInfo($webhook_request)
     {
-        $returnType = '\com\hydrogen\Model\Webhook';
+        $returnType = '\com\hydrogen\nucleus\Model\Webhook';
         $request = $this->createWebhookUsingPostRequest($webhook_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class WebhookApi
     /**
      * Create request for operation 'createWebhookUsingPost'
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook_request webhookRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook_request webhookRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,7 +362,7 @@ class WebhookApi
      *
      * @param  string $webhook_id UUID webhook_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -378,7 +378,7 @@ class WebhookApi
      *
      * @param  string $webhook_id UUID webhook_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -602,9 +602,9 @@ class WebhookApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageWebhook_
+     * @return \com\hydrogen\nucleus\Model\PageWebhook_
      */
     public function getWebhookAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -623,13 +623,13 @@ class WebhookApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageWebhook_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageWebhook_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageWebhook_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageWebhook_';
         $request = $this->getWebhookAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -681,7 +681,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageWebhook_',
+                        '\com\hydrogen\nucleus\Model\PageWebhook_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class WebhookApi
      */
     public function getWebhookAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageWebhook_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageWebhook_';
         $request = $this->getWebhookAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -897,9 +897,9 @@ class WebhookApi
      *
      * @param  string $webhook_id UUID webhook_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Webhook
+     * @return \com\hydrogen\nucleus\Model\Webhook
      */
     public function getWebhookUsingGet($webhook_id)
     {
@@ -914,13 +914,13 @@ class WebhookApi
      *
      * @param  string $webhook_id UUID webhook_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Webhook, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Webhook, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookUsingGetWithHttpInfo($webhook_id)
     {
-        $returnType = '\com\hydrogen\Model\Webhook';
+        $returnType = '\com\hydrogen\nucleus\Model\Webhook';
         $request = $this->getWebhookUsingGetRequest($webhook_id);
 
         try {
@@ -972,7 +972,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Webhook',
+                        '\com\hydrogen\nucleus\Model\Webhook',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1014,7 +1014,7 @@ class WebhookApi
      */
     public function getWebhookUsingGetAsyncWithHttpInfo($webhook_id)
     {
-        $returnType = '\com\hydrogen\Model\Webhook';
+        $returnType = '\com\hydrogen\nucleus\Model\Webhook';
         $request = $this->getWebhookUsingGetRequest($webhook_id);
 
         return $this->client
@@ -1168,12 +1168,12 @@ class WebhookApi
      *
      * Update a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook webhook (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook webhook (required)
      * @param  string $webhook_id UUID webhook_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Webhook
+     * @return \com\hydrogen\nucleus\Model\Webhook
      */
     public function updateWebhookUsingPut($webhook, $webhook_id)
     {
@@ -1186,16 +1186,16 @@ class WebhookApi
      *
      * Update a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook webhook (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook webhook (required)
      * @param  string $webhook_id UUID webhook_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Webhook, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Webhook, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebhookUsingPutWithHttpInfo($webhook, $webhook_id)
     {
-        $returnType = '\com\hydrogen\Model\Webhook';
+        $returnType = '\com\hydrogen\nucleus\Model\Webhook';
         $request = $this->updateWebhookUsingPutRequest($webhook, $webhook_id);
 
         try {
@@ -1247,7 +1247,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Webhook',
+                        '\com\hydrogen\nucleus\Model\Webhook',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class WebhookApi
      *
      * Update a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook webhook (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook webhook (required)
      * @param  string $webhook_id UUID webhook_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class WebhookApi
      *
      * Update a webhook
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook webhook (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook webhook (required)
      * @param  string $webhook_id UUID webhook_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class WebhookApi
      */
     public function updateWebhookUsingPutAsyncWithHttpInfo($webhook, $webhook_id)
     {
-        $returnType = '\com\hydrogen\Model\Webhook';
+        $returnType = '\com\hydrogen\nucleus\Model\Webhook';
         $request = $this->updateWebhookUsingPutRequest($webhook, $webhook_id);
 
         return $this->client
@@ -1334,7 +1334,7 @@ class WebhookApi
     /**
      * Create request for operation 'updateWebhookUsingPut'
      *
-     * @param  \com\hydrogen\Model\Webhook $webhook webhook (required)
+     * @param  \com\hydrogen\nucleus\Model\Webhook $webhook webhook (required)
      * @param  string $webhook_id UUID webhook_id (required)
      *
      * @throws \InvalidArgumentException

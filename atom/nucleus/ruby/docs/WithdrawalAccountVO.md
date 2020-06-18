@@ -1,4 +1,4 @@
-# AtomApi::WithdrawalAccountVO
+# NucleusApi::WithdrawalAccountVO
 
 ## Properties
 Name | Type | Description | Notes

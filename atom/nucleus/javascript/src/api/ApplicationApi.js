@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Application'), require('../model/PageApplication'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.ApplicationApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Application, root.HydrogenAtomApi.PageApplication);
+    root.HydrogenNucleusApi.ApplicationApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Application, root.HydrogenNucleusApi.PageApplication);
   }
 }(this, function(ApiClient, Application, PageApplication) {
   'use strict';

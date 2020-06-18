@@ -1,4 +1,4 @@
-# AtomApi::StatisticResourceVO
+# NucleusApi::StatisticResourceVO
 
 ## Properties
 Name | Type | Description | Notes

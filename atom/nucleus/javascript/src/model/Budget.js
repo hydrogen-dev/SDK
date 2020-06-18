@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./BudgetAggregationAccount'), require('./BudgetObject'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.Budget = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.BudgetAggregationAccount, root.HydrogenAtomApi.BudgetObject);
+    root.HydrogenNucleusApi.Budget = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.BudgetAggregationAccount, root.HydrogenNucleusApi.BudgetObject);
   }
 }(this, function(ApiClient, BudgetAggregationAccount, BudgetObject) {
   'use strict';

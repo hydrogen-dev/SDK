@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AggregationDataForClientParentResponseVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class AggregationDataForClientParentResponseVO implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'by_category' => '\com\hydrogen\Model\AggregationDataForClientByCategoryResponseVO[]'
+        'by_category' => '\com\hydrogen\nucleus\Model\AggregationDataForClientByCategoryResponseVO[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class AggregationDataForClientParentResponseVO implements ModelInterface, ArrayA
     /**
      * Gets by_category
      *
-     * @return \com\hydrogen\Model\AggregationDataForClientByCategoryResponseVO[]
+     * @return \com\hydrogen\nucleus\Model\AggregationDataForClientByCategoryResponseVO[]
      */
     public function getByCategory()
     {
@@ -217,7 +217,7 @@ class AggregationDataForClientParentResponseVO implements ModelInterface, ArrayA
     /**
      * Sets by_category
      *
-     * @param \com\hydrogen\Model\AggregationDataForClientByCategoryResponseVO[] $by_category by_category
+     * @param \com\hydrogen\nucleus\Model\AggregationDataForClientByCategoryResponseVO[] $by_category by_category
      *
      * @return $this
      */

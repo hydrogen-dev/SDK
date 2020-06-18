@@ -1,4 +1,4 @@
-# AtomApi::BankCredit
+# NucleusApi::BankCredit
 
 ## Properties
 Name | Type | Description | Notes

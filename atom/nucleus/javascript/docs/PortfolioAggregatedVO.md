@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PortfolioAggregatedVO
+# HydrogenNucleusApi.PortfolioAggregatedVO
 
 ## Properties
 Name | Type | Description | Notes

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PortfolioAssetSize();
+    instance = new HydrogenNucleusApi.PortfolioAssetSize();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,85 +53,85 @@
   describe('PortfolioAssetSize', function() {
     it('should create an instance of PortfolioAssetSize', function() {
       // uncomment below and update the code to test PortfolioAssetSize
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
-      //expect(instance).to.be.a(HydrogenAtomApi.PortfolioAssetSize);
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PortfolioAssetSize);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property assetSize (base name: "asset_size")', function() {
       // uncomment below and update the code to test the property assetSize
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property assetSizeAvailable (base name: "asset_size_available")', function() {
       // uncomment below and update the code to test the property assetSizeAvailable
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property assetSizePending (base name: "asset_size_pending")', function() {
       // uncomment below and update the code to test the property assetSizePending
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property cashFlow (base name: "cash_flow")', function() {
       // uncomment below and update the code to test the property cashFlow
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property modelId (base name: "model_id")', function() {
       // uncomment below and update the code to test the property modelId
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.PortfolioAssetSize();
+      //var instane = new HydrogenNucleusApi.PortfolioAssetSize();
       //expect(instance).to.be();
     });
 

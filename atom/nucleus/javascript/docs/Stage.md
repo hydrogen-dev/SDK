@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Stage
+# HydrogenNucleusApi.Stage
 
 ## Properties
 Name | Type | Description | Notes

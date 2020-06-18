@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ScoreApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class ScoreApi
      *
      * Create a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Score
+     * @return \com\hydrogen\nucleus\Model\Score
      */
     public function createScoreUsingPost($score)
     {
@@ -109,15 +109,15 @@ class ScoreApi
      *
      * Create a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Score, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Score, HTTP status code, HTTP response headers (array of strings)
      */
     public function createScoreUsingPostWithHttpInfo($score)
     {
-        $returnType = '\com\hydrogen\Model\Score';
+        $returnType = '\com\hydrogen\nucleus\Model\Score';
         $request = $this->createScoreUsingPostRequest($score);
 
         try {
@@ -169,7 +169,7 @@ class ScoreApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Score',
+                        '\com\hydrogen\nucleus\Model\Score',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class ScoreApi
      *
      * Create a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class ScoreApi
      *
      * Create a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createScoreUsingPostAsyncWithHttpInfo($score)
     {
-        $returnType = '\com\hydrogen\Model\Score';
+        $returnType = '\com\hydrogen\nucleus\Model\Score';
         $request = $this->createScoreUsingPostRequest($score);
 
         return $this->client
@@ -254,7 +254,7 @@ class ScoreApi
     /**
      * Create request for operation 'createScoreUsingPost'
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,9 +362,9 @@ class ScoreApi
      *
      * @param  string $score_id UUID score_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Score
+     * @return \com\hydrogen\nucleus\Model\Score
      */
     public function createScoreUsingPost1($score_id)
     {
@@ -379,13 +379,13 @@ class ScoreApi
      *
      * @param  string $score_id UUID score_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Score, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Score, HTTP status code, HTTP response headers (array of strings)
      */
     public function createScoreUsingPost1WithHttpInfo($score_id)
     {
-        $returnType = '\com\hydrogen\Model\Score';
+        $returnType = '\com\hydrogen\nucleus\Model\Score';
         $request = $this->createScoreUsingPost1Request($score_id);
 
         try {
@@ -437,7 +437,7 @@ class ScoreApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Score',
+                        '\com\hydrogen\nucleus\Model\Score',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -479,7 +479,7 @@ class ScoreApi
      */
     public function createScoreUsingPost1AsyncWithHttpInfo($score_id)
     {
-        $returnType = '\com\hydrogen\Model\Score';
+        $returnType = '\com\hydrogen\nucleus\Model\Score';
         $request = $this->createScoreUsingPost1Request($score_id);
 
         return $this->client
@@ -635,7 +635,7 @@ class ScoreApi
      *
      * @param  string $score_id UUID score_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -651,7 +651,7 @@ class ScoreApi
      *
      * @param  string $score_id UUID score_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -875,9 +875,9 @@ class ScoreApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageScore_
+     * @return \com\hydrogen\nucleus\Model\PageScore_
      */
     public function getScoreAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -896,13 +896,13 @@ class ScoreApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageScore_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageScore_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getScoreAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageScore_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageScore_';
         $request = $this->getScoreAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -954,7 +954,7 @@ class ScoreApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageScore_',
+                        '\com\hydrogen\nucleus\Model\PageScore_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1004,7 +1004,7 @@ class ScoreApi
      */
     public function getScoreAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageScore_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageScore_';
         $request = $this->getScoreAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1168,12 +1168,12 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Score
+     * @return \com\hydrogen\nucleus\Model\Score
      */
     public function updateScoreUsingPut($score, $score_id)
     {
@@ -1186,16 +1186,16 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Score, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Score, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateScoreUsingPutWithHttpInfo($score, $score_id)
     {
-        $returnType = '\com\hydrogen\Model\Score';
+        $returnType = '\com\hydrogen\nucleus\Model\Score';
         $request = $this->updateScoreUsingPutRequest($score, $score_id);
 
         try {
@@ -1247,7 +1247,7 @@ class ScoreApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Score',
+                        '\com\hydrogen\nucleus\Model\Score',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class ScoreApi
      */
     public function updateScoreUsingPutAsyncWithHttpInfo($score, $score_id)
     {
-        $returnType = '\com\hydrogen\Model\Score';
+        $returnType = '\com\hydrogen\nucleus\Model\Score';
         $request = $this->updateScoreUsingPutRequest($score, $score_id);
 
         return $this->client
@@ -1334,7 +1334,7 @@ class ScoreApi
     /**
      * Create request for operation 'updateScoreUsingPut'
      *
-     * @param  \com\hydrogen\Model\Score $score score (required)
+     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \InvalidArgumentException

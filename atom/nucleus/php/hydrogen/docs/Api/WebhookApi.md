@@ -1,4 +1,4 @@
-# com\hydrogen\WebhookApi
+# com\hydrogen\nucleus\WebhookApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createWebhookUsingPost**
-> \com\hydrogen\Model\Webhook createWebhookUsingPost($webhook_request)
+> \com\hydrogen\nucleus\Model\Webhook createWebhookUsingPost($webhook_request)
 
 Create a webhook
 
@@ -21,29 +21,29 @@ One active webhook service is allowed at all times.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\WebhookApi(
+$apiInstance = new com\hydrogen\nucleus\Api\WebhookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$webhook_request = new \com\hydrogen\Model\Webhook(); // \com\hydrogen\Model\Webhook | webhookRequest
+$webhook_request = new \com\hydrogen\nucleus\Model\Webhook(); // \com\hydrogen\nucleus\Model\Webhook | webhookRequest
 
 try {
     $result = $apiInstance->createWebhookUsingPost($webhook_request);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_request** | [**\com\hydrogen\Model\Webhook**](../Model/Webhook.md)| webhookRequest |
+ **webhook_request** | [**\com\hydrogen\nucleus\Model\Webhook**](../Model/Webhook.md)| webhookRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Webhook**](../Model/Webhook.md)
+[**\com\hydrogen\nucleus\Model\Webhook**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently delete a webhook for your firm. The webhook_id must be provided.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\WebhookApi(
+$apiInstance = new com\hydrogen\nucleus\Api\WebhookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -139,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookAllUsingGet**
-> \com\hydrogen\Model\PageWebhook_ getWebhookAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageWebhook_ getWebhookAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all webhooks
 
@@ -148,23 +148,23 @@ Get information for all webhooks defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\WebhookApi(
+$apiInstance = new com\hydrogen\nucleus\Api\WebhookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageWebhook_**](../Model/PageWebhook_.md)
+[**\com\hydrogen\nucleus\Model\PageWebhook_**](../Model/PageWebhook_.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookUsingGet**
-> \com\hydrogen\Model\Webhook getWebhookUsingGet($webhook_id)
+> \com\hydrogen\nucleus\Model\Webhook getWebhookUsingGet($webhook_id)
 
 Retrieve a webhook
 
@@ -220,23 +220,23 @@ Retrieve the information for a specific webhook. The webhook_id must be provided
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\WebhookApi(
+$apiInstance = new com\hydrogen\nucleus\Api\WebhookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Webhook**](../Model/Webhook.md)
+[**\com\hydrogen\nucleus\Model\Webhook**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhookUsingPut**
-> \com\hydrogen\Model\Webhook updateWebhookUsingPut($webhook, $webhook_id)
+> \com\hydrogen\nucleus\Model\Webhook updateWebhookUsingPut($webhook, $webhook_id)
 
 Update a webhook
 
@@ -284,29 +284,29 @@ Update a webhook for your firm. The webhook_id must be provided
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\WebhookApi(
+$apiInstance = new com\hydrogen\nucleus\Api\WebhookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$webhook = new \com\hydrogen\Model\Webhook(); // \com\hydrogen\Model\Webhook | webhook
+$webhook = new \com\hydrogen\nucleus\Model\Webhook(); // \com\hydrogen\nucleus\Model\Webhook | webhook
 $webhook_id = "webhook_id_example"; // string | UUID webhook_id
 
 try {
@@ -322,12 +322,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**\com\hydrogen\Model\Webhook**](../Model/Webhook.md)| webhook |
+ **webhook** | [**\com\hydrogen\nucleus\Model\Webhook**](../Model/Webhook.md)| webhook |
  **webhook_id** | [**string**](../Model/.md)| UUID webhook_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Webhook**](../Model/Webhook.md)
+[**\com\hydrogen\nucleus\Model\Webhook**](../Model/Webhook.md)
 
 ### Authorization
 

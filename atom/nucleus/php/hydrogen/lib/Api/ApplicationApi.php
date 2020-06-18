@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ApplicationApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class ApplicationApi
      *
      * Create an application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Application
+     * @return \com\hydrogen\nucleus\Model\Application
      */
     public function createApplicationUsingPost($application)
     {
@@ -109,15 +109,15 @@ class ApplicationApi
      *
      * Create an application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Application, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Application, HTTP status code, HTTP response headers (array of strings)
      */
     public function createApplicationUsingPostWithHttpInfo($application)
     {
-        $returnType = '\com\hydrogen\Model\Application';
+        $returnType = '\com\hydrogen\nucleus\Model\Application';
         $request = $this->createApplicationUsingPostRequest($application);
 
         try {
@@ -169,7 +169,7 @@ class ApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Application',
+                        '\com\hydrogen\nucleus\Model\Application',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class ApplicationApi
      *
      * Create an application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class ApplicationApi
      *
      * Create an application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createApplicationUsingPostAsyncWithHttpInfo($application)
     {
-        $returnType = '\com\hydrogen\Model\Application';
+        $returnType = '\com\hydrogen\nucleus\Model\Application';
         $request = $this->createApplicationUsingPostRequest($application);
 
         return $this->client
@@ -254,7 +254,7 @@ class ApplicationApi
     /**
      * Create request for operation 'createApplicationUsingPost'
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,7 +362,7 @@ class ApplicationApi
      *
      * @param  string $application_id UUID application_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -378,7 +378,7 @@ class ApplicationApi
      *
      * @param  string $application_id UUID application_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -602,9 +602,9 @@ class ApplicationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageApplication_
+     * @return \com\hydrogen\nucleus\Model\PageApplication_
      */
     public function getApplicationAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -623,13 +623,13 @@ class ApplicationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageApplication_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageApplication_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getApplicationAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageApplication_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageApplication_';
         $request = $this->getApplicationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -681,7 +681,7 @@ class ApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageApplication_',
+                        '\com\hydrogen\nucleus\Model\PageApplication_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class ApplicationApi
      */
     public function getApplicationAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageApplication_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageApplication_';
         $request = $this->getApplicationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -897,9 +897,9 @@ class ApplicationApi
      *
      * @param  string $application_id UUID application_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Application
+     * @return \com\hydrogen\nucleus\Model\Application
      */
     public function getApplicationUsingGet($application_id)
     {
@@ -914,13 +914,13 @@ class ApplicationApi
      *
      * @param  string $application_id UUID application_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Application, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Application, HTTP status code, HTTP response headers (array of strings)
      */
     public function getApplicationUsingGetWithHttpInfo($application_id)
     {
-        $returnType = '\com\hydrogen\Model\Application';
+        $returnType = '\com\hydrogen\nucleus\Model\Application';
         $request = $this->getApplicationUsingGetRequest($application_id);
 
         try {
@@ -972,7 +972,7 @@ class ApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Application',
+                        '\com\hydrogen\nucleus\Model\Application',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1014,7 +1014,7 @@ class ApplicationApi
      */
     public function getApplicationUsingGetAsyncWithHttpInfo($application_id)
     {
-        $returnType = '\com\hydrogen\Model\Application';
+        $returnType = '\com\hydrogen\nucleus\Model\Application';
         $request = $this->getApplicationUsingGetRequest($application_id);
 
         return $this->client
@@ -1168,12 +1168,12 @@ class ApplicationApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Application
+     * @return \com\hydrogen\nucleus\Model\Application
      */
     public function updateApplicationUsingPut($application, $application_id)
     {
@@ -1186,16 +1186,16 @@ class ApplicationApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Application, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Application, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateApplicationUsingPutWithHttpInfo($application, $application_id)
     {
-        $returnType = '\com\hydrogen\Model\Application';
+        $returnType = '\com\hydrogen\nucleus\Model\Application';
         $request = $this->updateApplicationUsingPutRequest($application, $application_id);
 
         try {
@@ -1247,7 +1247,7 @@ class ApplicationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Application',
+                        '\com\hydrogen\nucleus\Model\Application',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class ApplicationApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class ApplicationApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class ApplicationApi
      */
     public function updateApplicationUsingPutAsyncWithHttpInfo($application, $application_id)
     {
-        $returnType = '\com\hydrogen\Model\Application';
+        $returnType = '\com\hydrogen\nucleus\Model\Application';
         $request = $this->updateApplicationUsingPutRequest($application, $application_id);
 
         return $this->client
@@ -1334,7 +1334,7 @@ class ApplicationApi
     /**
      * Create request for operation 'updateApplicationUsingPut'
      *
-     * @param  \com\hydrogen\Model\Application $application application (required)
+     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \InvalidArgumentException

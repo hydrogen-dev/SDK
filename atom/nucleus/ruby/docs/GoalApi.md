@@ -1,4 +1,4 @@
-# AtomApi::GoalApi
+# NucleusApi::GoalApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -29,9 +29,9 @@ Create a goal track record for a goal under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -40,16 +40,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
-goal_track = AtomApi::GoalTrack.new # GoalTrack | goalTrack
+goal_track = NucleusApi::GoalTrack.new # GoalTrack | goalTrack
 
 
 begin
   #Create a goal track record
   result = api_instance.create_goal_track_using_post(goal_track)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->create_goal_track_using_post: #{e}"
 end
 ```
@@ -85,9 +85,9 @@ Create a new goal for your firm that clients can customize for themselves.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -96,16 +96,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
-goal_request = AtomApi::Goal.new # Goal | goalRequest
+goal_request = NucleusApi::Goal.new # Goal | goalRequest
 
 
 begin
   #Create a goal
   result = api_instance.create_goal_using_post(goal_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->create_goal_using_post: #{e}"
 end
 ```
@@ -141,9 +141,9 @@ Permanently delete an goal track record for a goal under a client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -152,7 +152,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 goal_track_id = 'goal_track_id_example' # String | UUID goal_track_id
 
@@ -162,7 +162,7 @@ goal_track_id2 = 'goal_track_id_example' # String | goal_track_id
 begin
   #Delete a goal track record
   api_instance.delete_goal_track_using_delete(goal_track_id, goal_track_id2)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->delete_goal_track_using_delete: #{e}"
 end
 ```
@@ -199,9 +199,9 @@ Permanently delete a goal for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -210,7 +210,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 goal_id = 'goal_id_example' # String | UUID goal_id
 
@@ -218,7 +218,7 @@ goal_id = 'goal_id_example' # String | UUID goal_id
 begin
   #Delete a goal
   api_instance.delete_goal_using_delete(goal_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->delete_goal_using_delete: #{e}"
 end
 ```
@@ -254,9 +254,9 @@ Get the details for all goals defined by your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -265,7 +265,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -279,7 +279,7 @@ begin
   #List all goals
   result = api_instance.get_goal_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_all_using_get: #{e}"
 end
 ```
@@ -319,9 +319,9 @@ Get a list of asset sizes per date for a goal for a specified client.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -330,7 +330,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 client_id = 'client_id_example' # String | client_id
 
@@ -348,7 +348,7 @@ begin
   #List goal asset sizes
   result = api_instance.get_goal_asset_size_all_using_get(client_id, goal_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_asset_size_all_using_get: #{e}"
 end
 ```
@@ -390,9 +390,9 @@ Get the information for all the securities that are currently being held in port
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -401,7 +401,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 client_id = 'client_id_example' # String | client_id
 
@@ -417,7 +417,7 @@ begin
   #List goal holdings
   result = api_instance.get_goal_holding_all_using_get(client_id, goal_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_holding_all_using_get: #{e}"
 end
 ```
@@ -457,9 +457,9 @@ Get information for all goal track records stored for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -468,7 +468,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -485,7 +485,7 @@ begin
   #List all goal track records
   result = api_instance.get_goal_track_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_track_all_using_get: #{e}"
 end
 ```
@@ -528,9 +528,9 @@ Retrieve the information for a specific goal track record for a goal under a cli
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -539,7 +539,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 goal_track_id = 'goal_track_id_example' # String | UUID goal_track_id
 
@@ -550,7 +550,7 @@ begin
   #Retrieve a goal track record
   result = api_instance.get_goal_track_using_get(goal_track_id, goal_track_id2)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_track_using_get: #{e}"
 end
 ```
@@ -587,9 +587,9 @@ Get the information for all transactions under portfolios associated with a part
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -598,7 +598,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 client_id = 'client_id_example' # String | client_id
 
@@ -618,7 +618,7 @@ begin
   #List goal transactions
   result = api_instance.get_goal_transaction_all_using_get(client_id, goal_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_transaction_all_using_get: #{e}"
 end
 ```
@@ -662,9 +662,9 @@ Retrieve the information for a goal defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -673,7 +673,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
 goal_id = 'goal_id_example' # String | UUID goal_id
 
@@ -682,7 +682,7 @@ begin
   #Retrieve a goal
   result = api_instance.get_goal_using_get(goal_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_using_get: #{e}"
 end
 ```
@@ -718,9 +718,9 @@ Update the information for a goal track record.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -729,9 +729,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
-goal_track = AtomApi::GoalTrack.new # GoalTrack | goal_track
+goal_track = NucleusApi::GoalTrack.new # GoalTrack | goal_track
 
 goal_track_id = 'goal_track_id_example' # String | UUID goal_track_id
 
@@ -740,7 +740,7 @@ begin
   #Update a goal track record
   result = api_instance.update_goal_track_using_put(goal_track, goal_track_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->update_goal_track_using_put: #{e}"
 end
 ```
@@ -777,9 +777,9 @@ Update a goal defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -788,9 +788,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::GoalApi.new
+api_instance = NucleusApi::GoalApi.new
 
-goal = AtomApi::Goal.new # Goal | goal
+goal = NucleusApi::Goal.new # Goal | goal
 
 goal_id = 'goal_id_example' # String | UUID goal_id
 
@@ -799,7 +799,7 @@ begin
   #Update a goal
   result = api_instance.update_goal_using_put(goal, goal_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->update_goal_using_put: #{e}"
 end
 ```

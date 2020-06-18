@@ -1,4 +1,4 @@
-# HydrogenAtomApi.OrderReconcileRequest
+# HydrogenNucleusApi.OrderReconcileRequest
 
 ## Properties
 Name | Type | Description | Notes

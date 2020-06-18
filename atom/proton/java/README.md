@@ -1,4 +1,4 @@
-# hydrogen_proton_api
+# hydrogen-proton-api
 
 Hydrogen Proton API
 - API version: 1.7.18
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>com.hydrogen</groupId>
-  <artifactId>hydrogen_proton_api</artifactId>
+  <artifactId>hydrogen-proton-api</artifactId>
   <version>1.7.18</version>
   <scope>compile</scope>
 </dependency>
@@ -60,7 +60,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen_proton_api:1.7.18"
+compile "com.hydrogen:hydrogen-proton-api:1.7.18"
 ```
 
 ### Others
@@ -73,7 +73,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen_proton_api-1.0.0.jar`
+* `target/hydrogen-proton-api-1.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -82,11 +82,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.hydrogen.ApiException;
-import com.hydrogen.AuthApiClient;
-import com.hydrogen.model.AnnuityCalculatorAccumulationHorizonRequest;
-import com.hydrogen.*;
-import com.hydrogen.api.AnnuitiesApi;
+import com.hydrogen.proton.ApiException;
+import com.hydrogen.proton.AuthApiClient;
+import com.hydrogen.proton.model.AnnuityCalculatorAccumulationHorizonRequest;
+import com.hydrogen.proton.api.AnnuitiesApi;
 
 import java.util.*;
 

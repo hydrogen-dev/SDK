@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/PageRiskProfile'), require('../model/RiskProfile'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.RiskProfileApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.PageRiskProfile, root.HydrogenAtomApi.RiskProfile);
+    root.HydrogenNucleusApi.RiskProfileApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.PageRiskProfile, root.HydrogenNucleusApi.RiskProfile);
   }
 }(this, function(ApiClient, PageRiskProfile, RiskProfile) {
   'use strict';

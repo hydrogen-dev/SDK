@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./GoalTrackAccounts'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.GoalTrack = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.GoalTrackAccounts);
+    root.HydrogenNucleusApi.GoalTrack = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.GoalTrackAccounts);
   }
 }(this, function(ApiClient, GoalTrackAccounts) {
   'use strict';

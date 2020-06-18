@@ -1,4 +1,4 @@
-# HydrogenAtomApi.DateDoubleVO
+# HydrogenNucleusApi.DateDoubleVO
 
 ## Properties
 Name | Type | Description | Notes

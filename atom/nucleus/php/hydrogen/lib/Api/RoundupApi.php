@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * RoundupApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class RoundupApi
      *
      * Create a Roundup Settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_settings roundupSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_settings roundupSettings (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\RoundupSettings
+     * @return \com\hydrogen\nucleus\Model\RoundupSettings
      */
     public function createRoundupSettingsUsingPost($roundup_settings)
     {
@@ -109,15 +109,15 @@ class RoundupApi
      *
      * Create a Roundup Settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_settings roundupSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_settings roundupSettings (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\RoundupSettings, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\RoundupSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function createRoundupSettingsUsingPostWithHttpInfo($roundup_settings)
     {
-        $returnType = '\com\hydrogen\Model\RoundupSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\RoundupSettings';
         $request = $this->createRoundupSettingsUsingPostRequest($roundup_settings);
 
         try {
@@ -169,7 +169,7 @@ class RoundupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\RoundupSettings',
+                        '\com\hydrogen\nucleus\Model\RoundupSettings',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class RoundupApi
      *
      * Create a Roundup Settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_settings roundupSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_settings roundupSettings (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class RoundupApi
      *
      * Create a Roundup Settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_settings roundupSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_settings roundupSettings (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createRoundupSettingsUsingPostAsyncWithHttpInfo($roundup_settings)
     {
-        $returnType = '\com\hydrogen\Model\RoundupSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\RoundupSettings';
         $request = $this->createRoundupSettingsUsingPostRequest($roundup_settings);
 
         return $this->client
@@ -254,7 +254,7 @@ class RoundupApi
     /**
      * Create request for operation 'createRoundupSettingsUsingPost'
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_settings roundupSettings (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_settings roundupSettings (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class RoundupApi
      *
      * Create a roundup
      *
-     * @param  \com\hydrogen\Model\RoundupCO $roundup_co roundupCO (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupCO $roundup_co roundupCO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Roundup
+     * @return \com\hydrogen\nucleus\Model\Roundup
      */
     public function createRoundupUsingPost($roundup_co)
     {
@@ -377,15 +377,15 @@ class RoundupApi
      *
      * Create a roundup
      *
-     * @param  \com\hydrogen\Model\RoundupCO $roundup_co roundupCO (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupCO $roundup_co roundupCO (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Roundup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Roundup, HTTP status code, HTTP response headers (array of strings)
      */
     public function createRoundupUsingPostWithHttpInfo($roundup_co)
     {
-        $returnType = '\com\hydrogen\Model\Roundup';
+        $returnType = '\com\hydrogen\nucleus\Model\Roundup';
         $request = $this->createRoundupUsingPostRequest($roundup_co);
 
         try {
@@ -437,7 +437,7 @@ class RoundupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Roundup',
+                        '\com\hydrogen\nucleus\Model\Roundup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class RoundupApi
      *
      * Create a roundup
      *
-     * @param  \com\hydrogen\Model\RoundupCO $roundup_co roundupCO (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupCO $roundup_co roundupCO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class RoundupApi
      *
      * Create a roundup
      *
-     * @param  \com\hydrogen\Model\RoundupCO $roundup_co roundupCO (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupCO $roundup_co roundupCO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createRoundupUsingPostAsyncWithHttpInfo($roundup_co)
     {
-        $returnType = '\com\hydrogen\Model\Roundup';
+        $returnType = '\com\hydrogen\nucleus\Model\Roundup';
         $request = $this->createRoundupUsingPostRequest($roundup_co);
 
         return $this->client
@@ -522,7 +522,7 @@ class RoundupApi
     /**
      * Create request for operation 'createRoundupUsingPost'
      *
-     * @param  \com\hydrogen\Model\RoundupCO $roundup_co roundupCO (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupCO $roundup_co roundupCO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -630,7 +630,7 @@ class RoundupApi
      *
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -646,7 +646,7 @@ class RoundupApi
      *
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -870,9 +870,9 @@ class RoundupApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageRoundup_
+     * @return \com\hydrogen\nucleus\Model\PageRoundup_
      */
     public function getRoundupAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -891,13 +891,13 @@ class RoundupApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageRoundup_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageRoundup_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRoundupAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageRoundup_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageRoundup_';
         $request = $this->getRoundupAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -949,7 +949,7 @@ class RoundupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageRoundup_',
+                        '\com\hydrogen\nucleus\Model\PageRoundup_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class RoundupApi
      */
     public function getRoundupAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageRoundup_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageRoundup_';
         $request = $this->getRoundupAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1169,9 +1169,9 @@ class RoundupApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageRoundupSettings_
+     * @return \com\hydrogen\nucleus\Model\PageRoundupSettings_
      */
     public function getRoundupSettingsAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1190,13 +1190,13 @@ class RoundupApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageRoundupSettings_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageRoundupSettings_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRoundupSettingsAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageRoundupSettings_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageRoundupSettings_';
         $request = $this->getRoundupSettingsAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1248,7 +1248,7 @@ class RoundupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageRoundupSettings_',
+                        '\com\hydrogen\nucleus\Model\PageRoundupSettings_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1298,7 +1298,7 @@ class RoundupApi
      */
     public function getRoundupSettingsAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageRoundupSettings_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageRoundupSettings_';
         $request = $this->getRoundupSettingsAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1464,9 +1464,9 @@ class RoundupApi
      *
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\RoundupSettings
+     * @return \com\hydrogen\nucleus\Model\RoundupSettings
      */
     public function getRoundupSettingsUsingGet($roundup_setting_id)
     {
@@ -1481,13 +1481,13 @@ class RoundupApi
      *
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\RoundupSettings, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\RoundupSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRoundupSettingsUsingGetWithHttpInfo($roundup_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\RoundupSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\RoundupSettings';
         $request = $this->getRoundupSettingsUsingGetRequest($roundup_setting_id);
 
         try {
@@ -1539,7 +1539,7 @@ class RoundupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\RoundupSettings',
+                        '\com\hydrogen\nucleus\Model\RoundupSettings',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1581,7 +1581,7 @@ class RoundupApi
      */
     public function getRoundupSettingsUsingGetAsyncWithHttpInfo($roundup_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\RoundupSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\RoundupSettings';
         $request = $this->getRoundupSettingsUsingGetRequest($roundup_setting_id);
 
         return $this->client
@@ -1737,9 +1737,9 @@ class RoundupApi
      *
      * @param  string $roundup_id UUID roundup_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Roundup
+     * @return \com\hydrogen\nucleus\Model\Roundup
      */
     public function getRoundupUsingGet($roundup_id)
     {
@@ -1754,13 +1754,13 @@ class RoundupApi
      *
      * @param  string $roundup_id UUID roundup_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Roundup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Roundup, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRoundupUsingGetWithHttpInfo($roundup_id)
     {
-        $returnType = '\com\hydrogen\Model\Roundup';
+        $returnType = '\com\hydrogen\nucleus\Model\Roundup';
         $request = $this->getRoundupUsingGetRequest($roundup_id);
 
         try {
@@ -1812,7 +1812,7 @@ class RoundupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Roundup',
+                        '\com\hydrogen\nucleus\Model\Roundup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1854,7 +1854,7 @@ class RoundupApi
      */
     public function getRoundupUsingGetAsyncWithHttpInfo($roundup_id)
     {
-        $returnType = '\com\hydrogen\Model\Roundup';
+        $returnType = '\com\hydrogen\nucleus\Model\Roundup';
         $request = $this->getRoundupUsingGetRequest($roundup_id);
 
         return $this->client
@@ -2008,12 +2008,12 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\RoundupSettings
+     * @return \com\hydrogen\nucleus\Model\RoundupSettings
      */
     public function updateRoundupSettingsUsingPut($roundup_setting, $roundup_setting_id)
     {
@@ -2026,16 +2026,16 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\RoundupSettings, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\RoundupSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateRoundupSettingsUsingPutWithHttpInfo($roundup_setting, $roundup_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\RoundupSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\RoundupSettings';
         $request = $this->updateRoundupSettingsUsingPutRequest($roundup_setting, $roundup_setting_id);
 
         try {
@@ -2087,7 +2087,7 @@ class RoundupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\RoundupSettings',
+                        '\com\hydrogen\nucleus\Model\RoundupSettings',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2102,7 +2102,7 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2123,7 +2123,7 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2131,7 +2131,7 @@ class RoundupApi
      */
     public function updateRoundupSettingsUsingPutAsyncWithHttpInfo($roundup_setting, $roundup_setting_id)
     {
-        $returnType = '\com\hydrogen\Model\RoundupSettings';
+        $returnType = '\com\hydrogen\nucleus\Model\RoundupSettings';
         $request = $this->updateRoundupSettingsUsingPutRequest($roundup_setting, $roundup_setting_id);
 
         return $this->client
@@ -2174,7 +2174,7 @@ class RoundupApi
     /**
      * Create request for operation 'updateRoundupSettingsUsingPut'
      *
-     * @param  \com\hydrogen\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \InvalidArgumentException

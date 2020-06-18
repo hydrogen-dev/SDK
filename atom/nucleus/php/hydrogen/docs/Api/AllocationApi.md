@@ -1,4 +1,4 @@
-# com\hydrogen\AllocationApi
+# com\hydrogen\nucleus\AllocationApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **createAllocationCompositionUsingPost**
-> \com\hydrogen\Model\AllocationComposition createAllocationCompositionUsingPost($alloc_request)
+> \com\hydrogen\nucleus\Model\AllocationComposition createAllocationCompositionUsingPost($alloc_request)
 
 Create an allocation composition
 
@@ -30,29 +30,29 @@ Create a new allocation composition record for an allocation.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$alloc_request = new \com\hydrogen\Model\AllocationComposition(); // \com\hydrogen\Model\AllocationComposition | allocRequest
+$alloc_request = new \com\hydrogen\nucleus\Model\AllocationComposition(); // \com\hydrogen\nucleus\Model\AllocationComposition | allocRequest
 
 try {
     $result = $apiInstance->createAllocationCompositionUsingPost($alloc_request);
@@ -67,11 +67,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **alloc_request** | [**\com\hydrogen\Model\AllocationComposition**](../Model/AllocationComposition.md)| allocRequest |
+ **alloc_request** | [**\com\hydrogen\nucleus\Model\AllocationComposition**](../Model/AllocationComposition.md)| allocRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\AllocationComposition**](../Model/AllocationComposition.md)
+[**\com\hydrogen\nucleus\Model\AllocationComposition**](../Model/AllocationComposition.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAllocationUsingPost**
-> \com\hydrogen\Model\Allocation createAllocationUsingPost($allocation_request)
+> \com\hydrogen\nucleus\Model\Allocation createAllocationUsingPost($allocation_request)
 
 Create an allocation
 
@@ -94,29 +94,29 @@ Create a new allocation for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$allocation_request = new \com\hydrogen\Model\Allocation(); // \com\hydrogen\Model\Allocation | allocationRequest
+$allocation_request = new \com\hydrogen\nucleus\Model\Allocation(); // \com\hydrogen\nucleus\Model\Allocation | allocationRequest
 
 try {
     $result = $apiInstance->createAllocationUsingPost($allocation_request);
@@ -131,11 +131,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation_request** | [**\com\hydrogen\Model\Allocation**](../Model/Allocation.md)| allocationRequest |
+ **allocation_request** | [**\com\hydrogen\nucleus\Model\Allocation**](../Model/Allocation.md)| allocationRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Allocation**](../Model/Allocation.md)
+[**\com\hydrogen\nucleus\Model\Allocation**](../Model/Allocation.md)
 
 ### Authorization
 
@@ -158,23 +158,23 @@ Permanently delete an allocation composition record for an allocation.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -221,23 +221,23 @@ Permanently delete an allocation defined by your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -275,7 +275,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllHoldingsUsingGET**
-> \com\hydrogen\Model\ModelHoldingAgg[] getAllHoldingsUsingGET($allocation_id, $end_date, $start_date)
+> \com\hydrogen\nucleus\Model\ModelHoldingAgg[] getAllHoldingsUsingGET($allocation_id, $end_date, $start_date)
 
 List all allocation holdings
 
@@ -284,23 +284,23 @@ Get the information for all securities assigned to a specific allocation.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\ModelHoldingAgg[]**](../Model/ModelHoldingAgg.md)
+[**\com\hydrogen\nucleus\Model\ModelHoldingAgg[]**](../Model/ModelHoldingAgg.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllTransactionsUsingGET**
-> \com\hydrogen\Model\PageModelTransaction_ getAllTransactionsUsingGET($allocation_id, $ascending, $end_date, $order_by, $page, $size, $start_date)
+> \com\hydrogen\nucleus\Model\PageModelTransaction_ getAllTransactionsUsingGET($allocation_id, $ascending, $end_date, $order_by, $page, $size, $start_date)
 
 List all allocation transactions
 
@@ -352,23 +352,23 @@ Get the information for all transactions made under an allocation to achieve the
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageModelTransaction_**](../Model/PageModelTransaction_.md)
+[**\com\hydrogen\nucleus\Model\PageModelTransaction_**](../Model/PageModelTransaction_.md)
 
 ### Authorization
 
@@ -419,30 +419,30 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllocationAggregatedDataUsingGET**
-> \com\hydrogen\Model\AllocationAggregatedVO getAllocationAggregatedDataUsingGET($allocation_id)
+> \com\hydrogen\nucleus\Model\AllocationAggregatedVO getAllocationAggregatedDataUsingGET($allocation_id)
 
 List all Allocation aggregated data overview
 
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AllocationAggregatedVO**](../Model/AllocationAggregatedVO.md)
+[**\com\hydrogen\nucleus\Model\AllocationAggregatedVO**](../Model/AllocationAggregatedVO.md)
 
 ### Authorization
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllocationAllUsingGet**
-> \com\hydrogen\Model\PageAllocation_ getAllocationAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAllocation_ getAllocationAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all allocations
 
@@ -490,23 +490,23 @@ Get details for all allocations defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAllocation_**](../Model/PageAllocation_.md)
+[**\com\hydrogen\nucleus\Model\PageAllocation_**](../Model/PageAllocation_.md)
 
 ### Authorization
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllocationCompositionAllUsingGet**
-> \com\hydrogen\Model\PageAllocationComposition_ getAllocationCompositionAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAllocationComposition_ getAllocationCompositionAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all allocations compositions
 
@@ -562,23 +562,23 @@ Get the allocation composition for all allocations.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAllocationComposition_**](../Model/PageAllocationComposition_.md)
+[**\com\hydrogen\nucleus\Model\PageAllocationComposition_**](../Model/PageAllocationComposition_.md)
 
 ### Authorization
 
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllocationCompositionUsingGet**
-> \com\hydrogen\Model\AllocationComposition getAllocationCompositionUsingGet($allocation_composition_id)
+> \com\hydrogen\nucleus\Model\AllocationComposition getAllocationCompositionUsingGet($allocation_composition_id)
 
 Retrieve an allocation composition
 
@@ -634,23 +634,23 @@ Retrieve the information of an allocation composition record for an allocation.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -675,7 +675,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AllocationComposition**](../Model/AllocationComposition.md)
+[**\com\hydrogen\nucleus\Model\AllocationComposition**](../Model/AllocationComposition.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllocationUsingGet**
-> \com\hydrogen\Model\Allocation getAllocationUsingGet($allocation_id)
+> \com\hydrogen\nucleus\Model\Allocation getAllocationUsingGet($allocation_id)
 
 Retrieve an allocation
 
@@ -698,23 +698,23 @@ Retrieve the information for an allocation defined by your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Allocation**](../Model/Allocation.md)
+[**\com\hydrogen\nucleus\Model\Allocation**](../Model/Allocation.md)
 
 ### Authorization
 
@@ -753,7 +753,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAssetsizeUsingGET**
-> \com\hydrogen\Model\DateDoubleVO[] getAssetsizeUsingGET($allocation_id, $end_date, $get_latest, $is_current_weight, $sort_type, $start_date)
+> \com\hydrogen\nucleus\Model\DateDoubleVO[] getAssetsizeUsingGET($allocation_id, $end_date, $get_latest, $is_current_weight, $sort_type, $start_date)
 
 List all allocation asset sizes
 
@@ -762,23 +762,23 @@ Get a list of asset sizes by date for a specific allocation.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -813,7 +813,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\DateDoubleVO[]**](../Model/DateDoubleVO.md)
+[**\com\hydrogen\nucleus\Model\DateDoubleVO[]**](../Model/DateDoubleVO.md)
 
 ### Authorization
 
@@ -827,7 +827,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAllocationCompositionUsingPut**
-> \com\hydrogen\Model\AllocationComposition updateAllocationCompositionUsingPut($allocation_composition, $allocation_composition_id)
+> \com\hydrogen\nucleus\Model\AllocationComposition updateAllocationCompositionUsingPut($allocation_composition, $allocation_composition_id)
 
 Update an allocation composition
 
@@ -836,29 +836,29 @@ Update the information of an allocation composition record for an allocation.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$allocation_composition = new \com\hydrogen\Model\AllocationComposition(); // \com\hydrogen\Model\AllocationComposition | aggregation_composition
+$allocation_composition = new \com\hydrogen\nucleus\Model\AllocationComposition(); // \com\hydrogen\nucleus\Model\AllocationComposition | aggregation_composition
 $allocation_composition_id = "allocation_composition_id_example"; // string | UUID allocation_composition_id
 
 try {
@@ -874,12 +874,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation_composition** | [**\com\hydrogen\Model\AllocationComposition**](../Model/AllocationComposition.md)| aggregation_composition |
+ **allocation_composition** | [**\com\hydrogen\nucleus\Model\AllocationComposition**](../Model/AllocationComposition.md)| aggregation_composition |
  **allocation_composition_id** | [**string**](../Model/.md)| UUID allocation_composition_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\AllocationComposition**](../Model/AllocationComposition.md)
+[**\com\hydrogen\nucleus\Model\AllocationComposition**](../Model/AllocationComposition.md)
 
 ### Authorization
 
@@ -893,7 +893,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAllocationUsingPut**
-> \com\hydrogen\Model\Allocation updateAllocationUsingPut($allocation, $allocation_id)
+> \com\hydrogen\nucleus\Model\Allocation updateAllocationUsingPut($allocation, $allocation_id)
 
 Update an allocation
 
@@ -902,29 +902,29 @@ Update an allocation defined by your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AllocationApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$allocation = new \com\hydrogen\Model\Allocation(); // \com\hydrogen\Model\Allocation | allocation
+$allocation = new \com\hydrogen\nucleus\Model\Allocation(); // \com\hydrogen\nucleus\Model\Allocation | allocation
 $allocation_id = "allocation_id_example"; // string | UUID allocation_id
 
 try {
@@ -940,12 +940,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation** | [**\com\hydrogen\Model\Allocation**](../Model/Allocation.md)| allocation |
+ **allocation** | [**\com\hydrogen\nucleus\Model\Allocation**](../Model/Allocation.md)| allocation |
  **allocation_id** | [**string**](../Model/.md)| UUID allocation_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Allocation**](../Model/Allocation.md)
+[**\com\hydrogen\nucleus\Model\Allocation**](../Model/Allocation.md)
 
 ### Authorization
 

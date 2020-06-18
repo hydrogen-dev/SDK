@@ -1,4 +1,4 @@
-# AtomApi::ClientAnalyticsHistory
+# NucleusApi::ClientAnalyticsHistory
 
 ## Properties
 Name | Type | Description | Notes

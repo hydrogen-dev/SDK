@@ -1,4 +1,4 @@
-# AtomApi::SecuritiesCountry
+# NucleusApi::SecuritiesCountry
 
 ## Properties
 Name | Type | Description | Notes

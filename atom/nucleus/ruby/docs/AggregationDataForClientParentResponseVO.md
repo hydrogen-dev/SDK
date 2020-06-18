@@ -1,4 +1,4 @@
-# AtomApi::AggregationDataForClientParentResponseVO
+# NucleusApi::AggregationDataForClientParentResponseVO
 
 ## Properties
 Name | Type | Description | Notes

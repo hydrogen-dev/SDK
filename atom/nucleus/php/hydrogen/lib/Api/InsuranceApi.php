@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * InsuranceApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class InsuranceApi
      *
      * Create a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceCoverage
+     * @return \com\hydrogen\nucleus\Model\InsuranceCoverage
      */
     public function createInsuranceCoverageUsingPost($insurance_coverage)
     {
@@ -109,15 +109,15 @@ class InsuranceApi
      *
      * Create a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceCoverage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceCoverage, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInsuranceCoverageUsingPostWithHttpInfo($insurance_coverage)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceCoverage';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceCoverage';
         $request = $this->createInsuranceCoverageUsingPostRequest($insurance_coverage);
 
         try {
@@ -169,7 +169,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceCoverage',
+                        '\com\hydrogen\nucleus\Model\InsuranceCoverage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class InsuranceApi
      *
      * Create a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class InsuranceApi
      *
      * Create a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInsuranceCoverageUsingPostAsyncWithHttpInfo($insurance_coverage)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceCoverage';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceCoverage';
         $request = $this->createInsuranceCoverageUsingPostRequest($insurance_coverage);
 
         return $this->client
@@ -254,7 +254,7 @@ class InsuranceApi
     /**
      * Create request for operation 'createInsuranceCoverageUsingPost'
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insuranceCoverage (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class InsuranceApi
      *
      * Create a insurance discount request
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceDiscount
+     * @return \com\hydrogen\nucleus\Model\InsuranceDiscount
      */
     public function createInsuranceDiscountUsingPost($insurance_discount)
     {
@@ -377,15 +377,15 @@ class InsuranceApi
      *
      * Create a insurance discount request
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceDiscount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceDiscount, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInsuranceDiscountUsingPostWithHttpInfo($insurance_discount)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceDiscount';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceDiscount';
         $request = $this->createInsuranceDiscountUsingPostRequest($insurance_discount);
 
         try {
@@ -437,7 +437,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceDiscount',
+                        '\com\hydrogen\nucleus\Model\InsuranceDiscount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class InsuranceApi
      *
      * Create a insurance discount request
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class InsuranceApi
      *
      * Create a insurance discount request
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInsuranceDiscountUsingPostAsyncWithHttpInfo($insurance_discount)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceDiscount';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceDiscount';
         $request = $this->createInsuranceDiscountUsingPostRequest($insurance_discount);
 
         return $this->client
@@ -522,7 +522,7 @@ class InsuranceApi
     /**
      * Create request for operation 'createInsuranceDiscountUsingPost'
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insuranceDiscount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class InsuranceApi
      *
      * Create a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceQuote
+     * @return \com\hydrogen\nucleus\Model\InsuranceQuote
      */
     public function createInsuranceQuoteUsingPost($insurance_quote)
     {
@@ -645,15 +645,15 @@ class InsuranceApi
      *
      * Create a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceQuote, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceQuote, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInsuranceQuoteUsingPostWithHttpInfo($insurance_quote)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceQuote';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceQuote';
         $request = $this->createInsuranceQuoteUsingPostRequest($insurance_quote);
 
         try {
@@ -705,7 +705,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceQuote',
+                        '\com\hydrogen\nucleus\Model\InsuranceQuote',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class InsuranceApi
      *
      * Create a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class InsuranceApi
      *
      * Create a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInsuranceQuoteUsingPostAsyncWithHttpInfo($insurance_quote)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceQuote';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceQuote';
         $request = $this->createInsuranceQuoteUsingPostRequest($insurance_quote);
 
         return $this->client
@@ -790,7 +790,7 @@ class InsuranceApi
     /**
      * Create request for operation 'createInsuranceQuoteUsingPost'
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insuranceQuote (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -898,7 +898,7 @@ class InsuranceApi
      *
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -914,7 +914,7 @@ class InsuranceApi
      *
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1134,7 +1134,7 @@ class InsuranceApi
      *
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1150,7 +1150,7 @@ class InsuranceApi
      *
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1371,7 +1371,7 @@ class InsuranceApi
      * @param  string $insurance_quote UUID insurance_quote_id (required)
      * @param  string $insurance_quote_id insurance_quote_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1388,7 +1388,7 @@ class InsuranceApi
      * @param  string $insurance_quote UUID insurance_quote_id (required)
      * @param  string $insurance_quote_id insurance_quote_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1629,9 +1629,9 @@ class InsuranceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageInsuranceCoverage_
+     * @return \com\hydrogen\nucleus\Model\PageInsuranceCoverage_
      */
     public function getInsuranceCoverageAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1650,13 +1650,13 @@ class InsuranceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageInsuranceCoverage_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageInsuranceCoverage_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInsuranceCoverageAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInsuranceCoverage_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInsuranceCoverage_';
         $request = $this->getInsuranceCoverageAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -1708,7 +1708,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageInsuranceCoverage_',
+                        '\com\hydrogen\nucleus\Model\PageInsuranceCoverage_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1758,7 +1758,7 @@ class InsuranceApi
      */
     public function getInsuranceCoverageAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInsuranceCoverage_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInsuranceCoverage_';
         $request = $this->getInsuranceCoverageAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -1924,9 +1924,9 @@ class InsuranceApi
      *
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceCoverage
+     * @return \com\hydrogen\nucleus\Model\InsuranceCoverage
      */
     public function getInsuranceCoverageUsingGet($insurance_coverage_id)
     {
@@ -1941,13 +1941,13 @@ class InsuranceApi
      *
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceCoverage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceCoverage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInsuranceCoverageUsingGetWithHttpInfo($insurance_coverage_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceCoverage';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceCoverage';
         $request = $this->getInsuranceCoverageUsingGetRequest($insurance_coverage_id);
 
         try {
@@ -1999,7 +1999,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceCoverage',
+                        '\com\hydrogen\nucleus\Model\InsuranceCoverage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2041,7 +2041,7 @@ class InsuranceApi
      */
     public function getInsuranceCoverageUsingGetAsyncWithHttpInfo($insurance_coverage_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceCoverage';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceCoverage';
         $request = $this->getInsuranceCoverageUsingGetRequest($insurance_coverage_id);
 
         return $this->client
@@ -2201,9 +2201,9 @@ class InsuranceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageInsuranceDiscount_
+     * @return \com\hydrogen\nucleus\Model\PageInsuranceDiscount_
      */
     public function getInsuranceDiscountAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2222,13 +2222,13 @@ class InsuranceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageInsuranceDiscount_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageInsuranceDiscount_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInsuranceDiscountAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInsuranceDiscount_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInsuranceDiscount_';
         $request = $this->getInsuranceDiscountAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2280,7 +2280,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageInsuranceDiscount_',
+                        '\com\hydrogen\nucleus\Model\PageInsuranceDiscount_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2330,7 +2330,7 @@ class InsuranceApi
      */
     public function getInsuranceDiscountAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInsuranceDiscount_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInsuranceDiscount_';
         $request = $this->getInsuranceDiscountAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2496,9 +2496,9 @@ class InsuranceApi
      *
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceDiscount
+     * @return \com\hydrogen\nucleus\Model\InsuranceDiscount
      */
     public function getInsuranceDiscountUsingGet($insurance_discount_id)
     {
@@ -2513,13 +2513,13 @@ class InsuranceApi
      *
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceDiscount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceDiscount, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInsuranceDiscountUsingGetWithHttpInfo($insurance_discount_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceDiscount';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceDiscount';
         $request = $this->getInsuranceDiscountUsingGetRequest($insurance_discount_id);
 
         try {
@@ -2571,7 +2571,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceDiscount',
+                        '\com\hydrogen\nucleus\Model\InsuranceDiscount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2613,7 +2613,7 @@ class InsuranceApi
      */
     public function getInsuranceDiscountUsingGetAsyncWithHttpInfo($insurance_discount_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceDiscount';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceDiscount';
         $request = $this->getInsuranceDiscountUsingGetRequest($insurance_discount_id);
 
         return $this->client
@@ -2773,9 +2773,9 @@ class InsuranceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageInsuranceQuote_
+     * @return \com\hydrogen\nucleus\Model\PageInsuranceQuote_
      */
     public function getInsuranceQuoteAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2794,13 +2794,13 @@ class InsuranceApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageInsuranceQuote_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageInsuranceQuote_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInsuranceQuoteAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInsuranceQuote_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInsuranceQuote_';
         $request = $this->getInsuranceQuoteAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2852,7 +2852,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageInsuranceQuote_',
+                        '\com\hydrogen\nucleus\Model\PageInsuranceQuote_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2902,7 +2902,7 @@ class InsuranceApi
      */
     public function getInsuranceQuoteAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageInsuranceQuote_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageInsuranceQuote_';
         $request = $this->getInsuranceQuoteAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3069,9 +3069,9 @@ class InsuranceApi
      * @param  string $insurance_quote UUID insurance_quote_id (required)
      * @param  string $insurance_quote_id insurance_quote_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceQuote
+     * @return \com\hydrogen\nucleus\Model\InsuranceQuote
      */
     public function getInsuranceQuoteUsingGet($insurance_quote, $insurance_quote_id)
     {
@@ -3087,13 +3087,13 @@ class InsuranceApi
      * @param  string $insurance_quote UUID insurance_quote_id (required)
      * @param  string $insurance_quote_id insurance_quote_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceQuote, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceQuote, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInsuranceQuoteUsingGetWithHttpInfo($insurance_quote, $insurance_quote_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceQuote';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceQuote';
         $request = $this->getInsuranceQuoteUsingGetRequest($insurance_quote, $insurance_quote_id);
 
         try {
@@ -3145,7 +3145,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceQuote',
+                        '\com\hydrogen\nucleus\Model\InsuranceQuote',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3189,7 +3189,7 @@ class InsuranceApi
      */
     public function getInsuranceQuoteUsingGetAsyncWithHttpInfo($insurance_quote, $insurance_quote_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceQuote';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceQuote';
         $request = $this->getInsuranceQuoteUsingGetRequest($insurance_quote, $insurance_quote_id);
 
         return $this->client
@@ -3358,12 +3358,12 @@ class InsuranceApi
      *
      * Update a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceCoverage
+     * @return \com\hydrogen\nucleus\Model\InsuranceCoverage
      */
     public function updateInsuranceCoverageUsingPut($insurance_coverage, $insurance_coverage_id)
     {
@@ -3376,16 +3376,16 @@ class InsuranceApi
      *
      * Update a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceCoverage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceCoverage, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInsuranceCoverageUsingPutWithHttpInfo($insurance_coverage, $insurance_coverage_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceCoverage';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceCoverage';
         $request = $this->updateInsuranceCoverageUsingPutRequest($insurance_coverage, $insurance_coverage_id);
 
         try {
@@ -3437,7 +3437,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceCoverage',
+                        '\com\hydrogen\nucleus\Model\InsuranceCoverage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3452,7 +3452,7 @@ class InsuranceApi
      *
      * Update a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3473,7 +3473,7 @@ class InsuranceApi
      *
      * Update a insurance coverage request
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3481,7 +3481,7 @@ class InsuranceApi
      */
     public function updateInsuranceCoverageUsingPutAsyncWithHttpInfo($insurance_coverage, $insurance_coverage_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceCoverage';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceCoverage';
         $request = $this->updateInsuranceCoverageUsingPutRequest($insurance_coverage, $insurance_coverage_id);
 
         return $this->client
@@ -3524,7 +3524,7 @@ class InsuranceApi
     /**
      * Create request for operation 'updateInsuranceCoverageUsingPut'
      *
-     * @param  \com\hydrogen\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceCoverage $insurance_coverage insurance_coverage (required)
      * @param  string $insurance_coverage_id UUID insurance_coverage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3645,12 +3645,12 @@ class InsuranceApi
      *
      * Update an insurance discount
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceDiscount
+     * @return \com\hydrogen\nucleus\Model\InsuranceDiscount
      */
     public function updateInsuranceDiscountUsingPut($insurance_discount, $insurance_discount_id)
     {
@@ -3663,16 +3663,16 @@ class InsuranceApi
      *
      * Update an insurance discount
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceDiscount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceDiscount, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInsuranceDiscountUsingPutWithHttpInfo($insurance_discount, $insurance_discount_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceDiscount';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceDiscount';
         $request = $this->updateInsuranceDiscountUsingPutRequest($insurance_discount, $insurance_discount_id);
 
         try {
@@ -3724,7 +3724,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceDiscount',
+                        '\com\hydrogen\nucleus\Model\InsuranceDiscount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3739,7 +3739,7 @@ class InsuranceApi
      *
      * Update an insurance discount
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3760,7 +3760,7 @@ class InsuranceApi
      *
      * Update an insurance discount
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3768,7 +3768,7 @@ class InsuranceApi
      */
     public function updateInsuranceDiscountUsingPutAsyncWithHttpInfo($insurance_discount, $insurance_discount_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceDiscount';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceDiscount';
         $request = $this->updateInsuranceDiscountUsingPutRequest($insurance_discount, $insurance_discount_id);
 
         return $this->client
@@ -3811,7 +3811,7 @@ class InsuranceApi
     /**
      * Create request for operation 'updateInsuranceDiscountUsingPut'
      *
-     * @param  \com\hydrogen\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceDiscount $insurance_discount insurance_discount (required)
      * @param  string $insurance_discount_id UUID insurance_discount_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3932,12 +3932,12 @@ class InsuranceApi
      *
      * Update a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insurance_quote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insurance_quote (required)
      * @param  string $insurance_quote_id UUID insurance_quote_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\InsuranceQuote
+     * @return \com\hydrogen\nucleus\Model\InsuranceQuote
      */
     public function updateInsuranceQuoteUsingPut($insurance_quote, $insurance_quote_id)
     {
@@ -3950,16 +3950,16 @@ class InsuranceApi
      *
      * Update a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insurance_quote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insurance_quote (required)
      * @param  string $insurance_quote_id UUID insurance_quote_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\InsuranceQuote, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\InsuranceQuote, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInsuranceQuoteUsingPutWithHttpInfo($insurance_quote, $insurance_quote_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceQuote';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceQuote';
         $request = $this->updateInsuranceQuoteUsingPutRequest($insurance_quote, $insurance_quote_id);
 
         try {
@@ -4011,7 +4011,7 @@ class InsuranceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\InsuranceQuote',
+                        '\com\hydrogen\nucleus\Model\InsuranceQuote',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4026,7 +4026,7 @@ class InsuranceApi
      *
      * Update a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insurance_quote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insurance_quote (required)
      * @param  string $insurance_quote_id UUID insurance_quote_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4047,7 +4047,7 @@ class InsuranceApi
      *
      * Update a insuranceQuote request
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insurance_quote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insurance_quote (required)
      * @param  string $insurance_quote_id UUID insurance_quote_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4055,7 +4055,7 @@ class InsuranceApi
      */
     public function updateInsuranceQuoteUsingPutAsyncWithHttpInfo($insurance_quote, $insurance_quote_id)
     {
-        $returnType = '\com\hydrogen\Model\InsuranceQuote';
+        $returnType = '\com\hydrogen\nucleus\Model\InsuranceQuote';
         $request = $this->updateInsuranceQuoteUsingPutRequest($insurance_quote, $insurance_quote_id);
 
         return $this->client
@@ -4098,7 +4098,7 @@ class InsuranceApi
     /**
      * Create request for operation 'updateInsuranceQuoteUsingPut'
      *
-     * @param  \com\hydrogen\Model\InsuranceQuote $insurance_quote insurance_quote (required)
+     * @param  \com\hydrogen\nucleus\Model\InsuranceQuote $insurance_quote insurance_quote (required)
      * @param  string $insurance_quote_id UUID insurance_quote_id (required)
      *
      * @throws \InvalidArgumentException

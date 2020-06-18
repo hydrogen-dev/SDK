@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**w_config** | [**\com\hydrogen\Model\WConfig**](WConfig.md) |  | 
+**w_config** | [**\com\hydrogen\proton\Model\WConfig**](WConfig.md) |  | 
 **sec_types** | **string[]** |  | 
 **min_assets** | **int** |  | 
 **w_asset_config** | **object** |  | [optional] 

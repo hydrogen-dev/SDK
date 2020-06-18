@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Investment();
+    instance = new HydrogenNucleusApi.Investment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,55 +53,55 @@
   describe('Investment', function() {
     it('should create an instance of Investment', function() {
       // uncomment below and update the code to test Investment
-      //var instane = new HydrogenAtomApi.Investment();
-      //expect(instance).to.be.a(HydrogenAtomApi.Investment);
+      //var instane = new HydrogenNucleusApi.Investment();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Investment);
     });
 
     it('should have the property fee (base name: "fee")', function() {
       // uncomment below and update the code to test the property fee
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 
     it('should have the property price (base name: "price")', function() {
       // uncomment below and update the code to test the property price
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 
     it('should have the property quantity (base name: "quantity")', function() {
       // uncomment below and update the code to test the property quantity
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 
     it('should have the property settleDate (base name: "settle_date")', function() {
       // uncomment below and update the code to test the property settleDate
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 
     it('should have the property ticker (base name: "ticker")', function() {
       // uncomment below and update the code to test the property ticker
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 
     it('should have the property tickerName (base name: "ticker_name")', function() {
       // uncomment below and update the code to test the property tickerName
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 
     it('should have the property tradeSignal (base name: "trade_signal")', function() {
       // uncomment below and update the code to test the property tradeSignal
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new HydrogenAtomApi.Investment();
+      //var instane = new HydrogenNucleusApi.Investment();
       //expect(instance).to.be();
     });
 

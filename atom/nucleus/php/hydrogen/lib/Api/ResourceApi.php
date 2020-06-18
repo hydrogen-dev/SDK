@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ResourceApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -93,9 +93,9 @@ class ResourceApi
      * Get All Countries
      *
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Country[]
+     * @return \com\hydrogen\nucleus\Model\Country[]
      */
     public function getAllCountryUsingGet()
     {
@@ -109,13 +109,13 @@ class ResourceApi
      * Get All Countries
      *
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Country[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Country[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllCountryUsingGetWithHttpInfo()
     {
-        $returnType = '\com\hydrogen\Model\Country[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Country[]';
         $request = $this->getAllCountryUsingGetRequest();
 
         try {
@@ -167,7 +167,7 @@ class ResourceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Country[]',
+                        '\com\hydrogen\nucleus\Model\Country[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -207,7 +207,7 @@ class ResourceApi
      */
     public function getAllCountryUsingGetAsyncWithHttpInfo()
     {
-        $returnType = '\com\hydrogen\Model\Country[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Country[]';
         $request = $this->getAllCountryUsingGetRequest();
 
         return $this->client
@@ -347,9 +347,9 @@ class ResourceApi
      * Get All Currencies
      *
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Currency[]
+     * @return \com\hydrogen\nucleus\Model\Currency[]
      */
     public function getAllCurrencyUsingGet()
     {
@@ -363,13 +363,13 @@ class ResourceApi
      * Get All Currencies
      *
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Currency[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Currency[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllCurrencyUsingGetWithHttpInfo()
     {
-        $returnType = '\com\hydrogen\Model\Currency[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Currency[]';
         $request = $this->getAllCurrencyUsingGetRequest();
 
         try {
@@ -421,7 +421,7 @@ class ResourceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Currency[]',
+                        '\com\hydrogen\nucleus\Model\Currency[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -461,7 +461,7 @@ class ResourceApi
      */
     public function getAllCurrencyUsingGetAsyncWithHttpInfo()
     {
-        $returnType = '\com\hydrogen\Model\Currency[]';
+        $returnType = '\com\hydrogen\nucleus\Model\Currency[]';
         $request = $this->getAllCurrencyUsingGetRequest();
 
         return $this->client
@@ -602,9 +602,9 @@ class ResourceApi
      *
      * @param  string $country_code country_code (optional, default to US)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\State[]
+     * @return \com\hydrogen\nucleus\Model\State[]
      */
     public function getAllStatesUsingGet($country_code = 'US')
     {
@@ -619,13 +619,13 @@ class ResourceApi
      *
      * @param  string $country_code country_code (optional, default to US)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\State[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\State[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllStatesUsingGetWithHttpInfo($country_code = 'US')
     {
-        $returnType = '\com\hydrogen\Model\State[]';
+        $returnType = '\com\hydrogen\nucleus\Model\State[]';
         $request = $this->getAllStatesUsingGetRequest($country_code);
 
         try {
@@ -677,7 +677,7 @@ class ResourceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\State[]',
+                        '\com\hydrogen\nucleus\Model\State[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -719,7 +719,7 @@ class ResourceApi
      */
     public function getAllStatesUsingGetAsyncWithHttpInfo($country_code = 'US')
     {
-        $returnType = '\com\hydrogen\Model\State[]';
+        $returnType = '\com\hydrogen\nucleus\Model\State[]';
         $request = $this->getAllStatesUsingGetRequest($country_code);
 
         return $this->client
@@ -864,9 +864,9 @@ class ResourceApi
      * List all statistic resource
      *
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return map[string,\com\hydrogen\Model\StatisticResourceVO[]]
+     * @return map[string,\com\hydrogen\nucleus\Model\StatisticResourceVO[]]
      */
     public function getAllStatisticsUsingGet()
     {
@@ -880,13 +880,13 @@ class ResourceApi
      * List all statistic resource
      *
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of map[string,\com\hydrogen\Model\StatisticResourceVO[]], HTTP status code, HTTP response headers (array of strings)
+     * @return array of map[string,\com\hydrogen\nucleus\Model\StatisticResourceVO[]], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllStatisticsUsingGetWithHttpInfo()
     {
-        $returnType = 'map[string,\com\hydrogen\Model\StatisticResourceVO[]]';
+        $returnType = 'map[string,\com\hydrogen\nucleus\Model\StatisticResourceVO[]]';
         $request = $this->getAllStatisticsUsingGetRequest();
 
         try {
@@ -938,7 +938,7 @@ class ResourceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'map[string,\com\hydrogen\Model\StatisticResourceVO[]]',
+                        'map[string,\com\hydrogen\nucleus\Model\StatisticResourceVO[]]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -978,7 +978,7 @@ class ResourceApi
      */
     public function getAllStatisticsUsingGetAsyncWithHttpInfo()
     {
-        $returnType = 'map[string,\com\hydrogen\Model\StatisticResourceVO[]]';
+        $returnType = 'map[string,\com\hydrogen\nucleus\Model\StatisticResourceVO[]]';
         $request = $this->getAllStatisticsUsingGetRequest();
 
         return $this->client

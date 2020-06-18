@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Benchmark();
+    instance = new HydrogenNucleusApi.Benchmark();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,67 +53,67 @@
   describe('Benchmark', function() {
     it('should create an instance of Benchmark', function() {
       // uncomment below and update the code to test Benchmark
-      //var instane = new HydrogenAtomApi.Benchmark();
-      //expect(instance).to.be.a(HydrogenAtomApi.Benchmark);
+      //var instane = new HydrogenNucleusApi.Benchmark();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Benchmark);
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property composition (base name: "composition")', function() {
       // uncomment below and update the code to test the property composition
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.Benchmark();
+      //var instane = new HydrogenNucleusApi.Benchmark();
       //expect(instance).to.be();
     });
 

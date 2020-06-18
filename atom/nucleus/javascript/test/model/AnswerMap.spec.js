@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AnswerMap();
+    instance = new HydrogenNucleusApi.AnswerMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,13 +53,13 @@
   describe('AnswerMap', function() {
     it('should create an instance of AnswerMap', function() {
       // uncomment below and update the code to test AnswerMap
-      //var instane = new HydrogenAtomApi.AnswerMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.AnswerMap);
+      //var instane = new HydrogenNucleusApi.AnswerMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AnswerMap);
     });
 
     it('should have the property answerId (base name: "answer_id")', function() {
       // uncomment below and update the code to test the property answerId
-      //var instane = new HydrogenAtomApi.AnswerMap();
+      //var instane = new HydrogenNucleusApi.AnswerMap();
       //expect(instance).to.be();
     });
 

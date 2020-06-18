@@ -1,4 +1,4 @@
-# AtomApi::PageAuditLog
+# NucleusApi::PageAuditLog
 
 ## Properties
 Name | Type | Description | Notes

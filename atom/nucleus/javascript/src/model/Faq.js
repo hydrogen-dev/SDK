@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./FAQKeyword'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.Faq = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.FAQKeyword);
+    root.HydrogenNucleusApi.Faq = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.FAQKeyword);
   }
 }(this, function(ApiClient, FAQKeyword) {
   'use strict';

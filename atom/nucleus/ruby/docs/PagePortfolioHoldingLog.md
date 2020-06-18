@@ -1,4 +1,4 @@
-# AtomApi::PagePortfolioHoldingLog
+# NucleusApi::PagePortfolioHoldingLog
 
 ## Properties
 Name | Type | Description | Notes

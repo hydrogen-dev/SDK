@@ -1,4 +1,4 @@
-# HydrogenAtomApi.CampaignPlan
+# HydrogenNucleusApi.CampaignPlan
 
 ## Properties
 Name | Type | Description | Notes

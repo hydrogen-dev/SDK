@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.SecurityPrice();
+    instance = new HydrogenNucleusApi.SecurityPrice();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,61 +53,61 @@
   describe('SecurityPrice', function() {
     it('should create an instance of SecurityPrice', function() {
       // uncomment below and update the code to test SecurityPrice
-      //var instane = new HydrogenAtomApi.SecurityPrice();
-      //expect(instance).to.be.a(HydrogenAtomApi.SecurityPrice);
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
+      //expect(instance).to.be.a(HydrogenNucleusApi.SecurityPrice);
     });
 
     it('should have the property adjustedPrice (base name: "adjusted_price")', function() {
       // uncomment below and update the code to test the property adjustedPrice
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property price (base name: "price")', function() {
       // uncomment below and update the code to test the property price
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.SecurityPrice();
+      //var instane = new HydrogenNucleusApi.SecurityPrice();
       //expect(instance).to.be();
     });
 

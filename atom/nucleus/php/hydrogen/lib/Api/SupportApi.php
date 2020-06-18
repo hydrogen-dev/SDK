@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * SupportApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class SupportApi
      *
      * Create a Chat
      *
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info_request chatInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info_request chatInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ChatInfo
+     * @return \com\hydrogen\nucleus\Model\ChatInfo
      */
     public function createChatUsingPost($chat_info_request)
     {
@@ -109,15 +109,15 @@ class SupportApi
      *
      * Create a Chat
      *
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info_request chatInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info_request chatInfoRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ChatInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ChatInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function createChatUsingPostWithHttpInfo($chat_info_request)
     {
-        $returnType = '\com\hydrogen\Model\ChatInfo';
+        $returnType = '\com\hydrogen\nucleus\Model\ChatInfo';
         $request = $this->createChatUsingPostRequest($chat_info_request);
 
         try {
@@ -169,7 +169,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ChatInfo',
+                        '\com\hydrogen\nucleus\Model\ChatInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class SupportApi
      *
      * Create a Chat
      *
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info_request chatInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info_request chatInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class SupportApi
      *
      * Create a Chat
      *
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info_request chatInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info_request chatInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createChatUsingPostAsyncWithHttpInfo($chat_info_request)
     {
-        $returnType = '\com\hydrogen\Model\ChatInfo';
+        $returnType = '\com\hydrogen\nucleus\Model\ChatInfo';
         $request = $this->createChatUsingPostRequest($chat_info_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class SupportApi
     /**
      * Create request for operation 'createChatUsingPost'
      *
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info_request chatInfoRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info_request chatInfoRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class SupportApi
      *
      * Create a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Consultation
+     * @return \com\hydrogen\nucleus\Model\Consultation
      */
     public function createConsultationUsingPost($cio_consultation_request)
     {
@@ -377,15 +377,15 @@ class SupportApi
      *
      * Create a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Consultation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Consultation, HTTP status code, HTTP response headers (array of strings)
      */
     public function createConsultationUsingPostWithHttpInfo($cio_consultation_request)
     {
-        $returnType = '\com\hydrogen\Model\Consultation';
+        $returnType = '\com\hydrogen\nucleus\Model\Consultation';
         $request = $this->createConsultationUsingPostRequest($cio_consultation_request);
 
         try {
@@ -437,7 +437,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Consultation',
+                        '\com\hydrogen\nucleus\Model\Consultation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class SupportApi
      *
      * Create a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class SupportApi
      *
      * Create a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createConsultationUsingPostAsyncWithHttpInfo($cio_consultation_request)
     {
-        $returnType = '\com\hydrogen\Model\Consultation';
+        $returnType = '\com\hydrogen\nucleus\Model\Consultation';
         $request = $this->createConsultationUsingPostRequest($cio_consultation_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class SupportApi
     /**
      * Create request for operation 'createConsultationUsingPost'
      *
-     * @param  \com\hydrogen\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $cio_consultation_request cioConsultationRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class SupportApi
      *
      * Create a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sale_request saleRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sale_request saleRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Sale
+     * @return \com\hydrogen\nucleus\Model\Sale
      */
     public function createSaleUsingPost($sale_request)
     {
@@ -645,15 +645,15 @@ class SupportApi
      *
      * Create a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sale_request saleRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sale_request saleRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Sale, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Sale, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSaleUsingPostWithHttpInfo($sale_request)
     {
-        $returnType = '\com\hydrogen\Model\Sale';
+        $returnType = '\com\hydrogen\nucleus\Model\Sale';
         $request = $this->createSaleUsingPostRequest($sale_request);
 
         try {
@@ -705,7 +705,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Sale',
+                        '\com\hydrogen\nucleus\Model\Sale',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class SupportApi
      *
      * Create a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sale_request saleRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sale_request saleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class SupportApi
      *
      * Create a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sale_request saleRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sale_request saleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSaleUsingPostAsyncWithHttpInfo($sale_request)
     {
-        $returnType = '\com\hydrogen\Model\Sale';
+        $returnType = '\com\hydrogen\nucleus\Model\Sale';
         $request = $this->createSaleUsingPostRequest($sale_request);
 
         return $this->client
@@ -790,7 +790,7 @@ class SupportApi
     /**
      * Create request for operation 'createSaleUsingPost'
      *
-     * @param  \com\hydrogen\Model\Sale $sale_request saleRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sale_request saleRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,11 +896,11 @@ class SupportApi
      *
      * Create a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SupportTicket
+     * @return \com\hydrogen\nucleus\Model\SupportTicket
      */
     public function createSupportTicketCommentUsingPost($support_ticker_comment_request)
     {
@@ -913,15 +913,15 @@ class SupportApi
      *
      * Create a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSupportTicketCommentUsingPostWithHttpInfo($support_ticker_comment_request)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->createSupportTicketCommentUsingPostRequest($support_ticker_comment_request);
 
         try {
@@ -973,7 +973,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SupportTicket',
+                        '\com\hydrogen\nucleus\Model\SupportTicket',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class SupportApi
      *
      * Create a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,14 +1008,14 @@ class SupportApi
      *
      * Create a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSupportTicketCommentUsingPostAsyncWithHttpInfo($support_ticker_comment_request)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->createSupportTicketCommentUsingPostRequest($support_ticker_comment_request);
 
         return $this->client
@@ -1058,7 +1058,7 @@ class SupportApi
     /**
      * Create request for operation 'createSupportTicketCommentUsingPost'
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticker_comment_request supportTickerCommentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,11 +1164,11 @@ class SupportApi
      *
      * Create a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SupportTicket
+     * @return \com\hydrogen\nucleus\Model\SupportTicket
      */
     public function createSupportTicketUsingPost($support_ticket_request)
     {
@@ -1181,15 +1181,15 @@ class SupportApi
      *
      * Create a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSupportTicketUsingPostWithHttpInfo($support_ticket_request)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->createSupportTicketUsingPostRequest($support_ticket_request);
 
         try {
@@ -1241,7 +1241,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SupportTicket',
+                        '\com\hydrogen\nucleus\Model\SupportTicket',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1256,7 +1256,7 @@ class SupportApi
      *
      * Create a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,14 +1276,14 @@ class SupportApi
      *
      * Create a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSupportTicketUsingPostAsyncWithHttpInfo($support_ticket_request)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->createSupportTicketUsingPostRequest($support_ticket_request);
 
         return $this->client
@@ -1326,7 +1326,7 @@ class SupportApi
     /**
      * Create request for operation 'createSupportTicketUsingPost'
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket_request supportTicketRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1434,7 +1434,7 @@ class SupportApi
      *
      * @param  string $chat_id UUID chat_info_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1450,7 +1450,7 @@ class SupportApi
      *
      * @param  string $chat_id UUID chat_info_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1670,7 +1670,7 @@ class SupportApi
      *
      * @param  string $consultation_id UUID consultation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1686,7 +1686,7 @@ class SupportApi
      *
      * @param  string $consultation_id UUID consultation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1906,7 +1906,7 @@ class SupportApi
      *
      * @param  string $sales_id UUID sales_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1922,7 +1922,7 @@ class SupportApi
      *
      * @param  string $sales_id UUID sales_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2142,7 +2142,7 @@ class SupportApi
      *
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2158,7 +2158,7 @@ class SupportApi
      *
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2378,7 +2378,7 @@ class SupportApi
      *
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2394,7 +2394,7 @@ class SupportApi
      *
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2618,9 +2618,9 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageChatInfo_
+     * @return \com\hydrogen\nucleus\Model\PageChatInfo_
      */
     public function getChatAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2639,13 +2639,13 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageChatInfo_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageChatInfo_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getChatAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageChatInfo_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageChatInfo_';
         $request = $this->getChatAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2697,7 +2697,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageChatInfo_',
+                        '\com\hydrogen\nucleus\Model\PageChatInfo_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2747,7 +2747,7 @@ class SupportApi
      */
     public function getChatAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageChatInfo_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageChatInfo_';
         $request = $this->getChatAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2913,9 +2913,9 @@ class SupportApi
      *
      * @param  string $chat_id UUID chat_info_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ChatInfo
+     * @return \com\hydrogen\nucleus\Model\ChatInfo
      */
     public function getChatUsingGet($chat_id)
     {
@@ -2930,13 +2930,13 @@ class SupportApi
      *
      * @param  string $chat_id UUID chat_info_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ChatInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ChatInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function getChatUsingGetWithHttpInfo($chat_id)
     {
-        $returnType = '\com\hydrogen\Model\ChatInfo';
+        $returnType = '\com\hydrogen\nucleus\Model\ChatInfo';
         $request = $this->getChatUsingGetRequest($chat_id);
 
         try {
@@ -2988,7 +2988,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ChatInfo',
+                        '\com\hydrogen\nucleus\Model\ChatInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3030,7 +3030,7 @@ class SupportApi
      */
     public function getChatUsingGetAsyncWithHttpInfo($chat_id)
     {
-        $returnType = '\com\hydrogen\Model\ChatInfo';
+        $returnType = '\com\hydrogen\nucleus\Model\ChatInfo';
         $request = $this->getChatUsingGetRequest($chat_id);
 
         return $this->client
@@ -3190,9 +3190,9 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageConsultation_
+     * @return \com\hydrogen\nucleus\Model\PageConsultation_
      */
     public function getConsultationAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3211,13 +3211,13 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageConsultation_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageConsultation_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getConsultationAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageConsultation_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageConsultation_';
         $request = $this->getConsultationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3269,7 +3269,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageConsultation_',
+                        '\com\hydrogen\nucleus\Model\PageConsultation_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3319,7 +3319,7 @@ class SupportApi
      */
     public function getConsultationAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageConsultation_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageConsultation_';
         $request = $this->getConsultationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3485,9 +3485,9 @@ class SupportApi
      *
      * @param  string $consultation_id UUID consultation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Consultation
+     * @return \com\hydrogen\nucleus\Model\Consultation
      */
     public function getConsultationUsingGet($consultation_id)
     {
@@ -3502,13 +3502,13 @@ class SupportApi
      *
      * @param  string $consultation_id UUID consultation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Consultation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Consultation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getConsultationUsingGetWithHttpInfo($consultation_id)
     {
-        $returnType = '\com\hydrogen\Model\Consultation';
+        $returnType = '\com\hydrogen\nucleus\Model\Consultation';
         $request = $this->getConsultationUsingGetRequest($consultation_id);
 
         try {
@@ -3560,7 +3560,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Consultation',
+                        '\com\hydrogen\nucleus\Model\Consultation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3602,7 +3602,7 @@ class SupportApi
      */
     public function getConsultationUsingGetAsyncWithHttpInfo($consultation_id)
     {
-        $returnType = '\com\hydrogen\Model\Consultation';
+        $returnType = '\com\hydrogen\nucleus\Model\Consultation';
         $request = $this->getConsultationUsingGetRequest($consultation_id);
 
         return $this->client
@@ -3762,9 +3762,9 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageSale_
+     * @return \com\hydrogen\nucleus\Model\PageSale_
      */
     public function getSaleAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3783,13 +3783,13 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageSale_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageSale_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSaleAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSale_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSale_';
         $request = $this->getSaleAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3841,7 +3841,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageSale_',
+                        '\com\hydrogen\nucleus\Model\PageSale_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3891,7 +3891,7 @@ class SupportApi
      */
     public function getSaleAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSale_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSale_';
         $request = $this->getSaleAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4057,9 +4057,9 @@ class SupportApi
      *
      * @param  string $sales_id UUID sales_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Sale
+     * @return \com\hydrogen\nucleus\Model\Sale
      */
     public function getSaleUsingGet($sales_id)
     {
@@ -4074,13 +4074,13 @@ class SupportApi
      *
      * @param  string $sales_id UUID sales_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Sale, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Sale, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSaleUsingGetWithHttpInfo($sales_id)
     {
-        $returnType = '\com\hydrogen\Model\Sale';
+        $returnType = '\com\hydrogen\nucleus\Model\Sale';
         $request = $this->getSaleUsingGetRequest($sales_id);
 
         try {
@@ -4132,7 +4132,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Sale',
+                        '\com\hydrogen\nucleus\Model\Sale',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4174,7 +4174,7 @@ class SupportApi
      */
     public function getSaleUsingGetAsyncWithHttpInfo($sales_id)
     {
-        $returnType = '\com\hydrogen\Model\Sale';
+        $returnType = '\com\hydrogen\nucleus\Model\Sale';
         $request = $this->getSaleUsingGetRequest($sales_id);
 
         return $this->client
@@ -4334,9 +4334,9 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageSupportTicket_
+     * @return \com\hydrogen\nucleus\Model\PageSupportTicket_
      */
     public function getSupportTicketAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4355,13 +4355,13 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageSupportTicket_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageSupportTicket_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSupportTicketAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSupportTicket_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSupportTicket_';
         $request = $this->getSupportTicketAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4413,7 +4413,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageSupportTicket_',
+                        '\com\hydrogen\nucleus\Model\PageSupportTicket_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4463,7 +4463,7 @@ class SupportApi
      */
     public function getSupportTicketAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSupportTicket_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSupportTicket_';
         $request = $this->getSupportTicketAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4633,9 +4633,9 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageSupportTicketComment_
+     * @return \com\hydrogen\nucleus\Model\PageSupportTicketComment_
      */
     public function getSupportTicketCommentAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4654,13 +4654,13 @@ class SupportApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageSupportTicketComment_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageSupportTicketComment_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSupportTicketCommentAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSupportTicketComment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSupportTicketComment_';
         $request = $this->getSupportTicketCommentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4712,7 +4712,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageSupportTicketComment_',
+                        '\com\hydrogen\nucleus\Model\PageSupportTicketComment_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4762,7 +4762,7 @@ class SupportApi
      */
     public function getSupportTicketCommentAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageSupportTicketComment_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageSupportTicketComment_';
         $request = $this->getSupportTicketCommentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4928,9 +4928,9 @@ class SupportApi
      *
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SupportTicketComment
+     * @return \com\hydrogen\nucleus\Model\SupportTicketComment
      */
     public function getSupportTicketCommentUsingGet($support_ticket_comment_id)
     {
@@ -4945,13 +4945,13 @@ class SupportApi
      *
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SupportTicketComment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SupportTicketComment, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSupportTicketCommentUsingGetWithHttpInfo($support_ticket_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicketComment';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicketComment';
         $request = $this->getSupportTicketCommentUsingGetRequest($support_ticket_comment_id);
 
         try {
@@ -5003,7 +5003,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SupportTicketComment',
+                        '\com\hydrogen\nucleus\Model\SupportTicketComment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5045,7 +5045,7 @@ class SupportApi
      */
     public function getSupportTicketCommentUsingGetAsyncWithHttpInfo($support_ticket_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicketComment';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicketComment';
         $request = $this->getSupportTicketCommentUsingGetRequest($support_ticket_comment_id);
 
         return $this->client
@@ -5201,9 +5201,9 @@ class SupportApi
      *
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SupportTicket
+     * @return \com\hydrogen\nucleus\Model\SupportTicket
      */
     public function getSupportTicketUsingGet($support_ticket_id)
     {
@@ -5218,13 +5218,13 @@ class SupportApi
      *
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSupportTicketUsingGetWithHttpInfo($support_ticket_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->getSupportTicketUsingGetRequest($support_ticket_id);
 
         try {
@@ -5276,7 +5276,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SupportTicket',
+                        '\com\hydrogen\nucleus\Model\SupportTicket',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5318,7 +5318,7 @@ class SupportApi
      */
     public function getSupportTicketUsingGetAsyncWithHttpInfo($support_ticket_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->getSupportTicketUsingGetRequest($support_ticket_id);
 
         return $this->client
@@ -5473,11 +5473,11 @@ class SupportApi
      * Update a Chat
      *
      * @param  string $chat_id UUID chat_id (required)
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info chat_info (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info chat_info (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ChatInfo
+     * @return \com\hydrogen\nucleus\Model\ChatInfo
      */
     public function updateChatUsingPut($chat_id, $chat_info)
     {
@@ -5491,15 +5491,15 @@ class SupportApi
      * Update a Chat
      *
      * @param  string $chat_id UUID chat_id (required)
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info chat_info (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info chat_info (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ChatInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ChatInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateChatUsingPutWithHttpInfo($chat_id, $chat_info)
     {
-        $returnType = '\com\hydrogen\Model\ChatInfo';
+        $returnType = '\com\hydrogen\nucleus\Model\ChatInfo';
         $request = $this->updateChatUsingPutRequest($chat_id, $chat_info);
 
         try {
@@ -5551,7 +5551,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ChatInfo',
+                        '\com\hydrogen\nucleus\Model\ChatInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5567,7 +5567,7 @@ class SupportApi
      * Update a Chat
      *
      * @param  string $chat_id UUID chat_id (required)
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info chat_info (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info chat_info (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5588,14 +5588,14 @@ class SupportApi
      * Update a Chat
      *
      * @param  string $chat_id UUID chat_id (required)
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info chat_info (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info chat_info (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateChatUsingPutAsyncWithHttpInfo($chat_id, $chat_info)
     {
-        $returnType = '\com\hydrogen\Model\ChatInfo';
+        $returnType = '\com\hydrogen\nucleus\Model\ChatInfo';
         $request = $this->updateChatUsingPutRequest($chat_id, $chat_info);
 
         return $this->client
@@ -5639,7 +5639,7 @@ class SupportApi
      * Create request for operation 'updateChatUsingPut'
      *
      * @param  string $chat_id UUID chat_id (required)
-     * @param  \com\hydrogen\Model\ChatInfo $chat_info chat_info (required)
+     * @param  \com\hydrogen\nucleus\Model\ChatInfo $chat_info chat_info (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5759,12 +5759,12 @@ class SupportApi
      *
      * Update a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $consultation consultation (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $consultation consultation (required)
      * @param  string $consultation_id UUID consultation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Consultation
+     * @return \com\hydrogen\nucleus\Model\Consultation
      */
     public function updateConsultationUsingPut($consultation, $consultation_id)
     {
@@ -5777,16 +5777,16 @@ class SupportApi
      *
      * Update a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $consultation consultation (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $consultation consultation (required)
      * @param  string $consultation_id UUID consultation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Consultation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Consultation, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateConsultationUsingPutWithHttpInfo($consultation, $consultation_id)
     {
-        $returnType = '\com\hydrogen\Model\Consultation';
+        $returnType = '\com\hydrogen\nucleus\Model\Consultation';
         $request = $this->updateConsultationUsingPutRequest($consultation, $consultation_id);
 
         try {
@@ -5838,7 +5838,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Consultation',
+                        '\com\hydrogen\nucleus\Model\Consultation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5853,7 +5853,7 @@ class SupportApi
      *
      * Update a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $consultation consultation (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $consultation consultation (required)
      * @param  string $consultation_id UUID consultation_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5874,7 +5874,7 @@ class SupportApi
      *
      * Update a CIO Consultation
      *
-     * @param  \com\hydrogen\Model\Consultation $consultation consultation (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $consultation consultation (required)
      * @param  string $consultation_id UUID consultation_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5882,7 +5882,7 @@ class SupportApi
      */
     public function updateConsultationUsingPutAsyncWithHttpInfo($consultation, $consultation_id)
     {
-        $returnType = '\com\hydrogen\Model\Consultation';
+        $returnType = '\com\hydrogen\nucleus\Model\Consultation';
         $request = $this->updateConsultationUsingPutRequest($consultation, $consultation_id);
 
         return $this->client
@@ -5925,7 +5925,7 @@ class SupportApi
     /**
      * Create request for operation 'updateConsultationUsingPut'
      *
-     * @param  \com\hydrogen\Model\Consultation $consultation consultation (required)
+     * @param  \com\hydrogen\nucleus\Model\Consultation $consultation consultation (required)
      * @param  string $consultation_id UUID consultation_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6046,12 +6046,12 @@ class SupportApi
      *
      * Update a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sales sales (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sales sales (required)
      * @param  string $sales_id UUID sales_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Sale
+     * @return \com\hydrogen\nucleus\Model\Sale
      */
     public function updateSaleUsingPut($sales, $sales_id)
     {
@@ -6064,16 +6064,16 @@ class SupportApi
      *
      * Update a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sales sales (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sales sales (required)
      * @param  string $sales_id UUID sales_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Sale, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Sale, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSaleUsingPutWithHttpInfo($sales, $sales_id)
     {
-        $returnType = '\com\hydrogen\Model\Sale';
+        $returnType = '\com\hydrogen\nucleus\Model\Sale';
         $request = $this->updateSaleUsingPutRequest($sales, $sales_id);
 
         try {
@@ -6125,7 +6125,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Sale',
+                        '\com\hydrogen\nucleus\Model\Sale',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6140,7 +6140,7 @@ class SupportApi
      *
      * Update a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sales sales (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sales sales (required)
      * @param  string $sales_id UUID sales_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6161,7 +6161,7 @@ class SupportApi
      *
      * Update a sales inquiry
      *
-     * @param  \com\hydrogen\Model\Sale $sales sales (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sales sales (required)
      * @param  string $sales_id UUID sales_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6169,7 +6169,7 @@ class SupportApi
      */
     public function updateSaleUsingPutAsyncWithHttpInfo($sales, $sales_id)
     {
-        $returnType = '\com\hydrogen\Model\Sale';
+        $returnType = '\com\hydrogen\nucleus\Model\Sale';
         $request = $this->updateSaleUsingPutRequest($sales, $sales_id);
 
         return $this->client
@@ -6212,7 +6212,7 @@ class SupportApi
     /**
      * Create request for operation 'updateSaleUsingPut'
      *
-     * @param  \com\hydrogen\Model\Sale $sales sales (required)
+     * @param  \com\hydrogen\nucleus\Model\Sale $sales sales (required)
      * @param  string $sales_id UUID sales_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6333,12 +6333,12 @@ class SupportApi
      *
      * Update a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SupportTicketComment
+     * @return \com\hydrogen\nucleus\Model\SupportTicketComment
      */
     public function updateSupportTicketCommentUsingPut($support_ticket_comment, $support_ticket_comment_id)
     {
@@ -6351,16 +6351,16 @@ class SupportApi
      *
      * Update a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SupportTicketComment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SupportTicketComment, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSupportTicketCommentUsingPutWithHttpInfo($support_ticket_comment, $support_ticket_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicketComment';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicketComment';
         $request = $this->updateSupportTicketCommentUsingPutRequest($support_ticket_comment, $support_ticket_comment_id);
 
         try {
@@ -6412,7 +6412,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SupportTicketComment',
+                        '\com\hydrogen\nucleus\Model\SupportTicketComment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6427,7 +6427,7 @@ class SupportApi
      *
      * Update a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6448,7 +6448,7 @@ class SupportApi
      *
      * Update a support ticket comment
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6456,7 +6456,7 @@ class SupportApi
      */
     public function updateSupportTicketCommentUsingPutAsyncWithHttpInfo($support_ticket_comment, $support_ticket_comment_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicketComment';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicketComment';
         $request = $this->updateSupportTicketCommentUsingPutRequest($support_ticket_comment, $support_ticket_comment_id);
 
         return $this->client
@@ -6499,7 +6499,7 @@ class SupportApi
     /**
      * Create request for operation 'updateSupportTicketCommentUsingPut'
      *
-     * @param  \com\hydrogen\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicketComment $support_ticket_comment support_ticket_comment (required)
      * @param  string $support_ticket_comment_id UUID support_ticket_comment_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6620,12 +6620,12 @@ class SupportApi
      *
      * Update a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket support_ticket (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket support_ticket (required)
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\SupportTicket
+     * @return \com\hydrogen\nucleus\Model\SupportTicket
      */
     public function updateSupportTicketUsingPut($support_ticket, $support_ticket_id)
     {
@@ -6638,16 +6638,16 @@ class SupportApi
      *
      * Update a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket support_ticket (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket support_ticket (required)
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\SupportTicket, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSupportTicketUsingPutWithHttpInfo($support_ticket, $support_ticket_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->updateSupportTicketUsingPutRequest($support_ticket, $support_ticket_id);
 
         try {
@@ -6699,7 +6699,7 @@ class SupportApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\SupportTicket',
+                        '\com\hydrogen\nucleus\Model\SupportTicket',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6714,7 +6714,7 @@ class SupportApi
      *
      * Update a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket support_ticket (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket support_ticket (required)
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6735,7 +6735,7 @@ class SupportApi
      *
      * Update a support ticket
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket support_ticket (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket support_ticket (required)
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6743,7 +6743,7 @@ class SupportApi
      */
     public function updateSupportTicketUsingPutAsyncWithHttpInfo($support_ticket, $support_ticket_id)
     {
-        $returnType = '\com\hydrogen\Model\SupportTicket';
+        $returnType = '\com\hydrogen\nucleus\Model\SupportTicket';
         $request = $this->updateSupportTicketUsingPutRequest($support_ticket, $support_ticket_id);
 
         return $this->client
@@ -6786,7 +6786,7 @@ class SupportApi
     /**
      * Create request for operation 'updateSupportTicketUsingPut'
      *
-     * @param  \com\hydrogen\Model\SupportTicket $support_ticket support_ticket (required)
+     * @param  \com\hydrogen\nucleus\Model\SupportTicket $support_ticket support_ticket (required)
      * @param  string $support_ticket_id UUID support_ticket_id (required)
      *
      * @throws \InvalidArgumentException

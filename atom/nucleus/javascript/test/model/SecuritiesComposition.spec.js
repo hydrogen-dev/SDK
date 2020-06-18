@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.SecuritiesComposition();
+    instance = new HydrogenNucleusApi.SecuritiesComposition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('SecuritiesComposition', function() {
     it('should create an instance of SecuritiesComposition', function() {
       // uncomment below and update the code to test SecuritiesComposition
-      //var instane = new HydrogenAtomApi.SecuritiesComposition();
-      //expect(instance).to.be.a(HydrogenAtomApi.SecuritiesComposition);
+      //var instane = new HydrogenNucleusApi.SecuritiesComposition();
+      //expect(instance).to.be.a(HydrogenNucleusApi.SecuritiesComposition);
     });
 
     it('should have the property componentId (base name: "component_id")', function() {
       // uncomment below and update the code to test the property componentId
-      //var instane = new HydrogenAtomApi.SecuritiesComposition();
+      //var instane = new HydrogenNucleusApi.SecuritiesComposition();
       //expect(instance).to.be();
     });
 
     it('should have the property endDate (base name: "end_date")', function() {
       // uncomment below and update the code to test the property endDate
-      //var instane = new HydrogenAtomApi.SecuritiesComposition();
+      //var instane = new HydrogenNucleusApi.SecuritiesComposition();
       //expect(instance).to.be();
     });
 
     it('should have the property startDate (base name: "start_date")', function() {
       // uncomment below and update the code to test the property startDate
-      //var instane = new HydrogenAtomApi.SecuritiesComposition();
+      //var instane = new HydrogenNucleusApi.SecuritiesComposition();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.SecuritiesComposition();
+      //var instane = new HydrogenNucleusApi.SecuritiesComposition();
       //expect(instance).to.be();
     });
 

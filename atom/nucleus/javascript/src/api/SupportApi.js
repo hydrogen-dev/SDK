@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/ChatInfo'), require('../model/Consultation'), require('../model/PageChatInfo'), require('../model/PageConsultation'), require('../model/PageSale'), require('../model/PageSupportTicket'), require('../model/PageSupportTicketComment'), require('../model/Sale'), require('../model/SupportTicket'), require('../model/SupportTicketComment'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.SupportApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.ChatInfo, root.HydrogenAtomApi.Consultation, root.HydrogenAtomApi.PageChatInfo, root.HydrogenAtomApi.PageConsultation, root.HydrogenAtomApi.PageSale, root.HydrogenAtomApi.PageSupportTicket, root.HydrogenAtomApi.PageSupportTicketComment, root.HydrogenAtomApi.Sale, root.HydrogenAtomApi.SupportTicket, root.HydrogenAtomApi.SupportTicketComment);
+    root.HydrogenNucleusApi.SupportApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.ChatInfo, root.HydrogenNucleusApi.Consultation, root.HydrogenNucleusApi.PageChatInfo, root.HydrogenNucleusApi.PageConsultation, root.HydrogenNucleusApi.PageSale, root.HydrogenNucleusApi.PageSupportTicket, root.HydrogenNucleusApi.PageSupportTicketComment, root.HydrogenNucleusApi.Sale, root.HydrogenNucleusApi.SupportTicket, root.HydrogenNucleusApi.SupportTicketComment);
   }
 }(this, function(ApiClient, ChatInfo, Consultation, PageChatInfo, PageConsultation, PageSale, PageSupportTicket, PageSupportTicketComment, Sale, SupportTicket, SupportTicketComment) {
   'use strict';

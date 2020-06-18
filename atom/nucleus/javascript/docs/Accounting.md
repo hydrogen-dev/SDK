@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Accounting
+# HydrogenNucleusApi.Accounting
 
 ## Properties
 Name | Type | Description | Notes

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.VClientGoalViewData();
+    instance = new HydrogenNucleusApi.VClientGoalViewData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,43 +53,43 @@
   describe('VClientGoalViewData', function() {
     it('should create an instance of VClientGoalViewData', function() {
       // uncomment below and update the code to test VClientGoalViewData
-      //var instane = new HydrogenAtomApi.VClientGoalViewData();
-      //expect(instance).to.be.a(HydrogenAtomApi.VClientGoalViewData);
+      //var instane = new HydrogenNucleusApi.VClientGoalViewData();
+      //expect(instance).to.be.a(HydrogenNucleusApi.VClientGoalViewData);
     });
 
     it('should have the property clientAssetSize (base name: "client_asset_size")', function() {
       // uncomment below and update the code to test the property clientAssetSize
-      //var instane = new HydrogenAtomApi.VClientGoalViewData();
+      //var instane = new HydrogenNucleusApi.VClientGoalViewData();
       //expect(instance).to.be();
     });
 
     it('should have the property clientAssetSizeDate (base name: "client_asset_size_date")', function() {
       // uncomment below and update the code to test the property clientAssetSizeDate
-      //var instane = new HydrogenAtomApi.VClientGoalViewData();
+      //var instane = new HydrogenNucleusApi.VClientGoalViewData();
       //expect(instance).to.be();
     });
 
     it('should have the property clientFirstName (base name: "client_first_name")', function() {
       // uncomment below and update the code to test the property clientFirstName
-      //var instane = new HydrogenAtomApi.VClientGoalViewData();
+      //var instane = new HydrogenNucleusApi.VClientGoalViewData();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.VClientGoalViewData();
+      //var instane = new HydrogenNucleusApi.VClientGoalViewData();
       //expect(instance).to.be();
     });
 
     it('should have the property clientLastName (base name: "client_last_name")', function() {
       // uncomment below and update the code to test the property clientLastName
-      //var instane = new HydrogenAtomApi.VClientGoalViewData();
+      //var instane = new HydrogenNucleusApi.VClientGoalViewData();
       //expect(instance).to.be();
     });
 
     it('should have the property clientViewGoalData (base name: "client_view_goal_data")', function() {
       // uncomment below and update the code to test the property clientViewGoalData
-      //var instane = new HydrogenAtomApi.VClientGoalViewData();
+      //var instane = new HydrogenNucleusApi.VClientGoalViewData();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# AtomApi::BulkTransactionVO
+# NucleusApi::BulkTransactionVO
 
 ## Properties
 Name | Type | Description | Notes

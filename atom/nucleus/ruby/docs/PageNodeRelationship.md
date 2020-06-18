@@ -1,4 +1,4 @@
-# AtomApi::PageNodeRelationship
+# NucleusApi::PageNodeRelationship
 
 ## Properties
 Name | Type | Description | Notes

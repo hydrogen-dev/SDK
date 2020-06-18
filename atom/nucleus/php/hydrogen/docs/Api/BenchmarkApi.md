@@ -1,4 +1,4 @@
-# com\hydrogen\BenchmarkApi
+# com\hydrogen\nucleus\BenchmarkApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createBenchmarkUsingPost**
-> \com\hydrogen\Model\Benchmark createBenchmarkUsingPost($benchmark)
+> \com\hydrogen\nucleus\Model\Benchmark createBenchmarkUsingPost($benchmark)
 
 Create a benchmark
 
@@ -22,29 +22,29 @@ Create a new benchmark for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BenchmarkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BenchmarkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$benchmark = new \com\hydrogen\Model\Benchmark(); // \com\hydrogen\Model\Benchmark | benchmark
+$benchmark = new \com\hydrogen\nucleus\Model\Benchmark(); // \com\hydrogen\nucleus\Model\Benchmark | benchmark
 
 try {
     $result = $apiInstance->createBenchmarkUsingPost($benchmark);
@@ -59,11 +59,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark** | [**\com\hydrogen\Model\Benchmark**](../Model/Benchmark.md)| benchmark |
+ **benchmark** | [**\com\hydrogen\nucleus\Model\Benchmark**](../Model/Benchmark.md)| benchmark |
 
 ### Return type
 
-[**\com\hydrogen\Model\Benchmark**](../Model/Benchmark.md)
+[**\com\hydrogen\nucleus\Model\Benchmark**](../Model/Benchmark.md)
 
 ### Authorization
 
@@ -86,23 +86,23 @@ Permanently delete a benchmark.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BenchmarkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BenchmarkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -140,7 +140,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBenchmarkAllUsingGet**
-> \com\hydrogen\Model\PageBenchmark_ getBenchmarkAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageBenchmark_ getBenchmarkAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all benchmarks
 
@@ -149,23 +149,23 @@ Get details for all benchmarks defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BenchmarkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BenchmarkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageBenchmark_**](../Model/PageBenchmark_.md)
+[**\com\hydrogen\nucleus\Model\PageBenchmark_**](../Model/PageBenchmark_.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBenchmarkAssetSizeAllUsingGet**
-> \com\hydrogen\Model\DateDoubleVO[] getBenchmarkAssetSizeAllUsingGet($benchmark_id, $end_date, $sort_type, $start_date)
+> \com\hydrogen\nucleus\Model\DateDoubleVO[] getBenchmarkAssetSizeAllUsingGet($benchmark_id, $end_date, $sort_type, $start_date)
 
 List all benchmark asset sizes
 
@@ -221,23 +221,23 @@ Get a list of asset sizes by date for a benchmark.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BenchmarkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BenchmarkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\DateDoubleVO[]**](../Model/DateDoubleVO.md)
+[**\com\hydrogen\nucleus\Model\DateDoubleVO[]**](../Model/DateDoubleVO.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBenchmarkUsingGet**
-> \com\hydrogen\Model\Benchmark getBenchmarkUsingGet($benchmark_id)
+> \com\hydrogen\nucleus\Model\Benchmark getBenchmarkUsingGet($benchmark_id)
 
 Retrieve a benchmark
 
@@ -291,23 +291,23 @@ Retrieve the information for a benchmark.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BenchmarkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BenchmarkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Benchmark**](../Model/Benchmark.md)
+[**\com\hydrogen\nucleus\Model\Benchmark**](../Model/Benchmark.md)
 
 ### Authorization
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateBenchmarkUsingPut**
-> \com\hydrogen\Model\Benchmark updateBenchmarkUsingPut($benchmark, $benchmark_id)
+> \com\hydrogen\nucleus\Model\Benchmark updateBenchmarkUsingPut($benchmark, $benchmark_id)
 
 Update a benchmark
 
@@ -355,29 +355,29 @@ Updated the information for a benchmark.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\BenchmarkApi(
+$apiInstance = new com\hydrogen\nucleus\Api\BenchmarkApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$benchmark = new \com\hydrogen\Model\Benchmark(); // \com\hydrogen\Model\Benchmark | benchmark
+$benchmark = new \com\hydrogen\nucleus\Model\Benchmark(); // \com\hydrogen\nucleus\Model\Benchmark | benchmark
 $benchmark_id = "benchmark_id_example"; // string | UUID benchmark_id
 
 try {
@@ -393,12 +393,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark** | [**\com\hydrogen\Model\Benchmark**](../Model/Benchmark.md)| benchmark |
+ **benchmark** | [**\com\hydrogen\nucleus\Model\Benchmark**](../Model/Benchmark.md)| benchmark |
  **benchmark_id** | [**string**](../Model/.md)| UUID benchmark_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Benchmark**](../Model/Benchmark.md)
+[**\com\hydrogen\nucleus\Model\Benchmark**](../Model/Benchmark.md)
 
 ### Authorization
 

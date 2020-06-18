@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageQuestion
+# HydrogenNucleusApi.PageQuestion
 
 ## Properties
 Name | Type | Description | Notes

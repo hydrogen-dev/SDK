@@ -1,4 +1,4 @@
-# com\hydrogen\CustomerApi
+# com\hydrogen\nucleus\CustomerApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createCustomerRevenueUsingPost**
-> \com\hydrogen\Model\CustomerRevenue createCustomerRevenueUsingPost($customer_revenue)
+> \com\hydrogen\nucleus\Model\CustomerRevenue createCustomerRevenueUsingPost($customer_revenue)
 
 Create a customer revenue
 
@@ -26,29 +26,29 @@ Create a new customer revenue, with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$customer_revenue = new \com\hydrogen\Model\CustomerRevenue(); // \com\hydrogen\Model\CustomerRevenue | customerRevenue
+$customer_revenue = new \com\hydrogen\nucleus\Model\CustomerRevenue(); // \com\hydrogen\nucleus\Model\CustomerRevenue | customerRevenue
 
 try {
     $result = $apiInstance->createCustomerRevenueUsingPost($customer_revenue);
@@ -63,11 +63,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_revenue** | [**\com\hydrogen\Model\CustomerRevenue**](../Model/CustomerRevenue.md)| customerRevenue |
+ **customer_revenue** | [**\com\hydrogen\nucleus\Model\CustomerRevenue**](../Model/CustomerRevenue.md)| customerRevenue |
 
 ### Return type
 
-[**\com\hydrogen\Model\CustomerRevenue**](../Model/CustomerRevenue.md)
+[**\com\hydrogen\nucleus\Model\CustomerRevenue**](../Model/CustomerRevenue.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerUsingPost**
-> \com\hydrogen\Model\Customer createCustomerUsingPost($customer)
+> \com\hydrogen\nucleus\Model\Customer createCustomerUsingPost($customer)
 
 Create a customer
 
@@ -90,29 +90,29 @@ Create a new customer, with your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$customer = new \com\hydrogen\Model\Customer(); // \com\hydrogen\Model\Customer | customer
+$customer = new \com\hydrogen\nucleus\Model\Customer(); // \com\hydrogen\nucleus\Model\Customer | customer
 
 try {
     $result = $apiInstance->createCustomerUsingPost($customer);
@@ -127,11 +127,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [**\com\hydrogen\Model\Customer**](../Model/Customer.md)| customer |
+ **customer** | [**\com\hydrogen\nucleus\Model\Customer**](../Model/Customer.md)| customer |
 
 ### Return type
 
-[**\com\hydrogen\Model\Customer**](../Model/Customer.md)
+[**\com\hydrogen\nucleus\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -154,23 +154,23 @@ Delete a customer revenue.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -217,23 +217,23 @@ Delete a customer.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -271,7 +271,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerAllUsingGet**
-> \com\hydrogen\Model\PageCustomer_ getCustomerAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageCustomer_ getCustomerAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all customer
 
@@ -280,23 +280,23 @@ List all customer.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageCustomer_**](../Model/PageCustomer_.md)
+[**\com\hydrogen\nucleus\Model\PageCustomer_**](../Model/PageCustomer_.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerRevenueAllUsingGet**
-> \com\hydrogen\Model\PageCustomerRevenue_ getCustomerRevenueAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageCustomerRevenue_ getCustomerRevenueAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all customer revenue
 
@@ -352,23 +352,23 @@ List all customer revenue.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageCustomerRevenue_**](../Model/PageCustomerRevenue_.md)
+[**\com\hydrogen\nucleus\Model\PageCustomerRevenue_**](../Model/PageCustomerRevenue_.md)
 
 ### Authorization
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerRevenueUsingGet**
-> \com\hydrogen\Model\CustomerRevenue getCustomerRevenueUsingGet($customer_revenue_id)
+> \com\hydrogen\nucleus\Model\CustomerRevenue getCustomerRevenueUsingGet($customer_revenue_id)
 
 Retrieve a customer revenue
 
@@ -424,23 +424,23 @@ Retrieve a customer revenue.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\CustomerRevenue**](../Model/CustomerRevenue.md)
+[**\com\hydrogen\nucleus\Model\CustomerRevenue**](../Model/CustomerRevenue.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerUsingGet**
-> \com\hydrogen\Model\Customer getCustomerUsingGet($customer_id)
+> \com\hydrogen\nucleus\Model\Customer getCustomerUsingGet($customer_id)
 
 Retrieve a customer
 
@@ -488,23 +488,23 @@ Retrieve a customer.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Customer**](../Model/Customer.md)
+[**\com\hydrogen\nucleus\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomerRevenueUsingPut**
-> \com\hydrogen\Model\CustomerRevenue updateCustomerRevenueUsingPut($customer_revenue, $customer_revenue_id)
+> \com\hydrogen\nucleus\Model\CustomerRevenue updateCustomerRevenueUsingPut($customer_revenue, $customer_revenue_id)
 
 Update a customer revenue
 
@@ -552,29 +552,29 @@ Update a customer revenue.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$customer_revenue = new \com\hydrogen\Model\CustomerRevenue(); // \com\hydrogen\Model\CustomerRevenue | customer_revenue
+$customer_revenue = new \com\hydrogen\nucleus\Model\CustomerRevenue(); // \com\hydrogen\nucleus\Model\CustomerRevenue | customer_revenue
 $customer_revenue_id = "customer_revenue_id_example"; // string | UUID customer_revenue_id
 
 try {
@@ -590,12 +590,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_revenue** | [**\com\hydrogen\Model\CustomerRevenue**](../Model/CustomerRevenue.md)| customer_revenue |
+ **customer_revenue** | [**\com\hydrogen\nucleus\Model\CustomerRevenue**](../Model/CustomerRevenue.md)| customer_revenue |
  **customer_revenue_id** | [**string**](../Model/.md)| UUID customer_revenue_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\CustomerRevenue**](../Model/CustomerRevenue.md)
+[**\com\hydrogen\nucleus\Model\CustomerRevenue**](../Model/CustomerRevenue.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomerUsingPut**
-> \com\hydrogen\Model\Customer updateCustomerUsingPut($customer, $customer_id)
+> \com\hydrogen\nucleus\Model\Customer updateCustomerUsingPut($customer, $customer_id)
 
 Update a customer
 
@@ -618,29 +618,29 @@ Update a customer.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\CustomerApi(
+$apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$customer = new \com\hydrogen\Model\Customer(); // \com\hydrogen\Model\Customer | customer
+$customer = new \com\hydrogen\nucleus\Model\Customer(); // \com\hydrogen\nucleus\Model\Customer | customer
 $customer_id = "customer_id_example"; // string | UUID customer_id
 
 try {
@@ -656,12 +656,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [**\com\hydrogen\Model\Customer**](../Model/Customer.md)| customer |
+ **customer** | [**\com\hydrogen\nucleus\Model\Customer**](../Model/Customer.md)| customer |
  **customer_id** | [**string**](../Model/.md)| UUID customer_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Customer**](../Model/Customer.md)
+[**\com\hydrogen\nucleus\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 

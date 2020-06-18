@@ -1,4 +1,4 @@
-# AtomApi::AllocationNodeMap
+# NucleusApi::AllocationNodeMap
 
 ## Properties
 Name | Type | Description | Notes

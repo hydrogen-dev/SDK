@@ -1,4 +1,4 @@
-# com\hydrogen\AnnuitiesApi
+# com\hydrogen\proton\AnnuitiesApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -28,24 +28,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AnnuitiesApi(
+$apiInstance = new com\hydrogen\proton\Api\AnnuitiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$annuity_calculator_accumulation_horizon_request = new \com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest(); // \com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest | Request payload for Annuity Calculator - Accumulation Horizon
+$annuity_calculator_accumulation_horizon_request = new \com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest(); // \com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest | Request payload for Annuity Calculator - Accumulation Horizon
 
 try {
     $result = $apiInstance->annuityCalculatorAccumulationHorizon($annuity_calculator_accumulation_horizon_request);
@@ -60,7 +60,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **annuity_calculator_accumulation_horizon_request** | [**\com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest**](../Model/AnnuityCalculatorAccumulationHorizonRequest.md)| Request payload for Annuity Calculator - Accumulation Horizon |
+ **annuity_calculator_accumulation_horizon_request** | [**\com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest**](../Model/AnnuityCalculatorAccumulationHorizonRequest.md)| Request payload for Annuity Calculator - Accumulation Horizon |
 
 ### Return type
 
@@ -93,24 +93,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AnnuitiesApi(
+$apiInstance = new com\hydrogen\proton\Api\AnnuitiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$annuity_calculator_annuity_amount_request = new \com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest(); // \com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest | Request payload for Annuity Calculator - Annuity Amount
+$annuity_calculator_annuity_amount_request = new \com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest(); // \com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest | Request payload for Annuity Calculator - Annuity Amount
 
 try {
     $result = $apiInstance->annuityCalculatorAnnuityAmount($annuity_calculator_annuity_amount_request);
@@ -125,7 +125,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **annuity_calculator_annuity_amount_request** | [**\com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest**](../Model/AnnuityCalculatorAnnuityAmountRequest.md)| Request payload for Annuity Calculator - Annuity Amount |
+ **annuity_calculator_annuity_amount_request** | [**\com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest**](../Model/AnnuityCalculatorAnnuityAmountRequest.md)| Request payload for Annuity Calculator - Annuity Amount |
 
 ### Return type
 
@@ -158,24 +158,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AnnuitiesApi(
+$apiInstance = new com\hydrogen\proton\Api\AnnuitiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$annuity_calculator_decumulation_horizon_request = new \com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest(); // \com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest | Request payload for Annuity Calculator - Decumulation Horizon
+$annuity_calculator_decumulation_horizon_request = new \com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest(); // \com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest | Request payload for Annuity Calculator - Decumulation Horizon
 
 try {
     $result = $apiInstance->annuityCalculatorDecumulationHorizon($annuity_calculator_decumulation_horizon_request);
@@ -190,7 +190,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **annuity_calculator_decumulation_horizon_request** | [**\com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest**](../Model/AnnuityCalculatorDecumulationHorizonRequest.md)| Request payload for Annuity Calculator - Decumulation Horizon |
+ **annuity_calculator_decumulation_horizon_request** | [**\com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest**](../Model/AnnuityCalculatorDecumulationHorizonRequest.md)| Request payload for Annuity Calculator - Decumulation Horizon |
 
 ### Return type
 
@@ -223,24 +223,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AnnuitiesApi(
+$apiInstance = new com\hydrogen\proton\Api\AnnuitiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$annuity_calculator_deposit_amount_request = new \com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest(); // \com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest | Request payload for Annuity Calculator - Deposit Amount
+$annuity_calculator_deposit_amount_request = new \com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest(); // \com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest | Request payload for Annuity Calculator - Deposit Amount
 
 try {
     $result = $apiInstance->annuityCalculatorDepositAmount($annuity_calculator_deposit_amount_request);
@@ -255,7 +255,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **annuity_calculator_deposit_amount_request** | [**\com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest**](../Model/AnnuityCalculatorDepositAmountRequest.md)| Request payload for Annuity Calculator - Deposit Amount |
+ **annuity_calculator_deposit_amount_request** | [**\com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest**](../Model/AnnuityCalculatorDepositAmountRequest.md)| Request payload for Annuity Calculator - Deposit Amount |
 
 ### Return type
 
@@ -288,24 +288,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AnnuitiesApi(
+$apiInstance = new com\hydrogen\proton\Api\AnnuitiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$annuity_calculator_initial_balance_request = new \com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest(); // \com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest | Request payload for Annuity Calculator - Initial Balance
+$annuity_calculator_initial_balance_request = new \com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest(); // \com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest | Request payload for Annuity Calculator - Initial Balance
 
 try {
     $result = $apiInstance->annuityCalculatorInitialBalance($annuity_calculator_initial_balance_request);
@@ -320,7 +320,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **annuity_calculator_initial_balance_request** | [**\com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest**](../Model/AnnuityCalculatorInitialBalanceRequest.md)| Request payload for Annuity Calculator - Initial Balance |
+ **annuity_calculator_initial_balance_request** | [**\com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest**](../Model/AnnuityCalculatorInitialBalanceRequest.md)| Request payload for Annuity Calculator - Initial Balance |
 
 ### Return type
 
@@ -353,24 +353,24 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AnnuitiesApi(
+$apiInstance = new com\hydrogen\proton\Api\AnnuitiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$variable_annuity_request = new \com\hydrogen\Model\VariableAnnuityRequest(); // \com\hydrogen\Model\VariableAnnuityRequest | Request payload for Variable Annuity
+$variable_annuity_request = new \com\hydrogen\proton\Model\VariableAnnuityRequest(); // \com\hydrogen\proton\Model\VariableAnnuityRequest | Request payload for Variable Annuity
 
 try {
     $result = $apiInstance->variableAnnuity($variable_annuity_request);
@@ -385,7 +385,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **variable_annuity_request** | [**\com\hydrogen\Model\VariableAnnuityRequest**](../Model/VariableAnnuityRequest.md)| Request payload for Variable Annuity |
+ **variable_annuity_request** | [**\com\hydrogen\proton\Model\VariableAnnuityRequest**](../Model/VariableAnnuityRequest.md)| Request payload for Variable Annuity |
 
 ### Return type
 

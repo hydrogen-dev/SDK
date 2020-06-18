@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**answers** | [**\com\hydrogen\Model\Answer[]**](Answer.md) |  | [optional] 
+**answers** | [**\com\hydrogen\nucleus\Model\Answer[]**](Answer.md) |  | [optional] 
 **category** | **string** | category | [optional] 
 **description** | **string** | description | [optional] 
 **document** | **string** | document | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **metadata** | **map[string,string]** | metadata | [optional] 
 **order_index** | **string** | order_index | [optional] 
 **question_type** | **string** | question_type | [optional] 
-**questionnaire** | [**\com\hydrogen\Model\Questionnaire**](Questionnaire.md) |  | [optional] 
+**questionnaire** | [**\com\hydrogen\nucleus\Model\Questionnaire**](Questionnaire.md) |  | [optional] 
 **questionnaire_id** | **string** | questionnaireId | [optional] 
 **subcategory** | **string** | subcategory | [optional] 
 **title** | **string** | title | [optional] 

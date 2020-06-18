@@ -1,4 +1,4 @@
-# com\hydrogen\DecisionTreeApi
+# com\hydrogen\nucleus\DecisionTreeApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **createDecisionTreeResultUsingPost**
-> \com\hydrogen\Model\DecisionTreeResultVO createDecisionTreeResultUsingPost($decision_tree_co)
+> \com\hydrogen\nucleus\Model\DecisionTreeResultVO createDecisionTreeResultUsingPost($decision_tree_co)
 
 Decision tree result
 
@@ -32,29 +32,29 @@ Decision tree result.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$decision_tree_co = new \com\hydrogen\Model\DecisionTreeCO(); // \com\hydrogen\Model\DecisionTreeCO | decisionTreeCO
+$decision_tree_co = new \com\hydrogen\nucleus\Model\DecisionTreeCO(); // \com\hydrogen\nucleus\Model\DecisionTreeCO | decisionTreeCO
 
 try {
     $result = $apiInstance->createDecisionTreeResultUsingPost($decision_tree_co);
@@ -69,11 +69,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decision_tree_co** | [**\com\hydrogen\Model\DecisionTreeCO**](../Model/DecisionTreeCO.md)| decisionTreeCO |
+ **decision_tree_co** | [**\com\hydrogen\nucleus\Model\DecisionTreeCO**](../Model/DecisionTreeCO.md)| decisionTreeCO |
 
 ### Return type
 
-[**\com\hydrogen\Model\DecisionTreeResultVO**](../Model/DecisionTreeResultVO.md)
+[**\com\hydrogen\nucleus\Model\DecisionTreeResultVO**](../Model/DecisionTreeResultVO.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createDecisionTreeUsingPost**
-> \com\hydrogen\Model\DecisionTree createDecisionTreeUsingPost($decision_tree)
+> \com\hydrogen\nucleus\Model\DecisionTree createDecisionTreeUsingPost($decision_tree)
 
 Create a decision tree
 
@@ -96,29 +96,29 @@ Create a new decision tree for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$decision_tree = new \com\hydrogen\Model\DecisionTree(); // \com\hydrogen\Model\DecisionTree | decisionTree
+$decision_tree = new \com\hydrogen\nucleus\Model\DecisionTree(); // \com\hydrogen\nucleus\Model\DecisionTree | decisionTree
 
 try {
     $result = $apiInstance->createDecisionTreeUsingPost($decision_tree);
@@ -133,11 +133,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decision_tree** | [**\com\hydrogen\Model\DecisionTree**](../Model/DecisionTree.md)| decisionTree |
+ **decision_tree** | [**\com\hydrogen\nucleus\Model\DecisionTree**](../Model/DecisionTree.md)| decisionTree |
 
 ### Return type
 
-[**\com\hydrogen\Model\DecisionTree**](../Model/DecisionTree.md)
+[**\com\hydrogen\nucleus\Model\DecisionTree**](../Model/DecisionTree.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createNodeRelationshipUsingPost**
-> \com\hydrogen\Model\NodeRelationship createNodeRelationshipUsingPost($node)
+> \com\hydrogen\nucleus\Model\NodeRelationship createNodeRelationshipUsingPost($node)
 
 Create a node relationship
 
@@ -160,29 +160,29 @@ Create a new node relationship for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$node = new \com\hydrogen\Model\NodeRelationship(); // \com\hydrogen\Model\NodeRelationship | node
+$node = new \com\hydrogen\nucleus\Model\NodeRelationship(); // \com\hydrogen\nucleus\Model\NodeRelationship | node
 
 try {
     $result = $apiInstance->createNodeRelationshipUsingPost($node);
@@ -197,11 +197,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **node** | [**\com\hydrogen\Model\NodeRelationship**](../Model/NodeRelationship.md)| node |
+ **node** | [**\com\hydrogen\nucleus\Model\NodeRelationship**](../Model/NodeRelationship.md)| node |
 
 ### Return type
 
-[**\com\hydrogen\Model\NodeRelationship**](../Model/NodeRelationship.md)
+[**\com\hydrogen\nucleus\Model\NodeRelationship**](../Model/NodeRelationship.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createNodeUsingPost**
-> \com\hydrogen\Model\Node createNodeUsingPost($node)
+> \com\hydrogen\nucleus\Model\Node createNodeUsingPost($node)
 
 Create a node
 
@@ -224,29 +224,29 @@ Create a new node for your firm that can be used in a decision tree and mapped t
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$node = new \com\hydrogen\Model\Node(); // \com\hydrogen\Model\Node | node
+$node = new \com\hydrogen\nucleus\Model\Node(); // \com\hydrogen\nucleus\Model\Node | node
 
 try {
     $result = $apiInstance->createNodeUsingPost($node);
@@ -261,11 +261,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **node** | [**\com\hydrogen\Model\Node**](../Model/Node.md)| node |
+ **node** | [**\com\hydrogen\nucleus\Model\Node**](../Model/Node.md)| node |
 
 ### Return type
 
-[**\com\hydrogen\Model\Node**](../Model/Node.md)
+[**\com\hydrogen\nucleus\Model\Node**](../Model/Node.md)
 
 ### Authorization
 
@@ -288,23 +288,23 @@ Permanently delete a decision tree.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -342,7 +342,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteNodeRelationshipUsingDelete**
-> \com\hydrogen\Model\NodeRelationship deleteNodeRelationshipUsingDelete($node_relationship_id)
+> \com\hydrogen\nucleus\Model\NodeRelationship deleteNodeRelationshipUsingDelete($node_relationship_id)
 
 Delete a node relationship
 
@@ -351,23 +351,23 @@ Permanently delete a node relationship.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\NodeRelationship**](../Model/NodeRelationship.md)
+[**\com\hydrogen\nucleus\Model\NodeRelationship**](../Model/NodeRelationship.md)
 
 ### Authorization
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteNodeUsingDelete**
-> \com\hydrogen\Model\DecisionTree deleteNodeUsingDelete($node_id)
+> \com\hydrogen\nucleus\Model\DecisionTree deleteNodeUsingDelete($node_id)
 
 Delete a node
 
@@ -415,23 +415,23 @@ Permanently delete a node.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\DecisionTree**](../Model/DecisionTree.md)
+[**\com\hydrogen\nucleus\Model\DecisionTree**](../Model/DecisionTree.md)
 
 ### Authorization
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDecisionTreeAllUsingGet**
-> \com\hydrogen\Model\PageDecisionTree_ getDecisionTreeAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageDecisionTree_ getDecisionTreeAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all decision tree
 
@@ -479,23 +479,23 @@ Get the information for all decision trees defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageDecisionTree_**](../Model/PageDecisionTree_.md)
+[**\com\hydrogen\nucleus\Model\PageDecisionTree_**](../Model/PageDecisionTree_.md)
 
 ### Authorization
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDecisionTreeUsingGet**
-> \com\hydrogen\Model\DecisionTree getDecisionTreeUsingGet($decision_tree_id)
+> \com\hydrogen\nucleus\Model\DecisionTree getDecisionTreeUsingGet($decision_tree_id)
 
 Retrieve a decision tree
 
@@ -551,23 +551,23 @@ Retrieve the information for a decision tree.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\DecisionTree**](../Model/DecisionTree.md)
+[**\com\hydrogen\nucleus\Model\DecisionTree**](../Model/DecisionTree.md)
 
 ### Authorization
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNodeAllUsingGet**
-> \com\hydrogen\Model\PageNode_ getNodeAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageNode_ getNodeAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all nodes
 
@@ -615,23 +615,23 @@ List all nodes that are defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageNode_**](../Model/PageNode_.md)
+[**\com\hydrogen\nucleus\Model\PageNode_**](../Model/PageNode_.md)
 
 ### Authorization
 
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNodeRelationshipAllUsingGet**
-> \com\hydrogen\Model\PageNodeRelationship_ getNodeRelationshipAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageNodeRelationship_ getNodeRelationshipAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all node relationships
 
@@ -687,23 +687,23 @@ Get the information for all the node relationships defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageNodeRelationship_**](../Model/PageNodeRelationship_.md)
+[**\com\hydrogen\nucleus\Model\PageNodeRelationship_**](../Model/PageNodeRelationship_.md)
 
 ### Authorization
 
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNodeRelationshipUsingGet**
-> \com\hydrogen\Model\NodeRelationship getNodeRelationshipUsingGet($node_relationship_id)
+> \com\hydrogen\nucleus\Model\NodeRelationship getNodeRelationshipUsingGet($node_relationship_id)
 
 Retrieve a node relationship
 
@@ -759,23 +759,23 @@ Retrieve the information for a node relationship.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\NodeRelationship**](../Model/NodeRelationship.md)
+[**\com\hydrogen\nucleus\Model\NodeRelationship**](../Model/NodeRelationship.md)
 
 ### Authorization
 
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNodeUsingGet**
-> \com\hydrogen\Model\Node getNodeUsingGet($node_id)
+> \com\hydrogen\nucleus\Model\Node getNodeUsingGet($node_id)
 
 Retrieve a node
 
@@ -823,23 +823,23 @@ Retrieve the information for a node.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Node**](../Model/Node.md)
+[**\com\hydrogen\nucleus\Model\Node**](../Model/Node.md)
 
 ### Authorization
 
@@ -878,7 +878,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDecisionTreeUsingPut**
-> \com\hydrogen\Model\DecisionTree updateDecisionTreeUsingPut($decision_tree, $decision_tree_id)
+> \com\hydrogen\nucleus\Model\DecisionTree updateDecisionTreeUsingPut($decision_tree, $decision_tree_id)
 
 Update a decision tree
 
@@ -887,29 +887,29 @@ Updated the information for a decision tree.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$decision_tree = new \com\hydrogen\Model\DecisionTree(); // \com\hydrogen\Model\DecisionTree | decision_tree
+$decision_tree = new \com\hydrogen\nucleus\Model\DecisionTree(); // \com\hydrogen\nucleus\Model\DecisionTree | decision_tree
 $decision_tree_id = "decision_tree_id_example"; // string | UUID decision_tree_id
 
 try {
@@ -925,12 +925,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decision_tree** | [**\com\hydrogen\Model\DecisionTree**](../Model/DecisionTree.md)| decision_tree |
+ **decision_tree** | [**\com\hydrogen\nucleus\Model\DecisionTree**](../Model/DecisionTree.md)| decision_tree |
  **decision_tree_id** | [**string**](../Model/.md)| UUID decision_tree_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\DecisionTree**](../Model/DecisionTree.md)
+[**\com\hydrogen\nucleus\Model\DecisionTree**](../Model/DecisionTree.md)
 
 ### Authorization
 
@@ -944,7 +944,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateNodeRelationshipUsingPut**
-> \com\hydrogen\Model\NodeRelationship updateNodeRelationshipUsingPut($json_node, $node_relationship_id)
+> \com\hydrogen\nucleus\Model\NodeRelationship updateNodeRelationshipUsingPut($json_node, $node_relationship_id)
 
 Update a node relationship
 
@@ -953,29 +953,29 @@ Update the information for a node relationship.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$json_node = new \com\hydrogen\Model\JsonNode(); // \com\hydrogen\Model\JsonNode | jsonNode
+$json_node = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | jsonNode
 $node_relationship_id = "node_relationship_id_example"; // string | UUID node_relationship_id
 
 try {
@@ -991,12 +991,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**\com\hydrogen\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
+ **json_node** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
  **node_relationship_id** | [**string**](../Model/.md)| UUID node_relationship_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\NodeRelationship**](../Model/NodeRelationship.md)
+[**\com\hydrogen\nucleus\Model\NodeRelationship**](../Model/NodeRelationship.md)
 
 ### Authorization
 
@@ -1010,7 +1010,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateNodeUsingPut**
-> \com\hydrogen\Model\Node updateNodeUsingPut($json_node, $node_id)
+> \com\hydrogen\nucleus\Model\Node updateNodeUsingPut($json_node, $node_id)
 
 Update a node
 
@@ -1019,29 +1019,29 @@ Updated the information for a node.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\DecisionTreeApi(
+$apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$json_node = new \com\hydrogen\Model\JsonNode(); // \com\hydrogen\Model\JsonNode | jsonNode
+$json_node = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | jsonNode
 $node_id = "node_id_example"; // string | UUID node_id
 
 try {
@@ -1057,12 +1057,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**\com\hydrogen\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
+ **json_node** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
  **node_id** | [**string**](../Model/.md)| UUID node_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Node**](../Model/Node.md)
+[**\com\hydrogen\nucleus\Model\Node**](../Model/Node.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# AtomApi::ClientStatus
+# NucleusApi::ClientStatus
 
 ## Properties
 Name | Type | Description | Notes

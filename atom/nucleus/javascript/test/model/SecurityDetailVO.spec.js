@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.SecurityDetailVO();
+    instance = new HydrogenNucleusApi.SecurityDetailVO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,31 +53,31 @@
   describe('SecurityDetailVO', function() {
     it('should create an instance of SecurityDetailVO', function() {
       // uncomment below and update the code to test SecurityDetailVO
-      //var instane = new HydrogenAtomApi.SecurityDetailVO();
-      //expect(instance).to.be.a(HydrogenAtomApi.SecurityDetailVO);
+      //var instane = new HydrogenNucleusApi.SecurityDetailVO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.SecurityDetailVO);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.SecurityDetailVO();
+      //var instane = new HydrogenNucleusApi.SecurityDetailVO();
       //expect(instance).to.be();
     });
 
     it('should have the property securityPriceDate (base name: "security_price_date")', function() {
       // uncomment below and update the code to test the property securityPriceDate
-      //var instane = new HydrogenAtomApi.SecurityDetailVO();
+      //var instane = new HydrogenNucleusApi.SecurityDetailVO();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instane = new HydrogenAtomApi.SecurityDetailVO();
+      //var instane = new HydrogenNucleusApi.SecurityDetailVO();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.SecurityDetailVO();
+      //var instane = new HydrogenNucleusApi.SecurityDetailVO();
       //expect(instance).to.be();
     });
 

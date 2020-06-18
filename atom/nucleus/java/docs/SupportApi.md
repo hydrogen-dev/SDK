@@ -41,9 +41,9 @@ Create a Chat
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -98,9 +98,9 @@ Create a new CIO Consultation
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -155,9 +155,9 @@ Create a new sales inquiry for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -212,9 +212,9 @@ Create a new support ticket comment for a support ticket.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -269,9 +269,9 @@ Create a new support ticket for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -326,9 +326,9 @@ Permanently delete a Chat
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -382,9 +382,9 @@ Permanently delete a CIO Consultation
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -438,9 +438,9 @@ Permanently delete a sales inquiry.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -494,9 +494,9 @@ Permanently delete a support ticket comment for a support ticket.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -550,9 +550,9 @@ Permanently delete a support ticket for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -606,9 +606,9 @@ Get details for all open chat
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -671,9 +671,9 @@ Retrieve the information for a Chat
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -728,9 +728,9 @@ Get details for all CIO Consultation
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -793,9 +793,9 @@ Retrieve the information for a CIO Consultation
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -850,9 +850,9 @@ Get all sales inquiries defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -915,9 +915,9 @@ Retrieve the information for a sales record
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -972,9 +972,9 @@ Get the information for all support tickets defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1037,9 +1037,9 @@ Get the information for all support ticket comments defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1102,9 +1102,9 @@ Retrieve the information for a support ticket comment defined for a support tick
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1159,9 +1159,9 @@ Retrieve the information for a support ticket defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1216,9 +1216,9 @@ Updated the information for a Chat
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1275,9 +1275,9 @@ Updated the information CIO Consultation
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1334,9 +1334,9 @@ Update the information for a sales inquiry.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1393,9 +1393,9 @@ Update the information for a support ticket comments defined for a support ticke
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1452,9 +1452,9 @@ Update the information for a support ticket defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SupportApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

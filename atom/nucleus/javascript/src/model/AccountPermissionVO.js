@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./PermissionVO'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AccountPermissionVO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.PermissionVO);
+    root.HydrogenNucleusApi.AccountPermissionVO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.PermissionVO);
   }
 }(this, function(ApiClient, PermissionVO) {
   'use strict';

@@ -1,4 +1,4 @@
-# AtomApi::AccountAllocationMapping
+# NucleusApi::AccountAllocationMapping
 
 ## Properties
 Name | Type | Description | Notes

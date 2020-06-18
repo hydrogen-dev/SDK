@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AllocationAggregatedVO
+# HydrogenNucleusApi.AllocationAggregatedVO
 
 ## Properties
 Name | Type | Description | Notes

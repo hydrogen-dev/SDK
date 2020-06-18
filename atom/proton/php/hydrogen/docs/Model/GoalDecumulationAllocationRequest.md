@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **use_proxy_data** | **bool** |  | [optional] [default to false]
 **thresh** | **float** |  | [optional] 
 **a_horizon** | **int** |  | [optional] 
-**withdrawal_config** | [**\com\hydrogen\Model\GoalWithdrawalConfig[]**](GoalWithdrawalConfig.md) |  | [optional] 
+**withdrawal_config** | [**\com\hydrogen\proton\Model\GoalWithdrawalConfig[]**](GoalWithdrawalConfig.md) |  | [optional] 
 **curr_inv** | **float** |  | [optional] 
 **remove_outliers** | **bool** |  | [optional] [default to true]
 **allocation_priority** | **string** |  | 

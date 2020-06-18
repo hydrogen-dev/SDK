@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/FinancialOffer'), require('../model/PageFinancialOffer'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.FinancialOfferApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.FinancialOffer, root.HydrogenAtomApi.PageFinancialOffer);
+    root.HydrogenNucleusApi.FinancialOfferApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.FinancialOffer, root.HydrogenNucleusApi.PageFinancialOffer);
   }
 }(this, function(ApiClient, FinancialOffer, PageFinancialOffer) {
   'use strict';

@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.CategoriesMap();
+    instance = new HydrogenNucleusApi.CategoriesMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('CategoriesMap', function() {
     it('should create an instance of CategoriesMap', function() {
       // uncomment below and update the code to test CategoriesMap
-      //var instane = new HydrogenAtomApi.CategoriesMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.CategoriesMap);
+      //var instane = new HydrogenNucleusApi.CategoriesMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.CategoriesMap);
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.CategoriesMap();
+      //var instane = new HydrogenNucleusApi.CategoriesMap();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.CategoriesMap();
+      //var instane = new HydrogenNucleusApi.CategoriesMap();
       //expect(instance).to.be();
     });
 

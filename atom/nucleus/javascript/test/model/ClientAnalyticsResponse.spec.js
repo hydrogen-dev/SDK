@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientAnalyticsResponse();
+    instance = new HydrogenNucleusApi.ClientAnalyticsResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,55 +53,55 @@
   describe('ClientAnalyticsResponse', function() {
     it('should create an instance of ClientAnalyticsResponse', function() {
       // uncomment below and update the code to test ClientAnalyticsResponse
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientAnalyticsResponse);
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientAnalyticsResponse);
     });
 
     it('should have the property averageNucleusClientsDaily (base name: "average_nucleus_clients_daily")', function() {
       // uncomment below and update the code to test the property averageNucleusClientsDaily
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property averageNucleusClientsTotal (base name: "average_nucleus_clients_total")', function() {
       // uncomment below and update the code to test the property averageNucleusClientsTotal
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property history (base name: "history")', function() {
       // uncomment below and update the code to test the property history
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property tenants (base name: "tenants")', function() {
       // uncomment below and update the code to test the property tenants
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property totalNucleusClients (base name: "total_nucleus_clients")', function() {
       // uncomment below and update the code to test the property totalNucleusClients
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property totalNucleusClientsActive (base name: "total_nucleus_clients_active")', function() {
       // uncomment below and update the code to test the property totalNucleusClientsActive
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property totalNucleusClientsInactive (base name: "total_nucleus_clients_inactive")', function() {
       // uncomment below and update the code to test the property totalNucleusClientsInactive
-      //var instane = new HydrogenAtomApi.ClientAnalyticsResponse();
+      //var instane = new HydrogenNucleusApi.ClientAnalyticsResponse();
       //expect(instance).to.be();
     });
 

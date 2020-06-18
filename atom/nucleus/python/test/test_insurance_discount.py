@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import atom_api
-from atom_api.models.insurance_discount import InsuranceDiscount  # noqa: E501
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.models.insurance_discount import InsuranceDiscount  # noqa: E501
+from nucleus_api.rest import ApiException
 
 
 class TestInsuranceDiscount(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestInsuranceDiscount(unittest.TestCase):
     def testInsuranceDiscount(self):
         """Test InsuranceDiscount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = atom_api.models.insurance_discount.InsuranceDiscount()  # noqa: E501
+        # model = nucleus_api.models.insurance_discount.InsuranceDiscount()  # noqa: E501
         pass
 
 

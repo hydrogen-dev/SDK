@@ -1,4 +1,4 @@
-# AtomApi::WithdrawalVO
+# NucleusApi::WithdrawalVO
 
 ## Properties
 Name | Type | Description | Notes

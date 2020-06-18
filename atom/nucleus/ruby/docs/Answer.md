@@ -1,4 +1,4 @@
-# AtomApi::Answer
+# NucleusApi::Answer
 
 ## Properties
 Name | Type | Description | Notes

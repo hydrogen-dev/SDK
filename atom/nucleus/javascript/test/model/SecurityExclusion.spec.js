@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.SecurityExclusion();
+    instance = new HydrogenNucleusApi.SecurityExclusion();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,73 +53,73 @@
   describe('SecurityExclusion', function() {
     it('should create an instance of SecurityExclusion', function() {
       // uncomment below and update the code to test SecurityExclusion
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
-      //expect(instance).to.be.a(HydrogenAtomApi.SecurityExclusion);
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
+      //expect(instance).to.be.a(HydrogenNucleusApi.SecurityExclusion);
     });
 
     it('should have the property accountId (base name: "account_id")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property isRestrictBuy (base name: "is_restrict_buy")', function() {
       // uncomment below and update the code to test the property isRestrictBuy
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property isRestrictSell (base name: "is_restrict_sell")', function() {
       // uncomment below and update the code to test the property isRestrictSell
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolioId (base name: "portfolio_id")', function() {
       // uncomment below and update the code to test the property portfolioId
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.SecurityExclusion();
+      //var instane = new HydrogenNucleusApi.SecurityExclusion();
       //expect(instance).to.be();
     });
 

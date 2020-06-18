@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ChatInfo();
+    instance = new HydrogenNucleusApi.ChatInfo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,67 +53,67 @@
   describe('ChatInfo', function() {
     it('should create an instance of ChatInfo', function() {
       // uncomment below and update the code to test ChatInfo
-      //var instane = new HydrogenAtomApi.ChatInfo();
-      //expect(instance).to.be.a(HydrogenAtomApi.ChatInfo);
+      //var instane = new HydrogenNucleusApi.ChatInfo();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ChatInfo);
     });
 
     it('should have the property assignedTo (base name: "assigned_to")', function() {
       // uncomment below and update the code to test the property assignedTo
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property chatLog (base name: "chat_log")', function() {
       // uncomment below and update the code to test the property chatLog
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property isNotification (base name: "is_notification")', function() {
       // uncomment below and update the code to test the property isNotification
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property isOpen (base name: "is_open")', function() {
       // uncomment below and update the code to test the property isOpen
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.ChatInfo();
+      //var instane = new HydrogenNucleusApi.ChatInfo();
       //expect(instance).to.be();
     });
 

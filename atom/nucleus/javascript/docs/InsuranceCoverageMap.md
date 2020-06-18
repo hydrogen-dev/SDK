@@ -1,4 +1,4 @@
-# HydrogenAtomApi.InsuranceCoverageMap
+# HydrogenNucleusApi.InsuranceCoverageMap
 
 ## Properties
 Name | Type | Description | Notes

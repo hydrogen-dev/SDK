@@ -1,4 +1,4 @@
-# com\hydrogen\AccountingApi
+# com\hydrogen\nucleus\AccountingApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createAccountingUsingPost**
-> \com\hydrogen\Model\Accounting createAccountingUsingPost($accounting)
+> \com\hydrogen\nucleus\Model\Accounting createAccountingUsingPost($accounting)
 
 Create an accounting
 
@@ -21,29 +21,29 @@ Store stats pulled from accounting vendors.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AccountingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AccountingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$accounting = new \com\hydrogen\Model\Accounting(); // \com\hydrogen\Model\Accounting | accounting
+$accounting = new \com\hydrogen\nucleus\Model\Accounting(); // \com\hydrogen\nucleus\Model\Accounting | accounting
 
 try {
     $result = $apiInstance->createAccountingUsingPost($accounting);
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting** | [**\com\hydrogen\Model\Accounting**](../Model/Accounting.md)| accounting |
+ **accounting** | [**\com\hydrogen\nucleus\Model\Accounting**](../Model/Accounting.md)| accounting |
 
 ### Return type
 
-[**\com\hydrogen\Model\Accounting**](../Model/Accounting.md)
+[**\com\hydrogen\nucleus\Model\Accounting**](../Model/Accounting.md)
 
 ### Authorization
 
@@ -85,23 +85,23 @@ Permanently delete an accounting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AccountingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AccountingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -139,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccountingAllUsingGet**
-> \com\hydrogen\Model\PageAccounting_ getAccountingAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAccounting_ getAccountingAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all accounting
 
@@ -148,23 +148,23 @@ Get information for all accounting for all clients defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AccountingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AccountingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageAccounting_**](../Model/PageAccounting_.md)
+[**\com\hydrogen\nucleus\Model\PageAccounting_**](../Model/PageAccounting_.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccountingUsingGet**
-> \com\hydrogen\Model\Accounting getAccountingUsingGet($accounting_id)
+> \com\hydrogen\nucleus\Model\Accounting getAccountingUsingGet($accounting_id)
 
 Retrieve an accounting
 
@@ -220,23 +220,23 @@ Retrieve the information for a specific accounting associated with a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AccountingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AccountingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Accounting**](../Model/Accounting.md)
+[**\com\hydrogen\nucleus\Model\Accounting**](../Model/Accounting.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAccountingUsingPut**
-> \com\hydrogen\Model\Accounting updateAccountingUsingPut($accounting, $accounting_id)
+> \com\hydrogen\nucleus\Model\Accounting updateAccountingUsingPut($accounting, $accounting_id)
 
 Update an accounting
 
@@ -284,29 +284,29 @@ Update the information for an accounting.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\AccountingApi(
+$apiInstance = new com\hydrogen\nucleus\Api\AccountingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$accounting = new \com\hydrogen\Model\Accounting(); // \com\hydrogen\Model\Accounting | accounting
+$accounting = new \com\hydrogen\nucleus\Model\Accounting(); // \com\hydrogen\nucleus\Model\Accounting | accounting
 $accounting_id = "accounting_id_example"; // string | UUID accounting_id
 
 try {
@@ -322,12 +322,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting** | [**\com\hydrogen\Model\Accounting**](../Model/Accounting.md)| accounting |
+ **accounting** | [**\com\hydrogen\nucleus\Model\Accounting**](../Model/Accounting.md)| accounting |
  **accounting_id** | [**string**](../Model/.md)| UUID accounting_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Accounting**](../Model/Accounting.md)
+[**\com\hydrogen\nucleus\Model\Accounting**](../Model/Accounting.md)
 
 ### Authorization
 

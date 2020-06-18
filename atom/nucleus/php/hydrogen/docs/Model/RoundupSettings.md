@@ -4,15 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **string** | account_id | 
-**accounts** | [**\com\hydrogen\Model\AccountMap[]**](AccountMap.md) |  | [optional] 
-**aggregation_accounts** | [**\com\hydrogen\Model\AggregationAccountsMap[]**](AggregationAccountsMap.md) |  | [optional] 
-**bank_links** | [**\com\hydrogen\Model\BankLinkMap[]**](BankLinkMap.md) |  | 
-**categories** | [**\com\hydrogen\Model\CategoriesMap[]**](CategoriesMap.md) |  | [optional] 
+**accounts** | [**\com\hydrogen\nucleus\Model\AccountMap[]**](AccountMap.md) |  | [optional] 
+**aggregation_accounts** | [**\com\hydrogen\nucleus\Model\AggregationAccountsMap[]**](AggregationAccountsMap.md) |  | [optional] 
+**bank_links** | [**\com\hydrogen\nucleus\Model\BankLinkMap[]**](BankLinkMap.md) |  | 
+**categories** | [**\com\hydrogen\nucleus\Model\CategoriesMap[]**](CategoriesMap.md) |  | [optional] 
 **client_id** | **string** | client_id | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 
-**merchants** | [**\com\hydrogen\Model\MerchantsMap[]**](MerchantsMap.md) |  | [optional] 
+**merchants** | [**\com\hydrogen\nucleus\Model\MerchantsMap[]**](MerchantsMap.md) |  | [optional] 
 **metadata** | **map[string,string]** | metadata | [optional] 
 **portfolio_id** | **string** | portfolio_id | [optional] 
 **secondary_id** | **string** |  | [optional] 

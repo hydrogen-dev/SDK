@@ -1,4 +1,4 @@
-# AtomApi::AccountAdvisorVO
+# NucleusApi::AccountAdvisorVO
 
 ## Properties
 Name | Type | Description | Notes

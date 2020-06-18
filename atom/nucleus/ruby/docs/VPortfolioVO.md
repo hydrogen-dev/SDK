@@ -1,4 +1,4 @@
-# AtomApi::VPortfolioVO
+# NucleusApi::VPortfolioVO
 
 ## Properties
 Name | Type | Description | Notes

@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./SupportTicketDocument'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.SupportTicket = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.SupportTicketDocument);
+    root.HydrogenNucleusApi.SupportTicket = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.SupportTicketDocument);
   }
 }(this, function(ApiClient, SupportTicketDocument) {
   'use strict';

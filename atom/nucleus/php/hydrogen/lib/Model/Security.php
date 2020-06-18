@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Security Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -73,8 +73,8 @@ class Security implements ModelInterface, ArrayAccess
         'secondary_id' => 'string',
         'sector' => 'string',
         'security_class' => 'string',
-        'security_composition' => '\com\hydrogen\Model\SecuritiesComposition[]',
-        'security_country' => '\com\hydrogen\Model\SecuritiesCountry[]',
+        'security_composition' => '\com\hydrogen\nucleus\Model\SecuritiesComposition[]',
+        'security_country' => '\com\hydrogen\nucleus\Model\SecuritiesCountry[]',
         'ticker' => 'string',
         'total_expense_ratio' => 'float',
         'type' => 'string',
@@ -723,7 +723,7 @@ class Security implements ModelInterface, ArrayAccess
     /**
      * Gets security_composition
      *
-     * @return \com\hydrogen\Model\SecuritiesComposition[]
+     * @return \com\hydrogen\nucleus\Model\SecuritiesComposition[]
      */
     public function getSecurityComposition()
     {
@@ -733,7 +733,7 @@ class Security implements ModelInterface, ArrayAccess
     /**
      * Sets security_composition
      *
-     * @param \com\hydrogen\Model\SecuritiesComposition[] $security_composition security_composition
+     * @param \com\hydrogen\nucleus\Model\SecuritiesComposition[] $security_composition security_composition
      *
      * @return $this
      */
@@ -747,7 +747,7 @@ class Security implements ModelInterface, ArrayAccess
     /**
      * Gets security_country
      *
-     * @return \com\hydrogen\Model\SecuritiesCountry[]
+     * @return \com\hydrogen\nucleus\Model\SecuritiesCountry[]
      */
     public function getSecurityCountry()
     {
@@ -757,7 +757,7 @@ class Security implements ModelInterface, ArrayAccess
     /**
      * Sets security_country
      *
-     * @param \com\hydrogen\Model\SecuritiesCountry[] $security_country security_country
+     * @param \com\hydrogen\nucleus\Model\SecuritiesCountry[] $security_country security_country
      *
      * @return $this
      */

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 
 **name** | **string** | name | 
-**questions** | [**\com\hydrogen\Model\Question[]**](Question.md) |  | [optional] 
+**questions** | [**\com\hydrogen\nucleus\Model\Question[]**](Question.md) |  | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **type** | **string** | type | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **start_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **tgt_val** | **float** |  | [optional] [default to 0.0]
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**w_config** | [**\com\hydrogen\Model\WConfig**](WConfig.md) |  | 
+**w_config** | [**\com\hydrogen\proton\Model\WConfig**](WConfig.md) |  | 
 **sec_types** | **string[]** |  | 
 **tgt_type** | **string** |  | [optional] [default to 'null']
 **min_assets** | **int** |  | 

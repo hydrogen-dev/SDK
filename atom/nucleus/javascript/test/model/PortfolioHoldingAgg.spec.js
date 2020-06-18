@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.PortfolioHoldingAgg();
+    instance = new HydrogenNucleusApi.PortfolioHoldingAgg();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,49 +53,49 @@
   describe('PortfolioHoldingAgg', function() {
     it('should create an instance of PortfolioHoldingAgg', function() {
       // uncomment below and update the code to test PortfolioHoldingAgg
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
-      //expect(instance).to.be.a(HydrogenAtomApi.PortfolioHoldingAgg);
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
+      //expect(instance).to.be.a(HydrogenNucleusApi.PortfolioHoldingAgg);
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
       //expect(instance).to.be();
     });
 
     it('should have the property costBasis (base name: "cost_basis")', function() {
       // uncomment below and update the code to test the property costBasis
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
       //expect(instance).to.be();
     });
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
       //expect(instance).to.be();
     });
 
     it('should have the property securityId (base name: "security_id")', function() {
       // uncomment below and update the code to test the property securityId
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
       //expect(instance).to.be();
     });
 
     it('should have the property shares (base name: "shares")', function() {
       // uncomment below and update the code to test the property shares
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.PortfolioHoldingAgg();
+      //var instane = new HydrogenNucleusApi.PortfolioHoldingAgg();
       //expect(instance).to.be();
     });
 

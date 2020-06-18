@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\proton\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\proton\ApiException;
+use com\hydrogen\proton\Configuration;
+use com\hydrogen\proton\HeaderSelector;
+use com\hydrogen\proton\ObjectSerializer;
 
 /**
  * AnnuitiesApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Accumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -109,9 +109,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Accumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -184,7 +184,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Accumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,7 +204,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Accumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -254,7 +254,7 @@ class AnnuitiesApi
     /**
      * Create request for operation 'annuityCalculatorAccumulationHorizon'
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAccumulationHorizonRequest $annuity_calculator_accumulation_horizon_request Request payload for Annuity Calculator - Accumulation Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,9 +360,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Annuity Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -377,9 +377,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Annuity Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -452,7 +452,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Annuity Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,7 +472,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Annuity Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -522,7 +522,7 @@ class AnnuitiesApi
     /**
      * Create request for operation 'annuityCalculatorAnnuityAmount'
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorAnnuityAmountRequest $annuity_calculator_annuity_amount_request Request payload for Annuity Calculator - Annuity Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,9 +628,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Decumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -645,9 +645,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Decumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -720,7 +720,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Decumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,7 +740,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Decumulation Horizon
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -790,7 +790,7 @@ class AnnuitiesApi
     /**
      * Create request for operation 'annuityCalculatorDecumulationHorizon'
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDecumulationHorizonRequest $annuity_calculator_decumulation_horizon_request Request payload for Annuity Calculator - Decumulation Horizon (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,9 +896,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -913,9 +913,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -988,7 +988,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,7 +1008,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Deposit Amount
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1058,7 +1058,7 @@ class AnnuitiesApi
     /**
      * Create request for operation 'annuityCalculatorDepositAmount'
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorDepositAmountRequest $annuity_calculator_deposit_amount_request Request payload for Annuity Calculator - Deposit Amount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,9 +1164,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Initial Balance
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1181,9 +1181,9 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Initial Balance
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1256,7 +1256,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Initial Balance
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,7 +1276,7 @@ class AnnuitiesApi
      *
      * Annuity Calculator - Initial Balance
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1326,7 +1326,7 @@ class AnnuitiesApi
     /**
      * Create request for operation 'annuityCalculatorInitialBalance'
      *
-     * @param  \com\hydrogen\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
+     * @param  \com\hydrogen\proton\Model\AnnuityCalculatorInitialBalanceRequest $annuity_calculator_initial_balance_request Request payload for Annuity Calculator - Initial Balance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1432,9 +1432,9 @@ class AnnuitiesApi
      *
      * Variable Annuity
      *
-     * @param  \com\hydrogen\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
+     * @param  \com\hydrogen\proton\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1449,9 +1449,9 @@ class AnnuitiesApi
      *
      * Variable Annuity
      *
-     * @param  \com\hydrogen\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
+     * @param  \com\hydrogen\proton\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1524,7 +1524,7 @@ class AnnuitiesApi
      *
      * Variable Annuity
      *
-     * @param  \com\hydrogen\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
+     * @param  \com\hydrogen\proton\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1544,7 +1544,7 @@ class AnnuitiesApi
      *
      * Variable Annuity
      *
-     * @param  \com\hydrogen\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
+     * @param  \com\hydrogen\proton\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1594,7 +1594,7 @@ class AnnuitiesApi
     /**
      * Create request for operation 'variableAnnuity'
      *
-     * @param  \com\hydrogen\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
+     * @param  \com\hydrogen\proton\Model\VariableAnnuityRequest $variable_annuity_request Request payload for Variable Annuity (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

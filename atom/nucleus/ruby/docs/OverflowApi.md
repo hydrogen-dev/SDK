@@ -1,4 +1,4 @@
-# AtomApi::OverflowApi
+# NucleusApi::OverflowApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -24,9 +24,9 @@ Create a new Overflow Settings request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -35,16 +35,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
-overflow_settings = AtomApi::OverflowSettings.new # OverflowSettings | overflowSettings
+overflow_settings = NucleusApi::OverflowSettings.new # OverflowSettings | overflowSettings
 
 
 begin
   #Create a Overflow Settings request
   result = api_instance.create_overflow_settings_using_post(overflow_settings)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->create_overflow_settings_using_post: #{e}"
 end
 ```
@@ -80,9 +80,9 @@ Create a new Overflow request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -91,16 +91,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
-overflow_vo = AtomApi::Overflow.new # Overflow | overflowVO
+overflow_vo = NucleusApi::Overflow.new # Overflow | overflowVO
 
 
 begin
   #Create a Overflow request
   result = api_instance.create_overflow_using_post(overflow_vo)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->create_overflow_using_post: #{e}"
 end
 ```
@@ -136,9 +136,9 @@ Permanently delete a  overflow settings registered with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -147,7 +147,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
 overflow_settings_id = 'overflow_settings_id_example' # String | UUID overflow_settings_id
 
@@ -155,7 +155,7 @@ overflow_settings_id = 'overflow_settings_id_example' # String | UUID overflow_s
 begin
   #Delete a overflow settings
   api_instance.delete_overflow_settings_using_delete(overflow_settings_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->delete_overflow_settings_using_delete: #{e}"
 end
 ```
@@ -191,9 +191,9 @@ Get details for all overflow.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -202,7 +202,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -216,7 +216,7 @@ begin
   #List all overflow objects
   result = api_instance.get_overflow_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->get_overflow_all_using_get: #{e}"
 end
 ```
@@ -256,9 +256,9 @@ Get details for all overflow setting.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -267,7 +267,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -281,7 +281,7 @@ begin
   #List all overflow settings
   result = api_instance.get_overflow_settings_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->get_overflow_settings_all_using_get: #{e}"
 end
 ```
@@ -321,9 +321,9 @@ Retrieve the information for a Overflow Settings.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -332,7 +332,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
 overflow_settings_id = 'overflow_settings_id_example' # String | UUID overflow_settings_id
 
@@ -341,7 +341,7 @@ begin
   #Retrieve a Overflow Setting
   result = api_instance.get_overflow_settings_using_get(overflow_settings_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->get_overflow_settings_using_get: #{e}"
 end
 ```
@@ -377,9 +377,9 @@ Retrieve the information for a Overflow.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -388,7 +388,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
 overflow_id = 'overflow_id_example' # String | UUID overflow_id
 
@@ -397,7 +397,7 @@ begin
   #Retrieve a Overflow object
   result = api_instance.get_overflow_using_get(overflow_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->get_overflow_using_get: #{e}"
 end
 ```
@@ -433,9 +433,9 @@ Update the information for a overflow setting registered with your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -444,9 +444,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OverflowApi.new
+api_instance = NucleusApi::OverflowApi.new
 
-overflow_settings = AtomApi::OverflowSettings.new # OverflowSettings | overflow_settings
+overflow_settings = NucleusApi::OverflowSettings.new # OverflowSettings | overflow_settings
 
 overflow_settings_id = 'overflow_settings_id_example' # String | UUID overflow_settings_id
 
@@ -455,7 +455,7 @@ begin
   #Update a overflow settings
   result = api_instance.update_overflow_settings_using_put(overflow_settings, overflow_settings_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OverflowApi->update_overflow_settings_using_put: #{e}"
 end
 ```

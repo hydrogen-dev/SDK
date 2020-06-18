@@ -1,4 +1,4 @@
-# atom_api.PortfolioApi
+# nucleus_api.PortfolioApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -48,15 +48,15 @@ Create a new asset size record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -68,8 +68,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_asset_size_log_request = atom_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_asset_size_log_request = nucleus_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
 
 try:
     # Create a portfolio asset size
@@ -111,15 +111,15 @@ Create a new comment for a portfolio defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -131,8 +131,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_comment = atom_api.PortfolioComment() # PortfolioComment | portfolioComment
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_comment = nucleus_api.PortfolioComment() # PortfolioComment | portfolioComment
 
 try:
     # Create a portfolio commentary
@@ -174,15 +174,15 @@ Create an portfolio goal.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -194,8 +194,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_goal = atom_api.PortfolioGoal() # PortfolioGoal | portfolioGoal
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_goal = nucleus_api.PortfolioGoal() # PortfolioGoal | portfolioGoal
 
 try:
     # Create an portfolio goal
@@ -237,15 +237,15 @@ Create a new holding record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -257,8 +257,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_holdin_log_request = atom_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolioHoldinLogRequest
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_holdin_log_request = nucleus_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolioHoldinLogRequest
 
 try:
     # Create a portfolio holding
@@ -300,15 +300,15 @@ Create a new transaction record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -320,8 +320,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_transaction_request = atom_api.PortfolioTransaction() # PortfolioTransaction | portfolioTransactionRequest
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_transaction_request = nucleus_api.PortfolioTransaction() # PortfolioTransaction | portfolioTransactionRequest
 
 try:
     # Create a portfolio transaction
@@ -363,15 +363,15 @@ Create a new portfolio for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -383,8 +383,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_request = atom_api.Portfolio() # Portfolio | portfolioRequest
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_request = nucleus_api.Portfolio() # Portfolio | portfolioRequest
 
 try:
     # Create a portfolio
@@ -426,15 +426,15 @@ Permanently delete a portfolio asset size record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -446,7 +446,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | UUID portfolio_asset_size_id
 
 try:
@@ -488,15 +488,15 @@ Permanently delete a portfolio comment for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -508,7 +508,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
 
 try:
@@ -550,15 +550,15 @@ Permanently delete an portfolio-goal mapping.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -570,7 +570,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
 
 try:
@@ -612,15 +612,15 @@ Permanently delete a portfolio holding record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -632,7 +632,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
 
 try:
@@ -674,15 +674,15 @@ Permanently delete a portfolio transaction record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -694,7 +694,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
 
 try:
@@ -736,15 +736,15 @@ Permanently delete a portfolio for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -756,7 +756,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
 
 try:
@@ -798,15 +798,15 @@ Retrieve the information for a securities associated with a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -818,7 +818,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | Portfolio Id
 show_asset_class = true # bool | true or false (optional) (default to true)
 show_category = true # bool | true or false (optional) (default to true)
@@ -871,15 +871,15 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -891,7 +891,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -942,15 +942,15 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -962,7 +962,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1013,15 +1013,15 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1033,7 +1033,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | portfolio_asset_size_id
 
 try:
@@ -1076,15 +1076,15 @@ List all comments for all portfolios defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1096,7 +1096,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1147,15 +1147,15 @@ Retrieve the information for a portfolio comment for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1167,7 +1167,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
 
 try:
@@ -1210,15 +1210,15 @@ Get information for all portfolio-goal mappings defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1230,7 +1230,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1281,15 +1281,15 @@ Retrieve the information for a specific portfolio-goal mapping.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1301,7 +1301,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
 
 try:
@@ -1344,15 +1344,15 @@ Get the information for all holding records for all portfolios defined for your 
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1364,7 +1364,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1415,15 +1415,15 @@ Retrieve the information for a portfolio holding record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1435,7 +1435,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
 
 try:
@@ -1478,15 +1478,15 @@ Get the information for all transaction records for all portfolios defined for y
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1498,7 +1498,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1549,15 +1549,15 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1569,7 +1569,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
 
 try:
@@ -1612,15 +1612,15 @@ Retrieve a portfolio for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1632,7 +1632,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
 
 try:
@@ -1675,15 +1675,15 @@ Update the information for a portfolio asset size record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1695,8 +1695,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_asset_size = atom_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolio_asset_size
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_asset_size = nucleus_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolio_asset_size
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | UUID portfolio_asset_size_id
 
 try:
@@ -1740,15 +1740,15 @@ Update the information for a portfolio comment for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1760,8 +1760,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_comment = atom_api.PortfolioComment() # PortfolioComment | portfolio_comment
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_comment = nucleus_api.PortfolioComment() # PortfolioComment | portfolio_comment
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
 
 try:
@@ -1805,15 +1805,15 @@ Update the information for an portfolio-goal mapping.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1825,8 +1825,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_goal = atom_api.PortfolioGoal() # PortfolioGoal | portfolio_goal
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_goal = nucleus_api.PortfolioGoal() # PortfolioGoal | portfolio_goal
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
 
 try:
@@ -1870,15 +1870,15 @@ Update the information for a portfolio holding record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1890,8 +1890,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_holding = atom_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolio_holding
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_holding = nucleus_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolio_holding
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
 
 try:
@@ -1935,15 +1935,15 @@ Update the information for a portfolio transaction record for a portfolio.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1955,8 +1955,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio_transaction = atom_api.PortfolioTransaction() # PortfolioTransaction | portfolio_transaction
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio_transaction = nucleus_api.PortfolioTransaction() # PortfolioTransaction | portfolio_transaction
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
 
 try:
@@ -2000,15 +2000,15 @@ Update a portfolio for an account.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -2020,8 +2020,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.PortfolioApi(atom_api.ApiClient(configuration))
-portfolio = atom_api.Portfolio() # Portfolio | portfolio
+api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
+portfolio = nucleus_api.Portfolio() # Portfolio | portfolio
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
 
 try:

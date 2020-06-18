@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ExternalAccountTransfer
+# HydrogenNucleusApi.ExternalAccountTransfer
 
 ## Properties
 Name | Type | Description | Notes

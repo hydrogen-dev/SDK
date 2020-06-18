@@ -1,4 +1,4 @@
-# atom_api.QuestionnaireApi
+# nucleus_api.QuestionnaireApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -37,15 +37,15 @@ Create a new answer for question.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -57,8 +57,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-answer = atom_api.Answer() # Answer | answer
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+answer = nucleus_api.Answer() # Answer | answer
 
 try:
     # Create an answer
@@ -100,15 +100,15 @@ Create a new client response for a question as part of a questionnaires.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -120,8 +120,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-client_response = atom_api.ClientResponse() # ClientResponse | clientResponse
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+client_response = nucleus_api.ClientResponse() # ClientResponse | clientResponse
 
 try:
     # Create a client response
@@ -163,15 +163,15 @@ Create a new question for questionnaire.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -183,8 +183,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-question = atom_api.Question() # Question | question
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+question = nucleus_api.Question() # Question | question
 
 try:
     # Create a question
@@ -226,15 +226,15 @@ Create a new questionnaire for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -246,8 +246,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-questionnaire = atom_api.Questionnaire() # Questionnaire | questionnaire
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+questionnaire = nucleus_api.Questionnaire() # Questionnaire | questionnaire
 
 try:
     # Create a questionnaire
@@ -289,15 +289,15 @@ Delete an answer for the question
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -309,7 +309,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 answer_id = 'answer_id_example' # str | UUID answer_id
 
 try:
@@ -351,15 +351,15 @@ Permanently delete a client response for a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -371,7 +371,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 client_response_id = 'client_response_id_example' # str | UUID client_response_id
 
 try:
@@ -413,15 +413,15 @@ Delete an answer for the question
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -433,7 +433,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 question_id = 'question_id_example' # str | UUID question_id
 
 try:
@@ -475,15 +475,15 @@ Permanently delete a questionnaire for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -495,7 +495,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 questionnaire_id = 'questionnaire_id_example' # str | UUID questionnaire_id
 
 try:
@@ -537,15 +537,15 @@ Get information for all Answers
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -557,7 +557,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'label' # str | order_by (optional) (default to label)
@@ -608,15 +608,15 @@ Retrieve the information for an answer for question
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -628,7 +628,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 answer_id = 'answer_id_example' # str | UUID answer_id
 
 try:
@@ -671,15 +671,15 @@ Get all the client responses for questions as part of a questionnaire defined by
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -691,7 +691,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -742,15 +742,15 @@ Retrieve the information for a client response for a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -762,7 +762,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 client_response_id = 'client_response_id_example' # str | UUID client_response_id
 
 try:
@@ -805,15 +805,15 @@ Get information for all Questions
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -825,7 +825,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'order_index' # str | order_by (optional) (default to order_index)
@@ -876,15 +876,15 @@ Retrieve the information for a question for questionnaire
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -896,7 +896,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 question_id = 'question_id_example' # str | UUID question_id
 
 try:
@@ -939,15 +939,15 @@ Get the information for all questionnaires defined for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -959,7 +959,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -1010,15 +1010,15 @@ Retrieve the information for a questionnaire for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1030,7 +1030,7 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 questionnaire_id = 'questionnaire_id_example' # str | UUID questionnaire_id
 
 try:
@@ -1073,15 +1073,15 @@ Update a answer for question.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1093,8 +1093,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-answer = atom_api.Answer() # Answer | answer
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+answer = nucleus_api.Answer() # Answer | answer
 answer_id = 'answer_id_example' # str | UUID answer_id
 
 try:
@@ -1138,15 +1138,15 @@ Update a client response for a client.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1158,8 +1158,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-client_response = atom_api.ClientResponse() # ClientResponse | client_response
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+client_response = nucleus_api.ClientResponse() # ClientResponse | client_response
 client_response_id = 'client_response_id_example' # str | UUID client_response_id
 
 try:
@@ -1203,15 +1203,15 @@ Update a question for questionnaire.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1223,8 +1223,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-question = atom_api.Question() # Question | question
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+question = nucleus_api.Question() # Question | question
 question_id = 'question_id_example' # str | UUID question_id
 
 try:
@@ -1268,15 +1268,15 @@ Update a questionnaire for your firm.
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -1288,8 +1288,8 @@ configuration.access_token = api_token_response.access_token
 
 
 # create an instance of the API class
-api_instance = atom_api.QuestionnaireApi(atom_api.ApiClient(configuration))
-questionnaire = atom_api.Questionnaire() # Questionnaire | questionnaire
+api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
+questionnaire = nucleus_api.Questionnaire() # Questionnaire | questionnaire
 questionnaire_id = 'questionnaire_id_example' # str | UUID questionnaire_id
 
 try:

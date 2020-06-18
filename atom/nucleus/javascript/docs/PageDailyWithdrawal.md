@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageDailyWithdrawal
+# HydrogenNucleusApi.PageDailyWithdrawal
 
 ## Properties
 Name | Type | Description | Notes

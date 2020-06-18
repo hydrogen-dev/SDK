@@ -1,4 +1,4 @@
-# AtomApi::PageChatInfo
+# NucleusApi::PageChatInfo
 
 ## Properties
 Name | Type | Description | Notes

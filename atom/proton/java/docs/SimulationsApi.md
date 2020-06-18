@@ -24,10 +24,10 @@ Run a historical analysis for a group of investments
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -84,10 +84,10 @@ Analyze a group of investments against key historical events
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -144,10 +144,10 @@ Simulate the future growth of a group of investments
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -204,10 +204,10 @@ Simulate the impact of adding, removing, reducing, or increasing various positio
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -264,10 +264,10 @@ Simulate the future growth of a simple savings account
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -324,10 +324,10 @@ Analyze a group of investments against a series of external economic factors
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -384,10 +384,10 @@ Analyze a group of investments against an external economic factor
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

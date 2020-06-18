@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\proton\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\proton\ApiException;
+use com\hydrogen\proton\Configuration;
+use com\hydrogen\proton\HeaderSelector;
+use com\hydrogen\proton\ObjectSerializer;
 
 /**
  * GoalsApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,9 +92,9 @@ class GoalsApi
      *
      * Goal Accumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -109,9 +109,9 @@ class GoalsApi
      *
      * Goal Accumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -184,7 +184,7 @@ class GoalsApi
      *
      * Goal Accumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,7 +204,7 @@ class GoalsApi
      *
      * Goal Accumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -254,7 +254,7 @@ class GoalsApi
     /**
      * Create request for operation 'goalAccumulationAllocation'
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationAllocationRequest $goal_accumulation_allocation_request Request payload for Goal Accumulation Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,9 +360,9 @@ class GoalsApi
      *
      * Goal Accumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -377,9 +377,9 @@ class GoalsApi
      *
      * Goal Accumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -452,7 +452,7 @@ class GoalsApi
      *
      * Goal Accumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,7 +472,7 @@ class GoalsApi
      *
      * Goal Accumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -522,7 +522,7 @@ class GoalsApi
     /**
      * Create request for operation 'goalAccumulationRecommendation'
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationRecommendationRequest $goal_accumulation_recommendation_request Request payload for Goal Accumulation Recommendation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,9 +628,9 @@ class GoalsApi
      *
      * Goal Accumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -645,9 +645,9 @@ class GoalsApi
      *
      * Goal Accumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -720,7 +720,7 @@ class GoalsApi
      *
      * Goal Accumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,7 +740,7 @@ class GoalsApi
      *
      * Goal Accumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -790,7 +790,7 @@ class GoalsApi
     /**
      * Create request for operation 'goalAccumulationStatus'
      *
-     * @param  \com\hydrogen\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalAccumulationStatusRequest $goal_accumulation_status_request Request payload for Goal Accumulation Status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,9 +896,9 @@ class GoalsApi
      *
      * Goal Decumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -913,9 +913,9 @@ class GoalsApi
      *
      * Goal Decumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -988,7 +988,7 @@ class GoalsApi
      *
      * Goal Decumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,7 +1008,7 @@ class GoalsApi
      *
      * Goal Decumulation Allocation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1058,7 +1058,7 @@ class GoalsApi
     /**
      * Create request for operation 'goalDecumulationAllocation'
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationAllocationRequest $goal_decumulation_allocation_request Request payload for Goal Decumulation Allocation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,9 +1164,9 @@ class GoalsApi
      *
      * Goal Decumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1181,9 +1181,9 @@ class GoalsApi
      *
      * Goal Decumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1256,7 +1256,7 @@ class GoalsApi
      *
      * Goal Decumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,7 +1276,7 @@ class GoalsApi
      *
      * Goal Decumulation Recommendation
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1326,7 +1326,7 @@ class GoalsApi
     /**
      * Create request for operation 'goalDecumulationRecommendation'
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationRecommendationRequest $goal_decumulation_recommendation_request Request payload for Goal Decumulation Recommendation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1432,9 +1432,9 @@ class GoalsApi
      *
      * Goal Decumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return map[string,object]
      */
@@ -1449,9 +1449,9 @@ class GoalsApi
      *
      * Goal Decumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\proton\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of map[string,object], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1524,7 +1524,7 @@ class GoalsApi
      *
      * Goal Decumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1544,7 +1544,7 @@ class GoalsApi
      *
      * Goal Decumulation Status
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1594,7 +1594,7 @@ class GoalsApi
     /**
      * Create request for operation 'goalDecumulationStatus'
      *
-     * @param  \com\hydrogen\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
+     * @param  \com\hydrogen\proton\Model\GoalDecumulationStatusRequest $goal_decumulation_status_request Request payload for Goal Decumulation Status (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

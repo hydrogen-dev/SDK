@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **allocation_id** | **string** |  | [optional] 
 **account_id** | **string** |  | [optional] 
 **portfolio_id** | **string** |  | [optional] 
-**sensitivity_factor** | [**\com\hydrogen\Model\SensitivityFactor**](SensitivityFactor.md) |  | 
+**sensitivity_factor** | [**\com\hydrogen\proton\Model\SensitivityFactor**](SensitivityFactor.md) |  | 
 **portfolio_weights** | **float[]** |  | [optional] 
 **frequency_interval** | **string** |  | 
 **aggregation_account_id** | **string** |  | [optional] 

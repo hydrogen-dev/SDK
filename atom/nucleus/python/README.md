@@ -14,7 +14,7 @@ Python 2.7 and 3.4+
 
 ### Update Base Path
 Follow steps to verify the base URL path:
-1. Go to configuration.py file located under atom_api folder.
+1. Go to configuration.py file located under nucleus_api folder.
 2. Search for self.host and change/verify the URL according to the environment.
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com/nucleus/v1
@@ -33,7 +33,7 @@ pip install git+https://github.com//.git
 
 Then import the package:
 ```python
-import atom_api 
+import nucleus_api 
 ```
 
 ### Setuptools
@@ -47,7 +47,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import atom_api
+import nucleus_api
 ```
 
 ## Getting Started
@@ -57,16 +57,16 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import atom_api
-from atom_api.rest import ApiException
+import nucleus_api
+from nucleus_api.rest import ApiException
 from pprint import pprint
 
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = atom_api.Configuration()
+configuration = nucleus_api.Configuration()
 
 # create an instance of the API class
-api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
 
@@ -76,8 +76,8 @@ api_instance = atom_api.AuthApi(atom_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 # create an instance of the API class
-api_instance = atom_api.AccountApi(atom_api.ApiClient(configuration))
-alloc_request = atom_api.AccountAllocationMapping() # AccountAllocationMapping | allocRequest
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+alloc_request = nucleus_api.AccountAllocationMapping() # AccountAllocationMapping | allocRequest
 
 try:
     # Create an account allocation

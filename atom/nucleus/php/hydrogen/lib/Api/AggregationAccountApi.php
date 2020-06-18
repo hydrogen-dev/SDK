@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AggregationAccountApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountBalance[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountBalance[]
      */
     public function createAggregationAccountBalanceBulkUsingPost($aggregation_account_balance)
     {
@@ -109,15 +109,15 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountBalance[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountBalance[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountBalanceBulkUsingPostWithHttpInfo($aggregation_account_balance)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance[]';
         $request = $this->createAggregationAccountBalanceBulkUsingPostRequest($aggregation_account_balance);
 
         try {
@@ -169,7 +169,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountBalance[]',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountBalance[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountBalanceBulkUsingPostAsyncWithHttpInfo($aggregation_account_balance)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance[]';
         $request = $this->createAggregationAccountBalanceBulkUsingPostRequest($aggregation_account_balance);
 
         return $this->client
@@ -254,7 +254,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountBalanceBulkUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance[] $aggregation_account_balance aggregationAccountBalance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class AggregationAccountApi
      *
      * Create an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountBalance
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountBalance
      */
     public function createAggregationAccountBalanceUsingPost($aggregation_account_balance)
     {
@@ -377,15 +377,15 @@ class AggregationAccountApi
      *
      * Create an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountBalance, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountBalance, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountBalanceUsingPostWithHttpInfo($aggregation_account_balance)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance';
         $request = $this->createAggregationAccountBalanceUsingPostRequest($aggregation_account_balance);
 
         try {
@@ -437,7 +437,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountBalance',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountBalance',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class AggregationAccountApi
      *
      * Create an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class AggregationAccountApi
      *
      * Create an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountBalanceUsingPostAsyncWithHttpInfo($aggregation_account_balance)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance';
         $request = $this->createAggregationAccountBalanceUsingPostRequest($aggregation_account_balance);
 
         return $this->client
@@ -522,7 +522,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountBalanceUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregationAccountBalance (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -628,11 +628,11 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccount[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccount[]
      */
     public function createAggregationAccountBulkUsingPost($aggregation_account_list)
     {
@@ -645,15 +645,15 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccount[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccount[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountBulkUsingPostWithHttpInfo($aggregation_account_list)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount[]';
         $request = $this->createAggregationAccountBulkUsingPostRequest($aggregation_account_list);
 
         try {
@@ -705,7 +705,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccount[]',
+                        '\com\hydrogen\nucleus\Model\AggregationAccount[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -720,7 +720,7 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -740,14 +740,14 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountBulkUsingPostAsyncWithHttpInfo($aggregation_account_list)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount[]';
         $request = $this->createAggregationAccountBulkUsingPostRequest($aggregation_account_list);
 
         return $this->client
@@ -790,7 +790,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountBulkUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -896,11 +896,11 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountHolding[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountHolding[]
      */
     public function createAggregationAccountHoldingBulkUsingPost($aggregation_transaction)
     {
@@ -913,15 +913,15 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountHolding[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountHolding[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountHoldingBulkUsingPostWithHttpInfo($aggregation_transaction)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding[]';
         $request = $this->createAggregationAccountHoldingBulkUsingPostRequest($aggregation_transaction);
 
         try {
@@ -973,7 +973,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountHolding[]',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountHolding[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1008,14 +1008,14 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountHoldingBulkUsingPostAsyncWithHttpInfo($aggregation_transaction)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding[]';
         $request = $this->createAggregationAccountHoldingBulkUsingPostRequest($aggregation_transaction);
 
         return $this->client
@@ -1058,7 +1058,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountHoldingBulkUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_transaction aggregationTransaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1164,11 +1164,11 @@ class AggregationAccountApi
      *
      * Create an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountHolding
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountHolding
      */
     public function createAggregationAccountHoldingUsingPost($aggregation_account_holding)
     {
@@ -1181,15 +1181,15 @@ class AggregationAccountApi
      *
      * Create an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountHoldingUsingPostWithHttpInfo($aggregation_account_holding)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding';
         $request = $this->createAggregationAccountHoldingUsingPostRequest($aggregation_account_holding);
 
         try {
@@ -1241,7 +1241,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountHolding',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1256,7 +1256,7 @@ class AggregationAccountApi
      *
      * Create an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1276,14 +1276,14 @@ class AggregationAccountApi
      *
      * Create an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountHoldingUsingPostAsyncWithHttpInfo($aggregation_account_holding)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding';
         $request = $this->createAggregationAccountHoldingUsingPostRequest($aggregation_account_holding);
 
         return $this->client
@@ -1326,7 +1326,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountHoldingUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregationAccountHolding (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1432,11 +1432,11 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountTransaction[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountTransaction[]
      */
     public function createAggregationAccountTransactionBulkUsingPost($aggregation_account_transactions)
     {
@@ -1449,15 +1449,15 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountTransaction[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountTransaction[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountTransactionBulkUsingPostWithHttpInfo($aggregation_account_transactions)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction[]';
         $request = $this->createAggregationAccountTransactionBulkUsingPostRequest($aggregation_account_transactions);
 
         try {
@@ -1509,7 +1509,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountTransaction[]',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountTransaction[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1524,7 +1524,7 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1544,14 +1544,14 @@ class AggregationAccountApi
      *
      * Create a bulk aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountTransactionBulkUsingPostAsyncWithHttpInfo($aggregation_account_transactions)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction[]';
         $request = $this->createAggregationAccountTransactionBulkUsingPostRequest($aggregation_account_transactions);
 
         return $this->client
@@ -1594,7 +1594,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountTransactionBulkUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction[] $aggregation_account_transactions aggregationAccountTransactions (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1700,11 +1700,11 @@ class AggregationAccountApi
      *
      * Create an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountTransaction
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountTransaction
      */
     public function createAggregationAccountTransactionUsingPost($aggregation_account_transaction)
     {
@@ -1717,15 +1717,15 @@ class AggregationAccountApi
      *
      * Create an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountTransactionUsingPostWithHttpInfo($aggregation_account_transaction)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->createAggregationAccountTransactionUsingPostRequest($aggregation_account_transaction);
 
         try {
@@ -1777,7 +1777,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountTransaction',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1792,7 +1792,7 @@ class AggregationAccountApi
      *
      * Create an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1812,14 +1812,14 @@ class AggregationAccountApi
      *
      * Create an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountTransactionUsingPostAsyncWithHttpInfo($aggregation_account_transaction)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->createAggregationAccountTransactionUsingPostRequest($aggregation_account_transaction);
 
         return $this->client
@@ -1862,7 +1862,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountTransactionUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregationAccountTransaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1968,11 +1968,11 @@ class AggregationAccountApi
      *
      * Create an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregationAccount (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregationAccount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccount
+     * @return \com\hydrogen\nucleus\Model\AggregationAccount
      */
     public function createAggregationAccountUsingPost($aggregation_account)
     {
@@ -1985,15 +1985,15 @@ class AggregationAccountApi
      *
      * Create an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregationAccount (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregationAccount (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAggregationAccountUsingPostWithHttpInfo($aggregation_account)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->createAggregationAccountUsingPostRequest($aggregation_account);
 
         try {
@@ -2045,7 +2045,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccount',
+                        '\com\hydrogen\nucleus\Model\AggregationAccount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2060,7 +2060,7 @@ class AggregationAccountApi
      *
      * Create an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregationAccount (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregationAccount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2080,14 +2080,14 @@ class AggregationAccountApi
      *
      * Create an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregationAccount (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregationAccount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAggregationAccountUsingPostAsyncWithHttpInfo($aggregation_account)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->createAggregationAccountUsingPostRequest($aggregation_account);
 
         return $this->client
@@ -2130,7 +2130,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'createAggregationAccountUsingPost'
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregationAccount (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregationAccount (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2238,7 +2238,7 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2254,7 +2254,7 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2474,7 +2474,7 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2490,7 +2490,7 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2710,9 +2710,9 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountTransaction
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountTransaction
      */
     public function deleteAggregationAccountTransactionUsingDelete($aggregation_account_transaction_id)
     {
@@ -2727,13 +2727,13 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAggregationAccountTransactionUsingDeleteWithHttpInfo($aggregation_account_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->deleteAggregationAccountTransactionUsingDeleteRequest($aggregation_account_transaction_id);
 
         try {
@@ -2785,7 +2785,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountTransaction',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2827,7 +2827,7 @@ class AggregationAccountApi
      */
     public function deleteAggregationAccountTransactionUsingDeleteAsyncWithHttpInfo($aggregation_account_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->deleteAggregationAccountTransactionUsingDeleteRequest($aggregation_account_transaction_id);
 
         return $this->client
@@ -2983,7 +2983,7 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2999,7 +2999,7 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3219,9 +3219,9 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountAggregateDataVO
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO
      */
     public function getAggregationAccountAggregateDataUsingGet($aggregation_account_id)
     {
@@ -3236,13 +3236,13 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountAggregateDataVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountAggregateDataUsingGetWithHttpInfo($aggregation_account_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountAggregateDataVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO';
         $request = $this->getAggregationAccountAggregateDataUsingGetRequest($aggregation_account_id);
 
         try {
@@ -3294,7 +3294,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountAggregateDataVO',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3336,7 +3336,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountAggregateDataUsingGetAsyncWithHttpInfo($aggregation_account_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountAggregateDataVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO';
         $request = $this->getAggregationAccountAggregateDataUsingGetRequest($aggregation_account_id);
 
         return $this->client
@@ -3496,9 +3496,9 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAggregationAccount_
+     * @return \com\hydrogen\nucleus\Model\PageAggregationAccount_
      */
     public function getAggregationAccountAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3517,13 +3517,13 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAggregationAccount_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAggregationAccount_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccount_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccount_';
         $request = $this->getAggregationAccountAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3575,7 +3575,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAggregationAccount_',
+                        '\com\hydrogen\nucleus\Model\PageAggregationAccount_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3625,7 +3625,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccount_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccount_';
         $request = $this->getAggregationAccountAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -3795,9 +3795,9 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAggregationAccountBalance_
+     * @return \com\hydrogen\nucleus\Model\PageAggregationAccountBalance_
      */
     public function getAggregationAccountBalanceAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -3816,13 +3816,13 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAggregationAccountBalance_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAggregationAccountBalance_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountBalanceAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccountBalance_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccountBalance_';
         $request = $this->getAggregationAccountBalanceAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -3874,7 +3874,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAggregationAccountBalance_',
+                        '\com\hydrogen\nucleus\Model\PageAggregationAccountBalance_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3924,7 +3924,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountBalanceAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccountBalance_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccountBalance_';
         $request = $this->getAggregationAccountBalanceAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4090,9 +4090,9 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountBalance
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountBalance
      */
     public function getAggregationAccountBalanceUsingGet($aggregation_account_balance_id)
     {
@@ -4107,13 +4107,13 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountBalance, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountBalance, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountBalanceUsingGetWithHttpInfo($aggregation_account_balance_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance';
         $request = $this->getAggregationAccountBalanceUsingGetRequest($aggregation_account_balance_id);
 
         try {
@@ -4165,7 +4165,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountBalance',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountBalance',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4207,7 +4207,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountBalanceUsingGetAsyncWithHttpInfo($aggregation_account_balance_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance';
         $request = $this->getAggregationAccountBalanceUsingGetRequest($aggregation_account_balance_id);
 
         return $this->client
@@ -4367,9 +4367,9 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAggregationAccountHolding_
+     * @return \com\hydrogen\nucleus\Model\PageAggregationAccountHolding_
      */
     public function getAggregationAccountHoldingAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -4388,13 +4388,13 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAggregationAccountHolding_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAggregationAccountHolding_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountHoldingAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccountHolding_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccountHolding_';
         $request = $this->getAggregationAccountHoldingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -4446,7 +4446,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAggregationAccountHolding_',
+                        '\com\hydrogen\nucleus\Model\PageAggregationAccountHolding_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4496,7 +4496,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountHoldingAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccountHolding_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccountHolding_';
         $request = $this->getAggregationAccountHoldingAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -4662,9 +4662,9 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountHolding
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountHolding
      */
     public function getAggregationAccountHoldingUsingGet($aggregation_account_holding_id)
     {
@@ -4679,13 +4679,13 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountHoldingUsingGetWithHttpInfo($aggregation_account_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding';
         $request = $this->getAggregationAccountHoldingUsingGetRequest($aggregation_account_holding_id);
 
         try {
@@ -4737,7 +4737,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountHolding',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4779,7 +4779,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountHoldingUsingGetAsyncWithHttpInfo($aggregation_account_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding';
         $request = $this->getAggregationAccountHoldingUsingGetRequest($aggregation_account_holding_id);
 
         return $this->client
@@ -4935,9 +4935,9 @@ class AggregationAccountApi
      *
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationDataForClientParentResponseVO
+     * @return \com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO
      */
     public function getAggregationAccountOverviewUsingGet($client_id)
     {
@@ -4952,13 +4952,13 @@ class AggregationAccountApi
      *
      * @param  string $client_id UUID client_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationDataForClientParentResponseVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountOverviewUsingGetWithHttpInfo($client_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationDataForClientParentResponseVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO';
         $request = $this->getAggregationAccountOverviewUsingGetRequest($client_id);
 
         try {
@@ -5010,7 +5010,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationDataForClientParentResponseVO',
+                        '\com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5052,7 +5052,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountOverviewUsingGetAsyncWithHttpInfo($client_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationDataForClientParentResponseVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO';
         $request = $this->getAggregationAccountOverviewUsingGetRequest($client_id);
 
         return $this->client
@@ -5212,9 +5212,9 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAggregationAccountTransaction_
+     * @return \com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_
      */
     public function getAggregationAccountTransactionAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -5233,13 +5233,13 @@ class AggregationAccountApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAggregationAccountTransaction_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountTransactionAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccountTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_';
         $request = $this->getAggregationAccountTransactionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -5291,7 +5291,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAggregationAccountTransaction_',
+                        '\com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5341,7 +5341,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountTransactionAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAggregationAccountTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_';
         $request = $this->getAggregationAccountTransactionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -5507,9 +5507,9 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountTransaction
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountTransaction
      */
     public function getAggregationAccountTransactionUsingGet($aggregation_account_transaction_id)
     {
@@ -5524,13 +5524,13 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountTransactionUsingGetWithHttpInfo($aggregation_account_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->getAggregationAccountTransactionUsingGetRequest($aggregation_account_transaction_id);
 
         try {
@@ -5582,7 +5582,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountTransaction',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5624,7 +5624,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountTransactionUsingGetAsyncWithHttpInfo($aggregation_account_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->getAggregationAccountTransactionUsingGetRequest($aggregation_account_transaction_id);
 
         return $this->client
@@ -5780,9 +5780,9 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccount
+     * @return \com\hydrogen\nucleus\Model\AggregationAccount
      */
     public function getAggregationAccountUsingGet($aggregation_account_id)
     {
@@ -5797,13 +5797,13 @@ class AggregationAccountApi
      *
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAggregationAccountUsingGetWithHttpInfo($aggregation_account_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->getAggregationAccountUsingGetRequest($aggregation_account_id);
 
         try {
@@ -5855,7 +5855,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccount',
+                        '\com\hydrogen\nucleus\Model\AggregationAccount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5897,7 +5897,7 @@ class AggregationAccountApi
      */
     public function getAggregationAccountUsingGetAsyncWithHttpInfo($aggregation_account_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->getAggregationAccountUsingGetRequest($aggregation_account_id);
 
         return $this->client
@@ -6051,12 +6051,12 @@ class AggregationAccountApi
      *
      * Update an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountBalance
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountBalance
      */
     public function updateAggregationAccountBalanceUsingPut($aggregation_account_balance, $aggregation_account_balance_id)
     {
@@ -6069,16 +6069,16 @@ class AggregationAccountApi
      *
      * Update an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountBalance, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountBalance, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAggregationAccountBalanceUsingPutWithHttpInfo($aggregation_account_balance, $aggregation_account_balance_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance';
         $request = $this->updateAggregationAccountBalanceUsingPutRequest($aggregation_account_balance, $aggregation_account_balance_id);
 
         try {
@@ -6130,7 +6130,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountBalance',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountBalance',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6145,7 +6145,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6166,7 +6166,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account balance
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6174,7 +6174,7 @@ class AggregationAccountApi
      */
     public function updateAggregationAccountBalanceUsingPutAsyncWithHttpInfo($aggregation_account_balance, $aggregation_account_balance_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountBalance';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountBalance';
         $request = $this->updateAggregationAccountBalanceUsingPutRequest($aggregation_account_balance, $aggregation_account_balance_id);
 
         return $this->client
@@ -6217,7 +6217,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'updateAggregationAccountBalanceUsingPut'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountBalance $aggregation_account_balance aggregation_account_balance (required)
      * @param  string $aggregation_account_balance_id UUID aggregation_account_balance_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6338,11 +6338,11 @@ class AggregationAccountApi
      *
      * Update a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccount
+     * @return \com\hydrogen\nucleus\Model\AggregationAccount
      */
     public function updateAggregationAccountBulkUsingPut($aggregation_account_list)
     {
@@ -6355,15 +6355,15 @@ class AggregationAccountApi
      *
      * Update a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAggregationAccountBulkUsingPutWithHttpInfo($aggregation_account_list)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->updateAggregationAccountBulkUsingPutRequest($aggregation_account_list);
 
         try {
@@ -6415,7 +6415,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccount',
+                        '\com\hydrogen\nucleus\Model\AggregationAccount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6430,7 +6430,7 @@ class AggregationAccountApi
      *
      * Update a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6450,14 +6450,14 @@ class AggregationAccountApi
      *
      * Update a bulk aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAggregationAccountBulkUsingPutAsyncWithHttpInfo($aggregation_account_list)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->updateAggregationAccountBulkUsingPutRequest($aggregation_account_list);
 
         return $this->client
@@ -6500,7 +6500,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'updateAggregationAccountBulkUsingPut'
      *
-     * @param  \com\hydrogen\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount[] $aggregation_account_list aggregationAccountList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6606,11 +6606,11 @@ class AggregationAccountApi
      *
      * Update an bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountHolding[]
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountHolding[]
      */
     public function updateAggregationAccountHoldingBulkUsingPut($aggregation_account_holding)
     {
@@ -6623,15 +6623,15 @@ class AggregationAccountApi
      *
      * Update an bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountHolding[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountHolding[], HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAggregationAccountHoldingBulkUsingPutWithHttpInfo($aggregation_account_holding)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding[]';
         $request = $this->updateAggregationAccountHoldingBulkUsingPutRequest($aggregation_account_holding);
 
         try {
@@ -6683,7 +6683,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountHolding[]',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountHolding[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6698,7 +6698,7 @@ class AggregationAccountApi
      *
      * Update an bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6718,14 +6718,14 @@ class AggregationAccountApi
      *
      * Update an bulk aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAggregationAccountHoldingBulkUsingPutAsyncWithHttpInfo($aggregation_account_holding)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding[]';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding[]';
         $request = $this->updateAggregationAccountHoldingBulkUsingPutRequest($aggregation_account_holding);
 
         return $this->client
@@ -6768,7 +6768,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'updateAggregationAccountHoldingBulkUsingPut'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding[] $aggregation_account_holding aggregationAccountHolding (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6874,12 +6874,12 @@ class AggregationAccountApi
      *
      * Update an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountHolding
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountHolding
      */
     public function updateAggregationAccountHoldingUsingPut($aggregation_account_holding, $aggregation_account_holding_id)
     {
@@ -6892,16 +6892,16 @@ class AggregationAccountApi
      *
      * Update an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountHolding, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountHolding, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAggregationAccountHoldingUsingPutWithHttpInfo($aggregation_account_holding, $aggregation_account_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding';
         $request = $this->updateAggregationAccountHoldingUsingPutRequest($aggregation_account_holding, $aggregation_account_holding_id);
 
         try {
@@ -6953,7 +6953,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountHolding',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountHolding',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6968,7 +6968,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6989,7 +6989,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account holding
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -6997,7 +6997,7 @@ class AggregationAccountApi
      */
     public function updateAggregationAccountHoldingUsingPutAsyncWithHttpInfo($aggregation_account_holding, $aggregation_account_holding_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountHolding';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountHolding';
         $request = $this->updateAggregationAccountHoldingUsingPutRequest($aggregation_account_holding, $aggregation_account_holding_id);
 
         return $this->client
@@ -7040,7 +7040,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'updateAggregationAccountHoldingUsingPut'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountHolding $aggregation_account_holding aggregation_account_holding (required)
      * @param  string $aggregation_account_holding_id UUID aggregation_account_holding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7161,12 +7161,12 @@ class AggregationAccountApi
      *
      * Update an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccountTransaction
+     * @return \com\hydrogen\nucleus\Model\AggregationAccountTransaction
      */
     public function updateAggregationAccountTransactionUsingPut($aggregation_account_transaction, $aggregation_account_transaction_id)
     {
@@ -7179,16 +7179,16 @@ class AggregationAccountApi
      *
      * Update an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccountTransaction, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAggregationAccountTransactionUsingPutWithHttpInfo($aggregation_account_transaction, $aggregation_account_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->updateAggregationAccountTransactionUsingPutRequest($aggregation_account_transaction, $aggregation_account_transaction_id);
 
         try {
@@ -7240,7 +7240,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccountTransaction',
+                        '\com\hydrogen\nucleus\Model\AggregationAccountTransaction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7255,7 +7255,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7276,7 +7276,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account transaction
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7284,7 +7284,7 @@ class AggregationAccountApi
      */
     public function updateAggregationAccountTransactionUsingPutAsyncWithHttpInfo($aggregation_account_transaction, $aggregation_account_transaction_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccountTransaction';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccountTransaction';
         $request = $this->updateAggregationAccountTransactionUsingPutRequest($aggregation_account_transaction, $aggregation_account_transaction_id);
 
         return $this->client
@@ -7327,7 +7327,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'updateAggregationAccountTransactionUsingPut'
      *
-     * @param  \com\hydrogen\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccountTransaction $aggregation_account_transaction aggregation_account_transaction (required)
      * @param  string $aggregation_account_transaction_id UUID aggregation_account_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7448,12 +7448,12 @@ class AggregationAccountApi
      *
      * Update an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregation_account (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregation_account (required)
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AggregationAccount
+     * @return \com\hydrogen\nucleus\Model\AggregationAccount
      */
     public function updateAggregationAccountUsingPut($aggregation_account, $aggregation_account_id)
     {
@@ -7466,16 +7466,16 @@ class AggregationAccountApi
      *
      * Update an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregation_account (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregation_account (required)
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AggregationAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAggregationAccountUsingPutWithHttpInfo($aggregation_account, $aggregation_account_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->updateAggregationAccountUsingPutRequest($aggregation_account, $aggregation_account_id);
 
         try {
@@ -7527,7 +7527,7 @@ class AggregationAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AggregationAccount',
+                        '\com\hydrogen\nucleus\Model\AggregationAccount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7542,7 +7542,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregation_account (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregation_account (required)
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7563,7 +7563,7 @@ class AggregationAccountApi
      *
      * Update an aggregation account
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregation_account (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregation_account (required)
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7571,7 +7571,7 @@ class AggregationAccountApi
      */
     public function updateAggregationAccountUsingPutAsyncWithHttpInfo($aggregation_account, $aggregation_account_id)
     {
-        $returnType = '\com\hydrogen\Model\AggregationAccount';
+        $returnType = '\com\hydrogen\nucleus\Model\AggregationAccount';
         $request = $this->updateAggregationAccountUsingPutRequest($aggregation_account, $aggregation_account_id);
 
         return $this->client
@@ -7614,7 +7614,7 @@ class AggregationAccountApi
     /**
      * Create request for operation 'updateAggregationAccountUsingPut'
      *
-     * @param  \com\hydrogen\Model\AggregationAccount $aggregation_account aggregation_account (required)
+     * @param  \com\hydrogen\nucleus\Model\AggregationAccount $aggregation_account aggregation_account (required)
      * @param  string $aggregation_account_id UUID aggregation_account_id (required)
      *
      * @throws \InvalidArgumentException

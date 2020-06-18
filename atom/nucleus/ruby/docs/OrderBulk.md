@@ -1,4 +1,4 @@
-# AtomApi::OrderBulk
+# NucleusApi::OrderBulk
 
 ## Properties
 Name | Type | Description | Notes

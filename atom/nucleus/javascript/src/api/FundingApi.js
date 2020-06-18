@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/BankLink'), require('../model/DailyDeposit'), require('../model/DailyWithdrawal'), require('../model/ExternalAccountTransfer'), require('../model/Funding'), require('../model/PageBankLink'), require('../model/PageDailyDeposit'), require('../model/PageDailyWithdrawal'), require('../model/PageExternalAccountTransfer'), require('../model/PageFunding'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.FundingApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.BankLink, root.HydrogenAtomApi.DailyDeposit, root.HydrogenAtomApi.DailyWithdrawal, root.HydrogenAtomApi.ExternalAccountTransfer, root.HydrogenAtomApi.Funding, root.HydrogenAtomApi.PageBankLink, root.HydrogenAtomApi.PageDailyDeposit, root.HydrogenAtomApi.PageDailyWithdrawal, root.HydrogenAtomApi.PageExternalAccountTransfer, root.HydrogenAtomApi.PageFunding);
+    root.HydrogenNucleusApi.FundingApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.BankLink, root.HydrogenNucleusApi.DailyDeposit, root.HydrogenNucleusApi.DailyWithdrawal, root.HydrogenNucleusApi.ExternalAccountTransfer, root.HydrogenNucleusApi.Funding, root.HydrogenNucleusApi.PageBankLink, root.HydrogenNucleusApi.PageDailyDeposit, root.HydrogenNucleusApi.PageDailyWithdrawal, root.HydrogenNucleusApi.PageExternalAccountTransfer, root.HydrogenNucleusApi.PageFunding);
   }
 }(this, function(ApiClient, BankLink, DailyDeposit, DailyWithdrawal, ExternalAccountTransfer, Funding, PageBankLink, PageDailyDeposit, PageDailyWithdrawal, PageExternalAccountTransfer, PageFunding) {
   'use strict';

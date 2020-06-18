@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AllocationApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class AllocationApi
      *
      * Create an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $alloc_request allocRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AllocationComposition
+     * @return \com\hydrogen\nucleus\Model\AllocationComposition
      */
     public function createAllocationCompositionUsingPost($alloc_request)
     {
@@ -109,15 +109,15 @@ class AllocationApi
      *
      * Create an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $alloc_request allocRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AllocationComposition, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AllocationComposition, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAllocationCompositionUsingPostWithHttpInfo($alloc_request)
     {
-        $returnType = '\com\hydrogen\Model\AllocationComposition';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationComposition';
         $request = $this->createAllocationCompositionUsingPostRequest($alloc_request);
 
         try {
@@ -169,7 +169,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AllocationComposition',
+                        '\com\hydrogen\nucleus\Model\AllocationComposition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class AllocationApi
      *
      * Create an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class AllocationApi
      *
      * Create an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAllocationCompositionUsingPostAsyncWithHttpInfo($alloc_request)
     {
-        $returnType = '\com\hydrogen\Model\AllocationComposition';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationComposition';
         $request = $this->createAllocationCompositionUsingPostRequest($alloc_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class AllocationApi
     /**
      * Create request for operation 'createAllocationCompositionUsingPost'
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $alloc_request allocRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $alloc_request allocRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -360,11 +360,11 @@ class AllocationApi
      *
      * Create an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation_request allocationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation_request allocationRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Allocation
+     * @return \com\hydrogen\nucleus\Model\Allocation
      */
     public function createAllocationUsingPost($allocation_request)
     {
@@ -377,15 +377,15 @@ class AllocationApi
      *
      * Create an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation_request allocationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation_request allocationRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Allocation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Allocation, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAllocationUsingPostWithHttpInfo($allocation_request)
     {
-        $returnType = '\com\hydrogen\Model\Allocation';
+        $returnType = '\com\hydrogen\nucleus\Model\Allocation';
         $request = $this->createAllocationUsingPostRequest($allocation_request);
 
         try {
@@ -437,7 +437,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Allocation',
+                        '\com\hydrogen\nucleus\Model\Allocation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class AllocationApi
      *
      * Create an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation_request allocationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation_request allocationRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -472,14 +472,14 @@ class AllocationApi
      *
      * Create an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation_request allocationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation_request allocationRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAllocationUsingPostAsyncWithHttpInfo($allocation_request)
     {
-        $returnType = '\com\hydrogen\Model\Allocation';
+        $returnType = '\com\hydrogen\nucleus\Model\Allocation';
         $request = $this->createAllocationUsingPostRequest($allocation_request);
 
         return $this->client
@@ -522,7 +522,7 @@ class AllocationApi
     /**
      * Create request for operation 'createAllocationUsingPost'
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation_request allocationRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation_request allocationRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -630,7 +630,7 @@ class AllocationApi
      *
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -646,7 +646,7 @@ class AllocationApi
      *
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -866,7 +866,7 @@ class AllocationApi
      *
      * @param  string $allocation_id UUID allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -882,7 +882,7 @@ class AllocationApi
      *
      * @param  string $allocation_id UUID allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1104,9 +1104,9 @@ class AllocationApi
      * @param  \DateTime $end_date end_date (optional, default to null)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\ModelHoldingAgg[]
+     * @return \com\hydrogen\nucleus\Model\ModelHoldingAgg[]
      */
     public function getAllHoldingsUsingGET($allocation_id, $end_date = 'null', $start_date = 'null')
     {
@@ -1123,13 +1123,13 @@ class AllocationApi
      * @param  \DateTime $end_date end_date (optional, default to null)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\ModelHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\ModelHoldingAgg[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllHoldingsUsingGETWithHttpInfo($allocation_id, $end_date = 'null', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\ModelHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHoldingAgg[]';
         $request = $this->getAllHoldingsUsingGETRequest($allocation_id, $end_date, $start_date);
 
         try {
@@ -1181,7 +1181,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\ModelHoldingAgg[]',
+                        '\com\hydrogen\nucleus\Model\ModelHoldingAgg[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1227,7 +1227,7 @@ class AllocationApi
      */
     public function getAllHoldingsUsingGETAsyncWithHttpInfo($allocation_id, $end_date = 'null', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\ModelHoldingAgg[]';
+        $returnType = '\com\hydrogen\nucleus\Model\ModelHoldingAgg[]';
         $request = $this->getAllHoldingsUsingGETRequest($allocation_id, $end_date, $start_date);
 
         return $this->client
@@ -1399,9 +1399,9 @@ class AllocationApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageModelTransaction_
+     * @return \com\hydrogen\nucleus\Model\PageModelTransaction_
      */
     public function getAllTransactionsUsingGET($allocation_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
@@ -1422,13 +1422,13 @@ class AllocationApi
      * @param  int $size size (optional, default to 25)
      * @param  \DateTime $start_date start_date (optional, default to null)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageModelTransaction_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageModelTransaction_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllTransactionsUsingGETWithHttpInfo($allocation_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\PageModelTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelTransaction_';
         $request = $this->getAllTransactionsUsingGETRequest($allocation_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
 
         try {
@@ -1480,7 +1480,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageModelTransaction_',
+                        '\com\hydrogen\nucleus\Model\PageModelTransaction_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1534,7 +1534,7 @@ class AllocationApi
      */
     public function getAllTransactionsUsingGETAsyncWithHttpInfo($allocation_id, $ascending = 'false', $end_date = 'null', $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
     {
-        $returnType = '\com\hydrogen\Model\PageModelTransaction_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageModelTransaction_';
         $request = $this->getAllTransactionsUsingGETRequest($allocation_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
 
         return $this->client
@@ -1720,9 +1720,9 @@ class AllocationApi
      *
      * @param  string $allocation_id Allocation Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AllocationAggregatedVO
+     * @return \com\hydrogen\nucleus\Model\AllocationAggregatedVO
      */
     public function getAllocationAggregatedDataUsingGET($allocation_id)
     {
@@ -1737,13 +1737,13 @@ class AllocationApi
      *
      * @param  string $allocation_id Allocation Id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AllocationAggregatedVO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AllocationAggregatedVO, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllocationAggregatedDataUsingGETWithHttpInfo($allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\AllocationAggregatedVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationAggregatedVO';
         $request = $this->getAllocationAggregatedDataUsingGETRequest($allocation_id);
 
         try {
@@ -1795,7 +1795,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AllocationAggregatedVO',
+                        '\com\hydrogen\nucleus\Model\AllocationAggregatedVO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1837,7 +1837,7 @@ class AllocationApi
      */
     public function getAllocationAggregatedDataUsingGETAsyncWithHttpInfo($allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\AllocationAggregatedVO';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationAggregatedVO';
         $request = $this->getAllocationAggregatedDataUsingGETRequest($allocation_id);
 
         return $this->client
@@ -1997,9 +1997,9 @@ class AllocationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAllocation_
+     * @return \com\hydrogen\nucleus\Model\PageAllocation_
      */
     public function getAllocationAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2018,13 +2018,13 @@ class AllocationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAllocation_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAllocation_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllocationAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAllocation_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAllocation_';
         $request = $this->getAllocationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2076,7 +2076,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAllocation_',
+                        '\com\hydrogen\nucleus\Model\PageAllocation_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2126,7 +2126,7 @@ class AllocationApi
      */
     public function getAllocationAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAllocation_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAllocation_';
         $request = $this->getAllocationAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2296,9 +2296,9 @@ class AllocationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageAllocationComposition_
+     * @return \com\hydrogen\nucleus\Model\PageAllocationComposition_
      */
     public function getAllocationCompositionAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -2317,13 +2317,13 @@ class AllocationApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageAllocationComposition_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageAllocationComposition_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllocationCompositionAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAllocationComposition_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAllocationComposition_';
         $request = $this->getAllocationCompositionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -2375,7 +2375,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageAllocationComposition_',
+                        '\com\hydrogen\nucleus\Model\PageAllocationComposition_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2425,7 +2425,7 @@ class AllocationApi
      */
     public function getAllocationCompositionAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageAllocationComposition_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageAllocationComposition_';
         $request = $this->getAllocationCompositionAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2591,9 +2591,9 @@ class AllocationApi
      *
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AllocationComposition
+     * @return \com\hydrogen\nucleus\Model\AllocationComposition
      */
     public function getAllocationCompositionUsingGet($allocation_composition_id)
     {
@@ -2608,13 +2608,13 @@ class AllocationApi
      *
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AllocationComposition, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AllocationComposition, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllocationCompositionUsingGetWithHttpInfo($allocation_composition_id)
     {
-        $returnType = '\com\hydrogen\Model\AllocationComposition';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationComposition';
         $request = $this->getAllocationCompositionUsingGetRequest($allocation_composition_id);
 
         try {
@@ -2666,7 +2666,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AllocationComposition',
+                        '\com\hydrogen\nucleus\Model\AllocationComposition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2708,7 +2708,7 @@ class AllocationApi
      */
     public function getAllocationCompositionUsingGetAsyncWithHttpInfo($allocation_composition_id)
     {
-        $returnType = '\com\hydrogen\Model\AllocationComposition';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationComposition';
         $request = $this->getAllocationCompositionUsingGetRequest($allocation_composition_id);
 
         return $this->client
@@ -2864,9 +2864,9 @@ class AllocationApi
      *
      * @param  string $allocation_id UUID allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Allocation
+     * @return \com\hydrogen\nucleus\Model\Allocation
      */
     public function getAllocationUsingGet($allocation_id)
     {
@@ -2881,13 +2881,13 @@ class AllocationApi
      *
      * @param  string $allocation_id UUID allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Allocation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Allocation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllocationUsingGetWithHttpInfo($allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\Allocation';
+        $returnType = '\com\hydrogen\nucleus\Model\Allocation';
         $request = $this->getAllocationUsingGetRequest($allocation_id);
 
         try {
@@ -2939,7 +2939,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Allocation',
+                        '\com\hydrogen\nucleus\Model\Allocation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2981,7 +2981,7 @@ class AllocationApi
      */
     public function getAllocationUsingGetAsyncWithHttpInfo($allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\Allocation';
+        $returnType = '\com\hydrogen\nucleus\Model\Allocation';
         $request = $this->getAllocationUsingGetRequest($allocation_id);
 
         return $this->client
@@ -3142,9 +3142,9 @@ class AllocationApi
      * @param  string $sort_type D (Daily), Q (quarterly), M (Monthly), Y (Annually) (optional)
      * @param  \DateTime $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\DateDoubleVO[]
+     * @return \com\hydrogen\nucleus\Model\DateDoubleVO[]
      */
     public function getAssetsizeUsingGET($allocation_id, $end_date = null, $get_latest = null, $is_current_weight = 'true', $sort_type = null, $start_date = null)
     {
@@ -3164,13 +3164,13 @@ class AllocationApi
      * @param  string $sort_type D (Daily), Q (quarterly), M (Monthly), Y (Annually) (optional)
      * @param  \DateTime $start_date start date (optional)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\DateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\DateDoubleVO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssetsizeUsingGETWithHttpInfo($allocation_id, $end_date = null, $get_latest = null, $is_current_weight = 'true', $sort_type = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\DateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\DateDoubleVO[]';
         $request = $this->getAssetsizeUsingGETRequest($allocation_id, $end_date, $get_latest, $is_current_weight, $sort_type, $start_date);
 
         try {
@@ -3222,7 +3222,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\DateDoubleVO[]',
+                        '\com\hydrogen\nucleus\Model\DateDoubleVO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3274,7 +3274,7 @@ class AllocationApi
      */
     public function getAssetsizeUsingGETAsyncWithHttpInfo($allocation_id, $end_date = null, $get_latest = null, $is_current_weight = 'true', $sort_type = null, $start_date = null)
     {
-        $returnType = '\com\hydrogen\Model\DateDoubleVO[]';
+        $returnType = '\com\hydrogen\nucleus\Model\DateDoubleVO[]';
         $request = $this->getAssetsizeUsingGETRequest($allocation_id, $end_date, $get_latest, $is_current_weight, $sort_type, $start_date);
 
         return $this->client
@@ -3453,12 +3453,12 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $allocation_composition aggregation_composition (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition aggregation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\AllocationComposition
+     * @return \com\hydrogen\nucleus\Model\AllocationComposition
      */
     public function updateAllocationCompositionUsingPut($allocation_composition, $allocation_composition_id)
     {
@@ -3471,16 +3471,16 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $allocation_composition aggregation_composition (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition aggregation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\AllocationComposition, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\AllocationComposition, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAllocationCompositionUsingPutWithHttpInfo($allocation_composition, $allocation_composition_id)
     {
-        $returnType = '\com\hydrogen\Model\AllocationComposition';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationComposition';
         $request = $this->updateAllocationCompositionUsingPutRequest($allocation_composition, $allocation_composition_id);
 
         try {
@@ -3532,7 +3532,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\AllocationComposition',
+                        '\com\hydrogen\nucleus\Model\AllocationComposition',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3547,7 +3547,7 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $allocation_composition aggregation_composition (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition aggregation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3568,7 +3568,7 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $allocation_composition aggregation_composition (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition aggregation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3576,7 +3576,7 @@ class AllocationApi
      */
     public function updateAllocationCompositionUsingPutAsyncWithHttpInfo($allocation_composition, $allocation_composition_id)
     {
-        $returnType = '\com\hydrogen\Model\AllocationComposition';
+        $returnType = '\com\hydrogen\nucleus\Model\AllocationComposition';
         $request = $this->updateAllocationCompositionUsingPutRequest($allocation_composition, $allocation_composition_id);
 
         return $this->client
@@ -3619,7 +3619,7 @@ class AllocationApi
     /**
      * Create request for operation 'updateAllocationCompositionUsingPut'
      *
-     * @param  \com\hydrogen\Model\AllocationComposition $allocation_composition aggregation_composition (required)
+     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition aggregation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3740,12 +3740,12 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation allocation (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Allocation
+     * @return \com\hydrogen\nucleus\Model\Allocation
      */
     public function updateAllocationUsingPut($allocation, $allocation_id)
     {
@@ -3758,16 +3758,16 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation allocation (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Allocation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Allocation, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAllocationUsingPutWithHttpInfo($allocation, $allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\Allocation';
+        $returnType = '\com\hydrogen\nucleus\Model\Allocation';
         $request = $this->updateAllocationUsingPutRequest($allocation, $allocation_id);
 
         try {
@@ -3819,7 +3819,7 @@ class AllocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Allocation',
+                        '\com\hydrogen\nucleus\Model\Allocation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3834,7 +3834,7 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation allocation (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3855,7 +3855,7 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation allocation (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3863,7 +3863,7 @@ class AllocationApi
      */
     public function updateAllocationUsingPutAsyncWithHttpInfo($allocation, $allocation_id)
     {
-        $returnType = '\com\hydrogen\Model\Allocation';
+        $returnType = '\com\hydrogen\nucleus\Model\Allocation';
         $request = $this->updateAllocationUsingPutRequest($allocation, $allocation_id);
 
         return $this->client
@@ -3906,7 +3906,7 @@ class AllocationApi
     /**
      * Create request for operation 'updateAllocationUsingPut'
      *
-     * @param  \com\hydrogen\Model\Allocation $allocation allocation (required)
+     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \InvalidArgumentException

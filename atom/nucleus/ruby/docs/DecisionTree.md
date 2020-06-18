@@ -1,4 +1,4 @@
-# AtomApi::DecisionTree
+# NucleusApi::DecisionTree
 
 ## Properties
 Name | Type | Description | Notes

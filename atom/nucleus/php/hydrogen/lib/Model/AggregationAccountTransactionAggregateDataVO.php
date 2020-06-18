@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * AggregationAccountTransactionAggregateDataVO Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,10 +58,10 @@ class AggregationAccountTransactionAggregateDataVO implements ModelInterface, Ar
       */
     protected static $swaggerTypes = [
         'aggregation_account_transaction_id' => 'string',
-        'bank_credit' => '\com\hydrogen\Model\BankCredit',
+        'bank_credit' => '\com\hydrogen\nucleus\Model\BankCredit',
         'create_date' => '\DateTime',
         'currency_code' => 'string',
-        'investment' => '\com\hydrogen\Model\Investment',
+        'investment' => '\com\hydrogen\nucleus\Model\Investment',
         'is_excluded_analysis' => 'bool',
         'metadata' => 'map[string,string]',
         'secondary_id' => 'string',
@@ -291,7 +291,7 @@ class AggregationAccountTransactionAggregateDataVO implements ModelInterface, Ar
     /**
      * Gets bank_credit
      *
-     * @return \com\hydrogen\Model\BankCredit
+     * @return \com\hydrogen\nucleus\Model\BankCredit
      */
     public function getBankCredit()
     {
@@ -301,7 +301,7 @@ class AggregationAccountTransactionAggregateDataVO implements ModelInterface, Ar
     /**
      * Sets bank_credit
      *
-     * @param \com\hydrogen\Model\BankCredit $bank_credit bank_credit
+     * @param \com\hydrogen\nucleus\Model\BankCredit $bank_credit bank_credit
      *
      * @return $this
      */
@@ -363,7 +363,7 @@ class AggregationAccountTransactionAggregateDataVO implements ModelInterface, Ar
     /**
      * Gets investment
      *
-     * @return \com\hydrogen\Model\Investment
+     * @return \com\hydrogen\nucleus\Model\Investment
      */
     public function getInvestment()
     {
@@ -373,7 +373,7 @@ class AggregationAccountTransactionAggregateDataVO implements ModelInterface, Ar
     /**
      * Sets investment
      *
-     * @param \com\hydrogen\Model\Investment $investment investment
+     * @param \com\hydrogen\nucleus\Model\Investment $investment investment
      *
      * @return $this
      */

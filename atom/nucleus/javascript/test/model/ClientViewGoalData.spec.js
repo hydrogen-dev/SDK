@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.ClientViewGoalData();
+    instance = new HydrogenNucleusApi.ClientViewGoalData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,91 +53,91 @@
   describe('ClientViewGoalData', function() {
     it('should create an instance of ClientViewGoalData', function() {
       // uncomment below and update the code to test ClientViewGoalData
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
-      //expect(instance).to.be.a(HydrogenAtomApi.ClientViewGoalData);
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
+      //expect(instance).to.be.a(HydrogenNucleusApi.ClientViewGoalData);
     });
 
     it('should have the property accounts (base name: "accounts")', function() {
       // uncomment below and update the code to test the property accounts
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property accumulationHorizon (base name: "accumulation_horizon")', function() {
       // uncomment below and update the code to test the property accumulationHorizon
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property decumulationHorizon (base name: "decumulation_horizon")', function() {
       // uncomment below and update the code to test the property decumulationHorizon
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAmount (base name: "goal_amount")', function() {
       // uncomment below and update the code to test the property goalAmount
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAssetSizeByGoal (base name: "goal_asset_size_by_goal")', function() {
       // uncomment below and update the code to test the property goalAssetSizeByGoal
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalAssetSizeByGoalDate (base name: "goal_asset_size_by_goal_date")', function() {
       // uncomment below and update the code to test the property goalAssetSizeByGoalDate
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalCategory (base name: "goal_category")', function() {
       // uncomment below and update the code to test the property goalCategory
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalCreateDate (base name: "goal_create_date")', function() {
       // uncomment below and update the code to test the property goalCreateDate
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalId (base name: "goal_id")', function() {
       // uncomment below and update the code to test the property goalId
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalName (base name: "goal_name")', function() {
       // uncomment below and update the code to test the property goalName
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalType (base name: "goal_type")', function() {
       // uncomment below and update the code to test the property goalType
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property goalUpdateDate (base name: "goal_update_date")', function() {
       // uncomment below and update the code to test the property goalUpdateDate
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property isDecumulation (base name: "is_decumulation")', function() {
       // uncomment below and update the code to test the property isDecumulation
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 
     it('should have the property portfolios (base name: "portfolios")', function() {
       // uncomment below and update the code to test the property portfolios
-      //var instane = new HydrogenAtomApi.ClientViewGoalData();
+      //var instane = new HydrogenNucleusApi.ClientViewGoalData();
       //expect(instance).to.be();
     });
 

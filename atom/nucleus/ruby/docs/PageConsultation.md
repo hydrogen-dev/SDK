@@ -1,4 +1,4 @@
-# AtomApi::PageConsultation
+# NucleusApi::PageConsultation
 
 ## Properties
 Name | Type | Description | Notes

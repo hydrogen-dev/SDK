@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Feature'), require('../model/FeatureTrack'), require('../model/PageFeature'), require('../model/PageFeatureTrack'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.FeatureApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Feature, root.HydrogenAtomApi.FeatureTrack, root.HydrogenAtomApi.PageFeature, root.HydrogenAtomApi.PageFeatureTrack);
+    root.HydrogenNucleusApi.FeatureApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Feature, root.HydrogenNucleusApi.FeatureTrack, root.HydrogenNucleusApi.PageFeature, root.HydrogenNucleusApi.PageFeatureTrack);
   }
 }(this, function(ApiClient, Feature, FeatureTrack, PageFeature, PageFeatureTrack) {
   'use strict';

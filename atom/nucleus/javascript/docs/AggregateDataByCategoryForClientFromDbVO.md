@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AggregateDataByCategoryForClientFromDbVO
+# HydrogenNucleusApi.AggregateDataByCategoryForClientFromDbVO
 
 ## Properties
 Name | Type | Description | Notes

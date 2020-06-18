@@ -1,4 +1,4 @@
-# AtomApi::OrderApi
+# NucleusApi::OrderApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -45,9 +45,9 @@ Aggregates all orders on a given date for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -56,18 +56,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-req = AtomApi::TokenDateRequest.new # TokenDateRequest | req
+req = NucleusApi::TokenDateRequest.new # TokenDateRequest | req
 
 
 begin
   #Bulk orders for an account
   result = api_instance.create_account_order_bulk_using_post(account_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_account_order_bulk_using_post: #{e}"
 end
 ```
@@ -104,9 +104,9 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -115,18 +115,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Create buy-only account rebalance orders
   result = api_instance.create_account_order_buy_only_using_post(account_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_account_order_buy_only_using_post: #{e}"
 end
 ```
@@ -163,9 +163,9 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -174,18 +174,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Create account rebalance orders
   result = api_instance.create_account_order_rebalance_using_post(account_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_account_order_rebalance_using_post: #{e}"
 end
 ```
@@ -220,9 +220,9 @@ Create account reconciliation order
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -231,18 +231,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-req = AtomApi::OrderReconcileRequest.new # OrderReconcileRequest | req
+req = NucleusApi::OrderReconcileRequest.new # OrderReconcileRequest | req
 
 
 begin
   #Create account reconciliation order
   result = api_instance.create_account_order_reconciliation(account_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_account_order_reconciliation: #{e}"
 end
 ```
@@ -279,9 +279,9 @@ Create order records necessary to entirely sell all the holdings within an accou
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -290,18 +290,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Sell all account order
   result = api_instance.create_account_order_sell_all_using_post(account_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_account_order_sell_all_using_post: #{e}"
 end
 ```
@@ -338,9 +338,9 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -349,18 +349,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Create sell-only account rebalance orders
   result = api_instance.create_account_order_sell_only_using_post(account_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_account_order_sell_only_using_post: #{e}"
 end
 ```
@@ -397,9 +397,9 @@ Aggregates all orders on a given date for a client
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -408,18 +408,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 client_id = 'client_id_example' # String | client_id
 
-req = AtomApi::TokenDateRequest.new # TokenDateRequest | req
+req = NucleusApi::TokenDateRequest.new # TokenDateRequest | req
 
 
 begin
   #Bulk orders for a client
   result = api_instance.create_client_order_bulk_using_post(client_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_client_order_bulk_using_post: #{e}"
 end
 ```
@@ -456,9 +456,9 @@ Aggregates all orders on a given date for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -467,16 +467,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
-req = AtomApi::TokenDateRequest.new # TokenDateRequest | req
+req = NucleusApi::TokenDateRequest.new # TokenDateRequest | req
 
 
 begin
   #Bulk orders for your firm
   result = api_instance.create_order_bulk_using_post(req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_order_bulk_using_post: #{e}"
 end
 ```
@@ -512,9 +512,9 @@ Create an order status for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -523,16 +523,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
-order_status_request = AtomApi::OrderStatus.new # OrderStatus | orderStatusRequest
+order_status_request = NucleusApi::OrderStatus.new # OrderStatus | orderStatusRequest
 
 
 begin
   #Create an order status
   result = api_instance.create_order_status_using_post(order_status_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_order_status_using_post: #{e}"
 end
 ```
@@ -568,9 +568,9 @@ Create a new order tracking record for an order.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -579,16 +579,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
-order_track_request = AtomApi::OrderTrack.new # OrderTrack | orderTrackRequest
+order_track_request = NucleusApi::OrderTrack.new # OrderTrack | orderTrackRequest
 
 
 begin
   #Create an order tracking record
   result = api_instance.create_order_track_using_post(order_track_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_order_track_using_post: #{e}"
 end
 ```
@@ -624,9 +624,9 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -635,18 +635,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 portfolio_id = 'portfolio_id_example' # String | portfolio_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Create buy-only portfolio rebalance orders
   result = api_instance.create_portfolio_order_buy_only_using_post(portfolio_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_portfolio_order_buy_only_using_post: #{e}"
 end
 ```
@@ -683,9 +683,9 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -694,18 +694,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 portfolio_id = 'portfolio_id_example' # String | portfolio_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Create portfolio rebalance orders
   result = api_instance.create_portfolio_order_rebalance_using_post(portfolio_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_portfolio_order_rebalance_using_post: #{e}"
 end
 ```
@@ -740,9 +740,9 @@ Create portfolio reconciliation order
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -751,18 +751,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 portfolio_id = 'portfolio_id_example' # String | portfolio_id
 
-req = AtomApi::OrderReconcileRequest.new # OrderReconcileRequest | req
+req = NucleusApi::OrderReconcileRequest.new # OrderReconcileRequest | req
 
 
 begin
   #Create portfolio reconciliation order
   result = api_instance.create_portfolio_order_reconciliation(portfolio_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_portfolio_order_reconciliation: #{e}"
 end
 ```
@@ -799,9 +799,9 @@ Create order records necessary to entirely sell all the holdings within a portfo
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -810,18 +810,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 portfolio_id = 'portfolio_id_example' # String | portfolio_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Sell all portfolio order
   result = api_instance.create_portfolio_order_sell_all_using_post(portfolio_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_portfolio_order_sell_all_using_post: #{e}"
 end
 ```
@@ -858,9 +858,9 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -869,18 +869,18 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 portfolio_id = 'portfolio_id_example' # String | portfolio_id
 
-req = AtomApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
+req = NucleusApi::AccountPortfolioRebalanceRequest.new # AccountPortfolioRebalanceRequest | req
 
 
 begin
   #Create sell-only portfolio rebalance orders
   result = api_instance.create_portfolio_order_sell_only_using_post(portfolio_id, req)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->create_portfolio_order_sell_only_using_post: #{e}"
 end
 ```
@@ -917,9 +917,9 @@ Permanently delete an order status defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -928,7 +928,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 order_status_id = 'order_status_id_example' # String | UUID order_status_id
 
@@ -936,7 +936,7 @@ order_status_id = 'order_status_id_example' # String | UUID order_status_id
 begin
   #Delete an order status
   api_instance.delete_order_status_using_delete(order_status_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->delete_order_status_using_delete: #{e}"
 end
 ```
@@ -972,9 +972,9 @@ Permanently delete an order tracking record for an order.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -983,7 +983,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 order_track_id = 'order_track_id_example' # String | UUID order_track_id
 
@@ -991,7 +991,7 @@ order_track_id = 'order_track_id_example' # String | UUID order_track_id
 begin
   #Delete an order tracking record
   api_instance.delete_order_track_using_delete(order_track_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->delete_order_track_using_delete: #{e}"
 end
 ```
@@ -1027,9 +1027,9 @@ Permanently delete an order record.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1038,7 +1038,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 order_id = 'order_id_example' # String | UUID order_id
 
@@ -1046,7 +1046,7 @@ order_id = 'order_id_example' # String | UUID order_id
 begin
   #Delete an order record
   api_instance.delete_order_using_delete(order_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->delete_order_using_delete: #{e}"
 end
 ```
@@ -1082,9 +1082,9 @@ Create an order record defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1093,16 +1093,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
-order_info_request = AtomApi::Order.new # Order | orderInfoRequest
+order_info_request = NucleusApi::Order.new # Order | orderInfoRequest
 
 
 begin
   #Create an order record
   result = api_instance.get_order_all_using_get(order_info_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_all_using_get: #{e}"
 end
 ```
@@ -1138,9 +1138,9 @@ Get the information for all order records defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1149,7 +1149,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1163,7 +1163,7 @@ begin
   #List all order records
   result = api_instance.get_order_all_using_get1(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_all_using_get1: #{e}"
 end
 ```
@@ -1203,9 +1203,9 @@ Get the information for all bulk order records.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1214,7 +1214,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1228,7 +1228,7 @@ begin
   #List all bulk orders
   result = api_instance.get_order_bulk_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_bulk_all_using_get: #{e}"
 end
 ```
@@ -1268,9 +1268,9 @@ Get the information for all order statuses defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1279,7 +1279,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1293,7 +1293,7 @@ begin
   #List all order statuses
   result = api_instance.get_order_status_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_status_all_using_get: #{e}"
 end
 ```
@@ -1333,9 +1333,9 @@ Retrieve the information for an order status defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1344,7 +1344,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 order_status_id = 'order_status_id_example' # String | UUID order_status_id
 
@@ -1353,7 +1353,7 @@ begin
   #Retrieve an order status
   result = api_instance.get_order_status_using_get(order_status_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_status_using_get: #{e}"
 end
 ```
@@ -1389,9 +1389,9 @@ Get the information for all order tracking record for all order records.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1400,7 +1400,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1414,7 +1414,7 @@ begin
   #List all order tracking records
   result = api_instance.get_order_track_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_track_all_using_get: #{e}"
 end
 ```
@@ -1454,9 +1454,9 @@ Retrieve the information for an order tracking record for an order.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1465,7 +1465,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 order_track_id = 'order_track_id_example' # String | UUID order_track_id
 
@@ -1474,7 +1474,7 @@ begin
   #Retrieve an order tracking record
   result = api_instance.get_order_track_using_get(order_track_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_track_using_get: #{e}"
 end
 ```
@@ -1510,9 +1510,9 @@ Retrieve the information for an order record.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1521,7 +1521,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
 order_id = 'order_id_example' # String | UUID order_id
 
@@ -1530,7 +1530,7 @@ begin
   #Retrieve an order record
   result = api_instance.get_order_using_get(order_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->get_order_using_get: #{e}"
 end
 ```
@@ -1566,9 +1566,9 @@ Update the information for an order status defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1577,9 +1577,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
-order_status = AtomApi::OrderStatus.new # OrderStatus | order_status
+order_status = NucleusApi::OrderStatus.new # OrderStatus | order_status
 
 order_status_id = 'order_status_id_example' # String | UUID order_status_id
 
@@ -1588,7 +1588,7 @@ begin
   #Update an order status
   result = api_instance.update_order_status_using_put(order_status, order_status_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->update_order_status_using_put: #{e}"
 end
 ```
@@ -1625,9 +1625,9 @@ Update the information for an order tracking record for an order.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1636,9 +1636,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
-order_track = AtomApi::OrderTrack.new # OrderTrack | order_track
+order_track = NucleusApi::OrderTrack.new # OrderTrack | order_track
 
 order_track_id = 'order_track_id_example' # String | UUID order_track_id
 
@@ -1647,7 +1647,7 @@ begin
   #Update an order tracking record
   result = api_instance.update_order_track_using_put(order_track, order_track_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->update_order_track_using_put: #{e}"
 end
 ```
@@ -1684,9 +1684,9 @@ Update the information for an order record.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1695,9 +1695,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::OrderApi.new
+api_instance = NucleusApi::OrderApi.new
 
-order = AtomApi::Order.new # Order | order
+order = NucleusApi::Order.new # Order | order
 
 order_id = 'order_id_example' # String | UUID order_id
 
@@ -1706,7 +1706,7 @@ begin
   #Update an order record
   result = api_instance.update_order_using_put(order, order_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling OrderApi->update_order_using_put: #{e}"
 end
 ```

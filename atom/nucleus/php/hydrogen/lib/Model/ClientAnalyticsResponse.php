@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * ClientAnalyticsResponse Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -60,8 +60,8 @@ class ClientAnalyticsResponse implements ModelInterface, ArrayAccess
         'average_nucleus_clients_daily' => 'string',
         'average_nucleus_clients_total' => 'string',
         'client_id' => 'string',
-        'history' => '\com\hydrogen\Model\ClientAnalyticsHistory[]',
-        'tenants' => '\com\hydrogen\Model\ClientAnalyticsTenants[]',
+        'history' => '\com\hydrogen\nucleus\Model\ClientAnalyticsHistory[]',
+        'tenants' => '\com\hydrogen\nucleus\Model\ClientAnalyticsTenants[]',
         'total_nucleus_clients' => 'int',
         'total_nucleus_clients_active' => 'int',
         'total_nucleus_clients_inactive' => 'int'
@@ -321,7 +321,7 @@ class ClientAnalyticsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets history
      *
-     * @return \com\hydrogen\Model\ClientAnalyticsHistory[]
+     * @return \com\hydrogen\nucleus\Model\ClientAnalyticsHistory[]
      */
     public function getHistory()
     {
@@ -331,7 +331,7 @@ class ClientAnalyticsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets history
      *
-     * @param \com\hydrogen\Model\ClientAnalyticsHistory[] $history history
+     * @param \com\hydrogen\nucleus\Model\ClientAnalyticsHistory[] $history history
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class ClientAnalyticsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets tenants
      *
-     * @return \com\hydrogen\Model\ClientAnalyticsTenants[]
+     * @return \com\hydrogen\nucleus\Model\ClientAnalyticsTenants[]
      */
     public function getTenants()
     {
@@ -355,7 +355,7 @@ class ClientAnalyticsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets tenants
      *
-     * @param \com\hydrogen\Model\ClientAnalyticsTenants[] $tenants tenants
+     * @param \com\hydrogen\nucleus\Model\ClientAnalyticsTenants[] $tenants tenants
      *
      * @return $this
      */

@@ -20,10 +20,10 @@ Analyze spending against a defined budget
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import PersonalFinancialManagementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -80,10 +80,10 @@ Analyze income, expenses, and net income
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import PersonalFinancialManagementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -140,10 +140,10 @@ Assess assets, liabilities, and net worth
 ### Example
 ```java
 // Import classes:
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
+//import com.hydrogen.proton.ApiException;
+//import com.hydrogen.proton.AuthApiClient;
 
-//import com.hydrogen.auth.*;
+//import com.hydrogen.proton.auth.*;
 //import PersonalFinancialManagementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

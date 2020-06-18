@@ -1,4 +1,4 @@
-# AtomApi::CardApi
+# NucleusApi::CardApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -26,9 +26,9 @@ Create a new cardProgram request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -37,16 +37,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
-card_program_request = AtomApi::CardProgram.new # CardProgram | cardProgramRequest
+card_program_request = NucleusApi::CardProgram.new # CardProgram | cardProgramRequest
 
 
 begin
   #Create a cardProgram request
   result = api_instance.create_card_program_using_post(card_program_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->create_card_program_using_post: #{e}"
 end
 ```
@@ -82,9 +82,9 @@ Create a new card request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -93,9 +93,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
-card_request = AtomApi::Card.new # Card | cardRequest
+card_request = NucleusApi::Card.new # Card | cardRequest
 
 opts = { 
   authorization: 'authorization_example' # String | Authorization
@@ -105,7 +105,7 @@ begin
   #Create a card request
   result = api_instance.create_card_using_post(card_request, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->create_card_using_post: #{e}"
 end
 ```
@@ -142,9 +142,9 @@ Permanently delete an cardProgram.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -153,7 +153,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
 card_program_id = 'card_program_id_example' # String | UUID card_program_id
 
@@ -161,7 +161,7 @@ card_program_id = 'card_program_id_example' # String | UUID card_program_id
 begin
   #Delete an cardProgram
   api_instance.delete_card_program_using_delete(card_program_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->delete_card_program_using_delete: #{e}"
 end
 ```
@@ -197,9 +197,9 @@ Permanently delete a card request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -208,7 +208,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
 card_id = 'card_id_example' # String | UUID card_id
 
@@ -216,7 +216,7 @@ card_id = 'card_id_example' # String | UUID card_id
 begin
   #Delete a card request
   api_instance.delete_card_using_delete(card_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->delete_card_using_delete: #{e}"
 end
 ```
@@ -252,9 +252,9 @@ Get the information for all card requests.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -263,7 +263,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -277,7 +277,7 @@ begin
   #List all card requests
   result = api_instance.get_card_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->get_card_all_using_get: #{e}"
 end
 ```
@@ -317,9 +317,9 @@ Get information for all cardProgram.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -328,7 +328,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -342,7 +342,7 @@ begin
   #List all cardProgram
   result = api_instance.get_card_program_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->get_card_program_all_using_get: #{e}"
 end
 ```
@@ -382,9 +382,9 @@ Retrieve the information for a specific cardProgram.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -393,7 +393,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
 card_program_id = 'card_program_id_example' # String | UUID card_program_id
 
@@ -402,7 +402,7 @@ begin
   #Retrieve an cardProgram
   result = api_instance.get_card_program_using_get(card_program_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->get_card_program_using_get: #{e}"
 end
 ```
@@ -438,9 +438,9 @@ Retrieve the information for a card request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -449,7 +449,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
 card_id = 'card_id_example' # String | UUID card_id
 
@@ -458,7 +458,7 @@ begin
   #Retrieve a card request
   result = api_instance.get_card_using_get(card_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->get_card_using_get: #{e}"
 end
 ```
@@ -494,9 +494,9 @@ Update the information for an cardProgram.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -505,9 +505,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
-card_program = AtomApi::CardProgram.new # CardProgram | card_program
+card_program = NucleusApi::CardProgram.new # CardProgram | card_program
 
 card_program_id = 'card_program_id_example' # String | UUID card_program_id
 
@@ -516,7 +516,7 @@ begin
   #Update an cardProgram
   result = api_instance.update_card_program_using_put(card_program, card_program_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->update_card_program_using_put: #{e}"
 end
 ```
@@ -553,9 +553,9 @@ Update the information for a card request.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -564,9 +564,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::CardApi.new
+api_instance = NucleusApi::CardApi.new
 
-card = AtomApi::Card.new # Card | card
+card = NucleusApi::Card.new # Card | card
 
 card_id = 'card_id_example' # String | UUID card_id
 
@@ -575,7 +575,7 @@ begin
   #Update a card request
   result = api_instance.update_card_using_put(card, card_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling CardApi->update_card_using_put: #{e}"
 end
 ```

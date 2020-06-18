@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **is_active** | **bool** | isActive | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
 **name** | **string** | name | 
-**node_map** | [**\com\hydrogen\Model\AllocationNodeMap[]**](AllocationNodeMap.md) |  | [optional] 
+**node_map** | [**\com\hydrogen\nucleus\Model\AllocationNodeMap[]**](AllocationNodeMap.md) |  | [optional] 
 **performance** | **double** | performance | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 

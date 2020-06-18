@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageBenchmark
+# HydrogenNucleusApi.PageBenchmark
 
 ## Properties
 Name | Type | Description | Notes

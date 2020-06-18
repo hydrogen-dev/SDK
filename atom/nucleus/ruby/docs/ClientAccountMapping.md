@@ -1,4 +1,4 @@
-# AtomApi::ClientAccountMapping
+# NucleusApi::ClientAccountMapping
 
 ## Properties
 Name | Type | Description | Notes

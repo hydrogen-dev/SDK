@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * Model Class Doc Comment
  *
  * @category Class
  * @description Model Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -72,7 +72,7 @@ class Model implements ModelInterface, ArrayAccess
         'is_active' => 'bool',
         'metadata' => 'map[string,string]',
         'name' => 'string',
-        'node_map' => '\com\hydrogen\Model\AllocationNodeMap[]',
+        'node_map' => '\com\hydrogen\nucleus\Model\AllocationNodeMap[]',
         'period_rebal' => 'bool',
         'rebalance_period' => 'int',
         'safe_sec' => 'string',
@@ -673,7 +673,7 @@ class Model implements ModelInterface, ArrayAccess
     /**
      * Gets node_map
      *
-     * @return \com\hydrogen\Model\AllocationNodeMap[]
+     * @return \com\hydrogen\nucleus\Model\AllocationNodeMap[]
      */
     public function getNodeMap()
     {
@@ -683,7 +683,7 @@ class Model implements ModelInterface, ArrayAccess
     /**
      * Sets node_map
      *
-     * @param \com\hydrogen\Model\AllocationNodeMap[] $node_map node_map
+     * @param \com\hydrogen\nucleus\Model\AllocationNodeMap[] $node_map node_map
      *
      * @return $this
      */

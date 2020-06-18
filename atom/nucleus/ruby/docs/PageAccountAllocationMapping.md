@@ -1,4 +1,4 @@
-# AtomApi::PageAccountAllocationMapping
+# NucleusApi::PageAccountAllocationMapping
 
 ## Properties
 Name | Type | Description | Notes

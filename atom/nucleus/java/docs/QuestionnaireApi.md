@@ -36,9 +36,9 @@ Create a new answer for question.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -93,9 +93,9 @@ Create a new client response for a question as part of a questionnaires.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -150,9 +150,9 @@ Create a new question for questionnaire.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -207,9 +207,9 @@ Create a new questionnaire for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -264,9 +264,9 @@ Delete an answer for the question
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -320,9 +320,9 @@ Permanently delete a client response for a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -376,9 +376,9 @@ Delete an answer for the question
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -432,9 +432,9 @@ Permanently delete a questionnaire for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -488,9 +488,9 @@ Get information for all Answers
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -553,9 +553,9 @@ Retrieve the information for an answer for question
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -610,9 +610,9 @@ Get all the client responses for questions as part of a questionnaire defined by
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -675,9 +675,9 @@ Retrieve the information for a client response for a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -732,9 +732,9 @@ Get information for all Questions
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -797,9 +797,9 @@ Retrieve the information for a question for questionnaire
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -854,9 +854,9 @@ Get the information for all questionnaires defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -919,9 +919,9 @@ Retrieve the information for a questionnaire for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -976,9 +976,9 @@ Update a answer for question.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1035,9 +1035,9 @@ Update a client response for a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1094,9 +1094,9 @@ Update a question for questionnaire.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1153,9 +1153,9 @@ Update a questionnaire for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

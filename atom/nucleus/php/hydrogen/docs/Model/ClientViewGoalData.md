@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | [**\com\hydrogen\Model\VAccountVO[]**](VAccountVO.md) |  | [optional] 
+**accounts** | [**\com\hydrogen\nucleus\Model\VAccountVO[]**](VAccountVO.md) |  | [optional] 
 **accumulation_horizon** | **double** |  | [optional] 
 **decumulation_horizon** | **double** |  | [optional] 
 **goal_amount** | **double** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **goal_type** | **string** |  | [optional] 
 **goal_update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **is_decumulation** | **bool** |  | [optional] 
-**portfolios** | [**\com\hydrogen\Model\VPortfolioVO[]**](VPortfolioVO.md) |  | [optional] 
+**portfolios** | [**\com\hydrogen\nucleus\Model\VPortfolioVO[]**](VPortfolioVO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

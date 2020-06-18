@@ -1,4 +1,4 @@
-# AtomApi::PageModelAssetSize
+# NucleusApi::PageModelAssetSize
 
 ## Properties
 Name | Type | Description | Notes

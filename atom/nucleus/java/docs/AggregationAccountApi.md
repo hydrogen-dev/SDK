@@ -44,9 +44,9 @@ Create a balance records under an aggregation accounts.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,9 +101,9 @@ Create a balance record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -158,9 +158,9 @@ Create a bulk aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -215,9 +215,9 @@ Create a bulk aggregation account holding.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -272,9 +272,9 @@ Create a holding record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -329,9 +329,9 @@ Create a bulk transaction record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -386,9 +386,9 @@ Create a transaction record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -443,9 +443,9 @@ Create an aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -500,9 +500,9 @@ Permanently delete a balance record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -556,9 +556,9 @@ Permanently delete a holding record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -612,9 +612,9 @@ Permanently delete a transaction record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -669,9 +669,9 @@ Permanently delete an aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -725,9 +725,9 @@ Retrieve the information for a specific aggregation account associated with a cl
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -782,9 +782,9 @@ Get information for all aggregation accounts for all clients defined for your fi
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -847,9 +847,9 @@ Get all of the balance records for all aggregation accounts defined for your fir
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -912,9 +912,9 @@ Retrieve the information for a specific balance record for an aggregation accoun
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -969,9 +969,9 @@ Get all of the holding records for all aggregation accounts defined for your fir
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1034,9 +1034,9 @@ Retrieve the information for a specific holding record for an aggregation accoun
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1091,9 +1091,9 @@ Retrieve the information for a specific aggregation account with aggregate data 
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1148,9 +1148,9 @@ Get all of the transaction records for all aggregation accounts defined for your
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1213,9 +1213,9 @@ Retrieve the information for a specific transaction record for an aggregation ac
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1270,9 +1270,9 @@ Retrieve the information for a specific aggregation account associated with a cl
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1327,9 +1327,9 @@ Update a balance record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1386,9 +1386,9 @@ Update a bulk aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1443,9 +1443,9 @@ Update a bulk holding record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1500,9 +1500,9 @@ Update a holding record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1559,9 +1559,9 @@ Update a transaction record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1618,9 +1618,9 @@ Update the information for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

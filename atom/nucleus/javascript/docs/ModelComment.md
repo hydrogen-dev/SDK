@@ -1,4 +1,4 @@
-# HydrogenAtomApi.ModelComment
+# HydrogenNucleusApi.ModelComment
 
 ## Properties
 Name | Type | Description | Notes

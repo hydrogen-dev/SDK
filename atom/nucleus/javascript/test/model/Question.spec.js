@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Question();
+    instance = new HydrogenNucleusApi.Question();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,103 +53,103 @@
   describe('Question', function() {
     it('should create an instance of Question', function() {
       // uncomment below and update the code to test Question
-      //var instane = new HydrogenAtomApi.Question();
-      //expect(instance).to.be.a(HydrogenAtomApi.Question);
+      //var instane = new HydrogenNucleusApi.Question();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Question);
     });
 
     it('should have the property answers (base name: "answers")', function() {
       // uncomment below and update the code to test the property answers
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property document (base name: "document")', function() {
       // uncomment below and update the code to test the property document
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property isAccount (base name: "is_account")', function() {
       // uncomment below and update the code to test the property isAccount
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property orderIndex (base name: "order_index")', function() {
       // uncomment below and update the code to test the property orderIndex
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property questionType (base name: "question_type")', function() {
       // uncomment below and update the code to test the property questionType
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property questionnaire (base name: "questionnaire")', function() {
       // uncomment below and update the code to test the property questionnaire
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property questionnaireId (base name: "questionnaire_id")', function() {
       // uncomment below and update the code to test the property questionnaireId
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property subcategory (base name: "subcategory")', function() {
       // uncomment below and update the code to test the property subcategory
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property tooltip (base name: "tooltip")', function() {
       // uncomment below and update the code to test the property tooltip
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instane = new HydrogenAtomApi.Question();
+      //var instane = new HydrogenNucleusApi.Question();
       //expect(instance).to.be();
     });
 

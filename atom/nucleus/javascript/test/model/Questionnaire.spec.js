@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.Questionnaire();
+    instance = new HydrogenNucleusApi.Questionnaire();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,67 +53,67 @@
   describe('Questionnaire', function() {
     it('should create an instance of Questionnaire', function() {
       // uncomment below and update the code to test Questionnaire
-      //var instane = new HydrogenAtomApi.Questionnaire();
-      //expect(instance).to.be.a(HydrogenAtomApi.Questionnaire);
+      //var instane = new HydrogenNucleusApi.Questionnaire();
+      //expect(instance).to.be.a(HydrogenNucleusApi.Questionnaire);
     });
 
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property decisionTreeId (base name: "decision_tree_id")', function() {
       // uncomment below and update the code to test the property decisionTreeId
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property isActive (base name: "is_active")', function() {
       // uncomment below and update the code to test the property isActive
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property questions (base name: "questions")', function() {
       // uncomment below and update the code to test the property questions
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property secondaryId (base name: "secondary_id")', function() {
       // uncomment below and update the code to test the property secondaryId
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 
     it('should have the property updateDate (base name: "update_date")', function() {
       // uncomment below and update the code to test the property updateDate
-      //var instane = new HydrogenAtomApi.Questionnaire();
+      //var instane = new HydrogenNucleusApi.Questionnaire();
       //expect(instance).to.be();
     });
 

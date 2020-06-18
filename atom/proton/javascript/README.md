@@ -102,7 +102,7 @@ var defaultClient = HydrogenProtonApi.ApiClient.instance;
 var oauth2 = defaultClient.authentications['oauth2'];
 
 // Create an instance of the Auth API class
-var api = new HydrogenAtomApi.AuthApi();
+var api = new HydrogenProtonApi.AuthApi();
 
 // Callback function definition
 var tokenGenerationCallback = function (error, data, response) {
@@ -112,6 +112,7 @@ var tokenGenerationCallback = function (error, data, response) {
     } else {
         console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
         oauth2.accessToken = data.access_token;
+        annuityCalculator();
     }
 };
 //          Use one of the below method to generate oauth token        
@@ -131,9 +132,6 @@ api.createUsingPostPassword({
     'client_secret': 'MYCLIENTSECRET'
 }, tokenGenerationCallback);
 
-var api = new HydrogenProtonApi.AnnuitiesApi()
-
-var annuityCalculatorAccumulationHorizonRequest = new HydrogenProtonApi.AnnuityCalculatorAccumulationHorizonRequest(); // {AnnuityCalculatorAccumulationHorizonRequest} Request payload for Annuity Calculator - Accumulation Horizon
 
 
 var callback = function(error, data, response) {
@@ -143,8 +141,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.annuityCalculatorAccumulationHorizon(annuityCalculatorAccumulationHorizonRequest, callback);
-
+const annuityCalculator = () => {
+    var api = new HydrogenProtonApi.AnnuitiesApi();
+    var annuityCalculatorAccumulationHorizonRequest = new HydrogenProtonApi.AnnuityCalculatorAccumulationHorizonRequest();
+    // {AnnuityCalculatorAccumulationHorizonRequest} Request payload for Annuity Calculator - Accumulation Horizon
+    api.annuityCalculatorAccumulationHorizon(annuityCalculatorAccumulationHorizonRequest, callback);
+}
 ```
 
 ## Documentation for API Endpoints

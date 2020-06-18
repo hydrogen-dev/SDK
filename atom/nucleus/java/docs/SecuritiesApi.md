@@ -31,9 +31,9 @@ Create a new security exclusion for a specific account or portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -88,9 +88,9 @@ Create a new price for a security defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -145,9 +145,9 @@ Create a new security for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -202,9 +202,9 @@ Permanently delete a security exclusion
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -258,9 +258,9 @@ Permanently delete a security price from a security.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -314,9 +314,9 @@ Permanently delete a security for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -370,9 +370,9 @@ Get details for all securities defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -435,9 +435,9 @@ Get details for all security exclusions defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -502,9 +502,9 @@ Retrieve the information for a security exclusion.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -559,9 +559,9 @@ Get prices for all securities defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -624,9 +624,9 @@ Retrieve the information for a security price for a security.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -681,9 +681,9 @@ Retrieve the information for a security defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -738,9 +738,9 @@ Update the information for a security exclusion.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -797,9 +797,9 @@ Update a security price for a security.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -856,9 +856,9 @@ Update a security for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

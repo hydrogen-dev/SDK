@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * VClientGoalViewData Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -62,7 +62,7 @@ class VClientGoalViewData implements ModelInterface, ArrayAccess
         'client_first_name' => 'string',
         'client_id' => 'string',
         'client_last_name' => 'string',
-        'client_view_goal_data' => '\com\hydrogen\Model\ClientViewGoalData[]'
+        'client_view_goal_data' => '\com\hydrogen\nucleus\Model\ClientViewGoalData[]'
     ];
 
     /**
@@ -357,7 +357,7 @@ class VClientGoalViewData implements ModelInterface, ArrayAccess
     /**
      * Gets client_view_goal_data
      *
-     * @return \com\hydrogen\Model\ClientViewGoalData[]
+     * @return \com\hydrogen\nucleus\Model\ClientViewGoalData[]
      */
     public function getClientViewGoalData()
     {
@@ -367,7 +367,7 @@ class VClientGoalViewData implements ModelInterface, ArrayAccess
     /**
      * Sets client_view_goal_data
      *
-     * @param \com\hydrogen\Model\ClientViewGoalData[] $client_view_goal_data client_view_goal_data
+     * @param \com\hydrogen\nucleus\Model\ClientViewGoalData[] $client_view_goal_data client_view_goal_data
      *
      * @return $this
      */

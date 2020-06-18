@@ -1,4 +1,4 @@
-# AtomApi::PortfolioApi
+# NucleusApi::PortfolioApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -47,9 +47,9 @@ Create a new asset size record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -58,16 +58,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_asset_size_log_request = AtomApi::PortfolioAssetSizeLog.new # PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
+portfolio_asset_size_log_request = NucleusApi::PortfolioAssetSizeLog.new # PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
 
 
 begin
   #Create a portfolio asset size
   result = api_instance.create_portfolio_asset_size_using_post(portfolio_asset_size_log_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->create_portfolio_asset_size_using_post: #{e}"
 end
 ```
@@ -103,9 +103,9 @@ Create a new comment for a portfolio defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -114,16 +114,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_comment = AtomApi::PortfolioComment.new # PortfolioComment | portfolioComment
+portfolio_comment = NucleusApi::PortfolioComment.new # PortfolioComment | portfolioComment
 
 
 begin
   #Create a portfolio commentary
   result = api_instance.create_portfolio_comment_using_post(portfolio_comment)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->create_portfolio_comment_using_post: #{e}"
 end
 ```
@@ -159,9 +159,9 @@ Create an portfolio goal.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -170,16 +170,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_goal = AtomApi::PortfolioGoal.new # PortfolioGoal | portfolioGoal
+portfolio_goal = NucleusApi::PortfolioGoal.new # PortfolioGoal | portfolioGoal
 
 
 begin
   #Create an portfolio goal
   result = api_instance.create_portfolio_goal_using_post(portfolio_goal)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->create_portfolio_goal_using_post: #{e}"
 end
 ```
@@ -215,9 +215,9 @@ Create a new holding record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -226,16 +226,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_holdin_log_request = AtomApi::PortfolioHoldingLog.new # PortfolioHoldingLog | portfolioHoldinLogRequest
+portfolio_holdin_log_request = NucleusApi::PortfolioHoldingLog.new # PortfolioHoldingLog | portfolioHoldinLogRequest
 
 
 begin
   #Create a portfolio holding
   result = api_instance.create_portfolio_holding_using_post(portfolio_holdin_log_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->create_portfolio_holding_using_post: #{e}"
 end
 ```
@@ -271,9 +271,9 @@ Create a new transaction record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -282,16 +282,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_transaction_request = AtomApi::PortfolioTransaction.new # PortfolioTransaction | portfolioTransactionRequest
+portfolio_transaction_request = NucleusApi::PortfolioTransaction.new # PortfolioTransaction | portfolioTransactionRequest
 
 
 begin
   #Create a portfolio transaction
   result = api_instance.create_portfolio_transaction_using_post(portfolio_transaction_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->create_portfolio_transaction_using_post: #{e}"
 end
 ```
@@ -327,9 +327,9 @@ Create a new portfolio for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -338,16 +338,16 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_request = AtomApi::Portfolio.new # Portfolio | portfolioRequest
+portfolio_request = NucleusApi::Portfolio.new # Portfolio | portfolioRequest
 
 
 begin
   #Create a portfolio
   result = api_instance.create_portfolio_using_post(portfolio_request)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->create_portfolio_using_post: #{e}"
 end
 ```
@@ -383,9 +383,9 @@ Permanently delete a portfolio asset size record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -394,7 +394,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # String | UUID portfolio_asset_size_id
 
@@ -402,7 +402,7 @@ portfolio_asset_size_id = 'portfolio_asset_size_id_example' # String | UUID port
 begin
   #Delete a portfolio asset size
   api_instance.delete_portfolio_asset_size_using_delete(portfolio_asset_size_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->delete_portfolio_asset_size_using_delete: #{e}"
 end
 ```
@@ -438,9 +438,9 @@ Permanently delete a portfolio comment for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -449,7 +449,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_comment_id = 'portfolio_comment_id_example' # String | UUID portfolio_comment_id
 
@@ -457,7 +457,7 @@ portfolio_comment_id = 'portfolio_comment_id_example' # String | UUID portfolio_
 begin
   #Delete a portfolio commentary
   api_instance.delete_portfolio_comment_using_delete(portfolio_comment_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->delete_portfolio_comment_using_delete: #{e}"
 end
 ```
@@ -493,9 +493,9 @@ Permanently delete an portfolio-goal mapping.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -504,7 +504,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_goal_id = 'portfolio_goal_id_example' # String | UUID portfolio_goal_id
 
@@ -512,7 +512,7 @@ portfolio_goal_id = 'portfolio_goal_id_example' # String | UUID portfolio_goal_i
 begin
   #Delete an portfolio goal
   api_instance.delete_portfolio_goal_using_delete(portfolio_goal_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->delete_portfolio_goal_using_delete: #{e}"
 end
 ```
@@ -548,9 +548,9 @@ Permanently delete a portfolio holding record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -559,7 +559,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_holding_id = 'portfolio_holding_id_example' # String | UUID portfolio_holding_id
 
@@ -567,7 +567,7 @@ portfolio_holding_id = 'portfolio_holding_id_example' # String | UUID portfolio_
 begin
   #Delete a portfolio holding
   api_instance.delete_portfolio_holding_using_delete(portfolio_holding_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->delete_portfolio_holding_using_delete: #{e}"
 end
 ```
@@ -603,9 +603,9 @@ Permanently delete a portfolio transaction record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -614,7 +614,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_transaction_id = 'portfolio_transaction_id_example' # String | UUID portfolio_transaction_id
 
@@ -622,7 +622,7 @@ portfolio_transaction_id = 'portfolio_transaction_id_example' # String | UUID po
 begin
   #Delete a portfolio transaction
   api_instance.delete_portfolio_transaction_using_delete(portfolio_transaction_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->delete_portfolio_transaction_using_delete: #{e}"
 end
 ```
@@ -658,9 +658,9 @@ Permanently delete a portfolio for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -669,7 +669,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_id = 'portfolio_id_example' # String | UUID portfolio_id
 
@@ -677,7 +677,7 @@ portfolio_id = 'portfolio_id_example' # String | UUID portfolio_id
 begin
   #Delete a portfolio
   api_instance.delete_portfolio_using_delete(portfolio_id)
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->delete_portfolio_using_delete: #{e}"
 end
 ```
@@ -713,9 +713,9 @@ Retrieve the information for a securities associated with a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -724,7 +724,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_id = 'portfolio_id_example' # String | Portfolio Id
 
@@ -740,7 +740,7 @@ begin
   #Retrieve an portfolio aggregate data
   result = api_instance.get_portfolio_aggregated_data_using_get(portfolio_id, opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_aggregated_data_using_get: #{e}"
 end
 ```
@@ -781,9 +781,9 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -792,7 +792,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -806,7 +806,7 @@ begin
   #List all portfolios
   result = api_instance.get_portfolio_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_all_using_get: #{e}"
 end
 ```
@@ -846,9 +846,9 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -857,7 +857,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -871,7 +871,7 @@ begin
   #Retrieve a portfolio asset size
   result = api_instance.get_portfolio_asset_size_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_asset_size_all_using_get: #{e}"
 end
 ```
@@ -911,9 +911,9 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -922,7 +922,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # String | portfolio_asset_size_id
 
@@ -931,7 +931,7 @@ begin
   #Retrieve a portfolio asset size
   result = api_instance.get_portfolio_asset_size_using_get(portfolio_asset_size_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_asset_size_using_get: #{e}"
 end
 ```
@@ -967,9 +967,9 @@ List all comments for all portfolios defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -978,7 +978,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -992,7 +992,7 @@ begin
   #List all portfolio commentary
   result = api_instance.get_portfolio_comment_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_comment_all_using_get: #{e}"
 end
 ```
@@ -1032,9 +1032,9 @@ Retrieve the information for a portfolio comment for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1043,7 +1043,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_comment_id = 'portfolio_comment_id_example' # String | UUID portfolio_comment_id
 
@@ -1052,7 +1052,7 @@ begin
   #Retrieve a portfolio commentary
   result = api_instance.get_portfolio_comment_using_get(portfolio_comment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_comment_using_get: #{e}"
 end
 ```
@@ -1088,9 +1088,9 @@ Get information for all portfolio-goal mappings defined for your firm.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1099,7 +1099,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1113,7 +1113,7 @@ begin
   #List all portfolio goals
   result = api_instance.get_portfolio_goal_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_goal_all_using_get: #{e}"
 end
 ```
@@ -1153,9 +1153,9 @@ Retrieve the information for a specific portfolio-goal mapping.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1164,7 +1164,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_goal_id = 'portfolio_goal_id_example' # String | UUID portfolio_goal_id
 
@@ -1173,7 +1173,7 @@ begin
   #Retrieve an portfolio goal
   result = api_instance.get_portfolio_goal_using_get(portfolio_goal_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_goal_using_get: #{e}"
 end
 ```
@@ -1209,9 +1209,9 @@ Get the information for all holding records for all portfolios defined for your 
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1220,7 +1220,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1234,7 +1234,7 @@ begin
   #List all portfolio holdings
   result = api_instance.get_portfolio_holding_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_holding_all_using_get: #{e}"
 end
 ```
@@ -1274,9 +1274,9 @@ Retrieve the information for a portfolio holding record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1285,7 +1285,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_holding_id = 'portfolio_holding_id_example' # String | UUID portfolio_holding_id
 
@@ -1294,7 +1294,7 @@ begin
   #Retrieve a portfolio holding
   result = api_instance.get_portfolio_holding_using_get(portfolio_holding_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_holding_using_get: #{e}"
 end
 ```
@@ -1330,9 +1330,9 @@ Get the information for all transaction records for all portfolios defined for y
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1341,7 +1341,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
@@ -1355,7 +1355,7 @@ begin
   #List all portfolio transactions
   result = api_instance.get_portfolio_transaction_all_using_get(opts)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_transaction_all_using_get: #{e}"
 end
 ```
@@ -1395,9 +1395,9 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1406,7 +1406,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_transaction_id = 'portfolio_transaction_id_example' # String | UUID portfolio_transaction_id
 
@@ -1415,7 +1415,7 @@ begin
   #Retrieve a portfolio transaction
   result = api_instance.get_portfolio_transaction_using_get(portfolio_transaction_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_transaction_using_get: #{e}"
 end
 ```
@@ -1451,9 +1451,9 @@ Retrieve a portfolio for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1462,7 +1462,7 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_id = 'portfolio_id_example' # String | UUID portfolio_id
 
@@ -1471,7 +1471,7 @@ begin
   #Retrieve a portfolio
   result = api_instance.get_portfolio_using_get(portfolio_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_using_get: #{e}"
 end
 ```
@@ -1507,9 +1507,9 @@ Update the information for a portfolio asset size record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1518,9 +1518,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_asset_size = AtomApi::PortfolioAssetSizeLog.new # PortfolioAssetSizeLog | portfolio_asset_size
+portfolio_asset_size = NucleusApi::PortfolioAssetSizeLog.new # PortfolioAssetSizeLog | portfolio_asset_size
 
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # String | UUID portfolio_asset_size_id
 
@@ -1529,7 +1529,7 @@ begin
   #Update a portfolio asset size
   result = api_instance.update_portfolio_asset_size_using_put(portfolio_asset_size, portfolio_asset_size_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->update_portfolio_asset_size_using_put: #{e}"
 end
 ```
@@ -1566,9 +1566,9 @@ Update the information for a portfolio comment for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1577,9 +1577,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_comment = AtomApi::PortfolioComment.new # PortfolioComment | portfolio_comment
+portfolio_comment = NucleusApi::PortfolioComment.new # PortfolioComment | portfolio_comment
 
 portfolio_comment_id = 'portfolio_comment_id_example' # String | UUID portfolio_comment_id
 
@@ -1588,7 +1588,7 @@ begin
   #Update a portfolio comment
   result = api_instance.update_portfolio_comment_using_put(portfolio_comment, portfolio_comment_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->update_portfolio_comment_using_put: #{e}"
 end
 ```
@@ -1625,9 +1625,9 @@ Update the information for an portfolio-goal mapping.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1636,9 +1636,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_goal = AtomApi::PortfolioGoal.new # PortfolioGoal | portfolio_goal
+portfolio_goal = NucleusApi::PortfolioGoal.new # PortfolioGoal | portfolio_goal
 
 portfolio_goal_id = 'portfolio_goal_id_example' # String | UUID portfolio_goal_id
 
@@ -1647,7 +1647,7 @@ begin
   #Update an portfolio goal
   result = api_instance.update_portfolio_goal_using_put(portfolio_goal, portfolio_goal_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->update_portfolio_goal_using_put: #{e}"
 end
 ```
@@ -1684,9 +1684,9 @@ Update the information for a portfolio holding record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1695,9 +1695,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_holding = AtomApi::PortfolioHoldingLog.new # PortfolioHoldingLog | portfolio_holding
+portfolio_holding = NucleusApi::PortfolioHoldingLog.new # PortfolioHoldingLog | portfolio_holding
 
 portfolio_holding_id = 'portfolio_holding_id_example' # String | UUID portfolio_holding_id
 
@@ -1706,7 +1706,7 @@ begin
   #Update a portfolio holding
   result = api_instance.update_portfolio_holding_using_put(portfolio_holding, portfolio_holding_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->update_portfolio_holding_using_put: #{e}"
 end
 ```
@@ -1743,9 +1743,9 @@ Update the information for a portfolio transaction record for a portfolio.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1754,9 +1754,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_transaction = AtomApi::PortfolioTransaction.new # PortfolioTransaction | portfolio_transaction
+portfolio_transaction = NucleusApi::PortfolioTransaction.new # PortfolioTransaction | portfolio_transaction
 
 portfolio_transaction_id = 'portfolio_transaction_id_example' # String | UUID portfolio_transaction_id
 
@@ -1765,7 +1765,7 @@ begin
   #Update a portfolio transaction
   result = api_instance.update_portfolio_transaction_using_put(portfolio_transaction, portfolio_transaction_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->update_portfolio_transaction_using_put: #{e}"
 end
 ```
@@ -1802,9 +1802,9 @@ Update a portfolio for an account.
 ### Example
 ```ruby
 # load the gem
-require 'atom_api'
+require 'nucleus_api'
 # Setup authorization
-AtomApi.configure do |config|
+NucleusApi.configure do |config|
 # Use one of the below method to generate oauth token        
 # Creating a token for grant_type=client_credentials
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
@@ -1813,9 +1813,9 @@ AtomApi.configure do |config|
 end
 
 
-api_instance = AtomApi::PortfolioApi.new
+api_instance = NucleusApi::PortfolioApi.new
 
-portfolio = AtomApi::Portfolio.new # Portfolio | portfolio
+portfolio = NucleusApi::Portfolio.new # Portfolio | portfolio
 
 portfolio_id = 'portfolio_id_example' # String | UUID portfolio_id
 
@@ -1824,7 +1824,7 @@ begin
   #Update a portfolio
   result = api_instance.update_portfolio_using_put(portfolio, portfolio_id)
   p result
-rescue AtomApi::ApiError => e
+rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->update_portfolio_using_put: #{e}"
 end
 ```

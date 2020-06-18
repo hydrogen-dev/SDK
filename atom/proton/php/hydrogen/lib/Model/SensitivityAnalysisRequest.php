@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\proton\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\proton\ObjectSerializer;
 
 /**
  * SensitivityAnalysisRequest Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\proton
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -66,7 +66,7 @@ class SensitivityAnalysisRequest implements ModelInterface, ArrayAccess
         'allocation_id' => 'string',
         'account_id' => 'string',
         'portfolio_id' => 'string',
-        'sensitivity_factor' => '\com\hydrogen\Model\SensitivityFactor',
+        'sensitivity_factor' => '\com\hydrogen\proton\Model\SensitivityFactor',
         'portfolio_weights' => 'float[]',
         'frequency_interval' => 'string',
         'aggregation_account_id' => 'string',
@@ -575,7 +575,7 @@ class SensitivityAnalysisRequest implements ModelInterface, ArrayAccess
     /**
      * Gets sensitivity_factor
      *
-     * @return \com\hydrogen\Model\SensitivityFactor
+     * @return \com\hydrogen\proton\Model\SensitivityFactor
      */
     public function getSensitivityFactor()
     {
@@ -585,7 +585,7 @@ class SensitivityAnalysisRequest implements ModelInterface, ArrayAccess
     /**
      * Sets sensitivity_factor
      *
-     * @param \com\hydrogen\Model\SensitivityFactor $sensitivity_factor sensitivity_factor
+     * @param \com\hydrogen\proton\Model\SensitivityFactor $sensitivity_factor sensitivity_factor
      *
      * @return $this
      */

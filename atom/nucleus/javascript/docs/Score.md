@@ -1,4 +1,4 @@
-# HydrogenAtomApi.Score
+# HydrogenNucleusApi.Score
 
 ## Properties
 Name | Type | Description | Notes

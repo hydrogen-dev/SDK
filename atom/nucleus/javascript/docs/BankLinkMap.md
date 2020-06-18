@@ -1,4 +1,4 @@
-# HydrogenAtomApi.BankLinkMap
+# HydrogenNucleusApi.BankLinkMap
 
 ## Properties
 Name | Type | Description | Notes

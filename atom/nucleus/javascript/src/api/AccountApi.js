@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/AccountAllocationMapping'), require('../model/AccountOverviewVO'), require('../model/AccountPermissionVO'), require('../model/AccountType'), require('../model/AclClientPermissionVO'), require('../model/AvailableDateDoubleVO'), require('../model/PageAccount'), require('../model/PageAccountAllocationMapping'), require('../model/PageAccountPermissionVO'), require('../model/PageAccountType'), require('../model/PagePortfolioTransaction'), require('../model/PageVAccountAssetSize'), require('../model/Portfolio'), require('../model/PortfolioHoldingAgg'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.AccountApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.Account, root.HydrogenAtomApi.AccountAllocationMapping, root.HydrogenAtomApi.AccountOverviewVO, root.HydrogenAtomApi.AccountPermissionVO, root.HydrogenAtomApi.AccountType, root.HydrogenAtomApi.AclClientPermissionVO, root.HydrogenAtomApi.AvailableDateDoubleVO, root.HydrogenAtomApi.PageAccount, root.HydrogenAtomApi.PageAccountAllocationMapping, root.HydrogenAtomApi.PageAccountPermissionVO, root.HydrogenAtomApi.PageAccountType, root.HydrogenAtomApi.PagePortfolioTransaction, root.HydrogenAtomApi.PageVAccountAssetSize, root.HydrogenAtomApi.Portfolio, root.HydrogenAtomApi.PortfolioHoldingAgg);
+    root.HydrogenNucleusApi.AccountApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.Account, root.HydrogenNucleusApi.AccountAllocationMapping, root.HydrogenNucleusApi.AccountOverviewVO, root.HydrogenNucleusApi.AccountPermissionVO, root.HydrogenNucleusApi.AccountType, root.HydrogenNucleusApi.AclClientPermissionVO, root.HydrogenNucleusApi.AvailableDateDoubleVO, root.HydrogenNucleusApi.PageAccount, root.HydrogenNucleusApi.PageAccountAllocationMapping, root.HydrogenNucleusApi.PageAccountPermissionVO, root.HydrogenNucleusApi.PageAccountType, root.HydrogenNucleusApi.PagePortfolioTransaction, root.HydrogenNucleusApi.PageVAccountAssetSize, root.HydrogenNucleusApi.Portfolio, root.HydrogenNucleusApi.PortfolioHoldingAgg);
   }
 }(this, function(ApiClient, Account, AccountAllocationMapping, AccountOverviewVO, AccountPermissionVO, AccountType, AclClientPermissionVO, AvailableDateDoubleVO, PageAccount, PageAccountAllocationMapping, PageAccountPermissionVO, PageAccountType, PagePortfolioTransaction, PageVAccountAssetSize, Portfolio, PortfolioHoldingAgg) {
   'use strict';

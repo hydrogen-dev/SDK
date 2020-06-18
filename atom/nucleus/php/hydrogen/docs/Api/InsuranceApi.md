@@ -1,4 +1,4 @@
-# com\hydrogen\InsuranceApi
+# com\hydrogen\nucleus\InsuranceApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **createInsuranceCoverageUsingPost**
-> \com\hydrogen\Model\InsuranceCoverage createInsuranceCoverageUsingPost($insurance_coverage)
+> \com\hydrogen\nucleus\Model\InsuranceCoverage createInsuranceCoverageUsingPost($insurance_coverage)
 
 Create a insurance coverage request
 
@@ -31,29 +31,29 @@ Create a new insurance coverage.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_coverage = new \com\hydrogen\Model\InsuranceCoverage(); // \com\hydrogen\Model\InsuranceCoverage | insuranceCoverage
+$insurance_coverage = new \com\hydrogen\nucleus\Model\InsuranceCoverage(); // \com\hydrogen\nucleus\Model\InsuranceCoverage | insuranceCoverage
 
 try {
     $result = $apiInstance->createInsuranceCoverageUsingPost($insurance_coverage);
@@ -68,11 +68,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_coverage** | [**\com\hydrogen\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)| insuranceCoverage |
+ **insurance_coverage** | [**\com\hydrogen\nucleus\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)| insuranceCoverage |
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)
+[**\com\hydrogen\nucleus\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createInsuranceDiscountUsingPost**
-> \com\hydrogen\Model\InsuranceDiscount createInsuranceDiscountUsingPost($insurance_discount)
+> \com\hydrogen\nucleus\Model\InsuranceDiscount createInsuranceDiscountUsingPost($insurance_discount)
 
 Create a insurance discount request
 
@@ -95,29 +95,29 @@ Create a new insurance discount.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_discount = new \com\hydrogen\Model\InsuranceDiscount(); // \com\hydrogen\Model\InsuranceDiscount | insuranceDiscount
+$insurance_discount = new \com\hydrogen\nucleus\Model\InsuranceDiscount(); // \com\hydrogen\nucleus\Model\InsuranceDiscount | insuranceDiscount
 
 try {
     $result = $apiInstance->createInsuranceDiscountUsingPost($insurance_discount);
@@ -132,11 +132,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_discount** | [**\com\hydrogen\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)| insuranceDiscount |
+ **insurance_discount** | [**\com\hydrogen\nucleus\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)| insuranceDiscount |
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)
+[**\com\hydrogen\nucleus\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createInsuranceQuoteUsingPost**
-> \com\hydrogen\Model\InsuranceQuote createInsuranceQuoteUsingPost($insurance_quote)
+> \com\hydrogen\nucleus\Model\InsuranceQuote createInsuranceQuoteUsingPost($insurance_quote)
 
 Create a insuranceQuote request
 
@@ -159,29 +159,29 @@ Create a new insuranceQuote request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_quote = new \com\hydrogen\Model\InsuranceQuote(); // \com\hydrogen\Model\InsuranceQuote | insuranceQuote
+$insurance_quote = new \com\hydrogen\nucleus\Model\InsuranceQuote(); // \com\hydrogen\nucleus\Model\InsuranceQuote | insuranceQuote
 
 try {
     $result = $apiInstance->createInsuranceQuoteUsingPost($insurance_quote);
@@ -196,11 +196,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**\com\hydrogen\Model\InsuranceQuote**](../Model/InsuranceQuote.md)| insuranceQuote |
+ **insurance_quote** | [**\com\hydrogen\nucleus\Model\InsuranceQuote**](../Model/InsuranceQuote.md)| insuranceQuote |
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceQuote**](../Model/InsuranceQuote.md)
+[**\com\hydrogen\nucleus\Model\InsuranceQuote**](../Model/InsuranceQuote.md)
 
 ### Authorization
 
@@ -223,23 +223,23 @@ Delete an  insurance coverage.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -286,23 +286,23 @@ Delete an  insurance discount.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -349,23 +349,23 @@ Permanently delete a insuranceQuote request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -405,7 +405,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceCoverageAllUsingGet**
-> \com\hydrogen\Model\PageInsuranceCoverage_ getInsuranceCoverageAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInsuranceCoverage_ getInsuranceCoverageAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 Get all insurance coverage request
 
@@ -414,23 +414,23 @@ Get all new insurance coverage.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageInsuranceCoverage_**](../Model/PageInsuranceCoverage_.md)
+[**\com\hydrogen\nucleus\Model\PageInsuranceCoverage_**](../Model/PageInsuranceCoverage_.md)
 
 ### Authorization
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceCoverageUsingGet**
-> \com\hydrogen\Model\InsuranceCoverage getInsuranceCoverageUsingGet($insurance_coverage_id)
+> \com\hydrogen\nucleus\Model\InsuranceCoverage getInsuranceCoverageUsingGet($insurance_coverage_id)
 
 Get a insurance coverage request
 
@@ -486,23 +486,23 @@ Get a new insurance coverage.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)
+[**\com\hydrogen\nucleus\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)
 
 ### Authorization
 
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceDiscountAllUsingGet**
-> \com\hydrogen\Model\PageInsuranceDiscount_ getInsuranceDiscountAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInsuranceDiscount_ getInsuranceDiscountAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 Get all insurance discount request
 
@@ -550,23 +550,23 @@ Get all new insurance discount.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageInsuranceDiscount_**](../Model/PageInsuranceDiscount_.md)
+[**\com\hydrogen\nucleus\Model\PageInsuranceDiscount_**](../Model/PageInsuranceDiscount_.md)
 
 ### Authorization
 
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceDiscountUsingGet**
-> \com\hydrogen\Model\InsuranceDiscount getInsuranceDiscountUsingGet($insurance_discount_id)
+> \com\hydrogen\nucleus\Model\InsuranceDiscount getInsuranceDiscountUsingGet($insurance_discount_id)
 
 Get a insurance discount request
 
@@ -622,23 +622,23 @@ Get a new insurance discount.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)
+[**\com\hydrogen\nucleus\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)
 
 ### Authorization
 
@@ -677,7 +677,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceQuoteAllUsingGet**
-> \com\hydrogen\Model\PageInsuranceQuote_ getInsuranceQuoteAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInsuranceQuote_ getInsuranceQuoteAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all insuranceQuote requests
 
@@ -686,23 +686,23 @@ Get the information for all insuranceQuote requests.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageInsuranceQuote_**](../Model/PageInsuranceQuote_.md)
+[**\com\hydrogen\nucleus\Model\PageInsuranceQuote_**](../Model/PageInsuranceQuote_.md)
 
 ### Authorization
 
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceQuoteUsingGet**
-> \com\hydrogen\Model\InsuranceQuote getInsuranceQuoteUsingGet($insurance_quote, $insurance_quote_id)
+> \com\hydrogen\nucleus\Model\InsuranceQuote getInsuranceQuoteUsingGet($insurance_quote, $insurance_quote_id)
 
 Retrieve a insuranceQuote request
 
@@ -758,23 +758,23 @@ Retrieve the information for a insuranceQuote request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -801,7 +801,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceQuote**](../Model/InsuranceQuote.md)
+[**\com\hydrogen\nucleus\Model\InsuranceQuote**](../Model/InsuranceQuote.md)
 
 ### Authorization
 
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateInsuranceCoverageUsingPut**
-> \com\hydrogen\Model\InsuranceCoverage updateInsuranceCoverageUsingPut($insurance_coverage, $insurance_coverage_id)
+> \com\hydrogen\nucleus\Model\InsuranceCoverage updateInsuranceCoverageUsingPut($insurance_coverage, $insurance_coverage_id)
 
 Update a insurance coverage request
 
@@ -824,29 +824,29 @@ Update a new insurance coverage.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_coverage = new \com\hydrogen\Model\InsuranceCoverage(); // \com\hydrogen\Model\InsuranceCoverage | insurance_coverage
+$insurance_coverage = new \com\hydrogen\nucleus\Model\InsuranceCoverage(); // \com\hydrogen\nucleus\Model\InsuranceCoverage | insurance_coverage
 $insurance_coverage_id = "insurance_coverage_id_example"; // string | UUID insurance_coverage_id
 
 try {
@@ -862,12 +862,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_coverage** | [**\com\hydrogen\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)| insurance_coverage |
+ **insurance_coverage** | [**\com\hydrogen\nucleus\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)| insurance_coverage |
  **insurance_coverage_id** | [**string**](../Model/.md)| UUID insurance_coverage_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)
+[**\com\hydrogen\nucleus\Model\InsuranceCoverage**](../Model/InsuranceCoverage.md)
 
 ### Authorization
 
@@ -881,7 +881,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateInsuranceDiscountUsingPut**
-> \com\hydrogen\Model\InsuranceDiscount updateInsuranceDiscountUsingPut($insurance_discount, $insurance_discount_id)
+> \com\hydrogen\nucleus\Model\InsuranceDiscount updateInsuranceDiscountUsingPut($insurance_discount, $insurance_discount_id)
 
 Update an insurance discount
 
@@ -890,29 +890,29 @@ Update an new insurance .
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_discount = new \com\hydrogen\Model\InsuranceDiscount(); // \com\hydrogen\Model\InsuranceDiscount | insurance_discount
+$insurance_discount = new \com\hydrogen\nucleus\Model\InsuranceDiscount(); // \com\hydrogen\nucleus\Model\InsuranceDiscount | insurance_discount
 $insurance_discount_id = "insurance_discount_id_example"; // string | UUID insurance_discount_id
 
 try {
@@ -928,12 +928,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_discount** | [**\com\hydrogen\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)| insurance_discount |
+ **insurance_discount** | [**\com\hydrogen\nucleus\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)| insurance_discount |
  **insurance_discount_id** | [**string**](../Model/.md)| UUID insurance_discount_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)
+[**\com\hydrogen\nucleus\Model\InsuranceDiscount**](../Model/InsuranceDiscount.md)
 
 ### Authorization
 
@@ -947,7 +947,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateInsuranceQuoteUsingPut**
-> \com\hydrogen\Model\InsuranceQuote updateInsuranceQuoteUsingPut($insurance_quote, $insurance_quote_id)
+> \com\hydrogen\nucleus\Model\InsuranceQuote updateInsuranceQuoteUsingPut($insurance_quote, $insurance_quote_id)
 
 Update a insuranceQuote request
 
@@ -956,29 +956,29 @@ Update the information for a insuranceQuote request.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\InsuranceApi(
+$apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_quote = new \com\hydrogen\Model\InsuranceQuote(); // \com\hydrogen\Model\InsuranceQuote | insurance_quote
+$insurance_quote = new \com\hydrogen\nucleus\Model\InsuranceQuote(); // \com\hydrogen\nucleus\Model\InsuranceQuote | insurance_quote
 $insurance_quote_id = "insurance_quote_id_example"; // string | UUID insurance_quote_id
 
 try {
@@ -994,12 +994,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**\com\hydrogen\Model\InsuranceQuote**](../Model/InsuranceQuote.md)| insurance_quote |
+ **insurance_quote** | [**\com\hydrogen\nucleus\Model\InsuranceQuote**](../Model/InsuranceQuote.md)| insurance_quote |
  **insurance_quote_id** | [**string**](../Model/.md)| UUID insurance_quote_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\InsuranceQuote**](../Model/InsuranceQuote.md)
+[**\com\hydrogen\nucleus\Model\InsuranceQuote**](../Model/InsuranceQuote.md)
 
 ### Authorization
 

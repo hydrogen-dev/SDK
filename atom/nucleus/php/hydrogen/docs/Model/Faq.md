@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **answer** | **string** | answer | 
 **category** | **string** | category | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**faq_keywords** | [**\com\hydrogen\Model\FAQKeyword[]**](FAQKeyword.md) |  | [optional] 
+**faq_keywords** | [**\com\hydrogen\nucleus\Model\FAQKeyword[]**](FAQKeyword.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | isActive | [optional] 
 **is_featured** | **bool** | isFeatured | [optional] 

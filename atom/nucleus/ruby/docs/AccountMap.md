@@ -1,4 +1,4 @@
-# AtomApi::AccountMap
+# NucleusApi::AccountMap
 
 ## Properties
 Name | Type | Description | Notes

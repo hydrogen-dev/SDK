@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageModelAssetSize
+# HydrogenNucleusApi.PageModelAssetSize
 
 ## Properties
 Name | Type | Description | Notes

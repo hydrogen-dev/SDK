@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/InsuranceCoverage'), require('../model/InsuranceDiscount'), require('../model/InsuranceQuote'), require('../model/PageInsuranceCoverage'), require('../model/PageInsuranceDiscount'), require('../model/PageInsuranceQuote'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.InsuranceApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.InsuranceCoverage, root.HydrogenAtomApi.InsuranceDiscount, root.HydrogenAtomApi.InsuranceQuote, root.HydrogenAtomApi.PageInsuranceCoverage, root.HydrogenAtomApi.PageInsuranceDiscount, root.HydrogenAtomApi.PageInsuranceQuote);
+    root.HydrogenNucleusApi.InsuranceApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.InsuranceCoverage, root.HydrogenNucleusApi.InsuranceDiscount, root.HydrogenNucleusApi.InsuranceQuote, root.HydrogenNucleusApi.PageInsuranceCoverage, root.HydrogenNucleusApi.PageInsuranceDiscount, root.HydrogenNucleusApi.PageInsuranceQuote);
   }
 }(this, function(ApiClient, InsuranceCoverage, InsuranceDiscount, InsuranceQuote, PageInsuranceCoverage, PageInsuranceDiscount, PageInsuranceQuote) {
   'use strict';

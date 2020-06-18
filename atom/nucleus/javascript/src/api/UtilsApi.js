@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/AccountStatus'), require('../model/PageAccountStatus'), require('../model/PageStage'), require('../model/PageTransactionCode'), require('../model/Stage'), require('../model/TransactionCode'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.UtilsApi = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AccountStatus, root.HydrogenAtomApi.PageAccountStatus, root.HydrogenAtomApi.PageStage, root.HydrogenAtomApi.PageTransactionCode, root.HydrogenAtomApi.Stage, root.HydrogenAtomApi.TransactionCode);
+    root.HydrogenNucleusApi.UtilsApi = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AccountStatus, root.HydrogenNucleusApi.PageAccountStatus, root.HydrogenNucleusApi.PageStage, root.HydrogenNucleusApi.PageTransactionCode, root.HydrogenNucleusApi.Stage, root.HydrogenNucleusApi.TransactionCode);
   }
 }(this, function(ApiClient, AccountStatus, PageAccountStatus, PageStage, PageTransactionCode, Stage, TransactionCode) {
   'use strict';

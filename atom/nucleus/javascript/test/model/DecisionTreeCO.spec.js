@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.DecisionTreeCO();
+    instance = new HydrogenNucleusApi.DecisionTreeCO();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('DecisionTreeCO', function() {
     it('should create an instance of DecisionTreeCO', function() {
       // uncomment below and update the code to test DecisionTreeCO
-      //var instane = new HydrogenAtomApi.DecisionTreeCO();
-      //expect(instance).to.be.a(HydrogenAtomApi.DecisionTreeCO);
+      //var instane = new HydrogenNucleusApi.DecisionTreeCO();
+      //expect(instance).to.be.a(HydrogenNucleusApi.DecisionTreeCO);
     });
 
     it('should have the property answers (base name: "answers")', function() {
       // uncomment below and update the code to test the property answers
-      //var instane = new HydrogenAtomApi.DecisionTreeCO();
+      //var instane = new HydrogenNucleusApi.DecisionTreeCO();
       //expect(instance).to.be();
     });
 
     it('should have the property entityType (base name: "entity_type")', function() {
       // uncomment below and update the code to test the property entityType
-      //var instane = new HydrogenAtomApi.DecisionTreeCO();
+      //var instane = new HydrogenNucleusApi.DecisionTreeCO();
       //expect(instance).to.be();
     });
 

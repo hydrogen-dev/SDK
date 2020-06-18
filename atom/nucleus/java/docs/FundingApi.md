@@ -42,9 +42,9 @@ Create a new bank link for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -99,9 +99,9 @@ Create a new deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -156,9 +156,9 @@ Create a new funding request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -213,9 +213,9 @@ Create a new external account transfer for a client account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -270,9 +270,9 @@ Create a new withdrawal request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -327,9 +327,9 @@ Permanently delete a bank link defined for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -383,9 +383,9 @@ Permanently delete a deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -439,9 +439,9 @@ Permanently delete a funding request defined for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -495,9 +495,9 @@ Permanently delete a external account transfer from a client account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -553,9 +553,9 @@ Permanently delete a withdrawal request from an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -609,9 +609,9 @@ Get all bank links defined for all clients defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -674,9 +674,9 @@ Retrieve the information for a bank link for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -731,9 +731,9 @@ Get the information for all deposit requests for all clients.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -796,9 +796,9 @@ Retrieve the information for a deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -853,9 +853,9 @@ Get the information for all funding requests defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -918,9 +918,9 @@ Retrieve the information for a funding request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -975,9 +975,9 @@ Get the information for all external account transfers defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1040,9 +1040,9 @@ Retrieve the information for a external account transfer for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1099,9 +1099,9 @@ Get the information for all withdrawal requests for all clients.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1164,9 +1164,9 @@ Retrieve the information for a withdrawal request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1221,9 +1221,9 @@ Update bank link list for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1278,9 +1278,9 @@ Update the information for a bank link for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1337,9 +1337,9 @@ Update the information for a deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1396,9 +1396,9 @@ Update the information for a funding request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1455,9 +1455,9 @@ Update the information for a external account transfer for a client account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1514,9 +1514,9 @@ Update the information for a withdrawal request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.ApiException;
-//import com.hydrogen.AuthApiClient;
-//import com.hydrogen.auth.*;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();

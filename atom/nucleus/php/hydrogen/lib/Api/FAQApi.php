@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * FAQApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class FAQApi
      *
      * Create a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq_request faqRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq_request faqRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Faq
+     * @return \com\hydrogen\nucleus\Model\Faq
      */
     public function createFaqUsingPost($faq_request)
     {
@@ -109,15 +109,15 @@ class FAQApi
      *
      * Create a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq_request faqRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq_request faqRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Faq, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Faq, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFaqUsingPostWithHttpInfo($faq_request)
     {
-        $returnType = '\com\hydrogen\Model\Faq';
+        $returnType = '\com\hydrogen\nucleus\Model\Faq';
         $request = $this->createFaqUsingPostRequest($faq_request);
 
         try {
@@ -169,7 +169,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Faq',
+                        '\com\hydrogen\nucleus\Model\Faq',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class FAQApi
      *
      * Create a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq_request faqRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq_request faqRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class FAQApi
      *
      * Create a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq_request faqRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq_request faqRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFaqUsingPostAsyncWithHttpInfo($faq_request)
     {
-        $returnType = '\com\hydrogen\Model\Faq';
+        $returnType = '\com\hydrogen\nucleus\Model\Faq';
         $request = $this->createFaqUsingPostRequest($faq_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class FAQApi
     /**
      * Create request for operation 'createFaqUsingPost'
      *
-     * @param  \com\hydrogen\Model\Faq $faq_request faqRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq_request faqRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,7 +362,7 @@ class FAQApi
      *
      * @param  string $faq_id UUID faq_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -378,7 +378,7 @@ class FAQApi
      *
      * @param  string $faq_id UUID faq_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -602,9 +602,9 @@ class FAQApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageFaq_
+     * @return \com\hydrogen\nucleus\Model\PageFaq_
      */
     public function getFaqAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -623,13 +623,13 @@ class FAQApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageFaq_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageFaq_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFaqAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFaq_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFaq_';
         $request = $this->getFaqAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -681,7 +681,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageFaq_',
+                        '\com\hydrogen\nucleus\Model\PageFaq_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class FAQApi
      */
     public function getFaqAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageFaq_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageFaq_';
         $request = $this->getFaqAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -897,9 +897,9 @@ class FAQApi
      *
      * @param  string $faq_id UUID faq_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Faq
+     * @return \com\hydrogen\nucleus\Model\Faq
      */
     public function getFaqUsingGet($faq_id)
     {
@@ -914,13 +914,13 @@ class FAQApi
      *
      * @param  string $faq_id UUID faq_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Faq, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Faq, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFaqUsingGetWithHttpInfo($faq_id)
     {
-        $returnType = '\com\hydrogen\Model\Faq';
+        $returnType = '\com\hydrogen\nucleus\Model\Faq';
         $request = $this->getFaqUsingGetRequest($faq_id);
 
         try {
@@ -972,7 +972,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Faq',
+                        '\com\hydrogen\nucleus\Model\Faq',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1014,7 +1014,7 @@ class FAQApi
      */
     public function getFaqUsingGetAsyncWithHttpInfo($faq_id)
     {
-        $returnType = '\com\hydrogen\Model\Faq';
+        $returnType = '\com\hydrogen\nucleus\Model\Faq';
         $request = $this->getFaqUsingGetRequest($faq_id);
 
         return $this->client
@@ -1168,12 +1168,12 @@ class FAQApi
      *
      * Update a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq faq (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq faq (required)
      * @param  string $faq_id UUID faq_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Faq
+     * @return \com\hydrogen\nucleus\Model\Faq
      */
     public function updateFaqUsingPut($faq, $faq_id)
     {
@@ -1186,16 +1186,16 @@ class FAQApi
      *
      * Update a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq faq (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq faq (required)
      * @param  string $faq_id UUID faq_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Faq, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Faq, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFaqUsingPutWithHttpInfo($faq, $faq_id)
     {
-        $returnType = '\com\hydrogen\Model\Faq';
+        $returnType = '\com\hydrogen\nucleus\Model\Faq';
         $request = $this->updateFaqUsingPutRequest($faq, $faq_id);
 
         try {
@@ -1247,7 +1247,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Faq',
+                        '\com\hydrogen\nucleus\Model\Faq',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class FAQApi
      *
      * Update a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq faq (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq faq (required)
      * @param  string $faq_id UUID faq_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class FAQApi
      *
      * Update a FAQ
      *
-     * @param  \com\hydrogen\Model\Faq $faq faq (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq faq (required)
      * @param  string $faq_id UUID faq_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class FAQApi
      */
     public function updateFaqUsingPutAsyncWithHttpInfo($faq, $faq_id)
     {
-        $returnType = '\com\hydrogen\Model\Faq';
+        $returnType = '\com\hydrogen\nucleus\Model\Faq';
         $request = $this->updateFaqUsingPutRequest($faq, $faq_id);
 
         return $this->client
@@ -1334,7 +1334,7 @@ class FAQApi
     /**
      * Create request for operation 'updateFaqUsingPut'
      *
-     * @param  \com\hydrogen\Model\Faq $faq faq (required)
+     * @param  \com\hydrogen\nucleus\Model\Faq $faq faq (required)
      * @param  string $faq_id UUID faq_id (required)
      *
      * @throws \InvalidArgumentException

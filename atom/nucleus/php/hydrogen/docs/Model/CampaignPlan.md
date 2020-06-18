@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | isActive | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
-**plan_rates** | [**\com\hydrogen\Model\CampaignPlanRate[]**](CampaignPlanRate.md) | planRates | [optional] 
+**plan_rates** | [**\com\hydrogen\nucleus\Model\CampaignPlanRate[]**](CampaignPlanRate.md) | planRates | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 

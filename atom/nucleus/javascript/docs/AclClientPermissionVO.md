@@ -1,4 +1,4 @@
-# HydrogenAtomApi.AclClientPermissionVO
+# HydrogenNucleusApi.AclClientPermissionVO
 
 ## Properties
 Name | Type | Description | Notes

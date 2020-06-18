@@ -1,4 +1,4 @@
-# AtomApi::PageRiskProfile
+# NucleusApi::PageRiskProfile
 
 ## Properties
 Name | Type | Description | Notes

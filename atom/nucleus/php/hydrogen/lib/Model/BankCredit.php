@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Model;
+namespace com\hydrogen\nucleus\Model;
 
 use \ArrayAccess;
-use \com\hydrogen\ObjectSerializer;
+use \com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * BankCredit Class Doc Comment
  *
  * @category Class
  * @description BankCredit Object
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -61,7 +61,7 @@ class BankCredit implements ModelInterface, ArrayAccess
         'amount' => 'double',
         'category' => 'string',
         'description' => 'string',
-        'location' => '\com\hydrogen\Model\Location',
+        'location' => '\com\hydrogen\nucleus\Model\Location',
         'memo' => 'string',
         'merchant' => 'string',
         'subcategory' => 'string',
@@ -331,7 +331,7 @@ class BankCredit implements ModelInterface, ArrayAccess
     /**
      * Gets location
      *
-     * @return \com\hydrogen\Model\Location
+     * @return \com\hydrogen\nucleus\Model\Location
      */
     public function getLocation()
     {
@@ -341,7 +341,7 @@ class BankCredit implements ModelInterface, ArrayAccess
     /**
      * Sets location
      *
-     * @param \com\hydrogen\Model\Location $location location
+     * @param \com\hydrogen\nucleus\Model\Location $location location
      *
      * @return $this
      */

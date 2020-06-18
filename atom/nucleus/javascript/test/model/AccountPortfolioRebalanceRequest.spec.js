@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+    instance = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,91 +53,91 @@
   describe('AccountPortfolioRebalanceRequest', function() {
     it('should create an instance of AccountPortfolioRebalanceRequest', function() {
       // uncomment below and update the code to test AccountPortfolioRebalanceRequest
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
-      //expect(instance).to.be.a(HydrogenAtomApi.AccountPortfolioRebalanceRequest);
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
+      //expect(instance).to.be.a(HydrogenNucleusApi.AccountPortfolioRebalanceRequest);
     });
 
     it('should have the property buyThreshold (base name: "buy_threshold")', function() {
       // uncomment below and update the code to test the property buyThreshold
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property buyTransactionCodeId (base name: "buy_transaction_code_id")', function() {
       // uncomment below and update the code to test the property buyTransactionCodeId
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cashPortfolioId (base name: "cash_portfolio_id")', function() {
       // uncomment below and update the code to test the property cashPortfolioId
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property cashSecId (base name: "cash_sec_id")', function() {
       // uncomment below and update the code to test the property cashSecId
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property commitOrders (base name: "commit_orders")', function() {
       // uncomment below and update the code to test the property commitOrders
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property nonFractional (base name: "non_fractional")', function() {
       // uncomment below and update the code to test the property nonFractional
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property portThreshold (base name: "port_threshold")', function() {
       // uncomment below and update the code to test the property portThreshold
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property restrictionsOn (base name: "restrictions_on")', function() {
       // uncomment below and update the code to test the property restrictionsOn
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sellThreshold (base name: "sell_threshold")', function() {
       // uncomment below and update the code to test the property sellThreshold
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sellTransactionCodeId (base name: "sell_transaction_code_id")', function() {
       // uncomment below and update the code to test the property sellTransactionCodeId
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property tenantId (base name: "tenant_id")', function() {
       // uncomment below and update the code to test the property tenantId
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property useCashAvailable (base name: "use_cash_available")', function() {
       // uncomment below and update the code to test the property useCashAvailable
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property useStrategic (base name: "use_strategic")', function() {
       // uncomment below and update the code to test the property useStrategic
-      //var instane = new HydrogenAtomApi.AccountPortfolioRebalanceRequest();
+      //var instane = new HydrogenNucleusApi.AccountPortfolioRebalanceRequest();
       //expect(instance).to.be();
     });
 

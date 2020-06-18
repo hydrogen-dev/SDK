@@ -1,4 +1,4 @@
-# AtomApi::AggregateDataByCategoryForClientFromDbVO
+# NucleusApi::AggregateDataByCategoryForClientFromDbVO
 
 ## Properties
 Name | Type | Description | Notes

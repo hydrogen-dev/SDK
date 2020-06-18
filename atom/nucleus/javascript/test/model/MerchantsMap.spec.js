@@ -23,15 +23,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenAtomApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenAtomApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new HydrogenAtomApi.MerchantsMap();
+    instance = new HydrogenNucleusApi.MerchantsMap();
   });
 
   var getProperty = function(object, getter, property) {
@@ -53,19 +53,19 @@
   describe('MerchantsMap', function() {
     it('should create an instance of MerchantsMap', function() {
       // uncomment below and update the code to test MerchantsMap
-      //var instane = new HydrogenAtomApi.MerchantsMap();
-      //expect(instance).to.be.a(HydrogenAtomApi.MerchantsMap);
+      //var instane = new HydrogenNucleusApi.MerchantsMap();
+      //expect(instance).to.be.a(HydrogenNucleusApi.MerchantsMap);
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new HydrogenAtomApi.MerchantsMap();
+      //var instane = new HydrogenNucleusApi.MerchantsMap();
       //expect(instance).to.be();
     });
 
     it('should have the property merchant (base name: "merchant")', function() {
       // uncomment below and update the code to test the property merchant
-      //var instane = new HydrogenAtomApi.MerchantsMap();
+      //var instane = new HydrogenNucleusApi.MerchantsMap();
       //expect(instance).to.be();
     });
 

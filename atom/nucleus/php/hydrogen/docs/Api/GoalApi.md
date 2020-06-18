@@ -1,4 +1,4 @@
-# com\hydrogen\GoalApi
+# com\hydrogen\nucleus\GoalApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **createGoalTrackUsingPost**
-> \com\hydrogen\Model\GoalTrack createGoalTrackUsingPost($goal_track)
+> \com\hydrogen\nucleus\Model\GoalTrack createGoalTrackUsingPost($goal_track)
 
 Create a goal track record
 
@@ -29,29 +29,29 @@ Create a goal track record for a goal under a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_track = new \com\hydrogen\Model\GoalTrack(); // \com\hydrogen\Model\GoalTrack | goalTrack
+$goal_track = new \com\hydrogen\nucleus\Model\GoalTrack(); // \com\hydrogen\nucleus\Model\GoalTrack | goalTrack
 
 try {
     $result = $apiInstance->createGoalTrackUsingPost($goal_track);
@@ -66,11 +66,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_track** | [**\com\hydrogen\Model\GoalTrack**](../Model/GoalTrack.md)| goalTrack |
+ **goal_track** | [**\com\hydrogen\nucleus\Model\GoalTrack**](../Model/GoalTrack.md)| goalTrack |
 
 ### Return type
 
-[**\com\hydrogen\Model\GoalTrack**](../Model/GoalTrack.md)
+[**\com\hydrogen\nucleus\Model\GoalTrack**](../Model/GoalTrack.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createGoalUsingPost**
-> \com\hydrogen\Model\Goal createGoalUsingPost($goal_request)
+> \com\hydrogen\nucleus\Model\Goal createGoalUsingPost($goal_request)
 
 Create a goal
 
@@ -93,29 +93,29 @@ Create a new goal for your firm that clients can customize for themselves.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_request = new \com\hydrogen\Model\Goal(); // \com\hydrogen\Model\Goal | goalRequest
+$goal_request = new \com\hydrogen\nucleus\Model\Goal(); // \com\hydrogen\nucleus\Model\Goal | goalRequest
 
 try {
     $result = $apiInstance->createGoalUsingPost($goal_request);
@@ -130,11 +130,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_request** | [**\com\hydrogen\Model\Goal**](../Model/Goal.md)| goalRequest |
+ **goal_request** | [**\com\hydrogen\nucleus\Model\Goal**](../Model/Goal.md)| goalRequest |
 
 ### Return type
 
-[**\com\hydrogen\Model\Goal**](../Model/Goal.md)
+[**\com\hydrogen\nucleus\Model\Goal**](../Model/Goal.md)
 
 ### Authorization
 
@@ -157,23 +157,23 @@ Permanently delete an goal track record for a goal under a client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -222,23 +222,23 @@ Permanently delete a goal for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -276,7 +276,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalAllUsingGet**
-> \com\hydrogen\Model\PageGoal_ getGoalAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageGoal_ getGoalAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all goals
 
@@ -285,23 +285,23 @@ Get the details for all goals defined by your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageGoal_**](../Model/PageGoal_.md)
+[**\com\hydrogen\nucleus\Model\PageGoal_**](../Model/PageGoal_.md)
 
 ### Authorization
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalAssetSizeAllUsingGet**
-> \com\hydrogen\Model\AvailableDateDoubleVO[] getGoalAssetSizeAllUsingGet($client_id, $goal_id, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date)
+> \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[] getGoalAssetSizeAllUsingGet($client_id, $goal_id, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date)
 
 List goal asset sizes
 
@@ -357,23 +357,23 @@ Get a list of asset sizes per date for a goal for a specified client.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\AvailableDateDoubleVO[]**](../Model/AvailableDateDoubleVO.md)
+[**\com\hydrogen\nucleus\Model\AvailableDateDoubleVO[]**](../Model/AvailableDateDoubleVO.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalHoldingAllUsingGet**
-> \com\hydrogen\Model\PortfolioHoldingAgg[] getGoalHoldingAllUsingGet($client_id, $goal_id, $end_date, $portfolio_goal, $start_date)
+> \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[] getGoalHoldingAllUsingGet($client_id, $goal_id, $end_date, $portfolio_goal, $start_date)
 
 List goal holdings
 
@@ -433,23 +433,23 @@ Get the information for all the securities that are currently being held in port
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PortfolioHoldingAgg[]**](../Model/PortfolioHoldingAgg.md)
+[**\com\hydrogen\nucleus\Model\PortfolioHoldingAgg[]**](../Model/PortfolioHoldingAgg.md)
 
 ### Authorization
 
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalTrackAllUsingGet**
-> \com\hydrogen\Model\PageGoalTrack_ getGoalTrackAllUsingGet($ascending, $end_date, $filter, $get_latest, $order_by, $page, $size, $start_date)
+> \com\hydrogen\nucleus\Model\PageGoalTrack_ getGoalTrackAllUsingGet($ascending, $end_date, $filter, $get_latest, $order_by, $page, $size, $start_date)
 
 List all goal track records
 
@@ -505,23 +505,23 @@ Get information for all goal track records stored for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PageGoalTrack_**](../Model/PageGoalTrack_.md)
+[**\com\hydrogen\nucleus\Model\PageGoalTrack_**](../Model/PageGoalTrack_.md)
 
 ### Authorization
 
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalTrackUsingGet**
-> \com\hydrogen\Model\GoalTrack getGoalTrackUsingGet($goal_track_id, $goal_track_id2)
+> \com\hydrogen\nucleus\Model\GoalTrack getGoalTrackUsingGet($goal_track_id, $goal_track_id2)
 
 Retrieve a goal track record
 
@@ -583,23 +583,23 @@ Retrieve the information for a specific goal track record for a goal under a cli
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\GoalTrack**](../Model/GoalTrack.md)
+[**\com\hydrogen\nucleus\Model\GoalTrack**](../Model/GoalTrack.md)
 
 ### Authorization
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalTransactionAllUsingGet**
-> \com\hydrogen\Model\PagePortfolioTransaction_ getGoalTransactionAllUsingGet($client_id, $goal_id, $ascending, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date)
+> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getGoalTransactionAllUsingGet($client_id, $goal_id, $ascending, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date)
 
 List goal transactions
 
@@ -649,23 +649,23 @@ Get the information for all transactions under portfolios associated with a part
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -706,7 +706,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\PagePortfolioTransaction_**](../Model/PagePortfolioTransaction_.md)
+[**\com\hydrogen\nucleus\Model\PagePortfolioTransaction_**](../Model/PagePortfolioTransaction_.md)
 
 ### Authorization
 
@@ -720,7 +720,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalUsingGet**
-> \com\hydrogen\Model\Goal getGoalUsingGet($goal_id)
+> \com\hydrogen\nucleus\Model\Goal getGoalUsingGet($goal_id)
 
 Retrieve a goal
 
@@ -729,23 +729,23 @@ Retrieve the information for a goal defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -770,7 +770,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\Model\Goal**](../Model/Goal.md)
+[**\com\hydrogen\nucleus\Model\Goal**](../Model/Goal.md)
 
 ### Authorization
 
@@ -784,7 +784,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateGoalTrackUsingPut**
-> \com\hydrogen\Model\GoalTrack updateGoalTrackUsingPut($goal_track, $goal_track_id)
+> \com\hydrogen\nucleus\Model\GoalTrack updateGoalTrackUsingPut($goal_track, $goal_track_id)
 
 Update a goal track record
 
@@ -793,29 +793,29 @@ Update the information for a goal track record.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal_track = new \com\hydrogen\Model\GoalTrack(); // \com\hydrogen\Model\GoalTrack | goal_track
+$goal_track = new \com\hydrogen\nucleus\Model\GoalTrack(); // \com\hydrogen\nucleus\Model\GoalTrack | goal_track
 $goal_track_id = "goal_track_id_example"; // string | UUID goal_track_id
 
 try {
@@ -831,12 +831,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_track** | [**\com\hydrogen\Model\GoalTrack**](../Model/GoalTrack.md)| goal_track |
+ **goal_track** | [**\com\hydrogen\nucleus\Model\GoalTrack**](../Model/GoalTrack.md)| goal_track |
  **goal_track_id** | [**string**](../Model/.md)| UUID goal_track_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\GoalTrack**](../Model/GoalTrack.md)
+[**\com\hydrogen\nucleus\Model\GoalTrack**](../Model/GoalTrack.md)
 
 ### Authorization
 
@@ -850,7 +850,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateGoalUsingPut**
-> \com\hydrogen\Model\Goal updateGoalUsingPut($goal, $goal_id)
+> \com\hydrogen\nucleus\Model\Goal updateGoalUsingPut($goal, $goal_id)
 
 Update a goal
 
@@ -859,29 +859,29 @@ Update a goal defined for your firm.
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\AuthApiClient::
+        \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\ApiException $e) {
+} catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\Api\GoalApi(
+$apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$goal = new \com\hydrogen\Model\Goal(); // \com\hydrogen\Model\Goal | goal
+$goal = new \com\hydrogen\nucleus\Model\Goal(); // \com\hydrogen\nucleus\Model\Goal | goal
 $goal_id = "goal_id_example"; // string | UUID goal_id
 
 try {
@@ -897,12 +897,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal** | [**\com\hydrogen\Model\Goal**](../Model/Goal.md)| goal |
+ **goal** | [**\com\hydrogen\nucleus\Model\Goal**](../Model/Goal.md)| goal |
  **goal_id** | [**string**](../Model/.md)| UUID goal_id |
 
 ### Return type
 
-[**\com\hydrogen\Model\Goal**](../Model/Goal.md)
+[**\com\hydrogen\nucleus\Model\Goal**](../Model/Goal.md)
 
 ### Authorization
 

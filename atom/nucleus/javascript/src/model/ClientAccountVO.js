@@ -23,10 +23,10 @@
     module.exports = factory(require('../ApiClient'), require('./AccountVO'), require('./DepositAccountVO'), require('./WithdrawalAccountVO'));
   } else {
     // Browser globals (root is window)
-    if (!root.HydrogenAtomApi) {
-      root.HydrogenAtomApi = {};
+    if (!root.HydrogenNucleusApi) {
+      root.HydrogenNucleusApi = {};
     }
-    root.HydrogenAtomApi.ClientAccountVO = factory(root.HydrogenAtomApi.ApiClient, root.HydrogenAtomApi.AccountVO, root.HydrogenAtomApi.DepositAccountVO, root.HydrogenAtomApi.WithdrawalAccountVO);
+    root.HydrogenNucleusApi.ClientAccountVO = factory(root.HydrogenNucleusApi.ApiClient, root.HydrogenNucleusApi.AccountVO, root.HydrogenNucleusApi.DepositAccountVO, root.HydrogenNucleusApi.WithdrawalAccountVO);
   }
 }(this, function(ApiClient, AccountVO, DepositAccountVO, WithdrawalAccountVO) {
   'use strict';

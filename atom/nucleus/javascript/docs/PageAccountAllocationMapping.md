@@ -1,4 +1,4 @@
-# HydrogenAtomApi.PageAccountAllocationMapping
+# HydrogenNucleusApi.PageAccountAllocationMapping
 
 ## Properties
 Name | Type | Description | Notes

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace com\hydrogen\Api;
+namespace com\hydrogen\nucleus\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use com\hydrogen\ApiException;
-use com\hydrogen\Configuration;
-use com\hydrogen\HeaderSelector;
-use com\hydrogen\ObjectSerializer;
+use com\hydrogen\nucleus\ApiException;
+use com\hydrogen\nucleus\Configuration;
+use com\hydrogen\nucleus\HeaderSelector;
+use com\hydrogen\nucleus\ObjectSerializer;
 
 /**
  * DocumentApi Class Doc Comment
  *
  * @category Class
- * @package  com\hydrogen
+ * @package  com\hydrogen\nucleus
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -92,11 +92,11 @@ class DocumentApi
      *
      * Create a Document
      *
-     * @param  \com\hydrogen\Model\Document $document_request documentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document_request documentRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Document
+     * @return \com\hydrogen\nucleus\Model\Document
      */
     public function createDocumentUsingPost($document_request)
     {
@@ -109,15 +109,15 @@ class DocumentApi
      *
      * Create a Document
      *
-     * @param  \com\hydrogen\Model\Document $document_request documentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document_request documentRequest (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Document, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDocumentUsingPostWithHttpInfo($document_request)
     {
-        $returnType = '\com\hydrogen\Model\Document';
+        $returnType = '\com\hydrogen\nucleus\Model\Document';
         $request = $this->createDocumentUsingPostRequest($document_request);
 
         try {
@@ -169,7 +169,7 @@ class DocumentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Document',
+                        '\com\hydrogen\nucleus\Model\Document',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class DocumentApi
      *
      * Create a Document
      *
-     * @param  \com\hydrogen\Model\Document $document_request documentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document_request documentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -204,14 +204,14 @@ class DocumentApi
      *
      * Create a Document
      *
-     * @param  \com\hydrogen\Model\Document $document_request documentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document_request documentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDocumentUsingPostAsyncWithHttpInfo($document_request)
     {
-        $returnType = '\com\hydrogen\Model\Document';
+        $returnType = '\com\hydrogen\nucleus\Model\Document';
         $request = $this->createDocumentUsingPostRequest($document_request);
 
         return $this->client
@@ -254,7 +254,7 @@ class DocumentApi
     /**
      * Create request for operation 'createDocumentUsingPost'
      *
-     * @param  \com\hydrogen\Model\Document $document_request documentRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document_request documentRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -362,7 +362,7 @@ class DocumentApi
      *
      * @param  string $document_id UUID document_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -378,7 +378,7 @@ class DocumentApi
      *
      * @param  string $document_id UUID document_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -602,9 +602,9 @@ class DocumentApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\PageDocument_
+     * @return \com\hydrogen\nucleus\Model\PageDocument_
      */
     public function getDocumentAllUsingGet($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -623,13 +623,13 @@ class DocumentApi
      * @param  int $page page (optional, default to 0)
      * @param  int $size size (optional, default to 25)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\PageDocument_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageDocument_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDocumentAllUsingGetWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDocument_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDocument_';
         $request = $this->getDocumentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         try {
@@ -681,7 +681,7 @@ class DocumentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\PageDocument_',
+                        '\com\hydrogen\nucleus\Model\PageDocument_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -731,7 +731,7 @@ class DocumentApi
      */
     public function getDocumentAllUsingGetAsyncWithHttpInfo($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\Model\PageDocument_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageDocument_';
         $request = $this->getDocumentAllUsingGetRequest($ascending, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -897,9 +897,9 @@ class DocumentApi
      *
      * @param  string $document_id UUID document_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Document
+     * @return \com\hydrogen\nucleus\Model\Document
      */
     public function getDocumentUsingGet($document_id)
     {
@@ -914,13 +914,13 @@ class DocumentApi
      *
      * @param  string $document_id UUID document_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Document, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDocumentUsingGetWithHttpInfo($document_id)
     {
-        $returnType = '\com\hydrogen\Model\Document';
+        $returnType = '\com\hydrogen\nucleus\Model\Document';
         $request = $this->getDocumentUsingGetRequest($document_id);
 
         try {
@@ -972,7 +972,7 @@ class DocumentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Document',
+                        '\com\hydrogen\nucleus\Model\Document',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1014,7 +1014,7 @@ class DocumentApi
      */
     public function getDocumentUsingGetAsyncWithHttpInfo($document_id)
     {
-        $returnType = '\com\hydrogen\Model\Document';
+        $returnType = '\com\hydrogen\nucleus\Model\Document';
         $request = $this->getDocumentUsingGetRequest($document_id);
 
         return $this->client
@@ -1168,12 +1168,12 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\Model\Document $document document (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\Model\Document
+     * @return \com\hydrogen\nucleus\Model\Document
      */
     public function updateDocumentUsingPut($document, $document_id)
     {
@@ -1186,16 +1186,16 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\Model\Document $document document (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
-     * @throws \com\hydrogen\ApiException on non-2xx response
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\Model\Document, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\Document, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateDocumentUsingPutWithHttpInfo($document, $document_id)
     {
-        $returnType = '\com\hydrogen\Model\Document';
+        $returnType = '\com\hydrogen\nucleus\Model\Document';
         $request = $this->updateDocumentUsingPutRequest($document, $document_id);
 
         try {
@@ -1247,7 +1247,7 @@ class DocumentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\Model\Document',
+                        '\com\hydrogen\nucleus\Model\Document',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1262,7 +1262,7 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\Model\Document $document document (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\Model\Document $document document (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1291,7 +1291,7 @@ class DocumentApi
      */
     public function updateDocumentUsingPutAsyncWithHttpInfo($document, $document_id)
     {
-        $returnType = '\com\hydrogen\Model\Document';
+        $returnType = '\com\hydrogen\nucleus\Model\Document';
         $request = $this->updateDocumentUsingPutRequest($document, $document_id);
 
         return $this->client
@@ -1334,7 +1334,7 @@ class DocumentApi
     /**
      * Create request for operation 'updateDocumentUsingPut'
      *
-     * @param  \com\hydrogen\Model\Document $document document (required)
+     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \InvalidArgumentException

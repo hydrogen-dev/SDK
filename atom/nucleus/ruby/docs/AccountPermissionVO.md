@@ -1,4 +1,4 @@
-# AtomApi::AccountPermissionVO
+# NucleusApi::AccountPermissionVO
 
 ## Properties
 Name | Type | Description | Notes

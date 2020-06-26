@@ -19,7 +19,7 @@ import re
 import six
 import json
 import urllib3
-from proton_api.api_client import ApiClient
+from integration_api.api_client import ApiClient
 
 class AuthApi(object):
 

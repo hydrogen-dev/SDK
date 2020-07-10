@@ -26,31 +26,31 @@
     if (!root.HydrogenIntegrationApi) {
       root.HydrogenIntegrationApi = {};
     }
-    root.HydrogenIntegrationApi.IavCO = factory(root.HydrogenIntegrationApi.ApiClient, root.HydrogenIntegrationApi.IavVendorRequestCO, root.HydrogenIntegrationApi.NucleusTransferFieldsCO);
+    root.HydrogenIntegrationApi.IavRequestCO = factory(root.HydrogenIntegrationApi.ApiClient, root.HydrogenIntegrationApi.IavVendorRequestCO, root.HydrogenIntegrationApi.NucleusTransferFieldsCO);
   }
 }(this, function(ApiClient, IavVendorRequestCO, NucleusTransferFieldsCO) {
   'use strict';
 
   /**
-   * The IavCO model module.
-   * @module model/IavCO
+   * The IavRequestCO model module.
+   * @module model/IavRequestCO
    * @version 1.2.1
    */
 
   /**
-   * Constructs a new <code>IavCO</code>.
-   * @alias module:model/IavCO
+   * Constructs a new <code>IavRequestCO</code>.
+   * @alias module:model/IavRequestCO
    * @class
    */
   var exports = function() {
   };
 
   /**
-   * Constructs a <code>IavCO</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>IavRequestCO</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/IavCO} obj Optional instance to populate.
-   * @return {module:model/IavCO} The populated <code>IavCO</code> instance.
+   * @param {module:model/IavRequestCO} obj Optional instance to populate.
+   * @return {module:model/IavRequestCO} The populated <code>IavRequestCO</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

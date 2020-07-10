@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createKYCUsingPost"></a>
 # **createKYCUsingPost**
-> KycResponseVo createKYCUsingPost(authorization, kycRequestCO)
+> KycResponseVo createKYCUsingPost(kycRequestCO)
 
 Do kyc for the client.
 
@@ -27,8 +27,6 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.KYCApi();
 
-var authorization = "authorization_example"; // String | Authorization
-
 var kycRequestCO = new HydrogenIntegrationApi.KycRequestCO(); // KycRequestCO | kycRequestCO
 
 
@@ -39,14 +37,13 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createKYCUsingPost(authorization, kycRequestCO, callback);
+apiInstance.createKYCUsingPost(kycRequestCO, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization | 
  **kycRequestCO** | [**KycRequestCO**](KycRequestCO.md)| kycRequestCO | 
 
 ### Return type
@@ -64,7 +61,7 @@ Name | Type | Description  | Notes
 
 <a name="getKYCStatusUsingGet"></a>
 # **getKYCStatusUsingGet**
-> [KycResponseVo] getKYCStatusUsingGet(authorization, nucleusClientId, opts)
+> [KycResponseVo] getKYCStatusUsingGet(nucleusClientId, opts)
 
 Fetch kyc_status for the given nucleus_client_id
 
@@ -81,8 +78,6 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.KYCApi();
 
-var authorization = "authorization_example"; // String | Authorization
-
 var nucleusClientId = "nucleusClientId_example"; // String | nucleus_client_id
 
 var opts = { 
@@ -98,14 +93,13 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getKYCStatusUsingGet(authorization, nucleusClientId, opts, callback);
+apiInstance.getKYCStatusUsingGet(nucleusClientId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization | 
  **nucleusClientId** | [**String**](.md)| nucleus_client_id | 
  **getLatest** | **Boolean**| get_latest | [optional] [default to false]
  **kycType** | **String**| kyc_type | [optional] [default to all]

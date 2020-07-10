@@ -27,7 +27,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.IAVApi();
 
-var iavRequestCO = new HydrogenIntegrationApi.IavCO(); // IavCO | iavRequestCO
+var iavRequestCO = new HydrogenIntegrationApi.IavRequestCO(); // IavRequestCO | iavRequestCO
 
 var opts = { 
   'authorization': "authorization_example" // String | Authorization
@@ -47,7 +47,7 @@ apiInstance.createIAVUsingPost(iavRequestCO, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **iavRequestCO** | [**IavCO**](IavCO.md)| iavRequestCO | 
+ **iavRequestCO** | [**IavRequestCO**](IavRequestCO.md)| iavRequestCO | 
  **authorization** | **String**| Authorization | [optional] 
 
 ### Return type
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getIAVUsingGet"></a>
 # **getIAVUsingGet**
-> IavResponseVo getIAVUsingGet(authorization, nucleusBankLinkId)
+> IavResponseVo getIAVUsingGet(nucleusBankLinkId)
 
 Get verified account based on id.
 
@@ -81,9 +81,6 @@ var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.IAVApi();
-
-var authorization = "authorization_example"; // String | Authorization
-
 var nucleusBankLinkId = "nucleusBankLinkId_example"; // String | nucleus_bank_link_id
 
 
@@ -94,14 +91,13 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getIAVUsingGet(authorization, nucleusBankLinkId, callback);
+apiInstance.getIAVUsingGet(nucleusBankLinkId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization | 
  **nucleusBankLinkId** | [**String**](.md)| nucleus_bank_link_id | 
 
 ### Return type

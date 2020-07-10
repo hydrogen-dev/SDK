@@ -43,7 +43,7 @@ class IAVApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param IavCO iav_request_co: iavRequestCO (required)
+        :param IavRequestCO iav_request_co: iavRequestCO (required)
         :return: IavResponseVo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class IAVApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param IavCO iav_request_co: iavRequestCO (required)
+        :param IavRequestCO iav_request_co: iavRequestCO (required)
         :return: IavResponseVo
                  If the method is called asynchronously,
                  returns the request thread.

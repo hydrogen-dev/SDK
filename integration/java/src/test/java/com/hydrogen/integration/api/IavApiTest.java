@@ -14,7 +14,7 @@
 package com.hydrogen.integration.api;
 
 import com.hydrogen.integration.ApiException;
-import com.hydrogen.integration.model.IavCO;
+import com.hydrogen.integration.model.IavRequestCO;
 import com.hydrogen.integration.model.IavResponseVo;
 
 import java.util.UUID;
@@ -40,7 +40,7 @@ public class IavApiTest {
      */
     @Test
     public void createIAVUsingPostTest() throws ApiException {
-        IavCO iavRequestCO = null;
+        IavRequestCO iavRequestCO = null;
         IavResponseVo response = api.createIAVUsingPost(iavRequestCO);
 
         // TODO: test validations

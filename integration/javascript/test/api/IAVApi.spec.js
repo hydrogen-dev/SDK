@@ -40,7 +40,7 @@
         it('should call createIAVUsingPost successfully', function(done) {
           // TODO: uncomment, update parameter values for createIAVUsingPost call and complete the assertions
           /*
-          var iavRequestCO = new HydrogenIntegrationApi.IavCO();
+          var iavRequestCO = new HydrogenIntegrationApi.IavRequestCO();
           iavRequestCO.authToken = "";
           iavRequestCO.isCash = false;
           iavRequestCO.nucleusAccountId = """00000000-0000-0000-0000-000000000000";

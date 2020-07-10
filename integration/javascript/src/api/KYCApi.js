@@ -64,13 +64,8 @@
      * @param {module:api/KYCApi~createKYCUsingPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/KycResponseVo}
      */
-    this.createKYCUsingPost = function(authorization, kycRequestCO, callback) {
+    this.createKYCUsingPost = function(kycRequestCO, callback) {
       var postBody = kycRequestCO;
-
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling createKYCUsingPost");
-      }
 
       // verify the required parameter 'kycRequestCO' is set
       if (kycRequestCO === undefined || kycRequestCO === null) {
@@ -85,7 +80,6 @@
       var collectionQueryParams = {
       };
       var headerParams = {
-        'Authorization': authorization
       };
       var formParams = {
       };
@@ -122,14 +116,9 @@
      * @param {module:api/KYCApi~getKYCStatusUsingGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/KycResponseVo>}
      */
-    this.getKYCStatusUsingGet = function(authorization, nucleusClientId, opts, callback) {
+    this.getKYCStatusUsingGet = function(nucleusClientId, opts, callback) {
       opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling getKYCStatusUsingGet");
-      }
 
       // verify the required parameter 'nucleusClientId' is set
       if (nucleusClientId === undefined || nucleusClientId === null) {
@@ -148,7 +137,6 @@
       var collectionQueryParams = {
       };
       var headerParams = {
-        'Authorization': authorization
       };
       var formParams = {
       };

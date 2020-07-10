@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.14
 require 'date'
 
 module IntegrationApi
-  class IavCO
+  class IavRequestCO
     attr_accessor :auth_token
 
     attr_accessor :is_cash

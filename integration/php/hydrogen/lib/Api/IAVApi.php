@@ -92,11 +92,11 @@ class IAVApi
      *
      * Instant Account Verification of an account.
      *
-     * @param  \com\hydrogen\integration\Model\IavCO $iav_request_co iavRequestCO (required)
+     * @param  \com\hydrogen\integration\Model\IavRequestCO $iav_request_co iavRequestCO (required)
      *
-     * @throws \com\hydrogen\integration\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * @return \com\hydrogen\integration\Model\IavResponseVo
+     *@throws \InvalidArgumentException
+     * @throws \com\hydrogen\integration\ApiException on non-2xx response
      */
     public function createIAVUsingPost($iav_request_co)
     {
@@ -109,11 +109,11 @@ class IAVApi
      *
      * Instant Account Verification of an account.
      *
-     * @param  \com\hydrogen\integration\Model\IavCO $iav_request_co iavRequestCO (required)
+     * @param  \com\hydrogen\integration\Model\IavRequestCO $iav_request_co iavRequestCO (required)
      *
-     * @throws \com\hydrogen\integration\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * @return array of \com\hydrogen\integration\Model\IavResponseVo, HTTP status code, HTTP response headers (array of strings)
+     *@throws \InvalidArgumentException
+     * @throws \com\hydrogen\integration\ApiException on non-2xx response
      */
     public function createIAVUsingPostWithHttpInfo($iav_request_co)
     {
@@ -184,10 +184,10 @@ class IAVApi
      *
      * Instant Account Verification of an account.
      *
-     * @param  \com\hydrogen\integration\Model\IavCO $iav_request_co iavRequestCO (required)
+     * @param  \com\hydrogen\integration\Model\IavRequestCO $iav_request_co iavRequestCO (required)
      *
-     * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     *@throws \InvalidArgumentException
      */
     public function createIAVUsingPostAsync($iav_request_co)
     {
@@ -204,10 +204,10 @@ class IAVApi
      *
      * Instant Account Verification of an account.
      *
-     * @param  \com\hydrogen\integration\Model\IavCO $iav_request_co iavRequestCO (required)
+     * @param  \com\hydrogen\integration\Model\IavRequestCO $iav_request_co iavRequestCO (required)
      *
-     * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     *@throws \InvalidArgumentException
      */
     public function createIAVUsingPostAsyncWithHttpInfo($iav_request_co)
     {
@@ -254,10 +254,10 @@ class IAVApi
     /**
      * Create request for operation 'createIAVUsingPost'
      *
-     * @param  \com\hydrogen\integration\Model\IavCO $iav_request_co iavRequestCO (required)
+     * @param  \com\hydrogen\integration\Model\IavRequestCO $iav_request_co iavRequestCO (required)
      *
-     * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     *@throws \InvalidArgumentException
      */
     protected function createIAVUsingPostRequest($iav_request_co)
     {

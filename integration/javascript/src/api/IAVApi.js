@@ -115,13 +115,8 @@
      * @param {module:api/IAVApi~getIAVUsingGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/IavResponseVo}
      */
-    this.getIAVUsingGet = function(authorization, nucleusBankLinkId, callback) {
+    this.getIAVUsingGet = function(nucleusBankLinkId, callback) {
       var postBody = null;
-
-      // verify the required parameter 'authorization' is set
-      if (authorization === undefined || authorization === null) {
-        throw new Error("Missing the required parameter 'authorization' when calling getIAVUsingGet");
-      }
 
       // verify the required parameter 'nucleusBankLinkId' is set
       if (nucleusBankLinkId === undefined || nucleusBankLinkId === null) {
@@ -137,7 +132,6 @@
       var collectionQueryParams = {
       };
       var headerParams = {
-        'Authorization': authorization
       };
       var formParams = {
       };

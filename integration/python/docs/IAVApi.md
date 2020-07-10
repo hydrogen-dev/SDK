@@ -40,7 +40,7 @@ configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = integration_api.IAVApi(integration_api.ApiClient(configuration))
-iav_request_co = integration_api.IavCO() # IavCO | iavRequestCO
+iav_request_co = integration_api.IavRequestCO() # IavRequestCO | iavRequestCO
 
 try:
     # Instant Account Verification of an account.
@@ -54,7 +54,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **iav_request_co** | [**IavCO**](IavCO.md)| iavRequestCO | 
+ **iav_request_co** | [**IavRequestCO**](IavRequestCO.md)| iavRequestCO | 
 
 ### Return type
 

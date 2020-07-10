@@ -1685,7 +1685,7 @@ paths:
           description: iavRequestCO
           required: true
           schema:
-            $ref: '#/definitions/IavCO'
+            $ref: '#/definitions/IavRequestCO'
       responses:
         '200':
           description: OK
@@ -3887,7 +3887,7 @@ definitions:
         type: string
       vendor_request:
         $ref: '#/definitions/IavVendorRequestCO'
-    title: IavCO
+    title: IavRequestCO
   IavResponseVo:
     type: object
     properties:

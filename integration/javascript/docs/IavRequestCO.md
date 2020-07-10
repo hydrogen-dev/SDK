@@ -1,4 +1,4 @@
-# HydrogenIntegrationApi.IavCO
+# HydrogenIntegrationApi.IavRequestCO
 
 ## Properties
 Name | Type | Description | Notes

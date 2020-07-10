@@ -1,6 +1,6 @@
 <?php
 /**
- * IavCO
+ * IavRequestCO
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \com\hydrogen\integration\ObjectSerializer;
 
 /**
- * IavCO Class Doc Comment
+ * IavRequestCO Class Doc Comment
  *
  * @category Class
  * @package  com\hydrogen\integration
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class IavCO implements ModelInterface, ArrayAccess
+class IavRequestCO implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class IavCO implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'IavCO';
+    protected static $swaggerModelName = 'IavRequestCO';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

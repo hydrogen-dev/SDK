@@ -11,6 +11,15 @@ For more information, please visit [https://www.hydrogenplatform.com/contact](ht
 
 ## Installation
 
+### Update Base Path 
+Follow steps to verify the base URL path:
+1. Go to ApiClient file located under src folder.
+2.  Search for **this.basePath** and change/verify the URL according to the environment.
+**Sandbox Base URL**
+https://sandbox.hydrogenplatform.com/integration/v1
+**Production Base URL**
+https://api.hydrogenplatform.com/integration/v1
+
 ### For [Node.js](https://nodejs.org/)
 
 #### npm
@@ -292,7 +301,7 @@ Class | Method | HTTP request | Description
  - [HydrogenIntegrationApi.GooglePayload](docs/GooglePayload.md)
  - [HydrogenIntegrationApi.IavAggregationResponseVo](docs/IavAggregationResponseVo.md)
  - [HydrogenIntegrationApi.IavBankLinkResponseVo](docs/IavBankLinkResponseVo.md)
- - [HydrogenIntegrationApi.IavCO](docs/IavCO.md)
+ - [HydrogenIntegrationApi.IavRequestCO](docs/IavRequestCO.md)
  - [HydrogenIntegrationApi.IavResponseVo](docs/IavResponseVo.md)
  - [HydrogenIntegrationApi.IavTokenExchangeVendorResponseVO](docs/IavTokenExchangeVendorResponseVO.md)
  - [HydrogenIntegrationApi.IavVendorRequestCO](docs/IavVendorRequestCO.md)

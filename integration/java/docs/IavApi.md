@@ -35,7 +35,7 @@ try {
    e.printStackTrace();
 }
 IavApi apiInstance = new IavApi();
-IavCO iavRequestCO = new IavCO(); // IavCO | iavRequestCO
+IavRequestCO iavRequestCO = new IavRequestCO(); // IavRequestCO | iavRequestCO
 try {
     IavResponseVo result = apiInstance.createIAVUsingPost(iavRequestCO);
     System.out.println(result);
@@ -49,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **iavRequestCO** | [**IavCO**](IavCO.md)| iavRequestCO |
+ **iavRequestCO** | [**IavRequestCO**](IavRequestCO.md)| iavRequestCO |
 
 ### Return type
 

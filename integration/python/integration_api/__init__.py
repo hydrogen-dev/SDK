@@ -99,7 +99,7 @@ from integration_api.models.get_order_response import GetOrderResponse
 from integration_api.models.google_payload import GooglePayload
 from integration_api.models.iav_aggregation_response_vo import IavAggregationResponseVo
 from integration_api.models.iav_bank_link_response_vo import IavBankLinkResponseVo
-from integration_api.models.iav_co import IavCO
+from integration_api.models.iav_request_co import IavRequestCO
 from integration_api.models.iav_response_vo import IavResponseVo
 from integration_api.models.iav_token_exchange_vendor_response_vo import IavTokenExchangeVendorResponseVO
 from integration_api.models.iav_vendor_request_co import IavVendorRequestCO

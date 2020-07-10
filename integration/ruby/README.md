@@ -20,10 +20,10 @@ Follow steps to verify the base URL path:
 2.  Search for @host and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com/integration/v1
 
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
+https://api.hydrogenplatform.com/integration/v1
 
 ### Build a gem
 
@@ -236,7 +236,7 @@ Class | Method | HTTP request | Description
  - [IntegrationApi::GooglePayload](docs/GooglePayload.md)
  - [IntegrationApi::IavAggregationResponseVo](docs/IavAggregationResponseVo.md)
  - [IntegrationApi::IavBankLinkResponseVo](docs/IavBankLinkResponseVo.md)
- - [IntegrationApi::IavCO](docs/IavCO.md)
+ - [IntegrationApi::IavRequestCO](docs/IavRequestCO.md)
  - [IntegrationApi::IavResponseVo](docs/IavResponseVo.md)
  - [IntegrationApi::IavTokenExchangeVendorResponseVO](docs/IavTokenExchangeVendorResponseVO.md)
  - [IntegrationApi::IavVendorRequestCO](docs/IavVendorRequestCO.md)

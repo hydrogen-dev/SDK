@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import integration_api
-from integration_api.models.iav_co import IavCO  # noqa: E501
+from integration_api.models.iav_request_co import IavRequestCO  # noqa: E501
 from integration_api.rest import ApiException
 
 
-class TestIavCO(unittest.TestCase):
-    """IavCO unit test stubs"""
+class TestIavRequestCO(unittest.TestCase):
+    """IavRequestCO unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestIavCO(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testIavCO(self):
-        """Test IavCO"""
+    def testIavRequestCO(self):
+        """Test IavRequestCO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = integration_api.models.iav_co.IavCO()  # noqa: E501
+        # model = integration_api.models.iav_request_co.IavRequestCO()  # noqa: E501
         pass
 
 

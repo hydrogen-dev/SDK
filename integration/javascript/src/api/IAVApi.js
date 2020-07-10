@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/IavCO', 'model/IavResponseVo'], factory);
+    define(['ApiClient', 'model/IavRequestCO', 'model/IavResponseVo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/IavCO'), require('../model/IavResponseVo'));
+    module.exports = factory(require('../ApiClient'), require('../model/IavRequestCO'), require('../model/IavResponseVo'));
   } else {
     // Browser globals (root is window)
     if (!root.HydrogenIntegrationApi) {
       root.HydrogenIntegrationApi = {};
     }
-    root.HydrogenIntegrationApi.IAVApi = factory(root.HydrogenIntegrationApi.ApiClient, root.HydrogenIntegrationApi.IavCO, root.HydrogenIntegrationApi.IavResponseVo);
+    root.HydrogenIntegrationApi.IAVApi = factory(root.HydrogenIntegrationApi.ApiClient, root.HydrogenIntegrationApi.IavRequestCO, root.HydrogenIntegrationApi.IavResponseVo);
   }
-}(this, function(ApiClient, IavCO, IavResponseVo) {
+}(this, function(ApiClient, IavRequestCO, IavResponseVo) {
   'use strict';
 
   /**
@@ -59,7 +59,7 @@
     /**
      * Instant Account Verification of an account.
      * Endpoint is used to verify account.
-     * @param {module:model/IavCO} iavRequestCO iavRequestCO
+     * @param {module:model/IavRequestCO} iavRequestCO iavRequestCO
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization Authorization
      * @param {module:api/IAVApi~createIAVUsingPostCallback} callback The callback function, accepting three arguments: error, data, response

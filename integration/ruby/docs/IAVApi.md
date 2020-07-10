@@ -32,7 +32,7 @@ end
 
 api_instance = IntegrationApi::IAVApi.new
 
-iav_request_co = IntegrationApi::IavCO.new # IavCO | iavRequestCO
+iav_request_co = IntegrationApi::IavRequestCO.new # IavRequestCO | iavRequestCO
 
 
 begin
@@ -48,7 +48,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **iav_request_co** | [**IavCO**](IavCO.md)| iavRequestCO | 
+ **iav_request_co** | [**IavRequestCO**](IavRequestCO.md)| iavRequestCO | 
 
 ### Return type
 

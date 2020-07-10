@@ -1,4 +1,4 @@
-# IntegrationApi::IavCO
+# IntegrationApi::IavRequestCO
 
 ## Properties
 Name | Type | Description | Notes

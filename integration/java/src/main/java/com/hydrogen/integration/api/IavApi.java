@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.hydrogen.integration.model.IavCO;
+import com.hydrogen.integration.model.IavRequestCO;
 import com.hydrogen.integration.model.IavResponseVo;
 
 import java.util.UUID;
@@ -65,7 +65,7 @@ public class IavApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createIAVUsingPostCall(IavCO iavRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createIAVUsingPostCall(IavRequestCO iavRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = iavRequestCO;
 
         // create path and map variables
@@ -107,7 +107,7 @@ public class IavApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createIAVUsingPostValidateBeforeCall(IavCO iavRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createIAVUsingPostValidateBeforeCall(IavRequestCO iavRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'iavRequestCO' is set
         if (iavRequestCO == null) {
@@ -127,7 +127,7 @@ public class IavApi {
      * @return IavResponseVo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public IavResponseVo createIAVUsingPost(IavCO iavRequestCO) throws ApiException {
+    public IavResponseVo createIAVUsingPost(IavRequestCO iavRequestCO) throws ApiException {
         ApiResponse<IavResponseVo> resp = createIAVUsingPostWithHttpInfo(iavRequestCO);
         return resp.getData();
     }
@@ -139,7 +139,7 @@ public class IavApi {
      * @return ApiResponse&lt;IavResponseVo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<IavResponseVo> createIAVUsingPostWithHttpInfo(IavCO iavRequestCO) throws ApiException {
+    public ApiResponse<IavResponseVo> createIAVUsingPostWithHttpInfo(IavRequestCO iavRequestCO) throws ApiException {
         com.squareup.okhttp.Call call = createIAVUsingPostValidateBeforeCall(iavRequestCO, null, null);
         Type localVarReturnType = new TypeToken<IavResponseVo>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -153,7 +153,7 @@ public class IavApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createIAVUsingPostAsync(IavCO iavRequestCO, final ApiCallback<IavResponseVo> callback) throws ApiException {
+    public com.squareup.okhttp.Call createIAVUsingPostAsync(IavRequestCO iavRequestCO, final ApiCallback<IavResponseVo> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

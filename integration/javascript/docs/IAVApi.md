@@ -27,7 +27,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.IAVApi();
 
-var iavRequestCO = new HydrogenIntegrationApi.IavCO(); // IavCO | iavRequestCO
+var iavRequestCO = new HydrogenIntegrationApi.IavRequestCO(); // IavRequestCO | iavRequestCO
 
 var opts = { 
   'authorization': "authorization_example" // String | Authorization
@@ -47,7 +47,7 @@ apiInstance.createIAVUsingPost(iavRequestCO, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **iavRequestCO** | [**IavCO**](IavCO.md)| iavRequestCO | 
+ **iavRequestCO** | [**IavRequestCO**](IavRequestCO.md)| iavRequestCO | 
  **authorization** | **String**| Authorization | [optional] 
 
 ### Return type

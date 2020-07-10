@@ -16,9 +16,9 @@ Follow steps to verify the base URL path:
 1. Go to Configuration file located under lib folder.
 2.  Search for $host and change/verify the URL according to the environment.
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com/integration/v1
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
+https://api.hydrogenplatform.com/integration/v1
 
 ## Installation & Usage
 ### Composer
@@ -242,7 +242,7 @@ Class | Method | HTTP request | Description
  - [GooglePayload](docs/Model/GooglePayload.md)
  - [IavAggregationResponseVo](docs/Model/IavAggregationResponseVo.md)
  - [IavBankLinkResponseVo](docs/Model/IavBankLinkResponseVo.md)
- - [IavCO](docs/Model/IavCO.md)
+ - [IavRequestCO](docs/Model/IavRequestCO.md)
  - [IavResponseVo](docs/Model/IavResponseVo.md)
  - [IavTokenExchangeVendorResponseVO](docs/Model/IavTokenExchangeVendorResponseVO.md)
  - [IavVendorRequestCO](docs/Model/IavVendorRequestCO.md)

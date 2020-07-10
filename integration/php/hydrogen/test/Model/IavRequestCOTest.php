@@ -1,6 +1,6 @@
 <?php
 /**
- * IavCOTest
+ * IavRequestCOTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace com\hydrogen\integration;
 
 /**
- * IavCOTest Class Doc Comment
+ * IavRequestCOTest Class Doc Comment
  *
  * @category    Class
- * @description IavCO
+ * @description IavRequestCO
  * @package     com\hydrogen\integration
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class IavCOTest extends \PHPUnit_Framework_TestCase
+class IavRequestCOTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class IavCOTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "IavCO"
+     * Test "IavRequestCO"
      */
-    public function testIavCO()
+    public function testIavRequestCO()
     {
     }
 

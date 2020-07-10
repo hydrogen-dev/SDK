@@ -21,10 +21,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.UUID;
 
 /**
- * IavCO
+ * IavRequestCO
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
-public class IavCO {
+public class IavRequestCO {
   @SerializedName("auth_token")
   private String authToken = null;
 
@@ -46,7 +46,7 @@ public class IavCO {
   @SerializedName("vendor_request")
   private IavVendorRequestCO vendorRequest = null;
 
-  public IavCO authToken(String authToken) {
+  public IavRequestCO authToken(String authToken) {
     this.authToken = authToken;
     return this;
   }
@@ -64,7 +64,7 @@ public class IavCO {
     this.authToken = authToken;
   }
 
-  public IavCO isCash(Boolean isCash) {
+  public IavRequestCO isCash(Boolean isCash) {
     this.isCash = isCash;
     return this;
   }
@@ -82,7 +82,7 @@ public class IavCO {
     this.isCash = isCash;
   }
 
-  public IavCO nucleusAccountId(UUID nucleusAccountId) {
+  public IavRequestCO nucleusAccountId(UUID nucleusAccountId) {
     this.nucleusAccountId = nucleusAccountId;
     return this;
   }
@@ -100,7 +100,7 @@ public class IavCO {
     this.nucleusAccountId = nucleusAccountId;
   }
 
-  public IavCO nucleusClientId(UUID nucleusClientId) {
+  public IavRequestCO nucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
     return this;
   }
@@ -118,7 +118,7 @@ public class IavCO {
     this.nucleusClientId = nucleusClientId;
   }
 
-  public IavCO nucleusTransferFields(NucleusTransferFieldsCO nucleusTransferFields) {
+  public IavRequestCO nucleusTransferFields(NucleusTransferFieldsCO nucleusTransferFields) {
     this.nucleusTransferFields = nucleusTransferFields;
     return this;
   }
@@ -136,7 +136,7 @@ public class IavCO {
     this.nucleusTransferFields = nucleusTransferFields;
   }
 
-  public IavCO product(String product) {
+  public IavRequestCO product(String product) {
     this.product = product;
     return this;
   }
@@ -154,7 +154,7 @@ public class IavCO {
     this.product = product;
   }
 
-  public IavCO vendorRequest(IavVendorRequestCO vendorRequest) {
+  public IavRequestCO vendorRequest(IavVendorRequestCO vendorRequest) {
     this.vendorRequest = vendorRequest;
     return this;
   }
@@ -181,14 +181,14 @@ public class IavCO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    IavCO iavCO = (IavCO) o;
-    return Objects.equals(this.authToken, iavCO.authToken) &&
-        Objects.equals(this.isCash, iavCO.isCash) &&
-        Objects.equals(this.nucleusAccountId, iavCO.nucleusAccountId) &&
-        Objects.equals(this.nucleusClientId, iavCO.nucleusClientId) &&
-        Objects.equals(this.nucleusTransferFields, iavCO.nucleusTransferFields) &&
-        Objects.equals(this.product, iavCO.product) &&
-        Objects.equals(this.vendorRequest, iavCO.vendorRequest);
+    IavRequestCO IavRequestCO = (IavRequestCO) o;
+    return Objects.equals(this.authToken, IavRequestCO.authToken) &&
+        Objects.equals(this.isCash, IavRequestCO.isCash) &&
+        Objects.equals(this.nucleusAccountId, IavRequestCO.nucleusAccountId) &&
+        Objects.equals(this.nucleusClientId, IavRequestCO.nucleusClientId) &&
+        Objects.equals(this.nucleusTransferFields, IavRequestCO.nucleusTransferFields) &&
+        Objects.equals(this.product, IavRequestCO.product) &&
+        Objects.equals(this.vendorRequest, IavRequestCO.vendorRequest);
   }
 
   @Override
@@ -200,7 +200,7 @@ public class IavCO {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class IavCO {\n");
+    sb.append("class IavRequestCO {\n");
     
     sb.append("    authToken: ").append(toIndentedString(authToken)).append("\n");
     sb.append("    isCash: ").append(toIndentedString(isCash)).append("\n");

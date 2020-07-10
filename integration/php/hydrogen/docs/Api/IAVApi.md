@@ -41,7 +41,7 @@ $apiInstance = new com\hydrogen\integration\Api\IAVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$iav_request_co = new \com\hydrogen\integration\Model\IavCO(); // \com\hydrogen\integration\Model\IavCO | iavRequestCO
+$iav_request_co = new \com\hydrogen\integration\Model\IavRequestCO(); IavRequestCO
 
 try {
     $result = $apiInstance->createIAVUsingPost($iav_request_co);
@@ -56,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **iav_request_co** | [**\com\hydrogen\integration\Model\IavCO**](../Model/IavCO.md)| iavRequestCO |
+ **iav_request_co** | [**\com\hydrogen\integration\Model\IavRequestCO**](../Model/IavRequestCO.md)| iavRequestCO |
 
 ### Return type
 

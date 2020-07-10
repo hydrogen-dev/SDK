@@ -17,9 +17,9 @@ Follow steps to verify the base URL path:
 1. Go to configuration.py file located under integration_api folder.
 2. Search for self.host and change/verify the URL according to the environment.
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com/integration/v1
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
+https://api.hydrogenplatform.com/integration/v1
 
 ## Installation & Usage
 ### pip install
@@ -233,7 +233,7 @@ Class | Method | HTTP request | Description
  - [GooglePayload](docs/GooglePayload.md)
  - [IavAggregationResponseVo](docs/IavAggregationResponseVo.md)
  - [IavBankLinkResponseVo](docs/IavBankLinkResponseVo.md)
- - [IavCO](docs/IavCO.md)
+ - [IavRequestCO](docs/IavRequestCO.md)
  - [IavResponseVo](docs/IavResponseVo.md)
  - [IavTokenExchangeVendorResponseVO](docs/IavTokenExchangeVendorResponseVO.md)
  - [IavVendorRequestCO](docs/IavVendorRequestCO.md)

@@ -31,14 +31,14 @@
   var instance;
 
   describe('(package)', function() {
-    describe('IavCO', function() {
+    describe('IavRequestCO', function() {
       beforeEach(function() {
-        instance = new HydrogenIntegrationApi.IavCO();
+        instance = new HydrogenIntegrationApi.IavRequestCO();
       });
 
-      it('should create an instance of IavCO', function() {
-        // TODO: update the code to test IavCO
-        expect(instance).to.be.a(HydrogenIntegrationApi.IavCO);
+      it('should create an instance of IavRequestCO', function() {
+        // TODO: update the code to test IavRequestCO
+        expect(instance).to.be.a(HydrogenIntegrationApi.IavRequestCO);
       });
 
       it('should have the property authToken (base name: "auth_token")', function() {

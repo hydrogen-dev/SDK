@@ -144,7 +144,8 @@ class Webhook(object):
         :type: list[str]
         """
         allowed_values = ["KYC", "KYC_STATUS"]  # noqa: E501
-        if not set(integration_service).issubset(set(allowed_values)):
+        if not set((integration_service_value.lower() for integration_service_value in integration_service))\
+                .issubset(set((value.lower() for value in allowed_values))):
             raise ValueError(
                 "Invalid values for `integration_service` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(integration_service) - set(allowed_values))),  # noqa: E501

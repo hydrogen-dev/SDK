@@ -277,7 +277,7 @@ class BaasClientVendorDataVO(object):
         :type: str
         """
         allowed_values = ["M", "F", "U"]  # noqa: E501
-        if gender not in allowed_values:
+        if gender is not None and gender.upper() not in allowed_values:
             raise ValueError(
                 "Invalid value for `gender` ({0}), must be one of {1}"  # noqa: E501
                 .format(gender, allowed_values)

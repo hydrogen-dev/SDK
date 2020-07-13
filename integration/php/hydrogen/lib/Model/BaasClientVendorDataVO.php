@@ -309,7 +309,7 @@ class BaasClientVendorDataVO implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getGenderAllowableValues();
-        if (!is_null($this->container['gender']) && !in_array($this->container['gender'], $allowedValues, true)) {
+        if (!is_null($this->container['gender']) && !in_array(strtoupper($this->container['gender']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'gender', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -495,7 +495,7 @@ class BaasClientVendorDataVO implements ModelInterface, ArrayAccess
     public function setGender($gender)
     {
         $allowedValues = $this->getGenderAllowableValues();
-        if (!is_null($gender) && !in_array($gender, $allowedValues, true)) {
+        if (!is_null($gender) && !in_array(strtoupper($gender), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'gender', must be one of '%s'",

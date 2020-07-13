@@ -353,7 +353,7 @@ class ResponseEntity implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getStatusCodeAllowableValues();
-        if (!is_null($this->container['status_code']) && !in_array($this->container['status_code'], $allowedValues, true)) {
+        if (!is_null($this->container['status_code']) && !in_array(strtoupper($this->container['status_code']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'status_code', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -443,7 +443,7 @@ class ResponseEntity implements ModelInterface, ArrayAccess
     public function setStatusCode($status_code)
     {
         $allowedValues = $this->getStatusCodeAllowableValues();
-        if (!is_null($status_code) && !in_array($status_code, $allowedValues, true)) {
+        if (!is_null($status_code) && !in_array(strtoupper($status_code), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'status_code', must be one of '%s'",

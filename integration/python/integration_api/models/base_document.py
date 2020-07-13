@@ -92,7 +92,7 @@ class BaseDocument(object):
         :type: str
         """
         allowed_values = ["BASIC_INFO", "ADDRESS_INFO", "PERSONAL_INFO", "IDENTIFICATION_INFO", "EMPLOYMENT_INFO", "INVESTOR_PROFILE_INFO", "COMPLIANCE_AML_INFO", "DISCLOSURES", "MARGIN_DISCLOSURE", "MARKETING_INFO", "CUSTODIAN_INFO", "INSTITUTIONAL_INFO", "DIRECTOR_INFO", "TRUST_INFO", "JOINT_BASIC_INFO", "JOINT_ADDRESS_INFO", "JOINT_PERSONAL_INFO", "JOINT_IDENTIFICATION_INFO", "JOINT_EMPLOYMENT_INFO", "JOINT_INVESTOR_PROFILE_INFO", "JOINT_COMPLIANCE_AML_INFO", "JOINT_DISCLOSURES", "JOINT_MARGIN_DISCLOSURE", "JOINT_MARKETING_INFO", "JOINT_CUSTODIAN_INFO", "JOINT_INSTITUTIONAL_INFO", "JOINT_DIRECTOR_INFO", "JOINT_TRUST_INFO"]  # noqa: E501
-        if type not in allowed_values:
+        if type is not None and type.upper() not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
                 .format(type, allowed_values)

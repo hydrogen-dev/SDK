@@ -144,7 +144,7 @@ class CardTokenRequestCO(object):
         :type: str
         """
         allowed_values = ["apple", "google", "samsung"]  # noqa: E501
-        if wallet not in allowed_values:
+        if wallet is not None and wallet.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `wallet` ({0}), must be one of {1}"  # noqa: E501
                 .format(wallet, allowed_values)

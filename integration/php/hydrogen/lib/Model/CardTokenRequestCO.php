@@ -225,7 +225,7 @@ class CardTokenRequestCO implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getWalletAllowableValues();
-        if (!is_null($this->container['wallet']) && !in_array($this->container['wallet'], $allowedValues, true)) {
+        if (!is_null($this->container['wallet']) && !in_array(strtolower($this->container['wallet']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'wallet', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -339,7 +339,7 @@ class CardTokenRequestCO implements ModelInterface, ArrayAccess
     public function setWallet($wallet)
     {
         $allowedValues = $this->getWalletAllowableValues();
-        if (!is_null($wallet) && !in_array($wallet, $allowedValues, true)) {
+        if (!is_null($wallet) && !in_array(strtolower($wallet), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'wallet', must be one of '%s'",

@@ -102,7 +102,7 @@ module IntegrationApi
     # @return true if the model is valid
     def valid?
       wallet_validator = EnumAttributeValidator.new('String', ['apple', 'google', 'samsung'])
-      return false unless wallet_validator.valid?(@wallet)
+      return false unless wallet_validator.valid?(@wallet.downcase)
       true
     end
 
@@ -110,7 +110,7 @@ module IntegrationApi
     # @param [Object] wallet Object to be assigned
     def wallet=(wallet)
       validator = EnumAttributeValidator.new('String', ['apple', 'google', 'samsung'])
-      unless validator.valid?(wallet)
+      unless validator.valid?(wallet.downcase)
         fail ArgumentError, 'invalid value for "wallet", must be one of #{validator.allowable_values}.'
       end
       @wallet = wallet

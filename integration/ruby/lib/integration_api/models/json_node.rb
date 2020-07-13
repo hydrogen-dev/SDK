@@ -236,7 +236,7 @@ module IntegrationApi
     # @return true if the model is valid
     def valid?
       node_type_validator = EnumAttributeValidator.new('String', ['ARRAY', 'BINARY', 'BOOLEAN', 'MISSING', 'NULL', 'NUMBER', 'OBJECT', 'POJO', 'STRING'])
-      return false unless node_type_validator.valid?(@node_type)
+      return false unless node_type_validator.valid?(@node_type.upcase)
       true
     end
 
@@ -244,7 +244,7 @@ module IntegrationApi
     # @param [Object] node_type Object to be assigned
     def node_type=(node_type)
       validator = EnumAttributeValidator.new('String', ['ARRAY', 'BINARY', 'BOOLEAN', 'MISSING', 'NULL', 'NUMBER', 'OBJECT', 'POJO', 'STRING'])
-      unless validator.valid?(node_type)
+      unless validator.valid?(node_type.upcase)
         fail ArgumentError, 'invalid value for "node_type", must be one of #{validator.allowable_values}.'
       end
       @node_type = node_type

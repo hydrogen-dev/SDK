@@ -218,7 +218,7 @@ module IntegrationApi
     # @return true if the model is valid
     def valid?
       gender_validator = EnumAttributeValidator.new('String', ['M', 'F', 'U'])
-      return false unless gender_validator.valid?(@gender)
+      return false unless gender_validator.valid?(@gender.upcase)
       true
     end
 
@@ -226,7 +226,7 @@ module IntegrationApi
     # @param [Object] gender Object to be assigned
     def gender=(gender)
       validator = EnumAttributeValidator.new('String', ['M', 'F', 'U'])
-      unless validator.valid?(gender)
+      unless validator.valid?(gender.upcase)
         fail ArgumentError, 'invalid value for "gender", must be one of #{validator.allowable_values}.'
       end
       @gender = gender

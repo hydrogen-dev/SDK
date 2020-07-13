@@ -333,7 +333,7 @@ class Webhook implements ModelInterface, ArrayAccess
     public function setIntegrationService($integration_service)
     {
         $allowedValues = $this->getIntegrationServiceAllowableValues();
-        if (!is_null($integration_service) && array_diff($integration_service, $allowedValues)) {
+        if (!is_null($integration_service) && array_udiff($integration_service, $allowedValues, 'strcasecmp')) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'integration_service', must be one of '%s'",

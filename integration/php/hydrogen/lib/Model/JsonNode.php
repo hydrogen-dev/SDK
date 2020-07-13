@@ -339,7 +339,7 @@ class JsonNode implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getNodeTypeAllowableValues();
-        if (!is_null($this->container['node_type']) && !in_array($this->container['node_type'], $allowedValues, true)) {
+        if (!is_null($this->container['node_type']) && !in_array(strtoupper($this->container['node_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'node_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -693,7 +693,7 @@ class JsonNode implements ModelInterface, ArrayAccess
     public function setNodeType($node_type)
     {
         $allowedValues = $this->getNodeTypeAllowableValues();
-        if (!is_null($node_type) && !in_array($node_type, $allowedValues, true)) {
+        if (!is_null($node_type) && !in_array(strtoupper($node_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'node_type', must be one of '%s'",

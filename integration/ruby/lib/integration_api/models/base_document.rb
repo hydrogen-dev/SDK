@@ -84,7 +84,7 @@ module IntegrationApi
     # @return true if the model is valid
     def valid?
       type_validator = EnumAttributeValidator.new('String', ['BASIC_INFO', 'ADDRESS_INFO', 'PERSONAL_INFO', 'IDENTIFICATION_INFO', 'EMPLOYMENT_INFO', 'INVESTOR_PROFILE_INFO', 'COMPLIANCE_AML_INFO', 'DISCLOSURES', 'MARGIN_DISCLOSURE', 'MARKETING_INFO', 'CUSTODIAN_INFO', 'INSTITUTIONAL_INFO', 'DIRECTOR_INFO', 'TRUST_INFO', 'JOINT_BASIC_INFO', 'JOINT_ADDRESS_INFO', 'JOINT_PERSONAL_INFO', 'JOINT_IDENTIFICATION_INFO', 'JOINT_EMPLOYMENT_INFO', 'JOINT_INVESTOR_PROFILE_INFO', 'JOINT_COMPLIANCE_AML_INFO', 'JOINT_DISCLOSURES', 'JOINT_MARGIN_DISCLOSURE', 'JOINT_MARKETING_INFO', 'JOINT_CUSTODIAN_INFO', 'JOINT_INSTITUTIONAL_INFO', 'JOINT_DIRECTOR_INFO', 'JOINT_TRUST_INFO'])
-      return false unless type_validator.valid?(@type)
+      return false unless type_validator.valid?(@type.upcase)
       true
     end
 
@@ -92,7 +92,7 @@ module IntegrationApi
     # @param [Object] type Object to be assigned
     def type=(type)
       validator = EnumAttributeValidator.new('String', ['BASIC_INFO', 'ADDRESS_INFO', 'PERSONAL_INFO', 'IDENTIFICATION_INFO', 'EMPLOYMENT_INFO', 'INVESTOR_PROFILE_INFO', 'COMPLIANCE_AML_INFO', 'DISCLOSURES', 'MARGIN_DISCLOSURE', 'MARKETING_INFO', 'CUSTODIAN_INFO', 'INSTITUTIONAL_INFO', 'DIRECTOR_INFO', 'TRUST_INFO', 'JOINT_BASIC_INFO', 'JOINT_ADDRESS_INFO', 'JOINT_PERSONAL_INFO', 'JOINT_IDENTIFICATION_INFO', 'JOINT_EMPLOYMENT_INFO', 'JOINT_INVESTOR_PROFILE_INFO', 'JOINT_COMPLIANCE_AML_INFO', 'JOINT_DISCLOSURES', 'JOINT_MARGIN_DISCLOSURE', 'JOINT_MARKETING_INFO', 'JOINT_CUSTODIAN_INFO', 'JOINT_INSTITUTIONAL_INFO', 'JOINT_DIRECTOR_INFO', 'JOINT_TRUST_INFO'])
-      unless validator.valid?(type)
+      unless validator.valid?(type.upcase)
         fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
       end
       @type = type

@@ -132,7 +132,7 @@ module IntegrationApi
     # @return true if the model is valid
     def valid?
       type_validator = EnumAttributeValidator.new('String', ['HOME', 'WORK', 'BILLING', 'MAILING', 'LEGAL', 'RESIDENCE', 'UNKNOWN'])
-      return false unless type_validator.valid?(@type)
+      return false unless type_validator.valid?(@type.upcase)
       true
     end
 
@@ -140,7 +140,7 @@ module IntegrationApi
     # @param [Object] type Object to be assigned
     def type=(type)
       validator = EnumAttributeValidator.new('String', ['HOME', 'WORK', 'BILLING', 'MAILING', 'LEGAL', 'RESIDENCE', 'UNKNOWN'])
-      unless validator.valid?(type)
+      unless validator.valid?(type.upcase)
         fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
       end
       @type = type

@@ -293,7 +293,7 @@ class OptConfig1 implements ModelInterface, ArrayAccess
     public function setSecTypes($sec_types)
     {
         $allowedValues = $this->getSecTypesAllowableValues();
-        if (!is_null($sec_types) && array_diff($sec_types, $allowedValues)) {
+        if (!is_null($sec_types) && array_udiff($sec_types, $allowedValues, 'strcasecmp')) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'sec_types', must be one of '%s'",

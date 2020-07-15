@@ -333,7 +333,7 @@ class Webhook implements ModelInterface, ArrayAccess
     public function setAtomService($atom_service)
     {
         $allowedValues = $this->getAtomServiceAllowableValues();
-        if (!is_null($atom_service) && array_diff($atom_service, $allowedValues)) {
+        if (!is_null($atom_service) && array_udiff($atom_service, $allowedValues, 'strcasecmp')) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'atom_service', must be one of '%s'",

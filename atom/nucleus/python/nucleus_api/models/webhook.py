@@ -102,7 +102,8 @@ class Webhook(object):
         :type: list[str]
         """
         allowed_values = ["CLIENT", "CLIENT_STATUS", "ACCOUNT_STATUS", "ACCOUNT", "CARD", "CARD_STATUS", "PORTFOLIO_ASSET_SIZE", "PORTFOLIO_TRANSACTION", "PORTFOLIO_TRANSACTION_STATUS", "PORTFOLIO_HOLDING", "AGGREGATION_ACCOUNT", "AGGREGATION_ACCOUNT_STATUS", "NOTIFICATION_CLIENT", "AGGREGATION_ACCOUNT_BALANCE", "AUDIT_LOG", "SUPPORT_TICKET", "FEATURE_TRACK", "AGGREGATION_ACCOUNT_TRANSACTION", "AGGREGATION_ACCOUNT_TRANSACTION_STATUS", "AGGREGATION_ACCOUNT_HOLDING", "ORDER_TRACK", "FUNDING", "FUNDING_STATUS", "BUDGET", "DOCUMENT", "CLIENT_RESPONSE"]  # noqa: E501
-        if not set(atom_service).issubset(set(allowed_values)):
+        if not set((atom_service_value.lower() for atom_service_value in atom_service)) \
+                .issubset(set((value.lower() for value in allowed_values))):
             raise ValueError(
                 "Invalid values for `atom_service` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(atom_service) - set(allowed_values))),  # noqa: E501

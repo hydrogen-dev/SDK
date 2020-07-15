@@ -406,7 +406,8 @@ class GoalAccumulationRecommendationRequest implements ModelInterface, ArrayAcce
             $invalidProperties[] = "'p_ret' can't be null";
         }
         $allowedValues = $this->getThreshTypeAllowableValues();
-        if (!is_null($this->container['thresh_type']) && !in_array($this->container['thresh_type'], $allowedValues, true)) {
+        if (!is_null($this->container['thresh_type']) &&
+            !in_array(strtolower($this->container['thresh_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'thresh_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -417,7 +418,8 @@ class GoalAccumulationRecommendationRequest implements ModelInterface, ArrayAcce
             $invalidProperties[] = "'p_risk' can't be null";
         }
         $allowedValues = $this->getRecommendTypeAllowableValues();
-        if (!is_null($this->container['recommend_type']) && !in_array($this->container['recommend_type'], $allowedValues, true)) {
+        if (!is_null($this->container['recommend_type']) &&
+            !in_array(strtolower($this->container['recommend_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'recommend_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -425,7 +427,8 @@ class GoalAccumulationRecommendationRequest implements ModelInterface, ArrayAcce
         }
 
         $allowedValues = $this->getHorizonFrequencyAllowableValues();
-        if (!is_null($this->container['horizon_frequency']) && !in_array($this->container['horizon_frequency'], $allowedValues, true)) {
+        if (!is_null($this->container['horizon_frequency']) &&
+            !in_array(strtolower($this->container['horizon_frequency']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'horizon_frequency', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -713,7 +716,7 @@ class GoalAccumulationRecommendationRequest implements ModelInterface, ArrayAcce
     public function setThreshType($thresh_type)
     {
         $allowedValues = $this->getThreshTypeAllowableValues();
-        if (!is_null($thresh_type) && !in_array($thresh_type, $allowedValues, true)) {
+        if (!is_null($thresh_type) && !in_array(strtolower($thresh_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'thresh_type', must be one of '%s'",
@@ -818,7 +821,7 @@ class GoalAccumulationRecommendationRequest implements ModelInterface, ArrayAcce
     public function setRecommendType($recommend_type)
     {
         $allowedValues = $this->getRecommendTypeAllowableValues();
-        if (!is_null($recommend_type) && !in_array($recommend_type, $allowedValues, true)) {
+        if (!is_null($recommend_type) && !in_array(strtolower($recommend_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'recommend_type', must be one of '%s'",
@@ -899,7 +902,8 @@ class GoalAccumulationRecommendationRequest implements ModelInterface, ArrayAcce
     public function setHorizonFrequency($horizon_frequency)
     {
         $allowedValues = $this->getHorizonFrequencyAllowableValues();
-        if (!is_null($horizon_frequency) && !in_array($horizon_frequency, $allowedValues, true)) {
+        if (!is_null($horizon_frequency) &&
+            !in_array(strtolower($horizon_frequency), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'horizon_frequency', must be one of '%s'",

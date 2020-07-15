@@ -383,13 +383,13 @@ module ProtonApi
     def valid?
       return false if !@compounding_rate.nil? && @compounding_rate < -1
       horizon_frequency_validator = EnumAttributeValidator.new('String', ['year', 'six_months', 'quarter', 'month', 'two_weeks', 'week', 'day'])
-      return false unless horizon_frequency_validator.valid?(@horizon_frequency)
+      return false unless horizon_frequency_validator.valid?(@horizon_frequency.downcase)
       return false if !@conf_tgt.nil? && @conf_tgt > 1
       return false if !@conf_tgt.nil? && @conf_tgt < 0
       return false if !@risk_score.nil? && @risk_score > 100
       return false if !@risk_score.nil? && @risk_score < 0
       market_data_source_validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      return false unless market_data_source_validator.valid?(@market_data_source)
+      return false unless market_data_source_validator.valid?(@market_data_source.downcase)
       return false if !@d_horizon.nil? && @d_horizon > 350
       return false if !@d_horizon.nil? && @d_horizon < 0
       return false if !@trading_days_per_year.nil? && @trading_days_per_year > 365
@@ -397,9 +397,9 @@ module ProtonApi
       return false if !@withdrawal_tax.nil? && @withdrawal_tax > 1
       return false if !@withdrawal_tax.nil? && @withdrawal_tax < 0
       thresh_type_validator = EnumAttributeValidator.new('String', ['amnt', 'perc'])
-      return false unless thresh_type_validator.valid?(@thresh_type)
+      return false unless thresh_type_validator.valid?(@thresh_type.downcase)
       recommend_type_validator = EnumAttributeValidator.new('String', ['recurring', 'one-time', 'combo', 'horizon'])
-      return false unless recommend_type_validator.valid?(@recommend_type)
+      return false unless recommend_type_validator.valid?(@recommend_type.downcase)
       return false if !@n.nil? && @n > 10000
       return false if !@n.nil? && @n < 1
       return false if !@thresh.nil? && @thresh < 0
@@ -408,10 +408,10 @@ module ProtonApi
       return false if !@curr_inv.nil? && @curr_inv < 0
       return false if @allocation_priority.nil?
       allocation_priority_validator = EnumAttributeValidator.new('String', ['goal', 'risk'])
-      return false unless allocation_priority_validator.valid?(@allocation_priority)
+      return false unless allocation_priority_validator.valid?(@allocation_priority.downcase)
       return false if @allocation_method.nil?
       allocation_method_validator = EnumAttributeValidator.new('String', ['select', 'create'])
-      return false unless allocation_method_validator.valid?(@allocation_method)
+      return false unless allocation_method_validator.valid?(@allocation_method.downcase)
       true
     end
 
@@ -429,7 +429,7 @@ module ProtonApi
     # @param [Object] horizon_frequency Object to be assigned
     def horizon_frequency=(horizon_frequency)
       validator = EnumAttributeValidator.new('String', ['year', 'six_months', 'quarter', 'month', 'two_weeks', 'week', 'day'])
-      unless validator.valid?(horizon_frequency)
+      unless validator.valid?(horizon_frequency.downcase)
         fail ArgumentError, 'invalid value for "horizon_frequency", must be one of #{validator.allowable_values}.'
       end
       @horizon_frequency = horizon_frequency
@@ -467,7 +467,7 @@ module ProtonApi
     # @param [Object] market_data_source Object to be assigned
     def market_data_source=(market_data_source)
       validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      unless validator.valid?(market_data_source)
+      unless validator.valid?(market_data_source.downcase)
         fail ArgumentError, 'invalid value for "market_data_source", must be one of #{validator.allowable_values}.'
       end
       @market_data_source = market_data_source
@@ -519,7 +519,7 @@ module ProtonApi
     # @param [Object] thresh_type Object to be assigned
     def thresh_type=(thresh_type)
       validator = EnumAttributeValidator.new('String', ['amnt', 'perc'])
-      unless validator.valid?(thresh_type)
+      unless validator.valid?(thresh_type.downcase)
         fail ArgumentError, 'invalid value for "thresh_type", must be one of #{validator.allowable_values}.'
       end
       @thresh_type = thresh_type
@@ -529,7 +529,7 @@ module ProtonApi
     # @param [Object] recommend_type Object to be assigned
     def recommend_type=(recommend_type)
       validator = EnumAttributeValidator.new('String', ['recurring', 'one-time', 'combo', 'horizon'])
-      unless validator.valid?(recommend_type)
+      unless validator.valid?(recommend_type.downcase)
         fail ArgumentError, 'invalid value for "recommend_type", must be one of #{validator.allowable_values}.'
       end
       @recommend_type = recommend_type
@@ -587,7 +587,7 @@ module ProtonApi
     # @param [Object] allocation_priority Object to be assigned
     def allocation_priority=(allocation_priority)
       validator = EnumAttributeValidator.new('String', ['goal', 'risk'])
-      unless validator.valid?(allocation_priority)
+      unless validator.valid?(allocation_priority.downcase)
         fail ArgumentError, 'invalid value for "allocation_priority", must be one of #{validator.allowable_values}.'
       end
       @allocation_priority = allocation_priority
@@ -597,7 +597,7 @@ module ProtonApi
     # @param [Object] allocation_method Object to be assigned
     def allocation_method=(allocation_method)
       validator = EnumAttributeValidator.new('String', ['select', 'create'])
-      unless validator.valid?(allocation_method)
+      unless validator.valid?(allocation_method.downcase)
         fail ArgumentError, 'invalid value for "allocation_method", must be one of #{validator.allowable_values}.'
       end
       @allocation_method = allocation_method

@@ -289,7 +289,8 @@ class AccumulationGoalDepositConfig implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getDepFrequencyAllowableValues();
-        if (!is_null($this->container['dep_frequency']) && !in_array($this->container['dep_frequency'], $allowedValues, true)) {
+        if (!is_null($this->container['dep_frequency']) &&
+            !in_array(strtolower($this->container['dep_frequency']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'dep_frequency', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -297,7 +298,8 @@ class AccumulationGoalDepositConfig implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getDepStartReferenceAllowableValues();
-        if (!is_null($this->container['dep_start_reference']) && !in_array($this->container['dep_start_reference'], $allowedValues, true)) {
+        if (!is_null($this->container['dep_start_reference']) &&
+            !in_array(strtolower($this->container['dep_start_reference']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'dep_start_reference', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -305,7 +307,8 @@ class AccumulationGoalDepositConfig implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getDepEndReferenceAllowableValues();
-        if (!is_null($this->container['dep_end_reference']) && !in_array($this->container['dep_end_reference'], $allowedValues, true)) {
+        if (!is_null($this->container['dep_end_reference']) &&
+            !in_array(strtolower($this->container['dep_end_reference']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'dep_end_reference', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -405,7 +408,8 @@ class AccumulationGoalDepositConfig implements ModelInterface, ArrayAccess
     public function setDepFrequency($dep_frequency)
     {
         $allowedValues = $this->getDepFrequencyAllowableValues();
-        if (!is_null($dep_frequency) && !in_array($dep_frequency, $allowedValues, true)) {
+        if (!is_null($dep_frequency)
+            && !in_array(strtolower($dep_frequency), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'dep_frequency', must be one of '%s'",
@@ -438,7 +442,7 @@ class AccumulationGoalDepositConfig implements ModelInterface, ArrayAccess
     public function setDepStartReference($dep_start_reference)
     {
         $allowedValues = $this->getDepStartReferenceAllowableValues();
-        if (!is_null($dep_start_reference) && !in_array($dep_start_reference, $allowedValues, true)) {
+        if (!is_null($dep_start_reference) && !in_array(strtolower($dep_start_reference), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'dep_start_reference', must be one of '%s'",
@@ -519,7 +523,7 @@ class AccumulationGoalDepositConfig implements ModelInterface, ArrayAccess
     public function setDepEndReference($dep_end_reference)
     {
         $allowedValues = $this->getDepEndReferenceAllowableValues();
-        if (!is_null($dep_end_reference) && !in_array($dep_end_reference, $allowedValues, true)) {
+        if (!is_null($dep_end_reference) && !in_array(strtolower($dep_end_reference), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'dep_end_reference', must be one of '%s'",

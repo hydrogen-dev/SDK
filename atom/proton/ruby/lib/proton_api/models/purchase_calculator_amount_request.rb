@@ -192,7 +192,7 @@ module ProtonApi
       return false if @purchase_horizon < 0
       return false if !@current_savings.nil? && @current_savings < 0
       horizon_frequency_interval_validator = EnumAttributeValidator.new('String', ['year', 'quarter', 'month', 'week'])
-      return false unless horizon_frequency_interval_validator.valid?(@horizon_frequency_interval)
+      return false unless horizon_frequency_interval_validator.valid?(@horizon_frequency_interval.downcase)
       true
     end
 
@@ -262,7 +262,7 @@ module ProtonApi
     # @param [Object] horizon_frequency_interval Object to be assigned
     def horizon_frequency_interval=(horizon_frequency_interval)
       validator = EnumAttributeValidator.new('String', ['year', 'quarter', 'month', 'week'])
-      unless validator.valid?(horizon_frequency_interval)
+      unless validator.valid?(horizon_frequency_interval.downcase)
         fail ArgumentError, 'invalid value for "horizon_frequency_interval", must be one of #{validator.allowable_values}.'
       end
       @horizon_frequency_interval = horizon_frequency_interval

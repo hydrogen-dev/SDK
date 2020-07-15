@@ -405,7 +405,8 @@ class VariableAnnuityRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getResultTypeAllowableValues();
-        if (!is_null($this->container['result_type']) && !in_array($this->container['result_type'], $allowedValues, true)) {
+        if (!is_null($this->container['result_type'])
+            && !in_array(strtolower($this->container['result_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'result_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -420,7 +421,8 @@ class VariableAnnuityRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($this->container['market_data_source']) && !in_array($this->container['market_data_source'], $allowedValues, true)) {
+        if (!is_null($this->container['market_data_source']) &&
+            !in_array(strtolower($this->container['market_data_source']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'market_data_source', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -443,7 +445,8 @@ class VariableAnnuityRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getFrequencyIntervalAllowableValues();
-        if (!is_null($this->container['frequency_interval']) && !in_array($this->container['frequency_interval'], $allowedValues, true)) {
+        if (!is_null($this->container['frequency_interval'])
+            && !in_array(strtolower($this->container['frequency_interval']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'frequency_interval', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -642,7 +645,7 @@ class VariableAnnuityRequest implements ModelInterface, ArrayAccess
     public function setResultType($result_type)
     {
         $allowedValues = $this->getResultTypeAllowableValues();
-        if (!is_null($result_type) && !in_array($result_type, $allowedValues, true)) {
+        if (!is_null($result_type) && !in_array(strtolower($result_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'result_type', must be one of '%s'",
@@ -728,7 +731,7 @@ class VariableAnnuityRequest implements ModelInterface, ArrayAccess
     public function setMarketDataSource($market_data_source)
     {
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($market_data_source) && !in_array($market_data_source, $allowedValues, true)) {
+        if (!is_null($market_data_source) && !in_array(strtolower($market_data_source), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'market_data_source', must be one of '%s'",
@@ -920,7 +923,8 @@ class VariableAnnuityRequest implements ModelInterface, ArrayAccess
     public function setFrequencyInterval($frequency_interval)
     {
         $allowedValues = $this->getFrequencyIntervalAllowableValues();
-        if (!is_null($frequency_interval) && !in_array($frequency_interval, $allowedValues, true)) {
+        if (!is_null($frequency_interval) &&
+            !in_array(strtolower($frequency_interval), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'frequency_interval', must be one of '%s'",

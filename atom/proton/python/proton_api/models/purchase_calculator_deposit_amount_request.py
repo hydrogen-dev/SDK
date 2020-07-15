@@ -317,7 +317,7 @@ class PurchaseCalculatorDepositAmountRequest(object):
         :type: str
         """
         allowed_values = ["year", "quarter", "month", "week"]  # noqa: E501
-        if horizon_frequency_interval not in allowed_values:
+        if horizon_frequency_interval is not None and horizon_frequency_interval.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `horizon_frequency_interval` ({0}), must be one of {1}"  # noqa: E501
                 .format(horizon_frequency_interval, allowed_values)

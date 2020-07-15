@@ -448,7 +448,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getHorizonFrequencyAllowableValues();
-        if (!is_null($this->container['horizon_frequency']) && !in_array($this->container['horizon_frequency'], $allowedValues, true)) {
+        if (!is_null($this->container['horizon_frequency'])
+            && !in_array(strtolower($this->container['horizon_frequency']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'horizon_frequency', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -472,7 +473,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($this->container['market_data_source']) && !in_array($this->container['market_data_source'], $allowedValues, true)) {
+        if (!is_null($this->container['market_data_source']) &&
+            !in_array(strtolower($this->container['market_data_source']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'market_data_source', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -504,7 +506,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getThreshTypeAllowableValues();
-        if (!is_null($this->container['thresh_type']) && !in_array($this->container['thresh_type'], $allowedValues, true)) {
+        if (!is_null($this->container['thresh_type']) &&
+            !in_array(strtolower($this->container['thresh_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'thresh_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -512,7 +515,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getRecommendTypeAllowableValues();
-        if (!is_null($this->container['recommend_type']) && !in_array($this->container['recommend_type'], $allowedValues, true)) {
+        if (!is_null($this->container['recommend_type']) &&
+            !in_array(strtolower($this->container['recommend_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'recommend_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -547,7 +551,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'allocation_priority' can't be null";
         }
         $allowedValues = $this->getAllocationPriorityAllowableValues();
-        if (!is_null($this->container['allocation_priority']) && !in_array($this->container['allocation_priority'], $allowedValues, true)) {
+        if (!is_null($this->container['allocation_priority']) &&
+            !in_array(strtolower($this->container['allocation_priority']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'allocation_priority', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -558,7 +563,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'allocation_method' can't be null";
         }
         $allowedValues = $this->getAllocationMethodAllowableValues();
-        if (!is_null($this->container['allocation_method']) && !in_array($this->container['allocation_method'], $allowedValues, true)) {
+        if (!is_null($this->container['allocation_method']) &&
+            !in_array(strtolower($this->container['allocation_method']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'allocation_method', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -701,7 +707,7 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     public function setHorizonFrequency($horizon_frequency)
     {
         $allowedValues = $this->getHorizonFrequencyAllowableValues();
-        if (!is_null($horizon_frequency) && !in_array($horizon_frequency, $allowedValues, true)) {
+        if (!is_null($horizon_frequency) && !in_array(strtolower($horizon_frequency), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'horizon_frequency', must be one of '%s'",
@@ -798,7 +804,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     public function setMarketDataSource($market_data_source)
     {
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($market_data_source) && !in_array($market_data_source, $allowedValues, true)) {
+        if (!is_null($market_data_source)
+            && !in_array(strtolower($market_data_source), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'market_data_source', must be one of '%s'",
@@ -927,7 +934,7 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     public function setThreshType($thresh_type)
     {
         $allowedValues = $this->getThreshTypeAllowableValues();
-        if (!is_null($thresh_type) && !in_array($thresh_type, $allowedValues, true)) {
+        if (!is_null($thresh_type) && !in_array(strtolower($thresh_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'thresh_type', must be one of '%s'",
@@ -960,7 +967,8 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     public function setRecommendType($recommend_type)
     {
         $allowedValues = $this->getRecommendTypeAllowableValues();
-        if (!is_null($recommend_type) && !in_array($recommend_type, $allowedValues, true)) {
+        if (!is_null($recommend_type) &&
+            !in_array(strtolower($recommend_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'recommend_type', must be one of '%s'",
@@ -1283,7 +1291,7 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     public function setAllocationPriority($allocation_priority)
     {
         $allowedValues = $this->getAllocationPriorityAllowableValues();
-        if (!in_array($allocation_priority, $allowedValues, true)) {
+        if (!is_null($allocation_priority) && !in_array(strtolower($allocation_priority), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'allocation_priority', must be one of '%s'",
@@ -1316,7 +1324,7 @@ class GoalDecumulationAllocationRequest implements ModelInterface, ArrayAccess
     public function setAllocationMethod($allocation_method)
     {
         $allowedValues = $this->getAllocationMethodAllowableValues();
-        if (!in_array($allocation_method, $allowedValues, true)) {
+        if (!is_null($allocation_method) && !in_array(strtolower($allocation_method), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'allocation_method', must be one of '%s'",

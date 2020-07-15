@@ -146,11 +146,11 @@ module ProtonApi
       return false if !@dep_inflation.nil? && @dep_inflation < -1
       return false if !@dep_amount.nil? && @dep_amount < 0
       dep_frequency_validator = EnumAttributeValidator.new('String', ['year', 'six_months', 'quarter', 'month', 'two_weeks', 'week', 'day'])
-      return false unless dep_frequency_validator.valid?(@dep_frequency)
+      return false unless dep_frequency_validator.valid?(@dep_frequency.downcase)
       dep_start_reference_validator = EnumAttributeValidator.new('String', ['a_start', 'a_end'])
-      return false unless dep_start_reference_validator.valid?(@dep_start_reference)
+      return false unless dep_start_reference_validator.valid?(@dep_start_reference.downcase)
       dep_end_reference_validator = EnumAttributeValidator.new('String', ['a_start', 'a_end'])
-      return false unless dep_end_reference_validator.valid?(@dep_end_reference)
+      return false unless dep_end_reference_validator.valid?(@dep_end_reference.downcase)
       true
     end
 
@@ -178,7 +178,7 @@ module ProtonApi
     # @param [Object] dep_frequency Object to be assigned
     def dep_frequency=(dep_frequency)
       validator = EnumAttributeValidator.new('String', ['year', 'six_months', 'quarter', 'month', 'two_weeks', 'week', 'day'])
-      unless validator.valid?(dep_frequency)
+      unless validator.valid?(dep_frequency.downcase)
         fail ArgumentError, 'invalid value for "dep_frequency", must be one of #{validator.allowable_values}.'
       end
       @dep_frequency = dep_frequency
@@ -188,7 +188,7 @@ module ProtonApi
     # @param [Object] dep_start_reference Object to be assigned
     def dep_start_reference=(dep_start_reference)
       validator = EnumAttributeValidator.new('String', ['a_start', 'a_end'])
-      unless validator.valid?(dep_start_reference)
+      unless validator.valid?(dep_start_reference.downcase)
         fail ArgumentError, 'invalid value for "dep_start_reference", must be one of #{validator.allowable_values}.'
       end
       @dep_start_reference = dep_start_reference
@@ -198,7 +198,7 @@ module ProtonApi
     # @param [Object] dep_end_reference Object to be assigned
     def dep_end_reference=(dep_end_reference)
       validator = EnumAttributeValidator.new('String', ['a_start', 'a_end'])
-      unless validator.valid?(dep_end_reference)
+      unless validator.valid?(dep_end_reference.downcase)
         fail ArgumentError, 'invalid value for "dep_end_reference", must be one of #{validator.allowable_values}.'
       end
       @dep_end_reference = dep_end_reference

@@ -142,7 +142,7 @@ class AccumulationGoalDepositConfig(object):
         :type: str
         """
         allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
-        if dep_frequency not in allowed_values:
+        if dep_frequency is not None and dep_frequency.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `dep_frequency` ({0}), must be one of {1}"  # noqa: E501
                 .format(dep_frequency, allowed_values)
@@ -169,7 +169,7 @@ class AccumulationGoalDepositConfig(object):
         :type: str
         """
         allowed_values = ["a_start", "a_end"]  # noqa: E501
-        if dep_start_reference not in allowed_values:
+        if dep_start_reference is not None and dep_start_reference.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `dep_start_reference` ({0}), must be one of {1}"  # noqa: E501
                 .format(dep_start_reference, allowed_values)
@@ -238,7 +238,7 @@ class AccumulationGoalDepositConfig(object):
         :type: str
         """
         allowed_values = ["a_start", "a_end"]  # noqa: E501
-        if dep_end_reference not in allowed_values:
+        if dep_end_reference is not None and dep_end_reference.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `dep_end_reference` ({0}), must be one of {1}"  # noqa: E501
                 .format(dep_end_reference, allowed_values)

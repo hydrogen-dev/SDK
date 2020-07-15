@@ -369,17 +369,17 @@ module ProtonApi
       return false if !@tax_rate.nil? && @tax_rate > 1
       return false if !@tax_rate.nil? && @tax_rate < 0
       result_type_validator = EnumAttributeValidator.new('String', ['mean', 'median', 'custom'])
-      return false unless result_type_validator.valid?(@result_type)
+      return false unless result_type_validator.valid?(@result_type.downcase)
       return false if @accumulation_horizon.nil?
       return false if @accumulation_horizon < 0
       market_data_source_validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      return false unless market_data_source_validator.valid?(@market_data_source)
+      return false unless market_data_source_validator.valid?(@market_data_source.downcase)
       return false if !@guaranteed_accumulation_benefit.nil? && @guaranteed_accumulation_benefit < 0
       return false if @decumulation_horizon.nil?
       return false if @decumulation_horizon < 1
       return false if !@trading_days_per_year.nil? && @trading_days_per_year < 1
       frequency_interval_validator = EnumAttributeValidator.new('String', ['year', 'quarter', 'month', 'week', 'day'])
-      return false unless frequency_interval_validator.valid?(@frequency_interval)
+      return false unless frequency_interval_validator.valid?(@frequency_interval.downcase)
       return false if !@n.nil? && @n < 1
       return false if !@inflation_rate.nil? && @inflation_rate > 20
       return false if !@inflation_rate.nil? && @inflation_rate < -1
@@ -417,7 +417,7 @@ module ProtonApi
     # @param [Object] result_type Object to be assigned
     def result_type=(result_type)
       validator = EnumAttributeValidator.new('String', ['mean', 'median', 'custom'])
-      unless validator.valid?(result_type)
+      unless validator.valid?(result_type.downcase)
         fail ArgumentError, 'invalid value for "result_type", must be one of #{validator.allowable_values}.'
       end
       @result_type = result_type
@@ -441,7 +441,7 @@ module ProtonApi
     # @param [Object] market_data_source Object to be assigned
     def market_data_source=(market_data_source)
       validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      unless validator.valid?(market_data_source)
+      unless validator.valid?(market_data_source.downcase)
         fail ArgumentError, 'invalid value for "market_data_source", must be one of #{validator.allowable_values}.'
       end
       @market_data_source = market_data_source
@@ -485,7 +485,7 @@ module ProtonApi
     # @param [Object] frequency_interval Object to be assigned
     def frequency_interval=(frequency_interval)
       validator = EnumAttributeValidator.new('String', ['year', 'quarter', 'month', 'week', 'day'])
-      unless validator.valid?(frequency_interval)
+      unless validator.valid?(frequency_interval.downcase)
         fail ArgumentError, 'invalid value for "frequency_interval", must be one of #{validator.allowable_values}.'
       end
       @frequency_interval = frequency_interval

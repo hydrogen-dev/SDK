@@ -94,16 +94,16 @@ module NucleusApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      permission_type_validator = EnumAttributeValidator.new('String', ['[INQUIRY_ACCESS', 'LIMITED_AUTHORITY', 'FULL_AUTHORITY', 'POWER_OF_ATTORNEY]'])
-      return false unless permission_type_validator.valid?(@permission_type)
+      permission_type_validator = EnumAttributeValidator.new('String', ['INQUIRY_ACCESS', 'LIMITED_AUTHORITY', 'FULL_AUTHORITY', 'POWER_OF_ATTORNEY'])
+      return false unless permission_type_validator.valid?(@permission_type.upcase)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] permission_type Object to be assigned
     def permission_type=(permission_type)
-      validator = EnumAttributeValidator.new('String', ['[INQUIRY_ACCESS', 'LIMITED_AUTHORITY', 'FULL_AUTHORITY', 'POWER_OF_ATTORNEY]'])
-      unless validator.valid?(permission_type)
+      validator = EnumAttributeValidator.new('String', ['INQUIRY_ACCESS', 'LIMITED_AUTHORITY', 'FULL_AUTHORITY', 'POWER_OF_ATTORNEY'])
+      unless validator.valid?(permission_type.upcase)
         fail ArgumentError, 'invalid value for "permission_type", must be one of #{validator.allowable_values}.'
       end
       @permission_type = permission_type

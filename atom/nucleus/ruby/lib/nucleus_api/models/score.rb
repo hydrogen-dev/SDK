@@ -218,8 +218,8 @@ module NucleusApi
     # @return true if the model is valid
     def valid?
       return false if @score_type.nil?
-      score_type_validator = EnumAttributeValidator.new('String', ['[goal_achievement_score', 'portfolio_optimization_score', 'credit_score', 'dimensional_risk_score', 'diversification_score', 'risk_score]'])
-      return false unless score_type_validator.valid?(@score_type)
+      score_type_validator = EnumAttributeValidator.new('String', ['goal_achievement_score', 'portfolio_optimization_score', 'credit_score', 'dimensional_risk_score', 'diversification_score', 'risk_score'])
+      return false unless score_type_validator.valid?(@score_type.downcase)
       return false if @score_value.nil?
       true
     end
@@ -227,8 +227,8 @@ module NucleusApi
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] score_type Object to be assigned
     def score_type=(score_type)
-      validator = EnumAttributeValidator.new('String', ['[goal_achievement_score', 'portfolio_optimization_score', 'credit_score', 'dimensional_risk_score', 'diversification_score', 'risk_score]'])
-      unless validator.valid?(score_type)
+      validator = EnumAttributeValidator.new('String', ['goal_achievement_score', 'portfolio_optimization_score', 'credit_score', 'dimensional_risk_score', 'diversification_score', 'risk_score'])
+      unless validator.valid?(score_type.downcase)
         fail ArgumentError, 'invalid value for "score_type", must be one of #{validator.allowable_values}.'
       end
       @score_type = score_type

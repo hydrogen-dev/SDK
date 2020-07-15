@@ -215,7 +215,7 @@ class PermissionVO implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getPermissionTypeAllowableValues();
-        if (!is_null($this->container['permission_type']) && !in_array($this->container['permission_type'], $allowedValues, true)) {
+        if (!is_null($this->container['permission_type']) && !in_array(strtoupper($this->container['permission_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'permission_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -281,7 +281,7 @@ class PermissionVO implements ModelInterface, ArrayAccess
     public function setPermissionType($permission_type)
     {
         $allowedValues = $this->getPermissionTypeAllowableValues();
-        if (!is_null($permission_type) && !in_array($permission_type, $allowedValues, true)) {
+        if (!is_null($permission_type) && !in_array(strtoupper($permission_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'permission_type', must be one of '%s'",

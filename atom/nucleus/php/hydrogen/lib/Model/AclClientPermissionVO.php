@@ -168,10 +168,10 @@ class AclClientPermissionVO implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const PERMISSION_TYPE_INQUIRY_ACCESS = '[INQUIRY_ACCESS';
+    const PERMISSION_TYPE_INQUIRY_ACCESS = 'INQUIRY_ACCESS';
     const PERMISSION_TYPE_LIMITED_AUTHORITY = 'LIMITED_AUTHORITY';
     const PERMISSION_TYPE_FULL_AUTHORITY = 'FULL_AUTHORITY';
-    const PERMISSION_TYPE_POWER_OF_ATTORNEY = 'POWER_OF_ATTORNEY]';
+    const PERMISSION_TYPE_POWER_OF_ATTORNEY = 'POWER_OF_ATTORNEY';
     
 
     
@@ -221,7 +221,8 @@ class AclClientPermissionVO implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getPermissionTypeAllowableValues();
-        if (!is_null($this->container['permission_type']) && !in_array($this->container['permission_type'], $allowedValues, true)) {
+        if (!is_null($this->container['permission_type'])
+            && !in_array(strtoupper($this->container['permission_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'permission_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -311,7 +312,7 @@ class AclClientPermissionVO implements ModelInterface, ArrayAccess
     public function setPermissionType($permission_type)
     {
         $allowedValues = $this->getPermissionTypeAllowableValues();
-        if (!is_null($permission_type) && !in_array($permission_type, $allowedValues, true)) {
+        if (!is_null($permission_type) && !in_array(strtoupper($permission_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'permission_type', must be one of '%s'",

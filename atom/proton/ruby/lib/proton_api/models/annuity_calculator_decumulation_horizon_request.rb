@@ -223,7 +223,7 @@ module ProtonApi
       return false if @accumulation_horizon.nil?
       return false if @accumulation_horizon < 0
       annuity_frequency_interval_validator = EnumAttributeValidator.new('String', ['year', 'quarter', 'month', 'week', 'day'])
-      return false unless annuity_frequency_interval_validator.valid?(@annuity_frequency_interval)
+      return false unless annuity_frequency_interval_validator.valid?(@annuity_frequency_interval.downcase)
       true
     end
 
@@ -307,7 +307,7 @@ module ProtonApi
     # @param [Object] annuity_frequency_interval Object to be assigned
     def annuity_frequency_interval=(annuity_frequency_interval)
       validator = EnumAttributeValidator.new('String', ['year', 'quarter', 'month', 'week', 'day'])
-      unless validator.valid?(annuity_frequency_interval)
+      unless validator.valid?(annuity_frequency_interval.downcase)
         fail ArgumentError, 'invalid value for "annuity_frequency_interval", must be one of #{validator.allowable_values}.'
       end
       @annuity_frequency_interval = annuity_frequency_interval

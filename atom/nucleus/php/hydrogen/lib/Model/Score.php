@@ -234,12 +234,12 @@ class Score implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SCORE_TYPE_GOAL_ACHIEVEMENT_SCORE = '[goal_achievement_score';
+    const SCORE_TYPE_GOAL_ACHIEVEMENT_SCORE = 'goal_achievement_score';
     const SCORE_TYPE_PORTFOLIO_OPTIMIZATION_SCORE = 'portfolio_optimization_score';
     const SCORE_TYPE_CREDIT_SCORE = 'credit_score';
     const SCORE_TYPE_DIMENSIONAL_RISK_SCORE = 'dimensional_risk_score';
     const SCORE_TYPE_DIVERSIFICATION_SCORE = 'diversification_score';
-    const SCORE_TYPE_RISK_SCORE = 'risk_score]';
+    const SCORE_TYPE_RISK_SCORE = 'risk_score';
     
 
     
@@ -307,7 +307,7 @@ class Score implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'score_type' can't be null";
         }
         $allowedValues = $this->getScoreTypeAllowableValues();
-        if (!is_null($this->container['score_type']) && !in_array($this->container['score_type'], $allowedValues, true)) {
+        if (!is_null($this->container['score_type']) && !in_array(strtolower($this->container['score_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'score_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -616,7 +616,7 @@ class Score implements ModelInterface, ArrayAccess
     public function setScoreType($score_type)
     {
         $allowedValues = $this->getScoreTypeAllowableValues();
-        if (!in_array($score_type, $allowedValues, true)) {
+        if (!in_array(strtolower($score_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'score_type', must be one of '%s'",

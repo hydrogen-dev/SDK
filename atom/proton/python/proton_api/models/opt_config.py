@@ -159,7 +159,8 @@ class OptConfig(object):
         if sec_types is None:
             raise ValueError("Invalid value for `sec_types`, must not be `None`")  # noqa: E501
         allowed_values = ["major", "minor", "cash"]  # noqa: E501
-        if not set(sec_types).issubset(set(allowed_values)):
+        if not set((sec_types_value.lower() for sec_types_value in sec_types)) \
+                .issubset(set((value.lower() for value in allowed_values))):
             raise ValueError(
                 "Invalid values for `sec_types` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(sec_types) - set(allowed_values))),  # noqa: E501

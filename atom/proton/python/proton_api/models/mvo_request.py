@@ -221,7 +221,8 @@ class MvoRequest(object):
         if sec_types is None:
             raise ValueError("Invalid value for `sec_types`, must not be `None`")  # noqa: E501
         allowed_values = ["major", "minor", "cash"]  # noqa: E501
-        if not set(sec_types).issubset(set(allowed_values)):
+        if not set((sec_type_value.lower() for sec_type_value in sec_types)) \
+                .issubset(set((value.lower() for value in allowed_values))):
             raise ValueError(
                 "Invalid values for `sec_types` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(sec_types) - set(allowed_values))),  # noqa: E501
@@ -249,7 +250,7 @@ class MvoRequest(object):
         :type: str
         """
         allowed_values = ["risk", "return"]  # noqa: E501
-        if tgt_type not in allowed_values:
+        if tgt_type is not None and tgt_type.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `tgt_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(tgt_type, allowed_values)
@@ -301,7 +302,7 @@ class MvoRequest(object):
         :type: str
         """
         allowed_values = ["nucleus", "integration"]  # noqa: E501
-        if market_data_source not in allowed_values:
+        if market_data_source is not None and market_data_source.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
                 .format(market_data_source, allowed_values)

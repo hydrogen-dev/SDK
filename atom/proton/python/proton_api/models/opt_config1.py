@@ -107,7 +107,8 @@ class OptConfig1(object):
         :type: list[str]
         """
         allowed_values = ["major", "minor", "cash"]  # noqa: E501
-        if not set(sec_types).issubset(set(allowed_values)):
+        if not set((sec_type_value.lower() for sec_type_value in sec_types)) \
+                .issubset(set((value.lower() for value in allowed_values))):
             raise ValueError(
                 "Invalid values for `sec_types` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(sec_types) - set(allowed_values))),  # noqa: E501

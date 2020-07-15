@@ -345,7 +345,7 @@ class AnnuityCalculatorDecumulationHorizonRequest(object):
         :type: str
         """
         allowed_values = ["year", "quarter", "month", "week", "day"]  # noqa: E501
-        if annuity_frequency_interval not in allowed_values:
+        if annuity_frequency_interval is not None and annuity_frequency_interval.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `annuity_frequency_interval` ({0}), must be one of {1}"  # noqa: E501
                 .format(annuity_frequency_interval, allowed_values)

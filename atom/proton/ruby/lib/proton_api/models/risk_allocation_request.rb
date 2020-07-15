@@ -144,10 +144,10 @@ module ProtonApi
       return false if !@risk_score.nil? && @risk_score > 100
       return false if !@risk_score.nil? && @risk_score < 0
       market_data_source_validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      return false unless market_data_source_validator.valid?(@market_data_source)
+      return false unless market_data_source_validator.valid?(@market_data_source.downcase)
       return false if @allocation_method.nil?
       allocation_method_validator = EnumAttributeValidator.new('String', ['select', 'create'])
-      return false unless allocation_method_validator.valid?(@allocation_method)
+      return false unless allocation_method_validator.valid?(@allocation_method.downcase)
       true
     end
 
@@ -169,7 +169,7 @@ module ProtonApi
     # @param [Object] market_data_source Object to be assigned
     def market_data_source=(market_data_source)
       validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      unless validator.valid?(market_data_source)
+      unless validator.valid?(market_data_source.downcase)
         fail ArgumentError, 'invalid value for "market_data_source", must be one of #{validator.allowable_values}.'
       end
       @market_data_source = market_data_source
@@ -179,7 +179,7 @@ module ProtonApi
     # @param [Object] allocation_method Object to be assigned
     def allocation_method=(allocation_method)
       validator = EnumAttributeValidator.new('String', ['select', 'create'])
-      unless validator.valid?(allocation_method)
+      unless validator.valid?(allocation_method.downcase)
         fail ArgumentError, 'invalid value for "allocation_method", must be one of #{validator.allowable_values}.'
       end
       @allocation_method = allocation_method

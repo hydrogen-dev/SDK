@@ -275,7 +275,7 @@ class GoalDecumulationAllocationRequest(object):
         :type: str
         """
         allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
-        if horizon_frequency not in allowed_values:
+        if horizon_frequency is not None and horizon_frequency.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `horizon_frequency` ({0}), must be one of {1}"  # noqa: E501
                 .format(horizon_frequency, allowed_values)

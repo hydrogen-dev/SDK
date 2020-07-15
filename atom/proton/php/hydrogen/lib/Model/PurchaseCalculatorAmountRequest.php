@@ -287,7 +287,8 @@ class PurchaseCalculatorAmountRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getHorizonFrequencyIntervalAllowableValues();
-        if (!is_null($this->container['horizon_frequency_interval']) && !in_array($this->container['horizon_frequency_interval'], $allowedValues, true)) {
+        if (!is_null($this->container['horizon_frequency_interval']) &&
+            !in_array(strtolower($this->container['horizon_frequency_interval']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'horizon_frequency_interval', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -549,7 +550,7 @@ class PurchaseCalculatorAmountRequest implements ModelInterface, ArrayAccess
     public function setHorizonFrequencyInterval($horizon_frequency_interval)
     {
         $allowedValues = $this->getHorizonFrequencyIntervalAllowableValues();
-        if (!is_null($horizon_frequency_interval) && !in_array($horizon_frequency_interval, $allowedValues, true)) {
+        if (!is_null($horizon_frequency_interval) && !in_array(strtolower($horizon_frequency_interval), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'horizon_frequency_interval', must be one of '%s'",

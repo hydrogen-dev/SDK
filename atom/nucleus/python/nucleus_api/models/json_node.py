@@ -465,7 +465,7 @@ class JsonNode(object):
         :type: str
         """
         allowed_values = ["ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING"]  # noqa: E501
-        if node_type not in allowed_values:
+        if node_type is not None and node_type.upper() not in allowed_values:
             raise ValueError(
                 "Invalid value for `node_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(node_type, allowed_values)

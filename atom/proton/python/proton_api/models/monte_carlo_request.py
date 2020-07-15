@@ -249,7 +249,7 @@ class MonteCarloRequest(object):
         :type: str
         """
         allowed_values = ["raw", "custom", "median", "mean", "tens"]  # noqa: E501
-        if result_type not in allowed_values:
+        if result_type is not None and result_type.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `result_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(result_type, allowed_values)
@@ -297,7 +297,7 @@ class MonteCarloRequest(object):
         :type: str
         """
         allowed_values = ["nucleus", "integration"]  # noqa: E501
-        if market_data_source not in allowed_values:
+        if market_data_source is not None and market_data_source.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
                 .format(market_data_source, allowed_values)
@@ -387,7 +387,7 @@ class MonteCarloRequest(object):
         :type: str
         """
         allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
-        if frequency_interval not in allowed_values:
+        if frequency_interval is not None and frequency_interval.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `frequency_interval` ({0}), must be one of {1}"  # noqa: E501
                 .format(frequency_interval, allowed_values)

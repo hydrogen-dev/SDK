@@ -349,7 +349,7 @@ class GoalAccumulationRecommendationRequest(object):
         :type: str
         """
         allowed_values = ["amnt", "perc"]  # noqa: E501
-        if thresh_type not in allowed_values:
+        if thresh_type is not None and thresh_type.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `thresh_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(thresh_type, allowed_values)
@@ -441,7 +441,7 @@ class GoalAccumulationRecommendationRequest(object):
         :type: str
         """
         allowed_values = ["recurring", "one-time", "combo", "horizon"]  # noqa: E501
-        if recommend_type not in allowed_values:
+        if recommend_type is not None and recommend_type.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `recommend_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(recommend_type, allowed_values)
@@ -510,7 +510,7 @@ class GoalAccumulationRecommendationRequest(object):
         :type: str
         """
         allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
-        if horizon_frequency not in allowed_values:
+        if horizon_frequency is not None and horizon_frequency.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `horizon_frequency` ({0}), must be one of {1}"  # noqa: E501
                 .format(horizon_frequency, allowed_values)

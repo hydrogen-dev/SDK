@@ -190,11 +190,11 @@ module ProtonApi
       return false if @w_config.nil?
       return false if @sec_types.nil?
       tgt_type_validator = EnumAttributeValidator.new('String', ['risk', 'return'])
-      return false unless tgt_type_validator.valid?(@tgt_type)
+      return false unless tgt_type_validator.valid?(@tgt_type.downcase)
       return false if @min_assets.nil?
       return false if @min_assets < 1
       market_data_source_validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      return false unless market_data_source_validator.valid?(@market_data_source)
+      return false unless market_data_source_validator.valid?(@market_data_source.downcase)
       return false if @tickers.nil?
       true
     end
@@ -203,7 +203,7 @@ module ProtonApi
     # @param [Object] tgt_type Object to be assigned
     def tgt_type=(tgt_type)
       validator = EnumAttributeValidator.new('String', ['risk', 'return'])
-      unless validator.valid?(tgt_type)
+      unless validator.valid?(tgt_type.downcase)
         fail ArgumentError, 'invalid value for "tgt_type", must be one of #{validator.allowable_values}.'
       end
       @tgt_type = tgt_type
@@ -227,7 +227,7 @@ module ProtonApi
     # @param [Object] market_data_source Object to be assigned
     def market_data_source=(market_data_source)
       validator = EnumAttributeValidator.new('String', ['nucleus', 'integration'])
-      unless validator.valid?(market_data_source)
+      unless validator.valid?(market_data_source.downcase)
         fail ArgumentError, 'invalid value for "market_data_source", must be one of #{validator.allowable_values}.'
       end
       @market_data_source = market_data_source

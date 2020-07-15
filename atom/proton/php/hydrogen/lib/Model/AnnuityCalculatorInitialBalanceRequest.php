@@ -315,7 +315,7 @@ class AnnuityCalculatorInitialBalanceRequest implements ModelInterface, ArrayAcc
         }
 
         $allowedValues = $this->getAnnuityFrequencyIntervalAllowableValues();
-        if (!is_null($this->container['annuity_frequency_interval']) && !in_array($this->container['annuity_frequency_interval'], $allowedValues, true)) {
+        if (!is_null($this->container['annuity_frequency_interval']) && !in_array(strtolower($this->container['annuity_frequency_interval']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'annuity_frequency_interval', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -633,7 +633,7 @@ class AnnuityCalculatorInitialBalanceRequest implements ModelInterface, ArrayAcc
     public function setAnnuityFrequencyInterval($annuity_frequency_interval)
     {
         $allowedValues = $this->getAnnuityFrequencyIntervalAllowableValues();
-        if (!is_null($annuity_frequency_interval) && !in_array($annuity_frequency_interval, $allowedValues, true)) {
+        if (!is_null($annuity_frequency_interval) && !in_array(strtolower($annuity_frequency_interval), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'annuity_frequency_interval', must be one of '%s'",

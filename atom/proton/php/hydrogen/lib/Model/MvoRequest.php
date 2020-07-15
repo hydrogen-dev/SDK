@@ -303,7 +303,8 @@ class MvoRequest implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'sec_types' can't be null";
         }
         $allowedValues = $this->getTgtTypeAllowableValues();
-        if (!is_null($this->container['tgt_type']) && !in_array($this->container['tgt_type'], $allowedValues, true)) {
+        if (!is_null($this->container['tgt_type']) &&
+            !in_array(strtolower($this->container['tgt_type']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'tgt_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -318,7 +319,8 @@ class MvoRequest implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($this->container['market_data_source']) && !in_array($this->container['market_data_source'], $allowedValues, true)) {
+        if (!is_null($this->container['market_data_source']) &&
+            !in_array(strtolower($this->container['market_data_source']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'market_data_source', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -483,7 +485,7 @@ class MvoRequest implements ModelInterface, ArrayAccess
     public function setSecTypes($sec_types)
     {
         $allowedValues = $this->getSecTypesAllowableValues();
-        if (array_diff($sec_types, $allowedValues)) {
+        if (array_udiff($sec_types, $allowedValues, 'strcasecmp')) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'sec_types', must be one of '%s'",
@@ -516,7 +518,7 @@ class MvoRequest implements ModelInterface, ArrayAccess
     public function setTgtType($tgt_type)
     {
         $allowedValues = $this->getTgtTypeAllowableValues();
-        if (!is_null($tgt_type) && !in_array($tgt_type, $allowedValues, true)) {
+        if (!is_null($tgt_type) && !in_array(strtolower($tgt_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'tgt_type', must be one of '%s'",
@@ -578,7 +580,8 @@ class MvoRequest implements ModelInterface, ArrayAccess
     public function setMarketDataSource($market_data_source)
     {
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($market_data_source) && !in_array($market_data_source, $allowedValues, true)) {
+        if (!is_null($market_data_source) &&
+            !in_array(strtolower($market_data_source), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'market_data_source', must be one of '%s'",

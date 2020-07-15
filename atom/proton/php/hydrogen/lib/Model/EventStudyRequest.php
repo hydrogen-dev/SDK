@@ -286,7 +286,8 @@ class EventStudyRequest implements ModelInterface, ArrayAccess
         $invalidProperties = [];
 
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($this->container['market_data_source']) && !in_array($this->container['market_data_source'], $allowedValues, true)) {
+        if (!is_null($this->container['market_data_source']) &&
+            !in_array(strtolower($this->container['market_data_source']), $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'market_data_source', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -328,7 +329,7 @@ class EventStudyRequest implements ModelInterface, ArrayAccess
     public function setEvents($events)
     {
         $allowedValues = $this->getEventsAllowableValues();
-        if (!is_null($events) && array_diff($events, $allowedValues)) {
+        if (!is_null($events) && array_udiff($events, $allowedValues, 'strcasecmp')) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'events', must be one of '%s'",
@@ -553,7 +554,7 @@ class EventStudyRequest implements ModelInterface, ArrayAccess
     public function setMarketDataSource($market_data_source)
     {
         $allowedValues = $this->getMarketDataSourceAllowableValues();
-        if (!is_null($market_data_source) && !in_array($market_data_source, $allowedValues, true)) {
+        if (!is_null($market_data_source) && !in_array(strtolower($market_data_source), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'market_data_source', must be one of '%s'",

@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
-  description: The Hydrogen Integration API
+  description: Hydrogen Integration API
   version: 1.2.1
   title: Hydrogen Integration API
   termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
   contact:
-    name: Hydrogen Technology Corporation
+    name: The Hydrogen Technology Corporation
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
 host: 'sandbox.hydrogenplatform.com:8000'

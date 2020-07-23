@@ -1,14 +1,14 @@
 swagger: '2.0'
 info:
-  description: The Hydrogen Atom API
+  description: Data model of Hydrogen Atom
   version: 1.7.0
-  title: Hydrogen Atom API
+  title: Hydrogen Nucleus API
   termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
   contact:
-    name: Hydrogen Technology Corporation
+    name: The Hydrogen Technology Corporation
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
-host: 'sandbox.hydrogenplatform.com:8000'
+host: 'sandbox.hydrogenplatform.com'
 basePath: /
 tags:
   - name: Account

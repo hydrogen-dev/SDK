@@ -1,0 +1,18 @@
+# WalletParams
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**wallet_key_id** | **string** |  | [optional] 
+**name** | **string** |  | 
+**type** | **string** |  | 
+**is_active** | **bool** |  | [optional] 
+**secondary_id** | **string** |  | [optional] 
+**record_status** | **string** |  | [optional] 
+**clients** | [**\com\hydrogen\molecule\Model\WalletClients[]**](WalletClients.md) |  | [optional] 
+**metadata** | **object** |  | [optional] 
+**token_whitelists** | [**\com\hydrogen\molecule\Model\TokenWhitelists[]**](TokenWhitelists.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

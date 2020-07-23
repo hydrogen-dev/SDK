@@ -5,9 +5,9 @@ Follow the individual SDK READMEs for information on installation, authorization
 ## Atom
 
 ### Nucleus/Electron
-Hydrogen Nucleus client SDKs are offered in:
+Hydrogen Nucleus/Electron SDKs are offered in:
 * [Java](atom/nucleus/java)
-* [Javascript/Node](atom/nucleus/javascript)
+* [Javascript](atom/nucleus/javascript)
 * [PHP](atom/nucleus/php)
 * [Python](atom/nucleus/python)
 * [Ruby](atom/nucleus/ruby)
@@ -17,9 +17,9 @@ Please see the official [Nucleus API documentation](https://www.hydrogenplatform
 Nucleus SDKs are generated from the [Nucleus OpenAPI Specification](atom/nucleus/nucleus.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
 
 ### Proton
-Hydrogen Proton client SDKs are offered in:
+Hydrogen Proton SDKs are offered in:
 * [Java](atom/proton/java)
-* [Javascript/Node](atom/proton/javascript)
+* [Javascript](atom/proton/javascript)
 * [PHP](atom/proton/php)
 * [Python](atom/proton/python)
 * [Ruby](atom/proton/ruby)
@@ -31,7 +31,8 @@ Proton SDKs are generated from the [Proton OpenAPI Specification](atom/proton/pr
 ## Molecule
 Molecule SDKs are offered in:
 * [Java](molecule/java)
-* [Javascript/Node](molecule/javascript)
+* [Javascript](molecule/javascript)
+* [PHP](molecule/php)
 * [Python](molecule/python)
 * [Ruby](molecule/ruby)
 
@@ -42,7 +43,7 @@ Molecule SDKs are generated from the [Molecule OpenAPI specification](molecule/m
 ## Hydro - Raindrop
 Hydro Raindrop SDKs are offered in:
 * [Java](hydro/raindrop/java)
-* [Javascript/Node](hydro/raindrop/javascript)
+* [Javascript](hydro/raindrop/javascript)
 * [PHP](hydro/raindrop/php)
 * [Python](hydro/raindrop/python)
 
@@ -51,7 +52,7 @@ Please see the official Hydro API documentation: [Raindrop](https://www.hydrogen
 ## Integration
 Integration SDKs are offered in:
 * [Java](integration/java)
-* [Javascript/Node](integration/javascript)
+* [Javascript](integration/javascript)
 * [PHP](integration/php)
 * [Python](integration/python)
 * [Ruby](integration/ruby)

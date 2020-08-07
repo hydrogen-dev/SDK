@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **ownerWalletId** | [**UUID**](UUID.md) |  |  [optional]
 **isMintable** | **Boolean** |  |  [optional]
 **isBurnable** | **Boolean** |  |  [optional]
+**totalSupply** | **Double** |  |  [optional]
+**circulatingSupply** | **Double** |  |  [optional]
 **whitelistAddress** | **String** |  |  [optional]
 **contractAddress** | **String** |  |  [optional]
 **crowdsaleAddress** | **String** |  |  [optional]

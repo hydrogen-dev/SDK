@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  |  [optional]
 **symbol** | **String** |  |  [optional]
+**totalSupply** | **Double** |  |  [optional]
 **nucleusModelId** | [**UUID**](UUID.md) |  |  [optional]
 **ownerWalletId** | [**UUID**](UUID.md) |  |  [optional]
 **isMintable** | **Boolean** |  |  [optional]

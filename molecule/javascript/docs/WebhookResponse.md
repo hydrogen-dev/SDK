@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **url** | **String** |  | [optional] 
 **moleculeService** | **[String]** |  | [optional] 
 **isActive** | **Boolean** |  | [optional] 
+**secret** | **String** |  | [optional] 
 **recordStatus** | **String** |  | [optional] 
 **createDate** | **Date** |  | [optional] 
 **updateDate** | **Date** |  | [optional] 

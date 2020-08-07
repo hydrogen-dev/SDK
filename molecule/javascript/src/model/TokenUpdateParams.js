@@ -59,6 +59,8 @@
         obj.name = ApiClient.convertToType(data['name'], 'String');
       if (data.hasOwnProperty('symbol'))
         obj.symbol = ApiClient.convertToType(data['symbol'], 'String');
+      if (data.hasOwnProperty('total_supply'))
+        obj.totalSupply = ApiClient.convertToType(data['total_supply'], 'Number');
       if (data.hasOwnProperty('nucleus_model_id'))
         obj.nucleusModelId = ApiClient.convertToType(data['nucleus_model_id'], 'String');
       if (data.hasOwnProperty('owner_wallet_id'))
@@ -98,6 +100,11 @@
    * @member {String} symbol
    */
   exports.prototype.symbol = undefined;
+
+  /**
+   * @member {Number} totalSupply
+   */
+  exports.prototype.totalSupply = undefined;
 
   /**
    * @member {String} nucleusModelId

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **url** | **String** |  |  [optional]
 **moleculeService** | [**List&lt;MoleculeServiceEnum&gt;**](#List&lt;MoleculeServiceEnum&gt;) |  |  [optional]
 **isActive** | **Boolean** |  |  [optional]
+**secret** | **String** |  |  [optional]
 **recordStatus** | **String** |  |  [optional]
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

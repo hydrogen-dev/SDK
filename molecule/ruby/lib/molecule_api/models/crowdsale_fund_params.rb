@@ -30,7 +30,7 @@ module MoleculeApi
     def self.swagger_types
       {
           :'token_id' => :'String',
-          :'supply' => :'String'
+          :'supply' => :'Float'
       }
     end
 

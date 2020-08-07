@@ -47,6 +47,12 @@ public class TokenResponse {
   @SerializedName("is_burnable")
   private Boolean isBurnable = null;
 
+  @SerializedName("total_supply")
+  private Double totalSupply = null;
+
+  @SerializedName("circulating_supply")
+  private Double circulatingSupply = null;
+
   @SerializedName("whitelist_address")
   private String whitelistAddress = null;
 
@@ -206,10 +212,48 @@ public class TokenResponse {
     this.isBurnable = isBurnable;
   }
 
+
+  public TokenResponse totalSupply(Double totalSupply) {
+    this.totalSupply = totalSupply;
+    return this;
+  }
+
+  /**
+   * Get totalSupply
+   * @return totalSupply
+   **/
+  @ApiModelProperty(value = "")
+  public Double getTotalSupply() {
+    return totalSupply;
+  }
+
+  public void setTotalSupply(Double totalSupply) {
+    this.totalSupply = totalSupply;
+  }
+
+  public TokenResponse circulatingSupply(Double circulatingSupply) {
+    this.circulatingSupply = circulatingSupply;
+    return this;
+  }
+
+  /**
+   * Get circulatingSupply
+   * @return circulatingSupply
+   **/
+  @ApiModelProperty(value = "")
+  public Double getCirculatingSupply() {
+    return circulatingSupply;
+  }
+
+  public void setCirculatingSupply(Double circulatingSupply) {
+    this.circulatingSupply = circulatingSupply;
+  }
+
   public TokenResponse whitelistAddress(String whitelistAddress) {
     this.whitelistAddress = whitelistAddress;
     return this;
   }
+
 
    /**
    * Get whitelistAddress
@@ -421,6 +465,8 @@ public class TokenResponse {
         Objects.equals(this.ownerWalletId, tokenResponse.ownerWalletId) &&
         Objects.equals(this.isMintable, tokenResponse.isMintable) &&
         Objects.equals(this.isBurnable, tokenResponse.isBurnable) &&
+        Objects.equals(this.totalSupply, tokenResponse.totalSupply) &&
+        Objects.equals(this.circulatingSupply, tokenResponse.circulatingSupply) &&
         Objects.equals(this.whitelistAddress, tokenResponse.whitelistAddress) &&
         Objects.equals(this.contractAddress, tokenResponse.contractAddress) &&
         Objects.equals(this.crowdsaleAddress, tokenResponse.crowdsaleAddress) &&
@@ -436,7 +482,9 @@ public class TokenResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, symbol, nucleusModelId, ownerWalletId, isMintable, isBurnable, whitelistAddress, contractAddress, crowdsaleAddress, isActive, secondaryId, recordStatus, offeringSettings, metadata, restrictions, createDate, updateDate);
+    return Objects.hash(id, name, symbol, nucleusModelId, ownerWalletId, isMintable, isBurnable, totalSupply, circulatingSupply,
+            whitelistAddress, contractAddress, crowdsaleAddress, isActive, secondaryId, recordStatus, offeringSettings, metadata,
+            restrictions, createDate, updateDate);
   }
 
 
@@ -452,6 +500,8 @@ public class TokenResponse {
     sb.append("    ownerWalletId: ").append(toIndentedString(ownerWalletId)).append("\n");
     sb.append("    isMintable: ").append(toIndentedString(isMintable)).append("\n");
     sb.append("    isBurnable: ").append(toIndentedString(isBurnable)).append("\n");
+    sb.append("    totalSupply: ").append(toIndentedString(totalSupply)).append("\n");
+    sb.append("    circulatingSupply: ").append(toIndentedString(circulatingSupply)).append("\n");
     sb.append("    whitelistAddress: ").append(toIndentedString(whitelistAddress)).append("\n");
     sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
     sb.append("    crowdsaleAddress: ").append(toIndentedString(crowdsaleAddress)).append("\n");

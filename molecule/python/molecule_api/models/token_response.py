@@ -38,6 +38,8 @@ class TokenResponse(object):
         'owner_wallet_id': 'str',
         'is_mintable': 'bool',
         'is_burnable': 'bool',
+        'total_supply': 'float',
+        'circulating_supply': 'float',
         'whitelist_address': 'str',
         'contract_address': 'str',
         'crowdsale_address': 'str',
@@ -59,6 +61,8 @@ class TokenResponse(object):
         'owner_wallet_id': 'owner_wallet_id',
         'is_mintable': 'is_mintable',
         'is_burnable': 'is_burnable',
+        'total_supply': 'total_supply',
+        'circulating_supply': 'circulating_supply',
         'whitelist_address': 'whitelist_address',
         'contract_address': 'contract_address',
         'crowdsale_address': 'crowdsale_address',
@@ -72,7 +76,8 @@ class TokenResponse(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, name=None, symbol=None, nucleus_model_id=None, owner_wallet_id=None, is_mintable=None, is_burnable=None, whitelist_address=None, contract_address=None, crowdsale_address=None, is_active=None, secondary_id=None, record_status=None, offering_settings=None, metadata=None, restrictions=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, name=None, symbol=None, nucleus_model_id=None, owner_wallet_id=None, is_mintable=None,
+                 is_burnable=None, total_supply=None, circulating_supply=None, whitelist_address=None, contract_address=None, crowdsale_address=None, is_active=None, secondary_id=None, record_status=None, offering_settings=None, metadata=None, restrictions=None, create_date=None, update_date=None):  # noqa: E501
         """TokenResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -82,6 +87,8 @@ class TokenResponse(object):
         self._owner_wallet_id = None
         self._is_mintable = None
         self._is_burnable = None
+        self._total_supply = None
+        self._circulating_supply = None
         self._whitelist_address = None
         self._contract_address = None
         self._crowdsale_address = None
@@ -109,6 +116,10 @@ class TokenResponse(object):
             self.is_mintable = is_mintable
         if is_burnable is not None:
             self.is_burnable = is_burnable
+        if total_supply is not None:
+            self.total_supply = total_supply
+        if circulating_supply is not None:
+            self.circulating_supply = circulating_supply
         if whitelist_address is not None:
             self.whitelist_address = whitelist_address
         if contract_address is not None:
@@ -278,6 +289,48 @@ class TokenResponse(object):
         """
 
         self._is_burnable = is_burnable
+
+    @property
+    def total_supply(self):
+        """Gets the total_supply of this TokenResponse.  # noqa: E501
+
+
+        :return: The total_supply of this TokenResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_supply
+
+    @total_supply.setter
+    def total_supply(self, total_supply):
+        """Sets the total_supply of this TokenResponse.
+
+
+        :param total_supply: The total_supply of this TokenResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._total_supply = total_supply
+
+    @property
+    def circulating_supply(self):
+        """Gets the circulating_supply of this TokenResponse.  # noqa: E501
+
+
+        :return: The circulating_supply of this TokenResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._circulating_supply
+
+    @circulating_supply.setter
+    def circulating_supply(self, circulating_supply):
+        """Sets the circulating_supply of this TokenResponse.
+
+
+        :param circulating_supply: The circulating_supply of this TokenResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._circulating_supply = circulating_supply
 
     @property
     def whitelist_address(self):

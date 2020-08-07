@@ -31,6 +31,9 @@ public class TokenParams {
   @SerializedName("symbol")
   private String symbol = null;
 
+  @SerializedName("total_supply")
+  private Double totalSupply = null;
+
   @SerializedName("nucleus_model_id")
   private UUID nucleusModelId = null;
 
@@ -109,6 +112,24 @@ public class TokenParams {
   public TokenParams nucleusModelId(UUID nucleusModelId) {
     this.nucleusModelId = nucleusModelId;
     return this;
+  }
+
+  public TokenParams totalSupply(Double totalSupply) {
+    this.totalSupply = totalSupply;
+    return this;
+  }
+
+  /**
+   * Get totalSupply
+   * @return totalSupply
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Double getTotalSupply() {
+    return totalSupply;
+  }
+
+  public void setTotalSupply(Double totalSupply) {
+    this.totalSupply = totalSupply;
   }
 
    /**
@@ -352,6 +373,7 @@ public class TokenParams {
     TokenParams tokenParams = (TokenParams) o;
     return Objects.equals(this.name, tokenParams.name) &&
         Objects.equals(this.symbol, tokenParams.symbol) &&
+        Objects.equals(this.totalSupply, tokenParams.totalSupply) &&
         Objects.equals(this.nucleusModelId, tokenParams.nucleusModelId) &&
         Objects.equals(this.ownerWalletId, tokenParams.ownerWalletId) &&
         Objects.equals(this.isMintable, tokenParams.isMintable) &&
@@ -369,7 +391,7 @@ public class TokenParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, symbol, nucleusModelId, ownerWalletId, isMintable, isBurnable, whitelistAddress, contractAddress, crowdsaleAddress, isActive, secondaryId, recordStatus, offeringSettings, metadata, restrictions);
+    return Objects.hash(name, symbol, totalSupply, nucleusModelId, ownerWalletId, isMintable, isBurnable, whitelistAddress, contractAddress, crowdsaleAddress, isActive, secondaryId, recordStatus, offeringSettings, metadata, restrictions);
   }
 
 
@@ -380,6 +402,7 @@ public class TokenParams {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
+    sb.append("    totalSupply: ").append(toIndentedString(totalSupply)).append("\n");
     sb.append("    nucleusModelId: ").append(toIndentedString(nucleusModelId)).append("\n");
     sb.append("    ownerWalletId: ").append(toIndentedString(ownerWalletId)).append("\n");
     sb.append("    isMintable: ").append(toIndentedString(isMintable)).append("\n");

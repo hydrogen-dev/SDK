@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **owner_wallet_id** | **string** |  | [optional] 
 **is_mintable** | **bool** |  | [optional] 
 **is_burnable** | **bool** |  | [optional] 
+**total_supply** | **double** |  | [optional] 
 **whitelist_address** | **string** |  | [optional] 
 **contract_address** | **string** |  | [optional] 
 **crowdsale_address** | **string** |  | [optional] 

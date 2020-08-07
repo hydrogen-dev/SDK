@@ -42,14 +42,16 @@
    * @alias module:model/TokenParams
    * @class
    * @param name {String} 
-   * @param symbol {String} 
+   * @param symbol {String}
+   * @param totalSupply {Number}
    * @param nucleusModelId {String} 
    * @param ownerWalletId {String} 
    * @param offeringSettings {module:model/TokenParamsOfferingSettings} 
    */
-  var exports = function(name, symbol, nucleusModelId, ownerWalletId, offeringSettings) {
+  var exports = function(name, symbol, totalSupply, nucleusModelId, ownerWalletId, offeringSettings) {
     this.name = name;
     this.symbol = symbol;
+    this.totalSupply = totalSupply;
     this.nucleusModelId = nucleusModelId;
     this.ownerWalletId = ownerWalletId;
     this.offeringSettings = offeringSettings;
@@ -69,6 +71,8 @@
         obj.name = ApiClient.convertToType(data['name'], 'String');
       if (data.hasOwnProperty('symbol'))
         obj.symbol = ApiClient.convertToType(data['symbol'], 'String');
+      if (data.hasOwnProperty('total_supply'))
+        obj.totalSupply = ApiClient.convertToType(data['total_supply'], 'Number');
       if (data.hasOwnProperty('nucleus_model_id'))
         obj.nucleusModelId = ApiClient.convertToType(data['nucleus_model_id'], 'String');
       if (data.hasOwnProperty('owner_wallet_id'))
@@ -108,6 +112,12 @@
    * @member {String} symbol
    */
   exports.prototype.symbol = undefined;
+
+
+  /**
+   * @member {Number} totalSupply
+   */
+  exports.prototype.totalSupply = undefined;
 
   /**
    * @member {String} nucleusModelId

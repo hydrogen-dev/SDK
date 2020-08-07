@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional] 
 **molecule_service** | **string[]** |  | [optional] 
 **is_active** | **bool** |  | [optional] 
+**secret** | **string** |  | [optional] 
 **record_status** | **string** |  | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 

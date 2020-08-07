@@ -103,6 +103,9 @@ public class WebhookResponse {
   @SerializedName("is_active")
   private Boolean isActive = null;
 
+  @SerializedName("secret")
+  private String secret = null;
+
   @SerializedName("record_status")
   private String recordStatus = null;
 
@@ -192,6 +195,24 @@ public class WebhookResponse {
     this.isActive = isActive;
   }
 
+  public WebhookResponse secret(String secret) {
+    this.secret = secret;
+    return this;
+  }
+
+  /**
+   * Get secret
+   * @return secret
+   **/
+  @ApiModelProperty(value = "")
+  public String getSecret() {
+    return secret;
+  }
+
+  public void setSecret(String secret) {
+    this.secret = secret;
+  }
+
   public WebhookResponse recordStatus(String recordStatus) {
     this.recordStatus = recordStatus;
     return this;
@@ -260,6 +281,7 @@ public class WebhookResponse {
         Objects.equals(this.url, webhookResponse.url) &&
         Objects.equals(this.moleculeService, webhookResponse.moleculeService) &&
         Objects.equals(this.isActive, webhookResponse.isActive) &&
+        Objects.equals(this.secret, webhookResponse.secret) &&
         Objects.equals(this.recordStatus, webhookResponse.recordStatus) &&
         Objects.equals(this.createDate, webhookResponse.createDate) &&
         Objects.equals(this.updateDate, webhookResponse.updateDate);
@@ -267,7 +289,7 @@ public class WebhookResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, url, moleculeService, isActive, recordStatus, createDate, updateDate);
+    return Objects.hash(id, url, moleculeService, isActive, secret, recordStatus, createDate, updateDate);
   }
 
 
@@ -280,6 +302,7 @@ public class WebhookResponse {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    moleculeService: ").append(toIndentedString(moleculeService)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
+    sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    recordStatus: ").append(toIndentedString(recordStatus)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");

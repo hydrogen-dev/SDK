@@ -35,6 +35,7 @@ class WebhookResponse(object):
         'url': 'str',
         'molecule_service': 'list[str]',
         'is_active': 'bool',
+        'secret': 'str',
         'record_status': 'str',
         'create_date': 'datetime',
         'update_date': 'datetime'
@@ -45,18 +46,20 @@ class WebhookResponse(object):
         'url': 'url',
         'molecule_service': 'molecule_service',
         'is_active': 'is_active',
+        'secret': 'secret',
         'record_status': 'record_status',
         'create_date': 'create_date',
         'update_date': 'update_date'
     }
 
-    def __init__(self, id=None, url=None, molecule_service=None, is_active=None, record_status=None, create_date=None, update_date=None):  # noqa: E501
+    def __init__(self, id=None, url=None, molecule_service=None, is_active=None, secret=None, record_status=None, create_date=None, update_date=None):  # noqa: E501
         """WebhookResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._url = None
         self._molecule_service = None
         self._is_active = None
+        self._secret = None
         self._record_status = None
         self._create_date = None
         self._update_date = None
@@ -70,6 +73,8 @@ class WebhookResponse(object):
             self.molecule_service = molecule_service
         if is_active is not None:
             self.is_active = is_active
+        if secret is not None:
+            self.secret = secret
         if record_status is not None:
             self.record_status = record_status
         if create_date is not None:
@@ -168,6 +173,28 @@ class WebhookResponse(object):
         """
 
         self._is_active = is_active
+
+
+    @property
+    def secret(self):
+        """Gets the secret of this WebhookResponse.  # noqa: E501
+
+
+        :return: The secret of this WebhookResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._secret
+
+    @secret.setter
+    def secret(self, secret):
+        """Sets the secret of this WebhookResponse.
+
+
+        :param secret: The secret of this WebhookResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._secret = secret
 
     @property
     def record_status(self):

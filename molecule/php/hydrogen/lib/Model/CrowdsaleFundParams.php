@@ -58,7 +58,7 @@ class CrowdsaleFundParams implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'token_id' => 'string',
-        'supply' => 'string'
+        'supply' => 'double'
     ];
 
     /**
@@ -68,7 +68,7 @@ class CrowdsaleFundParams implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'token_id' => 'uuid',
-        'supply' => null
+        'supply' => 'double'
     ];
 
     /**

@@ -33,6 +33,7 @@ class TokenParams(object):
     swagger_types = {
         'name': 'str',
         'symbol': 'str',
+        'total_supply': 'float',
         'nucleus_model_id': 'str',
         'owner_wallet_id': 'str',
         'is_mintable': 'bool',
@@ -51,6 +52,7 @@ class TokenParams(object):
     attribute_map = {
         'name': 'name',
         'symbol': 'symbol',
+        'total_supply': 'total_supply',
         'nucleus_model_id': 'nucleus_model_id',
         'owner_wallet_id': 'owner_wallet_id',
         'is_mintable': 'is_mintable',
@@ -66,11 +68,12 @@ class TokenParams(object):
         'restrictions': 'restrictions'
     }
 
-    def __init__(self, name=None, symbol=None, nucleus_model_id=None, owner_wallet_id=None, is_mintable=None, is_burnable=None, whitelist_address=None, contract_address=None, crowdsale_address=None, is_active=None, secondary_id=None, record_status=None, offering_settings=None, metadata=None, restrictions=None):  # noqa: E501
+    def __init__(self, name=None, symbol=None, total_supply=None, nucleus_model_id=None, owner_wallet_id=None, is_mintable=None, is_burnable=None, whitelist_address=None, contract_address=None, crowdsale_address=None, is_active=None, secondary_id=None, record_status=None, offering_settings=None, metadata=None, restrictions=None):  # noqa: E501
         """TokenParams - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._symbol = None
+        self._total_supply = None
         self._nucleus_model_id = None
         self._owner_wallet_id = None
         self._is_mintable = None
@@ -88,6 +91,7 @@ class TokenParams(object):
 
         self.name = name
         self.symbol = symbol
+        self.total_supply = total_supply
         self.nucleus_model_id = nucleus_model_id
         self.owner_wallet_id = owner_wallet_id
         if is_mintable is not None:
@@ -157,6 +161,30 @@ class TokenParams(object):
             raise ValueError("Invalid value for `symbol`, must not be `None`")  # noqa: E501
 
         self._symbol = symbol
+
+
+    @property
+    def total_supply(self):
+        """Gets the total_supply of this TokenParams.  # noqa: E501
+
+
+        :return: The total_supply of this TokenParams.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_supply
+
+    @total_supply.setter
+    def total_supply(self, total_supply):
+        """Sets the total_supply of this TokenParams.
+
+
+        :param total_supply: The total_supply of this TokenParams.  # noqa: E501
+        :type: float
+        """
+        if total_supply is None:
+            raise ValueError("Invalid value for `total_supply`, must not be `None`")  # noqa: E501
+
+        self._total_supply = total_supply
 
     @property
     def nucleus_model_id(self):

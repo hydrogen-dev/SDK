@@ -28,6 +28,10 @@ module MoleculeApi
 
     attr_accessor :is_burnable
 
+    attr_accessor :total_supply
+
+    attr_accessor :circulating_supply
+
     attr_accessor :whitelist_address
 
     attr_accessor :contract_address
@@ -60,6 +64,8 @@ module MoleculeApi
           :'owner_wallet_id' => :'owner_wallet_id',
           :'is_mintable' => :'is_mintable',
           :'is_burnable' => :'is_burnable',
+          :'total_supply' => :'total_supply',
+          :'circulating_supply' => :'circulating_supply',
           :'whitelist_address' => :'whitelist_address',
           :'contract_address' => :'contract_address',
           :'crowdsale_address' => :'crowdsale_address',
@@ -84,6 +90,8 @@ module MoleculeApi
           :'owner_wallet_id' => :'String',
           :'is_mintable' => :'BOOLEAN',
           :'is_burnable' => :'BOOLEAN',
+          :'total_supply' => :'Float',
+          :'circulating_supply' => :'Float',
           :'whitelist_address' => :'String',
           :'contract_address' => :'String',
           :'crowdsale_address' => :'String',
@@ -132,6 +140,13 @@ module MoleculeApi
 
       if attributes.has_key?(:'is_burnable')
         self.is_burnable = attributes[:'is_burnable']
+      end
+      if attributes.has_key?(:'total_supply')
+        self.total_supply = attributes[:'total_supply']
+      end
+
+      if attributes.has_key?(:'circulating_supply')
+        self.circulating_supply = attributes[:'circulating_supply']
       end
 
       if attributes.has_key?(:'whitelist_address')
@@ -204,6 +219,8 @@ module MoleculeApi
           owner_wallet_id == o.owner_wallet_id &&
           is_mintable == o.is_mintable &&
           is_burnable == o.is_burnable &&
+          total_supply == o.total_supply &&
+          circulating_supply == o.circulating_supply &&
           whitelist_address == o.whitelist_address &&
           contract_address == o.contract_address &&
           crowdsale_address == o.crowdsale_address &&
@@ -226,7 +243,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, symbol, nucleus_model_id, owner_wallet_id, is_mintable, is_burnable, whitelist_address, contract_address, crowdsale_address, is_active, secondary_id, record_status, offering_settings, metadata, restrictions, create_date, update_date].hash
+      [id, name, symbol, nucleus_model_id, owner_wallet_id, is_mintable, is_burnable, total_supply, circulating_supply, whitelist_address, contract_address, crowdsale_address, is_active, secondary_id, record_status, offering_settings, metadata, restrictions, create_date, update_date].hash
     end
 
     # Builds the object from hash

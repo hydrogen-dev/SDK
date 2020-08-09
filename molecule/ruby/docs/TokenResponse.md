@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **owner_wallet_id** | **String** |  | [optional] 
 **is_mintable** | **BOOLEAN** |  | [optional] 
 **is_burnable** | **BOOLEAN** |  | [optional] 
+**total_supply** | **Float** |  | [optional] 
+**circulating_supply** | **Float** |  | [optional] 
 **whitelist_address** | **String** |  | [optional] 
 **contract_address** | **String** |  | [optional] 
 **crowdsale_address** | **String** |  | [optional] 

@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token_id** | **String** |  | 
-**supply** | **String** |  | 
+**supply** | **Float** |  | 
 
 

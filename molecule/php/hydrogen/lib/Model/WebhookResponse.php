@@ -61,6 +61,7 @@ class WebhookResponse implements ModelInterface, ArrayAccess
         'url' => 'string',
         'molecule_service' => 'string[]',
         'is_active' => 'bool',
+        'secret' => 'string',
         'record_status' => 'string',
         'create_date' => '\DateTime',
         'update_date' => '\DateTime'
@@ -76,6 +77,7 @@ class WebhookResponse implements ModelInterface, ArrayAccess
         'url' => null,
         'molecule_service' => null,
         'is_active' => null,
+        'secret' => null,
         'record_status' => null,
         'create_date' => 'date-time',
         'update_date' => 'date-time'
@@ -112,6 +114,7 @@ class WebhookResponse implements ModelInterface, ArrayAccess
         'url' => 'url',
         'molecule_service' => 'molecule_service',
         'is_active' => 'is_active',
+        'secret' => 'secret',
         'record_status' => 'record_status',
         'create_date' => 'create_date',
         'update_date' => 'update_date'
@@ -127,6 +130,7 @@ class WebhookResponse implements ModelInterface, ArrayAccess
         'url' => 'setUrl',
         'molecule_service' => 'setMoleculeService',
         'is_active' => 'setIsActive',
+        'secret' => 'setSecret',
         'record_status' => 'setRecordStatus',
         'create_date' => 'setCreateDate',
         'update_date' => 'setUpdateDate'
@@ -142,6 +146,7 @@ class WebhookResponse implements ModelInterface, ArrayAccess
         'url' => 'getUrl',
         'molecule_service' => 'getMoleculeService',
         'is_active' => 'getIsActive',
+        'secret' => 'getSecret',
         'record_status' => 'getRecordStatus',
         'create_date' => 'getCreateDate',
         'update_date' => 'getUpdateDate'
@@ -238,6 +243,7 @@ class WebhookResponse implements ModelInterface, ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['molecule_service'] = isset($data['molecule_service']) ? $data['molecule_service'] : null;
         $this->container['is_active'] = isset($data['is_active']) ? $data['is_active'] : null;
+        $this->container['secret'] = isset($data['secret']) ? $data['secret'] : null;
         $this->container['record_status'] = isset($data['record_status']) ? $data['record_status'] : null;
         $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
         $this->container['update_date'] = isset($data['update_date']) ? $data['update_date'] : null;
@@ -368,6 +374,31 @@ class WebhookResponse implements ModelInterface, ArrayAccess
     public function setIsActive($is_active)
     {
         $this->container['is_active'] = $is_active;
+
+        return $this;
+    }
+
+
+    /**
+     * Gets secret
+     *
+     * @return string
+     */
+    public function getSecret()
+    {
+        return $this->container['secret'];
+    }
+
+    /**
+     * Sets secret
+     *
+     * @param string $secret secret
+     *
+     * @return $this
+     */
+    public function setSecret($secret)
+    {
+        $this->container['secret'] = $secret;
 
         return $this;
     }

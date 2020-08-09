@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **ownerWalletId** | **String** |  | [optional] 
 **isMintable** | **Boolean** |  | [optional] 
 **isBurnable** | **Boolean** |  | [optional] 
+**totalSupply** | **Number** |  | [optional] 
+**circulatingSupply** | **Number** |  | [optional] 
 **whitelistAddress** | **String** |  | [optional] 
 **contractAddress** | **String** |  | [optional] 
 **crowdsaleAddress** | **String** |  | [optional] 

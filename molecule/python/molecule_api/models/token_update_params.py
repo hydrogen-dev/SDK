@@ -33,6 +33,7 @@ class TokenUpdateParams(object):
     swagger_types = {
         'name': 'str',
         'symbol': 'str',
+        'total_supply': 'float',
         'nucleus_model_id': 'str',
         'owner_wallet_id': 'str',
         'is_mintable': 'bool',
@@ -51,6 +52,7 @@ class TokenUpdateParams(object):
     attribute_map = {
         'name': 'name',
         'symbol': 'symbol',
+        'total_supply': 'total_supply',
         'nucleus_model_id': 'nucleus_model_id',
         'owner_wallet_id': 'owner_wallet_id',
         'is_mintable': 'is_mintable',
@@ -66,11 +68,12 @@ class TokenUpdateParams(object):
         'restrictions': 'restrictions'
     }
 
-    def __init__(self, name=None, symbol=None, nucleus_model_id=None, owner_wallet_id=None, is_mintable=None, is_burnable=None, whitelist_address=None, contract_address=None, crowdsale_address=None, is_active=None, secondary_id=None, record_status=None, offering_settings=None, metadata=None, restrictions=None):  # noqa: E501
+    def __init__(self, name=None, symbol=None, total_supply=None, nucleus_model_id=None, owner_wallet_id=None, is_mintable=None, is_burnable=None, whitelist_address=None, contract_address=None, crowdsale_address=None, is_active=None, secondary_id=None, record_status=None, offering_settings=None, metadata=None, restrictions=None):  # noqa: E501
         """TokenUpdateParams - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._symbol = None
+        self._total_supply = None
         self._nucleus_model_id = None
         self._owner_wallet_id = None
         self._is_mintable = None
@@ -90,6 +93,8 @@ class TokenUpdateParams(object):
             self.name = name
         if symbol is not None:
             self.symbol = symbol
+        if total_supply is not None:
+            self.total_supply = total_supply
         if nucleus_model_id is not None:
             self.nucleus_model_id = nucleus_model_id
         if owner_wallet_id is not None:
@@ -158,6 +163,26 @@ class TokenUpdateParams(object):
         """
 
         self._symbol = symbol
+    @property
+    def total_supply(self):
+        """Gets the total_supply of this TokenUpdateParams.  # noqa: E501
+
+
+        :return: The total_supply of this TokenUpdateParams.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_supply
+
+    @total_supply.setter
+    def total_supply(self, total_supply):
+        """Sets the total_supply of this TokenUpdateParams.
+
+
+        :param total_supply: The total_supply of this TokenUpdateParams.  # noqa: E501
+        :type: float
+        """
+
+        self._total_supply = total_supply
 
     @property
     def nucleus_model_id(self):

@@ -29,7 +29,7 @@ public class CrowdsaleFundParams {
   private UUID tokenId = null;
 
   @SerializedName("supply")
-  private String supply = null;
+  private Double supply = null;
 
   public CrowdsaleFundParams tokenId(UUID tokenId) {
     this.tokenId = tokenId;
@@ -49,7 +49,7 @@ public class CrowdsaleFundParams {
     this.tokenId = tokenId;
   }
 
-  public CrowdsaleFundParams supply(String supply) {
+  public CrowdsaleFundParams supply(Double supply) {
     this.supply = supply;
     return this;
   }
@@ -59,11 +59,11 @@ public class CrowdsaleFundParams {
    * @return supply
   **/
   @ApiModelProperty(required = true, value = "")
-  public String getSupply() {
+  public Double getSupply() {
     return supply;
   }
 
-  public void setSupply(String supply) {
+  public void setSupply(Double supply) {
     this.supply = supply;
   }
 

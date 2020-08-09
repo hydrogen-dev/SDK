@@ -64,6 +64,8 @@ class TokenResponse implements ModelInterface, ArrayAccess
         'owner_wallet_id' => 'string',
         'is_mintable' => 'bool',
         'is_burnable' => 'bool',
+        'total_supply' => 'double',
+        'circulating_supply' => 'double',
         'whitelist_address' => 'string',
         'contract_address' => 'string',
         'crowdsale_address' => 'string',
@@ -90,6 +92,8 @@ class TokenResponse implements ModelInterface, ArrayAccess
         'owner_wallet_id' => 'uuid',
         'is_mintable' => null,
         'is_burnable' => null,
+        'total_supply' => 'double',
+        'circulating_supply' => 'double',
         'whitelist_address' => null,
         'contract_address' => null,
         'crowdsale_address' => null,
@@ -137,6 +141,8 @@ class TokenResponse implements ModelInterface, ArrayAccess
         'owner_wallet_id' => 'owner_wallet_id',
         'is_mintable' => 'is_mintable',
         'is_burnable' => 'is_burnable',
+        'total_supply' => 'total_supply',
+        'circulating_supply' => 'circulating_supply',
         'whitelist_address' => 'whitelist_address',
         'contract_address' => 'contract_address',
         'crowdsale_address' => 'crowdsale_address',
@@ -163,6 +169,8 @@ class TokenResponse implements ModelInterface, ArrayAccess
         'owner_wallet_id' => 'setOwnerWalletId',
         'is_mintable' => 'setIsMintable',
         'is_burnable' => 'setIsBurnable',
+        'total_supply' => 'setTotalSupply',
+        'circulating_supply' => 'setCirculatingSupply',
         'whitelist_address' => 'setWhitelistAddress',
         'contract_address' => 'setContractAddress',
         'crowdsale_address' => 'setCrowdsaleAddress',
@@ -189,6 +197,8 @@ class TokenResponse implements ModelInterface, ArrayAccess
         'owner_wallet_id' => 'getOwnerWalletId',
         'is_mintable' => 'getIsMintable',
         'is_burnable' => 'getIsBurnable',
+        'total_supply' => 'getTotalSupply',
+        'circulating_supply' => 'getCirculatingSupply',
         'whitelist_address' => 'getWhitelistAddress',
         'contract_address' => 'getContractAddress',
         'crowdsale_address' => 'getCrowdsaleAddress',
@@ -269,6 +279,8 @@ class TokenResponse implements ModelInterface, ArrayAccess
         $this->container['owner_wallet_id'] = isset($data['owner_wallet_id']) ? $data['owner_wallet_id'] : null;
         $this->container['is_mintable'] = isset($data['is_mintable']) ? $data['is_mintable'] : null;
         $this->container['is_burnable'] = isset($data['is_burnable']) ? $data['is_burnable'] : null;
+        $this->container['total_supply'] = isset($data['total_supply']) ? $data['total_supply'] : null;
+        $this->container['circulating_supply'] = isset($data['circulating_supply']) ? $data['circulating_supply'] : null;
         $this->container['whitelist_address'] = isset($data['whitelist_address']) ? $data['whitelist_address'] : null;
         $this->container['contract_address'] = isset($data['contract_address']) ? $data['contract_address'] : null;
         $this->container['crowdsale_address'] = isset($data['crowdsale_address']) ? $data['crowdsale_address'] : null;
@@ -473,6 +485,55 @@ class TokenResponse implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets total_supply
+     *
+     * @return double
+     */
+    public function getTotalSupply()
+    {
+        return $this->container['total_supply'];
+    }
+
+    /**
+     * Sets total_supply
+     *
+     * @param double $total_supply total_supply
+     *
+     * @return $this
+     */
+    public function setTotalSupply($total_supply)
+    {
+        $this->container['total_supply'] = $total_supply;
+
+        return $this;
+    }
+
+    /**
+     * Gets circulating_supply
+     *
+     * @return double
+     */
+    public function getCirculatingSupply()
+    {
+        return $this->container['circulating_supply'];
+    }
+
+    /**
+     * Sets circulating_supply
+     *
+     * @param double $circulating_supply circulating_supply
+     *
+     * @return $this
+     */
+    public function setCirculatingSupply($circulating_supply)
+    {
+        $this->container['circulating_supply'] = $circulating_supply;
+
+        return $this;
+    }
+
 
     /**
      * Gets whitelist_address

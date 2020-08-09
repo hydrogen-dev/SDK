@@ -69,6 +69,10 @@
         obj.isMintable = ApiClient.convertToType(data['is_mintable'], 'Boolean');
       if (data.hasOwnProperty('is_burnable'))
         obj.isBurnable = ApiClient.convertToType(data['is_burnable'], 'Boolean');
+      if (data.hasOwnProperty('total_supply'))
+        obj.totalSupply = ApiClient.convertToType(data['total_supply'], 'Number');
+      if (data.hasOwnProperty('circulating_supply'))
+        obj.circulatingSupply = ApiClient.convertToType(data['circulating_supply'], 'Number');
       if (data.hasOwnProperty('whitelist_address'))
         obj.whitelistAddress = ApiClient.convertToType(data['whitelist_address'], 'String');
       if (data.hasOwnProperty('contract_address'))
@@ -129,6 +133,16 @@
    * @member {Boolean} isBurnable
    */
   exports.prototype.isBurnable = undefined;
+
+  /**
+   * @member {Number} totalSupply
+   */
+  exports.prototype.totalSupply = undefined;
+
+  /**
+   * @member {Number} circulatingSupply
+   */
+  exports.prototype.circulatingSupply = undefined;
 
   /**
    * @member {String} whitelistAddress

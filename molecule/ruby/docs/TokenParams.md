@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
 **symbol** | **String** |  | 
+**total_supply** | **Float** |  | 
 **nucleus_model_id** | **String** |  | 
 **owner_wallet_id** | **String** |  | 
 **is_mintable** | **BOOLEAN** |  | [optional] 

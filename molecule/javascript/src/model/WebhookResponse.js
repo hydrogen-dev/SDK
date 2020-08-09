@@ -63,6 +63,8 @@
         obj.moleculeService = ApiClient.convertToType(data['molecule_service'], ['String']);
       if (data.hasOwnProperty('is_active'))
         obj.isActive = ApiClient.convertToType(data['is_active'], 'Boolean');
+      if (data.hasOwnProperty('secret'))
+        obj.secret = ApiClient.convertToType(data['secret'], 'String');
       if (data.hasOwnProperty('record_status'))
         obj.recordStatus = ApiClient.convertToType(data['record_status'], 'String');
       if (data.hasOwnProperty('create_date'))
@@ -92,6 +94,11 @@
    * @member {Boolean} isActive
    */
   exports.prototype.isActive = undefined;
+
+  /**
+   * @member {String} secret
+   */
+  exports.prototype.secret = undefined;
 
   /**
    * @member {String} recordStatus

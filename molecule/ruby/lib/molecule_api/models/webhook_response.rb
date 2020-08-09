@@ -22,6 +22,8 @@ module MoleculeApi
 
     attr_accessor :is_active
 
+    attr_accessor :secret
+
     attr_accessor :record_status
 
     attr_accessor :create_date
@@ -57,6 +59,7 @@ module MoleculeApi
           :'url' => :'url',
           :'molecule_service' => :'molecule_service',
           :'is_active' => :'is_active',
+          :'secret' => :'secret',
           :'record_status' => :'record_status',
           :'create_date' => :'create_date',
           :'update_date' => :'update_date'
@@ -70,6 +73,7 @@ module MoleculeApi
           :'url' => :'String',
           :'molecule_service' => :'Array<String>',
           :'is_active' => :'BOOLEAN',
+          :'secret' => :'String',
           :'record_status' => :'String',
           :'create_date' => :'DateTime',
           :'update_date' => :'DateTime'
@@ -100,6 +104,10 @@ module MoleculeApi
 
       if attributes.has_key?(:'is_active')
         self.is_active = attributes[:'is_active']
+      end
+
+      if attributes.has_key?(:'secret')
+        self.secret = attributes[:'secret']
       end
 
       if attributes.has_key?(:'record_status')
@@ -137,6 +145,7 @@ module MoleculeApi
           url == o.url &&
           molecule_service == o.molecule_service &&
           is_active == o.is_active &&
+          secret == o.secret &&
           record_status == o.record_status &&
           create_date == o.create_date &&
           update_date == o.update_date
@@ -151,7 +160,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, url, molecule_service, is_active, record_status, create_date, update_date].hash
+      [id, url, molecule_service, is_active, secret, record_status, create_date, update_date].hash
     end
 
     # Builds the object from hash

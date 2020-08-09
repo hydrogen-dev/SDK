@@ -18,6 +18,8 @@ module MoleculeApi
 
     attr_accessor :symbol
 
+    attr_accessor :total_supply
+
     attr_accessor :nucleus_model_id
 
     attr_accessor :owner_wallet_id
@@ -49,6 +51,7 @@ module MoleculeApi
       {
           :'name' => :'name',
           :'symbol' => :'symbol',
+          :'total_supply' => :'total_supply',
           :'nucleus_model_id' => :'nucleus_model_id',
           :'owner_wallet_id' => :'owner_wallet_id',
           :'is_mintable' => :'is_mintable',
@@ -70,6 +73,7 @@ module MoleculeApi
       {
           :'name' => :'String',
           :'symbol' => :'String',
+          :'total_supply' => :'Float',
           :'nucleus_model_id' => :'String',
           :'owner_wallet_id' => :'String',
           :'is_mintable' => :'BOOLEAN',
@@ -100,6 +104,10 @@ module MoleculeApi
 
       if attributes.has_key?(:'symbol')
         self.symbol = attributes[:'symbol']
+      end
+
+      if attributes.has_key?(:'total_supply')
+        self.total_supply = attributes[:'total_supply']
       end
 
       if attributes.has_key?(:'nucleus_model_id')
@@ -175,6 +183,7 @@ module MoleculeApi
       self.class == o.class &&
           name == o.name &&
           symbol == o.symbol &&
+          total_supply == o.total_supply &&
           nucleus_model_id == o.nucleus_model_id &&
           owner_wallet_id == o.owner_wallet_id &&
           is_mintable == o.is_mintable &&
@@ -199,7 +208,7 @@ module MoleculeApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, symbol, nucleus_model_id, owner_wallet_id, is_mintable, is_burnable, whitelist_address, contract_address, crowdsale_address, is_active, secondary_id, record_status, offering_settings, metadata, restrictions].hash
+      [name, symbol, total_supply, nucleus_model_id, owner_wallet_id, is_mintable, is_burnable, whitelist_address, contract_address, crowdsale_address, is_active, secondary_id, record_status, offering_settings, metadata, restrictions].hash
     end
 
     # Builds the object from hash

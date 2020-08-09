@@ -32,7 +32,7 @@ class CrowdsaleFundParams(object):
     """
     swagger_types = {
         'token_id': 'str',
-        'supply': 'str'
+        'supply': 'float'
     }
 
     attribute_map = {

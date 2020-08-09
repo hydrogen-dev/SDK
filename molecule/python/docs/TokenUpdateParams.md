@@ -4,7 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**symbol** | **str** |  | [optional] 
+**symbol** | **str** |  | [optional]
+**total_supply** | **float** |  | [optional]  
 **nucleus_model_id** | **str** |  | [optional] 
 **owner_wallet_id** | **str** |  | [optional] 
 **is_mintable** | **bool** |  | [optional] 

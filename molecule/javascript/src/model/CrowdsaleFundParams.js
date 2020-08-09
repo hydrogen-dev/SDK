@@ -62,7 +62,7 @@
       if (data.hasOwnProperty('token_id'))
         obj.tokenId = ApiClient.convertToType(data['token_id'], 'String');
       if (data.hasOwnProperty('supply'))
-        obj.supply = ApiClient.convertToType(data['supply'], 'String');
+        obj.supply = ApiClient.convertToType(data['supply'], 'Number');
     }
     return obj;
   }

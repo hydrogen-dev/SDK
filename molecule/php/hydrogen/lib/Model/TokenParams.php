@@ -59,6 +59,7 @@ class TokenParams implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'symbol' => 'string',
+        'total_supply' => 'double',
         'nucleus_model_id' => 'string',
         'owner_wallet_id' => 'string',
         'is_mintable' => 'bool',
@@ -82,6 +83,7 @@ class TokenParams implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'name' => null,
         'symbol' => null,
+        'total_supply' => 'double',
         'nucleus_model_id' => 'uuid',
         'owner_wallet_id' => 'uuid',
         'is_mintable' => null,
@@ -126,6 +128,7 @@ class TokenParams implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'symbol' => 'symbol',
+        'total_supply' => 'total_supply',
         'nucleus_model_id' => 'nucleus_model_id',
         'owner_wallet_id' => 'owner_wallet_id',
         'is_mintable' => 'is_mintable',
@@ -149,6 +152,7 @@ class TokenParams implements ModelInterface, ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'symbol' => 'setSymbol',
+        'total_supply' => 'setTotalSupply',
         'nucleus_model_id' => 'setNucleusModelId',
         'owner_wallet_id' => 'setOwnerWalletId',
         'is_mintable' => 'setIsMintable',
@@ -172,6 +176,7 @@ class TokenParams implements ModelInterface, ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'symbol' => 'getSymbol',
+        'total_supply' => 'getTotalSupply',
         'nucleus_model_id' => 'getNucleusModelId',
         'owner_wallet_id' => 'getOwnerWalletId',
         'is_mintable' => 'getIsMintable',
@@ -249,6 +254,7 @@ class TokenParams implements ModelInterface, ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['symbol'] = isset($data['symbol']) ? $data['symbol'] : null;
+        $this->container['total_supply'] = isset($data['total_supply']) ? $data['total_supply'] : null;
         $this->container['nucleus_model_id'] = isset($data['nucleus_model_id']) ? $data['nucleus_model_id'] : null;
         $this->container['owner_wallet_id'] = isset($data['owner_wallet_id']) ? $data['owner_wallet_id'] : null;
         $this->container['is_mintable'] = isset($data['is_mintable']) ? $data['is_mintable'] : null;
@@ -278,6 +284,9 @@ class TokenParams implements ModelInterface, ArrayAccess
         }
         if ($this->container['symbol'] === null) {
             $invalidProperties[] = "'symbol' can't be null";
+        }
+        if ($this->container['total_supply'] === null) {
+            $invalidProperties[] = "'total_supply' can't be null";
         }
         if ($this->container['nucleus_model_id'] === null) {
             $invalidProperties[] = "'nucleus_model_id' can't be null";
@@ -347,6 +356,31 @@ class TokenParams implements ModelInterface, ArrayAccess
     public function setSymbol($symbol)
     {
         $this->container['symbol'] = $symbol;
+
+        return $this;
+    }
+
+
+    /**
+     * Gets total_supply
+     *
+     * @return double
+     */
+    public function getTotalSupply()
+    {
+        return $this->container['total_supply'];
+    }
+
+    /**
+     * Sets total_supply
+     *
+     * @param double $total_supply total_supply
+     *
+     * @return $this
+     */
+    public function setTotalSupply($total_supply)
+    {
+        $this->container['total_supply'] = $total_supply;
 
         return $this;
     }

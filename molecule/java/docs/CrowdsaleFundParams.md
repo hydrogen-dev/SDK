@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tokenId** | [**UUID**](UUID.md) |  | 
-**supply** | **String** |  | 
+**supply** | **Double** |  | 
 
 
 

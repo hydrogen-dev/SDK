@@ -1608,7 +1608,7 @@ class FinancialPlanningApi
             );
         }
 
-        $resourcePath = '/mortgage_calculator/period_payment';
+        $resourcePath = '/mortgage_calculator/periodic_payment';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

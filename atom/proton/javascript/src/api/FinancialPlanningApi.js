@@ -324,7 +324,7 @@
       var returnType = {'String': Object};
 
       return this.apiClient.callApi(
-        '/mortgage_calculator/period_payment', 'POST',
+        '/mortgage_calculator/periodic_payment', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

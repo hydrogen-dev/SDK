@@ -612,7 +612,7 @@ class FinancialPlanningApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/mortgage_calculator/period_payment', 'POST',
+            '/mortgage_calculator/periodic_payment', 'POST',
             path_params,
             query_params,
             header_params,

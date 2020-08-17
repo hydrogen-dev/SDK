@@ -107,7 +107,7 @@ Class | Method | HTTP request | Description
 *FinancialPlanningApi* | [**education_calculator_percent_covered**](docs/FinancialPlanningApi.md#education_calculator_percent_covered) | **POST** /education_calculator/percent_covered | Education Calculator - Percent Covered
 *FinancialPlanningApi* | [**mortgage_calculator_down_payment**](docs/FinancialPlanningApi.md#mortgage_calculator_down_payment) | **POST** /mortgage_calculator/down_payment | Mortgage Calculator - Down Payment
 *FinancialPlanningApi* | [**mortgage_calculator_home_price**](docs/FinancialPlanningApi.md#mortgage_calculator_home_price) | **POST** /mortgage_calculator/home_price | Mortgage Calculator - Home Price
-*FinancialPlanningApi* | [**mortgage_calculator_periodic_payment**](docs/FinancialPlanningApi.md#mortgage_calculator_periodic_payment) | **POST** /mortgage_calculator/period_payment | Mortgage Calculator - Periodic Payment
+*FinancialPlanningApi* | [**mortgage_calculator_periodic_payment**](docs/FinancialPlanningApi.md#mortgage_calculator_periodic_payment) | **POST** /mortgage_calculator/periodic_payment | Mortgage Calculator - Periodic Payment
 *FinancialPlanningApi* | [**purchase_calculator_amount**](docs/FinancialPlanningApi.md#purchase_calculator_amount) | **POST** /purchase_calculator/amount | Purchase Calculator - Amount
 *FinancialPlanningApi* | [**purchase_calculator_deposit_amount**](docs/FinancialPlanningApi.md#purchase_calculator_deposit_amount) | **POST** /purchase_calculator/deposit_amount | Purchase Calculator - Deposit Amount
 *FinancialPlanningApi* | [**purchase_calculator_horizon**](docs/FinancialPlanningApi.md#purchase_calculator_horizon) | **POST** /purchase_calculator/horizon | Purchase Calculator - Horizon

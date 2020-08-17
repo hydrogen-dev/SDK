@@ -313,7 +313,7 @@ module ProtonApi
         fail ArgumentError, "Missing the required parameter 'mortgage_calculator_periodic_payment_request' when calling FinancialPlanningApi.mortgage_calculator_periodic_payment"
       end
       # resource path
-      local_var_path = '/mortgage_calculator/period_payment'
+      local_var_path = '/mortgage_calculator/periodic_payment'
 
       # query parameters
       query_params = {}

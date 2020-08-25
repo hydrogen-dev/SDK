@@ -687,7 +687,7 @@ public class FinancialPlanningApi {
         Object localVarPostBody = mortgageCalculatorPeriodicPaymentRequest;
 
         // create path and map variables
-        String localVarPath = "/mortgage_calculator/period_payment";
+        String localVarPath = "/mortgage_calculator/periodic_payment";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

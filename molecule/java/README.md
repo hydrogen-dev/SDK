@@ -48,7 +48,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.hydrogen</groupId>
+  <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-molecule-api</artifactId>
   <version>1.3.0</version>
   <scope>compile</scope>

@@ -25,6 +25,7 @@ Follow steps to verify the base URL path:
 https://sandbox.hydrogenplatform.com/integration/v1
 **Production Base URL**
 https://api.hydrogenplatform.com/integration/v1
+
 ## Installation
 
 To install the API client library to your local Maven repository, simply execute:
@@ -47,7 +48,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.hydrogen</groupId>
+  <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-integration-api</artifactId>
   <version>1.2.1</version>
   <scope>compile</scope>
@@ -77,7 +78,7 @@ Then manually install the following JARs:
 
 ## Getting Started
 
-Please follow the [installation](#installation) instruction and execute the following Java code:
+Please follow the [installation](#installation) instructions and execute the following Java code:
 
 ```java
 

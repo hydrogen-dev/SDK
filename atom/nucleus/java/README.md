@@ -48,9 +48,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.hydrogen</groupId>
+  <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-nucleus-api</artifactId>
-  <version>1.7.0</version>
+  <version>1.8.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -78,7 +78,7 @@ Then manually install the following JARs:
 
 ## Getting Started
 
-Please follow the [installation](#installation) instruction and execute the following Java code:
+Please follow the [installation](#installation) instructions and execute the following Java code:
 
 ```java
 

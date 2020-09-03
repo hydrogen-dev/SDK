@@ -14,6 +14,7 @@
 		<connection>scm:git:git@github.com:hydrogen-dev/SDK.git</connection>
 		<developerConnection>scm:git:git@github.com:hydrogen-dev/SDK.git</developerConnection>
 		<url>https://github.com/hydrogen-dev/SDK</url>
+		<tag>v1.8.0</tag>
 	</scm>
 
 	<licenses>
@@ -176,7 +177,6 @@
 					<localCheckout>true</localCheckout>
 					<pushChanges>false</pushChanges>
 					<mavenExecutorId>forked-path</mavenExecutorId>
-					<arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -185,6 +185,24 @@
 						<version>1.9.5</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+						<configuration>
+							<keyname>${gpg.keyname}</keyname>
+							<passphraseServerId>${gpg.keyname}</passphraseServerId>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>

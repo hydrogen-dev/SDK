@@ -4,7 +4,7 @@
 	<artifactId>hydrogen-nucleus-api</artifactId>
 	<packaging>jar</packaging>
 	<name>hydrogen-nucleus-api</name>
-	<version>1.8.0</version>
+	<version>1.8.1-SNAPSHOT</version>
 	<url>https://github.com/swagger-api/swagger-codegen</url>
 	<description>Swagger Java</description>
 
@@ -12,7 +12,7 @@
 		<connection>scm:git:git@github.com:hydrogen-dev/SDK.git</connection>
 		<developerConnection>scm:git:git@github.com:hydrogen-dev/SDK.git</developerConnection>
 		<url>https://github.com/hydrogen-dev/SDK</url>
-		<tag>hydrogen-nucleus-api-1.8.0</tag>
+		<tag>v1.8.0</tag>
 	</scm>
 
 	<licenses>

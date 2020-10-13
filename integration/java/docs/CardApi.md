@@ -39,15 +39,19 @@ Activate card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardBaseRequestCO activateRequest = new CardBaseRequestCO(); // CardBaseRequestCO | activateRequest
 try {
@@ -93,15 +97,19 @@ close a card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardBaseRequestCO closeRequest = new CardBaseRequestCO(); // CardBaseRequestCO | closeRequest
 try {
@@ -147,15 +155,19 @@ issue a card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardBaseRequestCO issueRequest = new CardBaseRequestCO(); // CardBaseRequestCO | issueRequest
 try {
@@ -201,15 +213,19 @@ pin card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardPinRequestCO cardPinRequestCO = new CardPinRequestCO(); // CardPinRequestCO | cardPinRequestCO
 try {
@@ -255,15 +271,19 @@ reactivate card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardBaseRequestCO reactivateRequest = new CardBaseRequestCO(); // CardBaseRequestCO | reactivateRequest
 try {
@@ -309,15 +329,19 @@ Reissue a card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardBaseRequestCO request = new CardBaseRequestCO(); // CardBaseRequestCO | request
 try {
@@ -363,15 +387,19 @@ Create a card reload
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardReloadRequestCO reloadRequest = new CardReloadRequestCO(); // CardReloadRequestCO | reloadRequest
 try {
@@ -417,15 +445,19 @@ suspend card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardBaseRequestCO suspendRequest = new CardBaseRequestCO(); // CardBaseRequestCO | suspendRequest
 try {
@@ -471,15 +503,19 @@ token card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardTokenRequestCO tokenizeRequest = new CardTokenRequestCO(); // CardTokenRequestCO | tokenizeRequest
 try {
@@ -525,15 +561,19 @@ Create Card transfer
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardTransferRequestCO transferRequest = new CardTransferRequestCO(); // CardTransferRequestCO | transferRequest
 try {
@@ -579,15 +619,19 @@ Create a card upload
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardUnloadRequestCO reloadRequest = new CardUnloadRequestCO(); // CardUnloadRequestCO | reloadRequest
 try {
@@ -633,15 +677,19 @@ Create a card client
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardClientRequestCO cardClientRequestCO = new CardClientRequestCO(); // CardClientRequestCO | cardClientRequestCO
 try {
@@ -687,15 +735,19 @@ Get a Card Balance
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 UUID id = new UUID(); // UUID | id
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
@@ -745,15 +797,19 @@ Get a card token
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 UUID id = new UUID(); // UUID | id
 try {
@@ -799,15 +855,19 @@ Get a card transaction
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 UUID id = new UUID(); // UUID | id
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
@@ -857,15 +917,19 @@ Get a card information
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 UUID id = new UUID(); // UUID | id
 try {
@@ -911,15 +975,19 @@ update a pin card
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 CardPinRequestCO cardPinRequestCO = new CardPinRequestCO(); // CardPinRequestCO | cardPinRequestCO
 UUID id = new UUID(); // UUID | id
@@ -967,15 +1035,19 @@ Update a card information
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 CardApi apiInstance = new CardApi();
 UUID id = new UUID(); // UUID | id
 try {

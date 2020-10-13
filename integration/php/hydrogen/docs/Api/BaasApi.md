@@ -35,6 +35,9 @@ $config =
         \com\hydrogen\integration\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);
 }
@@ -98,6 +101,9 @@ $config =
         \com\hydrogen\integration\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);
 }
@@ -161,6 +167,9 @@ $config =
         \com\hydrogen\integration\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);
 }
@@ -224,6 +233,9 @@ $config =
         \com\hydrogen\integration\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);
 }
@@ -293,6 +305,9 @@ $config =
         \com\hydrogen\integration\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);
 }
@@ -360,6 +375,9 @@ $config =
         \com\hydrogen\integration\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);
 }
@@ -427,6 +445,9 @@ $config =
         \com\hydrogen\integration\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);
 }

@@ -39,6 +39,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
 
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
@@ -100,6 +103,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
 
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
@@ -161,6 +167,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
 
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
@@ -222,6 +231,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
 
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
@@ -289,6 +301,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
 
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
@@ -354,6 +369,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
 
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
@@ -419,6 +437,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
 
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class

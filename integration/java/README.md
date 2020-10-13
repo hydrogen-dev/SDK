@@ -93,14 +93,17 @@ public class AggregationApiExample {
     public static void main(String[] args) {
         AuthApiClient authApiClient = new AuthApiClient();
         try {
-        //          You can use any one of them to access an API.
-        //          Creating a token for grant_type=client_credentials            
-           authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
-        //          Creating a token for grant_type=password
-           authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                                   "USERNAME", "PASSWORD");           
+            //          Use one of the below method to generate oauth token        
+            //          Creating a token for grant_type=client_credentials            
+            authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+            //          Creating a token for grant_type=password
+            authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                                    "USERNAME", "PASSWORD");     
+            //  Creating a token using client_token
+            authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+                    "CLIENT_TOKEN");      
         } catch (ApiException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
         AggregationApi apiInstance = new AggregationApi();
         AggregationRequestObject aggregationRequestObject = new AggregationRequestObject(); // AggregationRequestObject | aggregationRequestObject

@@ -22,8 +22,13 @@ Creates a new Wallet
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::WalletApi.new
@@ -72,8 +77,13 @@ Fetch Wallet list
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::WalletApi.new
@@ -135,8 +145,13 @@ Fetch Wallet details by Wallet Key ID
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::WalletApi.new
@@ -185,8 +200,13 @@ Fetch Wallet details
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::WalletApi.new
@@ -235,8 +255,13 @@ Update Wallet details
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::WalletApi.new

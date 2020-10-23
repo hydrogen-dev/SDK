@@ -23,15 +23,19 @@ Create historical market data
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 MarketDataApi apiInstance = new MarketDataApi();
 MdHistoryRequestCO historyRequest = new MdHistoryRequestCO(); // MdHistoryRequestCO | historyRequest
 try {
@@ -77,15 +81,19 @@ Create quote market data
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 MarketDataApi apiInstance = new MarketDataApi();
 MdQuoteRequestCO quoteRequest = new MdQuoteRequestCO(); // MdQuoteRequestCO | quoteRequest
 try {

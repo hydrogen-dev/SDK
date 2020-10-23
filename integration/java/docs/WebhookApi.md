@@ -28,15 +28,19 @@ One active webhook service is allowed at all times.
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 WebhookApi apiInstance = new WebhookApi();
 Webhook webhookRequest = new Webhook(); // Webhook | webhookRequest
 try {
@@ -84,15 +88,19 @@ Permanently delete a webhook for your firm. The webhook_id must be provided.
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 WebhookApi apiInstance = new WebhookApi();
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
@@ -139,15 +147,19 @@ Get information for all webhooks defined for your firm.
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 WebhookApi apiInstance = new WebhookApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -203,15 +215,19 @@ Retrieve the information for a specific webhook. The webhook_id must be provided
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 WebhookApi apiInstance = new WebhookApi();
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
@@ -259,15 +275,19 @@ Update a webhook for your firm. The webhook_id must be provided
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 WebhookApi apiInstance = new WebhookApi();
 Webhook webhook = new Webhook(); // Webhook | webhook
 UUID webhookId = new UUID(); // UUID | UUID webhook_id

@@ -28,15 +28,19 @@ create a Baas account
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 BaasApi apiInstance = new BaasApi();
 BaasAccountCO baasAccountCO = new BaasAccountCO(); // BaasAccountCO | baasAccountCO
 try {
@@ -82,15 +86,19 @@ Create a Baas Client
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 BaasApi apiInstance = new BaasApi();
 BaasClientCO baasClientCO = new BaasClientCO(); // BaasClientCO | baasClientCO
 try {
@@ -136,15 +144,19 @@ create a Baas subaccount
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 BaasApi apiInstance = new BaasApi();
 BaasSubAccountCO baasSubAccountCO = new BaasSubAccountCO(); // BaasSubAccountCO | baasSubAccountCO
 try {
@@ -190,15 +202,19 @@ Get a Baas account statement
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 BaasApi apiInstance = new BaasApi();
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
 UUID nucleusAccountId = new UUID(); // UUID | nucleus_account_id
@@ -250,15 +266,19 @@ Get a Baas portfolio balance
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 BaasApi apiInstance = new BaasApi();
 UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
@@ -308,15 +328,19 @@ Get a Baas portfolio transaction
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 BaasApi apiInstance = new BaasApi();
 UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
@@ -366,15 +390,19 @@ Update a Baas client
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 BaasApi apiInstance = new BaasApi();
 BaasClientCO baasClientCO = new BaasClientCO(); // BaasClientCO | baasClientCO
 try {

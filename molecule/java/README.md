@@ -98,7 +98,10 @@ public class CurrencyApiExample {
         authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
         //          Creating a token for grant_type=password
         authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                               "USERNAME", "PASSWORD");           
+                               "USERNAME", "PASSWORD");
+        //  Creating a token using client_token
+        authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+                "CLIENT_TOKEN");           
         } catch (ApiException e) {
         e.printStackTrace();
         }

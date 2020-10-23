@@ -25,15 +25,19 @@ Endpoint is used to verify account.
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 IavApi apiInstance = new IavApi();
 IavRequestCO iavRequestCO = new IavRequestCO(); // IavRequestCO | iavRequestCO
 try {
@@ -81,15 +85,19 @@ Get verified account based on id.
 
 AuthApiClient authApiClient = new AuthApiClient();
 try {
-//          You can use any one of them to access an API.
+//          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-   authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-   authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                           "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-   e.printStackTrace();
+e.printStackTrace();
 }
+
 IavApi apiInstance = new IavApi();
 UUID nucleusBankLinkId = new UUID(); // UUID | nucleus_bank_link_id
 try {

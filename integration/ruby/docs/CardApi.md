@@ -41,6 +41,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -96,6 +98,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -151,6 +155,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -206,6 +212,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -261,6 +269,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -316,6 +326,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -371,6 +383,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -426,6 +440,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -481,6 +497,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -536,6 +554,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -591,6 +611,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -646,6 +668,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -701,6 +725,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -762,6 +788,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -817,6 +845,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -878,6 +908,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -933,6 +965,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 
@@ -991,6 +1025,8 @@ IntegrationApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 

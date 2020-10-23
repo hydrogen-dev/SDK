@@ -57,6 +57,12 @@ api.createUsingPostPassword({
     'client_secret': 'MYCLIENTSECRET'
 }, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 var callback = function(error, data, response) {
       if (error) {
         console.error(error);
@@ -136,6 +142,12 @@ api.createUsingPostPassword({
     'client_secret': 'MYCLIENTSECRET'
 }, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 var callback = function(error, data, response) {
     if (error) {
         console.error(error);
@@ -229,6 +241,12 @@ api.createUsingPostPassword({
     'client_secret': 'MYCLIENTSECRET'
 }, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 var callback = function(error, data, response) {
     if (error) {
         console.error(error);
@@ -308,6 +326,12 @@ api.createUsingPostPassword({
     'client_secret': 'MYCLIENTSECRET'
 }, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 var callback = function(error, data, response) {
     if (error) {
         console.error(error);
@@ -387,6 +411,12 @@ api.createUsingPostPassword({
     'client_secret': 'MYCLIENTSECRET'
 }, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 var callback = function(error, data, response) {
     if (error) {
         console.error(error);

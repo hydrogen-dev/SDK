@@ -31,9 +31,13 @@ $config =
         \com\hydrogen\molecule\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\molecule\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\molecule\ApiException $e) {
     print_r($e);
 }
+
 $apiInstance = new com\hydrogen\molecule\Api\TokenTransferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -94,9 +98,13 @@ $config =
         \com\hydrogen\molecule\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\molecule\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\molecule\ApiException $e) {
     print_r($e);
 }
+
 $apiInstance = new com\hydrogen\molecule\Api\TokenTransferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -167,9 +175,13 @@ $config =
         \com\hydrogen\molecule\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\molecule\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\molecule\ApiException $e) {
     print_r($e);
 }
+
 $apiInstance = new com\hydrogen\molecule\Api\TokenTransferApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.

@@ -26,8 +26,13 @@ Burn tokens
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -76,8 +81,13 @@ Creates a new Token
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -126,8 +136,13 @@ Delete Token
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -175,8 +190,13 @@ Deploys provided Token to network
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -225,8 +245,13 @@ Fetch Token list
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -284,8 +309,13 @@ Fetch Token details
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -334,8 +364,13 @@ Mint new tokens
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -384,8 +419,13 @@ Update Token details
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new
@@ -438,8 +478,13 @@ Whitelist token for provided wallet
 require 'molecule_api'
 # setup authorization
 MoleculeApi.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth2
-  config.access_token = 'YOUR ACCESS TOKEN'
+  # Use one of the below method to generate oauth token        
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
 api_instance = MoleculeApi::TokenApi.new

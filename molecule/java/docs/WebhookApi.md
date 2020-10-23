@@ -32,6 +32,9 @@ authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
 authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
                        "USERNAME", "PASSWORD");           
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                       "USERNAME", "PASSWORD");           
 } catch (ApiException e) {
 e.printStackTrace();
 }
@@ -87,6 +90,9 @@ authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
 authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
                        "USERNAME", "PASSWORD");           
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                       "USERNAME", "PASSWORD");           
 } catch (ApiException e) {
 e.printStackTrace();
 }
@@ -138,6 +144,9 @@ try {
 //          You can use any one of them to access an API.
 //          Creating a token for grant_type=client_credentials            
 authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                       "USERNAME", "PASSWORD");           
 //          Creating a token for grant_type=password
 authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
                        "USERNAME", "PASSWORD");           
@@ -204,6 +213,9 @@ authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
 authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
                        "USERNAME", "PASSWORD");           
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                       "USERNAME", "PASSWORD");           
 } catch (ApiException e) {
 e.printStackTrace();
 }
@@ -256,6 +268,9 @@ try {
 //          You can use any one of them to access an API.
 //          Creating a token for grant_type=client_credentials            
 authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                       "USERNAME", "PASSWORD");           
 //          Creating a token for grant_type=password
 authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
                        "USERNAME", "PASSWORD");           
